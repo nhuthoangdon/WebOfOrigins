@@ -1,0 +1,92 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #070A14 0%,    /* Darker space black-navy */
+        #150F22 30%,   /* Deeper purple-black nebula */
+        #171F22 70%,   /* Dark teal-gray transition */
+        #252D33 100%   /* Subtle gray-blue, toned down */
+      );
+}
+#network {
+    width: 100%;
+    height: 100vh;
+/*            border: 1px solid #ccc;*/
+    background: transparent;
+}
+div.vis-tooltip {
+    background-color: rgba(238, 254, 251, 0.85);
+    border-radius: 24px;
+    padding: 6px 14px;
+    border: 1px solid #BBFFF9;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.15);
+}
+
+div.vis-network div.vis-navigation div.vis-button.vis-zoomExtends {
+    background-image: url(Assets/resetZoom.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 40px;
+}
+
+div.vis-network div.vis-navigation div.vis-button.vis-zoomOut {
+    background-image: url(Assets/zoomOut.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 40px;
+}
+
+div.vis-network div.vis-navigation div.vis-button.vis-zoomIn {
+    background-image: url(Assets/zoomIn.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 40px;
+}
+
+div.vis-network div.vis-navigation div.vis-button.vis-up {
+    background-image: url(Assets/arrow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+div.vis-network div.vis-navigation div.vis-button.vis-down {
+    background-image: url(Assets/arrow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: rotate(180deg);
+    transform-origin: center center;
+}
+
+div.vis-network div.vis-navigation div.vis-button.vis-left {
+    background-image: url(Assets/arrow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: rotate(-90deg);
+    transform-origin: center center;
+}
+
+div.vis-network div.vis-navigation div.vis-button.vis-right {
+    background-image: url(Assets/arrow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: rotate(90deg);
+    transform-origin: center center;
+}

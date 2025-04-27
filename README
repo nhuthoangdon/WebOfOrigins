@@ -1,0 +1,12 @@
+# Web of Origins Platform
+
+This project aims to construct a comprehensive database of the materials, components, and ingredients of consumer products, along with their associated impacts, providing a transparent and conscious perspective on the complexity of human development in relation to social and environmental issues.
+
+## Licensing
+
+This project is dual-licensed as follows:
+- **Visualization Code**: The source code (e.g., JavaScript files using vis.js in the `src/` directory) is licensed under the [MIT License](LICENSE).
+- **Scientific Database**: The database (e.g., files in the `data/` directory) is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](DATA_LICENSE.md).
+- **Third-Party Libraries**: Libraries like vis.js are licensed under their respective licenses (see `NOTICE` or library documentation).
+
+Please review the respective license files for full details.

@@ -1,0 +1,97 @@
+"id";"label";"type";"title";"shape";"image"
+"comp_1";"Gelatin";"Composition";"Common ingredients";;
+"comp_2";"Glucosamine";"Composition";"Active ingredient in glucosamine supplements";;
+"comp_3";"Collagen";"Composition";;;
+"comp_4";"High-Fructose Corn Syrup (HFCS)";"Composition";;;
+"con_1";"Water Overuse";"Concern";"Excessive water use and water scarcity";;
+"con_10";"Labour Exploitation";"Concern";"Violations, Exploitation";;
+"con_11";"Community Displacement";"Concern";"Community displacement, land conflicts";;
+"con_12";"Human Rights Violation";"Concern";"Human Right Violations, Child Labour, Forced Labour, Exploitation";;
+"con_13";"Ecosystem Disruption";"Concern";"Disruption of natural ecosystems, Industrial Expansion, Urbanisation";;
+"con_14";"Ocean Acidification";"Concern";"Waterway and ocean acidification";;
+"con_15";"Carbon Emissions";"Concern";"Excessive carbon emissions";;
+"con_16";"Soil Erosion";"Concern";;;
+"con_17";"Mircroplastics";"Concern";"Microplastic particles entering the environment";;
+"con_18";"Animal Abuse";"Concern";"Inhumane treatments of animals";;
+"con_2";"Deforestation";"Concern";"Destroying natural environments";;
+"con_3";"Chemical Contamination";"Concern";"Pesticides, Fertilisers, Heavy Metals, Industrial Waste";;
+"con_4";"Soil Degradation";"Concern";"Degradation of soil";;
+"con_5";"Greenhouse Gas Emissions";"Concern";"Harmful gas emissions";;
+"con_6";"Waste";"Concern";"Waste generation, mismanagement";;
+"con_7";"Air Pollution";"Concern";"Particulate Matter, Industrial Emissions, Toxic Gases";;
+"con_8";"Water Pollution";"Concern";"Polution in the marine environments";;
+"con_9";"IUU FIshing";"Concern";"Illegal, Unregulated, Unreported Fishing, Overfishing";;
+"consq_1";"Groundwater Depletion";"Consequence";"Reduction of water availability";;
+"consq_10";"Toxin Leaching";"Consequence";;;
+"consq_11";"Plastic Pollution";"Consequence";;;
+"consq_12";"Poor Working Conditions";"Consequence";;;
+"consq_13";"Loss of Livelihoods";"Consequence";;;
+"consq_14";"Forced Migration";"Consequence";;;
+"consq_15";"Food Supply Disruptions";"Consequence";;;
+"consq_16";"Child Labour";"Consequence";;;
+"consq_17";"Force Labour";"Consequence";;;
+"consq_18";"Biodiversity Loss";"Consequence";;;
+"consq_19";"Invasive Species";"Consequence";"Introduction of invasive, non-native species";;
+"consq_2";"Reduced Agricultural Productivity";"Consequence";"Reduction of agricultural yields";;
+"consq_20";"Coral Bleaching";"Consequence";;;
+"consq_21";"Species Extinction";"Consequence";;;
+"consq_22";"Decline in Natural Habitats";"Consequence";;;
+"consq_23";"Marine Life Decline";"Consequence";;;
+"consq_24";"Ocean Pollution";"Consequence";;;
+"consq_25";"Toxin Accumulation in Organisms";"Consequence";;;
+"consq_26";"Increased Greenhouse Gases";"Consequence";;;
+"consq_27";"Loss of Fisheries";"Consequence";;;
+"consq_3";"Habitat Loss";"Consequence";"Loss of natural living environments for wildlifes";;
+"consq_4";"Respiratory Diseases";"Consequence";;;
+"consq_5";"Acid Rain";"Consequence";;;
+"consq_6";"Reduced Air Quality";"Consequence";;;
+"consq_7";"Declining Fish Population";"Consequence";;;
+"consq_8";"Food Chain Disruption";"Consequence";;;
+"consq_9";"Landfill Overflow";"Consequence";;;
+"consumer_1";"USA";"Consumer";;"image";"https://flagsapi.com/US/flat/64.png"
+"consumer_2";"Australia";"Consumer";;"image";"https://flagsapi.com/AU/flat/64.png"
+"consumer_3";"Canada";"Consumer";;"image";"https://flagsapi.com/CA/flat/64.png"
+"consumer_4";"China";"Consumer";;"image";"https://flagsapi.com/CN/flat/64.png"
+"consumer_5";"Germany";"Consumer";;"image";
+"consumer_6";"Mexico";"Consumer";;"image";"https://flagsapi.com/MX/flat/64.png"
+"country_1";"USA";"Country";;"image";"https://flagsapi.com/US/flat/64.png"
+"country_2";"Australia";"Country";;"image";"https://flagsapi.com/AU/flat/64.png"
+"country_3";"Canada";"Country";;"image";"https://flagsapi.com/CA/flat/64.png"
+"country_4";"China";"Country";;"image";"https://flagsapi.com/CN/flat/64.png"
+"country_5";"Germany";"Country";;"image";
+"country_6";"Sri Lanka";"Country";;"image";
+"imp_1";"Ecosystem Collapse";"Impact";;;
+"imp_10";"Political Instability";"Impact";;;
+"imp_11";"Housing Crisis";"Impact";;;
+"imp_12";"Global Food Crisis";"Impact";;;
+"imp_13";"Poverty";"Impact";;;
+"imp_14";"Reputational Damage";"Impact";;;
+"imp_15";"Loss of Ecosystem Goods and Services";"Impact";;;
+"imp_16";"Food Chain Collapse";"Impact";;;
+"imp_17";"Reduced Climate Resilient";"Impact";;;
+"imp_18";"Unstable Food Webs";"Impact";;;
+"imp_19";"Disrupted Marine Economy";"Impact";;;
+"imp_2";"Human Health Risks";"Impact";;;
+"imp_3";"Food Insecurity";"Impact";;;
+"imp_4";"Water Scarcity";"Impact";;;
+"imp_5";"Climate Change";"Impact";;;
+"imp_6";"Public Health Crisis";"Impact";;;
+"imp_7";"Economic Decline";"Impact";;;
+"imp_8";"Social Unrest";"Impact";;;
+"imp_9";"Inequality";"Impact";;;
+"ind_1";"Slaughtering";"Industry";"Animal slaughtering";;
+"ind_2";"Animal Husbandry";"Industry";"Management of livestocks";;
+"ind_3";"Livestock Farming";"Industry";"Raising domesticated animals for human use";;
+"ind_4";"Horiculture";"Industry";"Planting";;
+"ind_5";"Agriculture";"Industry";"Field crop cultivation, Livestock production";;
+"ind_6";"Fishing";"Industry";"Commercial fishing";;
+"ind_7";"Seafood Processing";"Industry";"Process of seafood";;
+"item_1";"Glucosamine Supplements";"Item";"Dietary supplements containing Glucosamine as the main, active ingredient";;
+"item_2";"Gummies";"Item";"Sweetened, general gelatin-based gummies";;
+"item_3";"Jello";"Item";"Sweetened, gelatin-based jello powder or pre-made jellos";;
+"item_4";"Soft Drinks";"Item";"General sugary carbonated drinks";;
+"src_1";"Animal Hides";"Source";"Commonly from pig and cow hides";;
+"src_2";"Crustacean Shells";"Source";"Commonly from crabs, lobsters, prawns, and shrimps";;
+"src_3";"Fungi";"Source";;;
+"src_4";"Corn";"Source";;;
+"src_5";"Bacteria";"Source";;;
