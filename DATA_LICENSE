@@ -1,11 +1,45 @@
 # Data License
 
-The scientific database in this repository is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+© 2025 Web of Origins. All rights reserved for the database structure, arrangement, and content.
 
-You are free to:
-- Share: Copy and redistribute the material in any medium or format.
-- Adapt: Remix, transform, and build upon the material for any purpose, even commercially.
+This database, including its data as visualized in network or diagram form (e.g., via vis.js), is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License. You are free to:
+
+
+
+
+
+Share: Copy and redistribute the database or its derived visualizations in any medium or format.
+
+
+
+Adapt: Remix, transform, and build upon the database (e.g., create new visualizations or analyses) for non-commercial purposes.
 
 Under the following terms:
-- Attribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-- No additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+
+
+
+
+Attribution: You must give appropriate credit to Web of Origins (weboforigins.com) or Nhut Hoang-Don, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. Suggested citation: Web of Origins, 2025, www.weboforigins.com.
+
+
+
+NonCommercial: You may not use the database or its derived visualizations for commercial purposes without obtaining a separate paid license.
+
+
+
+No additional restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+For the full license text, see: https://creativecommons.org/licenses/by-nc/4.0/
+
+Commercial Use
+
+For commercial use of the database or its visualizations (e.g., in products, services, or commercial publications), please contact us at weboforigins@gmail.com to obtain a paid license.
+
+Scope of This License
+
+This DATA_LICENSE applies solely to the database content, including the structured data (e.g., nodes, edges, attributes) visualized as a network or diagram. The codebase, including the vis.js-based visualization code and other software, is licensed separately under the Creative Commons Attribution 4.0 International (CC BY 4.0) License. See the LICENSE file in the repository for details.
+
+Support This Project
+
+Help keep this database free and accessible! Donate at [your-donation-link] to support my work.

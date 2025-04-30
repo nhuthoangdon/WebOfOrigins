@@ -6,7 +6,8 @@ This project aims to construct a comprehensive database of the materials, compon
 
 This project is dual-licensed as follows:
 - **Visualization Code**: The source code (e.g., JavaScript files using vis.js in the `src/` directory) is licensed under the [MIT License](LICENSE).
-- **Scientific Database**: The database (e.g., files in the `data/` directory) is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0)](DATA_LICENSE.md).
+- **Database**: The network data (e.g., in `/data`) is licensed under CC BY-NC 4.0. See `DATA_LICENSE.md` and the Web of Origins website (www.weboforigins.com/license) for details.
 - **Third-Party Libraries**: Libraries like vis.js are licensed under their respective licenses (see `NOTICE` or library documentation).
+
 
 Please review the respective license files for full details.
