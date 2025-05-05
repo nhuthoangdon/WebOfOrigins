@@ -187,8 +187,11 @@ footer {
         }
 
 #home-footer {
+    width: auto;
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     justify-content: center;
     align-items: center;
 }
