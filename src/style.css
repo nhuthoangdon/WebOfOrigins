@@ -5,6 +5,7 @@ body, html {
     font-family: "Source Sans 3", sans-serif;
     font-optical-sizing: auto;
     font-size: 16px;
+    color: #F2F5F7;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -111,24 +112,28 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     padding: 16px;
     z-index: 1000;
     font-family: 'Source Code Pro', monospace;
+    text-align: center;
     font-size: 1rem;
     font-weight: 500;
 }
     .menu ul {
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
         list-style: none;
+        gap: .5em;
     }
         .menu ul li {
             margin-right: 24px;
         }
             .menu li a {
                 text-decoration: none;
-                color: #FFFFFF;
+                color: #F2F5F7;
                 transition: color 0.3s ease;
             }
             .menu a:visited {
-                color: #FFFFFF;
+                color: #F2F5F7;
             }
             .menu a:hover {
                 color: #9FFE71;
@@ -143,8 +148,14 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
                 font-weight: 400;
             }
 h1 {
-    color: white;
+    color: #AEA3FF;
     font-size: 4rem;
+    font-family: 'Source Code Pro', monospace;
+}
+
+h2 {
+    color: #C9E73A;
+    font-size: 3rem;
     font-family: 'Source Code Pro', monospace;
 }
 
@@ -155,25 +166,19 @@ p {
     letter-spacing: .03em;
 }
 
-    .about-content {
-        width: auto;
-        max-width: 100vw;
-        height: auto;
-        margin: 7rem 15%;
-        flex: 1 0 auto;
-    }
 
 footer {
     width: 100%;
     max-width: 100vw;
     font-family: 'Source Code Pro', monospace;
     font-weight: 400;
+    text-align: center;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
     gap: 1rem;
     padding: 1rem;
-    color: #E9EEF1;
+    color: #F2F5F7;
     font-size: .75em;
     box-sizing: border-box;
 }
@@ -183,6 +188,9 @@ footer {
         white-space: nowrap;
     }
         footer a:hover {
+            font-weight: 800;
+        }
+        footer a.current {
             font-weight: 800;
         }
 
@@ -195,3 +203,46 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+.primary-button {
+    padding: 1em 2em;
+    background-color: #611FF4;
+    border-radius: 10em;
+    color: #F2F5F7;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: .03em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.main {
+    max-width: 100vw;
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: calc(84px + 2%);
+    margin: calc(84px + 2%) 15%;
+}
+
+    .about-content {
+        width: auto;
+        max-width: 100vw;
+        height: auto;
+    }
+
+@media only screen and (max-width: 600px) {
+    .main {
+        margin: 140px 2em;
+    }
+    div.vis-network div.vis-navigation {
+        display: none;
+    }
+    #home-footer {
+        width: 100%;
+    }
+}
+
