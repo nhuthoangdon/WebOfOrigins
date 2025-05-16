@@ -106,14 +106,14 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
 }
 
 .menu {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
     padding: 16px;
     z-index: 1000;
     font-family: 'Source Code Pro', monospace;
     text-align: center;
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 500;
 }
     .menu ul {
@@ -129,11 +129,11 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
         }
             .menu li a {
                 text-decoration: none;
-                color: #F2F5F7;
+                color: #F8FAFB;
                 transition: color 0.3s ease;
             }
             .menu a:visited {
-                color: #F2F5F7;
+                color: #F8FAFB;
             }
             .menu a:hover {
                 color: #9FFE71;
@@ -149,13 +149,24 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
             }
 h1 {
     color: #AEA3FF;
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
 }
 
 h2 {
     color: #C9E73A;
     font-size: 3rem;
+    font-family: 'Source Code Pro', monospace;
+}
+
+h3 {
+    font-size: 2rem;
+    font-family: 'Source Code Pro', monospace;
+}
+
+h4 {
+    font-size: 1.5rem;
     font-family: 'Source Code Pro', monospace;
 }
 
@@ -166,6 +177,10 @@ p {
     letter-spacing: .03em;
 }
 
+a {
+    color: #8ED0DC;
+    font-weight: 600;
+}
 
 footer {
     width: 100%;
@@ -174,11 +189,11 @@ footer {
     font-weight: 400;
     text-align: center;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-end;
     gap: 1rem;
     padding: 1rem;
-    color: #F2F5F7;
+    color: #F8FAFB;
     font-size: .75em;
     box-sizing: border-box;
 }
@@ -194,26 +209,73 @@ footer {
             font-weight: 800;
         }
 
+button {
+    padding: 1em 2em;
+    border-radius: 10em;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;
+    letter-spacing: .03em;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+}
+a.button-link {
+    text-decoration: none;
+}
+    button span {
+        display: inline-block;
+        transition: all .5s ease;
+    }
+    button span img {
+        width: 1.5em;
+    }
+    button span.btn_label {
+        position: relative;
+        top: 0;
+        opacity: 1;
+        transition: .5s;
+    }
+    button span.btn_icon {
+        position: absolute;
+        transform: translateY(10px);
+        visibility: hidden;
+        opacity: 0;
+        transition: .4s;
+    }
+        button:hover span.btn_label {
+            top: -10px;
+            opacity: 0;
+        }
+        button:hover span.btn_icon {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    button:active {
+        opacity: .6;
+    }
+
+    .primary-button {
+        background-color: #611FF4;
+        border: 2px solid #B3B3CC;  
+        color: #F2F5F7;
+        transition: .5s;  
+    }
+        .primary-button:hover {
+            background-color: #0491AA;
+        }
+
 #home-footer {
-    width: auto;
+/*    width: auto;*/
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     justify-content: center;
     align-items: center;
-}
-
-.primary-button {
-    padding: 1em 2em;
-    background-color: #611FF4;
-    border-radius: 10em;
-    color: #F2F5F7;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 500;
-    text-decoration: none;
-    letter-spacing: .03em;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .main {
@@ -234,7 +296,7 @@ footer {
         height: auto;
     }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
     .main {
         margin: 140px 2em;
     }
@@ -246,3 +308,17 @@ footer {
     }
 }
 
+@media only screen and (max-width: 580px) {
+    ul {
+        padding-left: 1em;
+    }
+}
+
+@media only screen and (max-width: 481px) {
+    h1 {
+        font-size: 3rem;
+    }
+    footer {
+        justify-content: center;
+    }
+}
