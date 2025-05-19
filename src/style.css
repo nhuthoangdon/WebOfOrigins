@@ -56,7 +56,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-zoomOut {
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-zoomIn {
-    background-image: url(Assets/ic_zoomIn.svg);
+    background-image: url(Assets/ic_ZoomIn.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
