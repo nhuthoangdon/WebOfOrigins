@@ -330,6 +330,7 @@ a.button-link {
     }
     .menu-items {display: none;}
     .hamburger-menu {display: block; cursor: pointer;}
+        .hamburger-menu:active {opacity: .5}
     .menu {
         display: flex;
         flex-flow: row wrap;
