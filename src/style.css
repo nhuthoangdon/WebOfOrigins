@@ -114,7 +114,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     left: 0px;
     display: flex;
     box-sizing: border-box;
-    padding: 1em;
+    padding: 1em 2em;
     z-index: 1000;
     font-family: 'Source Code Pro', monospace;
     text-align: center;
@@ -312,6 +312,27 @@ a.button-link {
         height: auto;
     }
 
+    .info-CTAs {
+        font-family: 'Source Code Pro', monospace;
+        font-size: 1.1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+        .info-CTAs a {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 1em;
+            border-bottom: 1px solid;
+            padding-bottom: 1.5em;
+        }
+
+
+
+
+
+
 @media only screen and (max-width: 769px) {
     .main {
         margin: 140px 2em;
@@ -362,7 +383,7 @@ a.button-link {
 
 @media only screen and (max-width: 481px) {
     h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
     footer {
         justify-content: center;
