@@ -18,8 +18,8 @@ Papa.parse("data/nodes.csv", {
                     .trim() // Remove leading/trailing whitespace
                     .replace(/\u00A0/g, " ") // Replace non-breaking spaces with regular spaces
                     .replace(/[\r\n]+/g, " "); // Replace newlines with spaces
-                console.log(`Raw Node Label: "${rawLabel}" (Length: ${rawLabel.length})`);
-                console.log(`Cleaned Node Label: "${cleanedLabel}" (Length: ${cleanedLabel.length})`);
+                // console.log(`Raw Node Label: "${rawLabel}" (Length: ${rawLabel.length})`);
+                // console.log(`Cleaned Node Label: "${cleanedLabel}" (Length: ${cleanedLabel.length})`);
                 const title = row.title || ""; //fallback to empty string if missing
                 return {
                     id: row.id,
@@ -46,8 +46,8 @@ Papa.parse("data/nodes.csv", {
                             .trim()
                             .replace(/\u00A0/g, " ")
                             .replace(/[\r\n]+/g, " ");
-                        console.log(`Raw Edge Label: "${rawLabel}" (Length: ${rawLabel.length})`);
-                        console.log(`Cleaned Edge Label: "${cleanedLabel}" (Length: ${cleanedLabel.length})`);
+                        // console.log(`Raw Edge Label: "${rawLabel}" (Length: ${rawLabel.length})`);
+                        // console.log(`Cleaned Edge Label: "${cleanedLabel}" (Length: ${cleanedLabel.length})`);
                         const title = row.title || "";
                         return {
                             from: row.from_node,
@@ -152,8 +152,8 @@ const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; /
 const isFlagNode = node.type === "Country" || node.type === "Consumer";
 const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
 const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
-console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
-console.log(`Node: ${node.label}, Title: ${node.title}`); // Debug
+// console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
+// console.log(`Node: ${node.label}, Title: ${node.title}`);
 
 const nodeData = {
         id: node.id,
@@ -179,7 +179,7 @@ const nodeData = {
         title: node.title || "No Description"
     };
 
-    console.log(`Node ID: ${node.id}, Type: ${node.type}, Shape: ${nodeData.shape}, Image: ${nodeData.image}`);
+    // console.log(`Node ID: ${node.id}, Type: ${node.type}, Shape: ${nodeData.shape}, Image: ${nodeData.image}`);
     return nodeData;
 }));
 

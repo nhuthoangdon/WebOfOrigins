@@ -1,6 +1,13 @@
 /*fonts used: Source Sans 3 and Source Code Pro*/
 /*Weight: value 200-900*/
 
+/*colours:
+    #C9E73A: neon green
+    #0491AA: medium blue
+    #8ED0DC: light blue
+    #611FF4: purple
+    #AEA3FF: light purple*/
+
 body, html {
     font-family: "Source Sans 3", sans-serif;
     font-optical-sizing: auto;
@@ -105,14 +112,16 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     position: absolute;
     top: 0px;
     left: 0px;
-    padding: 16px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 1em;
     z-index: 1000;
     font-family: 'Source Code Pro', monospace;
     text-align: center;
     font-size: .9rem;
     font-weight: 500;
 }
-    .menu ul {
+    .menu-items {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -132,7 +141,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
                 color: #F8FAFB;
             }
             .menu a:hover {
-                color: #9FFE71;
+                color: #C9E73A;
                 font-weight: 900;
             }
             .menu a:active {
@@ -140,13 +149,18 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
                 opacity: .5;
             }
             .menu a.current {
-                color: #9FFE71;
+                color: #C9E73A;
                 font-weight: 400;
             }
     .nav-logo {
         width: 2.5em;
         height: auto;
     }
+
+.hamburger-menu {
+    display: none;
+}
+
 
 h1 {
     color: #AEA3FF;
@@ -310,10 +324,39 @@ a.button-link {
     }
 }
 
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 600px) {
     ul {
         padding-left: 1em;
     }
+    .menu-items {display: none;}
+    .hamburger-menu {display: block; cursor: pointer;}
+    .menu {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        padding: 1em;
+    }
+    .menu-mobile {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        order: 3;
+        flex: 1 0 100%;
+        align-items: flex-end;
+    }
+    .menu ul li {
+        margin-right: 0;
+    }
+   
 }
 
 @media only screen and (max-width: 481px) {
