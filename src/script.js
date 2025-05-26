@@ -17,5 +17,17 @@ $(document).ready(function() {
       }
     });
   });
+
+  $(window).scroll(function() {
+    if ($('.menu-items').hasClass('menu-mobile')) {
+      $('.menu-items').removeClass('menu-mobile').css({
+        'display': 'none',
+        'opacity': '0',
+        'transform': 'translateY(-10px)'
+      });
+    }
+  });
 });
+
+
 
