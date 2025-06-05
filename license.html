@@ -3,20 +3,43 @@
 <head>
 
 
-<script data-cookieconsent="ignore">    window.dataLayer = window.dataLayer || [];    function gtag() {        dataLayer.push(arguments);    }    gtag("consent", "default", {        ad_personalization: "denied",        ad_storage: "denied",        ad_user_data: "denied",        analytics_storage: "denied",        functionality_storage: "denied",        personalization_storage: "denied",        security_storage: "granted",        wait_for_update: 500,    });    gtag("set", "ads_data_redaction", true);    gtag("set", "url_passthrough", false);</script>
+<script
+  id="Cookiebot"
+  src="https://consent.cookiebot.com/uc.js"
+  data-cbid="835ef43b-2355-4c7f-8b33-7368c65d97a1"
+  data-blockingmode="auto"
+  type="text/javascript"
+></script>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J0XPT981ZB"></script>
-<script>
+
+
+<!-- Google analytics tag -->
+<script data-cookieconsent="ignore">
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  // Initialize gtag with default consent settings BEFORE any config or event calls.
+  // Cookiebot's auto-blocking will then update these based on user consent.
+  gtag("consent", "default", {
+    ad_personalization: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    analytics_storage: "denied",
+    functionality_storage: "denied",
+    personalization_storage: "denied",
+    security_storage: "granted", // Security storage should always be granted
+    wait_for_update: 500, // Give Cookiebot time to update consent
+  });
 
-  gtag('config', 'G-J0XPT981ZB');
+  gtag("set", "ads_data_redaction", true);
+  gtag("set", "url_passthrough", false);
+
+  // Initialize gtag for the specific GA4 property
+  gtag("js", new Date());
+  gtag("config", "G-J0XPT981ZB");
 </script>
-
-
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="835ef43b-2355-4c7f-8b33-7368c65d97a1" type="text/javascript" async></script>
 
 
   
