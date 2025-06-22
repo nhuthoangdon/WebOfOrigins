@@ -83,7 +83,7 @@ function createNetwork(nodesData, edgesData) {
             background: "#25B9FE", highlight: "#107CAE",
             hover: "#BDDBFA"
         },
-        Consumer: { 
+        iCountry: { 
             background: "#DFE2E5", highlight: "#DAF332",
             hover: "#BDDBFA"
         },
@@ -95,11 +95,19 @@ function createNetwork(nodesData, edgesData) {
             background: "#6591FF", highlight: "#0546FF",
             hover: "#ACBEEB"
         },
-        Industry: { 
-            background: "#F1F48F", highlight: "#FFE328",
-            hover: "#FFFAD5"
+        rawMaterial: {
+            background: "#CEA372", highlight: "#955813",
+            hover: "#C2AA8E"
         },
-        Country: { 
+        Industry: { 
+            background: "#60A4C2", highlight: "#2F647C",
+            hover: "#8BA6B2"
+        },
+        smCountry: { 
+            background: "#DFE2E5", highlight: "#DAF332",
+            hover: "#BDDBFA"
+        },
+        indCountry: { 
             background: "#DFE2E5", highlight: "#DAF332",
             hover: "#BDDBFA"
         },
@@ -112,64 +120,66 @@ function createNetwork(nodesData, edgesData) {
             hover: "#F2A9E0"
         },     
         Impact: { 
-            background: "#FF5926", highlight: "#FF1C04",
+            background: "#FB7E57", highlight: "#FF1C04",
             hover: "#FAB6A1"
         }
     };
 
     // Define level mapping for hierarchical layout
     const levelMap = {
-        Consumer: 0,
+        iCountry: 0,
         Item: 1,
         Composition: 2,
         Source: 3,
-        Country: 4,     
-        Industry: 5,
-        Concern: 6,
-        Consequence: 7,
-        Impact: 8
+        smCountry: 4,
+        rawMaterial: 5, 
+        Industry: 6,
+        indCountry: 7,
+        Concern: 8,
+        Consequence: 9,
+        Impact: 10
     };
 
-// Calculate the degree (number of edges) for each node
-const nodeDegrees = {};
-nodesData.forEach(node => {
-nodeDegrees[node.id] = 0; // Initialize degree to 0 for each node
-});
+    // Calculate the degree (number of edges) for each node
+    const nodeDegrees = {};
+    nodesData.forEach(node => {
+    nodeDegrees[node.id] = 0; // Initialize degree to 0 for each node
+    });
 
-edgesData.forEach(edge => {
-// Increment degree for both 'from' and 'to' nodes
-nodeDegrees[edge.from] = (nodeDegrees[edge.from] || 0) + 1;
-nodeDegrees[edge.to] = (nodeDegrees[edge.to] || 0) + 1;
-});
+    edgesData.forEach(edge => {
+    // Increment degree for both 'from' and 'to' nodes
+    nodeDegrees[edge.from] = (nodeDegrees[edge.from] || 0) + 1;
+    nodeDegrees[edge.to] = (nodeDegrees[edge.to] || 0) + 1;
+    });
 
-// Filter out unconnected nodes
-const connectedNodesData = nodesData.filter(node => nodeDegrees[node.id] > 0);
+    // Filter out unconnected nodes
+    const connectedNodesData = nodesData.filter(node => nodeDegrees[node.id] > 0);
 
-// Prepare nodes for Vis.js with size based on degree and level based on type
-const nodes = new vis.DataSet(connectedNodesData.map(node => {
-const degree = nodeDegrees[node.id] || 0;
-const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; // Fallback to level 0
-const isFlagNode = node.type === "Country" || node.type === "Consumer";
-const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
-const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
-// console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
-// console.log(`Node: ${node.label}, Title: ${node.title}`);
+    // Prepare nodes for Vis.js with size based on degree and level based on type
+    const nodes = new vis.DataSet(connectedNodesData.map(node => {
+    const degree = nodeDegrees[node.id] || 0;
+    const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; // Fallback to level 0
+    const isFlagNode = ['iCountry', 'smCountry', 'indCountry'].includes(node.type);
+    const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
+    const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
+    // console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
+    // console.log(`Node: ${node.label}, Title: ${node.title}`);
 
-const nodeData = {
+    const nodeData = {
         id: node.id,
         label: wrapText(node.label, 20),
-        shape: isFlagNode && node.image ? "image" : "dot",
-        image: isFlagNode ? node.image : undefined,
+        shape: isFlagNode && validImage ? "image" : "dot",
+        image: isFlagNode && validImage ? node.image : undefined,
         color: {
             background: colorMap[node.type]?.background || "#FFFFFF",
             border: colorMap[node.type]?.border || "#000000",
             highlight: {
                 background: colorMap[node.type]?.highlight || "#0AFA10",
-                border: "#7CFC14"
+                border: colorMap[node.type]?.border || "#7CFC14"
             },
             hover: {
                 background: colorMap[node.type]?.hover || "#D9F0EA",
-                border: "#7CFC14"
+                border: colorMap[node.type]?.border || "#7CFC14"
             }
         },
         borderWidthSelected: 2,
@@ -179,20 +189,20 @@ const nodeData = {
         title: node.title || "No Description"
     };
 
-    // console.log(`Node ID: ${node.id}, Type: ${node.type}, Shape: ${nodeData.shape}, Image: ${nodeData.image}`);
-    return nodeData;
+        // console.log(`Node ID: ${node.id}, Type: ${node.type}, Shape: ${nodeData.shape}, Image: ${nodeData.image}`);
+        return nodeData;
 }));
 
     // Prepare edges for Vis.js
     const edges = new vis.DataSet(edgesData.map(edge => ({
         from: edge.from,
         to: edge.to,
-        label: wrapText(edge.label, 20),
+        label: wrapText(edge.label, 40),
         title: edge.title || "No Description",
         arrows: edge.is_same_level ? undefined : "to", // No arrows for same-level, arrows for hierarchical
         font: { 
             align: "horizontal", 
-            size: 14,
+            size: 18,
             color: "#B3C8FF"
          },
         color: { 
@@ -210,9 +220,9 @@ const nodeData = {
             hierarchical: {
                 enabled: true,
                 direction: "UD",
-                levelSeparation: 300,
-                nodeSpacing: 300,
-                treeSpacing: 200,
+                levelSeparation: 400,
+                nodeSpacing: 400,
+                treeSpacing: 300,
                 sortMethod: "hubsize", //hubsize or directed
                 shakeTowards: "leaves",
                 blockShifting: true,
@@ -246,7 +256,7 @@ const nodeData = {
         nodes: {
             shape: "dot",
             font: {
-                size: 18,
+                size: 24,
                 align: "center",
                 multi: true, //multiline labels
                 color: "#FFFFFF"
@@ -255,7 +265,7 @@ const nodeData = {
                 node: true,
                 label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 26;
                 }                  
             }
         },
@@ -268,26 +278,28 @@ const nodeData = {
             },
             font: {
                 multi: true,
-                size: 14,
+                size: 18,
                 color: "#B3C8FF",
                 strokeWidth: 0
             },
             chosen: {
                 label: function(values, id, selected, hovering) {
-                    values.size = 18;
+                    values.size = 28;
                     values.color = "#FFFFFF";
+                    values.mod = "bold";
                 }                  
             }
         },
         groups: {
-            "Consumer": {
-                font: {color: colorMap["Consumer"].background},
+            "iCountry": {
+                shape: "image",
+                font: {color: colorMap["iCountry"].background},
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 24;
                         if (selected) {
-                            values.color = colorMap["Consumer"].highlight;
+                            values.color = colorMap["iCountry"].highlight;
                         }
                     }       
                 }
@@ -297,7 +309,7 @@ const nodeData = {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 24;
                         if (selected) {
                             values.color = colorMap["Item"].highlight;
                         }
@@ -309,7 +321,7 @@ const nodeData = {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 24;
                         if (selected) {
                             values.color = colorMap["Composition"].highlight;
                         }
@@ -321,9 +333,21 @@ const nodeData = {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 24;
                         if (selected) {
                             values.color = colorMap["Source"].highlight;
+                        }
+                    }       
+                }
+            },
+            "rawMaterial": {
+                font: {color: colorMap["rawMaterial"].background},
+                chosen: {
+                    label: function(values, id, selected, hovering) {
+                    values.mod = "bold";
+                    values.size = 24;
+                        if (selected) {
+                            values.color = colorMap["rawMaterial"].highlight;
                         }
                     }       
                 }
@@ -333,23 +357,37 @@ const nodeData = {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 24;
                         if (selected) {
                             values.color = colorMap["Industry"].highlight;
                         }
                     }       
                 }
             },
-            "Country": {
-                font: {color: colorMap["Country"].background},
+            "smCountry": {
+                shape: "image",
+                font: { color: colorMap["smCountry"].background },
                 chosen: {
                     label: function(values, id, selected, hovering) {
-                    values.mod = "bold";
-                    values.size = 22;
+                        values.mod = "bold";
+                        values.size = 24;
                         if (selected) {
-                            values.color = colorMap["Country"].highlight;
+                            values.color = colorMap["smCountry"].highlight;
                         }
-                    }       
+                    }
+                }
+            },
+            "indCountry": {
+                shape: "image",
+                font: { color: colorMap["indCountry"].background },
+                chosen: {
+                    label: function(values, id, selected, hovering) {
+                        values.mod = "bold";
+                        values.size = 24;
+                        if (selected) {
+                            values.color = colorMap["indCountry"].highlight;
+                        }
+                    }
                 }
             },
             "Concern": {
@@ -357,7 +395,7 @@ const nodeData = {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 24;
                         if (selected) {
                             values.color = colorMap["Concern"].highlight;
                         }
@@ -369,7 +407,7 @@ const nodeData = {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 24;
                         if (selected) {
                             values.color = colorMap["Consequence"].highlight;
                         }
@@ -381,7 +419,7 @@ const nodeData = {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 22;
+                    values.size = 24;
                         if (selected) {
                             values.color = colorMap["Impact"].highlight;
                         }
@@ -391,7 +429,60 @@ const nodeData = {
         }
     };
 
-    const network = new vis.Network(container, data, options);
+        const network = new vis.Network(container, data, options);
+
+
+        // Function to get related nodes up to a specified depth, following only direct edges
+        function getRelatedNodes(nodeId, depth, visited = new Set()) {
+            // Guard against invalid input or excessive depth
+            if (!nodeId || depth <= 0 || visited.has(nodeId)) return [];
+            visited.add(nodeId);
+
+            const related = [nodeId];
+            // Get connected edges
+            const connectedEdges = network.getConnectedEdges(nodeId);
+            connectedEdges.forEach(edgeId => {
+                const edge = edges.get(edgeId);
+                const connectedNodeId = edge.from === nodeId ? edge.to : edge.from;
+                // Only include outgoing or incoming edges (exclude same-level for simplicity)
+                const isValidEdge = (
+                    (edge.from === nodeId && edge.to === connectedNodeId) || // Outgoing
+                    (edge.to === nodeId && edge.from === connectedNodeId)    // Incoming
+                );
+                if (isValidEdge && !visited.has(connectedNodeId)) {
+                    // Recursively get related nodes
+                    related.push(...getRelatedNodes(connectedNodeId, depth - 1, visited));
+                }
+            });
+
+            // Return unique node IDs
+            return [...new Set(related)];
+        }
+
+        // Handle node selection event
+        network.on("selectNode", function(params) {
+            try {
+                const selectedNodeId = params.nodes[0]; // Get the clicked node
+                if (!selectedNodeId) return; // Guard against no selection
+
+                const depth = 2; // Keep depth at 2 for controlled selection
+                const relatedNodeIds = getRelatedNodes(selectedNodeId, depth);
+
+                // Use vis.js setSelection with animation
+                network.setSelection({
+                    nodes: relatedNodeIds,
+                    animation: { duration: 300, easingFunction: "easeInOutQuad" }
+                }, { highlightEdges: true });
+            } catch (error) {
+                console.error("Error selecting related nodes:", error);
+            }
+        });
+
+        // Optional: Handle deselection for better UX
+        network.on("deselectNode", function() {
+            network.unselectAll();
+        });
+
 }
 
 // Load data and create the network

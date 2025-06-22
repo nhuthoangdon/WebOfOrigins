@@ -1,97 +1,139 @@
 "id";"label";"type";"title";"shape";"image"
-"comp_1";"Gelatin";"Composition";"Common ingredients";;
-"comp_2";"Glucosamine";"Composition";"Active ingredient in glucosamine supplements";;
-"comp_3";"Collagen";"Composition";;;
-"comp_4";"High-Fructose Corn Syrup (HFCS)";"Composition";;;
-"con_1";"Water Overuse";"Concern";"Excessive water use and water scarcity";;
-"con_10";"Labour Exploitation";"Concern";"Violations, Exploitation";;
-"con_11";"Community Displacement";"Concern";"Community displacement, land conflicts";;
-"con_12";"Human Rights Violation";"Concern";"Human Right Violations, Child Labour, Forced Labour, Exploitation";;
-"con_13";"Ecosystem Disruption";"Concern";"Disruption of natural ecosystems, Industrial Expansion, Urbanisation";;
-"con_14";"Ocean Acidification";"Concern";"Waterway and ocean acidification";;
-"con_15";"Carbon Emissions";"Concern";"Excessive carbon emissions";;
-"con_16";"Soil Erosion";"Concern";;;
-"con_17";"Mircroplastics";"Concern";"Microplastic particles entering the environment";;
-"con_18";"Animal Abuse";"Concern";"Inhumane treatments of animals";;
-"con_2";"Deforestation";"Concern";"Destroying natural environments";;
-"con_3";"Chemical Contamination";"Concern";"Pesticides, Fertilisers, Heavy Metals, Industrial Waste";;
-"con_4";"Soil Degradation";"Concern";"Degradation of soil";;
-"con_5";"Greenhouse Gas Emissions";"Concern";"Harmful gas emissions";;
-"con_6";"Waste";"Concern";"Waste generation, mismanagement";;
-"con_7";"Air Pollution";"Concern";"Particulate Matter, Industrial Emissions, Toxic Gases";;
-"con_8";"Water Pollution";"Concern";"Polution in the marine environments";;
-"con_9";"IUU FIshing";"Concern";"Illegal, Unregulated, Unreported Fishing, Overfishing";;
-"consq_1";"Groundwater Depletion";"Consequence";"Reduction of water availability";;
-"consq_10";"Toxin Leaching";"Consequence";;;
-"consq_11";"Plastic Pollution";"Consequence";;;
-"consq_12";"Poor Working Conditions";"Consequence";;;
-"consq_13";"Loss of Livelihoods";"Consequence";;;
-"consq_14";"Forced Migration";"Consequence";;;
-"consq_15";"Food Supply Disruptions";"Consequence";;;
-"consq_16";"Child Labour";"Consequence";;;
-"consq_17";"Force Labour";"Consequence";;;
-"consq_18";"Biodiversity Loss";"Consequence";;;
-"consq_19";"Invasive Species";"Consequence";"Introduction of invasive, non-native species";;
-"consq_2";"Reduced Agricultural Productivity";"Consequence";"Reduction of agricultural yields";;
-"consq_20";"Coral Bleaching";"Consequence";;;
-"consq_21";"Species Extinction";"Consequence";;;
-"consq_22";"Decline in Natural Habitats";"Consequence";;;
-"consq_23";"Marine Life Decline";"Consequence";;;
-"consq_24";"Ocean Pollution";"Consequence";;;
-"consq_25";"Toxin Accumulation in Organisms";"Consequence";;;
-"consq_26";"Increased Greenhouse Gases";"Consequence";;;
-"consq_27";"Loss of Fisheries";"Consequence";;;
-"consq_3";"Habitat Loss";"Consequence";"Loss of natural living environments for wildlifes";;
-"consq_4";"Respiratory Diseases";"Consequence";;;
-"consq_5";"Acid Rain";"Consequence";;;
-"consq_6";"Reduced Air Quality";"Consequence";;;
-"consq_7";"Declining Fish Population";"Consequence";;;
-"consq_8";"Food Chain Disruption";"Consequence";;;
-"consq_9";"Landfill Overflow";"Consequence";;;
-"consumer_1";"USA";"Consumer";;"image";"https://flagsapi.com/US/flat/64.png"
-"consumer_2";"Australia";"Consumer";;"image";"https://flagsapi.com/AU/flat/64.png"
-"consumer_3";"Canada";"Consumer";;"image";"https://flagsapi.com/CA/flat/64.png"
-"consumer_4";"China";"Consumer";;"image";"https://flagsapi.com/CN/flat/64.png"
-"consumer_5";"Germany";"Consumer";;"image";
-"consumer_6";"Mexico";"Consumer";;"image";"https://flagsapi.com/MX/flat/64.png"
-"country_1";"USA";"Country";;"image";"https://flagsapi.com/US/flat/64.png"
-"country_2";"Australia";"Country";;"image";"https://flagsapi.com/AU/flat/64.png"
-"country_3";"Canada";"Country";;"image";"https://flagsapi.com/CA/flat/64.png"
-"country_4";"China";"Country";;"image";"https://flagsapi.com/CN/flat/64.png"
-"country_5";"Germany";"Country";;"image";
-"country_6";"Sri Lanka";"Country";;"image";
-"imp_1";"Ecosystem Collapse";"Impact";;;
-"imp_10";"Political Instability";"Impact";;;
-"imp_11";"Housing Crisis";"Impact";;;
-"imp_12";"Global Food Crisis";"Impact";;;
-"imp_13";"Poverty";"Impact";;;
-"imp_14";"Reputational Damage";"Impact";;;
-"imp_15";"Loss of Ecosystem Goods and Services";"Impact";;;
-"imp_16";"Food Chain Collapse";"Impact";;;
-"imp_17";"Reduced Climate Resilient";"Impact";;;
-"imp_18";"Unstable Food Webs";"Impact";;;
-"imp_19";"Disrupted Marine Economy";"Impact";;;
-"imp_2";"Human Health Risks";"Impact";;;
-"imp_3";"Food Insecurity";"Impact";;;
-"imp_4";"Water Scarcity";"Impact";;;
-"imp_5";"Climate Change";"Impact";;;
-"imp_6";"Public Health Crisis";"Impact";;;
-"imp_7";"Economic Decline";"Impact";;;
-"imp_8";"Social Unrest";"Impact";;;
-"imp_9";"Inequality";"Impact";;;
-"ind_1";"Slaughtering";"Industry";"Animal slaughtering";;
-"ind_2";"Animal Husbandry";"Industry";"Management of livestocks";;
-"ind_3";"Livestock Farming";"Industry";"Raising domesticated animals for human use";;
-"ind_4";"Horiculture";"Industry";"Planting";;
-"ind_5";"Agriculture";"Industry";"Field crop cultivation, Livestock production";;
-"ind_6";"Fishing";"Industry";"Commercial fishing";;
-"ind_7";"Seafood Processing";"Industry";"Process of seafood";;
-"item_1";"Glucosamine Supplements";"Item";"Dietary supplements containing Glucosamine as the main, active ingredient";;
-"item_2";"Gummies";"Item";"Sweetened, general gelatin-based gummies";;
-"item_3";"Jello";"Item";"Sweetened, gelatin-based jello powder or pre-made jellos";;
-"item_4";"Soft Drinks";"Item";"General sugary carbonated drinks";;
-"src_1";"Animal Hides";"Source";"Commonly from pig and cow hides";;
-"src_2";"Crustacean Shells";"Source";"Commonly from crabs, lobsters, prawns, and shrimps";;
-"src_3";"Fungi";"Source";;;
-"src_4";"Corn";"Source";;;
-"src_5";"Bacteria";"Source";;;
+"comp_1";"Glucosamine";"Composition";"Constituent of cartilage";;
+"comp_5";"Chondroitin";"Composition";"Component of cartilage";;
+"con_1";"Excessive Fertilisation";"Concern";"Associates with Agriculture";;
+"con_10";"GMO";"Concern";"Associates with Agriculture";;
+"con_11";"Chemical Contamination";"Concern";"Associates with Various Industries";;
+"con_12";"Waste Generation";"Concern";"Associates with Various Industries";;
+"con_13";"Resource Extraction";"Concern";"Associates with Various Industries";;
+"con_14";"Energy Consumption";"Concern";"Associates with Various Industries";;
+"con_15";"Greenhouse Gas Emissions";"Concern";"Associates with Various Industries";;
+"con_16";"Nuclear Waste";"Concern";"Associates with Energy Production";;
+"con_17";"Land Use";"Concern";"Associates with Various Industries";;
+"con_18";"Fossil Fuel Extraction";"Concern";"Associates with Energy Production";;
+"con_19";"Oil Spills";"Concern";"Associates with Transportation";;
+"con_2";"Pesticide & Herbicide Use";"Concern";"Associates with Agriculture";;
+"con_20";"Noise Pollution";"Concern";"Associates with Various Industries";;
+"con_21";"Infrastructure Development";"Concern";"Associates with Various Industries";;
+"con_22";"Land Clearing";"Concern";"Associates with Various Industries";;
+"con_23";"Overfishing";"Concern";"Associates with Fishing";;
+"con_24";"Bycatch";"Concern";"Associates with Fishing";;
+"con_25";"Habitat Destruction";"Concern";"Associates with Various Industries";;
+"con_26";"Microplastics";"Concern";"Associates with Various Industries";;
+"con_27";"Light Pollution";"Concern";"Associates with Urban Development";;
+"con_28";"Thermal Pollution";"Concern";"Associates with Energy Production";;
+"con_29";"E-waste Generation";"Concern";"Associates with Technology";;
+"con_30";"Water Use";"Concern";"Associates with Various Industries";;
+"con_31";"Energy Consumption";"Concern";"Associates with Various Industries";;
+"con_32";"Rare Earth Mineral Mining";"Concern";"Associates with Technology";;
+"con_33";"Manufacturing Waste";"Concern";"Associates with Various Industries";;
+"con_34";"Pharmaceutical Pollution";"Concern";"Associates with Pharmaceuticals";;
+"con_35";"Medical Waste";"Concern";"Associates with Healthcare";;
+"con_36";"Packaging Waste";"Concern";"Associates with Various Industries";;
+"con_37";"Plastic Waste";"Concern";"Associates with Various Industries";;
+"con_38";"Urbanisation";"Concern";"Associates with Various Industries";;
+"con_39";"Heavy Metal Leaching";"Concern";"Associates with Manufacturing";;
+"con_4";"Water Overuse";"Concern";"Associates with Various Industries";;
+"con_40";"Air Particulate Emissions";"Concern";"Associates with Manufacturing";;
+"con_41";"Labour Exploitation";"Concern";"Associates with Various Industries";;
+"con_42";"Child Labour";"Concern";"Associates with Various Industries";;
+"con_43";"Human Right Violations";"Concern";"Associates with Various Industries";;
+"con_44";"Animal Cruelty";"Concern";"Associates with Various Industries";;
+"con_45";"Unfair Trade Practices";"Concern";"Associates with Various Industries";;
+"con_46";"Data Privacy";"Concern";"Associates with Technology";;
+"con_5";"Soil Nutrient Loss";"Concern";"Associates with Various Industries";;
+"con_6";"Deforestation";"Concern";"Associates with Various Industries";;
+"con_7";"Monoculture";"Concern";"Associates with Agriculture";;
+"con_8";"Methane Emissions";"Concern";"Associates with Agriculture";;
+"con_9";"Antibiotic Use";"Concern";"Associates with Agriculture";;
+"consq_32";"Water Pollution";"Consequence";"Degradation of water quality, including water contamination and physical changes";;
+"consq_33";"Soil Pollution";"Consequence";"Chemicals or substances in soil at higher than normal concentration";;
+"consq_34";"Air Pollution";"Consequence";"Chemical, physical, or biological contamination of the environment";;
+"consq_35";"Noise Pollution";"Consequence";"Unwanted or disturbing sound or noise with negative effects on humans and animals";;
+"consq_36";"Light Pollution";"Consequence";"Excessive artifical lighting that disrupts natural darkness";;
+"consq_37";"Thermal Pollution";"Consequence";"Excessive heat in the environment, especially water bodies";;
+"consq_38";"Habitat Loss";"Consequence";"Reduction of natural space available for species to live";;
+"consq_39";"Habitat Fragmentation";"Consequence";"Fragmentation of continuous habitats into smaller, isolated patches";;
+"consq_40";"Habitat Destruction";"Consequence";"Complete or near-complete obliteration of a natural habitat";;
+"consq_41";"Increased GHG levels";"Consequence";"Rises in the concentration of greenhouse gases in atmosphere, trapping heat";;
+"consq_42";"Ocean Acidification";"Consequence";"Decrease in ocean pH primarily caused by excess atmospheric CO2 absorption";;
+"consq_43";"Melting Glaciers";"Consequence";"Thinning and shrinking of large masses of ice on land due to rising temperature";;
+"consq_44";"Sea Level Rise";"Consequence";"Increase in average global sea level";;
+"consq_45";"Groundwater Depletion";"Consequence";"Long-term lowering of groundwater table";;
+"consq_46";"Mineral Exhaustion";"Consequence";"Reduction or depletion of economically viable mineral reserves";;
+"consq_47";"Soil Degradation";"Consequence";"Decline in soil quality and health";;
+"consq_48";"Species Population Decline";"Consequence";"Decrease in number of individuals within a species";;
+"consq_49";"Genetic Diversity Reduction";"Consequence";"Decrease in the variety of genes within a species";;
+"consq_50";"Biodiversity Loss";"Consequence";"Reduction of variety amongst living organisms in terms of species, genetic, ecosystem diversity";;
+"consq_51";"Chemical Exposure";"Consequence";"Contact with or absorption of harmful chemical substances";;
+"consq_52";"Antibiotic Resistance";"Consequence";"The ability of bacteria and microorganisms to survive and grow in spite of antibiotics";;
+"consq_53";"Respiratory Issues";"Consequence";"Health problems affecting the lungs and breathing passages";;
+"consq_54";"Resource Scarcity";"Consequence";"Demand for natural resources exceeds available supply";;
+"consq_55";"Economic Disruption";"Consequence";"Disturbances to normal economic activity";;
+"consq_56";"Cultural Erosion";"Consequence";"Loss or weakening of traditional values, customs, beliefs, languages";;
+"consq_57";"Social Inequality";"Consequence";"Unequal distribution of resources, opportunities, and privileges";;
+"consq_59";"Pesticide-resistant Pests";"Consequence";"Insects, weeds that have developed the ability to survive and reproduce in spite of pesticides";;
+"consq_60";"Top Soil Erosion";"Consequence";"Removal of the uppermost most fertile layer of soil";;
+"iCountry_41";"Australia";"iCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
+"iCountry_42";"Canada";"iCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
+"iCountry_43";"China";"iCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
+"iCountry_44";"India";"iCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
+"iCountry_45";"Indonesia";"iCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
+"iCountry_46";"Japan";"iCountry";;"image";"https://flagsapi.com/JP/flat/64.png"
+"iCountry_47";"Mexico";"iCountry";;"image";"https://flagsapi.com/MX/flat/64.png"
+"iCountry_48";"Thailand";"iCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
+"iCountry_49";"USA";"iCountry";;"image";"https://flagsapi.com/US/flat/64.png"
+"iCountry_50";"Vietnam";"iCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
+"imp_1";"Eutrophication";"Impact";"Excessive nutrients in water, causing toxic algal blooms, oxygen depletion, dead zones in aquatic ecosystems";;
+"imp_10";"Food Insecurity";"Impact";"The lack of consistent access to sufficient, safe, nutritious food";;
+"imp_11";"Loss of Livelihoods";"Impact";"Destruction or significant reduction of the means of earning a living";;
+"imp_12";"Economic Decline";"Impact";"Sustained downturn in economic activity characterised by reduced production, employment, and income";;
+"imp_13";"Resource Conflicts";"Impact";"Disputes or clashes over control or access to natural resources such as water, land, minerals";;
+"imp_14";"Public Health Risks";"Impact";"Hazards to human health and well-being from environmental factors or disease";;
+"imp_15";"Aquatic Life Impacts";"Impact";"Harmful effects on plants and animals living in water environments";;
+"imp_16";"Bioaccumulation in Food Chains";"Impact";"Increasing concentration of toxic substances in organisms as they move up the food chain";;
+"imp_17";"Wildlife Impacts";"Impact";"Adverse effects on non-domesticated animals and their natural habitats";;
+"imp_18";"Unsafe Drinking Water";"Impact";"Contaminated or unfit water for human consumption";;
+"imp_19";"Limited Irrigation";"Impact";"Insufficient water availability for crops or agricultural activities";;
+"imp_2";"Ecosystem Collapse";"Impact";"Breakdown of the ecosystem's structure and function";;
+"imp_20";"Reduced Agricultural Productivity";"Impact";"Decrease in the amount of crops or livestock from farming";;
+"imp_21";"Restricted Water Access";"Impact";"Limited availability or difficulty in obtaining water for essential uses";;
+"imp_22";"Increased Costs";"Impact";"Rise in expenses associated with goods, services, or activities";;
+"imp_23";"Loss of Cropland";"Impact";"Reduction or disappearance of land suitable for growing crops";;
+"imp_3";"Loss of Ecosystem Services";"Impact";"Decline or loss of ecosystem benefits such as clean water, pollination, climate regulation";;
+"imp_4";"Increased Natural Disasters";"Impact";"Rise in frequency or intensity of extreme weather events and geological phenomena like floods, droughts, heatwaves";;
+"imp_5";"Species Extinction";"Impact";"The complete disappearance of a species from Earth";;
+"imp_6";"Public Health Crises";"Impact";"Significant or widespread impact on the health of a population";;
+"imp_7";"Forced Migration";"Impact";"People being compelled to leave their homes due to unwanted factors";;
+"imp_8";"Cultural Heritage Loss";"Impact";"Destruction or degradation of valued traditions, historial sites, artifacts, or knowledge of a community";;
+"imp_9";"Social Unrest";"Impact";"Disruptions to public order stemming from societal grievances";;
+"indCountry_10";"Thailand";"indCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
+"indCountry_11";"USA";"indCountry";;"image";"https://flagsapi.com/US/flat/64.png"
+"indCountry_12";"Vietnam";"indCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
+"indCountry_3";"Australia";"indCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
+"indCountry_4";"Canada";"indCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
+"indCountry_5";"China";"indCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
+"indCountry_6";"India";"indCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
+"indCountry_7";"Indonesia";"indCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
+"indCountry_8";"Japan";"indCountry";;"image";"https://flagsapi.com/JP/flat/64.png"
+"indCountry_9";"Mexico";"indCountry";;"image";"https://flagsapi.com/MX/flat/64.png"
+"ind_1";"Corn Farming";"Industry";"Corn agriculture";;
+"ind_2";"Aquaculture";"Industry";"Farming of marine and freshwater organisms";;
+"ind_3";"Seafood Processing";"Industry";"Preparation and handling of seafood for consumption";;
+"ind_4";"Fishing";"Industry";"Commercial fishing";;
+"ind_8";"Biotechnology";"Industry";"Use of biological systems and organisms to develop new products and processes";;
+"item_1";"Glucosamine Supplements";"Item";"Support joint health, osteoarthritis";;
+"mat_11";"Crustacean Shells";"rawMaterial";"Exoskeletons of shrimp, lobsters, crabs, crayfish, etc.";;
+"mat_14";"Filamentuous Fungi";"rawMaterial";"Commonly used in various industries to produce enzymes, chemicals, and other compounds";;
+"smCountry_18";"Australia";"smCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
+"smCountry_19";"Canada";"smCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
+"smCountry_20";"China";"smCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
+"smCountry_21";"India";"smCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
+"smCountry_22";"Indonesia";"smCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
+"smCountry_23";"Japan";"smCountry";;"image";"https://flagsapi.com/JP/flat/64.png"
+"smCountry_24";"Mexico";"smCountry";;"image";"https://flagsapi.com/MX/flat/64.png"
+"smCountry_25";"Thailand";"smCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
+"smCountry_26";"USA";"smCountry";;"image";"https://flagsapi.com/US/flat/64.png"
+"smCountry_27";"Vietnam";"smCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
+"src_6";"Chitin";"Source";"Derived from exoskeletons of arthropods and cell walls of fungi";;
+"src_9";"Corn";"Source";"Raw material";;
