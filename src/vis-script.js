@@ -265,7 +265,7 @@ function createNetwork(nodesData, edgesData) {
                 node: true,
                 label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 26;
+                    values.size = 28;
                 }                  
             }
         },
@@ -284,7 +284,7 @@ function createNetwork(nodesData, edgesData) {
             },
             chosen: {
                 label: function(values, id, selected, hovering) {
-                    values.size = 28;
+                    values.size = 20;
                     values.color = "#FFFFFF";
                     values.mod = "bold";
                 }                  
@@ -297,7 +297,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["iCountry"].highlight;
                         }
@@ -309,7 +309,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["Item"].highlight;
                         }
@@ -321,7 +321,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["Composition"].highlight;
                         }
@@ -333,7 +333,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["Source"].highlight;
                         }
@@ -345,7 +345,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["rawMaterial"].highlight;
                         }
@@ -357,7 +357,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["Industry"].highlight;
                         }
@@ -370,7 +370,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                         values.mod = "bold";
-                        values.size = 24;
+                        values.size = 28;
                         if (selected) {
                             values.color = colorMap["smCountry"].highlight;
                         }
@@ -383,7 +383,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                         values.mod = "bold";
-                        values.size = 24;
+                        values.size = 28;
                         if (selected) {
                             values.color = colorMap["indCountry"].highlight;
                         }
@@ -395,7 +395,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["Concern"].highlight;
                         }
@@ -407,7 +407,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["Consequence"].highlight;
                         }
@@ -419,7 +419,7 @@ function createNetwork(nodesData, edgesData) {
                 chosen: {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
-                    values.size = 24;
+                    values.size = 28;
                         if (selected) {
                             values.color = colorMap["Impact"].highlight;
                         }
@@ -431,57 +431,42 @@ function createNetwork(nodesData, edgesData) {
 
         const network = new vis.Network(container, data, options);
 
+network.on("selectNode", function (params) {
+    const selectedNodeIds = params.nodes; // Support multiple selected nodes
+    const highlightDepth = 2; // Adjust depth of highlighted nodes
 
-        // Function to get related nodes up to a specified depth, following only direct edges
-        function getRelatedNodes(nodeId, depth, visited = new Set()) {
-            // Guard against invalid input or excessive depth
-            if (!nodeId || depth <= 0 || visited.has(nodeId)) return [];
-            visited.add(nodeId);
+    // Get nodes and edges to highlight
+    let nodesToHighlight = new Set(selectedNodeIds);
+    let edgesToHighlight = new Set();
 
-            const related = [nodeId];
-            // Get connected edges
-            const connectedEdges = network.getConnectedEdges(nodeId);
-            connectedEdges.forEach(edgeId => {
-                const edge = edges.get(edgeId);
-                const connectedNodeId = edge.from === nodeId ? edge.to : edge.from;
-                // Only include outgoing or incoming edges (exclude same-level for simplicity)
-                const isValidEdge = (
-                    (edge.from === nodeId && edge.to === connectedNodeId) || // Outgoing
-                    (edge.to === nodeId && edge.from === connectedNodeId)    // Incoming
-                );
-                if (isValidEdge && !visited.has(connectedNodeId)) {
-                    // Recursively get related nodes
-                    related.push(...getRelatedNodes(connectedNodeId, depth - 1, visited));
-                }
+    // Collect nodes up to specified depth for each selected node
+    for (let depth = 0; depth < highlightDepth; depth++) {
+        let currentNodes = new Set(nodesToHighlight);
+        currentNodes.forEach(nodeId => {
+            network.getConnectedNodes(nodeId).forEach(connectedNodeId => {
+                nodesToHighlight.add(connectedNodeId);
             });
+        });
+    }
 
-            // Return unique node IDs
-            return [...new Set(related)];
-        }
-
-        // Handle node selection event
-        network.on("selectNode", function(params) {
-            try {
-                const selectedNodeId = params.nodes[0]; // Get the clicked node
-                if (!selectedNodeId) return; // Guard against no selection
-
-                const depth = 2; // Keep depth at 2 for controlled selection
-                const relatedNodeIds = getRelatedNodes(selectedNodeId, depth);
-
-                // Use vis.js setSelection with animation
-                network.setSelection({
-                    nodes: relatedNodeIds,
-                    animation: { duration: 300, easingFunction: "easeInOutQuad" }
-                }, { highlightEdges: true });
-            } catch (error) {
-                console.error("Error selecting related nodes:", error);
+    // Collect edges only between highlighted nodes
+    nodesToHighlight.forEach(nodeId => {
+        network.getConnectedEdges(nodeId).forEach(edgeId => {
+            const edge = edges.get(edgeId);
+            if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
+                edgesToHighlight.add(edgeId);
             }
         });
+    });
 
-        // Optional: Handle deselection for better UX
-        network.on("deselectNode", function() {
-            network.unselectAll();
-        });
+    // Use network.setSelection to apply highlighting
+    network.setSelection({
+        nodes: Array.from(nodesToHighlight),
+        edges: Array.from(edgesToHighlight)
+    }, {
+        highlightEdges: false // Prevent default edge highlighting
+    });
+});
 
 }
 
