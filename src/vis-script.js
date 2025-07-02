@@ -194,23 +194,37 @@ function createNetwork(nodesData, edgesData) {
 }));
 
     // Prepare edges for Vis.js
-    const edges = new vis.DataSet(edgesData.map(edge => ({
-        from: edge.from,
-        to: edge.to,
-        label: wrapText(edge.label, 40),
-        title: edge.title || "No Description",
-        arrows: edge.is_same_level ? undefined : "to", // No arrows for same-level, arrows for hierarchical
-        font: { 
-            align: "horizontal", 
-            size: 18,
-            color: "#B3C8FF"
-         },
-        color: { 
-            color: "#A3BFFA", 
-            highlight: "#7CFC14",
-            hover: "#BEF9D4"
-        },
-    })));
+    const edges = new vis.DataSet(edgesData.map((edge, index, edgesArray) => {
+        // Check for multiple edges between the same nodes
+        const sameNodeEdges = edgesArray.filter(e => 
+            (e.from === edge.from && e.to === edge.to) || 
+            (e.from === edge.to && e.to === edge.from)
+        );
+        const edgeIndex = sameNodeEdges.indexOf(edge);
+        
+        return {
+            from: edge.from,
+            to: edge.to,
+            label: wrapText(edge.label, 40),
+            title: edge.title || "No Description",
+            arrows: edge.is_same_level ? undefined : "to",
+            font: { 
+                align: "horizontal", 
+                size: 18,
+                color: "#B3C8FF"
+            },
+            color: { 
+                color: "#A3BFFA", 
+                highlight: "#7CFC14",
+                hover: "#BEF9D4"
+            },
+            smooth: {
+                enabled: true,
+                type: sameNodeEdges.length > 1 ? (edgeIndex % 2 === 0 ? 'curvedCW' : 'curvedCCW') : 'continuous',
+                roundness: sameNodeEdges.length > 1 ? 0.2 * (edgeIndex + 1) : 0
+            }
+        };
+    }));
 
     // Create the network
     const container = document.getElementById("network");

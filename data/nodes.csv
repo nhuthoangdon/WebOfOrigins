@@ -76,6 +76,12 @@
 "consq_9";"Habitat Destruction";"Consequence";"Complete or near-complete obliteration of a natural habitat";;
 "iCountry_1";"USA";"iCountry";;"image";"https://flagsapi.com/US/flat/64.png"
 "iCountry_10";"Indonesia";"iCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
+"iCountry_11";"European Union";"iCountry";;"image";"https://flagsapi.com/EU/flat/64.png"
+"iCountry_12";"Ecuador";"iCountry";;"image";"https://flagsapi.com/EC/flat/64.png"
+"iCountry_13";"Brazil";"iCountry";;"image";"https://flagsapi.com/BR/flat/64.png"
+"iCountry_14";"Argentina";"iCountry";;"image";"https://flagsapi.com/AR/flat/64.png"
+"iCountry_15";"Ukraine";"iCountry";;"image";"https://flagsapi.com/UA/flat/64.png"
+"iCountry_16";"South Korea";"iCountry";;"image";"https://flagsapi.com/KR/flat/64.png"
 "iCountry_2";"Australia";"iCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
 "iCountry_3";"Canada";"iCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
 "iCountry_4";"China";"iCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
@@ -109,6 +115,12 @@
 "imp_9";"Social Unrest";"Impact";"Disruptions to public order stemming from societal grievances";;
 "indCountry_1";"USA";"indCountry";;"image";"https://flagsapi.com/US/flat/64.png"
 "indCountry_10";"Indonesia";"indCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
+"indCountry_11";"European Union";"indCountry";;"image";"https://flagsapi.com/EU/flat/64.png"
+"indCountry_12";"Ecuador";"indCountry";;"image";"https://flagsapi.com/EC/flat/64.png"
+"indCountry_13";"Brazil";"indCountry";;"image";"https://flagsapi.com/BR/flat/64.png"
+"indCountry_14";"Argentina";"indCountry";;"image";"https://flagsapi.com/AR/flat/64.png"
+"indCountry_15";"Ukraine";"indCountry";;"image";"https://flagsapi.com/UA/flat/64.png"
+"indCountry_16";"South Korea";"indCountry";;"image";"https://flagsapi.com/KR/flat/64.png"
 "indCountry_2";"Australia";"indCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
 "indCountry_3";"Canada";"indCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
 "indCountry_4";"China";"indCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
@@ -125,8 +137,19 @@
 "item_1";"Glucosamine Supplements";"Item";"Dietary Supplement for Joint health, osteoarthritis";;
 "mat_1";"Crustacean Shells";"rawMaterial";"Exoskeletons of shrimp, lobsters, crabs, crayfish, etc.";;
 "mat_2";"Filamentuous Fungi";"rawMaterial";"Commonly used in various industries to produce enzymes, chemicals, and other compounds";;
+"mat_3";"Bovine (Cow)";"rawMaterial";"Cattle, farmed for various purposes beyond meat";;
+"mat_4";"Shark";"rawMaterial";"Caught for meat, fins, skin, cartilage, liver oil";;
+"mat_5";"Porcine (Pig)";"rawMaterial";"Swine, farmed for various purposes beyond meat";;
+"mat_6";"Avian (Bird)";"rawMaterial";"Chicken is most farmed";;
+"mat_7";"Fish";"rawMaterial";"Can be used for food, cartilage, bone, and oil";;
 "smCountry_1";"USA";"smCountry";;"image";"https://flagsapi.com/US/flat/64.png"
 "smCountry_10";"Indonesia";"smCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
+"smCountry_11";"European Union";"smCountry";;"image";"https://flagsapi.com/EU/flat/64.png"
+"smCountry_12";"Ecuador";"smCountry";;"image";"https://flagsapi.com/EC/flat/64.png"
+"smCountry_13";"Brazil";"smCountry";;"image";"https://flagsapi.com/BR/flat/64.png"
+"smCountry_14";"Argentina";"smCountry";;"image";"https://flagsapi.com/AR/flat/64.png"
+"smCountry_15";"Ukraine";"smCountry";;"image";"https://flagsapi.com/UA/flat/64.png"
+"smCountry_16";"South Korea";"smCountry";;"image";"https://flagsapi.com/KR/flat/64.png"
 "smCountry_2";"Australia";"smCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
 "smCountry_3";"Canada";"smCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
 "smCountry_4";"China";"smCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
@@ -137,3 +160,4 @@
 "smCountry_9";"Vietnam";"smCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
 "src_1";"Chitin";"Source";"Derived from exoskeletons of arthropods and cell walls of fungi";;
 "src_2";"Corn";"Source";"Raw material";;
+"src_3";"Animal Cartilage";"Source";"Tough and flexible connective tissue supporting the skeleton";;
