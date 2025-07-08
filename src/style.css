@@ -39,6 +39,9 @@ body, html {
     background: transparent;
 }
 div.vis-tooltip {
+    font-size: 14px;
+    max-width: 500px;
+    white-space: pre-wrap;
     background-color: rgba(238, 254, 251, 0.85);
     border-radius: 24px;
     padding: 6px 14px;

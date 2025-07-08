@@ -49,11 +49,13 @@ Papa.parse("data/nodes.csv", {
                         // console.log(`Raw Edge Label: "${rawLabel}" (Length: ${rawLabel.length})`);
                         // console.log(`Cleaned Edge Label: "${cleanedLabel}" (Length: ${cleanedLabel.length})`);
                         const title = row.title || "";
+                        const roleCount = parseInt(row.roleCount, 10) || 1; // Convert to number, default to 1 if missing
                         return {
                             from: row.from_node,
                             to: row.to_node,
                             label: cleanedLabel,
                             title: title,
+                            roleCount: roleCount, //newly added
                             is_same_level: row.is_same_level === "1" //convert to boolean-like
                         };
                     });
@@ -107,7 +109,7 @@ function createNetwork(nodesData, edgesData) {
             background: "#DFE2E5", highlight: "#DAF332",
             hover: "#BDDBFA"
         },
-        indCountry: { 
+        icCountry: { 
             background: "#DFE2E5", highlight: "#DAF332",
             hover: "#BDDBFA"
         },
@@ -134,7 +136,7 @@ function createNetwork(nodesData, edgesData) {
         smCountry: 4,
         rawMaterial: 5, 
         Industry: 6,
-        indCountry: 7,
+        icCountry: 7,
         Concern: 8,
         Consequence: 9,
         Impact: 10
@@ -146,10 +148,25 @@ function createNetwork(nodesData, edgesData) {
     nodeDegrees[node.id] = 0; // Initialize degree to 0 for each node
     });
 
-    edgesData.forEach(edge => {
-    // Increment degree for both 'from' and 'to' nodes
-    nodeDegrees[edge.from] = (nodeDegrees[edge.from] || 0) + 1;
-    nodeDegrees[edge.to] = (nodeDegrees[edge.to] || 0) + 1;
+    // edgesData.forEach(edge => {
+    // // Increment degree for both 'from' and 'to' nodes
+    // nodeDegrees[edge.from] = (nodeDegrees[edge.from] || 0) + 1;
+    // nodeDegrees[edge.to] = (nodeDegrees[edge.to] || 0) + 1;
+    // });
+
+        edgesData.forEach(edge => {
+        // Determine if 'from' or 'to' nodes are country nodes
+        const fromNode = nodesData.find(node => node.id === edge.from);
+        const toNode = nodesData.find(node => node.id === edge.to);
+        const isFromCountry = fromNode && ['iCountry', 'smCountry', 'icCountry'].includes(fromNode.type);
+        const isToCountry = toNode && ['iCountry', 'smCountry', 'icCountry'].includes(toNode.type);
+        
+        // Use roleCount for country nodes, default to 1 for others
+        const edgeWeight = !isNaN(parseInt(edge.roleCount, 10)) && edge.roleCount > 0 ? parseInt(edge.roleCount, 10) : 1;
+        
+        // Increment degree: use roleCount for country nodes, 1 for others
+        nodeDegrees[edge.from] = (nodeDegrees[edge.from] || 0) + (isFromCountry ? edgeWeight : 1);
+        nodeDegrees[edge.to] = (nodeDegrees[edge.to] || 0) + (isToCountry ? edgeWeight : 1);
     });
 
     // Filter out unconnected nodes
@@ -159,7 +176,7 @@ function createNetwork(nodesData, edgesData) {
     const nodes = new vis.DataSet(connectedNodesData.map(node => {
     const degree = nodeDegrees[node.id] || 0;
     const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; // Fallback to level 0
-    const isFlagNode = ['iCountry', 'smCountry', 'indCountry'].includes(node.type);
+    const isFlagNode = ['iCountry', 'smCountry', 'icCountry'].includes(node.type);
     const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
     const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
     // console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
@@ -201,7 +218,7 @@ function createNetwork(nodesData, edgesData) {
             (e.from === edge.to && e.to === edge.from)
         );
         const edgeIndex = sameNodeEdges.indexOf(edge);
-        
+            
         return {
             from: edge.from,
             to: edge.to,
@@ -209,9 +226,11 @@ function createNetwork(nodesData, edgesData) {
             title: edge.title || "No Description",
             arrows: edge.is_same_level ? undefined : "to",
             font: { 
-                align: "horizontal", 
+                align: "middle", 
                 size: 18,
-                color: "#B3C8FF"
+                color: "#B3C8FF",
+                strokeWidth: 0, // Remove stroke to avoid visual offset
+                multi: true // Support multiline labels
             },
             color: { 
                 color: "#A3BFFA", 
@@ -220,8 +239,8 @@ function createNetwork(nodesData, edgesData) {
             },
             smooth: {
                 enabled: true,
-                type: sameNodeEdges.length > 1 ? (edgeIndex % 2 === 0 ? 'curvedCW' : 'curvedCCW') : 'continuous',
-                roundness: sameNodeEdges.length > 1 ? 0.2 * (edgeIndex + 1) : 0
+                type: sameNodeEdges.length > 1 ? (edgeIndex % 2 === 0 ? 'curvedCW' : 'curvedCCW') : 'continuous', // Use 'continuous' for single edges
+                roundness: sameNodeEdges.length > 1 ? 0.1 * (edgeIndex + 1) : 0.2 // Reduced roundness
             }
         };
     }));
@@ -234,9 +253,9 @@ function createNetwork(nodesData, edgesData) {
             hierarchical: {
                 enabled: true,
                 direction: "UD",
-                levelSeparation: 400,
-                nodeSpacing: 400,
-                treeSpacing: 300,
+                levelSeparation: 500,
+                nodeSpacing: 600,
+                treeSpacing: 400,
                 sortMethod: "hubsize", //hubsize or directed
                 shakeTowards: "leaves",
                 blockShifting: true,
@@ -251,21 +270,26 @@ function createNetwork(nodesData, edgesData) {
                 enabled: true,
             },
             multiselect: true,
-            navigationButtons: true
+            navigationButtons: true,
+            dragNodes: true,
+            hoverEdges: true
         },
         physics: {
             enabled: false, // Can disable if conflict occurs with hierarchical layout
-            stabilization: true, //disable if physics is disabled
-            // hierarchicalRepulsion: {
-            //     avoidOverlap: 1, //Maximise overlap avoidance
-            //     nodeDistance: 68, //Minimum distance between nodes
-            //     springLength: 200, //Length of edges
-            //     centralGravity: 0.0,
-            //     springLength: 100,
-            //     springConstant: 0.01,
-            //     nodeDistance: 120,
-            //     damping: 0.09,
-            // }
+            stabilization: {
+                enabled: true, //disable if physics is disabled
+                iterations: 100,
+                fitRange: 0.1
+            },
+            hierarchicalRepulsion: {
+                avoidOverlap: 1, //Maximise overlap avoidance
+                nodeDistance: 300, //Minimum distance between nodes
+                springLength: 500, //Length of edges
+                centralGravity: 0.0,
+                springConstant: 0.005, //Lower for softer repulsion
+                damping: 0.2, //higher to stabilise quickly
+            },
+            solver: "hierarchicalRepulsion" // Ensure hierarchical solver is used
         },
         nodes: {
             shape: "dot",
@@ -281,11 +305,20 @@ function createNetwork(nodesData, edgesData) {
                     values.mod = "bold";
                     values.size = 28;
                 }                  
+            },
+            scaling: {
+                // min: 10,
+                // max: 500,
+                customScalingFunction: function(min, max, total, value) {
+                return 0.5 + (value / total) * 0.5; // Smoother scaling for node sizes
+                }
             }
         },
         edges: {
             smooth: {
-                type: "continuous"
+                enabled: true,
+                type: "continuous", //or change to cubicBezier for smoother curves
+                roundness: 0.2 //if use cubicBezier, increase for less entanglement
             },
             color: { 
                 color: "#A3BFFA", highlight: "#00FFFF" 
@@ -294,13 +327,15 @@ function createNetwork(nodesData, edgesData) {
                 multi: true,
                 size: 18,
                 color: "#B3C8FF",
-                strokeWidth: 0
+                strokeWidth: 0,
+                align: 'middle'
             },
             chosen: {
                 label: function(values, id, selected, hovering) {
                     values.size = 20;
                     values.color = "#FFFFFF";
                     values.mod = "bold";
+                    values.align = "middle"; // Reinforce middle alignment on selection
                 }                  
             }
         },
@@ -391,15 +426,15 @@ function createNetwork(nodesData, edgesData) {
                     }
                 }
             },
-            "indCountry": {
+            "icCountry": {
                 shape: "image",
-                font: { color: colorMap["indCountry"].background },
+                font: { color: colorMap["icCountry"].background },
                 chosen: {
                     label: function(values, id, selected, hovering) {
                         values.mod = "bold";
                         values.size = 28;
                         if (selected) {
-                            values.color = colorMap["indCountry"].highlight;
+                            values.color = colorMap["icCountry"].highlight;
                         }
                     }
                 }
@@ -443,44 +478,44 @@ function createNetwork(nodesData, edgesData) {
         }
     };
 
-        const network = new vis.Network(container, data, options);
+    const network = new vis.Network(container, data, options);
 
-network.on("selectNode", function (params) {
-    const selectedNodeIds = params.nodes; // Support multiple selected nodes
-    const highlightDepth = 2; // Adjust depth of highlighted nodes
+        network.on("selectNode", function (params) {
+        const selectedNodeIds = params.nodes; // Support multiple selected nodes
+        const highlightDepth = 1; // Adjust depth of highlighted nodes
 
-    // Get nodes and edges to highlight
-    let nodesToHighlight = new Set(selectedNodeIds);
-    let edgesToHighlight = new Set();
+        // Get nodes and edges to highlight
+        let nodesToHighlight = new Set(selectedNodeIds);
+        let edgesToHighlight = new Set();
 
-    // Collect nodes up to specified depth for each selected node
-    for (let depth = 0; depth < highlightDepth; depth++) {
-        let currentNodes = new Set(nodesToHighlight);
-        currentNodes.forEach(nodeId => {
-            network.getConnectedNodes(nodeId).forEach(connectedNodeId => {
-                nodesToHighlight.add(connectedNodeId);
+        // Collect nodes up to specified depth for each selected node
+        for (let depth = 0; depth < highlightDepth; depth++) {
+            let currentNodes = new Set(nodesToHighlight);
+            currentNodes.forEach(nodeId => {
+                network.getConnectedNodes(nodeId).forEach(connectedNodeId => {
+                    nodesToHighlight.add(connectedNodeId);
+                });
+            });
+        }
+
+        // Collect edges only between highlighted nodes
+        nodesToHighlight.forEach(nodeId => {
+            network.getConnectedEdges(nodeId).forEach(edgeId => {
+                const edge = edges.get(edgeId);
+                if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
+                    edgesToHighlight.add(edgeId);
+                }
             });
         });
-    }
 
-    // Collect edges only between highlighted nodes
-    nodesToHighlight.forEach(nodeId => {
-        network.getConnectedEdges(nodeId).forEach(edgeId => {
-            const edge = edges.get(edgeId);
-            if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
-                edgesToHighlight.add(edgeId);
-            }
+        // Use network.setSelection to apply highlighting
+        network.setSelection({
+            nodes: Array.from(nodesToHighlight),
+            edges: Array.from(edgesToHighlight)
+        }, {
+            highlightEdges: false // Prevent default edge highlighting
         });
     });
-
-    // Use network.setSelection to apply highlighting
-    network.setSelection({
-        nodes: Array.from(nodesToHighlight),
-        edges: Array.from(edgesToHighlight)
-    }, {
-        highlightEdges: false // Prevent default edge highlighting
-    });
-});
 
 }
 

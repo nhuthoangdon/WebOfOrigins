@@ -1,6 +1,6 @@
 "id";"label";"type";"title";"shape";"image"
-"comp_1";"Glucosamine";"Composition";"Natural Compound: Building block for cartilage";;
-"comp_2";"Chondroitin";"Composition";"Natural Compound: Constituent of cartilage";;
+"comp_1";"Glucosamine";"Composition";"Natural Compound: Building block for cartilage (22)";;
+"comp_2";"Chondroitin";"Composition";"Natural Compound: Constituent of cartilage (22)";;
 "con_1";"Excessive Fertilisation";"Concern";"Overuse of chemical fertilisers. Often relates to Agriculture";;
 "con_10";"Chemical Contamination";"Concern";;;
 "con_11";"Waste Generation";"Concern";;;
@@ -90,6 +90,22 @@
 "iCountry_7";"India";"iCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
 "iCountry_8";"Thailand";"iCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
 "iCountry_9";"Vietnam";"iCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
+"icCountry_1";"USA";"icCountry";;"image";"https://flagsapi.com/US/flat/64.png"
+"icCountry_10";"Indonesia";"icCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
+"icCountry_11";"European Union";"icCountry";;"image";"https://flagsapi.com/EU/flat/64.png"
+"icCountry_12";"Ecuador";"icCountry";;"image";"https://flagsapi.com/EC/flat/64.png"
+"icCountry_13";"Brazil";"icCountry";;"image";"https://flagsapi.com/BR/flat/64.png"
+"icCountry_14";"Argentina";"icCountry";;"image";"https://flagsapi.com/AR/flat/64.png"
+"icCountry_15";"Ukraine";"icCountry";;"image";"https://flagsapi.com/UA/flat/64.png"
+"icCountry_16";"South Korea";"icCountry";;"image";"https://flagsapi.com/KR/flat/64.png"
+"icCountry_2";"Australia";"icCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
+"icCountry_3";"Canada";"icCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
+"icCountry_4";"China";"icCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
+"icCountry_5";"Mexico";"icCountry";;"image";"https://flagsapi.com/MX/flat/64.png"
+"icCountry_6";"Japan";"icCountry";;"image";"https://flagsapi.com/JP/flat/64.png"
+"icCountry_7";"India";"icCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
+"icCountry_8";"Thailand";"icCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
+"icCountry_9";"Vietnam";"icCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
 "imp_1";"Eutrophication";"Impact";"Excessive nutrients in water, causing toxic algal blooms, oxygen depletion, dead zones in aquatic ecosystems";;
 "imp_10";"Food Insecurity";"Impact";"The lack of consistent access to sufficient, safe, nutritious food";;
 "imp_11";"Loss of Livelihoods";"Impact";"Destruction or significant reduction of the means of earning a living";;
@@ -113,22 +129,6 @@
 "imp_7";"Forced Migration";"Impact";"People being compelled to leave their homes due to unwanted factors";;
 "imp_8";"Cultural Heritage Loss";"Impact";"Destruction or degradation of valued traditions, historial sites, artifacts, or knowledge of a community";;
 "imp_9";"Social Unrest";"Impact";"Disruptions to public order stemming from societal grievances";;
-"indCountry_1";"USA";"indCountry";;"image";"https://flagsapi.com/US/flat/64.png"
-"indCountry_10";"Indonesia";"indCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
-"indCountry_11";"European Union";"indCountry";;"image";"https://flagsapi.com/EU/flat/64.png"
-"indCountry_12";"Ecuador";"indCountry";;"image";"https://flagsapi.com/EC/flat/64.png"
-"indCountry_13";"Brazil";"indCountry";;"image";"https://flagsapi.com/BR/flat/64.png"
-"indCountry_14";"Argentina";"indCountry";;"image";"https://flagsapi.com/AR/flat/64.png"
-"indCountry_15";"Ukraine";"indCountry";;"image";"https://flagsapi.com/UA/flat/64.png"
-"indCountry_16";"South Korea";"indCountry";;"image";"https://flagsapi.com/KR/flat/64.png"
-"indCountry_2";"Australia";"indCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
-"indCountry_3";"Canada";"indCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
-"indCountry_4";"China";"indCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
-"indCountry_5";"Mexico";"indCountry";;"image";"https://flagsapi.com/MX/flat/64.png"
-"indCountry_6";"Japan";"indCountry";;"image";"https://flagsapi.com/JP/flat/64.png"
-"indCountry_7";"India";"indCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
-"indCountry_8";"Thailand";"indCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
-"indCountry_9";"Vietnam";"indCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
 "ind_1";"Corn Farming";"Industry";"Corn agriculture";;
 "ind_2";"Aquaculture";"Industry";"Farming of marine and freshwater organisms";;
 "ind_3";"Seafood Processing";"Industry";"Preparation and handling of seafood for consumption";;
