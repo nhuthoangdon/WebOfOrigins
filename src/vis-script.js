@@ -176,48 +176,48 @@ function createNetwork(nodesData, edgesData) {
 
     // Prepare nodes for Vis.js with size based on degree and level based on type
     const nodes = new vis.DataSet(connectedNodesData.map(node => {
-    const degree = nodeDegrees[node.id] || 0;
-    const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; // Fallback to level 0
-    const isFlagNode = ['iCountry', 'smCountry', 'icCountry'].includes(node.type);
-    const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
-    const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
-    const title = node.is_sustainable ? `${node.title || "No Description"} (Sustainable)` : node.title || "No Description";
+        const degree = nodeDegrees[node.id] || 0;
+        const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; // Fallback to level 0
+        const isFlagNode = ['iCountry', 'smCountry', 'icCountry'].includes(node.type);
+        const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
+        const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
+        const title = node.is_sustainable ? `${node.title || "No Description"} (Sustainable)` : node.title || "No Description";
 
-    // console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
-    // console.log(`Node: ${node.label}, Title: ${node.title}`);
+        // console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
+        // console.log(`Node: ${node.label}, Title: ${node.title}`);
 
-    const nodeData = {
-        id: node.id,
-        label: wrapText(node.label, 20),
-        shape: isFlagNode && validImage ? "image" : "dot",
-        image: isFlagNode && validImage ? node.image : undefined,
-        color: {
-            background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#38E648" : (colorMap[node.type]?.background || "#FFFFFF"),
-            border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#38E648" : (colorMap[node.type]?.border || "#000000"),
-            highlight: {
-                background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#0DAA01" : (colorMap[node.type]?.highlight || "#0AFA10"),
-                border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#72F300" : (colorMap[node.type]?.border || "#7CFC14")
+        const nodeData = {
+            id: node.id,
+            label: wrapText(node.label, 20),
+            shape: isFlagNode && validImage ? "image" : "dot",
+            image: isFlagNode && validImage ? node.image : undefined,
+            color: {
+                background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#38E648" : (colorMap[node.type]?.background || "#FFFFFF"),
+                border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#38E648" : (colorMap[node.type]?.border || "#000000"),
+                highlight: {
+                    background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#0DAA01" : (colorMap[node.type]?.highlight || "#0AFA10"),
+                    border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#72F300" : (colorMap[node.type]?.border || "#7CFC14")
+                },
+                hover: {
+                    background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#98F79F" : (colorMap[node.type]?.hover || "#D9F0EA"),
+                    border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#B4FF00" : (colorMap[node.type]?.border || "#7CFC14")
+                }
             },
-            hover: {
-                background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#00FF12" : (colorMap[node.type]?.hover || "#D9F0EA"),
-                border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#B4FF00" : (colorMap[node.type]?.border || "#7CFC14")
-            }
-        },
-        font: {
+            font: {
                 color: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#38E648" : (colorMap[node.type]?.background || "#FFFFFF"),
                 size: 24,
                 align: "center",
                 multi: true,
             },
-        borderWidthSelected: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? 4 : 2,
-        group: node.type,
-        size: nodeSize,
-        level: nodeLevel,
-        title: node.title || "No Description"
-    };
+            borderWidthSelected: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? 4 : 2,
+            group: node.type,
+            size: nodeSize,
+            level: nodeLevel,
+            title: node.title || "No Description"
+        };
 
-        // console.log(`Node ID: ${node.id}, Type: ${node.type}, Shape: ${nodeData.shape}, Image: ${nodeData.image}`);
-        return nodeData;
+            // console.log(`Node ID: ${node.id}, Type: ${node.type}, Shape: ${nodeData.shape}, Image: ${nodeData.image}`);
+            return nodeData;
 }));
 
     // Prepare edges for Vis.js
@@ -393,8 +393,9 @@ function createNetwork(nodesData, edgesData) {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
                     values.size = 28;
+                    const node = nodesData.find(n => n.id === id);
                         if (selected) {
-                            values.color = colorMap["Source"].highlight;
+                            values.color = node.is_sustainable ? "#0DAA01" : colorMap["Source"].highlight;
                         }
                     }       
                 }
@@ -405,8 +406,10 @@ function createNetwork(nodesData, edgesData) {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
                     values.size = 28;
+                    const node = nodesData.find(n => n.id === id);
                         if (selected) {
-                            values.color = colorMap["rawMaterial"].highlight;
+                            // values.color = colorMap["rawMaterial"].highlight;
+                            values.color = node.is_sustainable ? "#0DAA01" : colorMap["rawMaterial"].highlight;
                         }
                     }       
                 }
@@ -417,8 +420,9 @@ function createNetwork(nodesData, edgesData) {
                     label: function(values, id, selected, hovering) {
                     values.mod = "bold";
                     values.size = 28;
+                    const node = nodesData.find(n => n.id === id);
                         if (selected) {
-                            values.color = colorMap["Industry"].highlight;
+                            values.color = node.is_sustainable ? "#0DAA01" : colorMap["Industry"].highlight;
                         }
                     }       
                 }
