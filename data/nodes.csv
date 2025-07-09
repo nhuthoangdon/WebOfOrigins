@@ -1,112 +1,112 @@
-"id";"label";"type";"title";"shape";"image"
-"comp_1";"Glucosamine";"Composition";"Natural Compound: Building block for cartilage (22)";;
-"comp_2";"Chondroitin";"Composition";"Natural Compound: Constituent of cartilage (22)";;
-"con_1";"Excessive Fertilisation";"Concern";"Overuse of chemical fertilisers. Often relates to Agriculture";;
-"con_10";"Industrial Waste";"Concern";"Generation of hazardous or non-recyclable waste from industry. Often relates to Various Industries";;
-"con_11";"Plastic Pollution";"Concern";"Accumulation of plastic waste in the environment. Often relates to Various Industries";;
-"con_12";"Energy Overconsumption";"Concern";"High use of fossil fuels or non-renewable energy. Often relates to Various Industries";;
-"con_13";"Overfishing";"Concern";"Excessive harvesting of marine species. Often relates to Fishing";;
-"con_14";"Habitat Destruction";"Concern";"Direct elimination of natural habitats for development. Often relates to Various Industries";;
-"con_15";"Mining Activities";"Concern";"Extraction of minerals, including rare earths. Often relates to Energy Production";;
-"con_16";"Urbanisation";"Concern";"Expansion of urban areas into natural landscapes. Often relates to Urban Development";;
-"con_17";"Labour Exploitation";"Concern";"Unfair labor practices, including child labor. Often relates to Various Industries";;
-"con_18";"IUU Fishing";"Concern";"Illegal, unreported, or unregulated fishing practices. Often relates to Fishing";;
-"con_2";"Pesticide & Herbicide Use";"Concern";"Application of synthetic pesticides and herbicides. Often relates to Agriculture";;
-"con_3";"Water Overuse";"Concern";"Excessive withdrawal of groundwater or surface water. Often relates to Various Industries";;
-"con_4";"Soil Degradation";"Concern";"Loss of soil nutrients or structure due to farming practices. Often relates to Various Industries";;
-"con_5";"Deforestation";"Concern";"Clearing of forests for agriculture or development. Often relates to Various Industries";;
-"con_6";"Monoculture Farming";"Concern";"Cultivation of single crop species over large areas. Often relates to Agriculture";;
-"con_7";"Greenhouse Gas (GHG) Emissions";"Concern";"Release of CO2, methane, and other GHGs from human activities. Often relates to Various Industries";;
-"con_8";"Antibiotic Overuse";"Concern";"Excessive use of antibiotics in agriculture or medicine. Often relates to Various Industries";;
-"con_9";"Genetic Modification";"Concern";"Use of genetically modified organisms in agriculture. Often relates to Agriculture";;
-"consq_1";"Water Contamination";"Consequence";"Degradation of water quality by pollutants";;
-"consq_10";"Chemical Exposure";"Consequence";"Human or wildlife contact with toxic substances";;
-"consq_11";"Antibiotic Resistance";"Consequence";"Increased resistance of bacteria to antibiotics";;
-"consq_12";"Resource Scarcity";"Consequence";"Depletion of natural resources like water or minerals";;
-"consq_13";"Pesticide-Resistant Pests";"Consequence";"Development of pest resistance to chemical controls";;
-"consq_2";"Soil Contamination";"Consequence";"Accumulation of harmful substances in soil";;
-"consq_3";"Air Pollution";"Consequence";"Release of particulates or gases into the atmosphere";;
-"consq_4";"Biodiversity Loss";"Consequence";"Reduction in species diversity or population";;
-"consq_5";"Ocean Acidification";"Consequence";"Decrease in ocean pH due to CO2 absorption";;
-"consq_6";"Climate Change";"Consequence";"Global warming and altered weather patterns";;
-"consq_7";"Groundwater Depletion";"Consequence";"Reduction in groundwater reserves";;
-"consq_8";"Soil Erosion";"Consequence";"Loss of topsoil due to wind or water";;
-"consq_9";"Habitat Fragmentation";"Consequence";"Division of habitats into smaller, isolated patches";;
-"iCountry_1";"USA";"iCountry";;"image";"https://flagsapi.com/US/flat/64.png"
-"iCountry_10";"Indonesia";"iCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
-"iCountry_11";"European Union";"iCountry";;"image";"https://flagsapi.com/EU/flat/64.png"
-"iCountry_12";"Ecuador";"iCountry";;"image";"https://flagsapi.com/EC/flat/64.png"
-"iCountry_13";"Brazil";"iCountry";;"image";"https://flagsapi.com/BR/flat/64.png"
-"iCountry_14";"Argentina";"iCountry";;"image";"https://flagsapi.com/AR/flat/64.png"
-"iCountry_15";"Ukraine";"iCountry";;"image";"https://flagsapi.com/UA/flat/64.png"
-"iCountry_16";"South Korea";"iCountry";;"image";"https://flagsapi.com/KR/flat/64.png"
-"iCountry_2";"Australia";"iCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
-"iCountry_3";"Canada";"iCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
-"iCountry_4";"China";"iCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
-"iCountry_5";"Mexico";"iCountry";;"image";"https://flagsapi.com/MX/flat/64.png"
-"iCountry_6";"Japan";"iCountry";;"image";"https://flagsapi.com/JP/flat/64.png"
-"iCountry_7";"India";"iCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
-"iCountry_8";"Thailand";"iCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
-"iCountry_9";"Vietnam";"iCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
-"icCountry_1";"USA";"icCountry";;"image";"https://flagsapi.com/US/flat/64.png"
-"icCountry_10";"Indonesia";"icCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
-"icCountry_11";"European Union";"icCountry";;"image";"https://flagsapi.com/EU/flat/64.png"
-"icCountry_12";"Ecuador";"icCountry";;"image";"https://flagsapi.com/EC/flat/64.png"
-"icCountry_13";"Brazil";"icCountry";;"image";"https://flagsapi.com/BR/flat/64.png"
-"icCountry_14";"Argentina";"icCountry";;"image";"https://flagsapi.com/AR/flat/64.png"
-"icCountry_15";"Ukraine";"icCountry";;"image";"https://flagsapi.com/UA/flat/64.png"
-"icCountry_16";"South Korea";"icCountry";;"image";"https://flagsapi.com/KR/flat/64.png"
-"icCountry_2";"Australia";"icCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
-"icCountry_3";"Canada";"icCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
-"icCountry_4";"China";"icCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
-"icCountry_5";"Mexico";"icCountry";;"image";"https://flagsapi.com/MX/flat/64.png"
-"icCountry_6";"Japan";"icCountry";;"image";"https://flagsapi.com/JP/flat/64.png"
-"icCountry_7";"India";"icCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
-"icCountry_8";"Thailand";"icCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
-"icCountry_9";"Vietnam";"icCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
-"imp_1";"Eutrophication";"Impact";"Nutrient overload causing algal blooms and aquatic dead zones";;
-"imp_10";"Unsafe Drinking Water";"Impact";"Contaminated water unfit for consumption";;
-"imp_11";"Reduced Agricultural Yield";"Impact";"Decreased crop or livestock productivity";;
-"imp_12";"Sea Level Rise";"Impact";"Increased coastal flooding from rising oceans";;
-"imp_13";"Natural Disaster Increase";"Impact";"Higher frequency of extreme weather events";;
-"imp_14";"Social Inequality";"Impact";"Unequal access to resources or opportunities";;
-"imp_2";"Ecosystem Collapse";"Impact";"Breakdown of ecosystem structure and function";;
-"imp_3";"Species Extinction";"Impact";"Permanent loss of species";;
-"imp_4";"Public Health Crises";"Impact";"Widespread health issues from environmental factors";;
-"imp_5";"Food Insecurity";"Impact";"Lack of reliable access to sufficient food";;
-"imp_6";"Economic Decline";"Impact";"Sustained reduction in economic activity";;
-"imp_7";"Resource Conflicts";"Impact";"Disputes over scarce natural resources";;
-"imp_8";"Aquatic Life Loss";"Impact";"Decline in aquatic species populations";;
-"imp_9";"Wildlife Decline";"Impact";"Reduction in terrestrial wildlife populations";;
-"ind_1";"Corn Farming";"Industry";"Corn agriculture";;
-"ind_2";"Aquaculture";"Industry";"Farming of marine and freshwater organisms";;
-"ind_3";"Seafood Processing";"Industry";"Preparation and handling of seafood for consumption";;
-"ind_4";"Fishing";"Industry";"Commercial fishing";;
-"ind_5";"Biotechnology";"Industry";"Use of biological systems and organisms to develop new products and processes";;
-"item_1";"Glucosamine Supplements";"Item";"Dietary Supplement for Joint health, osteoarthritis";;
-"mat_1";"Crustacean Shells";"rawMaterial";"Exoskeletons of shrimp, lobsters, crabs, crayfish, etc.";;
-"mat_2";"Filamentuous Fungi";"rawMaterial";"Commonly used in various industries to produce enzymes, chemicals, and other compounds";;
-"mat_3";"Bovine (Cow)";"rawMaterial";"Cattle, farmed for various purposes beyond meat";;
-"mat_4";"Shark";"rawMaterial";"Caught for meat, fins, skin, cartilage, liver oil";;
-"mat_5";"Porcine (Pig)";"rawMaterial";"Swine, farmed for various purposes beyond meat";;
-"mat_6";"Avian (Bird)";"rawMaterial";"Chicken is most farmed";;
-"mat_7";"Fish";"rawMaterial";"Can be used for food, cartilage, bone, and oil";;
-"smCountry_1";"USA";"smCountry";;"image";"https://flagsapi.com/US/flat/64.png"
-"smCountry_10";"Indonesia";"smCountry";;"image";"https://flagsapi.com/ID/flat/64.png"
-"smCountry_11";"European Union";"smCountry";;"image";"https://flagsapi.com/EU/flat/64.png"
-"smCountry_12";"Ecuador";"smCountry";;"image";"https://flagsapi.com/EC/flat/64.png"
-"smCountry_13";"Brazil";"smCountry";;"image";"https://flagsapi.com/BR/flat/64.png"
-"smCountry_14";"Argentina";"smCountry";;"image";"https://flagsapi.com/AR/flat/64.png"
-"smCountry_15";"Ukraine";"smCountry";;"image";"https://flagsapi.com/UA/flat/64.png"
-"smCountry_16";"South Korea";"smCountry";;"image";"https://flagsapi.com/KR/flat/64.png"
-"smCountry_2";"Australia";"smCountry";;"image";"https://flagsapi.com/AU/flat/64.png"
-"smCountry_3";"Canada";"smCountry";;"image";"https://flagsapi.com/CA/flat/64.png"
-"smCountry_4";"China";"smCountry";;"image";"https://flagsapi.com/CN/flat/64.png"
-"smCountry_5";"Mexico";"smCountry";;"image";"https://flagsapi.com/MX/flat/64.png"
-"smCountry_6";"Japan";"smCountry";;"image";"https://flagsapi.com/JP/flat/64.png"
-"smCountry_7";"India";"smCountry";;"image";"https://flagsapi.com/IN/flat/64.png"
-"smCountry_8";"Thailand";"smCountry";;"image";"https://flagsapi.com/TH/flat/64.png"
-"smCountry_9";"Vietnam";"smCountry";;"image";"https://flagsapi.com/VN/flat/64.png"
-"src_1";"Chitin";"Source";"Derived from exoskeletons of arthropods and cell walls of fungi";;
-"src_2";"Corn";"Source";"Raw material";;
-"src_3";"Animal Cartilage";"Source";"Tough and flexible connective tissue supporting the skeleton";;
+"id";"label";"type";"title";"shape";"image";"is_sustainable"
+"comp_1";"Glucosamine";"Composition";"Natural Compound: Building block for cartilage (22)";;;
+"comp_2";"Chondroitin";"Composition";"Natural Compound: Constituent of cartilage (22)";;;
+"con_1";"Excessive Fertilisation";"Concern";"Overuse of chemical fertilisers. Often relates to Agriculture";;;
+"con_10";"Industrial Waste";"Concern";"Generation of hazardous or non-recyclable waste from industry. Often relates to Various Industries";;;
+"con_11";"Plastic Pollution";"Concern";"Accumulation of plastic waste in the environment. Often relates to Various Industries";;;
+"con_12";"Energy Overconsumption";"Concern";"High use of fossil fuels or non-renewable energy. Often relates to Various Industries";;;
+"con_13";"Overfishing";"Concern";"Excessive harvesting of marine species. Often relates to Fishing";;;
+"con_14";"Habitat Destruction";"Concern";"Direct elimination of natural habitats for development. Often relates to Various Industries";;;
+"con_15";"Mining Activities";"Concern";"Extraction of minerals, including rare earths. Often relates to Energy Production";;;
+"con_16";"Urbanisation";"Concern";"Expansion of urban areas into natural landscapes. Often relates to Urban Development";;;
+"con_17";"Labour Exploitation";"Concern";"Unfair labor practices, including child labor. Often relates to Various Industries";;;
+"con_18";"IUU Fishing";"Concern";"Illegal, unreported, or unregulated fishing practices. Often relates to Fishing";;;
+"con_2";"Pesticide & Herbicide Use";"Concern";"Application of synthetic pesticides and herbicides. Often relates to Agriculture";;;
+"con_3";"Water Overuse";"Concern";"Excessive withdrawal of groundwater or surface water. Often relates to Various Industries";;;
+"con_4";"Soil Degradation";"Concern";"Loss of soil nutrients or structure due to farming practices. Often relates to Various Industries";;;
+"con_5";"Deforestation";"Concern";"Clearing of forests for agriculture or development. Often relates to Various Industries";;;
+"con_6";"Monoculture Farming";"Concern";"Cultivation of single crop species over large areas. Often relates to Agriculture";;;
+"con_7";"Greenhouse Gas (GHG) Emissions";"Concern";"Release of CO2, methane, and other GHGs from human activities. Often relates to Various Industries";;;
+"con_8";"Antibiotic Overuse";"Concern";"Excessive use of antibiotics in agriculture or medicine. Often relates to Various Industries";;;
+"con_9";"Genetic Modification";"Concern";"Use of genetically modified organisms in agriculture. Often relates to Agriculture";;;
+"consq_1";"Water Contamination";"Consequence";"Degradation of water quality by pollutants";;;
+"consq_10";"Chemical Exposure";"Consequence";"Human or wildlife contact with toxic substances";;;
+"consq_11";"Antibiotic Resistance";"Consequence";"Increased resistance of bacteria to antibiotics";;;
+"consq_12";"Resource Scarcity";"Consequence";"Depletion of natural resources like water or minerals";;;
+"consq_13";"Pesticide-Resistant Pests";"Consequence";"Development of pest resistance to chemical controls";;;
+"consq_2";"Soil Contamination";"Consequence";"Accumulation of harmful substances in soil";;;
+"consq_3";"Air Pollution";"Consequence";"Release of particulates or gases into the atmosphere";;;
+"consq_4";"Biodiversity Loss";"Consequence";"Reduction in species diversity or population";;;
+"consq_5";"Ocean Acidification";"Consequence";"Decrease in ocean pH due to CO2 absorption";;;
+"consq_6";"Climate Change";"Consequence";"Global warming and altered weather patterns";;;
+"consq_7";"Groundwater Depletion";"Consequence";"Reduction in groundwater reserves";;;
+"consq_8";"Soil Erosion";"Consequence";"Loss of topsoil due to wind or water";;;
+"consq_9";"Habitat Fragmentation";"Consequence";"Division of habitats into smaller, isolated patches";;;
+"iCountry_1";"USA";"iCountry";;"image";"https://flagsapi.com/US/flat/64.png";
+"iCountry_10";"Indonesia";"iCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
+"iCountry_11";"European Union";"iCountry";;"image";"https://flagsapi.com/EU/flat/64.png";
+"iCountry_12";"Ecuador";"iCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
+"iCountry_13";"Brazil";"iCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
+"iCountry_14";"Argentina";"iCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
+"iCountry_15";"Ukraine";"iCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
+"iCountry_16";"South Korea";"iCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
+"iCountry_2";"Australia";"iCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
+"iCountry_3";"Canada";"iCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
+"iCountry_4";"China";"iCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
+"iCountry_5";"Mexico";"iCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
+"iCountry_6";"Japan";"iCountry";;"image";"https://flagsapi.com/JP/flat/64.png";
+"iCountry_7";"India";"iCountry";;"image";"https://flagsapi.com/IN/flat/64.png";
+"iCountry_8";"Thailand";"iCountry";;"image";"https://flagsapi.com/TH/flat/64.png";
+"iCountry_9";"Vietnam";"iCountry";;"image";"https://flagsapi.com/VN/flat/64.png";
+"icCountry_1";"USA";"icCountry";;"image";"https://flagsapi.com/US/flat/64.png";
+"icCountry_10";"Indonesia";"icCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
+"icCountry_11";"European Union";"icCountry";;"image";"https://flagsapi.com/EU/flat/64.png";
+"icCountry_12";"Ecuador";"icCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
+"icCountry_13";"Brazil";"icCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
+"icCountry_14";"Argentina";"icCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
+"icCountry_15";"Ukraine";"icCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
+"icCountry_16";"South Korea";"icCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
+"icCountry_2";"Australia";"icCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
+"icCountry_3";"Canada";"icCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
+"icCountry_4";"China";"icCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
+"icCountry_5";"Mexico";"icCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
+"icCountry_6";"Japan";"icCountry";;"image";"https://flagsapi.com/JP/flat/64.png";
+"icCountry_7";"India";"icCountry";;"image";"https://flagsapi.com/IN/flat/64.png";
+"icCountry_8";"Thailand";"icCountry";;"image";"https://flagsapi.com/TH/flat/64.png";
+"icCountry_9";"Vietnam";"icCountry";;"image";"https://flagsapi.com/VN/flat/64.png";
+"imp_1";"Eutrophication";"Impact";"Nutrient overload causing algal blooms and aquatic dead zones";;;
+"imp_10";"Unsafe Drinking Water";"Impact";"Contaminated water unfit for consumption";;;
+"imp_11";"Reduced Agricultural Yield";"Impact";"Decreased crop or livestock productivity";;;
+"imp_12";"Sea Level Rise";"Impact";"Increased coastal flooding from rising oceans";;;
+"imp_13";"Natural Disaster Increase";"Impact";"Higher frequency of extreme weather events";;;
+"imp_14";"Social Inequality";"Impact";"Unequal access to resources or opportunities";;;
+"imp_2";"Ecosystem Collapse";"Impact";"Breakdown of ecosystem structure and function";;;
+"imp_3";"Species Extinction";"Impact";"Permanent loss of species";;;
+"imp_4";"Public Health Crises";"Impact";"Widespread health issues from environmental factors";;;
+"imp_5";"Food Insecurity";"Impact";"Lack of reliable access to sufficient food";;;
+"imp_6";"Economic Decline";"Impact";"Sustained reduction in economic activity";;;
+"imp_7";"Resource Conflicts";"Impact";"Disputes over scarce natural resources";;;
+"imp_8";"Aquatic Life Loss";"Impact";"Decline in aquatic species populations";;;
+"imp_9";"Wildlife Decline";"Impact";"Reduction in terrestrial wildlife populations";;;
+"ind_1";"Corn Farming";"Industry";"Corn agriculture";;;"0"
+"ind_2";"Aquaculture";"Industry";"Farming of marine and freshwater organisms";;;
+"ind_3";"Seafood Processing";"Industry";"Preparation and handling of seafood for consumption";;;
+"ind_4";"Fishing";"Industry";"Commercial fishing";;;
+"ind_5";"Biotechnology";"Industry";"Use of biological systems and organisms to develop new products and processes";;;"1"
+"item_1";"Glucosamine Supplements";"Item";"Dietary Supplement for Joint health, osteoarthritis";;;
+"mat_1";"Crustacean Shells";"rawMaterial";"Exoskeletons of shrimp, lobsters, crabs, crayfish, etc.";;;"0"
+"mat_2";"Filamentuous Fungi";"rawMaterial";"Commonly used in various industries to produce enzymes, chemicals, and other compounds";;;"1"
+"mat_3";"Bovine (Cow)";"rawMaterial";"Cattle, farmed for various purposes beyond meat";;;
+"mat_4";"Shark";"rawMaterial";"Caught for meat, fins, skin, cartilage, liver oil";;;"0"
+"mat_5";"Porcine (Pig)";"rawMaterial";"Swine, farmed for various purposes beyond meat";;;
+"mat_6";"Avian (Bird)";"rawMaterial";"Chicken is most farmed";;;
+"mat_7";"Fish";"rawMaterial";"Can be used for food, cartilage, bone, and oil";;;
+"smCountry_1";"USA";"smCountry";;"image";"https://flagsapi.com/US/flat/64.png";
+"smCountry_10";"Indonesia";"smCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
+"smCountry_11";"European Union";"smCountry";;"image";"https://flagsapi.com/EU/flat/64.png";
+"smCountry_12";"Ecuador";"smCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
+"smCountry_13";"Brazil";"smCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
+"smCountry_14";"Argentina";"smCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
+"smCountry_15";"Ukraine";"smCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
+"smCountry_16";"South Korea";"smCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
+"smCountry_2";"Australia";"smCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
+"smCountry_3";"Canada";"smCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
+"smCountry_4";"China";"smCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
+"smCountry_5";"Mexico";"smCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
+"smCountry_6";"Japan";"smCountry";;"image";"https://flagsapi.com/JP/flat/64.png";
+"smCountry_7";"India";"smCountry";;"image";"https://flagsapi.com/IN/flat/64.png";
+"smCountry_8";"Thailand";"smCountry";;"image";"https://flagsapi.com/TH/flat/64.png";
+"smCountry_9";"Vietnam";"smCountry";;"image";"https://flagsapi.com/VN/flat/64.png";
+"src_1";"Chitin";"Source";"Derived from exoskeletons of arthropods and cell walls of fungi";;;
+"src_2";"Corn";"Source";"Raw material";;;"0"
+"src_3";"Animal Cartilage";"Source";"Tough and flexible connective tissue supporting the skeleton";;;

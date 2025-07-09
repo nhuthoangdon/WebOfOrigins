@@ -21,13 +21,15 @@ Papa.parse("data/nodes.csv", {
                 // console.log(`Raw Node Label: "${rawLabel}" (Length: ${rawLabel.length})`);
                 // console.log(`Cleaned Node Label: "${cleanedLabel}" (Length: ${cleanedLabel.length})`);
                 const title = row.title || ""; //fallback to empty string if missing
+                const is_sustainable = parseInt(row.is_sustainable, 10) === 1;
                 return {
                     id: row.id,
                     label: cleanedLabel,
                     type: row.type,
                     title: title,
                     shape: row.shape || "",
-                    image: row.image || ""
+                    image: row.image || "",
+                    is_sustainable: is_sustainable
                 };
         });
 
@@ -179,6 +181,8 @@ function createNetwork(nodesData, edgesData) {
     const isFlagNode = ['iCountry', 'smCountry', 'icCountry'].includes(node.type);
     const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
     const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
+    const title = node.is_sustainable ? `${node.title || "No Description"} (Sustainable)` : node.title || "No Description";
+
     // console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
     // console.log(`Node: ${node.label}, Title: ${node.title}`);
 
@@ -188,18 +192,24 @@ function createNetwork(nodesData, edgesData) {
         shape: isFlagNode && validImage ? "image" : "dot",
         image: isFlagNode && validImage ? node.image : undefined,
         color: {
-            background: colorMap[node.type]?.background || "#FFFFFF",
-            border: colorMap[node.type]?.border || "#000000",
+            background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#38E648" : (colorMap[node.type]?.background || "#FFFFFF"),
+            border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#38E648" : (colorMap[node.type]?.border || "#000000"),
             highlight: {
-                background: colorMap[node.type]?.highlight || "#0AFA10",
-                border: colorMap[node.type]?.border || "#7CFC14"
+                background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#0DAA01" : (colorMap[node.type]?.highlight || "#0AFA10"),
+                border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#72F300" : (colorMap[node.type]?.border || "#7CFC14")
             },
             hover: {
-                background: colorMap[node.type]?.hover || "#D9F0EA",
-                border: colorMap[node.type]?.border || "#7CFC14"
+                background: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#00FF12" : (colorMap[node.type]?.hover || "#D9F0EA"),
+                border: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#B4FF00" : (colorMap[node.type]?.border || "#7CFC14")
             }
         },
-        borderWidthSelected: 2,
+        font: {
+                color: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? "#38E648" : (colorMap[node.type]?.background || "#FFFFFF"),
+                size: 24,
+                align: "center",
+                multi: true,
+            },
+        borderWidthSelected: node.is_sustainable && ['Source', 'rawMaterial', 'Industry'].includes(node.type) ? 4 : 2,
         group: node.type,
         size: nodeSize,
         level: nodeLevel,
