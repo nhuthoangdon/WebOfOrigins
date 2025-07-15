@@ -40,6 +40,8 @@
 "iCountry_14";"Argentina";"iCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
 "iCountry_15";"Ukraine";"iCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
 "iCountry_16";"South Korea";"iCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
+"iCountry_17";"Philippines";"iCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
+"iCountry_18";"Bangladesh";"iCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
 "iCountry_2";"Australia";"iCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
 "iCountry_3";"Canada";"iCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
 "iCountry_4";"China";"iCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
@@ -56,6 +58,8 @@
 "icCountry_14";"Argentina";"icCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
 "icCountry_15";"Ukraine";"icCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
 "icCountry_16";"South Korea";"icCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
+"icCountry_17";"Philippines";"icCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
+"icCountry_18";"Bangladesh";"icCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
 "icCountry_2";"Australia";"icCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
 "icCountry_3";"Canada";"icCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
 "icCountry_4";"China";"icCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
@@ -78,14 +82,17 @@
 "imp_7";"Resource Conflicts";"Impact";"Disputes over scarce natural resources";;;
 "imp_8";"Aquatic Life Loss";"Impact";"Decline in aquatic species populations";;;
 "imp_9";"Wildlife Decline";"Impact";"Reduction in terrestrial wildlife populations";;;
-"ind_1";"Corn Farming";"Industry";"Corn agriculture";;;"0"
-"ind_2";"Aquaculture";"Industry";"Farming of marine and freshwater organisms";;;
-"ind_3";"Seafood Processing";"Industry";"Preparation and handling of seafood for consumption";;;
-"ind_4";"Fishing";"Industry";"Commercial fishing";;;
+"ind_1";"Corn Farming";"Industry";"Corn/maize farming, significant global sector, high production volumes";;;"0"
+"ind_3";"Crustacean Processing";"Industry";"Preparation and handling of crustaceans for consumption, commonly shrimp, crabs, lobsters, crayfish";;;
+"ind_4";"Crustacean Fisheries";"Industry";"Commercial harvesting of aquatic arthropods—commonly decapods such as shrimp, lobsters, and crabs";;;
 "ind_5";"Biotechnology";"Industry";"Use of biological systems and organisms to develop new products and processes";;;"1"
+"ind_6";"Shrimp and Prawn Farming";"Industry";"Most heavily farmed crustaceans (e.g. Whiteleg shrimp, Giant tiger prawn, Freshwater prawn)";;;
+"ind_7";"Lobster Farming";"Industry";"Commonly rock lobsters; smallest farmed share among crustaceans, minor vs wild catch (<5% of total lobster production) (36)";;;
+"ind_8";"Crab Farming";"Industry";"Growing sector, though wild-caught fisheries still dominate production (1.6 mil tons wild catch vs 1.24 mil tons from aquaculture) (37)";;;
+"ind_9";"Crayfish Farming";"Industry";"Growing sector within aquaculture, production volume smaller than Shrimp, Prawn, and Crab, ~200,000 metric tons (34)";;;
 "item_1";"Glucosamine Supplements";"Item";"Dietary Supplement for Joint health, osteoarthritis";;;
 "mat_1";"Crustacean Shells";"rawMaterial";"Exoskeletons of shrimp, lobsters, crabs, crayfish, etc.";;;"0"
-"mat_2";"Filamentuous Fungi";"rawMaterial";"Commonly used in various industries to produce enzymes, chemicals, and other compounds";;;"1"
+"mat_2";"Filamentuous Fungi";"rawMaterial";"Saprophytic microorganisms commonly used in various industries to produce enzymes, chemicals, and other compounds";;;"1"
 "mat_3";"Bovine (Cow)";"rawMaterial";"Cattle, farmed for various purposes beyond meat";;;
 "mat_4";"Shark";"rawMaterial";"Caught for meat, fins, skin, cartilage, liver oil";;;"0"
 "mat_5";"Porcine (Pig)";"rawMaterial";"Swine, farmed for various purposes beyond meat";;;
@@ -99,6 +106,8 @@
 "smCountry_14";"Argentina";"smCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
 "smCountry_15";"Ukraine";"smCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
 "smCountry_16";"South Korea";"smCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
+"smCountry_17";"Philippines";"smCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
+"smCountry_18";"Bangladesh";"smCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
 "smCountry_2";"Australia";"smCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
 "smCountry_3";"Canada";"smCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
 "smCountry_4";"China";"smCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
