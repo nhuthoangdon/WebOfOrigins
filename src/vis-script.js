@@ -177,7 +177,20 @@ function createNetwork(nodesData, edgesData) {
     // Prepare nodes for Vis.js with size based on degree and level based on type
     const nodes = new vis.DataSet(connectedNodesData.map(node => {
         const degree = nodeDegrees[node.id] || 0;
-        const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; // Fallback to level 0
+        // const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; //leveling based on node level settings
+        // const nodeLevel = levelMap[node.label] || levelMap[node.type] || 0; //apply sub-levels to specific nodes e.g. Shrimp Farming: 6.2, Crab Farming: 6.3
+        const baseLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0;
+        const connectedSameLevelEdges = edgesData.filter(edge => edge.is_same_level && (edge.from === node.id || edge.to === node.id));
+        
+        const maxOffset = 200;
+        let offset = 0;
+        if (connectedSameLevelEdges.length > 0) {
+            offset = maxOffset * (1 / (degree + 1)); // Small inverse offset, e.g., degree 0 = 20, degree 1 = 10, degree 2 = 6.7
+            offset = Math.min(offset, maxOffset); // Cap explicitly
+        }
+        const nodeLevel = baseLevel + (offset / 100); // Higher division for slight offset
+        console.log(`Node: ${node.label}, Degree: ${degree}, Offset: ${offset}, ScaledOffset: ${offset / 10}, Level: ${nodeLevel}`);
+        
         const isFlagNode = ['iCountry', 'smCountry', 'icCountry'].includes(node.type);
         const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
         const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
@@ -263,7 +276,7 @@ function createNetwork(nodesData, edgesData) {
             hierarchical: {
                 enabled: true,
                 direction: "UD",
-                levelSeparation: 500,
+                levelSeparation: 600,
                 nodeSpacing: 600,
                 treeSpacing: 400,
                 sortMethod: "hubsize", //hubsize or directed
