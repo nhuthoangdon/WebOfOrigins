@@ -42,7 +42,13 @@
 "iCountry_16";"South Korea";"iCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
 "iCountry_17";"Philippines";"iCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
 "iCountry_18";"Bangladesh";"iCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
+"iCountry_19";"Hong Kong";"iCountry";;"image";"https://flagsapi.com/HK/flat/64.png";
 "iCountry_2";"Australia";"iCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
+"iCountry_20";"United Kingdom";"iCountry";;"image";"https://flagsapi.com/GB/flat/64.png";
+"iCountry_21";"Spain";"iCountry";;"image";"https://flagsapi.com/ES/flat/64.png";
+"iCountry_22";"Taiwan";"iCountry";;"image";"https://flagsapi.com/TW/flat/64.png";
+"iCountry_23";"Malaysia";"iCountry";;"image";"https://flagsapi.com/MY/flat/64.png";
+"iCountry_24";"Singapore";"iCountry";;"image";"https://flagsapi.com/SG/flat/64.png";
 "iCountry_3";"Canada";"iCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
 "iCountry_4";"China";"iCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
 "iCountry_5";"Mexico";"iCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
@@ -60,7 +66,13 @@
 "icCountry_16";"South Korea";"icCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
 "icCountry_17";"Philippines";"icCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
 "icCountry_18";"Bangladesh";"icCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
+"icCountry_19";"Hong Kong";"icCountry";;"image";"https://flagsapi.com/HK/flat/64.png";
 "icCountry_2";"Australia";"icCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
+"icCountry_20";"United Kingdom";"icCountry";;"image";"https://flagsapi.com/GB/flat/64.png";
+"icCountry_21";"Spain";"icCountry";;"image";"https://flagsapi.com/ES/flat/64.png";
+"icCountry_22";"Taiwan";"icCountry";;"image";"https://flagsapi.com/TW/flat/64.png";
+"icCountry_23";"Malaysia";"icCountry";;"image";"https://flagsapi.com/MY/flat/64.png";
+"icCountry_24";"Singapore";"icCountry";;"image";"https://flagsapi.com/SG/flat/64.png";
 "icCountry_3";"Canada";"icCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
 "icCountry_4";"China";"icCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
 "icCountry_5";"Mexico";"icCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
@@ -90,11 +102,11 @@
 "ind_7";"Lobster Farming";"Industry";"Commonly rock lobsters; smallest farmed share among crustaceans, minor vs wild catch (<5% of total lobster production) (36)";;;
 "ind_8";"Crab Farming";"Industry";"Growing sector, though wild-caught fisheries still dominate production (1.6 mil tons wild catch vs 1.24 mil tons from aquaculture) (37)";;;
 "ind_9";"Crayfish Farming";"Industry";"Growing sector within aquaculture, production volume smaller than Shrimp, Prawn, and Crab, ~200,000 metric tons (34)";;;
-"item_1";"Glucosamine Supplements";"Item";"Dietary Supplement for Joint health, osteoarthritis";;;
+"item_1";"Joint Health Supplements";"Item";"Dietary Supplement for Supplements used to support joint function, reduce pain, and slow cartilage degradation; commonly taken for osteoarthritis";;;
 "mat_1";"Crustacean Shells";"rawMaterial";"Exoskeletons of shrimp, lobsters, crabs, crayfish, etc.";;;"0"
 "mat_2";"Filamentuous Fungi";"rawMaterial";"Saprophytic microorganisms commonly used in various industries to produce enzymes, chemicals, and other compounds";;;"1"
 "mat_3";"Bovine (Cow)";"rawMaterial";"Cattle, farmed for various purposes beyond meat";;;
-"mat_4";"Shark";"rawMaterial";"Caught for meat, fins, skin, cartilage, liver oil";;;"0"
+"mat_4";"Sharks and Elasmobranchs";"rawMaterial";"Cartilaginous fish with skeletons made of cartilage rather than bone, incl. sharks, rays, and skates";;;"0"
 "mat_5";"Porcine (Pig)";"rawMaterial";"Swine, farmed for various purposes beyond meat";;;
 "mat_6";"Avian (Bird)";"rawMaterial";"Chicken is most farmed";;;
 "mat_7";"Fish";"rawMaterial";"Can be used for food, cartilage, bone, and oil";;;
@@ -108,7 +120,13 @@
 "smCountry_16";"South Korea";"smCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
 "smCountry_17";"Philippines";"smCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
 "smCountry_18";"Bangladesh";"smCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
+"smCountry_19";"Hong Kong";"smCountry";;"image";"https://flagsapi.com/HK/flat/64.png";
 "smCountry_2";"Australia";"smCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
+"smCountry_20";"United Kingdom";"smCountry";;"image";"https://flagsapi.com/GB/flat/64.png";
+"smCountry_21";"Spain";"smCountry";;"image";"https://flagsapi.com/ES/flat/64.png";
+"smCountry_22";"Taiwan";"smCountry";;"image";"https://flagsapi.com/TW/flat/64.png";
+"smCountry_23";"Malaysia";"smCountry";;"image";"https://flagsapi.com/MY/flat/64.png";
+"smCountry_24";"Singapore";"smCountry";;"image";"https://flagsapi.com/SG/flat/64.png";
 "smCountry_3";"Canada";"smCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
 "smCountry_4";"China";"smCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
 "smCountry_5";"Mexico";"smCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
@@ -117,5 +135,7 @@
 "smCountry_8";"Thailand";"smCountry";;"image";"https://flagsapi.com/TH/flat/64.png";
 "smCountry_9";"Vietnam";"smCountry";;"image";"https://flagsapi.com/VN/flat/64.png";
 "src_1";"Chitin";"Source";"Derived from exoskeletons of arthropods and cell walls of fungi";;;
-"src_2";"Corn";"Source";"Raw material";;;"0"
-"src_3";"Animal Cartilage";"Source";"Tough and flexible connective tissue supporting the skeleton";;;
+"src_2";"Corn";"Source";"Also known as maize; widely cultivated for use in food, feed, and various industrial applications";;;"0"
+"src_3";"Animal Cartilage";"Source";"Tough and flexible connective tissue supporting the skeleton, primarily sourced from cattle, poultry, and fish";;;
+"src_4";"Shark Fins";"Source";"Composed of cartilage, collagen fibers, and elastoidin. Traditional Chinese medicine believed to have medicinal properties";;;"0"
+"src_5";"Shark Cartilage";"Source";"Niche market, high-value material processed from shark skeletons (byproducts of meat/fin industries), mainly used in nutraceuticals and cosmetics";;;"0"
