@@ -150,12 +150,6 @@ function createNetwork(nodesData, edgesData) {
     nodeDegrees[node.id] = 0; // Initialize degree to 0 for each node
     });
 
-    // edgesData.forEach(edge => {
-    // // Increment degree for both 'from' and 'to' nodes
-    // nodeDegrees[edge.from] = (nodeDegrees[edge.from] || 0) + 1;
-    // nodeDegrees[edge.to] = (nodeDegrees[edge.to] || 0) + 1;
-    // });
-
         edgesData.forEach(edge => {
         // Determine if 'from' or 'to' nodes are country nodes
         const fromNode = nodesData.find(node => node.id === edge.from);
@@ -543,6 +537,34 @@ function createNetwork(nodesData, edgesData) {
             highlightEdges: false // Prevent default edge highlighting
         });
     });
+
+        network.on("dragStart", function (params) {
+            if (params.nodes.length > 0) {
+                network.setOptions({
+                    physics: {
+                        enabled: true,
+                        stabilization: true,
+                        hierarchicalRepulsion: {
+                            avoidOverlap: 1,
+                            nodeDistance: 150,
+                            springLength: 200
+                        }
+                    }
+                });
+            }
+        });
+
+        network.on("dragEnd", function (params) {
+            network.setOptions({
+                physics: {
+                    enabled: false
+                }
+            });
+            // Store current position and scale
+            const { x, y, scale } = network.getViewPosition();
+            // Disable stabilization and reapply view position
+            network.moveTo({ position: { x, y }, scale, animation: false });
+        });
 
 }
 

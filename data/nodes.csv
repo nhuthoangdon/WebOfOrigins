@@ -34,7 +34,7 @@
 "consq_9";"Habitat Fragmentation";"Consequence";"Division of habitats into smaller, isolated patches";;;
 "iCountry_1";"USA";"iCountry";;"image";"https://flagsapi.com/US/flat/64.png";
 "iCountry_10";"Indonesia";"iCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
-"iCountry_11";"European Union";"iCountry";;"image";"https://flagsapi.com/EU/flat/64.png";
+"iCountry_11";"European Union";"iCountry";;"image";"src/Assets/eu_flag.svg";
 "iCountry_12";"Ecuador";"iCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
 "iCountry_13";"Brazil";"iCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
 "iCountry_14";"Argentina";"iCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
@@ -58,7 +58,7 @@
 "iCountry_9";"Vietnam";"iCountry";;"image";"https://flagsapi.com/VN/flat/64.png";
 "icCountry_1";"USA";"icCountry";;"image";"https://flagsapi.com/US/flat/64.png";
 "icCountry_10";"Indonesia";"icCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
-"icCountry_11";"European Union";"icCountry";;"image";"https://flagsapi.com/EU/flat/64.png";
+"icCountry_11";"European Union";"icCountry";;"image";"src/Assets/eu_flag.svg";
 "icCountry_12";"Ecuador";"icCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
 "icCountry_13";"Brazil";"icCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
 "icCountry_14";"Argentina";"icCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
@@ -112,7 +112,7 @@
 "mat_7";"Fish";"rawMaterial";"Can be used for food, cartilage, bone, and oil";;;
 "smCountry_1";"USA";"smCountry";;"image";"https://flagsapi.com/US/flat/64.png";
 "smCountry_10";"Indonesia";"smCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
-"smCountry_11";"European Union";"smCountry";;"image";"https://flagsapi.com/EU/flat/64.png";
+"smCountry_11";"European Union";"smCountry";;"image";"src/Assets/eu_flag.svg";
 "smCountry_12";"Ecuador";"smCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
 "smCountry_13";"Brazil";"smCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
 "smCountry_14";"Argentina";"smCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
