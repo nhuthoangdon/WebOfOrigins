@@ -1,6 +1,6 @@
 "id";"label";"type";"title";"shape";"image";"is_sustainable"
-"comp_1";"Glucosamine";"Composition";"Natural Compound: Building block for cartilage (22)";;;
-"comp_2";"Chondroitin";"Composition";"Natural Compound: Constituent of cartilage (22)";;;
+"comp_1";"Glucosamine";"Composition";"Natural Compound: A natural sugar found in shellfish shells, fungal cell walls, and the human body; a building block of cartilage that supports joint health (22)";;;
+"comp_2";"Chondroitin";"Composition";"Natural Compound: A natural substance found in cartilage around joints that helps maintain cartilage structure and cushion the joints (22)";;;
 "con_1";"Excessive Fertilisation";"Concern";"Overuse of chemical fertilisers. Often relates to Agriculture";;;
 "con_10";"Industrial Waste";"Concern";"Generation of hazardous or non-recyclable waste from industry. Often relates to Various Industries";;;
 "con_11";"Plastic Pollution";"Concern";"Accumulation of plastic waste in the environment. Often relates to Various Industries";;;
@@ -32,54 +32,80 @@
 "consq_7";"Groundwater Depletion";"Consequence";"Reduction in groundwater reserves";;;
 "consq_8";"Soil Erosion";"Consequence";"Loss of topsoil due to wind or water";;;
 "consq_9";"Habitat Fragmentation";"Consequence";"Division of habitats into smaller, isolated patches";;;
-"iCountry_1";"USA";"iCountry";;"image";"https://flagsapi.com/US/flat/64.png";
-"iCountry_10";"Indonesia";"iCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
-"iCountry_11";"European Union";"iCountry";;"image";"src/Assets/eu_flag.svg";
-"iCountry_12";"Ecuador";"iCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
-"iCountry_13";"Brazil";"iCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
-"iCountry_14";"Argentina";"iCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
-"iCountry_15";"Ukraine";"iCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
-"iCountry_16";"South Korea";"iCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
-"iCountry_17";"Philippines";"iCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
-"iCountry_18";"Bangladesh";"iCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
-"iCountry_19";"Hong Kong";"iCountry";;"image";"https://flagsapi.com/HK/flat/64.png";
-"iCountry_2";"Australia";"iCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
-"iCountry_20";"United Kingdom";"iCountry";;"image";"https://flagsapi.com/GB/flat/64.png";
-"iCountry_21";"Spain";"iCountry";;"image";"https://flagsapi.com/ES/flat/64.png";
-"iCountry_22";"Taiwan";"iCountry";;"image";"https://flagsapi.com/TW/flat/64.png";
-"iCountry_23";"Malaysia";"iCountry";;"image";"https://flagsapi.com/MY/flat/64.png";
-"iCountry_24";"Singapore";"iCountry";;"image";"https://flagsapi.com/SG/flat/64.png";
-"iCountry_3";"Canada";"iCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
-"iCountry_4";"China";"iCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
-"iCountry_5";"Mexico";"iCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
-"iCountry_6";"Japan";"iCountry";;"image";"https://flagsapi.com/JP/flat/64.png";
-"iCountry_7";"India";"iCountry";;"image";"https://flagsapi.com/IN/flat/64.png";
-"iCountry_8";"Thailand";"iCountry";;"image";"https://flagsapi.com/TH/flat/64.png";
-"iCountry_9";"Vietnam";"iCountry";;"image";"https://flagsapi.com/VN/flat/64.png";
-"icCountry_1";"USA";"icCountry";;"image";"https://flagsapi.com/US/flat/64.png";
-"icCountry_10";"Indonesia";"icCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
-"icCountry_11";"European Union";"icCountry";;"image";"src/Assets/eu_flag.svg";
-"icCountry_12";"Ecuador";"icCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
-"icCountry_13";"Brazil";"icCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
-"icCountry_14";"Argentina";"icCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
-"icCountry_15";"Ukraine";"icCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
-"icCountry_16";"South Korea";"icCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
-"icCountry_17";"Philippines";"icCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
-"icCountry_18";"Bangladesh";"icCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
-"icCountry_19";"Hong Kong";"icCountry";;"image";"https://flagsapi.com/HK/flat/64.png";
-"icCountry_2";"Australia";"icCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
-"icCountry_20";"United Kingdom";"icCountry";;"image";"https://flagsapi.com/GB/flat/64.png";
-"icCountry_21";"Spain";"icCountry";;"image";"https://flagsapi.com/ES/flat/64.png";
-"icCountry_22";"Taiwan";"icCountry";;"image";"https://flagsapi.com/TW/flat/64.png";
-"icCountry_23";"Malaysia";"icCountry";;"image";"https://flagsapi.com/MY/flat/64.png";
-"icCountry_24";"Singapore";"icCountry";;"image";"https://flagsapi.com/SG/flat/64.png";
-"icCountry_3";"Canada";"icCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
-"icCountry_4";"China";"icCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
-"icCountry_5";"Mexico";"icCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
-"icCountry_6";"Japan";"icCountry";;"image";"https://flagsapi.com/JP/flat/64.png";
-"icCountry_7";"India";"icCountry";;"image";"https://flagsapi.com/IN/flat/64.png";
-"icCountry_8";"Thailand";"icCountry";;"image";"https://flagsapi.com/TH/flat/64.png";
-"icCountry_9";"Vietnam";"icCountry";;"image";"https://flagsapi.com/VN/flat/64.png";
+"iCountry_1";"USA";"iCountry";"USA";"image";"https://flagsapi.com/US/flat/64.png";
+"iCountry_10";"Indonesia";"iCountry";"Indonesia";"image";"https://flagsapi.com/ID/flat/64.png";
+"iCountry_11";"European Union";"iCountry";"European Union";"image";"src/Assets/eu_flag.svg";
+"iCountry_12";"Ecuador";"iCountry";"Ecuador";"image";"https://flagsapi.com/EC/flat/64.png";
+"iCountry_13";"Brazil";"iCountry";"Brazil";"image";"https://flagsapi.com/BR/flat/64.png";
+"iCountry_14";"Argentina";"iCountry";"Argentina";"image";"https://flagsapi.com/AR/flat/64.png";
+"iCountry_15";"Ukraine";"iCountry";"Ukraine";"image";"https://flagsapi.com/UA/flat/64.png";
+"iCountry_16";"South Korea";"iCountry";"South Korea";"image";"https://flagsapi.com/KR/flat/64.png";
+"iCountry_17";"Philippines";"iCountry";"Philippines";"image";"https://flagsapi.com/PH/flat/64.png";
+"iCountry_18";"Bangladesh";"iCountry";"Bangladesh";"image";"https://flagsapi.com/BD/flat/64.png";
+"iCountry_19";"Hong Kong";"iCountry";"Hong Kong";"image";"https://flagsapi.com/HK/flat/64.png";
+"iCountry_2";"Australia";"iCountry";"Australia";"image";"https://flagsapi.com/AU/flat/64.png";
+"iCountry_20";"United Kingdom";"iCountry";"United Kingdom";"image";"https://flagsapi.com/GB/flat/64.png";
+"iCountry_21";"Spain";"iCountry";"Spain";"image";"https://flagsapi.com/ES/flat/64.png";
+"iCountry_22";"Taiwan";"iCountry";"Taiwan";"image";"https://flagsapi.com/TW/flat/64.png";
+"iCountry_23";"Malaysia";"iCountry";"Malaysia";"image";"https://flagsapi.com/MY/flat/64.png";
+"iCountry_24";"Singapore";"iCountry";"Singapore";"image";"https://flagsapi.com/SG/flat/64.png";
+"iCountry_25";"Ireland";"iCountry";"Ireland";"image";"https://flagsapi.com/IE/flat/64.png";
+"iCountry_26";"Switzerland";"iCountry";"Switzerland";"image";"https://flagsapi.com/CH/flat/64.png";
+"iCountry_27";"Belgium";"iCountry";"Belgium";"image";"https://flagsapi.com/BE/flat/64.png";
+"iCountry_28";"France";"iCountry";"France";"image";"https://flagsapi.com/FR/flat/64.png";
+"iCountry_29";"Lithuania";"iCountry";"Lithuania";"image";"https://flagsapi.com/LT/flat/64.png";
+"iCountry_3";"Canada";"iCountry";"Canada";"image";"https://flagsapi.com/CA/flat/64.png";
+"iCountry_30";"Peru";"iCountry";"Peru";"image";"https://flagsapi.com/PE/flat/64.png";
+"iCountry_31";"Russia";"iCountry";"Russia";"image";"https://flagsapi.com/RU/flat/64.png";
+"iCountry_32";"Germany";"iCountry";"Germany";"image";"https://flagsapi.com/DE/flat/64.png";
+"iCountry_33";"Nigeria";"iCountry";"Nigeria";"image";"https://flagsapi.com/NG/flat/64.png";
+"iCountry_34";"Italy";"iCountry";"Italy";"image";"https://flagsapi.com/IT/flat/64.png";
+"iCountry_35";"Netherlands";"iCountry";"Netherlands";"image";"https://flagsapi.com/NL/flat/64.png";
+"iCountry_36";"Denmark";"iCountry";"Denmark";"image";"https://flagsapi.com/DK/flat/64.png";
+"iCountry_37";"Poland";"iCountry";"Poland";"image";"https://flagsapi.com/PL/flat/64.png";
+"iCountry_4";"China";"iCountry";"China";"image";"https://flagsapi.com/CN/flat/64.png";
+"iCountry_5";"Mexico";"iCountry";"Mexico";"image";"https://flagsapi.com/MX/flat/64.png";
+"iCountry_6";"Japan";"iCountry";"Japan";"image";"https://flagsapi.com/JP/flat/64.png";
+"iCountry_7";"India";"iCountry";"India";"image";"https://flagsapi.com/IN/flat/64.png";
+"iCountry_8";"Thailand";"iCountry";"Thailand";"image";"https://flagsapi.com/TH/flat/64.png";
+"iCountry_9";"Vietnam";"iCountry";"Vietnam";"image";"https://flagsapi.com/VN/flat/64.png";
+"icCountry_1";"USA";"icCountry";"USA";"image";"https://flagsapi.com/US/flat/64.png";
+"icCountry_10";"Indonesia";"icCountry";"Indonesia";"image";"https://flagsapi.com/ID/flat/64.png";
+"icCountry_11";"European Union";"icCountry";"European Union";"image";"src/Assets/eu_flag.svg";
+"icCountry_12";"Ecuador";"icCountry";"Ecuador";"image";"https://flagsapi.com/EC/flat/64.png";
+"icCountry_13";"Brazil";"icCountry";"Brazil";"image";"https://flagsapi.com/BR/flat/64.png";
+"icCountry_14";"Argentina";"icCountry";"Argentina";"image";"https://flagsapi.com/AR/flat/64.png";
+"icCountry_15";"Ukraine";"icCountry";"Ukraine";"image";"https://flagsapi.com/UA/flat/64.png";
+"icCountry_16";"South Korea";"icCountry";"South Korea";"image";"https://flagsapi.com/KR/flat/64.png";
+"icCountry_17";"Philippines";"icCountry";"Philippines";"image";"https://flagsapi.com/PH/flat/64.png";
+"icCountry_18";"Bangladesh";"icCountry";"Bangladesh";"image";"https://flagsapi.com/BD/flat/64.png";
+"icCountry_19";"Hong Kong";"icCountry";"Hong Kong";"image";"https://flagsapi.com/HK/flat/64.png";
+"icCountry_2";"Australia";"icCountry";"Australia";"image";"https://flagsapi.com/AU/flat/64.png";
+"icCountry_20";"United Kingdom";"icCountry";"United Kingdom";"image";"https://flagsapi.com/GB/flat/64.png";
+"icCountry_21";"Spain";"icCountry";"Spain";"image";"https://flagsapi.com/ES/flat/64.png";
+"icCountry_22";"Taiwan";"icCountry";"Taiwan";"image";"https://flagsapi.com/TW/flat/64.png";
+"icCountry_23";"Malaysia";"icCountry";"Malaysia";"image";"https://flagsapi.com/MY/flat/64.png";
+"icCountry_24";"Singapore";"icCountry";"Singapore";"image";"https://flagsapi.com/SG/flat/64.png";
+"icCountry_25";"Ireland";"icCountry";"Ireland";"image";"https://flagsapi.com/IE/flat/64.png";
+"icCountry_26";"Switzerland";"icCountry";"Switzerland";"image";"https://flagsapi.com/CH/flat/64.png";
+"icCountry_27";"Belgium";"icCountry";"Belgium";"image";"https://flagsapi.com/BE/flat/64.png";
+"icCountry_28";"France";"icCountry";"France";"image";"https://flagsapi.com/FR/flat/64.png";
+"icCountry_29";"Lithuania";"icCountry";"Lithuania";"image";"https://flagsapi.com/LT/flat/64.png";
+"icCountry_3";"Canada";"icCountry";"Canada";"image";"https://flagsapi.com/CA/flat/64.png";
+"icCountry_30";"Peru";"icCountry";"Peru";"image";"https://flagsapi.com/PE/flat/64.png";
+"icCountry_31";"Russia";"icCountry";"Russia";"image";"https://flagsapi.com/RU/flat/64.png";
+"icCountry_32";"Germany";"icCountry";"Germany";"image";"https://flagsapi.com/DE/flat/64.png";
+"icCountry_33";"Nigeria";"icCountry";"Nigeria";"image";"https://flagsapi.com/NG/flat/64.png";
+"icCountry_34";"Italy";"icCountry";"Italy";"image";"https://flagsapi.com/IT/flat/64.png";
+"icCountry_35";"Netherlands";"icCountry";"Netherlands";"image";"https://flagsapi.com/NL/flat/64.png";
+"icCountry_36";"Denmark";"icCountry";"Denmark";"image";"https://flagsapi.com/DK/flat/64.png";
+"icCountry_37";"Poland";"icCountry";"Poland";"image";"https://flagsapi.com/PL/flat/64.png";
+"icCountry_4";"China";"icCountry";"China";"image";"https://flagsapi.com/CN/flat/64.png";
+"icCountry_5";"Mexico";"icCountry";"Mexico";"image";"https://flagsapi.com/MX/flat/64.png";
+"icCountry_6";"Japan";"icCountry";"Japan";"image";"https://flagsapi.com/JP/flat/64.png";
+"icCountry_7";"India";"icCountry";"India";"image";"https://flagsapi.com/IN/flat/64.png";
+"icCountry_8";"Thailand";"icCountry";"Thailand";"image";"https://flagsapi.com/TH/flat/64.png";
+"icCountry_9";"Vietnam";"icCountry";"Vietnam";"image";"https://flagsapi.com/VN/flat/64.png";
 "imp_1";"Eutrophication";"Impact";"Nutrient overload causing algal blooms and aquatic dead zones";;;
 "imp_10";"Unsafe Drinking Water";"Impact";"Contaminated water unfit for consumption";;;
 "imp_11";"Reduced Agricultural Yield";"Impact";"Decreased crop or livestock productivity";;;
@@ -95,47 +121,82 @@
 "imp_8";"Aquatic Life Loss";"Impact";"Decline in aquatic species populations";;;
 "imp_9";"Wildlife Decline";"Impact";"Reduction in terrestrial wildlife populations";;;
 "ind_1";"Corn Farming";"Industry";"Corn/maize farming, significant global sector, high production volumes";;;"0"
+"ind_10";"Cattle Farming";"Industry";"Raising cattle for beef or dairy, incl. breeding, feeding, and herd management";;;"0"
+"ind_11";"Cattle Slaughtering";"Industry";"The Slaughtering Industry is the entry point where live Cattle are processed into carcasses and raw products for further processing";;;"0"
+"ind_13";"Dairy Farming";"Industry";"Milking and initial processing of raw milk";;;
+"ind_14";"Tanning";"Industry";"Tanning and treating animal skins and hides for leather products";;;"0"
+"ind_15";"Fisheries";"Industry";"Harvesting of fish and aquatic species from wild stocks in marine and fresh water environments, including coastal, inland, and deep-sea ecosystems";;;
+"ind_16";"Shark Fisheries";"Industry";"Targeted capture of sharks in marine fisheries, primarily for fins, meat, cartilage, and other derived products";;;
+"ind_17";"Pig Farming";"Industry";"Breeding and raising pigs for meat production. Includes commercial and small-scale operations for pork supply";;;"0"
+"ind_18";"Pig Slaughtering";"Industry";"The Slaughtering Industry is the entry point where live Pigs are processed into carcasses and raw products for further processing";;;
+"ind_20";"Livestock Trading (Bovine)";"Industry";"Import and export of live Bovines for breeding, fattening, or slaughter";;;
+"ind_21";"Livestock Trading (Porcine)";"Industry";"Export and import of live Pigs for breeding or slaughter";;;
+"ind_22";"Rendering (Animals)";"Industry";"Rendering Plants collect raw byproducts (e.g. bones, cartilage, hides, fat, offal, blood) from animal slaughter for processing into usable materials";;;
+"ind_23";"Pharmaceuticals";"Industry";"Producing drugs, vaccines, and biologics for human and animal health";;;
+"ind_24";"Pet Food";"Industry";"Manufacturing nutritional products formulated for domestic animals";;;
+"ind_25";"Cosmetics";"Industry";"Creating personal care and beauty products for external human use";;;
+"ind_26";"Animal Feed";"Industry";"Producing feed formulations to support livestock and poultry health and productivity";;;
+"ind_27";"Fertiliser";"Industry";"Converting organic or synthetic materials into nutrient sources to enhance soil fertility and crop growth";;;
+"ind_28";"Poultry Farming";"Industry";"Breeding and raising poultry (primarily chickens, turkeys, ducks) for meat or eggs";;;
+"ind_29";"Livestock Trading (Poultry)";"Industry";"Import/Export of live poultry (e.g. chicks, breeding stock, or slaughter-ready birds) for breeding, fattening, or slaughter";;;
 "ind_3";"Crustacean Processing";"Industry";"Preparation and handling of crustaceans for consumption, commonly shrimp, crabs, lobsters, crayfish";;;
+"ind_30";"Poultry Slaughtering";"Industry";"Killing and initial processing of poultry into carcasses, primal cuts, and byproducts (e.g. feathers, offal)";;;
 "ind_4";"Crustacean Fisheries";"Industry";"Commercial harvesting of aquatic arthropods—commonly decapods such as shrimp, lobsters, and crabs";;;
 "ind_5";"Biotechnology";"Industry";"Use of biological systems and organisms to develop new products and processes";;;"1"
-"ind_6";"Shrimp and Prawn Farming";"Industry";"Most heavily farmed crustaceans (e.g. Whiteleg shrimp, Giant tiger prawn, Freshwater prawn)";;;
+"ind_6";"Shrimp and Prawn Farming";"Industry";"Most heavily farmed crustaceans (e.g. Whiteleg shrimp, Giant tiger prawn, Freshwater prawn)";;;"0"
 "ind_7";"Lobster Farming";"Industry";"Commonly rock lobsters; smallest farmed share among crustaceans, minor vs wild catch (<5% of total lobster production) (36)";;;
 "ind_8";"Crab Farming";"Industry";"Growing sector, though wild-caught fisheries still dominate production (1.6 mil tons wild catch vs 1.24 mil tons from aquaculture) (37)";;;
 "ind_9";"Crayfish Farming";"Industry";"Growing sector within aquaculture, production volume smaller than Shrimp, Prawn, and Crab, ~200,000 metric tons (34)";;;
-"item_1";"Joint Health Supplements";"Item";"Dietary Supplement for Supplements used to support joint function, reduce pain, and slow cartilage degradation; commonly taken for osteoarthritis";;;
-"mat_1";"Crustacean Shells";"rawMaterial";"Exoskeletons of shrimp, lobsters, crabs, crayfish, etc.";;;"0"
+"item_1";"Joint Health Supplements";"Item";"Dietary Supplement for Supplements containing Glucosamine and Chondroitin Sulfate, used to support joint function, reduce pain, and slow cartilage degradation; commonly taken for osteoarthritis";;;
+"mat_1";"Crustacean Shells";"rawMaterial";"Crustacean exoskeletons, often from shrimp (largest source), lobsters, crabs, and crayfish; used to produce chitin, chitosan, and glucosamine";;;"0"
 "mat_2";"Filamentuous Fungi";"rawMaterial";"Saprophytic microorganisms commonly used in various industries to produce enzymes, chemicals, and other compounds";;;"1"
-"mat_3";"Bovine (Cow)";"rawMaterial";"Cattle, farmed for various purposes beyond meat";;;
-"mat_4";"Sharks and Elasmobranchs";"rawMaterial";"Cartilaginous fish with skeletons made of cartilage rather than bone, incl. sharks, rays, and skates";;;"0"
-"mat_5";"Porcine (Pig)";"rawMaterial";"Swine, farmed for various purposes beyond meat";;;
-"mat_6";"Avian (Bird)";"rawMaterial";"Chicken is most farmed";;;
-"mat_7";"Fish";"rawMaterial";"Can be used for food, cartilage, bone, and oil";;;
-"smCountry_1";"USA";"smCountry";;"image";"https://flagsapi.com/US/flat/64.png";
-"smCountry_10";"Indonesia";"smCountry";;"image";"https://flagsapi.com/ID/flat/64.png";
-"smCountry_11";"European Union";"smCountry";;"image";"src/Assets/eu_flag.svg";
-"smCountry_12";"Ecuador";"smCountry";;"image";"https://flagsapi.com/EC/flat/64.png";
-"smCountry_13";"Brazil";"smCountry";;"image";"https://flagsapi.com/BR/flat/64.png";
-"smCountry_14";"Argentina";"smCountry";;"image";"https://flagsapi.com/AR/flat/64.png";
-"smCountry_15";"Ukraine";"smCountry";;"image";"https://flagsapi.com/UA/flat/64.png";
-"smCountry_16";"South Korea";"smCountry";;"image";"https://flagsapi.com/KR/flat/64.png";
-"smCountry_17";"Philippines";"smCountry";;"image";"https://flagsapi.com/PH/flat/64.png";
-"smCountry_18";"Bangladesh";"smCountry";;"image";"https://flagsapi.com/BD/flat/64.png";
-"smCountry_19";"Hong Kong";"smCountry";;"image";"https://flagsapi.com/HK/flat/64.png";
-"smCountry_2";"Australia";"smCountry";;"image";"https://flagsapi.com/AU/flat/64.png";
-"smCountry_20";"United Kingdom";"smCountry";;"image";"https://flagsapi.com/GB/flat/64.png";
-"smCountry_21";"Spain";"smCountry";;"image";"https://flagsapi.com/ES/flat/64.png";
-"smCountry_22";"Taiwan";"smCountry";;"image";"https://flagsapi.com/TW/flat/64.png";
-"smCountry_23";"Malaysia";"smCountry";;"image";"https://flagsapi.com/MY/flat/64.png";
-"smCountry_24";"Singapore";"smCountry";;"image";"https://flagsapi.com/SG/flat/64.png";
-"smCountry_3";"Canada";"smCountry";;"image";"https://flagsapi.com/CA/flat/64.png";
-"smCountry_4";"China";"smCountry";;"image";"https://flagsapi.com/CN/flat/64.png";
-"smCountry_5";"Mexico";"smCountry";;"image";"https://flagsapi.com/MX/flat/64.png";
-"smCountry_6";"Japan";"smCountry";;"image";"https://flagsapi.com/JP/flat/64.png";
-"smCountry_7";"India";"smCountry";;"image";"https://flagsapi.com/IN/flat/64.png";
-"smCountry_8";"Thailand";"smCountry";;"image";"https://flagsapi.com/TH/flat/64.png";
-"smCountry_9";"Vietnam";"smCountry";;"image";"https://flagsapi.com/VN/flat/64.png";
+"mat_3";"Bovine (Cow)";"rawMaterial";"Domesticated cattle raised for beef, dairy, leather, and byproducts like gelatin, tallow, and bone meal";;;"0"
+"mat_4";"Sharks and Elasmobranchs";"rawMaterial";"Cartilaginous fish harvested for meat, fins, cartilage, liver oil, and skin; byproducts used in supplements, cosmetics, and traditional medicine";;;"0"
+"mat_5";"Porcine (Pig)";"rawMaterial";"Domesticated pigs raised for meat (pork) and byproducts such as insulin, gelatin, heparin, and lard";;;"0"
+"mat_6";"Avian (Bird)";"rawMaterial";"Birds like chickens and ducks raised for meat, eggs, feathers, and byproducts such as gelatin, enzymes, and vaccines";;;"0"
+"mat_7";"Fish";"rawMaterial";"Aquatic species farmed or caught for meat, oils, collagen, fishmeal, and other byproducts used in feed, supplements, and cosmetics";;;"0"
+"mat_8";"Dairy Cows";"rawMaterial";"Cattle selectively bred for high milk production; central to the dairy industry for producing milk, cheese, yogurt and other dairy products";;;"0"
+"smCountry_1";"USA";"smCountry";"USA";"image";"https://flagsapi.com/US/flat/64.png";
+"smCountry_10";"Indonesia";"smCountry";"Indonesia";"image";"https://flagsapi.com/ID/flat/64.png";
+"smCountry_11";"European Union";"smCountry";"European Union";"image";"src/Assets/eu_flag.svg";
+"smCountry_12";"Ecuador";"smCountry";"Ecuador";"image";"https://flagsapi.com/EC/flat/64.png";
+"smCountry_13";"Brazil";"smCountry";"Brazil";"image";"https://flagsapi.com/BR/flat/64.png";
+"smCountry_14";"Argentina";"smCountry";"Argentina";"image";"https://flagsapi.com/AR/flat/64.png";
+"smCountry_15";"Ukraine";"smCountry";"Ukraine";"image";"https://flagsapi.com/UA/flat/64.png";
+"smCountry_16";"South Korea";"smCountry";"South Korea";"image";"https://flagsapi.com/KR/flat/64.png";
+"smCountry_17";"Philippines";"smCountry";"Philippines";"image";"https://flagsapi.com/PH/flat/64.png";
+"smCountry_18";"Bangladesh";"smCountry";"Bangladesh";"image";"https://flagsapi.com/BD/flat/64.png";
+"smCountry_19";"Hong Kong";"smCountry";"Hong Kong";"image";"https://flagsapi.com/HK/flat/64.png";
+"smCountry_2";"Australia";"smCountry";"Australia";"image";"https://flagsapi.com/AU/flat/64.png";
+"smCountry_20";"United Kingdom";"smCountry";"United Kingdom";"image";"https://flagsapi.com/GB/flat/64.png";
+"smCountry_21";"Spain";"smCountry";"Spain";"image";"https://flagsapi.com/ES/flat/64.png";
+"smCountry_22";"Taiwan";"smCountry";"Taiwan";"image";"https://flagsapi.com/TW/flat/64.png";
+"smCountry_23";"Malaysia";"smCountry";"Malaysia";"image";"https://flagsapi.com/MY/flat/64.png";
+"smCountry_24";"Singapore";"smCountry";"Singapore";"image";"https://flagsapi.com/SG/flat/64.png";
+"smCountry_25";"Ireland";"smCountry";"Ireland";"image";"https://flagsapi.com/IE/flat/64.png";
+"smCountry_26";"Switzerland";"smCountry";"Switzerland";"image";"https://flagsapi.com/CH/flat/64.png";
+"smCountry_27";"Belgium";"smCountry";"Belgium";"image";"https://flagsapi.com/BE/flat/64.png";
+"smCountry_28";"France";"smCountry";"France";"image";"https://flagsapi.com/FR/flat/64.png";
+"smCountry_29";"Lithuania";"smCountry";"Lithuania";"image";"https://flagsapi.com/LT/flat/64.png";
+"smCountry_3";"Canada";"smCountry";"Canada";"image";"https://flagsapi.com/CA/flat/64.png";
+"smCountry_30";"Peru";"smCountry";"Peru";"image";"https://flagsapi.com/PE/flat/64.png";
+"smCountry_31";"Russia";"smCountry";"Russia";"image";"https://flagsapi.com/RU/flat/64.png";
+"smCountry_32";"Germany";"smCountry";"Germany";"image";"https://flagsapi.com/DE/flat/64.png";
+"smCountry_33";"Nigeria";"smCountry";"Nigeria";"image";"https://flagsapi.com/NG/flat/64.png";
+"smCountry_34";"Italy";"smCountry";"Italy";"image";"https://flagsapi.com/IT/flat/64.png";
+"smCountry_35";"Netherlands";"smCountry";"Netherlands";"image";"https://flagsapi.com/NL/flat/64.png";
+"smCountry_36";"Denmark";"smCountry";"Denmark";"image";"https://flagsapi.com/DK/flat/64.png";
+"smCountry_37";"Poland";"smCountry";"Poland";"image";"https://flagsapi.com/PL/flat/64.png";
+"smCountry_4";"China";"smCountry";"China";"image";"https://flagsapi.com/CN/flat/64.png";
+"smCountry_5";"Mexico";"smCountry";"Mexico";"image";"https://flagsapi.com/MX/flat/64.png";
+"smCountry_6";"Japan";"smCountry";"Japan";"image";"https://flagsapi.com/JP/flat/64.png";
+"smCountry_7";"India";"smCountry";"India";"image";"https://flagsapi.com/IN/flat/64.png";
+"smCountry_8";"Thailand";"smCountry";"Thailand";"image";"https://flagsapi.com/TH/flat/64.png";
+"smCountry_9";"Vietnam";"smCountry";"Vietnam";"image";"https://flagsapi.com/VN/flat/64.png";
 "src_1";"Chitin";"Source";"Derived from exoskeletons of arthropods and cell walls of fungi";;;
 "src_2";"Corn";"Source";"Also known as maize; widely cultivated for use in food, feed, and various industrial applications";;;"0"
-"src_3";"Animal Cartilage";"Source";"Tough and flexible connective tissue supporting the skeleton, primarily sourced from cattle, poultry, and fish";;;
-"src_4";"Shark Fins";"Source";"Composed of cartilage, collagen fibers, and elastoidin. Traditional Chinese medicine believed to have medicinal properties";;;"0"
+"src_3";"Animal Cartilage";"Source";"Tough connective tissue from cattle, poultry, and fish; used for chondroitin and collagen extraction, joint health supplements, traditional foods, pet feed, and biomedical applications";;;
 "src_5";"Shark Cartilage";"Source";"Niche market, high-value material processed from shark skeletons (byproducts of meat/fin industries), mainly used in nutraceuticals and cosmetics";;;"0"
+"src_6";"Beef (Bovine Meat)";"Source";"Meat derived from Bovine animals, primarily Cattle, processed for human consumption and used in a wide range of food products";;;
+"src_7";"Pork (Pig Meat)";"Source";"Meat derived from Pigs, processed for human consumption and widely used in various food products";;;
+"src_8";"Poultry (Avian Meat)";"Source";"Meat derived from Avian species such as chicken, turkey, and duck, processed for human consumption and widely used in global food products";;;"0"

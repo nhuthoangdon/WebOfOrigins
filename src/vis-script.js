@@ -321,6 +321,7 @@ function createNetwork(nodesData, edgesData) {
                 label: function(values, id, selected, hovering) {
                     values.mod = "bold";
                     values.size = 28;
+                    values.color = "#DAF332";
                 }                  
             },
             scaling: {
@@ -365,7 +366,8 @@ function createNetwork(nodesData, edgesData) {
                     values.mod = "bold";
                     values.size = 28;
                         if (selected) {
-                            values.color = colorMap["iCountry"].highlight;
+                            // values.color = colorMap["iCountry"].highlight;
+                            values.color = "#DAF332";
                         }
                     }       
                 }
@@ -377,7 +379,8 @@ function createNetwork(nodesData, edgesData) {
                     values.mod = "bold";
                     values.size = 28;
                         if (selected) {
-                            values.color = colorMap["Item"].highlight;
+                            // values.color = colorMap["Item"].highlight;
+                            values.color = "#DAF332";
                         }
                     }       
                 }
@@ -389,7 +392,8 @@ function createNetwork(nodesData, edgesData) {
                     values.mod = "bold";
                     values.size = 28;
                         if (selected) {
-                            values.color = colorMap["Composition"].highlight;
+                            // values.color = colorMap["Composition"].highlight;
+                            values.color = "#DAF332";
                         }
                     }       
                 }
@@ -402,7 +406,7 @@ function createNetwork(nodesData, edgesData) {
                     values.size = 28;
                     const node = nodesData.find(n => n.id === id);
                         if (selected) {
-                            values.color = node.is_sustainable ? "#0DAA01" : colorMap["Source"].highlight;
+                            values.color = node.is_sustainable ? "#0DAA01" : values.color = "#DAF332";
                         }
                     }       
                 }
@@ -416,7 +420,7 @@ function createNetwork(nodesData, edgesData) {
                     const node = nodesData.find(n => n.id === id);
                         if (selected) {
                             // values.color = colorMap["rawMaterial"].highlight;
-                            values.color = node.is_sustainable ? "#0DAA01" : colorMap["rawMaterial"].highlight;
+                            values.color = node.is_sustainable ? "#0DAA01" : values.color = "#DAF332";
                         }
                     }       
                 }
@@ -429,7 +433,7 @@ function createNetwork(nodesData, edgesData) {
                     values.size = 28;
                     const node = nodesData.find(n => n.id === id);
                         if (selected) {
-                            values.color = node.is_sustainable ? "#0DAA01" : colorMap["Industry"].highlight;
+                            values.color = node.is_sustainable ? "#0DAA01" : values.color = "#DAF332";
                         }
                     }       
                 }
@@ -442,7 +446,8 @@ function createNetwork(nodesData, edgesData) {
                         values.mod = "bold";
                         values.size = 28;
                         if (selected) {
-                            values.color = colorMap["smCountry"].highlight;
+                            // values.color = colorMap["smCountry"].highlight;
+                            values.color = "#DAF332";
                         }
                     }
                 }
@@ -455,7 +460,8 @@ function createNetwork(nodesData, edgesData) {
                         values.mod = "bold";
                         values.size = 28;
                         if (selected) {
-                            values.color = colorMap["icCountry"].highlight;
+                            // values.color = colorMap["icCountry"].highlight;
+                            values.color = "#DAF332";
                         }
                     }
                 }
@@ -467,7 +473,8 @@ function createNetwork(nodesData, edgesData) {
                     values.mod = "bold";
                     values.size = 28;
                         if (selected) {
-                            values.color = colorMap["Concern"].highlight;
+                            // values.color = colorMap["Concern"].highlight;
+                            values.color = "#DAF332";
                         }
                     }       
                 }
@@ -479,7 +486,8 @@ function createNetwork(nodesData, edgesData) {
                     values.mod = "bold";
                     values.size = 28;
                         if (selected) {
-                            values.color = colorMap["Consequence"].highlight;
+                            // values.color = colorMap["Consequence"].highlight;
+                            values.color = "#DAF332";
                         }
                     }       
                 }
@@ -491,7 +499,8 @@ function createNetwork(nodesData, edgesData) {
                     values.mod = "bold";
                     values.size = 28;
                         if (selected) {
-                            values.color = colorMap["Impact"].highlight;
+                            // values.color = colorMap["Impact"].highlight;
+                            values.color = "#DAF332";
                         }
                     }       
                 }
@@ -528,6 +537,7 @@ function createNetwork(nodesData, edgesData) {
                 }
             });
         });
+
 
         // Use network.setSelection to apply highlighting
         network.setSelection({
