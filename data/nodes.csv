@@ -1,6 +1,11 @@
 "id";"label";"type";"title";"shape";"image";"is_sustainable"
 "comp_1";"Glucosamine";"Composition";"Natural Compound: A natural sugar found in shellfish shells, fungal cell walls, and the human body; a building block of cartilage that supports joint health (22)";;;
 "comp_2";"Chondroitin";"Composition";"Natural Compound: A natural substance found in cartilage around joints that helps maintain cartilage structure and cushion the joints (22)";;;
+"comp_3";"Gelatin";"Composition";"Natural Compound: A protein derived by boiling animal tissues, used as a gelling agent, thickener, or stabilizer in food, pharmaceutical, and industrial products, providing texture, elasticity, or encapsulation properties ()";;;
+"comp_4";"Collagen";"Composition";"Natural Compound: A structural protein abundant in animal tissues such as skin, bones, and connective tissues; commercially extracted for use in gelatin production, collagen peptides, nutraceuticals, cosmetics, pharmaceuticals, and biomedical applications ()";;;
+"comp_5";"Marine Collagen";"Composition";"Natural Compound: Collagen derived from marine life, most commonly fish ()";;;
+"comp_6";"MSM (Methylsulfonylmethane)";"Composition";"Natural Compound: A natural organic sulfur compound found in many living organisms, often used as a dietary supplement for potential joint and skin health benefits ()";;;
+"comp_7";"Hyaluronic Acid";"Composition";"Natural Compound: A naturally occurring polysaccharide found in connective tissues and skin, known for its exceptional ability to retain moisture and support skin hydration, joint lubrication, and tissue repair ()";;;
 "con_1";"Excessive Fertilisation";"Concern";"Overuse of chemical fertilisers. Often relates to Agriculture";;;
 "con_10";"Industrial Waste";"Concern";"Generation of hazardous or non-recyclable waste from industry. Often relates to Various Industries";;;
 "con_11";"Plastic Pollution";"Concern";"Accumulation of plastic waste in the environment. Often relates to Various Industries";;;
@@ -141,21 +146,42 @@
 "ind_29";"Livestock Trading (Poultry)";"Industry";"Import/Export of live poultry (e.g. chicks, breeding stock, or slaughter-ready birds) for breeding, fattening, or slaughter";;;
 "ind_3";"Crustacean Processing";"Industry";"Preparation and handling of crustaceans for consumption, commonly shrimp, crabs, lobsters, crayfish";;;
 "ind_30";"Poultry Slaughtering";"Industry";"Killing and initial processing of poultry into carcasses, primal cuts, and byproducts (e.g. feathers, offal)";;;
+"ind_31";"Paper Manufacturing";"Industry";"Transforming Wood or recycled fibres into usable paper products";;;
+"ind_32";"Forestry";"Industry";"The practice of managing, cultivating, and conserving forests and associated resources";;;
 "ind_4";"Crustacean Fisheries";"Industry";"Commercial harvesting of aquatic arthropods—commonly decapods such as shrimp, lobsters, and crabs";;;
 "ind_5";"Biotechnology";"Industry";"Use of biological systems and organisms to develop new products and processes";;;"1"
 "ind_6";"Shrimp and Prawn Farming";"Industry";"Most heavily farmed crustaceans (e.g. Whiteleg shrimp, Giant tiger prawn, Freshwater prawn)";;;"0"
 "ind_7";"Lobster Farming";"Industry";"Commonly rock lobsters; smallest farmed share among crustaceans, minor vs wild catch (<5% of total lobster production) (36)";;;
 "ind_8";"Crab Farming";"Industry";"Growing sector, though wild-caught fisheries still dominate production (1.6 mil tons wild catch vs 1.24 mil tons from aquaculture) (37)";;;
 "ind_9";"Crayfish Farming";"Industry";"Growing sector within aquaculture, production volume smaller than Shrimp, Prawn, and Crab, ~200,000 metric tons (34)";;;
-"item_1";"Joint Health Supplements";"Item";"Dietary Supplement for Supplements containing Glucosamine and Chondroitin Sulfate, used to support joint function, reduce pain, and slow cartilage degradation; commonly taken for osteoarthritis";;;
+"item_1";"Joint Health Supplements";"Item";"Dietary Supplement for Tablets, capsules, gummies, or powders containing Glucosamine, often combined with Chondroitin Sulfate or other compounds, used to support joint function, reduce pain, and slow cartilage degradation, commonly for osteoarthritis and joint mobility";;;
+"item_10";"Confectionery";"Item";"Confectionery for Food items rich in sugar and carbohydrates";;;
+"item_11";"Capsules";"Item";"Pharmaceutical for Cylindrical enclosures—commonly made from gelatin or plant-based alternatives—used to encase and deliver medications, supplements, or other ingestible substances. Designed for easy swallowing and controlled release";;;
+"item_12";"Collagen Peptides/Hydrolysed Collagen";"Item";"Dietary Supplement for Small pieces of animal Collagen, broken down into smaller peptides or animo acids that can be absorbed through gastrointestinal tract. Commonly available in powdered, pill, or liquid forms";;;
+"item_13";"Collagen Face Cream";"Item";"Cosmetics for Facial skincare product containing hydrolysed Collagen, formulated to support skin elasticity, hydration, and a smoother appearance";;;
+"item_14";"Sausages";"Item";"Food for Processed meat products made from ground or emulsified meat, fat, and seasonings, filled into natural or synthetic casings";;;
+"item_15";"Coated Tablets";"Item";"Pharmaceutical for Solid oral dosage forms in which the compressed tablet core is covered with a polymer, sugar, or film coating to improve stability, control release, mask taste, or enhance handling in pharmaceutical manufacturing";;;
+"item_16";"Wound Dressings";"Item";"Pharmaceutical for Sterile medical materials or products applied to cover and protect wounds, designed to promote healing, control moisture, absorb exudate, and prevent contamination in clinical or surgical settings";;;
+"item_17";"Pet Supplements";"Item";"Dietary Supplement for Nutritional products formulated to support the health, growth, or specific needs of companion animals, containing vitamins, minerals, amino acids, fatty acids, or other bioactive ingredients";;;
+"item_18";"Energy Gels";"Item";"Dietary Supplement for Concentrated, easily digestible carbohydrate-based products, often with added electrolytes or other nutrients, designed to provide rapid energy for endurance activities";;;
+"item_19";"Protein Bars";"Item";"Food for Compact supplemental foods formulated with concentrated protein (dairy, plant, or blended), carbohydrates, fats, and added nutrients, designed for convenient nutrition and supplementation";;;
+"item_2";"Gummies";"Item";"Confectionery for Soft, chewy sweets shaped in various forms, often fruit-flavored";;;
+"item_3";"Jello";"Item";"Dessert for Wiggly, fruit-flavored dessert gel, typically served chilled";;;
+"item_4";"Marshmallows";"Item";"Confectionery for Fluffy, sweet confections used in desserts or hot drinks";;;
+"item_5";"Dairy Yogurt";"Item";"Dairy for Creamy dairy product";;;
+"item_6";"Cream Cheese";"Item";"Dairy for Soft, spreadable cheese";;;
+"item_7";"Sour Cream";"Item";"Dairy for Tangy dairy topping";;;
+"item_8";"Margarine";"Item";"Spread for Vegetable oil spread, butter substitute";;;
+"item_9";"Ice Cream";"Item";"Dessert for Frozen dessert";;;
 "mat_1";"Crustacean Shells";"rawMaterial";"Crustacean exoskeletons, often from shrimp (largest source), lobsters, crabs, and crayfish; used to produce chitin, chitosan, and glucosamine";;;"0"
 "mat_2";"Filamentuous Fungi";"rawMaterial";"Saprophytic microorganisms commonly used in various industries to produce enzymes, chemicals, and other compounds";;;"1"
 "mat_3";"Bovine (Cow)";"rawMaterial";"Domesticated cattle raised for beef, dairy, leather, and byproducts like gelatin, tallow, and bone meal";;;"0"
 "mat_4";"Sharks and Elasmobranchs";"rawMaterial";"Cartilaginous fish harvested for meat, fins, cartilage, liver oil, and skin; byproducts used in supplements, cosmetics, and traditional medicine";;;"0"
 "mat_5";"Porcine (Pig)";"rawMaterial";"Domesticated pigs raised for meat (pork) and byproducts such as insulin, gelatin, heparin, and lard";;;"0"
-"mat_6";"Avian (Bird)";"rawMaterial";"Birds like chickens and ducks raised for meat, eggs, feathers, and byproducts such as gelatin, enzymes, and vaccines";;;"0"
+"mat_6";"Avian (Poultry/Fowls)";"rawMaterial";"Birds like chickens and ducks raised for meat, eggs, feathers, and byproducts such as gelatin, enzymes, and vaccines";;;"0"
 "mat_7";"Fish";"rawMaterial";"Aquatic species farmed or caught for meat, oils, collagen, fishmeal, and other byproducts used in feed, supplements, and cosmetics";;;"0"
 "mat_8";"Dairy Cows";"rawMaterial";"Cattle selectively bred for high milk production; central to the dairy industry for producing milk, cheese, yogurt and other dairy products";;;"0"
+"mat_9";"Lignin (Wood)";"rawMaterial";"A complex organic polymer found in the cell walls of woody plants, providing rigidity and resistance to decay; often obtained as a byproduct of the pulp and Paper industry";;;
 "smCountry_1";"USA";"smCountry";"USA";"image";"https://flagsapi.com/US/flat/64.png";
 "smCountry_10";"Indonesia";"smCountry";"Indonesia";"image";"https://flagsapi.com/ID/flat/64.png";
 "smCountry_11";"European Union";"smCountry";"European Union";"image";"src/Assets/eu_flag.svg";
@@ -194,9 +220,18 @@
 "smCountry_8";"Thailand";"smCountry";"Thailand";"image";"https://flagsapi.com/TH/flat/64.png";
 "smCountry_9";"Vietnam";"smCountry";"Vietnam";"image";"https://flagsapi.com/VN/flat/64.png";
 "src_1";"Chitin";"Source";"Derived from exoskeletons of arthropods and cell walls of fungi";;;
+"src_10";"Animal Skins/Hides";"Source";"Animal hide rich in collagen, widely utilized for gelatin production, collagen peptide manufacturing, leather processing, and cosmetic or pharmaceutical formulations";;;
+"src_11";"Animal Tendons, Ligaments, and Fascia";"Source";"Tendons, sinews, and ligaments from animals, primarily obtained as byproducts of the meat processing industry; utilized for gelatin production, collagen peptide manufacturing, nutraceuticals, and medical-grade biomaterials";;;
+"src_12";"Fish Scales & Skin";"Source";"Collagen-rich outer tissue of fish, commercially processed for gelatin, collagen peptides, cosmetic actives, and biomedical or packaging applications such as wound dressings and biofilms";;;
+"src_13";"Other Fish Parts";"Source";"Various fish byproducts—such as heads, bones, and fins—processed for collagen extraction, fish protein hydrolysates, animal feed, fertilizers, and biomedical uses";;;
+"src_14";"DMS (Dimethyl Sulfide)";"Source";"A sulfur-containing compound originating from the breakdown of Lignin in wood pulp during Paper Manufacturing";;;
+"src_15";"DMSO (Dimethyl Sulfoxide)";"Source";"A colorless, odorless organic solvent derived from the oxidation of dimethyl sulfide (DMS), used widely in industrial applications and as a precursor in the synthesis of dietary supplements like MSM";;;
+"src_16";"Rooster Combs";"Source";"The fleshy, red, and prominent growth on top of a rooster's head, more prominent than in hens";;;
+"src_17";"Bacteria (Streptococcus spp. or Bacillus spp.)";"Source";"Bacterial strains, typically used in fermentation for producing hyaluronic acid as well as in food processing, enzyme production, probiotics, and other industrial applications";;;
 "src_2";"Corn";"Source";"Also known as maize; widely cultivated for use in food, feed, and various industrial applications";;;"0"
-"src_3";"Animal Cartilage";"Source";"Tough connective tissue from cattle, poultry, and fish; used for chondroitin and collagen extraction, joint health supplements, traditional foods, pet feed, and biomedical applications";;;
+"src_3";"Animal Cartilage";"Source";"Tough connective tissue from cattle, poultry, and fish, used for collagen/gelatin and chondroitin extraction in supplements, foods, pet feed, and biomedical applications";;;
 "src_5";"Shark Cartilage";"Source";"Niche market, high-value material processed from shark skeletons (byproducts of meat/fin industries), mainly used in nutraceuticals and cosmetics";;;"0"
 "src_6";"Beef (Bovine Meat)";"Source";"Meat derived from Bovine animals, primarily Cattle, processed for human consumption and used in a wide range of food products";;;
 "src_7";"Pork (Pig Meat)";"Source";"Meat derived from Pigs, processed for human consumption and widely used in various food products";;;
 "src_8";"Poultry (Avian Meat)";"Source";"Meat derived from Avian species such as chicken, turkey, and duck, processed for human consumption and widely used in global food products";;;"0"
+"src_9";"Animal Bones";"Source";"Dense skeletal structures containing collagen and minerals; commercially rendered for gelatin, bone-derived ingredients (e.g., calcium phosphates), and functional food or pharmaceutical components";;;
