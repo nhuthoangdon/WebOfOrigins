@@ -226,8 +226,8 @@
 "src_13";"Other Fish Parts";"Source";"Various fish byproducts—such as heads, bones, and fins—processed for collagen extraction, fish protein hydrolysates, animal feed, fertilizers, and biomedical uses";;;
 "src_14";"DMS (Dimethyl Sulfide)";"Source";"A sulfur-containing compound originating from the breakdown of Lignin in wood pulp during Paper Manufacturing";;;
 "src_15";"DMSO (Dimethyl Sulfoxide)";"Source";"A colorless, odorless organic solvent derived from the oxidation of dimethyl sulfide (DMS), used widely in industrial applications and as a precursor in the synthesis of dietary supplements like MSM";;;
-"src_16";"Rooster Combs";"Source";"The fleshy, red, and prominent growth on top of a rooster's head, more prominent than in hens";;;
-"src_17";"Bacteria (Streptococcus spp. or Bacillus spp.)";"Source";"Bacterial strains, typically used in fermentation for producing hyaluronic acid as well as in food processing, enzyme production, probiotics, and other industrial applications";;;
+"src_16";"Rooster Combs";"Source";"The fleshy, red, and prominent growth on top of a rooster's head, more prominent than in hens";;;"0"
+"src_17";"Bacteria (Streptococcus spp. or Bacillus spp.)";"Source";"Bacterial strains, typically used in fermentation for producing hyaluronic acid as well as in food processing, enzyme production, probiotics, and other industrial applications";;;"1"
 "src_2";"Corn";"Source";"Also known as maize; widely cultivated for use in food, feed, and various industrial applications";;;"0"
 "src_3";"Animal Cartilage";"Source";"Tough connective tissue from cattle, poultry, and fish, used for collagen/gelatin and chondroitin extraction in supplements, foods, pet feed, and biomedical applications";;;
 "src_5";"Shark Cartilage";"Source";"Niche market, high-value material processed from shark skeletons (byproducts of meat/fin industries), mainly used in nutraceuticals and cosmetics";;;"0"
