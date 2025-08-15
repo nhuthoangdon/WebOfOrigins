@@ -161,8 +161,12 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
                 color: #C9E73A;
                 font-weight: 400;
             }
+    
+a#home-logo {
+    display: flex;
+}
     .nav-logo {
-        width: 4em;
+        width: 10em;
         height: auto;
     }
 
