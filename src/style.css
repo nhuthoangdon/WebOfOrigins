@@ -145,6 +145,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
                 text-decoration: none;
                 color: #F8FAFB;
                 transition: color 0.3s ease;
+                position: relative;
             }
             .menu a:visited {
                 color: #F8FAFB;
@@ -159,8 +160,27 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
             }
             .menu a.current {
                 color: #C9E73A;
-                font-weight: 400;
             }
+            .menu li a::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                width: 100%;
+                height: 2px;
+                background: #C9E73A;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                border-radius: 2px;
+                pointer-events: none;
+                opacity: 0.9;
+            }
+                .menu li a:hover::after,
+                .menu li a:focus::after {
+                    transform: scaleX(1);
+                }
     
 a#home-logo {
     display: flex;
@@ -205,7 +225,10 @@ p {
     letter-spacing: .03em;
 }
 
-b {font-weight: 700;}
+b {
+    font-weight: 700;
+    color:#AEA3FF;
+}
 
 a {
     color: #8ED0DC;
@@ -234,6 +257,8 @@ footer {
     }
         footer a:hover {
             font-weight: 800;
+            text-decoration: underline;
+            color: #C9E73A;
         }
         footer a.current {
             font-weight: 800;
@@ -308,6 +333,15 @@ a.button-link {
             background-color: #0491AA;
         }
 
+.link {
+    transition: color 0.1s;
+}
+    .link:hover {
+        color: #C9E73A;
+    }
+    .link:visited {
+        color: #611FF4;
+    }
 
 .main {
     max-width: 100vw;
@@ -321,20 +355,28 @@ a.button-link {
     margin: calc(84px + 2%) 15%;
 }
 
-    .about-content {
-        width: auto;
-        max-width: 100vw;
-        height: auto;
-    }
+.big-link {
+    font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
+    display: inline-flex;
+    transition: color 0.2s;
+}
 
-    .info-CTAs {
+
+.about-content {
+    width: auto;
+    max-width: 100vw;
+    height: auto;
+}
+
+    .sponsor-links {
         font-family: 'Source Code Pro', monospace;
         font-size: 1.1em;
         display: flex;
         flex-direction: column;
         gap: 1.5em;
     }
-        .info-CTAs a {
+        .sponsor-links a {
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -342,10 +384,13 @@ a.button-link {
             border-bottom: 1px solid;
             padding-bottom: 1.5em;
         }
-
-
-
-
+            .sponsor-links a:hover .fa-brands,
+            .sponsor-links a:focus .fa-brands,
+            .sponsor-links a:hover .fa-solid,
+            .sponsor-links a:focus .fa-solid {
+                color: #C9E73A !important;
+                transition: color 0.2s;
+            }
 
 
 @media only screen and (max-width: 769px) {
