@@ -575,6 +575,42 @@ function createNetwork(nodesData, edgesData) {
             // Disable stabilization and reapply view position
             network.moveTo({ position: { x, y }, scale, animation: false });
         });
+        
+        network.on("click", function (params) {
+            if (params.nodes.length === 1) {
+                const selectedNodeIds = params.nodes;
+                const highlightDepth = 1;
+                let nodesToHighlight = new Set(selectedNodeIds);
+                let edgesToHighlight = new Set();
+
+                for (let depth = 0; depth < highlightDepth; depth++) {
+                    let currentNodes = new Set(nodesToHighlight);
+                    currentNodes.forEach(nodeId => {
+                        network.getConnectedNodes(nodeId).forEach(connectedNodeId => {
+                            nodesToHighlight.add(connectedNodeId);
+                        });
+                    });
+                }
+
+                nodesToHighlight.forEach(nodeId => {
+                    network.getConnectedEdges(nodeId).forEach(edgeId => {
+                        const edge = edges.get(edgeId);
+                        if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
+                            edgesToHighlight.add(edgeId);
+                        }
+                    });
+                });
+
+                network.setSelection({
+                    nodes: Array.from(nodesToHighlight),
+                    edges: Array.from(edgesToHighlight)
+                }, {
+                    highlightEdges: false
+                });
+            } else if (params.nodes.length === 0 && params.edges.length === 0) {
+                network.unselectAll();
+            }
+         });
 
 }
 
