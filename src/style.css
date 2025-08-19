@@ -360,6 +360,9 @@ a.button-link {
     display: inline-flex;
     transition: color 0.2s;
 }
+    .big-link:hover {
+        color: #C9E73A;
+    }
 
 
 .about-content {
