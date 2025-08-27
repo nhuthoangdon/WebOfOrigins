@@ -1,3 +1,5 @@
+let nodes, edges, network;
+
 // Function to load and parse CSV files
 function loadData(callback) {
 let nodesData = [];
@@ -18,8 +20,6 @@ Papa.parse("data/nodes.csv", {
                     .trim() // Remove leading/trailing whitespace
                     .replace(/\u00A0/g, " ") // Replace non-breaking spaces with regular spaces
                     .replace(/[\r\n]+/g, " "); // Replace newlines with spaces
-                // console.log(`Raw Node Label: "${rawLabel}" (Length: ${rawLabel.length})`);
-                // console.log(`Cleaned Node Label: "${cleanedLabel}" (Length: ${cleanedLabel.length})`);
                 const title = row.title || ""; //fallback to empty string if missing
                 const is_sustainable = parseInt(row.is_sustainable, 10) === 1;
                 return {
@@ -48,8 +48,6 @@ Papa.parse("data/nodes.csv", {
                             .trim()
                             .replace(/\u00A0/g, " ")
                             .replace(/[\r\n]+/g, " ");
-                        // console.log(`Raw Edge Label: "${rawLabel}" (Length: ${rawLabel.length})`);
-                        // console.log(`Cleaned Edge Label: "${cleanedLabel}" (Length: ${cleanedLabel.length})`);
                         const title = row.title || "";
                         const roleCount = parseInt(row.roleCount, 10) || 1; // Convert to number, default to 1 if missing
                         return {
@@ -78,6 +76,7 @@ function wrapText(text, maxChars = 15) { //function to wrap long label text into
 if (!text) return "";  // Prevent errors if label is missing
 return text.replace(new RegExp(`(.{1,${maxChars}})(\\s|$)`, "g"), "$1\n").trim();
 }
+
 
 // Function to create the network
 function createNetwork(nodesData, edgesData) {
@@ -169,7 +168,7 @@ function createNetwork(nodesData, edgesData) {
     const connectedNodesData = nodesData.filter(node => nodeDegrees[node.id] > 0);
 
     // Prepare nodes for Vis.js with size based on degree and level based on type
-    const nodes = new vis.DataSet(connectedNodesData.map(node => {
+        nodes = new vis.DataSet(connectedNodesData.map(node => {
         const degree = nodeDegrees[node.id] || 0;
         // const nodeLevel = levelMap[node.type] !== undefined ? levelMap[node.type] : 0; //leveling based on node level settings
         // const nodeLevel = levelMap[node.label] || levelMap[node.type] || 0; //apply sub-levels to specific nodes e.g. Shrimp Farming: 6.2, Crab Farming: 6.3
@@ -183,15 +182,11 @@ function createNetwork(nodesData, edgesData) {
             offset = Math.min(offset, maxOffset); // Cap explicitly
         }
         const nodeLevel = baseLevel + (offset / 100); // Higher division for slight offset
-        console.log(`Node: ${node.label}, Degree: ${degree}, Offset: ${offset}, ScaledOffset: ${offset / 10}, Level: ${nodeLevel}`);
         
         const isFlagNode = ['iCountry', 'smCountry', 'icCountry'].includes(node.type);
         const nodeSize = 20 + degree * 10; // Base size of 20, plus 10 per edge
         const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined; // Skip invalid URLs
         const title = node.is_sustainable ? `${node.title || "No Description"} (Sustainable)` : node.title || "No Description";
-
-        // console.log(`Node: ${node.label}, Type: ${node.type}, Degree: ${degree}, Size: ${nodeSize}, Level: ${nodeLevel}`); // Debug: Log each node's details
-        // console.log(`Node: ${node.label}, Title: ${node.title}`);
 
         const nodeData = {
             id: node.id,
@@ -222,13 +217,11 @@ function createNetwork(nodesData, edgesData) {
             level: nodeLevel,
             title: node.title || "No Description"
         };
-
-            // console.log(`Node ID: ${node.id}, Type: ${node.type}, Shape: ${nodeData.shape}, Image: ${nodeData.image}`);
             return nodeData;
-}));
+    }));
 
     // Prepare edges for Vis.js
-    const edges = new vis.DataSet(edgesData.map((edge, index, edgesArray) => {
+    edges = new vis.DataSet(edgesData.map((edge, index, edgesArray) => {
         // Check for multiple edges between the same nodes
         const sameNodeEdges = edgesArray.filter(e => 
             (e.from === edge.from && e.to === edge.to) || 
@@ -261,7 +254,7 @@ function createNetwork(nodesData, edgesData) {
             }
         };
     }));
-
+    
     // Create the network
     const container = document.getElementById("network");
     const data = { nodes: nodes, edges: edges };
@@ -508,7 +501,7 @@ function createNetwork(nodesData, edgesData) {
         }
     };
 
-    const network = new vis.Network(container, data, options);
+    network = new vis.Network(container, data, options);
 
         network.on("selectNode", function (params) {
         const selectedNodeIds = params.nodes; // Support multiple selected nodes
@@ -612,7 +605,55 @@ function createNetwork(nodesData, edgesData) {
             }
          });
 
+    // Ensure toggle element exists and bind event
+    const toggleElement = document.getElementById('country-toggle');
+    if (toggleElement) {
+        toggleElement.addEventListener('change', function (event) {
+            toggleCountryNodes(event.target.checked); // Explicitly use event.target.checked
+        });
+    } else {
+        console.error("Country toggle element (#country-toggle) not found in DOM");
+         }
 }
+
+function toggleCountryNodes(show) {
+    if (show === undefined) {
+        console.error("Show parameter is undefined, check DOM or event binding");
+        return;
+    }
+    const countryTypes = ['iCountry', 'smCountry', 'icCountry'];
+    const countryNodeIds = nodes.getIds().filter(id => {
+        const node = nodes.get(id);
+        return node && countryTypes.includes(node.group);
+    });
+
+    if (show) {
+        // When showing, rebuild all nodes with a fresh dataset
+        const nonCountryNodes = nodes.get().filter(node => !countryTypes.includes(node.group));
+        const countryNodes = countryNodeIds.map(id => {
+            const node = nodes.get(id);
+            // Create a new object without hidden property
+            const { hidden, ...cleanNode } = node;
+            return cleanNode;
+        });
+        nodes.clear(); // Clear existing nodes
+        nodes.add([...nonCountryNodes, ...countryNodes]); // Re-add all nodes
+    } else {
+        // When hiding, set hidden to true
+        nodes.update(countryNodeIds.map(id => ({ id, hidden: true })));
+    }
+
+    // Refresh the network and adjust layout
+    // network.setData({ nodes, edges });
+    // network.fit({ animation: false });
+
+    // Verify updated states
+    const updatedStates = countryNodeIds.map(id => ({
+        id,
+        hidden: nodes.get(id)?.hidden || false
+    }));
+}
+
 
 // Load data and create the network
 loadData((nodesData, edgesData) => {

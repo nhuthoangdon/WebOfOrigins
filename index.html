@@ -94,7 +94,40 @@
         </div>
     </div>
 
-    
+    <div id="control-panel" class="control-panel collapsed">
+      <button id="control-panel-toggle" class="control-panel-toggle" aria-label="Expand control panel">
+        <i class="fa-solid fa-chevron-left"></i>
+        <span class="control-panel-title label_small">Filters & Settings</span>
+      </button>
+      <div class="control-panel-content">
+        <div class="checkbox-row" id="country-toggle">
+          <input type="checkbox" id="country-toggle" name="country-toggle" checked>
+          <label for="country-toggle">Show Country</label>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const panel = document.getElementById('control-panel');
+      const toggle = document.getElementById('control-panel-toggle');
+      const icon = toggle.querySelector('i');
+
+      toggle.addEventListener('click', function() {
+        panel.classList.toggle('collapsed');
+        if (panel.classList.contains('collapsed')) {
+          icon.classList.remove('fa-chevron-right');
+          icon.classList.add('fa-chevron-left');
+          toggle.setAttribute('aria-label', 'Expand control panel');
+        } else {
+          icon.classList.remove('fa-chevron-left');
+          icon.classList.add('fa-chevron-right');
+          toggle.setAttribute('aria-label', 'Collapse control panel');
+        }
+      });
+    });
+    </script>
 
 
 
