@@ -3,9 +3,10 @@
 "comp_2";"Chondroitin";"Composition";"Natural Compound: A natural substance found in cartilage around joints that helps maintain cartilage structure and cushion the joints (22)";;;
 "comp_3";"Gelatin";"Composition";"Natural Compound: A protein derived by boiling animal tissues, used as a gelling agent, thickener, or stabilizer in food, pharmaceutical, and industrial products, providing texture, elasticity, or encapsulation properties ()";;;
 "comp_4";"Collagen";"Composition";"Natural Compound: A structural protein abundant in animal tissues such as skin, bones, and connective tissues; commercially extracted for use in gelatin production, collagen peptides, nutraceuticals, cosmetics, pharmaceuticals, and biomedical applications ()";;;
-"comp_5";"Marine Collagen";"Composition";"Natural Compound: Collagen derived from marine life, most commonly fish ()";;;
+"comp_5";"Marine Collagen";"Composition";"Natural Compound: Collagen derived from marine life, most commonly fish, smaller peptide sizes than land-animal collagen, and is thought to be better absorbed by the body ()";;;
 "comp_6";"MSM (Methylsulfonylmethane)";"Composition";"Natural Compound: A natural organic sulfur compound found in many living organisms, often used as a dietary supplement for potential joint and skin health benefits ()";;;
 "comp_7";"Hyaluronic Acid";"Composition";"Natural Compound: A naturally occurring polysaccharide found in connective tissues and skin, known for its exceptional ability to retain moisture and support skin hydration, joint lubrication, and tissue repair ()";;;
+"comp_8";"Surimi";"Composition";"Processed Food Product: Paste made from minced and rinsed Meat of mild-flavoured, lean, white Fish (most commonly Alaska Pollock and Pacific Whiting) ()";;;
 "con_1";"Excessive Fertilisation";"Concern";"Overuse of chemical fertilisers. Often relates to Agriculture";;;
 "con_10";"Industrial Waste";"Concern";"Generation of hazardous or non-recyclable waste from industry. Often relates to Various Industries";;;
 "con_11";"Plastic Pollution";"Concern";"Accumulation of plastic waste in the environment. Often relates to Various Industries";;;
@@ -68,7 +69,11 @@
 "iCountry_35";"Netherlands";"iCountry";"Netherlands";"image";"https://flagsapi.com/NL/flat/64.png";
 "iCountry_36";"Denmark";"iCountry";"Denmark";"image";"https://flagsapi.com/DK/flat/64.png";
 "iCountry_37";"Poland";"iCountry";"Poland";"image";"https://flagsapi.com/PL/flat/64.png";
+"iCountry_38";"Iceland";"iCountry";"Iceland";"image";"https://flagsapi.com/IS/flat/64.png";
+"iCountry_39";"Maldives";"iCountry";"Maldives";"image";"https://flagsapi.com/MV/flat/64.png";
 "iCountry_4";"China";"iCountry";"China";"image";"https://flagsapi.com/CN/flat/64.png";
+"iCountry_40";"Norway";"iCountry";"Norway";"image";"https://flagsapi.com/NO/flat/64.png";
+"iCountry_41";"Chile";"iCountry";"Chile";"image";"https://flagsapi.com/CL/flat/64.png";
 "iCountry_5";"Mexico";"iCountry";"Mexico";"image";"https://flagsapi.com/MX/flat/64.png";
 "iCountry_6";"Japan";"iCountry";"Japan";"image";"https://flagsapi.com/JP/flat/64.png";
 "iCountry_7";"India";"iCountry";"India";"image";"https://flagsapi.com/IN/flat/64.png";
@@ -105,7 +110,11 @@
 "icCountry_35";"Netherlands";"icCountry";"Netherlands";"image";"https://flagsapi.com/NL/flat/64.png";
 "icCountry_36";"Denmark";"icCountry";"Denmark";"image";"https://flagsapi.com/DK/flat/64.png";
 "icCountry_37";"Poland";"icCountry";"Poland";"image";"https://flagsapi.com/PL/flat/64.png";
+"icCountry_38";"Iceland";"icCountry";"Iceland";"image";"https://flagsapi.com/IS/flat/64.png";
+"icCountry_39";"Maldives";"icCountry";"Maldives";"image";"https://flagsapi.com/MV/flat/64.png";
 "icCountry_4";"China";"icCountry";"China";"image";"https://flagsapi.com/CN/flat/64.png";
+"icCountry_40";"Norway";"icCountry";"Norway";"image";"https://flagsapi.com/NO/flat/64.png";
+"icCountry_41";"Chile";"icCountry";"Chile";"image";"https://flagsapi.com/CL/flat/64.png";
 "icCountry_5";"Mexico";"icCountry";"Mexico";"image";"https://flagsapi.com/MX/flat/64.png";
 "icCountry_6";"Japan";"icCountry";"Japan";"image";"https://flagsapi.com/JP/flat/64.png";
 "icCountry_7";"India";"icCountry";"India";"image";"https://flagsapi.com/IN/flat/64.png";
@@ -166,6 +175,8 @@
 "item_18";"Energy Gels";"Item";"Dietary Supplement for Concentrated, easily digestible carbohydrate-based products, often with added electrolytes or other nutrients, designed to provide rapid energy for endurance activities";;;
 "item_19";"Protein Bars";"Item";"Food for Compact supplemental foods formulated with concentrated protein (dairy, plant, or blended), carbohydrates, fats, and added nutrients, designed for convenient nutrition and supplementation";;;
 "item_2";"Gummies";"Item";"Confectionery for Soft, chewy sweets shaped in various forms, often fruit-flavored";;;
+"item_20";"Photographic Film";"Item";"Non-Ingestible for Strip of plastic coated with a chemical emultion used in analog or traditional photography";;;
+"item_21";"Crab Stick";"Item";"Food for Processed seafood made primarily from minced white Fish, shaped and flavoured to resemble crab meat";;;
 "item_3";"Jello";"Item";"Dessert for Wiggly, fruit-flavored dessert gel, typically served chilled";;;
 "item_4";"Marshmallows";"Item";"Confectionery for Fluffy, sweet confections used in desserts or hot drinks";;;
 "item_5";"Dairy Yogurt";"Item";"Dairy for Creamy dairy product";;;
@@ -174,12 +185,13 @@
 "item_8";"Margarine";"Item";"Spread for Vegetable oil spread, butter substitute";;;
 "item_9";"Ice Cream";"Item";"Dessert for Frozen dessert";;;
 "mat_1";"Crustacean Shells";"rawMaterial";"Crustacean exoskeletons, often from shrimp (largest source), lobsters, crabs, and crayfish; used to produce chitin, chitosan, and glucosamine";;;"0"
+"mat_10";"Wild-Caught Fish";"rawMaterial";"Fish harvested from natural marine and freshwater environments for food, supplements, and byproducts, incl. Cod, Tuna, Anchovies, and Sardines";;;
 "mat_2";"Filamentuous Fungi";"rawMaterial";"Saprophytic microorganisms commonly used in various industries to produce enzymes, chemicals, and other compounds";;;"1"
 "mat_3";"Bovine (Cow)";"rawMaterial";"Domesticated cattle raised for beef, dairy, leather, and byproducts like gelatin, tallow, and bone meal";;;"0"
 "mat_4";"Sharks and Elasmobranchs";"rawMaterial";"Cartilaginous fish harvested for meat, fins, cartilage, liver oil, and skin; byproducts used in supplements, cosmetics, and traditional medicine";;;"0"
 "mat_5";"Porcine (Pig)";"rawMaterial";"Domesticated pigs raised for meat (pork) and byproducts such as insulin, gelatin, heparin, and lard";;;"0"
 "mat_6";"Avian (Poultry/Fowls)";"rawMaterial";"Birds like chickens and ducks raised for meat, eggs, feathers, and byproducts such as gelatin, enzymes, and vaccines";;;"0"
-"mat_7";"Fish";"rawMaterial";"Aquatic species farmed or caught for meat, oils, collagen, fishmeal, and other byproducts used in feed, supplements, and cosmetics";;;"0"
+"mat_7";"Farmed Fish";"rawMaterial";"Fish raised in controlled aquaculture systems for Food, Nutritional Supplements, and other Byproducts, most commonly Salmon, Tilapia, Catfish, and Carp";;;"0"
 "mat_8";"Dairy Cows";"rawMaterial";"Cattle selectively bred for high milk production; central to the dairy industry for producing milk, cheese, yogurt and other dairy products";;;"0"
 "mat_9";"Lignin (Wood)";"rawMaterial";"A complex organic polymer found in the cell walls of woody plants, providing rigidity and resistance to decay; often obtained as a byproduct of the pulp and Paper industry";;;
 "smCountry_1";"USA";"smCountry";"USA";"image";"https://flagsapi.com/US/flat/64.png";
@@ -213,7 +225,11 @@
 "smCountry_35";"Netherlands";"smCountry";"Netherlands";"image";"https://flagsapi.com/NL/flat/64.png";
 "smCountry_36";"Denmark";"smCountry";"Denmark";"image";"https://flagsapi.com/DK/flat/64.png";
 "smCountry_37";"Poland";"smCountry";"Poland";"image";"https://flagsapi.com/PL/flat/64.png";
+"smCountry_38";"Iceland";"smCountry";"Iceland";"image";"https://flagsapi.com/IS/flat/64.png";
+"smCountry_39";"Maldives";"smCountry";"Maldives";"image";"https://flagsapi.com/MV/flat/64.png";
 "smCountry_4";"China";"smCountry";"China";"image";"https://flagsapi.com/CN/flat/64.png";
+"smCountry_40";"Norway";"smCountry";"Norway";"image";"https://flagsapi.com/NO/flat/64.png";
+"smCountry_41";"Chile";"smCountry";"Chile";"image";"https://flagsapi.com/CL/flat/64.png";
 "smCountry_5";"Mexico";"smCountry";"Mexico";"image";"https://flagsapi.com/MX/flat/64.png";
 "smCountry_6";"Japan";"smCountry";"Japan";"image";"https://flagsapi.com/JP/flat/64.png";
 "smCountry_7";"India";"smCountry";"India";"image";"https://flagsapi.com/IN/flat/64.png";
@@ -228,6 +244,7 @@
 "src_15";"DMSO (Dimethyl Sulfoxide)";"Source";"A colorless, odorless organic solvent derived from the oxidation of dimethyl sulfide (DMS), used widely in industrial applications and as a precursor in the synthesis of dietary supplements like MSM";;;
 "src_16";"Rooster Combs";"Source";"The fleshy, red, and prominent growth on top of a rooster's head, more prominent than in hens";;;"0"
 "src_17";"Bacteria (Streptococcus spp. or Bacillus spp.)";"Source";"Bacterial strains, typically used in fermentation for producing hyaluronic acid as well as in food processing, enzyme production, probiotics, and other industrial applications";;;"1"
+"src_18";"Fish Meat & Products";"Source";"Fish Flesh and related products, primarily consumed as food";;;"0"
 "src_2";"Corn";"Source";"Also known as maize; widely cultivated for use in food, feed, and various industrial applications";;;"0"
 "src_3";"Animal Cartilage";"Source";"Tough connective tissue from cattle, poultry, and fish, used for collagen/gelatin and chondroitin extraction in supplements, foods, pet feed, and biomedical applications";;;
 "src_5";"Shark Cartilage";"Source";"Niche market, high-value material processed from shark skeletons (byproducts of meat/fin industries), mainly used in nutraceuticals and cosmetics";;;"0"
