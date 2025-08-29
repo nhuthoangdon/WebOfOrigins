@@ -614,6 +614,7 @@ function createNetwork(nodesData, edgesData) {
     } else {
         console.error("Country toggle element (#country-toggle) not found in DOM");
          }
+
 }
 
 function toggleCountryNodes(show) {
@@ -658,4 +659,36 @@ function toggleCountryNodes(show) {
 // Load data and create the network
 loadData((nodesData, edgesData) => {
     createNetwork(nodesData, edgesData);
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const panel = document.getElementById('control-panel');
+    const toggle = document.getElementById('control-panel-toggle');
+    const icon = toggle.querySelector('i');
+
+    toggle.addEventListener('click', function () {
+        panel.classList.toggle('collapsed');
+        if (panel.classList.contains('collapsed')) {
+            icon.classList.remove('fa-chevron-right');
+            icon.classList.add('fa-chevron-left');
+            toggle.setAttribute('aria-label', 'Expand control panel');
+        } else {
+            icon.classList.remove('fa-chevron-left');
+            icon.classList.add('fa-chevron-right');
+            toggle.setAttribute('aria-label', 'Collapse control panel');
+        }
+    });
+});
+
+document.addEventListener('click', function (event) {
+    const panel = document.getElementById('control-panel');
+    const toggle = document.getElementById('control-panel-toggle');
+    if (!panel.contains(event.target) && !toggle.contains(event.target) && !panel.classList.contains('collapsed')) {
+        panel.classList.add('collapsed');
+        toggle.querySelector('i').classList.remove('fa-chevron-right');
+        toggle.querySelector('i').classList.add('fa-chevron-left');
+        toggle.setAttribute('aria-label', 'Expand control panel');
+    }
 });
