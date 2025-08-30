@@ -42,8 +42,8 @@ div.vis-tooltip {
     font-size: 14px;
     max-width: 500px;
     white-space: pre-wrap;
-    background-color: rgba(238, 254, 251, 0.85);
-    border-radius: 24px;
+    background-color: rgba(204, 223, 240, 0.85);
+    border-radius: 12px;
     padding: 6px 14px;
     border: 1px solid #BBFFF9;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.15);
@@ -110,6 +110,12 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     transform: rotate(90deg);
     transform-origin: center center;
 }
+
+    div.vis-button:hover {
+        background-color: rgba(142, 208, 220, 0.15);
+        box-shadow: 0 0 1px rgba(201, 231, 58, 0.3);
+        transition: background-color 0.2s, box-shadow 0.2s;
+    }
 
 .menu {
     position: absolute;
@@ -305,6 +311,39 @@ a#home-logo {
     font-weight: 600;
 }
 
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+#node-search {
+    padding: 0.5em;
+    border-radius: 6px;
+    border: 1px solid #8ED0DC;
+    background: #1a232b;
+    color: #F8FAFB;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9em; 
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+    .search-container:hover {
+        background: #263544;
+        box-shadow: 0 0 8px rgba(142, 208, 220, 0.3);
+    }
+
+    #node-search:hover {
+        border-color: #C9E73A;
+        box-shadow: 0 0 5px rgba(201, 231, 58, 0.5); 
+    }
+    
+    #node-search::placeholder {
+        color: #8ED0DC;
+        opacity: 0.5;
+        font-weight: 200;
+        font-style: italic;
+    }
 
 @media (max-width: 600px) {
     .control-panel {

@@ -617,6 +617,38 @@ function createNetwork(nodesData, edgesData) {
 
 }
 
+let matchingNodes = [];
+let currentIndex = 0;
+
+const searchInput = document.getElementById('node-search');
+if (searchInput) {
+    searchInput.addEventListener('input', function () {
+        const keyword = searchInput.value.toLowerCase().trim();
+        matchingNodes = nodes.getIds().filter(id => {
+            const node = nodes.get(id);
+            return node && node.label.toLowerCase().includes(keyword);
+        });
+
+        currentIndex = 0;
+        network.setSelection({ nodes: matchingNodes }, { highlightEdges: true });
+        if (matchingNodes.length > 0) {
+            network.focus(matchingNodes[0], { scale: 1.5, animation: true });
+        } else {
+            network.unselectAll();
+        }
+    });
+
+    searchInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            if (matchingNodes.length > 0) {
+                currentIndex = (currentIndex + 1) % matchingNodes.length;
+                network.focus(matchingNodes[currentIndex], { scale: 1.5, animation: true });
+            }
+        }
+    });
+}
+
 function toggleCountryNodes(show) {
     if (show === undefined) {
         console.error("Show parameter is undefined, check DOM or event binding");
