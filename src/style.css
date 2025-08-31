@@ -345,6 +345,36 @@ a#home-logo {
         font-style: italic;
     }
 
+        #node-search-clear {
+            position: absolute;
+            right: 0;
+            top: auto;
+            transform: translate(-2.75em, 1em);
+            width: 1.5em;
+            height: 1.5em;
+            background: rgba(248, 250, 251, 0.1);
+            color: #F2F5F7;
+            border-radius: 50%;
+            border: solid 1px rgba(248, 250, 251, 0.2);
+            cursor: pointer;
+            display: none;
+            font-size: 0.6em;
+            font-weight: 100;
+            line-height: 1;
+            padding: 0;
+        }
+    
+        #node-search-clear:hover {
+            background: #C9E73A;
+            color: #070A14;
+        }
+    
+        /* .search-container:hover #node-search-clear,
+        #node-search:focus+#node-search-clear {
+            display: block;
+        } */
+    
+
 @media (max-width: 600px) {
     .control-panel {
         width: 90vw;

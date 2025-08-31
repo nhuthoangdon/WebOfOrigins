@@ -621,8 +621,9 @@ let matchingNodes = [];
 let currentIndex = 0;
 
 const searchInput = document.getElementById('node-search');
-if (searchInput) {
-    searchInput.addEventListener('input', function () {
+const clearButton = document.getElementById('node-search-clear');
+if (searchInput && clearButton) {
+    function performSearch() {
         const keyword = searchInput.value.toLowerCase().trim();
         matchingNodes = nodes.getIds().filter(id => {
             const node = nodes.get(id);
@@ -630,11 +631,20 @@ if (searchInput) {
         });
 
         currentIndex = 0;
+        clearButton.style.display = keyword.length > 0 ? 'block' : 'none';
         network.setSelection({ nodes: matchingNodes }, { highlightEdges: true });
         if (matchingNodes.length > 0) {
             network.focus(matchingNodes[0], { scale: 1.5, animation: true });
         } else {
             network.unselectAll();
+        }
+    }
+
+    searchInput.addEventListener('input', performSearch);
+
+    searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim().length > 0) {
+            performSearch();
         }
     });
 
@@ -646,6 +656,14 @@ if (searchInput) {
                 network.focus(matchingNodes[currentIndex], { scale: 1.5, animation: true });
             }
         }
+    });
+
+    clearButton.addEventListener('click', function () {
+        searchInput.value = '';
+        clearButton.style.display = 'none';
+        matchingNodes = [];
+        currentIndex = 0;
+        network.unselectAll();
     });
 }
 
