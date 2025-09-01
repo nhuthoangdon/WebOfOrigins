@@ -622,7 +622,8 @@ let currentIndex = 0;
 
 const searchInput = document.getElementById('node-search');
 const clearButton = document.getElementById('node-search-clear');
-if (searchInput && clearButton) {
+const resultCount = document.getElementById('search-result-count');
+if (searchInput && clearButton && resultCount) {
     function performSearch() {
         const keyword = searchInput.value.toLowerCase().trim();
         matchingNodes = nodes.getIds().filter(id => {
@@ -632,6 +633,7 @@ if (searchInput && clearButton) {
 
         currentIndex = 0;
         clearButton.style.display = keyword.length > 0 ? 'block' : 'none';
+        resultCount.textContent = matchingNodes.length > 0 ? `1 of ${matchingNodes.length}` : '0 of 0';
         network.setSelection({ nodes: matchingNodes }, { highlightEdges: true });
         if (matchingNodes.length > 0) {
             network.focus(matchingNodes[0], { scale: 1.5, animation: true });
@@ -653,6 +655,7 @@ if (searchInput && clearButton) {
             event.preventDefault();
             if (matchingNodes.length > 0) {
                 currentIndex = (currentIndex + 1) % matchingNodes.length;
+                resultCount.textContent = `${currentIndex + 1} of ${matchingNodes.length}`;
                 network.focus(matchingNodes[currentIndex], { scale: 1.5, animation: true });
             }
         }
@@ -663,6 +666,7 @@ if (searchInput && clearButton) {
         clearButton.style.display = 'none';
         matchingNodes = [];
         currentIndex = 0;
+        resultCount.textContent = '0 of 0';
         network.unselectAll();
     });
 }
