@@ -2,32 +2,59 @@
 
 console.log('script.js is loaded and running');
 
-$(document).ready(function() {
-  $('.hamburger-menu').click(function() {
-    $('.menu-items').toggleClass('menu-mobile').css({
-      'display': function() {
-        return $(this).hasClass('menu-mobile') ? 'flex' : 'none';
-      },
+//MENU - MOBILE TOGGLE
+$(document).ready(function () {
+  const $menu = $('.menu-items');
+  const $hamburger = $('.hamburger-menu');
+
+  // Helper: Open the menu
+  function openMenu() {
+    $menu.addClass('menu-mobile').css({
+      'display': 'flex',
       'transition': 'opacity 0.3s ease, transform 0.3s ease',
-      'opacity': function() {
-        return $(this).hasClass('menu-mobile') ? '1' : '0';
-      },
-      'transform': function() {
-        return $(this).hasClass('menu-mobile') ? 'translateY(0)' : 'translateY(-10px)';
-      }
+      'opacity': '1',
+      'transform': 'translateY(0)'
     });
+  }
+
+  // Helper: Close the menu
+  function closeMenu() {
+    $menu.removeClass('menu-mobile').css({
+      'display': 'none',
+      'opacity': '0',
+      'transform': 'translateY(-10px)'
+    });
+  }
+
+  // Toggle menu on hamburger click
+  $hamburger.click(function (e) {
+    e.stopPropagation(); // stop click from reaching document
+    if ($menu.hasClass('menu-mobile')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
-  $(window).scroll(function() {
-    if ($('.menu-items').hasClass('menu-mobile')) {
-      $('.menu-items').removeClass('menu-mobile').css({
-        'display': 'none',
-        'opacity': '0',
-        'transform': 'translateY(-10px)'
-      });
+  // Close menu on scroll
+  $(window).scroll(function () {
+    if ($menu.hasClass('menu-mobile')) {
+      closeMenu();
+    }
+  });
+
+  // Close menu on clicking outside
+  $(document).click(function (e) {
+    if (
+      $menu.hasClass('menu-mobile') &&
+      !$menu.is(e.target) && $menu.has(e.target).length === 0 &&
+      !$hamburger.is(e.target) && $hamburger.has(e.target).length === 0
+    ) {
+      closeMenu();
     }
   });
 });
+
 
 
 

@@ -72,7 +72,7 @@ Papa.parse("data/nodes.csv", {
 });
 }
 
-function wrapText(text, maxChars = 15) { //function to wrap long label text into multiple lines
+function wrapText(text, maxChars = 30) { //function to wrap long label text into multiple lines
 if (!text) return "";  // Prevent errors if label is missing
 return text.replace(new RegExp(`(.{1,${maxChars}})(\\s|$)`, "g"), "$1\n").trim();
 }
@@ -617,59 +617,249 @@ function createNetwork(nodesData, edgesData) {
 
 }
 
-let matchingNodes = [];
-let currentIndex = 0;
 
-const searchInput = document.getElementById('node-search');
-const clearButton = document.getElementById('node-search-clear');
-const resultCount = document.getElementById('search-result-count');
-if (searchInput && clearButton && resultCount) {
-    function performSearch() {
-        const keyword = searchInput.value.toLowerCase().trim();
-        matchingNodes = nodes.getIds().filter(id => {
-            const node = nodes.get(id);
-            return node && node.label.toLowerCase().includes(keyword);
-        });
+const searchInput = document.getElementById("large-search-input");
+const searchBtn = document.getElementById("large-search-btn");
+const searchResults = document.getElementById("search-results");
+const drawerPanel = document.createElement("div");
+      drawerPanel.className = "global-drawer";
+      drawerPanel.style.display = "none";
+      document.body.appendChild(drawerPanel);
 
-        currentIndex = 0;
-        clearButton.style.display = keyword.length > 0 ? 'block' : 'none';
-        resultCount.textContent = matchingNodes.length > 0 ? `1 of ${matchingNodes.length}` : '0 of 0';
-        network.setSelection({ nodes: matchingNodes }, { highlightEdges: true });
-        if (matchingNodes.length > 0) {
-            network.focus(matchingNodes[0], { scale: 1.5, animation: true });
-        } else {
-            network.unselectAll();
-        }
+// Function to update drawer content
+const updateDrawerContent = (nodeId, nodeLabel) => {
+    const connectedEdges = network.getConnectedEdges(nodeId);
+    if (connectedEdges.length === 0 || connectedEdges.every(edgeId => edges.get(edgeId).title === "No Description")) {
+        return `<h3>${nodeLabel.replace(/\n/g, " ")} Highlights</h3><p style="color: #28282bff;">No further info found for this item. Please check back later.</p>`;
+    } else {
+        const validEdgeTitles = connectedEdges
+            .map(edgeId => {
+                const edge = edges.get(edgeId);
+                return edge.title !== "No Description" ? edge.title : null;
+            })
+            .filter(title => title !== null)
+            .map(title => title || "No further info found.");
+        // Convert array to ul with li elements for bullets
+        const listItems = validEdgeTitles.map(title => `<li>${title}</li>`).join("");
+        return `<h3>${nodeLabel.replace(/\n/g, " ")} Highlights</h3><ul>${listItems}</ul>`;
     }
+      };
 
-    searchInput.addEventListener('input', performSearch);
 
-    searchInput.addEventListener('focus', () => {
-        if (searchInput.value.trim().length > 0) {
-            performSearch();
+// Toggle function to handle open/close and content
+const toggleDrawer = (nodeId, nodeLabel) => {
+    const isDrawerOpen = window.jQuery ? $(".global-drawer").is(":visible") : drawerPanel.style.display === "block";
+
+    if (isDrawerOpen) {
+        if (drawerPanel.dataset.currentNodeId !== nodeId) {
+            drawerPanel.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+            drawerPanel.dataset.currentNodeId = nodeId;
         }
-    });
+    } else {
+        drawerPanel.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+        if (window.jQuery) {
+            $(drawerPanel).show().animate({ right: "0" }, 200);
+        } else {
+            drawerPanel.style.display = "block";
+            drawerPanel.classList.add("open");
+        }
+        drawerPanel.dataset.currentNodeId = nodeId;
+    }
+      };
 
-    searchInput.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            if (matchingNodes.length > 0) {
-                currentIndex = (currentIndex + 1) % matchingNodes.length;
-                resultCount.textContent = `${currentIndex + 1} of ${matchingNodes.length}`;
-                network.focus(matchingNodes[currentIndex], { scale: 1.5, animation: true });
+// Outside click handler with jQuery or vanilla fallback
+if (window.jQuery) {
+    $(document).on("click", function (event) {
+        if (
+            $(".global-drawer").is(":visible") &&
+            !$(drawerPanel).is(event.target) &&
+            $(event.target).closest(".global-drawer").length === 0 &&
+            !$(event.target).hasClass("btn-tertiary")
+        ) {
+            if (window.jQuery) {
+                $(drawerPanel).animate({ right: "-400px" }, 200, function () {
+                    $(this).hide();
+                });
+            } else {
+                drawerPanel.classList.remove("open");
+                drawerPanel.addEventListener("transitionend", function hideAfter() {
+                    if (!drawerPanel.classList.contains("open")) {
+                        drawerPanel.style.display = "none";
+                    }
+                    drawerPanel.removeEventListener("transitionend", hideAfter);
+                });
             }
+            delete drawerPanel.dataset.currentNodeId; // Clear current node ID when closed
         }
     });
-
-    clearButton.addEventListener('click', function () {
-        searchInput.value = '';
-        clearButton.style.display = 'none';
-        matchingNodes = [];
-        currentIndex = 0;
-        resultCount.textContent = '0 of 0';
-        network.unselectAll();
+} else {
+    document.addEventListener("click", function (event) {
+        if (
+            drawerPanel.style.display === "block" &&
+            !drawerPanel.contains(event.target) &&
+            !event.target.classList.contains("btn-tertiary")
+        ) {
+            drawerPanel.classList.remove("open");
+            drawerPanel.addEventListener("transitionend", function hideAfter() {
+                if (!drawerPanel.classList.contains("open")) {
+                    drawerPanel.style.display = "none";
+                }
+                drawerPanel.removeEventListener("transitionend", hideAfter);
+            });
+            delete drawerPanel.dataset.currentNodeId; // Clear current node ID when closed
+        }
     });
-}
+      }
+
+let debounceTimeout;
+searchInput.onkeypress = (e) => {
+    if (e.key === "Enter") {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => searchBtn.onclick(), 300); // 300ms delay
+    }
+  };
+  
+searchBtn.onclick = () => {
+    const query = searchInput.value.toLowerCase().trim();
+    if (!query) return;
+    searchResults.innerHTML = "";
+    searchResults.style.display = "flex";
+
+    const matchingNodes = nodes.get().filter(node =>
+        node.label.toLowerCase().replace(/\n/g, " ").includes(query)
+    );
+    const fragment = document.createDocumentFragment();
+
+    matchingNodes.forEach(node => {
+        const resultDiv = document.createElement("div");
+              resultDiv.className = "result-item";
+              resultDiv.setAttribute("data-node-id", node.id); // Store node ID for drawer reference
+        const resultItemCTA = document.createElement("div");
+              resultItemCTA.className = "result-item-cta";
+
+        // Generate pathway text using unwrapped label
+        let pathway = `<b style="color: #dfdee8ff;">${node.label.replace(/\n/g, " ")}: </b>`;
+        const nodeDescription = (node.title || "No description available.").replace(/\n/g, " ");
+        const fromSources = network.getConnectedNodes(node.id, "from").map(id => nodes.get(id).label.replace(/\n/g, " "));
+        const toSources = network.getConnectedNodes(node.id, "to").map(id => nodes.get(id).label.replace(/\n/g, " "));
+
+        if (nodeDescription != node.label) {
+            pathway += `${nodeDescription}\n`;
+        } else {
+            pathway += "\n";
+        }
+
+        if (fromSources.length > 0) {
+            pathway += `- Associates with: ${fromSources.join(", ")}\n`;
+        }
+
+        if (toSources.length > 0) {
+            pathway += `- Connects to: ${toSources.join(", ")}`;
+        }
+
+        const p = document.createElement("p");
+        p.innerHTML = pathway;
+        resultDiv.appendChild(p);
+
+        const GoToBtn = document.createElement("button");
+        GoToBtn.className = "go-to-node";
+        GoToBtn.textContent = "See Connections";
+        GoToBtn.onclick = () => {
+            network.selectNodes([node.id]);
+            network.fit({ nodes: [node.id], animation: true });
+            window.scrollTo({ top: document.getElementById("network").offsetTop, behavior: "smooth" });
+            if (window.jQuery) {
+                $(drawerPanel).animate({ right: "-400px" }, 200, function () {
+                    $(this).hide();
+                });
+            } else {
+                drawerPanel.classList.remove("open");
+                drawerPanel.addEventListener("transitionend", function hideAfter() {
+                    if (!drawerPanel.classList.contains("open")) {
+                        drawerPanel.style.display = "none";
+                    }
+                    drawerPanel.removeEventListener("transitionend", hideAfter);
+                });
+            }
+            delete drawerPanel.dataset.currentNodeId; // Clear current node ID when navigating
+        };
+        resultDiv.appendChild(GoToBtn);
+
+        const ViewMoreBtn = document.createElement("button");
+        ViewMoreBtn.className = "btn-tertiary";
+        ViewMoreBtn.textContent = "View Details";
+        ViewMoreBtn.addEventListener("click", () => {
+            const nodeId = resultDiv.getAttribute("data-node-id");
+            toggleDrawer(nodeId, node.label);
+        });
+        fragment.appendChild(resultDiv);
+        resultDiv.appendChild(resultItemCTA);
+        resultItemCTA.appendChild(ViewMoreBtn);
+        resultItemCTA.appendChild(GoToBtn);
+    });
+    searchResults.appendChild(fragment);
+
+    if (!matchingNodes.length) {
+        searchResults.innerHTML = "<p>No matches found. Please try another keyword or check back soon — our database is updated continuously.</p>";
+    }
+};
+
+searchInput.onkeypress = (e) => { if (e.key === "Enter") searchBtn.onclick(); };
+
+
+// let matchingNodes = [];
+// let currentIndex = 0;
+
+// const searchInput = document.getElementById('node-search');
+// const clearButton = document.getElementById('node-search-clear');
+// const resultCount = document.getElementById('search-result-count');
+// if (searchInput && clearButton && resultCount) {
+//     function performSearch() {
+//         const keyword = searchInput.value.toLowerCase().trim();
+//         matchingNodes = nodes.getIds().filter(id => {
+//             const node = nodes.get(id);
+//             return node && node.label.toLowerCase().includes(keyword);
+//         });
+
+//         currentIndex = 0;
+//         clearButton.style.display = keyword.length > 0 ? 'block' : 'none';
+//         resultCount.textContent = matchingNodes.length > 0 ? `1 of ${matchingNodes.length}` : '0 of 0';
+//         network.setSelection({ nodes: matchingNodes }, { highlightEdges: true });
+//         if (matchingNodes.length > 0) {
+//             network.focus(matchingNodes[0], { scale: 1.5, animation: true });
+//         } else {
+//             network.unselectAll();
+//         }
+//     }
+
+//     searchInput.addEventListener('input', performSearch);
+
+//     searchInput.addEventListener('focus', () => {
+//         if (searchInput.value.trim()     // Generate pathway text (example: traverse connections).length > 0) {
+//             performSearch();
+//         }
+//     });
+
+//     searchInput.addEventListener('keydown', function (event) {
+//         if (event.key === 'Enter') {
+//             event.preventDefault();
+//             if (matchingNodes.length > 0) {
+//                 currentIndex = (currentIndex + 1) % matchingNodes.length;
+//                 resultCount.textContent = `${currentIndex + 1} of ${matchingNodes.length}`;
+//                 network.focus(matchingNodes[currentIndex], { scale: 1.5, animation: true });
+//             }
+//         }
+//     });
+
+//     clearButton.addEventListener('click', function () {
+//         searchInput.value = '';
+//         clearButton.style.display = 'none';
+//         matchingNodes = [];
+//         currentIndex = 0;
+//         resultCount.textContent = '0 of 0';
+//         network.unselectAll();
+//     });
+// }
 
 function toggleCountryNodes(show) {
     if (show === undefined) {

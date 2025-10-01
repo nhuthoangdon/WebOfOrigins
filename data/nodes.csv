@@ -157,33 +157,36 @@
 "ind_30";"Poultry Slaughtering";"Industry";"Killing and initial processing of poultry into carcasses, primal cuts, and byproducts (e.g. feathers, offal)";;;
 "ind_31";"Paper Manufacturing";"Industry";"Transforming Wood or recycled fibres into usable paper products";;;
 "ind_32";"Forestry";"Industry";"The practice of managing, cultivating, and conserving forests and associated resources";;;
+"ind_33";"Fish Aquaculture";"Industry";"Fish farming, breeding and raising of fish in controlled environments";;;
+"ind_34";"Commercial Fishing";"Industry";"Catching fish and seafood for profit from wild fisheries in marine and freshwater environments";;;
+"ind_35";"Artisanal Fishing";"Industry";"Low-tech, small-scale fishing practices by individual fishers or households, primarily for local consumption or trade";;;
 "ind_4";"Crustacean Fisheries";"Industry";"Commercial harvesting of aquatic arthropods—commonly decapods such as shrimp, lobsters, and crabs";;;
 "ind_5";"Biotechnology";"Industry";"Use of biological systems and organisms to develop new products and processes";;;"1"
 "ind_6";"Shrimp and Prawn Farming";"Industry";"Most heavily farmed crustaceans (e.g. Whiteleg shrimp, Giant tiger prawn, Freshwater prawn)";;;"0"
 "ind_7";"Lobster Farming";"Industry";"Commonly rock lobsters; smallest farmed share among crustaceans, minor vs wild catch (<5% of total lobster production) (36)";;;
 "ind_8";"Crab Farming";"Industry";"Growing sector, though wild-caught fisheries still dominate production (1.6 mil tons wild catch vs 1.24 mil tons from aquaculture) (37)";;;
 "ind_9";"Crayfish Farming";"Industry";"Growing sector within aquaculture, production volume smaller than Shrimp, Prawn, and Crab, ~200,000 metric tons (34)";;;
-"item_1";"Joint Health Supplements";"Item";"Dietary Supplement for Tablets, capsules, gummies, or powders containing Glucosamine, often combined with Chondroitin Sulfate or other compounds, used to support joint function, reduce pain, and slow cartilage degradation, commonly for osteoarthritis and joint mobility";;;
-"item_10";"Confectionery";"Item";"Confectionery for Food items rich in sugar and carbohydrates";;;
-"item_11";"Capsules";"Item";"Pharmaceutical for Cylindrical enclosures—commonly made from gelatin or plant-based alternatives—used to encase and deliver medications, supplements, or other ingestible substances. Designed for easy swallowing and controlled release";;;
-"item_12";"Collagen Peptides/Hydrolysed Collagen";"Item";"Dietary Supplement for Small pieces of animal Collagen, broken down into smaller peptides or animo acids that can be absorbed through gastrointestinal tract. Commonly available in powdered, pill, or liquid forms";;;
-"item_13";"Collagen Face Cream";"Item";"Cosmetics for Facial skincare product containing hydrolysed Collagen, formulated to support skin elasticity, hydration, and a smoother appearance";;;
-"item_14";"Sausages";"Item";"Food for Processed meat products made from ground or emulsified meat, fat, and seasonings, filled into natural or synthetic casings";;;
-"item_15";"Coated Tablets";"Item";"Pharmaceutical for Solid oral dosage forms in which the compressed tablet core is covered with a polymer, sugar, or film coating to improve stability, control release, mask taste, or enhance handling in pharmaceutical manufacturing";;;
-"item_16";"Wound Dressings";"Item";"Pharmaceutical for Sterile medical materials or products applied to cover and protect wounds, designed to promote healing, control moisture, absorb exudate, and prevent contamination in clinical or surgical settings";;;
-"item_17";"Pet Supplements";"Item";"Dietary Supplement for Nutritional products formulated to support the health, growth, or specific needs of companion animals, containing vitamins, minerals, amino acids, fatty acids, or other bioactive ingredients";;;
-"item_18";"Energy Gels";"Item";"Dietary Supplement for Concentrated, easily digestible carbohydrate-based products, often with added electrolytes or other nutrients, designed to provide rapid energy for endurance activities";;;
-"item_19";"Protein Bars";"Item";"Food for Compact supplemental foods formulated with concentrated protein (dairy, plant, or blended), carbohydrates, fats, and added nutrients, designed for convenient nutrition and supplementation";;;
-"item_2";"Gummies";"Item";"Confectionery for Soft, chewy sweets shaped in various forms, often fruit-flavored";;;
-"item_20";"Photographic Film";"Item";"Non-Ingestible for Strip of plastic coated with a chemical emultion used in analog or traditional photography";;;
-"item_21";"Crab Stick";"Item";"Food for Processed seafood made primarily from minced white Fish, shaped and flavoured to resemble crab meat";;;
-"item_3";"Jello";"Item";"Dessert for Wiggly, fruit-flavored dessert gel, typically served chilled";;;
-"item_4";"Marshmallows";"Item";"Confectionery for Fluffy, sweet confections used in desserts or hot drinks";;;
-"item_5";"Dairy Yogurt";"Item";"Dairy for Creamy dairy product";;;
-"item_6";"Cream Cheese";"Item";"Dairy for Soft, spreadable cheese";;;
-"item_7";"Sour Cream";"Item";"Dairy for Tangy dairy topping";;;
-"item_8";"Margarine";"Item";"Spread for Vegetable oil spread, butter substitute";;;
-"item_9";"Ice Cream";"Item";"Dessert for Frozen dessert";;;
+"item_1";"Joint Health Supplements";"Item";"Tablets, capsules, gummies, or powders containing Glucosamine, often combined with Chondroitin Sulfate or other compounds, used to support joint function, reduce pain, and slow cartilage degradation, commonly for osteoarthritis and joint mobility";;;
+"item_10";"Confectionery";"Item";"Food items rich in sugar and carbohydrates";;;
+"item_11";"Capsules";"Item";"Cylindrical enclosures—commonly made from gelatin or plant-based alternatives—used to encase and deliver medications, supplements, or other ingestible substances. Designed for easy swallowing and controlled release";;;
+"item_12";"Collagen Peptides/Hydrolysed Collagen";"Item";"Small pieces of animal Collagen, broken down into smaller peptides or animo acids that can be absorbed through gastrointestinal tract. Commonly available in powdered, pill, or liquid forms";;;
+"item_13";"Collagen Face Cream";"Item";"Facial skincare product containing hydrolysed Collagen, formulated to support skin elasticity, hydration, and a smoother appearance";;;
+"item_14";"Sausages";"Item";"Processed meat products made from ground or emulsified meat, fat, and seasonings, filled into natural or synthetic casings";;;
+"item_15";"Coated Tablets";"Item";"Solid oral dosage forms in which the compressed tablet core is covered with a polymer, sugar, or film coating to improve stability, control release, mask taste, or enhance handling in pharmaceutical manufacturing";;;
+"item_16";"Wound Dressings";"Item";"Sterile medical materials or products applied to cover and protect wounds, designed to promote healing, control moisture, absorb exudate, and prevent contamination in clinical or surgical settings";;;
+"item_17";"Pet Supplements";"Item";"Nutritional products formulated to support the health, growth, or specific needs of companion animals, containing vitamins, minerals, amino acids, fatty acids, or other bioactive ingredients";;;
+"item_18";"Energy Gels";"Item";"Concentrated, easily digestible carbohydrate-based products, often with added electrolytes or other nutrients, designed to provide rapid energy for endurance activities";;;
+"item_19";"Protein Bars";"Item";"Compact supplemental foods formulated with concentrated protein (dairy, plant, or blended), carbohydrates, fats, and added nutrients, designed for convenient nutrition and supplementation";;;
+"item_2";"Gummies";"Item";"Soft, chewy sweets shaped in various forms, often fruit-flavored";;;
+"item_20";"Photographic Film";"Item";"Strip of plastic coated with a chemical emultion used in analog or traditional photography";;;
+"item_21";"Crab Stick";"Item";"Processed seafood made primarily from minced white Fish, shaped and flavoured to resemble crab meat";;;
+"item_3";"Jello";"Item";"Wiggly, fruit-flavored dessert gel, typically served chilled";;;
+"item_4";"Marshmallows";"Item";"Fluffy, sweet confections used in desserts or hot drinks";;;
+"item_5";"Dairy Yogurt";"Item";"Creamy dairy product";;;
+"item_6";"Cream Cheese";"Item";"Soft, spreadable cheese";;;
+"item_7";"Sour Cream";"Item";"Tangy dairy topping";;;
+"item_8";"Margarine";"Item";"Vegetable oil spread, butter substitute";;;
+"item_9";"Ice Cream";"Item";"Frozen dessert";;;
 "mat_1";"Crustacean Shells";"rawMaterial";"Crustacean exoskeletons, often from shrimp (largest source), lobsters, crabs, and crayfish; used to produce chitin, chitosan, and glucosamine";;;"0"
 "mat_10";"Wild-Caught Fish";"rawMaterial";"Fish harvested from natural marine and freshwater environments for food, supplements, and byproducts, incl. Cod, Tuna, Anchovies, and Sardines";;;
 "mat_2";"Filamentuous Fungi";"rawMaterial";"Saprophytic microorganisms commonly used in various industries to produce enzymes, chemicals, and other compounds";;;"1"
