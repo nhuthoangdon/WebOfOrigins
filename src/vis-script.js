@@ -624,7 +624,37 @@ const searchResults = document.getElementById("search-results");
 const drawerPanel = document.createElement("div");
       drawerPanel.className = "global-drawer";
       drawerPanel.style.display = "none";
-      document.body.appendChild(drawerPanel);
+
+// Add close button as a persistent element
+const closeIcon = document.createElement("i");
+      closeIcon.className = "fa-solid fa-xmark fa-lg";
+const closeDrawerBtn = document.createElement("div");
+      closeDrawerBtn.className = "btn-ic-close";
+closeDrawerBtn.appendChild(closeIcon);
+closeDrawerBtn.addEventListener("click", () => {
+    if (window.jQuery) {
+        $(drawerPanel).animate({ right: "-400px" }, 300, function () {
+            $(this).hide();
+        });
+    } else {
+        drawerPanel.classList.remove("open");
+        drawerPanel.addEventListener("transitionend", function hideAfter() {
+            if (!drawerPanel.classList.contains("open")) {
+                drawerPanel.style.display = "none";
+            }
+            drawerPanel.removeEventListener("transitionend", hideAfter);
+        });
+    }
+    delete drawerPanel.dataset.currentNodeId; // Clear current node ID when closed
+});
+drawerPanel.appendChild(closeDrawerBtn);
+
+// Add content container to hold dynamic content
+const contentContainer = document.createElement("div");
+contentContainer.className = "drawer-content";
+drawerPanel.appendChild(contentContainer);
+
+document.body.appendChild(drawerPanel);
 
 // Function to update drawer content
 const updateDrawerContent = (nodeId, nodeLabel) => {
@@ -646,19 +676,19 @@ const updateDrawerContent = (nodeId, nodeLabel) => {
       };
 
 
-// Toggle function to handle open/close and content
+// Enhanced toggle function to handle open/close and content
 const toggleDrawer = (nodeId, nodeLabel) => {
     const isDrawerOpen = window.jQuery ? $(".global-drawer").is(":visible") : drawerPanel.style.display === "block";
 
     if (isDrawerOpen) {
         if (drawerPanel.dataset.currentNodeId !== nodeId) {
-            drawerPanel.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+            contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel); // Update only content container
             drawerPanel.dataset.currentNodeId = nodeId;
         }
     } else {
-        drawerPanel.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+        contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel); // Update only content container
         if (window.jQuery) {
-            $(drawerPanel).show().animate({ right: "0" }, 200);
+            $(drawerPanel).show().animate({ right: "0" }, 300);
         } else {
             drawerPanel.style.display = "block";
             drawerPanel.classList.add("open");
@@ -667,49 +697,45 @@ const toggleDrawer = (nodeId, nodeLabel) => {
     }
       };
 
-// Outside click handler with jQuery or vanilla fallback
-if (window.jQuery) {
-    $(document).on("click", function (event) {
-        if (
-            $(".global-drawer").is(":visible") &&
-            !$(drawerPanel).is(event.target) &&
-            $(event.target).closest(".global-drawer").length === 0 &&
-            !$(event.target).hasClass("btn-tertiary")
-        ) {
-            if (window.jQuery) {
-                $(drawerPanel).animate({ right: "-400px" }, 200, function () {
-                    $(this).hide();
-                });
-            } else {
-                drawerPanel.classList.remove("open");
-                drawerPanel.addEventListener("transitionend", function hideAfter() {
-                    if (!drawerPanel.classList.contains("open")) {
-                        drawerPanel.style.display = "none";
-                    }
-                    drawerPanel.removeEventListener("transitionend", hideAfter);
-                });
+// Unified outside click handler
+function handleOutsideClick(event) {
+    const isVisible = window.jQuery
+        ? $(".global-drawer").is(":visible")
+        : drawerPanel.style.display === "block";
+
+    const isClickInside = drawerPanel.contains(event.target);
+    const isCloseBtn = event.target.classList.contains("btn-ic-close") ||
+        event.target.classList.contains("btn-tertiary");
+
+    if (isVisible && !isClickInside && !isCloseBtn) {
+        closeDrawer();
+    }
+}
+
+function closeDrawer() {
+    if (window.jQuery) {
+        $(drawerPanel).animate({ right: "-400px" }, 200, function () {
+            $(this).hide();
+        });
+    } else {
+        drawerPanel.classList.remove("open");
+        drawerPanel.addEventListener("transitionend", function hideAfter() {
+            if (!drawerPanel.classList.contains("open")) {
+                drawerPanel.style.display = "none";
             }
-            delete drawerPanel.dataset.currentNodeId; // Clear current node ID when closed
-        }
-    });
+            drawerPanel.removeEventListener("transitionend", hideAfter);
+        });
+    }
+    delete drawerPanel.dataset.currentNodeId; // Clear current node ID
+}
+
+// Bind correct handler
+if (window.jQuery) {
+    $(document).on("click", handleOutsideClick);
 } else {
-    document.addEventListener("click", function (event) {
-        if (
-            drawerPanel.style.display === "block" &&
-            !drawerPanel.contains(event.target) &&
-            !event.target.classList.contains("btn-tertiary")
-        ) {
-            drawerPanel.classList.remove("open");
-            drawerPanel.addEventListener("transitionend", function hideAfter() {
-                if (!drawerPanel.classList.contains("open")) {
-                    drawerPanel.style.display = "none";
-                }
-                drawerPanel.removeEventListener("transitionend", hideAfter);
-            });
-            delete drawerPanel.dataset.currentNodeId; // Clear current node ID when closed
-        }
-    });
-      }
+    document.addEventListener("click", handleOutsideClick);
+}
+      
 
 let debounceTimeout;
 searchInput.onkeypress = (e) => {
@@ -762,7 +788,7 @@ searchBtn.onclick = () => {
         resultDiv.appendChild(p);
 
         const GoToBtn = document.createElement("button");
-        GoToBtn.className = "go-to-node";
+        GoToBtn.className = "secondary-button";
         GoToBtn.textContent = "See Connections";
         GoToBtn.onclick = () => {
             network.selectNodes([node.id]);

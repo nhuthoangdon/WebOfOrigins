@@ -55,7 +55,7 @@ body, html {
 }
 
 #large-search-panel h2 {
-    color: #f7f7f7;
+    color: #eae9ef;
     font-size: 2.3rem;
     margin-bottom: 1.2em;
     font-family: 'Source Code Pro', monospace;
@@ -118,6 +118,7 @@ body, html {
             box-shadow: 0 2px 8px rgba(97, 31, 244, 0.10);
             cursor: pointer;
         }
+
         .btn-inactive {
             background: #3a3f47;
             color: #F2F5F7;
@@ -133,7 +134,7 @@ body, html {
     gap: 1em;
     background: rgb(34 46 56 / 10%);
     border-radius: 14px;
-    margin: 0 auto 10% auto;
+    margin: 0 auto 5% auto;
     color: #F8FAFB;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     font-family: 'Source Sans 3', sans-serif;
@@ -185,13 +186,14 @@ body, html {
     z-index: 1000;
     transition: right 0.3s ease;
     overflow-y: auto;
-    font-size: 14px;
+    font-size: 0.9em;
     font-family: 'Source Sans 3', sans-serif;
 }
     .global-drawer.open {
         right: 0;
     }
 
+        
 .global-drawer h3 {
     font-size: 1.3em;
     margin-bottom: 10px;
@@ -214,9 +216,47 @@ body, html {
         margin-bottom: 5px;
     }
 
-.global-drawer.display {
-    right: 0;
-}
+    .drawer-content {
+        margin-top: 40px;
+        /* Space for the close button */  
+    }
+        .btn-ic-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            background: transparent;
+            border: 1px solid rgba(26, 35, 43, 1);
+            cursor: pointer;
+            color: rgba(26, 35, 43, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            z-index: 1;
+            transform: scale(1);
+            transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .btn-ic-close:hover {
+            background: rgba(26, 35, 43, 1);
+            color: #dfdde7;
+            /* border-color: rgba(201, 231, 58, 1); */
+        }
+        .btn-ic-close:focus {
+            outline: 2px solid rgba(26, 35, 43, 1);
+            outline-offset: 2px;
+        }
+        .btn-ic-close:active {
+            opacity: .5;
+            transform: scale(0.95);
+        }
+        i.fa-xmark {
+            transition: transform 0.3s ease;
+        }
+        .btn-ic-close:hover i {
+            transform: rotate(90deg);
+        }
 
 .btn-tertiary {
     color: #8ED0DC;
@@ -226,17 +266,34 @@ body, html {
     border: none;
     box-shadow: none;
     padding: 6px;
+    position: relative;
 }
     .btn-tertiary::after {
         content: "⯈";
         font-size: 12px;
         margin-left: 4px;
     }
-    .btn-tertiary:hover, .btn-tertiary:focus {
+    .btn-tertiary::before {
+        content: "";
+        height: 2px;
+        width: 0;
+        background: #C9E73A;
+        display: inline-block;
+        position: absolute;
+        top: calc(100% + 4px);
+    }
+    .btn-tertiary:hover {
         color: #C9E73A;
     }
+    .btn-tertiary:focus {
+        outline: none;
+        color: #C9E73A;
+    }
+    .btn-tertiary:focus:before {
+        width: 90%;
+    }
 
-.go-to-node {
+.secondary-button {
     background-color: transparent;
     color: #dfdde7;
     border: 1px solid rgba(97, 31, 244, 1);
@@ -250,10 +307,10 @@ body, html {
     letter-spacing: .01em;
     transition: background 0.2s, color 0.2s;
 }
-.go-to-node:hover, .go-to-node:focus {
-    background: rgba(97, 31, 244, 1);
-    color: #dfdde7;
-}
+    .secondary-button:hover, .secondary-button:focus {
+        background: rgba(97, 31, 244, 1);
+        color: #dfdde7;
+    }
 
 @media only screen and (max-width: 769px) {
     #large-search-panel, #search-results {
@@ -789,7 +846,10 @@ a.button-link {
     button:active {
         opacity: .6;
     }
-
+button:focus {
+        outline: 2px solid #8ED0DC;
+        outline-offset: 4px;
+    }
     .primary-button {
         background: linear-gradient(145deg, #611FF4 20%, #02d9ff 100%);
         background-size: 200% 100%;
@@ -799,10 +859,14 @@ a.button-link {
         color: #F2F5F7;
         transition: background-position 0.5s ease, box-shadow 0.3s ease;
     }
-        .primary-button:hover, .primary-button:focus {
+        .primary-button:hover {
             background-position: 100% 50%;
             box-shadow: 0 2px 14px rgba(29, 3, 87, 0.25);
             outline: none;
+        }
+        .primary-button:focus {
+            outline: 2px solid #8ED0DC;
+            outline-offset: 4px;
         }
 
 .link {
