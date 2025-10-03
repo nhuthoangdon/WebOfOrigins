@@ -54,10 +54,17 @@ body, html {
     font-family: 'Source Code Pro', monospace;
 }
 
-#large-search-panel h2 {
-    color: #eae9ef;
-    font-size: 2.3rem;
-    margin-bottom: 1.2em;
+.large-search-headings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.large-search-headings h2 {
+    color: #F2F5F7;
+    /* font-size: 2.3rem; */
+    margin: 0 auto 1.2em auto;
     font-family: 'Source Code Pro', monospace;
     font-weight: 600;
     letter-spacing: .02em;
@@ -197,6 +204,7 @@ body, html {
 .global-drawer h3 {
     font-size: 1.3em;
     margin-bottom: 10px;
+    color: #1a232b;
 }
 
 .global-drawer pre {
@@ -272,6 +280,8 @@ body, html {
         content: "⯈";
         font-size: 12px;
         margin-left: 4px;
+        transform: translateX(0);
+        transition: transform 0.3s ease;
     }
     .btn-tertiary::before {
         content: "";
@@ -284,6 +294,9 @@ body, html {
     }
     .btn-tertiary:hover {
         color: #C9E73A;
+    }
+    .btn-tertiary:hover::after {
+        transform: translateX(4px);
     }
     .btn-tertiary:focus {
         outline: none;
@@ -312,28 +325,6 @@ body, html {
         color: #dfdde7;
     }
 
-@media only screen and (max-width: 769px) {
-    #large-search-panel, #search-results {
-        max-width: 98vw;
-        box-sizing: border-box;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    #large-search-panel h2 {
-        font-size: 28px;
-    }
-    #large-search-input {
-        font-size: 1rem;
-        padding: 1em 1.2em;
-    }
-    #search-results {
-        padding: 1em 0.5em;
-    }
-}
-
-
-
 #network {
     width: 95vw;
     height: 90vh;
@@ -347,11 +338,15 @@ body, html {
         border-color: rgba(142, 208, 220, 0.3);
         box-shadow: 0 0px 18px 6px rgba(0, 6, 10, 0.2);
     }
+    #network:focus-within {
+        outline: 1px solid rgba(142, 208, 220, 0.8);
+        outline-offset: 4px;
+    }
 div.vis-tooltip {
     font-size: 14px;
     max-width: 500px;
     white-space: pre-wrap;
-    background-color: rgba(246, 248, 249, 0.85);
+    background-color: rgba(246, 247, 249, 0.9);
     color: #070A14;
     border-radius: 8px;
     padding: 6px 14px;
@@ -389,6 +384,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-up {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 0px;
+    display: none;
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-down {
@@ -399,6 +395,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-down {
     border-radius: 0px;
     transform: rotate(180deg);
     transform-origin: center center;
+    display: none;
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-left {
@@ -409,6 +406,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-left {
     border-radius: 0px;
     transform: rotate(-90deg);
     transform-origin: center center;
+    display: none;
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-right {
@@ -419,6 +417,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     border-radius: 0px;
     transform: rotate(90deg);
     transform-origin: center center;
+    display: none;
 }
 
     div.vis-button:hover {
@@ -695,21 +694,6 @@ a#home-logo {
 
 
 
-@media (max-width: 600px) {
-    .control-panel {
-        width: 90vw;
-    }
-
-    .control-panel.collapsed {
-        right: calc(-90vw + 48px);
-    }
-        .control-panel.collapsed i,
-        .control-panel.collapsed span {
-            transform: translateX(-4px);
-        }
-}
-
-
 
 h1 {
     color: #AEA3FF;
@@ -725,8 +709,11 @@ h2 {
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1rem;
     font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #8ED0DC;
 }
 
 h4 {
@@ -930,8 +917,7 @@ button:focus {
                 color: #C9E73A !important;
                 transition: color 0.2s;
             }
-
-
+            
 @media only screen and (max-width: 769px) {
     .main {
         margin: 140px 2em;
@@ -941,6 +927,14 @@ button:focus {
     }
     #home-footer {
         width: 100%;
+    }
+    #large-search-panel,
+    #search-results {
+        max-width: 95vw;
+        box-sizing: border-box;
+    }
+    #search-results {
+        max-width: 95vw;
     }
 }
 
@@ -958,7 +952,6 @@ button:focus {
         align-items: center;
         box-sizing: border-box;
         height: auto;
-        position: absolute;
         top: 0;
         left: 0;
         width: 100vw;
@@ -976,6 +969,7 @@ button:focus {
         padding: 32px 24px;
         background: rgba(229 230 241 / 98%);
         border-radius: 8px;
+        color: #070A14;
     }
         .menu-mobile a, .menu-mobile a:visited {
             color: #070A14;
@@ -984,8 +978,50 @@ button:focus {
             color: #611FF4;
             font-weight: 800;
         }
+        .menu-mobile li a {
+            color: #070A14;
+        }
     .menu ul li {
         margin-right: 0;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 2.3rem;
+    }
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    #large-search-panel {
+        padding: 24px; 
+    }
+
+        #large-search-panel h2 {
+            font-size: 28px;
+        }
+    
+        #large-search-input {
+            font-size: 1rem;
+            padding: 1.2em 1.4em;
+        }
+    
+        #search-results {
+            padding: 1em;
+        }
+
+    .control-panel {
+        width: 90vw;
+    }
+
+    .control-panel.collapsed {
+        right: calc(-90vw + 48px);
+    }
+
+    .control-panel.collapsed i,
+    .control-panel.collapsed span {
+        transform: translateX(-4px);
     }
    
 }
@@ -996,5 +1032,44 @@ button:focus {
     }
     footer {
         justify-content: center;
+    }
+    #large-search-panel {
+        padding: 16px; 
+    }
+    #search-results {
+        margin: 1rem 1rem 3rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .result-item-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .global-drawer {
+        width: 95vw;
+        padding: 24px;
+    }
+    .global-drawer h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .large-search-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1em;
+        border-radius: 8px;
+    }
+    #large-search-btn {
+        padding: 14px;
+    }
+    #search-results {
+        padding: 12px
+    }
+    .result-item {
+        padding: 16px;
     }
 }
