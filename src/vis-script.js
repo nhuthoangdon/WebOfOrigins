@@ -748,6 +748,14 @@ searchInput.onkeypress = (e) => {
 searchBtn.onclick = () => {
     const query = searchInput.value.toLowerCase().trim();
     if (!query) return;
+    if (smallSearchInput && smallClearButton && smallResultCount) {
+        smallSearchInput.value = '';
+        smallClearButton.style.display = 'none';
+        matchingNodesSmall = [];
+        currentIndexSmall = 0;
+        smallResultCount.textContent = '0 of 0';
+        network.unselectAll();
+    }
     searchResults.innerHTML = "";
     searchResults.style.display = "flex";
 
@@ -793,7 +801,9 @@ searchBtn.onclick = () => {
         GoToBtn.onclick = () => {
             network.selectNodes([node.id]);
             network.fit({ nodes: [node.id], animation: true });
-            window.scrollTo({ top: document.getElementById("network").offsetTop, behavior: "smooth" });
+            const networkElement = document.getElementById("network");
+            const topPos = networkElement.getBoundingClientRect().top + window.scrollY - 50;
+            window.scrollTo({ top: topPos, behavior: "smooth" });
             if (window.jQuery) {
                 $(drawerPanel).animate({ right: "-400px" }, 200, function () {
                     $(this).hide();
@@ -833,59 +843,75 @@ searchBtn.onclick = () => {
 searchInput.onkeypress = (e) => { if (e.key === "Enter") searchBtn.onclick(); };
 
 
-// let matchingNodes = [];
-// let currentIndex = 0;
 
-// const searchInput = document.getElementById('node-search');
-// const clearButton = document.getElementById('node-search-clear');
-// const resultCount = document.getElementById('search-result-count');
-// if (searchInput && clearButton && resultCount) {
-//     function performSearch() {
-//         const keyword = searchInput.value.toLowerCase().trim();
-//         matchingNodes = nodes.getIds().filter(id => {
-//             const node = nodes.get(id);
-//             return node && node.label.toLowerCase().includes(keyword);
-//         });
+let matchingNodesSmall = [];
+let currentIndexSmall = 0;
 
-//         currentIndex = 0;
-//         clearButton.style.display = keyword.length > 0 ? 'block' : 'none';
-//         resultCount.textContent = matchingNodes.length > 0 ? `1 of ${matchingNodes.length}` : '0 of 0';
-//         network.setSelection({ nodes: matchingNodes }, { highlightEdges: true });
-//         if (matchingNodes.length > 0) {
-//             network.focus(matchingNodes[0], { scale: 1.5, animation: true });
-//         } else {
-//             network.unselectAll();
-//         }
-//     }
+const smallSearchInput = document.getElementById('small-search-input');
+const smallClearButton = document.getElementById('small-search-clear');
+const smallResultCount = document.getElementById('small-search-result-count');
+const largeSearchResults = document.getElementById('search-results');
 
-//     searchInput.addEventListener('input', performSearch);
+if (smallSearchInput && smallClearButton && smallResultCount) {
+    function performSmallSearch() {
+        // Clear large search results to avoid conflicts
+        largeSearchResults.style.display = 'none';
+        largeSearchResults.innerHTML = '';
 
-//     searchInput.addEventListener('focus', () => {
-//         if (searchInput.value.trim()     // Generate pathway text (example: traverse connections).length > 0) {
-//             performSearch();
-//         }
-//     });
+        const keyword = smallSearchInput.value.toLowerCase().trim();
+        matchingNodesSmall = nodes.getIds().filter(id => {
+            const node = nodes.get(id);
+            return node && node.label.toLowerCase().replace(/\n/g, ' ').includes(keyword);
+        });
 
-//     searchInput.addEventListener('keydown', function (event) {
-//         if (event.key === 'Enter') {
-//             event.preventDefault();
-//             if (matchingNodes.length > 0) {
-//                 currentIndex = (currentIndex + 1) % matchingNodes.length;
-//                 resultCount.textContent = `${currentIndex + 1} of ${matchingNodes.length}`;
-//                 network.focus(matchingNodes[currentIndex], { scale: 1.5, animation: true });
-//             }
-//         }
-//     });
+        currentIndexSmall = 0;
+        smallClearButton.style.display = keyword.length > 0 ? 'block' : 'none';
+        smallResultCount.textContent = matchingNodesSmall.length > 0 ? `1 of ${matchingNodesSmall.length}` : '0 of 0';
+        network.setSelection({ nodes: matchingNodesSmall }, { highlightEdges: true });
+        if (matchingNodesSmall.length > 0) {
+            network.focus(matchingNodesSmall[0], { scale: 1.5, animation: true });
+            const networkElement = document.getElementById('network');
+            const topPos = networkElement.getBoundingClientRect().top + window.scrollY - 50;
+            window.scrollTo({ top: topPos, behavior: 'smooth' });
+        } else {
+            network.unselectAll();
+        }
+    }
 
-//     clearButton.addEventListener('click', function () {
-//         searchInput.value = '';
-//         clearButton.style.display = 'none';
-//         matchingNodes = [];
-//         currentIndex = 0;
-//         resultCount.textContent = '0 of 0';
-//         network.unselectAll();
-//     });
-// }
+    smallSearchInput.addEventListener('input', performSmallSearch);
+
+    smallSearchInput.addEventListener('focus', () => {
+        if (smallSearchInput.value.trim().length > 0) {
+            performSmallSearch();
+        }
+    });
+
+    smallSearchInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            if (matchingNodesSmall.length > 0) {
+                currentIndexSmall = (currentIndexSmall + 1) % matchingNodesSmall.length;
+                smallResultCount.textContent = `${currentIndexSmall + 1} of ${matchingNodesSmall.length}`;
+                network.focus(matchingNodesSmall[currentIndexSmall], { scale: 1.5, animation: true });
+                const networkElement = document.getElementById('network');
+                const topPos = networkElement.getBoundingClientRect().top + window.scrollY - 50;
+                window.scrollTo({ top: topPos, behavior: 'smooth' });
+            }
+        }
+    });
+
+    smallClearButton.addEventListener('click', () => {
+        smallSearchInput.value = '';
+        smallClearButton.style.display = 'none';
+        matchingNodesSmall = [];
+        currentIndexSmall = 0;
+        smallResultCount.textContent = '0 of 0';
+        network.unselectAll();
+        // Clear large search results
+        largeSearchResults.style.display = 'none';
+        largeSearchResults.innerHTML = '';
+    });
+}
 
 function toggleCountryNodes(show) {
     if (show === undefined) {
@@ -938,16 +964,48 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.getElementById('control-panel-toggle');
     const icon = toggle.querySelector('i');
 
+    const mediaQuery = window.matchMedia('(max-width: 481px)');
+
+    function handleViewportChange(e) {
+        if (e.matches) {
+            // Mobile breakpoint: start collapsed with chevron up
+            icon.classList.remove('fa-chevron-right', 'fa-chevron-left');
+            icon.classList.add('fa-chevron-up');
+        } else {
+            // Desktop breakpoint: default to right chevron
+            icon.classList.remove('fa-chevron-up', 'fa-chevron-down');
+            icon.classList.add('fa-chevron-right');
+        }
+    }
+
+    mediaQuery.addEventListener('change', handleViewportChange);
+    handleViewportChange(mediaQuery);
+
     toggle.addEventListener('click', function () {
         panel.classList.toggle('collapsed');
-        if (panel.classList.contains('collapsed')) {
-            icon.classList.remove('fa-chevron-right');
-            icon.classList.add('fa-chevron-left');
-            toggle.setAttribute('aria-label', 'Expand control panel');
+
+        if (mediaQuery.matches) {
+            // Mobile logic: up when collapsed, down when expanded
+            if (panel.classList.contains('collapsed')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                toggle.setAttribute('aria-label', 'Expand control panel');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+                toggle.setAttribute('aria-label', 'Collapse control panel');
+            }
         } else {
-            icon.classList.remove('fa-chevron-left');
-            icon.classList.add('fa-chevron-right');
-            toggle.setAttribute('aria-label', 'Collapse control panel');
+            // Desktop logic: left when collapsed, right when expanded
+            if (panel.classList.contains('collapsed')) {
+                icon.classList.remove('fa-chevron-right');
+                icon.classList.add('fa-chevron-left');
+                toggle.setAttribute('aria-label', 'Expand control panel');
+            } else {
+                icon.classList.remove('fa-chevron-left');
+                icon.classList.add('fa-chevron-right');
+                toggle.setAttribute('aria-label', 'Collapse control panel');
+            }
         }
     });
 });
