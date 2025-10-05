@@ -278,9 +278,13 @@ function createNetwork(nodesData, edgesData) {
             tooltipDelay: 100,
             keyboard: {
                 enabled: true,
+                speed: { x: 10, y: 10, zoom: 0.02 },
+                bindToWindow: false  // Changed to false
             },
             multiselect: true,
             navigationButtons: true,
+            zoomView: true,
+            dragView: true,
             dragNodes: true,
             hoverEdges: true
         },
@@ -963,23 +967,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const panel = document.getElementById('control-panel');
     const toggle = document.getElementById('control-panel-toggle');
     const icon = toggle.querySelector('i');
-
     const mediaQuery = window.matchMedia('(max-width: 481px)');
 
     function handleViewportChange(e) {
         if (e.matches) {
             // Mobile breakpoint: start collapsed with chevron up
-            icon.classList.remove('fa-chevron-right', 'fa-chevron-left');
+            panel.classList.add('collapsed');
+            icon.classList.remove('fa-chevron-right', 'fa-chevron-left', 'fa-chevron-down');
             icon.classList.add('fa-chevron-up');
+            toggle.setAttribute('aria-label', 'Expand control panel');
         } else {
-            // Desktop breakpoint: default to right chevron
-            icon.classList.remove('fa-chevron-up', 'fa-chevron-down');
-            icon.classList.add('fa-chevron-right');
+            // Desktop breakpoint: start collapsed with chevron left
+            panel.classList.add('collapsed');
+            icon.classList.remove('fa-chevron-up', 'fa-chevron-down', 'fa-chevron-right');
+            icon.classList.add('fa-chevron-left');
+            toggle.setAttribute('aria-label', 'Expand control panel');
         }
     }
 
-    mediaQuery.addEventListener('change', handleViewportChange);
+    // Initial setup
     handleViewportChange(mediaQuery);
+    mediaQuery.addEventListener('change', handleViewportChange);
 
     toggle.addEventListener('click', function () {
         panel.classList.toggle('collapsed');
@@ -1008,15 +1016,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-});
 
-document.addEventListener('click', function (event) {
-    const panel = document.getElementById('control-panel');
-    const toggle = document.getElementById('control-panel-toggle');
-    if (!panel.contains(event.target) && !toggle.contains(event.target) && !panel.classList.contains('collapsed')) {
-        panel.classList.add('collapsed');
-        toggle.querySelector('i').classList.remove('fa-chevron-right');
-        toggle.querySelector('i').classList.add('fa-chevron-left');
-        toggle.setAttribute('aria-label', 'Expand control panel');
-    }
+    // Handle outside clicks to collapse the panel
+    document.addEventListener('click', function (event) {
+        if (!panel.contains(event.target) && !toggle.contains(event.target) && !panel.classList.contains('collapsed')) {
+            panel.classList.add('collapsed');
+            if (mediaQuery.matches) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-right');
+                icon.classList.add('fa-chevron-left');
+            }
+            toggle.setAttribute('aria-label', 'Expand control panel');
+        }
+    });
 });
