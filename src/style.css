@@ -324,6 +324,15 @@ body, html {
         background: rgba(97, 31, 244, 1);
         color: #dfdde7;
     }
+    .secondary-button:hover::after {
+        content: " ⦿";
+    }
+        .secondary-button::after {
+            content: " ⦾";
+            margin-left: 0.5em;
+            font-size: 0.9em;     
+        }
+    
 
 .network-container {
     position: relative;
