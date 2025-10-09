@@ -186,7 +186,8 @@ body, html {
     height: 100vh;
     max-height: 100vh;
     box-sizing: border-box;
-    background-color: rgba(239, 241, 244, 0.95);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
     color: #070A14;
     padding: 32px;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
@@ -226,7 +227,6 @@ body, html {
 
     .drawer-content {
         margin-top: 40px;
-        /* Space for the close button */  
     }
         .btn-ic-close {
             position: absolute;
@@ -311,13 +311,8 @@ body, html {
     color: #dfdde7;
     border: 1px solid rgba(97, 31, 244, 1);
     box-shadow: none;
-    padding: 0.7em 1.5em;
     border-radius: 300px;
     cursor: pointer;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: .01em;
     transition: background 0.2s, color 0.2s;
 }
     .secondary-button:hover, .secondary-button:focus {
@@ -451,12 +446,16 @@ div.vis-tooltip {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.15);
 }
 
+div.vis-button {
+    transition: border-color 0.2s;
+    border-radius: 40px;
+    }
+
 div.vis-network div.vis-navigation div.vis-button.vis-zoomExtends {
     background-image: url(Assets/ic_resetZoom.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 40px;
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-zoomOut {
@@ -464,7 +463,6 @@ div.vis-network div.vis-navigation div.vis-button.vis-zoomOut {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 40px;
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-zoomIn {
@@ -472,7 +470,6 @@ div.vis-network div.vis-navigation div.vis-button.vis-zoomIn {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 40px;
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-up {
@@ -518,24 +515,24 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
 }
 
     div.vis-button:hover {
-        background-color: rgba(142, 208, 220, 0.15);
-        box-shadow: 0 0 1px rgba(232, 234, 237, 0.15);
-        transition: background-color 0.2s, box-shadow 0.2s;
+        /* background-color: rgba(142, 208, 220, 0.15); */
+        /* box-shadow: 0 0 1px rgba(232, 234, 237, 0.15); */
+        border-color: rgba(142, 208, 220, 0.9);
     }
 
 .menu {
     position: fixed;
     top: 0px;
     left: 0px;
-    width: auto;
+    width: 100%;
     max-width: 100vw;
     display: flex;
     flex-flow: row wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
-    padding: 1em 2em;
+    padding: 1.5rem 2rem;
     z-index: 1000;
     font-family: 'Source Code Pro', monospace;
     text-align: center;
@@ -547,8 +544,12 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
+        text-align: left;
         list-style: none;
+        opacity: 1;
+        visibility: visible;
         gap: .5em;
+        transition: opacity .3s ease-out;
     }
         .menu ul li {
             margin-right: 24px;
@@ -754,13 +755,18 @@ p {
 
 b {
     font-weight: 700;
-    color: #611FF4;
 }
 
 a {
     color: #8ED0DC;
     font-weight: 600;
 }
+    a:hover {
+        color: #C9E73A;
+    }
+    a:active {
+        opacity: .5;
+    }
 
 .label_small {
     font-size: 0.875em;
@@ -810,9 +816,10 @@ footer {
     }
 
 button {
-    padding: 1em 2em;
+    padding: 0.9em 1.5em;
     border-radius: 10em;
     font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
     font-weight: 600;
     letter-spacing: .03em;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
@@ -820,6 +827,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: .5em;
     transition: all .2s;
 }
 a.button-link {
@@ -861,6 +869,9 @@ button:focus {
         outline: 2px solid #8ED0DC;
         outline-offset: 4px;
     }
+    #header-sponsor-cta {
+        margin-left: auto;
+    }
     .primary-button {
         background: linear-gradient(145deg, #611FF4 20%, #02d9ff 100%);
         background-size: 200% 100%;
@@ -891,15 +902,7 @@ button:focus {
     }
 
 .main {
-    max-width: 100vw;
-    flex: 1 0 auto;
-    display: flex;
-    flex-flow: column;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    margin-top: calc(84px + 2%);
-    margin: calc(84px + 2%) 15%;
+    
 }
 
 .big-link {
@@ -913,11 +916,31 @@ button:focus {
     }
 
 
-.about-content {
+.text-container {
     width: auto;
     max-width: 100vw;
     height: auto;
+    text-align: left;
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: calc(84px + 2%);
+    margin: calc(84px + 2%) 15%;
 }
+    .text-paragraph {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+    }
+        .text-paragraph h4 {
+            margin-bottom: 0;
+        }
 
     .sponsor-links {
         font-family: 'Source Code Pro', monospace;
@@ -946,9 +969,92 @@ button:focus {
 
 /* BREAK POINTS */
 
+@media only screen and (max-width: 812px) {
+    
+    .menu {
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+            max-height: 64px;
+            width: 100vw;
+            color: #070A14;
+        }
+        #header-sponsor-cta {
+            display: none;
+        }
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 1.2em;
+            text-align: right;
+            gap: 1.5em;
+            background: linear-gradient(135deg,
+                        rgba(29, 3, 76, 0.25) 10%,
+                        rgba(31, 10, 87, 0.75) 50%,
+                        rgba(5, 1, 20, 0.95) 100%);
+                backdrop-filter: blur(12px) saturate(120%);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+                border: 1px solid rgba(89, 55, 175, 0.15);
+            width: calc(100% - 2em);
+            padding: 2em;
+            margin: auto;
+            box-sizing: border-box;
+            position: absolute;
+            top: 4em;
+            left: 50%;
+            border-radius: 10px;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -20px);
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease-in, visibility 0s linear 0.3s;
+        }
+        .sponsor-button-mobile {
+            margin-top: 1.5em;
+            font-size: 14px;
+        }
+            .sponsor-button-mobile::after {
+                content: '🤍';
+            }
+        
+        .menu-items-mobile_open {
+            visibility: visible;
+            opacity: 1;
+            transform: translate(-50%, 0);
+            pointer-events: auto;
+            transition-delay: 0s;
+        }
+    
+        .hamburger-menu {
+            display: block;
+            cursor: pointer;
+        }
+    
+        .hamburger-menu:active {
+            opacity: .5;
+        }
+
+        .menu ul li {
+            margin-right: 0;
+        }
+}
+
+
 @media only screen and (max-width: 769px) {
-    .main {
-        margin: 140px 2em;
+    h1 {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+    h2 {
+        font-size: 2.3rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+    h4 {
+        font-size: 1rem;
     }
     div.vis-network div.vis-navigation {
         display: none;
@@ -974,64 +1080,23 @@ button:focus {
     #search-results {
         max-width: 95vw;
     }
+    footer {
+        justify-content: center;
+    }
 }
 
 @media only screen and (max-width: 600px) {
+    .menu-items {
+            align-items: center;
+            text-align: center;
+        }
+
     ul {
         padding-left: 1em;
     }
-    .menu-items {display: none;}
-    .hamburger-menu {display: block; cursor: pointer;}
-        .hamburger-menu:active {opacity: .5}
-    .menu {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-items: center;
-        box-sizing: border-box;
-        height: auto;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        padding: 1em;
+    .text-container {
+        margin: 5rem 2rem;
     }
-    .menu-mobile {
-        width: 100vw;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        order: 3;
-        flex: 1 0 100%;
-        align-items: flex-end;
-        padding: 32px 24px;
-        background: rgba(229 230 241 / 98%);
-        border-radius: 8px;
-        color: #070A14;
-    }
-        .menu-mobile a, .menu-mobile a:visited {
-            color: #070A14;
-        }
-        .menu-mobile a.current {
-            color: #611FF4;
-            font-weight: 800;
-        }
-        .menu-mobile li a {
-            color: #070A14;
-        }
-    .menu ul li {
-        margin-right: 0;
-    }
-    h1 {
-        font-size: 4rem;
-    }
-    h2 {
-        font-size: 2.3rem;
-    }
-    h3 {
-        font-size: 0.9rem;
-    }
-
     #large-search-panel {
         padding: 24px; 
     }
@@ -1056,16 +1121,19 @@ button:focus {
     .control-panel.collapsed {
         right: calc(-90vw + 48px);
     }
+
+    .sponsor-links {
+        font-size: 1em;
+    }
    
 }
 
 @media only screen and (max-width: 481px) {
+    
     h1 {
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
-    footer {
-        justify-content: center;
-    }
+    
     #large-search-panel {
         padding: 16px; 
     }
@@ -1098,6 +1166,7 @@ button:focus {
 }
 
 @media only screen and (max-width: 426px) {
+    
     .result-item-cta {
         flex-direction: column;
         align-items: center;
@@ -1127,5 +1196,8 @@ button:focus {
     }
     .result-item {
         padding: 16px;
+    }
+    .menu-items {
+        padding: 2em 1em;
     }
 }

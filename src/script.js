@@ -2,34 +2,71 @@
 
 console.log('script.js is loaded and running');
 
-//MENU - MOBILE TOGGLE
 $(document).ready(function () {
-  const $menu = $('.menu-items');
-  const $hamburger = $('.hamburger-menu');
+  // Header sponsor CTA button logic
+  const sponsorButton = document.getElementById('header-sponsor-cta');
+  const sponsorLink = './about#sponsor-links';
 
-  // Helper: Open the menu
-  function openMenu() {
-    $menu.addClass('menu-mobile').css({
-      'display': 'flex',
-      'transition': 'opacity 0.3s ease, transform 0.3s ease',
-      'opacity': '1',
-      'transform': 'translateY(0)'
+  if (sponsorButton) {
+    sponsorButton.addEventListener('click', function () {
+      window.location.href = sponsorLink;
     });
   }
 
-  // Helper: Close the menu
-  function closeMenu() {
-    $menu.removeClass('menu-mobile').css({
-      'display': 'none',
-      'opacity': '0',
-      'transform': 'translateY(-10px)'
+  const $menu = $('.menu');
+  const $hamburger = $('.hamburger-menu');
+  const $hamburgerIcon = $hamburger.find('i');
+  const $menuItems = $('.menu-items');
+
+  // Create mobile-only CTA button once
+  const $mobileSponsorCTA = $('<button>', {
+    text: 'Support This Project',
+    class: 'primary-button sponsor-button-mobile'
+  });
+
+  if ($mobileSponsorCTA.length) {
+    $mobileSponsorCTA.on('click', function (e) {
+      e.stopPropagation(); // prevent closing the menu
+      window.location.href = sponsorLink;
     });
+  }
+  
+
+  // Helper: check if viewport is mobile
+  function isMobile() {
+    return window.matchMedia('(max-width: 812px)').matches;
+  }
+
+  // Append CTA only in mobile view
+  function ensureMobileCTA() {
+    if (isMobile()) {
+      // Only append if it doesn't exist already
+      if ($menuItems.find('.primary-button').length === 0) {
+        $menuItems.append($mobileSponsorCTA);
+      }
+    } else {
+      // Remove CTA when resizing to desktop
+      $mobileSponsorCTA.detach();
+    }
+  }
+
+  // Open the menu
+  function openMenu() {
+    ensureMobileCTA();
+    $menuItems.addClass('menu-items-mobile_open');
+    $hamburgerIcon.removeClass('fa-bars').addClass('fa-xmark');
+  }
+
+  // Close the menu
+  function closeMenu() {
+    $menuItems.removeClass('menu-items-mobile_open');
+    $hamburgerIcon.removeClass('fa-xmark').addClass('fa-bars');
   }
 
   // Toggle menu on hamburger click
-  $hamburger.click(function (e) {
-    e.stopPropagation(); // stop click from reaching document
-    if ($menu.hasClass('menu-mobile')) {
+  $hamburger.on('click', function (e) {
+    e.stopPropagation();
+    if ($hamburgerIcon.hasClass('fa-xmark')) {
       closeMenu();
     } else {
       openMenu();
@@ -37,24 +74,25 @@ $(document).ready(function () {
   });
 
   // Close menu on scroll
-  $(window).scroll(function () {
-    if ($menu.hasClass('menu-mobile')) {
-      closeMenu();
-    }
-  });
+  $(window).on('scroll', closeMenu);
 
   // Close menu on clicking outside
-  $(document).click(function (e) {
+  $(document).on('click', function (e) {
     if (
-      $menu.hasClass('menu-mobile') &&
-      !$menu.is(e.target) && $menu.has(e.target).length === 0 &&
-      !$hamburger.is(e.target) && $hamburger.has(e.target).length === 0
+      !$menu.is(e.target) &&
+      $menu.has(e.target).length === 0 &&
+      !$hamburger.is(e.target) &&
+      $hamburger.has(e.target).length === 0
     ) {
       closeMenu();
     }
   });
+
+  // Check/resync button when resizing
+  $(window).on('resize', ensureMobileCTA);
+
+  // Initial check (in case loaded on mobile)
+  ensureMobileCTA();
+
+
 });
-
-
-
-
