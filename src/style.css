@@ -1162,7 +1162,9 @@ button:focus {
             border-top: solid rgba(142, 208, 220, 0.15);
             border-left: none;
         }
-    
+    .text-container {
+        gap: 1rem;
+    }
 }
 
 @media only screen and (max-width: 426px) {
