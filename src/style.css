@@ -969,8 +969,13 @@ button:focus {
 
 /* BREAK POINTS */
 
-@media only screen and (max-width: 812px) {
-    
+@media only screen and (max-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (max-width: 961px) { /* mostly used because of Header Menu */
     .menu {
             justify-content: space-between;
             align-items: center;
@@ -979,9 +984,11 @@ button:focus {
             width: 100vw;
             color: #070A14;
         }
+    
         #header-sponsor-cta {
             display: none;
         }
+    
         .menu-items {
             display: flex;
             flex-direction: column;
@@ -990,12 +997,12 @@ button:focus {
             text-align: right;
             gap: 1.5em;
             background: linear-gradient(135deg,
-                        rgba(29, 3, 76, 0.25) 10%,
-                        rgba(31, 10, 87, 0.75) 50%,
-                        rgba(5, 1, 20, 0.95) 100%);
-                backdrop-filter: blur(12px) saturate(120%);
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-                border: 1px solid rgba(89, 55, 175, 0.15);
+                    rgba(29, 3, 76, 0.25) 10%,
+                    rgba(31, 10, 87, 0.75) 50%,
+                    rgba(5, 1, 20, 0.95) 100%);
+            backdrop-filter: blur(12px) saturate(120%);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(89, 55, 175, 0.15);
             width: calc(100% - 2em);
             padding: 2em;
             margin: auto;
@@ -1010,14 +1017,16 @@ button:focus {
             transform: translate(-50%, -20px);
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease-in, visibility 0s linear 0.3s;
         }
+    
         .sponsor-button-mobile {
             margin-top: 1.5em;
             font-size: 14px;
         }
-            .sponsor-button-mobile::after {
-                content: '🤍';
-            }
-        
+    
+        .sponsor-button-mobile::after {
+            content: '🤍';
+        }
+    
         .menu-items-mobile_open {
             visibility: visible;
             opacity: 1;
@@ -1034,28 +1043,45 @@ button:focus {
         .hamburger-menu:active {
             opacity: .5;
         }
-
+    
         .menu ul li {
             margin-right: 0;
         }
 }
 
-
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 812px) {
+    
     h1 {
-        font-size: 3rem;
-        font-weight: 500;
-    }
+            font-size: 3rem;
+            font-weight: 500;
+        }
+    
     h2 {
         font-size: 2.3rem;
     }
 
     h3 {
-        font-size: 0.9rem;
-    }
-    h4 {
         font-size: 1rem;
     }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    .text-container {
+        margin: 5rem 3rem;
+        gap: 1rem;
+    }
+
+    footer {
+        justify-content: center;
+    }
+
+}
+
+
+@media only screen and (max-width: 769px) {
+    
     div.vis-network div.vis-navigation {
         display: none;
     }
@@ -1080,9 +1106,7 @@ button:focus {
     #search-results {
         max-width: 95vw;
     }
-    footer {
-        justify-content: center;
-    }
+    
 }
 
 @media only screen and (max-width: 600px) {
@@ -1094,9 +1118,7 @@ button:focus {
     ul {
         padding-left: 1em;
     }
-    .text-container {
-        margin: 5rem 2rem;
-    }
+
     #large-search-panel {
         padding: 24px; 
     }
@@ -1162,9 +1184,7 @@ button:focus {
             border-top: solid rgba(142, 208, 220, 0.15);
             border-left: none;
         }
-    .text-container {
-        gap: 1rem;
-    }
+
 }
 
 @media only screen and (max-width: 426px) {
@@ -1181,9 +1201,13 @@ button:focus {
     .global-drawer h3 {
         font-size: 1.2em;
     }
+
+    .text-container {
+        margin: 5rem 2rem;
+    }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 370px) {
     .large-search-container {
         flex-direction: column;
         justify-content: center;
@@ -1201,5 +1225,8 @@ button:focus {
     }
     .menu-items {
         padding: 2em 1em;
+    }
+    .text-container {
+        margin: 5rem 1.5rem;
     }
 }

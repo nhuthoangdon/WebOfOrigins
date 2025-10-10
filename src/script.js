@@ -33,13 +33,13 @@ $(document).ready(function () {
   
 
   // Helper: check if viewport is mobile
-  function isMobile() {
-    return window.matchMedia('(max-width: 812px)').matches;
+  function isBreakpoint961() {
+    return window.matchMedia('(max-width: 961px)').matches;
   }
 
   // Append CTA only in mobile view
   function ensureMobileCTA() {
-    if (isMobile()) {
+    if (isBreakpoint961()) {
       // Only append if it doesn't exist already
       if ($menuItems.find('.primary-button').length === 0) {
         $menuItems.append($mobileSponsorCTA);
