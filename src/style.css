@@ -18,17 +18,16 @@ body, html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    width: 100%;
     min-height: 100vh;
     max-width: 100vw;
     background: radial-gradient(circle at center,
-                rgba(83, 43, 135, 0.15) 40%,
+                rgba(25, 1, 55, 0.4) 30%,
                 /* faint muted purple centre */
-                rgba(31, 10, 87, 0.2) 80%,
+                rgba(8, 1, 35, 0.4) 60%,
                 /* indigo mid */
-                rgba(6, 0, 33, 0.2) 100%,
+                rgba(2, 0, 12, 0.8) 100%
                 /* dark navy far out */
-                rgba(6, 1, 32, 0.3) 140%
-                /* transparent way past edge */
             );
         background-color: #050114;
         /* fallback */
@@ -339,14 +338,14 @@ body, html {
 #network {
     width: 95vw;
     height: 90vh;
-    border: 1px solid rgba(142, 208, 220, 0.15);
+    border: 1px solid rgba(142, 208, 220, 0.2);
     border-radius: 18px;
     background: transparent;
-    box-shadow: inset 0 0px 18px 6px rgb(128 165 182 / 6%);
+    /* box-shadow: inset 0 0px 18px 6px rgb(128 165 182 / 6%); */
     transition: border-color 0.2s, box-shadow 0.2s;
 }
     #network:hover {
-        border-color: rgba(142, 208, 220, 0.3);
+        border-color: rgba(142, 208, 220, 0.6);
         box-shadow: 0 0px 18px 6px rgba(0, 6, 10, 0.2);
     }
     #network:focus {
@@ -774,46 +773,109 @@ a {
     color: #8ED0DC;
 }
 
+.short-vertical-divider {
+    width: 1px;
+    height: 100%;
+    min-height: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: auto 1em;
+}
+
 footer {
     width: 100%;
     max-width: 100vw;
     font-family: 'Source Code Pro', monospace;
-    font-weight: 400;
-    text-align: center;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     margin-top: 10%;
-    padding: 1rem;
+    padding: 2rem 4rem;
     color: #F8FAFB;
-    font-size: .75em;
     box-sizing: border-box;
+    overflow: hidden;
+    /* background: rgba(0, 6, 11, 0.4); */
 }
-    footer a {
-        text-decoration: none;
-        color: #8ED0DC;
-        white-space: nowrap;
+            footer a {
+            color: #F8FAFB;
+            }
+
+    .footer-main-container {
+        width: 100%;
+        max-width: 95vw;
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1em;
+        padding: 1em 0 1.5em 0;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid 1px rgba(197, 211, 239, 0.15);
     }
-        footer a:hover {
-            font-weight: 800;
-            text-decoration: underline;
-            color: #C9E73A;
+        .footer-left-content {
+            width: auto;
+            max-width: 70vw;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 2em;
         }
-        footer a.current {
-            font-weight: 800;
+            .footer-logo {
+                width: 3em;
+                height: auto;
+            }
+            .footer-links {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 1.5em;
+            }
+                .footer-links a {
+                    font-size: .8em;
+                    text-decoration: none;
+                    text-align: left;
+                    white-space: nowrap;
+                }
+                .footer-links a:hover {
+                    font-weight: 800;
+                    text-decoration: underline;
+                    color: #C9E73A;
+                }
+                .footer-links a:current {
+                    font-weight: 800;
+                }
+        .footer-socials {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 1.5em;
         }
-    
-    #home-footer {
+    .footer-bottom {
+        width: 100%;
         display: flex;
         flex-flow: row wrap;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        bottom: 0;
-        justify-content: center;
-        align-items: center;
+        gap: 1.5em;
+        font-size: .7em;
     }
+        .footer-bottom a {
+            text-decoration: none;
+            text-align: center;
+            color: #dfdde7;
+        }
+        .footer-copyright {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-bottom-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5em;
+        }
+
 
 button {
     padding: 0.9em 1.5em;
@@ -1075,8 +1137,23 @@ button:focus {
 
     footer {
         justify-content: center;
+        padding: 2rem;
     }
-
+        .footer-main-container {
+            justify-content: center;
+            padding: 1em 0 2em 0;
+            gap: 2em;
+        }
+            .footer-left-content {
+                flex-wrap: wrap;
+                max-width: 100%;
+                justify-content: center;
+                gap: 2em;
+            }
+                .footer-links {
+                    justify-content: center;
+                    flex-grow: 1;
+                }
 }
 
 
@@ -1106,6 +1183,7 @@ button:focus {
     #search-results {
         max-width: 95vw;
     }
+
     
 }
 
@@ -1147,6 +1225,18 @@ button:focus {
     .sponsor-links {
         font-size: 1em;
     }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 2em;
+        }
+            .footer-copyright,
+            .footer-bottom-links {
+                flex-grow: 1;
+            }
+                footer .footer-bottom .short-vertical-divider {
+                    display: none;
+                }
    
 }
 
@@ -1185,6 +1275,7 @@ button:focus {
             border-left: none;
         }
 
+
 }
 
 @media only screen and (max-width: 426px) {
@@ -1205,6 +1296,8 @@ button:focus {
     .text-container {
         margin: 5rem 2rem;
     }
+
+
 }
 
 @media only screen and (max-width: 370px) {

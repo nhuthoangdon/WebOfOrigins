@@ -3,96 +3,120 @@
 console.log('script.js is loaded and running');
 
 $(document).ready(function () {
-  // Header sponsor CTA button logic
-  const sponsorButton = document.getElementById('header-sponsor-cta');
-  const sponsorLink = './about#sponsor-links';
 
-  if (sponsorButton) {
-    sponsorButton.addEventListener('click', function () {
-      window.location.href = sponsorLink;
-    });
-  }
+  // --- Load fragments in parallel ---
+  const headerPromise = fetch('/src/header.html')
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector('header').innerHTML = html;
+    })
+    .catch(err => console.error('Header failed to load:', err));
 
-  const $menu = $('.menu');
-  const $hamburger = $('.hamburger-menu');
-  const $hamburgerIcon = $hamburger.find('i');
-  const $menuItems = $('.menu-items');
+  const footerPromise = fetch('/src/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector('footer').innerHTML = html;
+    })
+    .catch(err => console.error('Footer failed to load:', err));
 
-  // Create mobile-only CTA button once
-  const $mobileSponsorCTA = $('<button>', {
-    text: 'Support This Project',
-    class: 'primary-button sponsor-button-mobile'
+  // --- Once both are loaded ---
+  Promise.all([headerPromise, footerPromise]).then(() => {
+    console.log('Header and footer loaded successfully.');
+
+    initHeader();          // attach logic to header
+    highlightCurrentNav(); // mark active page
   });
 
-  if ($mobileSponsorCTA.length) {
-    $mobileSponsorCTA.on('click', function (e) {
-      e.stopPropagation(); // prevent closing the menu
-      window.location.href = sponsorLink;
-    });
-  }
-  
 
-  // Helper: check if viewport is mobile
-  function isBreakpoint961() {
-    return window.matchMedia('(max-width: 961px)').matches;
-  }
-
-  // Append CTA only in mobile view
-  function ensureMobileCTA() {
-    if (isBreakpoint961()) {
-      // Only append if it doesn't exist already
-      if ($menuItems.find('.primary-button').length === 0) {
-        $menuItems.append($mobileSponsorCTA);
+  // --- Highlight current page in nav ---
+  function highlightCurrentNav() {
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll("ul.menu-items li a").forEach(link => {
+      const href = link.getAttribute("href");
+      if (href && href.includes(currentPath)) {
+        link.classList.add("current");
       }
-    } else {
-      // Remove CTA when resizing to desktop
-      $mobileSponsorCTA.detach();
-    }
+    });
   }
 
-  // Open the menu
-  function openMenu() {
-    ensureMobileCTA();
-    $menuItems.addClass('menu-items-mobile_open');
-    $hamburgerIcon.removeClass('fa-bars').addClass('fa-xmark');
-  }
 
-  // Close the menu
-  function closeMenu() {
-    $menuItems.removeClass('menu-items-mobile_open');
-    $hamburgerIcon.removeClass('fa-xmark').addClass('fa-bars');
-  }
+  // --- Initialize header interactions ---
+  function initHeader() {
+    const sponsorLink = './about#sponsor-links-anchor';
+    const sponsorButton = document.getElementById('header-sponsor-cta');
 
-  // Toggle menu on hamburger click
-  $hamburger.on('click', function (e) {
-    e.stopPropagation();
-    if ($hamburgerIcon.hasClass('fa-xmark')) {
-      closeMenu();
-    } else {
-      openMenu();
+    // Sponsor button (desktop)
+    if (sponsorButton) {
+      sponsorButton.addEventListener('click', function () {
+        window.location.href = sponsorLink;
+      });
     }
-  });
 
-  // Close menu on scroll
-  $(window).on('scroll', closeMenu);
+    // --- Menu logic ---
+    const $menu = $('.menu');
+    const $hamburger = $('.hamburger-menu');
+    const $hamburgerIcon = $hamburger.find('i');
+    const $menuItems = $('.menu-items');
 
-  // Close menu on clicking outside
-  $(document).on('click', function (e) {
-    if (
-      !$menu.is(e.target) &&
-      $menu.has(e.target).length === 0 &&
-      !$hamburger.is(e.target) &&
-      $hamburger.has(e.target).length === 0
-    ) {
-      closeMenu();
+    // Mobile-only CTA
+    const $mobileSponsorCTA = $('<button>', {
+      text: 'Support This Project',
+      class: 'primary-button sponsor-button-mobile'
+    }).on('click', function (e) {
+      e.stopPropagation();
+      window.location.href = sponsorLink;
+    });
+
+    // Helper for viewport check
+    function isMobileView() {
+      return window.matchMedia('(max-width: 961px)').matches;
     }
-  });
 
-  // Check/resync button when resizing
-  $(window).on('resize', ensureMobileCTA);
+    // Ensure CTA appears only on mobile
+    function ensureMobileCTA() {
+      if (isMobileView()) {
+        if ($menuItems.find('.primary-button').length === 0) {
+          $menuItems.append($mobileSponsorCTA);
+        }
+      } else {
+        $mobileSponsorCTA.detach();
+      }
+    }
 
-  // Initial check (in case loaded on mobile)
-  ensureMobileCTA();
+    // Menu open/close
+    function openMenu() {
+      ensureMobileCTA();
+      $menuItems.addClass('menu-items-mobile_open');
+      $hamburgerIcon.removeClass('fa-bars').addClass('fa-xmark');
+    }
 
+    function closeMenu() {
+      $menuItems.removeClass('menu-items-mobile_open');
+      $hamburgerIcon.removeClass('fa-xmark').addClass('fa-bars');
+    }
+
+    // Event listeners
+    $hamburger.on('click', function (e) {
+      e.stopPropagation();
+      if ($hamburgerIcon.hasClass('fa-xmark')) closeMenu();
+      else openMenu();
+    });
+
+    $(window).on('scroll', closeMenu);
+
+    $(document).on('click', function (e) {
+      if (
+        !$menu.is(e.target) &&
+        $menu.has(e.target).length === 0 &&
+        !$hamburger.is(e.target) &&
+        $hamburger.has(e.target).length === 0
+      ) {
+        closeMenu();
+      }
+    });
+
+    $(window).on('resize', ensureMobileCTA);
+    ensureMobileCTA(); // Initial check
+  }
 
 });
