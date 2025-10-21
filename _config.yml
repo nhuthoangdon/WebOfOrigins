@@ -1,0 +1,6 @@
+title: Web of Origins
+theme: minima
+plugins:
+  - jekyll-feed
+baseurl: ""
+url: "https://www.weboforigins.com"
