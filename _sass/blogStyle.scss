@@ -1,0 +1,23 @@
+
+$page-content-margins: 6rem auto;
+$max-content-width: 900px;
+$content-gap: 2rem;
+
+.wide-width-section { 
+    width: 90%;
+   padding: 0 2rem;
+   margin: $page-content-margins;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+    margin: $page-content-margins;
+    gap: $content-gap;
+     
+    .wrapper {
+        width: 80%;
+        max-width: $max-content-width;
+    }
+}
+

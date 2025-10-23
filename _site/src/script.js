@@ -42,7 +42,7 @@ $(document).ready(function () {
 
   // --- Initialize header interactions ---
   function initHeader() {
-    const sponsorLink = './about#sponsor-links-anchor';
+    const sponsorLink = '/about#sponsor-links-anchor';
     const sponsorButton = document.getElementById('header-sponsor-cta');
 
     // Sponsor button (desktop)

@@ -1,0 +1,16 @@
+---
+layout: grid
+title: Insights
+---
+
+<h2>Latest Insights</h2>
+<p>Dive deeper into our findings</p>
+
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+        {{ post.excerpt }}
+    </li>
+    {% endfor %}
+</ul>

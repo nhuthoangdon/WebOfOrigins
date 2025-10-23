@@ -728,13 +728,14 @@ h1 {
 }
 
 h2 {
-    color: #C9E73A;
+    color: #AEA3FF;
     font-size: 3rem;
     font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: 'Source Code Pro', monospace;
     text-transform: uppercase;
     letter-spacing: .1rem;
