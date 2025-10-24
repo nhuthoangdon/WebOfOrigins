@@ -4,3 +4,4 @@ plugins:
   - jekyll-feed
 baseurl: ""
 url: "https://www.weboforigins.com"
+excerpt_separator: <!--more-->
