@@ -1,13 +1,54 @@
+# Site Settings
 title: Web of Origins
-theme: minima
+description: Visualising the connections between products, materials, industries, and their origins.
+author: Web of Origins
+url: https://weboforigins.com
+baseurl: ""
+logo: /src/Assets/logo.svg
+
+# Build Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Includes & Excludes
+include:
+  - _pages
+  - blog
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Plugins
 plugins:
   - jekyll-feed
-baseurl: ""
-url: "https://www.weboforigins.com"
-excerpt_separator: <!--more-->
-markdown: kramdown
-sass:
-  style: compressed
-  sass_dir: _sass
+  - jekyll-seo-tag
 
-include: ["_pages", "blog"]
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Excerpt
+excerpt_separator: <!--more-->
+
+# Minima Theme (optional overrides)
+theme: minima
+minima:
+  skin: auto
+  social_links:
+    twitter: WebOfOrigins
+    linkedin: company/weboforigins
+    facebook: WebOfOrigins

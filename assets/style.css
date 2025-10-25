@@ -452,21 +452,21 @@ div.vis-button {
     }
 
 div.vis-network div.vis-navigation div.vis-button.vis-zoomExtends {
-    background-image: url(Assets/ic_resetZoom.svg);
+    background-image: url(/src/Assets/ic_resetZoom.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-zoomOut {
-    background-image: url(Assets/ic_zoomOut.svg);
+    background-image: url(/src/Assets/ic_zoomOut.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 div.vis-network div.vis-navigation div.vis-button.vis-zoomIn {
-    background-image: url(Assets/ic_zoomIn.svg);
+    background-image: url(/src/Assets/ic_zoomIn.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

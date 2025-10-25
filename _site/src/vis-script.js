@@ -279,7 +279,7 @@ function createNetwork(nodesData, edgesData) {
             keyboard: {
                 enabled: true,
                 speed: { x: 10, y: 10, zoom: 0.02 },
-                bindToWindow: false  // Changed to false
+                bindToWindow: true 
             },
             multiselect: true,
             navigationButtons: true,
