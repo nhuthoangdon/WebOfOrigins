@@ -5,3 +5,9 @@ plugins:
 baseurl: ""
 url: "https://www.weboforigins.com"
 excerpt_separator: <!--more-->
+markdown: kramdown
+sass:
+  style: compressed
+  sass_dir: _sass
+
+  
