@@ -119,4 +119,40 @@ $(document).ready(function () {
     ensureMobileCTA(); // Initial check
   }
 
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.listing-grid li').forEach(li => {
+      const url = li.querySelector('h5 a')?.getAttribute('href');
+      if (url) {
+        li.style.cursor = 'pointer';
+        li.addEventListener('click', (e) => {
+          // Prevent navigation if clicking on button or link inside
+          if (e.target.closest('a, button')) return;
+          window.location.href = url;
+        });
+        // Optional: keyboard accessibility
+        li.setAttribute('tabindex', '0');
+        li.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.location.href = url;
+          }
+        });
+      }
+    });
+  });
+  
+  // Make cards/panels clickable and links to respective posts
+  document.querySelectorAll('.listing-grid li').forEach(li => {
+    const postUrl = li.closest('li').dataset.postUrl;
+    if (postUrl) {
+      li.style.cursor = 'pointer';
+      li.addEventListener('click', () => {
+        window.location.href = postUrl;
+      });
+      // Preserve button click
+      li.querySelector('.btn-tertiary')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+    }
+  });
 });

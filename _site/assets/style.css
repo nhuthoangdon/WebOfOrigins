@@ -1070,7 +1070,7 @@ button:focus {
                     rgba(5, 1, 20, 0.95) 100%);
             backdrop-filter: blur(12px) saturate(120%);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(89, 55, 175, 0.15);
+            border: 1px solid rgba(67, 105, 220, 0.3);
             width: calc(100% - 2em);
             padding: 2em;
             margin: auto;

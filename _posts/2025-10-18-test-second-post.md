@@ -3,6 +3,7 @@ title: "Test more post"
 date: 2025-10-18
 layout: post
 author: Web of Origins
+category: [test, test, test]
 ---
 
 test

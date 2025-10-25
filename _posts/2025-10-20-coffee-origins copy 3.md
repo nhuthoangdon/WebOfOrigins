@@ -1,8 +1,18 @@
 ---
-title: "Tracing Coffee Origins"
-date: 2025-10-20
-layout: post
-author: Remy
+title: "Palm Oil in Cosmetics"
+date: 2025-10-10
+category: ingredients
+tags: [deforestation, orangutans, indonesia]
+impact: [deforestation, biodiversity-loss]
+supply_chain: [indonesia, malaysia, netherlands-import]
+product_type: cosmetics
+# excerpt: "How palm oil links beauty products to rainforest destruction."
+image: null
+sources:
+  - name: WWF Report 2024
+    url: https://wwf.org/palmoil2024
+  - name: USDA Export Data
+    url: https://usda.gov/palmoil
 ---
 
 test if this is the layout that got effected

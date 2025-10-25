@@ -3,6 +3,7 @@ title: "Tracing Coffee Origins"
 date: 2025-10-01
 layout: post
 author: Remy
+tags: [dogs, cats, pets]
 image: /src/Assets/test-image.jpg
 ---
 

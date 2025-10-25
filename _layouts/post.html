@@ -1,8 +1,35 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+<h2>{{ page.title }}</h2>
+{% if page.date %}
+<p class="supporting-text date">{{ page.date | date_to_string }}</p>
+{% endif %}
+
+{% if page.category %}
+<p class="post-meta">Category: {{ page.category | default: page.categories | join: ', ' }}</p>
+{% endif %}
+
+{% if page.tags %}
+<p class="post-meta">Tags: {{ page.tags | join: ', ' }}</p>
+{% endif %}
+
+{% if page.impact %}
+<p class="post-meta">Impacts: {{ page.impact | join: ', ' }}</p>
+{% endif %}
+
+{% if page.supply_chain %}
+<p class="post-meta">Supply Chain: {{ page.supply_chain | join: ' → ' }}</p>
+{% endif %}
+
+{% if page.sources %}
+<p class="post-meta">Sources:</p>
+<ul class="ref-list">
+    {% for src in page.sources %}
+    <li class="post-meta"><a href="{{ src.url }}" target="_blank">{{ src.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
 
 <img src="{{ page.image }}" alt="Post Image" />
 

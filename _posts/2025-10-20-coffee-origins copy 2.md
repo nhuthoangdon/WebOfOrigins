@@ -3,6 +3,7 @@ title: "Tracing Coffee Origins"
 date: 2025-10-20
 layout: post
 author: Remy
+category: [remy, tuti, bOO]
 ---
 
 Layout 2

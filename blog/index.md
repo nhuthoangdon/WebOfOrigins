@@ -9,11 +9,11 @@ permalink: /blog/
 
 <ul class="listing-grid">
     {% for post in site.posts %}
-    <li>
+    <li data-post-url="{{ post.url }}">
         <img class="image-thumbnail" src="{{ post.image }}" alt="Post Image" />
-        <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
+        <h5>{{ post.title }}</h5>
         {{ post.excerpt }}
-        <a href="{{ post.url }}" class="panel-cta-link"><button class="btn-tertiary">View Insight</button></a>
+        <a href="{{ post.url }}" class="panel-cta-link"><button class="btn-tertiary">Read More</button></a>
     </li>
     {% endfor %}
 </ul>
