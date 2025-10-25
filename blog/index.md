@@ -1,6 +1,7 @@
 ---
 layout: grid
 title: Insights
+permalink: /blog/
 ---
 
 <h2>Latest Insights</h2>
