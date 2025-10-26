@@ -4,13 +4,13 @@ $page-content-margins: 6rem auto;
 $page-content-paddings: 0 2rem;
 $max-text-content-width: 1000px;
 $content-gap: 2rem;
+$small-text-size: 0.85rem;
+$border-radius-small: 8px;
+$border-radius-medium: 14px;
+$border-radius-large: 28px;
 
 
-h5 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 1rem 0 0.5rem 0;
-}
+
 .intro-text {
     font-size: 1.15rem;
     margin-bottom: 2rem;
@@ -40,7 +40,7 @@ ul.listing-grid {
         justify-content: flex-start;
         text-align: left;
         border: 1px solid rgba(142, 208, 220, 0.1);
-        border-radius: 8px;
+        border-radius: $border-radius-small;
         background: rgba(71, 110, 141, 0.08);
         padding: 1.5rem;
         cursor: pointer;
@@ -66,6 +66,16 @@ ul.listing-grid {
             margin-bottom: 0;
             color: #8ED0DC;
             font-family: $heading-font;
+        }
+        p {
+            margin: 0.5em 0;
+        }
+        .meta-block {
+            margin: 0.5em 0 0 0;
+        
+            .post-meta {
+                margin: 0.5em 0;
+            }
         }
         
         .image-thumbnail {
@@ -105,5 +115,31 @@ ul.listing-grid {
         width: 100%;
         max-width: $max-text-content-width;
     }
+    @media (max-width: 1220px) {
+        max-width: 800px;
+    }
 }
+
+.post-meta {
+    font-size: $small-text-size;
+    color: #a8b4bc;
+    letter-spacing: .04rem;
+}
+
+.blog-hero-image {
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    border-radius: $border-radius-medium;
+    margin: 2rem 0 2rem 0;
+
+    @media (max-width: 600px) {
+                width: 100%;
+                height: auto;
+                max-height: none;
+            }
+}
+
+
+
 

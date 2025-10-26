@@ -2,8 +2,11 @@
 title: "Tracing Coffee Origins"
 date: 2025-10-01
 layout: post
-author: Remy
-tags: [dogs, cats, pets]
+author: remy
+industry: [food, mining]
+impact: [social, environmental]
+tags: [dogs, cats, pets, orangeutans]
+supply_chain: [indonesia]
 image: /src/Assets/test-image.jpg
 ---
 

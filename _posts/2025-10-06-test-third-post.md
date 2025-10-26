@@ -3,6 +3,8 @@ title: "Test 2 blah"
 date: 2025-10-06
 layout: post
 author: Remy
+industry: [agriculture, food, mining, food production]
+impact: [environmental]
 category: [global warming, supply chain]
 ---
 

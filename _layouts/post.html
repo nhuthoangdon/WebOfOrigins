@@ -1,36 +1,110 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-{% if page.date %}
-<p class="supporting-text date">{{ page.date | date_to_string }}</p>
-{% endif %}
 
-{% if page.category %}
-<p class="post-meta">Category: {{ page.category | default: page.categories | join: ', ' }}</p>
-{% endif %}
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<meta itemprop="headline" content="{{ page.title }}">
 
-{% if page.tags %}
-<p class="post-meta">Tags: {{ page.tags | join: ', ' }}</p>
-{% endif %}
+    <h2>{{ page.title }}</h2>
+    {% if page.date %}
+    <p class="post-meta date">{{ page.date | date_to_string }}</p>
+    {% endif %}
 
-{% if page.impact %}
-<p class="post-meta">Impacts: {{ page.impact | join: ', ' }}</p>
-{% endif %}
+    {% if page.industry %}
+    <p class="post-meta"><b>Industries:</b> {{ page.industry | join: ', ' }}</p>
+    {% endif %}
 
-{% if page.supply_chain %}
-<p class="post-meta">Supply Chain: {{ page.supply_chain | join: ' → ' }}</p>
-{% endif %}
+    {% if page.impact %}
+    <p class="post-meta"><b>Impacts:</b> {{ page.impact | join: ', ' }}</p>
+    {% endif %}
 
-{% if page.sources %}
-<p class="post-meta">Sources:</p>
-<ul class="ref-list">
-    {% for src in page.sources %}
-    <li class="post-meta"><a href="{{ src.url }}" target="_blank">{{ src.name }}</a></li>
+    {% if page.category %}
+    <p class="post-meta"><b>Category:</b> {{ page.category | default: page.categories | join: ', ' }}</p>
+    {% endif %}
+
+    {% if page.supply_chain %}
+    <p class="post-meta"><b>Supply Chain:</b> {{ page.supply_chain | join: ' → ' }}</p>
+    {% endif %}
+
+    {% if page.tags %}
+    <p class="post-meta"><b>Tags:</b> {{ page.tags | join: ', ' }}</p>
+    {% endif %}
+
+    <img src="{{ page.image }}" alt="Post Image" class="blog-hero-image" />
+
+    {{ content }}
+
+    {% if page.sources %}
+    <p class="post-meta"><b>Sources:</b></p>
+    <ul class="ref-list">
+        {% for src in page.sources %}
+        <li class="post-meta"><a href="{{ src.url }}" target="_blank">{{ src.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% comment %}=====================================================================
+    RELATED POSTS – safe, no-plugin, Jekyll 3.8+ / GitHub Pages
+    ====================================================================={% endcomment %}
+    
+    {% assign related_posts = site.posts | where_exp: "p", "p != page" %}
+    {% assign match_list = "" %}
+    
+    {% for post in related_posts %}
+    {% assign score = 0 %}
+    
+    {% if page.industry and post.industry %}
+    {% for i in page.industry %}
+    {% if post.industry contains i %}
+    {% assign score = score | plus: 1 %}
+    {% endif %}
     {% endfor %}
-</ul>
-{% endif %}
+    {% endif %}
+    
+    {% if page.impact and post.impact %}
+    {% for i in page.impact %}
+    {% if post.impact contains i %}
+    {% assign score = score | plus: 1 %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    
+    {% if score == 0 and page.tags and post.tags %}
+    {% for t in page.tags %}
+    {% if post.tags contains t %}
+    {% assign score = score | plus: 1 %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    
+    {% if score > 0 %}
+    {% comment %} store: score|post-url|post-title|post-date {% endcomment %}
+    {% assign entry = score | append: "|" | append: post.url | append: "|" | append: post.title | append: "|" | append:
+    post.date %}
+    {% assign match_list = match_list | append: entry | append: "||" %}
+    {% endif %}
+    {% endfor %}
+    
+    {% if match_list != "" %}
+    {% assign entries = match_list | split: "||" %}
+    {% assign sorted = entries | sort | reverse %} <!-- sort by score (string) -->
+    {% assign top3 = sorted | slice: 0, 3 %}
+    
+    <div class="related-posts">
+        <h3>Related Insights</h3>
+        <ul>
+            {% for e in top3 %}
+            {% assign parts = e | split: "|" %}
+            {% assign post_url = parts[1] %}
+            {% assign post_title = parts[2] %}
+            {% assign post_date = parts[3] %}
+            <li>
+                <a href="{{ post_url | relative_url }}">{{ post_title }}</a>
+                <span class="post-meta">— {{ post_date | date: "%b %Y" }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
 
-<img src="{{ page.image }}" alt="Post Image" />
-
-{{ content }}
+</article>
