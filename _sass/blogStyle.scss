@@ -65,7 +65,8 @@ ul.listing-grid {
         h5 {
             margin-bottom: 0;
             color: #8ED0DC;
-            font-family: $heading-font;
+            font-family: $body-font;
+            letter-spacing: 0.03em;
         }
         p {
             margin: 0.5em 0;
@@ -140,6 +141,26 @@ ul.listing-grid {
             }
 }
 
-
+.related-posts {
+    margin-top: 10%;
+    .listing-grid {
+        > :first-child {
+                grid-column: span 1;       
+            }
+        
+        gap: 1em;
+        
+        li {
+            gap: 0.5em;
+            .meta-block {
+                margin: 0;
+                }
+            h5 {
+                font-size: 1em;
+                margin: 0;
+            }
+        }
+    }
+}
 
 

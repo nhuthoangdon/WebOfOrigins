@@ -1,5 +1,6 @@
 ---
 layout: default
+title: "{{ page.title }}"
 ---
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -7,7 +8,7 @@ layout: default
 
     <h2>{{ page.title }}</h2>
     {% if page.date %}
-    <p class="post-meta date">{{ page.date | date_to_string }}</p>
+    <p class="post-meta date"><i>{{ page.date | date_to_string }}</i></p>
     {% endif %}
 
     {% if page.industry %}
@@ -43,8 +44,11 @@ layout: default
     </ul>
     {% endif %}
 
+    <hr>
+
+
     {% comment %}=====================================================================
-    RELATED POSTS – safe, no-plugin, Jekyll 3.8+ / GitHub Pages
+    RELATED POSTS
     ====================================================================={% endcomment %}
     
     {% assign related_posts = site.posts | where_exp: "p", "p != page" %}
@@ -92,17 +96,41 @@ layout: default
     
     <div class="related-posts">
         <h3>Related Insights</h3>
-        <ul>
+        <ul class="listing-grid">
             {% for e in top3 %}
             {% assign parts = e | split: "|" %}
             {% assign post_url = parts[1] %}
             {% assign post_title = parts[2] %}
             {% assign post_date = parts[3] %}
-            <li>
-                <a href="{{ post_url | relative_url }}">{{ post_title }}</a>
-                <span class="post-meta">— {{ post_date | date: "%b %Y" }}</span>
+        
+            {% assign related_post = site.posts | where: "url", post_url | first %}
+        
+            <li data-post-url="{{ related_post.url }}">
+                {% if related_post.image %}
+                <img class="image-thumbnail" src="{{ related_post.image | relative_url }}"
+                    alt="Thumbnail for {{ related_post.title | escape }}" />
+                {% else %}
+                <img class="image-thumbnail" src="/src/Assets/default-thumb.jpg" alt="Default thumbnail" />
+                {% endif %}
+
+                <a href="{{ related_post.url | relative_url }}"><h5>{{ related_post.title }}</h5></a>
+
+                <span class="meta-block">
+                    {% if related_post.industry %}
+                    <p class="post-meta">
+                        <b>Industries:</b> {{ related_post.industry | join: ', ' }}
+                    </p>
+                    {% endif %}
+            
+                    {% if related_post.impact %}
+                    <p class="post-meta">
+                        <b>Impacts:</b> {{ related_post.impact | join: ', ' }}
+                    </p>
+                    {% endif %}
+                </span>
+                <a href="{{ related_post.url | relative_url }}" class="panel-cta-link"><button class="btn-tertiary">Read More</button></a>
             </li>
-            {% endfor %}
+            {% endfor %}     
         </ul>
     </div>
     {% endif %}

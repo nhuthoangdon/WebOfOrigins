@@ -11,7 +11,7 @@ permalink: /blog/
     {% for post in site.posts %}
     <li data-post-url="{{ post.url }}">
         <img class="image-thumbnail" src="{{ post.image }}" alt="Post Image" />
-        <h5>{{ post.title }}</h5>
+        <a href="{{ post.url }}"><h5>{{ post.title }}</h5></a>
         <span class="meta-block">
         {% if post.industry %}
         <p class="post-meta"><b>Industries:</b> {{ post.industry | join: ', ' }}</p>

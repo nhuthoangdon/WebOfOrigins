@@ -119,9 +119,11 @@ $(document).ready(function () {
     ensureMobileCTA(); // Initial check
   }
 
+
+  // Make list items clickable and link to respective posts
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.listing-grid li').forEach(li => {
-      const url = li.querySelector('h5 a')?.getAttribute('href');
+      const url = li.querySelector('a')?.getAttribute('href');
       if (url) {
         li.style.cursor = 'pointer';
         li.addEventListener('click', (e) => {
