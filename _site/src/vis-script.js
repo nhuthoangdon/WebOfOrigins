@@ -800,7 +800,7 @@ searchBtn.onclick = () => {
         resultDiv.appendChild(p);
 
         const GoToBtn = document.createElement("button");
-        GoToBtn.className = "secondary-button";
+        GoToBtn.className = "secondary-button go-to-node";
         GoToBtn.textContent = "See Connections";
         GoToBtn.onclick = () => {
             network.selectNodes([node.id]);
@@ -826,7 +826,7 @@ searchBtn.onclick = () => {
         resultDiv.appendChild(GoToBtn);
 
         const ViewMoreBtn = document.createElement("button");
-        ViewMoreBtn.className = "btn-tertiary";
+        ViewMoreBtn.className = "btn-tertiary view-node-details";
         ViewMoreBtn.textContent = "View Details";
         ViewMoreBtn.addEventListener("click", () => {
             const nodeId = resultDiv.getAttribute("data-node-id");

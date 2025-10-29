@@ -7,16 +7,13 @@ title: "{{ page.title }}"
 <meta itemprop="headline" content="{{ page.title }}">
 
     <h2>{{ page.title }}</h2>
-    {% if page.date %}
-    <p class="post-meta date"><i>{{ page.date | date_to_string }}</i></p>
-    {% endif %}
 
     {% if page.industry %}
-    <p class="post-meta"><b>Industries:</b> {{ page.industry | join: ', ' }}</p>
+    <p class="post-meta"><b>Industries:</b> {{ page.industry | array_to_sentence_string }}</p>
     {% endif %}
 
     {% if page.impact %}
-    <p class="post-meta"><b>Impacts:</b> {{ page.impact | join: ', ' }}</p>
+    <p class="post-meta"><b>Impacts:</b> {{ page.impact | array_to_sentence_string }}</p>
     {% endif %}
 
     {% if page.category %}
@@ -29,6 +26,10 @@ title: "{{ page.title }}"
 
     {% if page.tags %}
     <p class="post-meta"><b>Tags:</b> {{ page.tags | join: ', ' }}</p>
+    {% endif %}
+
+    {% if page.date %}
+    <p class="post-meta date"><i>{{ page.date | date_to_string }}</i></p>
     {% endif %}
 
     <img src="{{ page.image }}" alt="Post Image" class="blog-hero-image" />
@@ -118,13 +119,13 @@ title: "{{ page.title }}"
                 <span class="meta-block">
                     {% if related_post.industry %}
                     <p class="post-meta">
-                        <b>Industries:</b> {{ related_post.industry | join: ', ' }}
+                        <b>Industries:</b> {{ related_post.industry | array_to_sentence_string }}
                     </p>
                     {% endif %}
             
                     {% if related_post.impact %}
                     <p class="post-meta">
-                        <b>Impacts:</b> {{ related_post.impact | join: ', ' }}
+                        <b>Impacts:</b> {{ related_post.impact | array_to_sentence_string }}
                     </p>
                     {% endif %}
                 </span>

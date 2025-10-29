@@ -143,6 +143,9 @@ ul.listing-grid {
 
 .related-posts {
     margin-top: 10%;
+    h3 {
+        margin-bottom: 2rem;
+    }
     .listing-grid {
         > :first-child {
                 grid-column: span 1;       

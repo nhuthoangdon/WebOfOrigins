@@ -14,10 +14,10 @@ permalink: /blog/
         <a href="{{ post.url }}"><h5>{{ post.title }}</h5></a>
         <span class="meta-block">
         {% if post.industry %}
-        <p class="post-meta"><b>Industries:</b> {{ post.industry | join: ', ' }}</p>
+        <p class="post-meta"><b>Industries:</b> {{ post.industry | array_to_sentence_string }}</p>
         {% endif %}
         {% if post.impact %}
-        <p class="post-meta"><b>Impacts:</b> {{ post.impact | join: ', ' }}</p>
+        <p class="post-meta"><b>Impacts:</b> {{ post.impact | array_to_sentence_string }}</p>
         {% endif %}
         </span>
         {{ post.excerpt }}

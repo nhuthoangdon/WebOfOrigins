@@ -2,7 +2,14 @@
 
 console.log('script.js is loaded and running');
 
-$(document).ready(function () {
+function goToInsights() {
+  $('.go-to-insights').on('click', function () {
+    window.location.href = '/blog/';
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
 
   // --- Load fragments in parallel ---
   const headerPromise = fetch('/src/header.html')
@@ -30,10 +37,15 @@ $(document).ready(function () {
 
   // --- Highlight current page in nav ---
   function highlightCurrentNav() {
-    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+    let currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
     document.querySelectorAll("ul.menu-items li a").forEach(link => {
-      const href = link.getAttribute("href");
-      if (href && href.includes(currentPath)) {
+      let href = link.getAttribute("href");
+      if (!href) return;
+      href = href.replace(/\/+$/, ''); // Normalize href
+      // Match if paths equal, or special case for home (/index or /)
+      if (href === currentPath ||
+        (currentPath === '/' && (href === '/index' || href === '')) ||
+        (href === '/' && currentPath === '/index')) {
         link.classList.add("current");
       }
     });
@@ -120,8 +132,10 @@ $(document).ready(function () {
   }
 
 
-  // Make list items clickable and link to respective posts
-  document.addEventListener('DOMContentLoaded', () => {
+  
+  
+
+    // Make list items clickable and link to respective posts
     document.querySelectorAll('.listing-grid li').forEach(li => {
       const url = li.querySelector('a')?.getAttribute('href');
       if (url) {
@@ -141,7 +155,6 @@ $(document).ready(function () {
         });
       }
     });
-  });
   
   // Make cards/panels clickable and links to respective posts
   document.querySelectorAll('.listing-grid li').forEach(li => {
@@ -157,4 +170,7 @@ $(document).ready(function () {
       });
     }
   });
+
+  goToInsights();
+
 });

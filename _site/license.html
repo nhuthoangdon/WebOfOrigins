@@ -58,44 +58,6 @@
     <link rel="icon" type="image/png" href="./src/Assets/favicon_default.png">
 
     <link rel="stylesheet" href="./assets/style.css" type="text/css">
-    
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        color: #010812;
-        text-align: center;
-      }
-
-      p {
-        color: #010812;
-      }
-
-        .license-notice {
-          padding: 5%;
-          background-color: #EFF4F8;
-          
-          border-radius: 1em;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-        .license-notice p {
-          margin: 0.5em 0;      
-          font-size: 1em;
-          font-weight: 400;
-          text-align: center;
-        }
-        .license-notice a {
-          color: #0491AA;
-          text-decoration: none;
-        }
-        .license-notice a:hover {
-          text-decoration: underline;
-          font-weight: 800;
-        }
-  </style>
 
 
 </head>
@@ -103,29 +65,21 @@
 
 <body>
 
-  <div id="menu" class="menu">
-        <a href="./index"><img class="nav-logo" alt="WOO Logo" src="./src/Assets/logo.svg"></a>
-        <ul class="menu-items">           
-            <li><a href="./index">Home</a></li>
-            <li><a href="./about">About</a></li>
-            <li><a href="#dataguide">Data Guide</a></li>
-            <li><a href="about#sponsor-links">Support This Project</a></li>
-        </ul>
-        <div class="hamburger-menu">
-            <a><i class="fa-solid fa-bars fa-xl" style="color: #F8FAFB;"></i></a>
-        </div>
-    </div>
+  <header></header>
 
-  <div class="main">
+  <div class="text-container">
     <h2>License</h2>
-    <div class="license-notice">
-      <p><i><b>© 2025 Web of Origins</b> by Nhut Hoang-Don. All rights reserved for the database structure, content, and website materials.</i></p>
+    <div class="notice-panel">
+      <p style="width: 60%; margin: auto; text-align: center;"><i><b>© 2025 Web of Origins</b> by Nhut Hoang-Don. All rights reserved for the database structure, content, and website materials.</i></p>
       <h4>Data</h4>
       <p>The database, including its visualisation(s), is licensed under the <a class="link" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</a> license. Free to use, share, and adapt for non-commercial purposes with appropriate credit. Suggested citation: Web of Origins, Nhut Hoang-Don, 2025, <a class="link" href="www.weboforigins.com">weboforigins.com</a>.</p>
       <h4>Code</h4>
       <p>The codebase, including visualisation scripts, is licensed under the <a class="link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> license. See my repository’s <a class="link" href="https://github.com/nhuthoangdon/WebOfOrigins/blob/31a5e300278c8a3babec3584bfc88be6f178668b/LICENSE">LICENSE</a> file for details.</p>
-      <p>For commercial use of the database or its visualisations, contact me at <a class="link" href="mailto:weboforigins@gmail.com">weboforigins@gmail.com</a> for a paid license.</p>
-      <p>Help make this project grow! <a class="link" href="./about#sponsor-links" target="_blank">Donate now</a> to support my work.</p>
+      <p>For commercial use of the database or its visualisations, please contact <a class="link" href="mailto:weboforigins@gmail.com">weboforigins@gmail.com</a>.</p>
+      <p>Help bringing educational contents closer to the public! <a class="link" href="./about#sponsor-links" target="_blank">Donate now</a> to support this project.</p>
+
+      <h4>Data Visualisations</h4>
+      <p>The visualisations on this website are created using <a href="https://visjs.org/">vis.js</a>, an open-source JavaScript library. The usage and distribution of the library and its source codes are subject to the terms of the vis.js license. For more information, please refer to the official vis.js license documentation.</p>
     </div>
 
     <a class="button-link" href="./index"></a><button class="primary-button"><span class="btn-label">Home</span><span class="btn-icon"><img src="./src/Assets/ic_Home.png"></span></button></a>
