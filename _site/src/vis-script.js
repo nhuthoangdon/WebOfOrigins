@@ -770,7 +770,7 @@ searchBtn.onclick = () => {
 
     matchingNodes.forEach(node => {
         const resultDiv = document.createElement("div");
-              resultDiv.className = "result-item";
+              resultDiv.className = "result-item card";
               resultDiv.setAttribute("data-node-id", node.id); // Store node ID for drawer reference
         const resultItemCTA = document.createElement("div");
               resultItemCTA.className = "result-item-cta";
