@@ -56,7 +56,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/dist/dist/vis-network.min.css" type="text/css" />
-    <link rel="stylesheet" href="./assets/style.css" type="text/css">
+    <link rel="stylesheet" href="/assets/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,10 +64,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
     <title>Web Of Origins</title>
-    <link rel="icon" type="image/x-icon" href="./src/Assets/favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="./src/Assets/favicon_light.svg" media="(prefers-color-scheme: light)">
-    <link rel="icon" type="image/svg+xml" href="./src/Assets/favicon_dark.svg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" href="./src/Assets/favicon_default.png">
+    <link rel="icon" type="image/x-icon" href="/src/Assets/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/src/Assets/favicon_light.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="/src/Assets/favicon_dark.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="/src/Assets/favicon_default.png">
 </head>
 
 
@@ -80,49 +80,51 @@
 
   <header></header>
 
-  <!-- Search CTA -->
-  <div id="large-search-panel">
-    <div class="large-search-headings">
-      <h3>Explore where things come from and end up</h3>
-      <h2>What would you like to trace today?</h2>
+  <main class="wrapper">
+    <!-- Search CTA -->
+    <div id="large-search-panel">
+      <div class="large-search-headings">
+        <h3>Explore where things come from and end up</h3>
+        <h2>What would you like to trace today?</h2>
+      </div>
+      <div tabindex="0" class="large-search-container" role="button" aria-label="Enter a product name, material, ingredient, country, or impact, for example 'glucosamine', 'plastic', 'coffee', 'china', or 'flood' then click Go to search the Web of Origins database.">
+        <input type="text" id="large-search-input" placeholder="Type an item, ingredient, country, or impact - e.g. 'jello', 'corn', 'China', 'pollution' ..." aria-label="Search input, type a keyword here, e.g. 'glucosamine'">
+        <button id="large-search-btn" class="primary-button"><span class="btn-label">Go</span><span class="btn-icon"><i class="fa-solid fa-magnifying-glass"></i></span></button>
+      </div>
+      <span class="supporting-text">Latest entry: 'eggshell membrane'.</span>
     </div>
-    <div tabindex="0" class="large-search-container" role="button" aria-label="Enter a product name, material, ingredient, country, or impact, for example 'glucosamine', 'plastic', 'coffee', 'china', or 'flood' then click Go to search the Web of Origins database.">
-      <input type="text" id="large-search-input" placeholder="Type an item, ingredient, country, or impact - e.g. 'jello', 'corn', 'China', 'pollution' ..." aria-label="Search input, type a keyword here, e.g. 'glucosamine'">
-      <button id="large-search-btn" class="primary-button"><span class="btn-label">Go</span><span class="btn-icon"><i class="fa-solid fa-magnifying-glass"></i></span></button>
-    </div>
-    <span class="supporting-text">Latest entry: 'eggshell membrane'.</span>
-  </div>
-  
-  <!-- Search Results -->
-  <div id="search-results" class="card-container"></div>
-
-   <div class="network-container">
     
-    <div id="network"></div>
+    <!-- Search Results -->
+    <div id="search-results" class="card-container"></div>
 
-    <div id="control-panel" class="control-panel collapsed">
-      <button id="control-panel-toggle" class="control-panel-toggle" aria-label="Expand control panel">
-        <i class="fa-solid fa-chevron-left"></i>
-        <span class="control-panel-title label_small">Search & Controls</span>
-      </button>
-      <div class="control-panel-content">
-        <div class="checkbox-row" id="country-toggle">
-          <input type="checkbox" id="country-toggle" name="country-toggle" checked>
-          <label for="country-toggle">Show Country</label>
-        </div>
-        <div class="small-search-panel">
-          <div class="small-search-container">
-            <input type="text" id="small-search-input" placeholder="Search node by keyword...">
-            <button id="small-search-clear" title="Clear search">✖</button>
+    <div class="network-container">
+      
+      <div id="network"></div>
+
+      <div id="control-panel" class="control-panel collapsed">
+        <button id="control-panel-toggle" class="control-panel-toggle" aria-label="Expand control panel">
+          <i class="fa-solid fa-chevron-left"></i>
+          <span class="control-panel-title label_small">Search & Controls</span>
+        </button>
+        <div class="control-panel-content">
+          <div class="checkbox-row" id="country-toggle">
+            <input type="checkbox" id="country-toggle" name="country-toggle" checked>
+            <label for="country-toggle">Show Country</label>
           </div>
-          <div id="small-search-result-count" class="small-search-result-count">0 of 0</div>
+          <div class="small-search-panel">
+            <div class="small-search-container">
+              <input type="text" id="small-search-input" placeholder="Search node by keyword...">
+              <button id="small-search-clear" title="Clear search">✖</button>
+            </div>
+            <div id="small-search-result-count" class="small-search-result-count">0 of 0</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <a href="#references" class="cta-link open-new-tab">References</a>
-  
-  <button class="secondary-button go-to-insights">View Insights</button>
+    <a href="#references" class="cta-link open-new-tab">References</a>
+    
+    <button class="secondary-button go-to-insights">View Insights</button>
+</main>
 
   <footer></footer>
 

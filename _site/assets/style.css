@@ -1,15 +1,3 @@
-/*fonts used: Source Sans 3 and Source Code Pro*/
-/*Weight: value 200-900*/
-
-/*colours:
-    #C9E73A: neon green
-    #0491AA: medium blue
-    #8ED0DC: light blue
-    #611FF4: purple
-    #AEA3FF: light purple
-    #UI white: #F2F5F7
-    */
-
 :root {
     --background: radial-gradient(circle at center,
             rgba(25, 1, 55, 0.4) 30%, /* centre */ 
@@ -26,6 +14,7 @@
     --ui-light-purple: #AEA3FF;
     --ui-light-blue: #8ED0DC;
     --ui-neon-green: #C9E73A;
+    --ui-subtle-gray: #a8b4bc;
     --input-field-bg: rgba(71, 64, 112, 0.1);
     --input-field-border: 1px solid rgb(142, 208, 220, 0.3);
     --input-field-hover-border-color: rgba(142, 208, 220, 0.6);
@@ -39,6 +28,7 @@
     --popup-bg-color: rgba(246, 247, 249, 0.9);
     --popup-box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     --text-color: var(--ui-white);
+    --tinted-text-color: var(--ui-subtle-gray);
     --placeholder-text-color: var(--ui-light-blue);
     --heading-color: var(--ui-light-purple);
     --link-color: var(--ui-light-blue);
@@ -54,10 +44,10 @@ body, html {
     font-optical-sizing: auto;
     font-size: 16px;
     color: var(--text-color);
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
     min-height: 100vh;
     max-width: 100vw;
     background: var(--background);
@@ -65,14 +55,16 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+main, .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: auto;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
 }
-
 
 #large-search-panel {
     width: auto;
@@ -566,7 +558,6 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     max-width: 100vw;
     display: flex;
     flex-flow: row wrap;
-    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
@@ -795,9 +786,22 @@ h5 {
 
 p {
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 1.125rem;
+    line-height: 1.8rem;
     font-weight: 300;
     letter-spacing: .03em;
+}
+
+p.intro-text {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--tinted-text-color);
+}
+
+.sub-text {
+    font-size: 1rem;
+    line-height: auto;
 }
 
 b {
@@ -1056,18 +1060,24 @@ button:focus {
     }
 
 
-.big-link {
+.large-cta-link {
     font-family: var(--heading-font);
     text-decoration: none;
     display: inline-flex;
     transition: color 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+    border-bottom: 1px solid;
+    padding-bottom: 1.5em;
 }
-    .big-link:hover {
+    .large-cta-link:hover {
         color: var(--highlight-color);
     }
 
 
-.text-container {
+.text-container-wrapper {
     width: auto;
     max-width: 100vw;
     height: auto;
@@ -1092,12 +1102,15 @@ button:focus {
         .text-paragraph h4 {
             margin-bottom: 0;
         }
+    .text-container-wrapper .primary-button {
+        margin-top: calc(1rem + 2%);
+    }
 
     .sponsor-links, #sponsor-links {
         font-family: var(--heading-font);
         font-size: 1.1em;
-        display: flex !important;
-        flex-flow: row wrap !important;
+        display: flex;
+        flex-flow: row wrap;
         align-items: center;
         justify-content: center;
         gap: 3rem;
@@ -1109,29 +1122,35 @@ button:focus {
             }
         }
   
-        .sponsor-links a {
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 1em;
-            border-bottom: 1px solid;
-            padding-bottom: 1.5em;
-        }
-            .sponsor-links a:hover .fa-brands,
-            .sponsor-links a:focus .fa-brands,
-            .sponsor-links a:hover .fa-solid,
-            .sponsor-links a:focus .fa-solid {
-                color: var(--highlight-color) !important;
-                transition: color 0.2s;
-            }
 
-    #sponsor-links-anchor {
-        scroll-margin-top: -10rem;
+.social-ctas {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+}
+    .social-ctas a, .social-cta {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background: transparent;
+        border-radius: 4px;
+        border: 1px solid var(--ui-light-blue);
     }
+    .social-cta:hover {
+        background-color: var(--ui-neon-green);
+        color: var(--ui-black);
+    }
+        
 
 hr {
+    width: 100%;
    margin: 10% 0;
-   border: 1px solid rgba(142, 208, 220, 0.2);
+   border: 1px solid rgba(136, 146, 230, 0.15);
 }
 
 .notice-panel {
@@ -1171,9 +1190,9 @@ hr {
             justify-content: space-between;
             align-items: center;
             height: auto;
+            gap: 2rem;
             max-height: 64px;
             width: 100vw;
-            color: #070A14;
         }
     
         #header-sponsor-cta {
@@ -1259,7 +1278,7 @@ hr {
         font-size: 1.2rem;
     }
 
-    .text-container {
+    .text-container-wrapper {
         margin: 5rem 3rem;
         gap: 1rem;
     }
@@ -1325,9 +1344,9 @@ hr {
             text-align: center;
         }
 
-    ul {
+    /* ul {
         padding-left: 1em;
-    }
+    } */
 
     #large-search-panel {
         padding: 24px; 
@@ -1388,6 +1407,11 @@ hr {
     #search-results {
         margin: 1rem 1rem 3rem 1rem;
     }
+        .result-item-cta {
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+        }
     .control-panel {
         width: 80vw;
         height: 40vh;
@@ -1416,11 +1440,6 @@ hr {
 
 @media (max-width: 426px) {
     
-    .result-item-cta {
-        flex-direction: column;
-        align-items: center;
-        gap: 1em;
-    }
     .global-drawer {
         width: 95vw;
         padding: 24px;
@@ -1429,7 +1448,7 @@ hr {
         font-size: 1.2em;
     }
 
-    .text-container {
+    .text-container-wrapper {
         margin: 5rem 2rem;
     }
 
@@ -1458,7 +1477,7 @@ hr {
     .menu-items {
         padding: 2em 1em;
     }
-    .text-container {
+    .text-container-wrapper {
         margin: 5rem 1.5rem;
     }
 }

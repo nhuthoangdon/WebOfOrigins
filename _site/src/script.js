@@ -54,14 +54,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --- Initialize header interactions ---
   function initHeader() {
-    const sponsorLink = '/about#sponsor-links-anchor';
-    const sponsorButton = document.getElementById('header-sponsor-cta');
+    const sponsorLink = '/pages/sponsor';
+    const sponsorButtons = document.querySelectorAll('.sponsor-cta');
 
     // Sponsor button (desktop)
-    if (sponsorButton) {
-      sponsorButton.addEventListener('click', function () {
-        window.location.href = sponsorLink;
-      });
+    if (sponsorButtons.length > 0) {
+      sponsorButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          window.location.href = sponsorLink;
+        });
+      })
     }
 
     // --- Menu logic ---

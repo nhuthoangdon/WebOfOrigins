@@ -1,26 +1,27 @@
 $heading-font: 'Source Code Pro', monospace;
 $body-font: 'Source Sans 3', sans-serif;
-$page-content-margins: 6rem auto;
-$page-content-paddings: 0 2rem;
+$page-content-margins: 10% auto;
+$page-content-paddings: 0 5%;
 $max-text-content-width: 1000px;
 $content-gap: 2rem;
 $small-text-size: 0.85rem;
 $border-radius-small: 8px;
 $border-radius-medium: 14px;
 $border-radius-large: 28px;
+$tinted-text-color: #a8b4bc;
 
 
-
-.intro-text {
-    font-size: 1.15rem;
-    margin-bottom: 2rem;
-}
 
 // _layouts/grid.html styling
-.wide-width-section { 
-    width: 90%;
-   padding: 0 2rem;
+.wide-width-section {
+    max-width: 95vw;
+   padding: $page-content-paddings;
    margin: $page-content-margins;
+   align-items: flex-start;
+   @media (max-width: 1024px) {
+    max-width: 100%;
+    margin: 6rem auto;
+   }
 }
 
 ul.listing-grid {
@@ -69,12 +70,16 @@ ul.listing-grid {
             letter-spacing: 0.03em;
         }
         p {
+            font-size: 1rem;
+            line-height: 1.5em;
             margin: 0.5em 0;
         }
         .meta-block {
             margin: 0.5em 0 0 0;
         
             .post-meta {
+                font-size: $small-text-size;
+                line-height: 1.4em;
                 margin: 0.5em 0;
             }
         }
@@ -95,35 +100,55 @@ ul.listing-grid {
     }
     > :first-child {
     grid-column: span 2;
+        @media (max-width: 700px) {
+            grid-column: auto;
+        }
     }
 }
 
 // Default layout for post page
-.page-content {
+.content-wrapper {
     width: 100%;
     max-width: 100vw;
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.page-content {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
     margin: $page-content-margins;
     padding: $page-content-paddings;
-    gap: $content-gap;
     box-sizing: border-box;
+
+    @media (max-width: 1220px) {
+            max-width: 100%;
+            padding: 0 4rem;
+            margin: 6rem auto;
+        }
+    @media (max-width: 600px) {
+        padding: 0 2rem;
+    }
      
     .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $content-gap;
         width: 100%;
-        max-width: $max-text-content-width;
     }
-    @media (max-width: 1220px) {
-        max-width: 800px;
-    }
+}
+
+.text-container {
+    max-width: $max-text-content-width;
 }
 
 .post-meta {
     font-size: $small-text-size;
-    color: #a8b4bc;
+    color: $tinted-text-color;
     letter-spacing: .04rem;
 }
 

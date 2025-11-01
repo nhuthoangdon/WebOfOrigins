@@ -6,6 +6,7 @@ title: "{{ page.title }}"
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 <meta itemprop="headline" content="{{ page.title }}">
 
+<div class="text-container">
     <h2>{{ page.title }}</h2>
 
     {% if page.industry %}
@@ -44,7 +45,7 @@ title: "{{ page.title }}"
         {% endfor %}
     </ul>
     {% endif %}
-
+</div>
     <hr>
 
 
