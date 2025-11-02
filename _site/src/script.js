@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = postUrl;
       });
       // Preserve button click
-      li.querySelector('.btn-tertiary')?.addEventListener('click', (e) => {
+      li.querySelector('.panel-cta')?.addEventListener('click', (e) => {
         e.stopPropagation();
       });
     }

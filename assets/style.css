@@ -184,6 +184,7 @@ main, .wrapper {
 }
 
     .result-item p {
+        font-size: 1rem;
         margin: 0 0 0.7em 0;
         padding: 6px 0;
         line-height: 1.5em;
@@ -289,45 +290,67 @@ main, .wrapper {
             transform: rotate(90deg);
         }
 
-.btn-tertiary {
-    color: var(--link-color);
-    font-size: 14px;
+a.panel-cta {
+    font-family: var(--heading-font);
+    font-size: 0.9em;
     font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--link-color);
+    text-decoration: none;
     background: transparent;
-    border: none;
-    box-shadow: none;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
     padding: 6px;
     position: relative;
+    cursor: pointer;
 }
-    .btn-tertiary::after {
+    a.panel-cta::after {
         content: "⯈";
         font-size: 12px;
         margin-left: 4px;
         transform: translateX(0);
         transition: transform 0.3s ease;
     }
-    .btn-tertiary::before {
+   
+    a.panel-cta:hover {
+        color: var(--highlight-color);
+    }
+    a.panel-cta:hover::after {
+        transform: translateX(4px);
+    }
+   
+    a.panel-cta:focus {
+        color: var(--highlight-color);
+    }
+
+
+a.tertiary-button {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
+    color: var(--link-color);
+    text-decoration: none;
+    position: relative;
+}
+
+    a.tertiary-button::before {
         content: "";
         height: 2px;
-        width: 0;
+        width: 100%;
         background: var(--highlight-color);
         display: inline-block;
         position: absolute;
         top: calc(100% + 4px);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease-out;
     }
-    .btn-tertiary:hover {
-        color: var(--highlight-color);
-    }
-    .btn-tertiary:hover::after {
-        transform: translateX(4px);
-    }
-    .btn-tertiary:focus {
-        outline: none;
-        color: var(--highlight-color);
-    }
-    .btn-tertiary:focus:before {
-        width: 90%;
-    }
+        a.tertiary-button:hover::before, a.tertiary-button:focus::before {
+            transform: scaleX(1);
+        }
 
 .secondary-button {
     background-color: transparent;

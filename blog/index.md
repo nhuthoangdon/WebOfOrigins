@@ -21,7 +21,7 @@ permalink: /blog/
             {% endif %}
         </span>
         {{ post.excerpt }}
-        <a href="{{ post.url }}" class="panel-cta-link"><button class="btn-tertiary">Read More</button></a>
+        <a href="{{ post.url }}" class="panel-cta">Read More</a>
     </li>
     {% endfor %}
 </ul>

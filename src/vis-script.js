@@ -709,7 +709,7 @@ function handleOutsideClick(event) {
 
     const isClickInside = drawerPanel.contains(event.target);
     const isCloseBtn = event.target.classList.contains("btn-ic-close") ||
-        event.target.classList.contains("btn-tertiary");
+        event.target.classList.contains("panel-cta");
 
     if (isVisible && !isClickInside && !isCloseBtn) {
         closeDrawer();
@@ -825,8 +825,8 @@ searchBtn.onclick = () => {
         };
         resultDiv.appendChild(GoToBtn);
 
-        const ViewMoreBtn = document.createElement("button");
-        ViewMoreBtn.className = "btn-tertiary view-node-details";
+        const ViewMoreBtn = document.createElement("a");
+        ViewMoreBtn.className = "panel-cta view-node-details";
         ViewMoreBtn.textContent = "View Details";
         ViewMoreBtn.addEventListener("click", () => {
             const nodeId = resultDiv.getAttribute("data-node-id");

@@ -46,7 +46,8 @@ title: "{{ page.title }}"
     </ul>
     {% endif %}
 </div>
-    <hr>
+
+<hr>
 
 
     {% comment %}=====================================================================
@@ -130,7 +131,7 @@ title: "{{ page.title }}"
                     </p>
                     {% endif %}
                 </span>
-                <a href="{{ related_post.url | relative_url }}" class="panel-cta-link"><button class="btn-tertiary">Read More</button></a>
+                <a href="{{ related_post.url | relative_url }}" class="panel-cta-link panel-cta">Read More</a>
             </li>
             {% endfor %}     
         </ul>
@@ -138,3 +139,5 @@ title: "{{ page.title }}"
     {% endif %}
 
 </article>
+
+<a href="/blog/" class="tertiary-button go-back">View All Insights</a>
