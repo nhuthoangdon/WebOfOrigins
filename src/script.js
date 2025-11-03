@@ -8,8 +8,19 @@ function goToInsights() {
   });
 }
 
+function animatedSponsorCTAs() {
+  $('.sponsor-links a.large-cta-link').on('mouseover', function() {
+    $(this).find('i').addClass('fa-beat');
+  });
+
+  $('.sponsor-links a.large-cta-link').on('mouseout', function () {
+    $(this).find('i').removeClass('fa-beat');
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  animatedSponsorCTAs();
 
   // --- Load fragments in parallel ---
   const headerPromise = fetch('/src/header.html')

@@ -290,7 +290,7 @@ main, .wrapper {
             transform: rotate(90deg);
         }
 
-a.panel-cta {
+.panel-cta {
     font-family: var(--heading-font);
     font-size: 0.9em;
     font-weight: 600;
@@ -298,14 +298,14 @@ a.panel-cta {
     color: var(--link-color);
     text-decoration: none;
     background: transparent;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     flex-flow: row nowrap;
     padding: 6px;
     position: relative;
     cursor: pointer;
 }
-    a.panel-cta::after {
+    .panel-cta::after {
         content: "⯈";
         font-size: 12px;
         margin-left: 4px;
@@ -313,20 +313,23 @@ a.panel-cta {
         transition: transform 0.3s ease;
     }
    
-    a.panel-cta:hover {
+    .panel-cta:hover {
         color: var(--highlight-color);
     }
-    a.panel-cta:hover::after {
+    .panel-cta:hover::after {
         transform: translateX(4px);
     }
-   
-    a.panel-cta:focus {
+    .panel-cta:focus {
         color: var(--highlight-color);
     }
 
 
-a.tertiary-button {
-    display: block;
+.tertiary-button {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
     font-family: var(--heading-font);
     font-size: 1rem;
     font-weight: 600;
@@ -334,23 +337,28 @@ a.tertiary-button {
     color: var(--link-color);
     text-decoration: none;
     position: relative;
+    padding: 8px;
+    margin: 1em auto;
 }
 
-    a.tertiary-button::before {
+    .tertiary-button::before {
         content: "";
         height: 2px;
-        width: 100%;
+        width: 90%;
         background: var(--highlight-color);
         display: inline-block;
         position: absolute;
         top: calc(100% + 4px);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease-out;
+        transform: translateY(-8px);
+        opacity: 0;
+        transition: opacity 0.1s ease-in-out, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-        a.tertiary-button:hover::before, a.tertiary-button:focus::before {
-            transform: scaleX(1);
+        .tertiary-button:hover::before, .tertiary-button:focus::before {
+            transform: translateY(0);
+            opacity: 1;
         }
+
+    
 
 .secondary-button {
     background-color: transparent;
@@ -611,6 +619,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
                 color: var(--text-color);
                 transition: color 0.3s ease;
                 position: relative;
+                padding: 0.5rem;
             }
             .menu a:visited {
                 color: var(--text-color);
@@ -629,8 +638,8 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
                 content: "";
                 display: block;
                 position: absolute;
-                left: 0;
-                bottom: -1em;
+                left: 5%;
+                bottom: -0.5em;
                 width: 100%;
                 height: 2px;
                 background: var(--highlight-color);
@@ -643,7 +652,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
             }
                 .menu li a:hover::after,
                 .menu li a:focus::after {
-                    transform: scaleX(1);
+                    transform: scaleX(0.9);
                 }
     
 a#home-logo {
@@ -1111,8 +1120,7 @@ button:focus {
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    margin-top: calc(84px + 2%);
-    margin: calc(84px + 2%) 15%;
+    margin: calc(80px + 2%) 15%;
 }
     .text-paragraph {
         width: 100%;
@@ -1136,7 +1144,7 @@ button:focus {
         flex-flow: row wrap;
         align-items: center;
         justify-content: center;
-        gap: 3rem;
+        gap: 4rem;
         margin-top: 2rem;
     }
         @media (max-width: 1024px) {
@@ -1172,7 +1180,7 @@ button:focus {
 
 hr {
     width: 100%;
-   margin: 10% 0;
+   margin: 8% 0;
    border: 1px solid rgba(136, 146, 230, 0.15);
 }
 

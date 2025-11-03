@@ -1,10 +1,11 @@
 $heading-font: 'Source Code Pro', monospace;
 $body-font: 'Source Sans 3', sans-serif;
-$page-content-margins: 10% auto;
+$page-content-margins: 8% auto;
 $page-content-paddings: 0 5%;
 $max-text-content-width: 1000px;
 $content-gap: 2rem;
 $small-text-size: 0.85rem;
+$medium-text-size: 1rem;
 $border-radius-small: 8px;
 $border-radius-medium: 14px;
 $border-radius-large: 28px;
@@ -147,8 +148,10 @@ ul.listing-grid {
     max-width: $max-text-content-width;
 }
 
+
+
 .post-meta {
-    font-size: $small-text-size;
+    font-size: $medium-text-size;
     color: $tinted-text-color;
     letter-spacing: .04rem;
 }

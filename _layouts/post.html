@@ -9,29 +9,31 @@ title: "{{ page.title }}"
 <div class="text-container">
     <h2>{{ page.title }}</h2>
 
-    {% if page.industry %}
-    <p class="post-meta"><b>Industries:</b> {{ page.industry | array_to_sentence_string }}</p>
-    {% endif %}
+    <div class="meta-block">
+        {% if page.industry %}
+        <p class="post-meta"><b>Industries:</b> {{ page.industry | array_to_sentence_string }}</p>
+        {% endif %}
 
-    {% if page.impact %}
-    <p class="post-meta"><b>Impacts:</b> {{ page.impact | array_to_sentence_string }}</p>
-    {% endif %}
+        {% if page.impact %}
+        <p class="post-meta"><b>Impacts:</b> {{ page.impact | array_to_sentence_string }}</p>
+        {% endif %}
 
-    {% if page.category %}
-    <p class="post-meta"><b>Category:</b> {{ page.category | default: page.categories | join: ', ' }}</p>
-    {% endif %}
+        {% if page.category %}
+        <p class="post-meta"><b>Category:</b> {{ page.category | default: page.categories | join: ', ' }}</p>
+        {% endif %}
 
-    {% if page.supply_chain %}
-    <p class="post-meta"><b>Supply Chain:</b> {{ page.supply_chain | join: ' → ' }}</p>
-    {% endif %}
+        {% if page.supply_chain %}
+        <p class="post-meta"><b>Supply Chain:</b> {{ page.supply_chain | join: ' → ' }}</p>
+        {% endif %}
 
-    {% if page.tags %}
-    <p class="post-meta"><b>Tags:</b> {{ page.tags | join: ', ' }}</p>
-    {% endif %}
+        {% if page.tags %}
+        <p class="post-meta"><b>Tags:</b> {{ page.tags | join: ', ' }}</p>
+        {% endif %}
 
-    {% if page.date %}
-    <p class="post-meta date"><i>{{ page.date | date_to_string }}</i></p>
-    {% endif %}
+        {% if page.date %}
+        <p class="post-meta date"><i>{{ page.date | date_to_string }}</i></p>
+        {% endif %}
+    </div>
 
     <img src="{{ page.image }}" alt="Post Image" class="blog-hero-image" />
 
@@ -140,4 +142,16 @@ title: "{{ page.title }}"
 
 </article>
 
-<a href="/blog/" class="tertiary-button go-back">View All Insights</a>
+<a href="/blog/" class="tertiary-button go-back"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
+
+<hr>
+
+<h4>Follow for the latest insights</h4>
+<div class="social-ctas">
+    <a href="https://twitter.com/WebOfOrigins" target="_blank" class="social-cta">
+        <i class="fa-brands fa-x-twitter fa-lg"></i></a>
+    <a href="https://www.facebook.com/WebOfOrigins" target="_blank" class="social-cta">
+        <i class="fa-brands fa-facebook-f fa-lg"></i></a>
+    <a href="https://www.linkedin.com/company/weboforigins" target="_blank" class="social-cta">
+        <i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+</div>
