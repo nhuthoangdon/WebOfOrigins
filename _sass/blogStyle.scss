@@ -108,7 +108,7 @@ ul.listing-grid {
     }
 }
 
-// Default layout for post page
+// Default layout
 .content-wrapper {
     width: 100%;
     max-width: 100vw;
@@ -146,9 +146,14 @@ ul.listing-grid {
 
 .text-container {
     max-width: $max-text-content-width;
+    display: flex;
+    flex-direction: column;
 }
 
-
+.centered-content {
+    align-items: center;
+    text-align: center;
+}
 
 .post-meta {
     font-size: $medium-text-size;

@@ -1,16 +1,29 @@
 ---
 layout: null
+title: "{{ page.title }}"
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html  %}
 
     <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2LXFRGT" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
         {% include header.html %}
         <main class="wide-width-section">
             {{ content }}
         </main>
 
         {% include footer.html %}
+
+
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script src="{{ " /src/script.js" | relative_url }}" type="text/javascript"></script>
+
+        <script id="CookieDeclaration" src="https://consent.cookiebot.com/835ef43b-2355-4c7f-8b33-7368c65d97a1/cd.js" type="text/javascript" async></script>
     </body>
 </html>

@@ -344,7 +344,7 @@ main, .wrapper {
     .tertiary-button::before {
         content: "";
         height: 2px;
-        width: 90%;
+        width: 100%;
         background: var(--highlight-color);
         display: inline-block;
         position: absolute;
@@ -357,7 +357,13 @@ main, .wrapper {
             transform: translateY(0);
             opacity: 1;
         }
-
+.tertiary-button.go-back i {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+    .tertiary-button.go-back:hover i {
+        transform: translateX(-6px);
+    }
     
 
 .secondary-button {
@@ -1186,7 +1192,7 @@ hr {
 
 .notice-panel {
     display: block;
-    width: 80vw;
+    width: 80%;
     max-width: 800px;
     height: auto;
     padding: 5% 7%;
@@ -1199,6 +1205,10 @@ hr {
     .notice-panel p {
         color: var(--ui-black);
         font-weight: 400;
+        text-align: left;
+    }
+    .notice-panel h3, .notice-panel h4, .notice-panel h5 {
+        color: var(--ui-dark-purple);
     }
     .notice-panel a {
         color:  #0491AA;
@@ -1207,6 +1217,11 @@ hr {
         .notice-panel a:hover {
             color: var(--ui-dark-purple);
         }
+    @media (max-width: 450px) {
+        .notice-panel {
+            width: auto;
+        }
+    }
 
 /* BREAK POINTS */
 

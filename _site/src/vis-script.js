@@ -840,7 +840,7 @@ searchBtn.onclick = () => {
     searchResults.appendChild(fragment);
 
     if (!matchingNodes.length) {
-        searchResults.innerHTML = "<p>No matches found. Please try another keyword or check back soon — our database is updated continuously.</p>";
+        searchResults.innerHTML = "<p>No matches found. Please try a different keyword. For best results, try a single keyword and double-check your spelling. The database is updated continuously, so you can also check back soon!</p>";
     }
 };
 
