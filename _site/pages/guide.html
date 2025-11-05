@@ -86,25 +86,51 @@
     <main class="page-content">
         <div class="text-container">
     <h1 class="article-header">About the Data Visualisation</h1>
-    <h4>Reading the Network</h4>
+    <h4>Interactions & Data Interpretation</h4>
     <p>
-        The network visualises connections between consumer products, their direct ingredients/compositions, raw materials, industries, and resulting social/environmental impacts, together with the associated countries in hierarchical order. Use the control panel on the right of the network canvas to find keywords and toggle views (e.g., show/hide countries). Nodes represent entitites; edges show relationships. Hover over nodes and edges to see additional info.
+        The network visualises connections between consumer products, their direct ingredients/compositions, raw materials, industries, and resulting social/environmental impacts, together with the associated countries in hierarchical order (vertically). Nodes represent entitites; edges show relationships. Hover over nodes and edges to see additional info. The larger the nodes, the more connections they have with other nodes → the more prominent the entities are in the supply chain. <br>
+        <br>
+        Use the control panel on the right of the network canvas to find keywords and toggle views (e.g., show/hide countries).
     </p>
+    <p>Use your mouse or the controls on the bottom right corner to manipulate the view (e.g. zoom in/out, focus) </p>
+    <p>
+        Clicking on a node will highlight its direct connections (up to 2 hierarchy levels), trace the supply chain by
+        clicking on the next relevant nodes one by one. Please note that multi-selection is currently not working.
+    </p>
+    <p>Highlighted Nodes can be clicked and dragged for better view</p>
+    
     <h4>Network Structure</h4>
     <p>
         <b>Nodes are color-coded by hierarchy level</b><br>
         <br>
-        <b>• Country:</b> countries associated with the end products (Item nodes) <br>
-        <b>• Item:</b> end products (e.g. "Jello"): Blue – Starting points for consumer goods.
-        iCountry (item-related countries): Gray (#DFE2E5) – Prominent producers/importers/exporters of items.
-        Composition (e.g., ingredients like "Gelatin"): Purple (#C869ED) – Breakdown of item components.
-        Source (e.g., "Animal Byproducts"): Blue (#6591FF) – Origins of compositions.
-        rawMaterial (e.g., "Chitin"): Brown (#CEA372) – Base materials extracted from sources.
-        smCountry (source/material countries): Gray (#DFE2E5) – Key countries for sources/materials.
-        Industry (e.g., "Shrimp Farming"): Teal (#60A4C2) – Production processes.
+        <b>• Country (flag):</b> Key countries associated with the end products (Item nodes). <br> <br>
+        <b style="color: #25B9FE;">• Item:</b> End products/consumer goods (e.g. "Jello").<br>
+        <br>
+        <b style="color: #C869ED;">• Composition:</b> Direct ingredients or components of the Items (e.g. Gelatin). <br> <br>
+        <b style="color: #6591FF;">• Source:</b> Materials or sources of the Compositions, if applicable (e.g. Animal Hides). <br><br>
+        <b>• Country (flag):</b> Key countries associated with the Sources and Raw Materials. <br><br>
+        <b style="color: #CEA372;">• Raw Material:</b> Base materials or origins of the Sources or Compositions (e.g. Cattle). <br> <br>
+        <b style="color: #60A4C2;">• Industry:</b> Industries that process the Raw Materials (e.g. Cattle Rendering). <br> <br>
+        <b>• Country (flag):</b> Countries linked to the Industries and Concerns. <br><br>
+        <b style="color: #FBB53B;">• Concerns:</b> Potential or reported issues of the Industries (e.g. Waste Generation). <br><br>
+        <b style="color: #F05CCB;">• Consequences:</b> Direct outcomes of the Concerns (e.g. Water Contamination). <br> <br>
+        <b style="color: #FB7E57;">• Impacts:</b> Broader social/environmental effects from the Consequences or Concerns (e.g. Biosecurity Risks). <br><br>
+        <b style="color: chartreuse;">🍀 Sustainable Nodes:</b> eco-friendly ingredients/compositions/materials.
     </p>
-
+    <h4>Data Sources</h4>
+    <p>
+       The data used to construct the network is collected through extensive research. All supposely "claims" are based on credible sources cited in <a class="link" href="/pages/reference">References</a>. Data is not exhausive and might not cover all related entries in a pathway. <br>
+       <br>
+       For countries, only the most prominent ones (usually the global top 3-5) are featured. Country Roles (e.g. Producer, Consumer, Importer, Exporter) are paired with relative adjectives of importance (e.g. significant importer, major consumer) and not ranking as a country's production data can change constantly. Occasionally, a country might be listed as "the largest" or "global leader" if its role is stable and the data is consistent across various sources.
+    </p>
 </div>
+
+    <a class="button-link page-cta" href="/index">
+        <button class="primary-button">
+            <span class="btn-label">Explore the Network</span>
+            <span class="btn-icon"><img src="/src/Assets/ic_Home.png"></span>
+        </button>
+    </a>
     </main>
 
     <footer>

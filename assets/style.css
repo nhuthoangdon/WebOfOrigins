@@ -872,6 +872,14 @@ a {
         opacity: .5;
     }
 
+.link {
+    transition: color 0.1s;
+}
+
+.link:visited {
+    color: var(--ui-dark-purple);   
+}
+
 .label_small {
     font-size: 0.875em;
     font-weight: 500;
@@ -1102,15 +1110,10 @@ button:focus {
             outline-offset: 4px;
         }
 
-.link {
-    transition: color 0.1s;
+.page-cta {
+    margin-top: calc(2rem + 2%);
 }
-    .link:hover {
-        color: var(--highlight-color);
-    }
-    .link:visited {
-        color: var(--ui-dark-purple);
-    }
+
 
 
 .large-cta-link {
