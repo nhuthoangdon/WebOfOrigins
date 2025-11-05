@@ -3,11 +3,10 @@ layout: default
 title: "{{ page.title }}"
 ---
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="text-container" itemscope itemtype="http://schema.org/BlogPosting">
 <meta itemprop="headline" content="{{ page.title }}">
 
-<div class="text-container">
-    <h2>{{ page.title }}</h2>
+    <h1 class="article-header">{{ page.title }}</h1>
 
     <div class="meta-block">
         {% if page.industry %}
@@ -47,10 +46,11 @@ title: "{{ page.title }}"
         {% endfor %}
     </ul>
     {% endif %}
-</div>
+</article>
 
 <hr>
 
+<section>
 
     {% comment %}=====================================================================
     RELATED POSTS
@@ -140,9 +140,9 @@ title: "{{ page.title }}"
     </div>
     {% endif %}
 
-</article>
+    <a href="/blog/" class="tertiary-button go-back"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
 
-<a href="/blog/" class="tertiary-button go-back"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
+</section>
 
 <hr>
 

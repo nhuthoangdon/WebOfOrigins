@@ -4,7 +4,7 @@ title: Insights
 permalink: /blog/
 ---
 
-<h2>Latest Insights</h2>
+<h1 class="article-header">Latest Insights</h1>
 <p class="intro-text">Dive deeper into our findings</p>
 
 <ul class="listing-grid">
