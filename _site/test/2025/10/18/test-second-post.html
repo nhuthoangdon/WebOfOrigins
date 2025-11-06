@@ -1,30 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Google Tag Manager -->
-<script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-K2LXFRGT');</script>
-<!-- End Google Tag Manager -->
 
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="835ef43b-2355-4c7f-8b33-7368c65d97a1"
-    data-blockingmode="auto" type="text/javascript"></script>
+<!-- Cookiebot (MUST be first blocking script) -->
+<script 
+    id="Cookiebot" 
+    src="https://consent.cookiebot.com/uc.js" 
+    data-cbid="835ef43b-2355-4c7f-8b33-7368c65d97a1"
+    data-blockingmode="auto" type="text/javascript">
+</script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0XPT981ZB"></script>
-
-
-<!-- Google analytics tag -->
+<!-- Google Analytics initialization (optional, if not managed inside GTM) -->
 <script data-cookieconsent="ignore">
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    // Initialize gtag with default consent settings BEFORE any config or event calls.
-    // Cookiebot's auto-blocking will then update these based on user consent.
+    function gtag() { dataLayer.push(arguments); }
     gtag("consent", "default", {
         ad_personalization: "denied",
         ad_storage: "denied",
@@ -32,17 +20,29 @@
         analytics_storage: "denied",
         functionality_storage: "denied",
         personalization_storage: "denied",
-        security_storage: "granted", // Security storage should always be granted
-        wait_for_update: 500, // Give Cookiebot time to update consent
+        security_storage: "granted",
+        wait_for_update: 500
     });
-
     gtag("set", "ads_data_redaction", true);
     gtag("set", "url_passthrough", false);
-
-    // Initialize gtag for the specific GA4 property
     gtag("js", new Date());
     gtag("config", "G-J0XPT981ZB");
 </script>
+
+<!-- Google Tag Manager -->
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K2LXFRGT');
+</script>
+
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +74,6 @@
       <li><a href="/%20/pages/guide">Network Guide</a></li>
       <li><a href="/about">Project Background</a></li>
       <li><a href="/blog/">Insights</a></li>
-      <li><a href="#references">References</a></li>
     </ul>
     <button id="header-sponsor-cta" class="primary-button"><span class="btn-label">Support This Project</span><span class="btn-icon"><i class="fa-solid fa-heart"></i></span></button>
     <div class="hamburger-menu">
@@ -166,6 +165,7 @@ Would you like that setup example?</p>
 </div>
     </main>
 
+    
     <footer>
   <div class="footer-main-container">
     <div class="footer-left-content">
@@ -188,9 +188,9 @@ Would you like that setup example?</p>
     <div class="footer-copyright">© 2025 Web of Origins</div>
     <span class="short-vertical-divider"></span>
     <div class="footer-bottom-links">
-      <a href="/license">License</a>
+      <a href="/pages/license">License</a>
       <a href="#disclaimer">Disclaimer</a>
-      <a href="#privacy">Privacy</a>
+      <a href="/pages/privacy">Privacy</a>
     </div>
   </div>
 </footer>
@@ -200,8 +200,6 @@ Would you like that setup example?</p>
         integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="/%20/src/script.js" type="text/javascript"></script>
 
-    <script id="CookieDeclaration" src="https://consent.cookiebot.com/835ef43b-2355-4c7f-8b33-7368c65d97a1/cd.js"
-        type="text/javascript" async></script>
 </body>
 
 </html>
