@@ -1161,7 +1161,7 @@ button:focus {
         margin-top: calc(1rem + 2%);
     }
 
-    .sponsor-links, #sponsor-links {
+    .donate-links, #donate-links {
         font-family: var(--heading-font);
         font-size: 1.1em;
         display: flex;
@@ -1172,7 +1172,7 @@ button:focus {
         margin-top: 2rem;
     }
         @media (max-width: 1024px) {
-            .sponsor-links, #sponsor-links {
+            .donate-links, #donate-links {
                 gap: 2rem;
             }
         }
@@ -1448,7 +1448,7 @@ hr {
         right: calc(-90vw + 48px);
     }
 
-    .sponsor-links {
+    .donate-links {
         font-size: 1em;
     }
 
@@ -1527,7 +1527,7 @@ hr {
         margin: 5rem 2rem;
     }
 
-    #sponsor-links-anchor {
+    #donate-links-anchor {
         scroll-margin-top: -35rem;
     }
 

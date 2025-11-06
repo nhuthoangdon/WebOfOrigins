@@ -9,11 +9,11 @@ function goToInsights() {
 }
 
 function animatedSponsorCTAs() {
-  $('.sponsor-links a.large-cta-link').on('mouseover', function() {
+  $('.donate-links a.large-cta-link').on('mouseover', function() {
     $(this).find('i').addClass('fa-beat');
   });
 
-  $('.sponsor-links a.large-cta-link').on('mouseout', function () {
+  $('.donate-links a.large-cta-link').on('mouseout', function () {
     $(this).find('i').removeClass('fa-beat');
   });
 }
