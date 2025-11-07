@@ -23,19 +23,37 @@ document.addEventListener("DOMContentLoaded", function () {
   animatedSponsorCTAs();
 
   // --- Load fragments in parallel ---
-  const headerPromise = fetch('/src/header.html')
-    .then(res => res.text())
-    .then(html => {
-      document.querySelector('header').innerHTML = html;
-    })
-    .catch(err => console.error('Header failed to load:', err));
+  const headerPromise = new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/src/header.html', true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          document.querySelector('header').innerHTML = xhr.responseText;
+          resolve();
+        } else {
+          reject(new Error(xhr.status));
+        }
+      }
+    };
+    xhr.send();
+  });
 
-  const footerPromise = fetch('/src/footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.querySelector('footer').innerHTML = html;
-    })
-    .catch(err => console.error('Footer failed to load:', err));
+  const footerPromise = new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/src/footer.html', true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          document.querySelector('footer').innerHTML = xhr.responseText;
+          resolve();
+        } else {
+          reject(new Error(xhr.status));
+        }
+      }
+    };
+    xhr.send();
+  });
 
   // --- Once both are loaded ---
   Promise.all([headerPromise, footerPromise]).then(() => {

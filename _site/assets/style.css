@@ -78,6 +78,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    box-sizing: border-box;
 }
 
 #large-search-panel {
@@ -934,6 +935,18 @@ a {
             content: "↗";
         }
 
+
+.follow-socials {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+
 footer {
     width: 100%;
     max-width: 100vw;
@@ -1278,7 +1291,7 @@ hr {
             text-align: right;
             gap: 1.5em;
             background: linear-gradient(135deg,
-                    rgba(3, 3, 76, 0.3) 10%,
+                    rgba(3, 3, 76, 0.7) 10%,
                     rgba(4, 15, 56, 0.8) 50%,
                     rgba(5, 0, 20, 0.98) 100%);
             backdrop-filter: blur(12px) saturate(120%);
