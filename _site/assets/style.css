@@ -90,6 +90,11 @@ section {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+@media (max-width: 450px) {
+    section {
+        padding: 0;
+    }
+}
 
 #large-search-panel {
     width: auto;
