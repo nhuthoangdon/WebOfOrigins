@@ -47,15 +47,19 @@ ul.listing-grid {
         align-items: flex-start;
         justify-content: flex-start;
         text-align: left;
-        border: 1px solid rgba(142, 208, 220, 0.1);
+        -webkit-border-radius: $border-radius-small;
         border-radius: $border-radius-small;
+        border: 1px solid rgba(142, 208, 220, 0.1);
         background: rgba(71, 110, 141, 0.08);
         padding: 1.5rem;
         cursor: pointer;
+        -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
 
         &:hover {
+            -webkit-box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            -webkit-transform: translateY(-5px);
             transform: translateY(-5px);
             border-color: rgba(94, 167, 239, 0.3);
             background: rgba(94, 167, 239, 0.1);
@@ -64,6 +68,7 @@ ul.listing-grid {
                     color: #C9E73A; 
          }
          &:hover a::after {
+            -webkit-transform: translateX(4px);
             transform: translateX(4px);
          }
 
@@ -96,8 +101,10 @@ ul.listing-grid {
             width: 100%;
             height: 10em;
             object-fit: cover;
+            -webkit-object-fit: cover;
             margin-bottom: 1em;
             background-color: rgba(94, 167, 239, 0.5);
+            -webkit-border-radius: 8px 8px 0 0;
             border-radius: 8px 8px 0 0;
         }
 
@@ -146,6 +153,7 @@ img {
     height: auto;
     max-height: 70vh;
     object-fit: contain;
+    -webkit-object-fit: contain;
 }
 
 .blog-hero-image {
@@ -153,6 +161,8 @@ img {
     height: auto;
     max-height: 480px;
     object-fit: cover;
+    -webkit-object-fit: cover;
+    -webkit-border-radius: $border-radius-medium;
     border-radius: $border-radius-medium;
     margin: 2rem 0 2rem 0;
 
@@ -187,5 +197,3 @@ img {
         }
     }
 }
-
-
