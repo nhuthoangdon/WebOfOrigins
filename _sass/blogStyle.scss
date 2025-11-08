@@ -117,6 +117,7 @@ ul.listing-grid {
 
 // Default layout
 .page-content { //main page content after header
+    width: 100%;
     margin: $page-content-margins;
     padding: $page-content-paddings;
 
@@ -128,9 +129,13 @@ ul.listing-grid {
     @media (max-width: 600px) {
         padding: 0 2rem;
     }
+    @media (max-width: 350px) {
+        padding: 0 1rem;
+    }
 }
 
 .text-container {
+    width: 100%;
     max-width: $max-text-content-width;
     display: flex;
     flex-direction: column;

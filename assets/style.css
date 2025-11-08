@@ -456,6 +456,7 @@ section {
     -webkit-border-radius: 300px;
     border-radius: 300px;
     text-decoration: none;
+    text-align: center;
     cursor: pointer;
     -webkit-transition: background 0.2s, color 0.2s;
     transition: background 0.2s, color 0.2s;
@@ -1248,6 +1249,7 @@ button {
     font-size: 0.9em;
     font-weight: 600;
     letter-spacing: .03em;
+    text-align: center;
     -webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
     cursor: pointer;
@@ -1386,13 +1388,15 @@ button:focus {
         flex-direction: column;
         -webkit-align-items: flex-start;
         align-items: flex-start;
-        gap: 1em;
+        gap: 1.5em;
+        text-align: left;
     }
         .text-paragraph h4 {
             margin-bottom: 0;
         }
-    .text-container-wrapper .primary-button {
+    .text-paragraph .primary-button {
         margin-top: calc(1rem + 2%);
+        align-self: center;
     }
 
     .donate-links, #donate-links {
@@ -1620,7 +1624,7 @@ hr {
     }
 
     .text-container-wrapper {
-        margin: 5rem 3rem;
+        margin: 5rem 2rem;
         gap: 1rem;
     }
 
@@ -1802,10 +1806,6 @@ hr {
         font-size: 1.2em;
     }
 
-    .text-container-wrapper {
-        margin: 5rem 2rem;
-    }
-
     #donate-links-anchor {
         scroll-margin-top: -35rem;
     }
@@ -1837,4 +1837,13 @@ hr {
     .text-container-wrapper {
         margin: 5rem 1.5rem;
     }
+}
+
+@media (max-width: 320px) {
+    h1 { font-size: 10vw; }
+    h2, h1.article-header { font-size: 9vw; }
+    .text-container-wrapper { margin: 8rem 1.5rem; }
+    #large-search-panel { margin-top: 8rem; }
+    ul.listing-grid { grid-template-columns: auto; }
+    .tertiary-button { text-align: center; }
 }
