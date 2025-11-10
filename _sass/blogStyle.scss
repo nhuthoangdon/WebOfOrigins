@@ -4,7 +4,7 @@ $page-content-margins: 8% auto;
 $page-content-paddings: 0 5%;
 $max-text-content-width: 850px;
 $content-gap: 2rem;
-$small-text-size: 0.85rem;
+$small-text-size: 0.9rem;
 $medium-text-size: 1rem;
 $border-radius-small: 8px;
 $border-radius-medium: 14px;
@@ -67,14 +67,14 @@ ul.listing-grid {
          &:hover a {
                     color: #C9E73A; 
          }
-         &:hover a::after {
+         &:hover a span::after {
             -webkit-transform: translateX(4px);
             transform: translateX(4px);
          }
 
         a { text-decoration: none; }
         
-        h5 {
+        h4 {
             margin-bottom: 0;
             color: #8ED0DC;
             font-family: $body-font;

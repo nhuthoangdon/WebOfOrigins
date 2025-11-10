@@ -800,7 +800,7 @@ searchBtn.onclick = () => {
         resultDiv.appendChild(p);
 
         const GoToBtn = document.createElement("button");
-        GoToBtn.className = "secondary-button go-to-node";
+        GoToBtn.className = "secondary-button go-to-node icon icon-regular";
         GoToBtn.textContent = "See Connections";
         GoToBtn.onclick = () => {
             network.selectNodes([node.id]);
@@ -825,16 +825,17 @@ searchBtn.onclick = () => {
         };
         resultDiv.appendChild(GoToBtn);
 
-        const ViewMoreBtn = document.createElement("a");
-        ViewMoreBtn.className = "panel-cta view-node-details";
-        ViewMoreBtn.textContent = "View Details";
-        ViewMoreBtn.addEventListener("click", () => {
+        const viewMoreBtn = document.createElement("a");
+        viewMoreBtn.className = "panel-cta view-node-details icon icon-solid icon-chevron-right";
+        const viewMoreIcon = document.createElement("span");
+        viewMoreBtn.textContent = "View Details";
+        viewMoreBtn.addEventListener("click", () => {
             const nodeId = resultDiv.getAttribute("data-node-id");
             toggleDrawer(nodeId, node.label);
         });
         fragment.appendChild(resultDiv);
         resultDiv.appendChild(resultItemCTA);
-        resultItemCTA.appendChild(ViewMoreBtn);
+        resultItemCTA.appendChild(viewMoreBtn);
         resultItemCTA.appendChild(GoToBtn);
     });
     searchResults.appendChild(fragment);

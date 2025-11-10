@@ -100,7 +100,7 @@ title: "{{ page.title }}"
     {% assign top3 = sorted | slice: 0, 3 %}
     
     <div class="related-posts">
-        <h3>Related Insights</h3>
+        <h2>Related Insights</h2>
         <ul class="listing-grid">
             {% for e in top3 %}
             {% assign parts = e | split: "|" %}
@@ -133,7 +133,7 @@ title: "{{ page.title }}"
                     </p>
                     {% endif %}
                 </span>
-                <a href="{{ related_post.url | relative_url }}" class="panel-cta-link panel-cta">Read More</a>
+                <a href="{{ related_post.url | relative_url }}" class="panel-cta-link panel-cta"><span class="icon icon-solid icon-chevron-right">Read More</span></a>
             </li>
             {% endfor %}     
         </ul>
@@ -147,7 +147,7 @@ title: "{{ page.title }}"
 <hr>
 
 <section class="follow-socials">
-    <h4>Stay Connected</h4>
+    <h2>Stay Connected</h2>
     <div class="social-ctas">
         <a href="https://twitter.com/WebOfOrigins" target="_blank" class="social-cta">
             <i class="fa-brands fa-x-twitter fa-lg"></i></a>

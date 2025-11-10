@@ -11,7 +11,7 @@ permalink: /blog/
     {% for post in site.posts %}
     <li data-post-url="{{ post.url }}">
         <img class="image-thumbnail" src="{{ post.image }}" alt="Post Image" />
-        <a href="{{ post.url }}"><h5>{{ post.title }}</h5></a>
+        <a href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
         <span class="meta-block">
             {% if post.industry %}
             <p class="post-meta"><b>Industries:</b> {{ post.industry | array_to_sentence_string }}</p>
@@ -21,7 +21,7 @@ permalink: /blog/
             {% endif %}
         </span>
         {{ post.excerpt }}
-        <a href="{{ post.url }}" class="panel-cta">Read More</a>
+        <a href="{{ post.url }}" class="panel-cta"><span class ="icon icon-solid icon-chevron-right">Read More</span></a>
     </li>
     {% endfor %}
 </ul>
@@ -29,7 +29,7 @@ permalink: /blog/
 <hr>
 
 <section class="follow-socials">
-    <h4>Stay Connected</h4>
+    <h2>Stay Connected</h2>
     <div class="social-ctas">
         <a href="https://twitter.com/WebOfOrigins" target="_blank" class="social-cta">
             <i class="fa-brands fa-x-twitter fa-lg"></i></a>
