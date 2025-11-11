@@ -60,6 +60,11 @@
 }
 
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 
 body, html {
@@ -269,6 +274,7 @@ button:focus {
     position: relative;
     padding: 8px;
     margin: 1em auto;
+    cursor: pointer;
 }
 
 .tertiary-button::before {
@@ -486,12 +492,14 @@ button:focus {
         font-weight: 600;
     }
 
-    .result-item-cta {
+    .two-option-ctas {
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
         -webkit-flex-direction: row;
         flex-direction: row;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
         -webkit-align-items: center;
         align-items: center;
         -webkit-justify-content: space-between;
@@ -527,7 +535,7 @@ button:focus {
     -webkit-transition: right 0.3s ease;
     transition: right 0.3s ease;
     overflow-y: auto;
-    font-size: 0.9em;
+    font-size: 1em;
     font-family: var(--body-font);
 }
     .global-drawer.open {
@@ -1552,6 +1560,9 @@ hr {
    margin: 8% 0;
    border: 1px solid rgba(136, 146, 230, 0.15);
 }
+@media (max-width: 600px) {
+    hr { margin: 6rem 0; }
+}
 
 .notice-panel {
     display: block;
@@ -1845,13 +1856,13 @@ hr {
     #search-results {
         margin: 1rem 1rem 3rem 1rem;
     }
-        .result-item-cta {
-            -webkit-flex-direction: column;
-            flex-direction: column;
-            -webkit-align-items: center;
-            align-items: center;
-            gap: 1em;
-        }
+    .two-option-ctas {
+        -webkit-align-items: center;
+        align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        gap: 1em;
+    }
     .control-panel {
         width: 80vw;
         height: 40vh;

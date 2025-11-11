@@ -633,24 +633,9 @@ const drawerPanel = document.createElement("div");
 const closeIcon = document.createElement("i");
       closeIcon.className = "fa-solid fa-xmark fa-lg";
 const closeDrawerBtn = document.createElement("div");
-      closeDrawerBtn.className = "btn-ic-close";
+      closeDrawerBtn.className = "btn-ic-close close-drawer";
 closeDrawerBtn.appendChild(closeIcon);
-closeDrawerBtn.addEventListener("click", () => {
-    if (window.jQuery) {
-        $(drawerPanel).animate({ right: "-400px" }, 300, function () {
-            $(this).hide();
-        });
-    } else {
-        drawerPanel.classList.remove("open");
-        drawerPanel.addEventListener("transitionend", function hideAfter() {
-            if (!drawerPanel.classList.contains("open")) {
-                drawerPanel.style.display = "none";
-            }
-            drawerPanel.removeEventListener("transitionend", hideAfter);
-        });
-    }
-    delete drawerPanel.dataset.currentNodeId; // Clear current node ID when closed
-});
+
 drawerPanel.appendChild(closeDrawerBtn);
 
 // Add content container to hold dynamic content
@@ -678,6 +663,41 @@ const updateDrawerContent = (nodeId, nodeLabel) => {
         return `<h3>${nodeLabel.replace(/\n/g, " ")} Highlights</h3><ul>${listItems}</ul>`;
     }
       };
+
+//add Close and View Node Buttons to drawerPanel
+const optionButtons = document.createElement("div");
+    optionButtons.className = "two-option-ctas drawer-options";
+const closeDrawerOption = document.createElement("a");
+    closeDrawerOption.className = "tertiary-button btn-go-back icon icon-solid icon-close close-drawer";
+    closeDrawerOption.textContent = "Close";
+const goToNodeOption = document.createElement("button");
+goToNodeOption.className = "secondary-button icon icon-regular go-to-node";
+goToNodeOption.textContent = "View Node";
+
+optionButtons.appendChild(closeDrawerOption);
+optionButtons.appendChild(goToNodeOption);
+drawerPanel.appendChild(optionButtons);
+
+function closeDrawer() {
+    if (window.jQuery) {
+        $(drawerPanel).animate({ right: "-400px" }, 300, function () {
+            $(this).hide();
+        });
+    } else {
+        drawerPanel.classList.remove("open");
+        drawerPanel.addEventListener("transitionend", function hideAfter() {
+            if (!drawerPanel.classList.contains("open")) {
+                drawerPanel.style.display = "none";
+            }
+            drawerPanel.removeEventListener("transitionend", hideAfter);
+        });
+    }
+    delete drawerPanel.dataset.currentNodeId; // Clear current node ID when closed
+}
+document.querySelectorAll(".close-drawer").forEach(btn => {
+    btn.addEventListener("click", closeDrawer);
+});
+
 
 
 // Enhanced toggle function to handle open/close and content
@@ -773,7 +793,7 @@ searchBtn.onclick = () => {
               resultDiv.className = "result-item card";
               resultDiv.setAttribute("data-node-id", node.id); // Store node ID for drawer reference
         const resultItemCTA = document.createElement("div");
-              resultItemCTA.className = "result-item-cta";
+              resultItemCTA.className = "two-option-ctas";
 
         // Generate pathway text using unwrapped label
         let pathway = `<b style="color: #dfdee8ff;">${node.label.replace(/\n/g, " ")}: </b>`;
