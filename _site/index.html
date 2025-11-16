@@ -35,7 +35,8 @@
     data-size="flexible" 
     data-callback="onTurnstileSuccess"
     data-error-callback="onTurnstileError"
-    data-expired-callback="onTurnstileExpired">
+    data-expired-callback="onTurnstileExpired"
+    data-action="page_load_check">
   </div>
   
     <main class="wrapper">
@@ -89,7 +90,27 @@
 
 
 
-
+  <script>
+    // 3. The callback function to send the token to your server
+    function turnstileCallback(token) {
+      fetch('/validate-turnstile', { // Matches the backend handler path
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: token })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            console.log('Turnstile successfully verified. You can now enable site features.');
+            // Example: Hide the Turnstile widget after success
+            document.querySelector('.cf-turnstile').style.display = 'none';
+          } else {
+            console.error('Verification failed:', data.errors);
+          }
+        })
+        .catch(error => console.error('Error communicating with verification endpoint:', error));
+    }
+  </script>
 
 
     <!-- Vis.js JavaScript -->

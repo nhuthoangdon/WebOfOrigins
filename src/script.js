@@ -205,3 +205,79 @@ document.addEventListener("DOMContentLoaded", function () {
   goToInsights();
 
 });
+
+
+
+// ⚠️ IMPORTANT: Replace 'your-secret-key' with your actual Cloudflare Secret Key.
+const SECRET_KEY = '0x4AAAAAACBLTjaYeRJbPXDXNqaE9Rk08Vs';
+
+/**
+ * Validates the Turnstile token against the Cloudflare API.
+ * @param {string} token - The cf-turnstile-response token from the client.
+ * @param {string} remoteip - The user's IP address.
+ * @returns {Promise<object>} The JSON response from the siteverify API.
+ */
+async function validateTurnstile(token, remoteip) {
+  // Note: Using URLSearchParams for cleaner URL-encoded body generation
+  const body = new URLSearchParams({
+    secret: SECRET_KEY,
+    response: token,
+    remoteip: remoteip,
+  });
+
+  try {
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      body: body
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error('Turnstile validation error:', error);
+    // Ensure a predictable failure structure
+    return { success: false, 'error-codes': ['internal-error'] };
+  }
+}
+
+// --- Server-Side Route Handler for Token Validation ---
+
+/**
+ * Example handler for a dedicated API endpoint (e.g., POST /validate-turnstile).
+ * This function handles the incoming validation request from the client-side script.
+ * @param {Request} request - The incoming HTTP request object.
+ * @returns {Response} A JSON response indicating success or failure.
+ */
+async function handleTokenValidation(request) {
+  // 1. Get the token and IP from the request body and headers.
+  const body = await request.json(); // Assuming client sends JSON body
+  const token = body.token;
+
+  // Attempt to get the real IP address from standard headers
+  const ip = request.headers.get('CF-Connecting-IP') ||
+    request.headers.get('X-Forwarded-For') ||
+    'unknown';
+
+  // 2. Validate the token.
+  const validation = await validateTurnstile(token, ip);
+
+  if (validation.success) {
+    // Token is valid - you can set a session cookie here to track the validated user
+    console.log('Valid verification from:', validation.hostname);
+
+    // Respond with success to the client
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } else {
+    // Token is invalid - Cloudflare detected bot or challenge failed
+    console.log('Invalid token:', validation['error-codes']);
+
+    // Respond with failure to the client
+    return new Response(JSON.stringify({ success: false, errors: validation['error-codes'] }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+}
