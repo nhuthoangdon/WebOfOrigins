@@ -540,6 +540,7 @@ button:focus {
 }
     .global-drawer.open {
         right: 0;
+        display: block;
     }
 
         

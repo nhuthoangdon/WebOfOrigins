@@ -667,9 +667,12 @@ const updateDrawerContent = (nodeId, nodeLabel) => {
 //add Close and View Node Buttons to drawerPanel
 const optionButtons = document.createElement("div");
     optionButtons.className = "two-option-ctas drawer-options";
+
 const closeDrawerOption = document.createElement("a");
     closeDrawerOption.className = "tertiary-button btn-go-back icon icon-solid icon-close close-drawer";
     closeDrawerOption.textContent = "Close";
+    closeDrawerOption.href = "javascript:void(0);";
+
 const goToNodeOption = document.createElement("button");
 goToNodeOption.className = "secondary-button icon icon-regular go-to-node";
 goToNodeOption.textContent = "View Node";
@@ -678,37 +681,169 @@ optionButtons.appendChild(closeDrawerOption);
 optionButtons.appendChild(goToNodeOption);
 drawerPanel.appendChild(optionButtons);
 
-function closeDrawer() {
-    if (window.jQuery) {
-        $(drawerPanel).animate({ right: "-400px" }, 300, function () {
-            $(this).hide();
-        });
-    } else {
-        drawerPanel.classList.remove("open");
-        drawerPanel.addEventListener("transitionend", function hideAfter() {
-            if (!drawerPanel.classList.contains("open")) {
-                drawerPanel.style.display = "none";
-            }
-            drawerPanel.removeEventListener("transitionend", hideAfter);
-        });
+// function closeDrawer() {
+//     if (window.jQuery) {
+//         $(drawerPanel).animate({ right: "-400px" }, 200, function () {
+//             $(this).hide();
+//         });
+//     } else {
+//         drawerPanel.classList.remove("open");
+//         drawerPanel.addEventListener("transitionend", function hideAfter() {
+//             if (!drawerPanel.classList.contains("open")) {
+//                 drawerPanel.style.display = "none";
+//             }
+//             drawerPanel.removeEventListener("transitionend", hideAfter);
+//         });
+//     }
+//     delete drawerPanel.dataset.currentNodeId; // Clear current node ID
+// }
+
+// function closeDrawer(e) {
+//     if (e) {
+//         e.preventDefault();
+//         e.stopPropagation();
+//     }
+
+//     // 1. Force a reflow — this is the missing magic
+//     void drawerPanel.offsetHeight;
+
+//     // 2. Remove the open class → triggers the CSS transition
+//     drawerPanel.classList.remove("open");
+
+//     // 3. One-time listener (fresh every time)
+//     const hideDrawer = () => {
+//         drawerPanel.style.display = "none";
+//         drawerPanel.removeEventListener("transitionend", hideDrawer);
+//     };
+
+//     drawerPanel.addEventListener("transitionend", hideDrawer);
+
+//     delete drawerPanel.dataset.currentNodeId;
+// }
+
+
+
+function closeDrawer(e) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
     }
-    delete drawerPanel.dataset.currentNodeId; // Clear current node ID when closed
+
+    // Ensure drawerPanel exists
+    if (!drawerPanel) return;
+
+    // Target value (px) - matches your CSS right: -400px
+    const target = -400;
+    const duration = 200; // ms - matches your jQuery 200ms
+
+    const computed = getComputedStyle(drawerPanel);
+    const wasDisplayNone = computed.display === "none";
+
+    if (wasDisplayNone) {
+        drawerPanel.style.display = "block";
+    }
+
+    let startRight = parseFloat(getComputedStyle(drawerPanel).right);
+    if (Number.isNaN(startRight)) startRight = 0;
+
+    if (startRight === target) {
+        drawerPanel.style.display = "none";
+        delete drawerPanel.dataset.currentNodeId;
+        return;
+    }
+
+    // Cancel any previous animation
+    if (drawerPanel._drawerAnim) {
+        drawerPanel._drawerAnim.cancelled = true;
+    }
+
+    // jQuery 'swing' easing
+    const swing = t => 0.5 - Math.cos(t * Math.PI) / 2;
+    const startTime = performance.now();
+    const anim = { cancelled: false };
+    drawerPanel._drawerAnim = anim;
+
+    function step(now) {
+        if (anim.cancelled) return;
+
+        const elapsed = now - startTime;
+        const tRaw = Math.min(1, elapsed / duration);
+        const t = swing(tRaw);
+        const current = startRight + (target - startRight) * t;
+
+        drawerPanel.style.right = current + "px";
+
+        if (tRaw < 1) {
+            requestAnimationFrame(step);
+            return;
+        }
+
+        // Animation finished
+        drawerPanel.style.right = target + "px";
+        drawerPanel.style.display = "none";
+
+        if (drawerPanel._drawerAnim === anim) {
+            drawerPanel._drawerAnim = null;
+        }
+    }
+
+    requestAnimationFrame(step);
+    delete drawerPanel.dataset.currentNodeId;
 }
+
+
+
+
+
+// function closeDrawer(e) {
+//     if (e) e.preventDefault(); // safe for both <a> and <button>
+
+//     drawerPanel.classList.remove("open");
+
+//     const hideAfterTransition = () => {
+//         if (!drawerPanel.classList.contains("open")) {
+//             drawerPanel.style.display = "none";
+//         }
+//         drawerPanel.removeEventListener("transitionend", hideAfterTransition);
+//     };
+
+//     drawerPanel.addEventListener("transitionend", hideAfterTransition);
+//     delete drawerPanel.dataset.currentNodeId;
+// }
+
+// function closeDrawer() {
+//     // Remove open class to trigger CSS transition
+//     drawerPanel.classList.remove("open");
+
+//     // Listen for transition end, then hide after transition
+//     const hideAfter = () => {
+//         if (!drawerPanel.classList.contains("open")) {
+//             drawerPanel.style.display = "none";
+//         }
+//         drawerPanel.removeEventListener("transitionend", hideAfter);
+//     };
+
+//     drawerPanel.addEventListener("transitionend", hideAfter);
+
+//     delete drawerPanel.dataset.currentNodeId; // Clear stored node ID
+// }
 document.querySelectorAll(".close-drawer").forEach(btn => {
     btn.addEventListener("click", closeDrawer);
 });
 
 
-
-// Enhanced toggle function to handle open/close and content
 const toggleDrawer = (nodeId, nodeLabel) => {
-    const isDrawerOpen = window.jQuery ? $(".global-drawer").is(":visible") : drawerPanel.style.display === "block";
+    const isOpen = drawerPanel.classList.contains("open");
+    // Update content first
+    contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+    drawerPanel.dataset.currentNodeId = nodeId;
 
-    if (isDrawerOpen) {
-        if (drawerPanel.dataset.currentNodeId !== nodeId) {
-            contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel); // Update only content container
-            drawerPanel.dataset.currentNodeId = nodeId;
-        }
+    if (!isOpen) {
+        // Drawer is closed → open it
+        drawerPanel.style.display = "block";
+        requestAnimationFrame(() => {
+            drawerPanel.classList.add("open");
+        });
     } else {
         contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel); // Update only content container
         if (window.jQuery) {
@@ -719,7 +854,7 @@ const toggleDrawer = (nodeId, nodeLabel) => {
         }
         drawerPanel.dataset.currentNodeId = nodeId;
     }
-      };
+};
 
 // Unified outside click handler
 function handleOutsideClick(event) {
@@ -736,22 +871,6 @@ function handleOutsideClick(event) {
     }
 }
 
-function closeDrawer() {
-    if (window.jQuery) {
-        $(drawerPanel).animate({ right: "-400px" }, 200, function () {
-            $(this).hide();
-        });
-    } else {
-        drawerPanel.classList.remove("open");
-        drawerPanel.addEventListener("transitionend", function hideAfter() {
-            if (!drawerPanel.classList.contains("open")) {
-                drawerPanel.style.display = "none";
-            }
-            drawerPanel.removeEventListener("transitionend", hideAfter);
-        });
-    }
-    delete drawerPanel.dataset.currentNodeId; // Clear current node ID
-}
 
 // Bind correct handler
 if (window.jQuery) {

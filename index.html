@@ -18,6 +18,9 @@
     <link rel="icon" type="image/png" href="/src/Assets/favicon_default.png">
 
     <script data-search-pseudo-elements src="https://kit.fontawesome.com/22d2e141d4.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 
@@ -25,8 +28,17 @@
 <body>
 
   <header></header>
-
-  <main class="wrapper">
+  
+  <div class="cf-turnstile" 
+    data-sitekey="0x4AAAAAACBLTv9bEWI1GQF2" 
+    data-theme="auto" 
+    data-size="flexible" 
+    data-callback="onTurnstileSuccess"
+    data-error-callback="onTurnstileError"
+    data-expired-callback="onTurnstileExpired">
+  </div>
+  
+    <main class="wrapper">
     <!-- Search CTA -->
     <div id="large-search-panel">
       <div class="large-search-headings">
