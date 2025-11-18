@@ -669,58 +669,17 @@ const optionButtons = document.createElement("div");
     optionButtons.className = "two-option-ctas drawer-options";
 
 const closeDrawerOption = document.createElement("a");
-    closeDrawerOption.className = "tertiary-button btn-go-back icon icon-solid icon-close close-drawer";
-    closeDrawerOption.textContent = "Close";
+    closeDrawerOption.className = "tertiary-button btn-go-back close-icon close-drawer light-mode";
+    closeDrawerOption.innerHTML = "<i class='fa-regular fa-circle-xmark'></i> Close";
     closeDrawerOption.href = "javascript:void(0);";
 
 const goToNodeOption = document.createElement("button");
-goToNodeOption.className = "secondary-button icon icon-regular go-to-node";
+goToNodeOption.className = "secondary-button icon icon-regular go-to-node light-mode";
 goToNodeOption.textContent = "View Node";
 
 optionButtons.appendChild(closeDrawerOption);
 optionButtons.appendChild(goToNodeOption);
 drawerPanel.appendChild(optionButtons);
-
-// function closeDrawer() {
-//     if (window.jQuery) {
-//         $(drawerPanel).animate({ right: "-400px" }, 200, function () {
-//             $(this).hide();
-//         });
-//     } else {
-//         drawerPanel.classList.remove("open");
-//         drawerPanel.addEventListener("transitionend", function hideAfter() {
-//             if (!drawerPanel.classList.contains("open")) {
-//                 drawerPanel.style.display = "none";
-//             }
-//             drawerPanel.removeEventListener("transitionend", hideAfter);
-//         });
-//     }
-//     delete drawerPanel.dataset.currentNodeId; // Clear current node ID
-// }
-
-// function closeDrawer(e) {
-//     if (e) {
-//         e.preventDefault();
-//         e.stopPropagation();
-//     }
-
-//     // 1. Force a reflow — this is the missing magic
-//     void drawerPanel.offsetHeight;
-
-//     // 2. Remove the open class → triggers the CSS transition
-//     drawerPanel.classList.remove("open");
-
-//     // 3. One-time listener (fresh every time)
-//     const hideDrawer = () => {
-//         drawerPanel.style.display = "none";
-//         drawerPanel.removeEventListener("transitionend", hideDrawer);
-//     };
-
-//     drawerPanel.addEventListener("transitionend", hideDrawer);
-
-//     delete drawerPanel.dataset.currentNodeId;
-// }
-
 
 
 function closeDrawer(e) {
@@ -792,69 +751,48 @@ function closeDrawer(e) {
 }
 
 
-
-
-
-// function closeDrawer(e) {
-//     if (e) e.preventDefault(); // safe for both <a> and <button>
-
-//     drawerPanel.classList.remove("open");
-
-//     const hideAfterTransition = () => {
-//         if (!drawerPanel.classList.contains("open")) {
-//             drawerPanel.style.display = "none";
-//         }
-//         drawerPanel.removeEventListener("transitionend", hideAfterTransition);
-//     };
-
-//     drawerPanel.addEventListener("transitionend", hideAfterTransition);
-//     delete drawerPanel.dataset.currentNodeId;
-// }
-
-// function closeDrawer() {
-//     // Remove open class to trigger CSS transition
-//     drawerPanel.classList.remove("open");
-
-//     // Listen for transition end, then hide after transition
-//     const hideAfter = () => {
-//         if (!drawerPanel.classList.contains("open")) {
-//             drawerPanel.style.display = "none";
-//         }
-//         drawerPanel.removeEventListener("transitionend", hideAfter);
-//     };
-
-//     drawerPanel.addEventListener("transitionend", hideAfter);
-
-//     delete drawerPanel.dataset.currentNodeId; // Clear stored node ID
-// }
 document.querySelectorAll(".close-drawer").forEach(btn => {
     btn.addEventListener("click", closeDrawer);
 });
 
 
+
 const toggleDrawer = (nodeId, nodeLabel) => {
     const isOpen = drawerPanel.classList.contains("open");
-    // Update content first
+
+    // Update content
     contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
     drawerPanel.dataset.currentNodeId = nodeId;
 
     if (!isOpen) {
-        // Drawer is closed → open it
+        // Drawer closed → open it
         drawerPanel.style.display = "block";
+
+        // Let CSS handle transition to open state
         requestAnimationFrame(() => {
             drawerPanel.classList.add("open");
         });
+
     } else {
-        contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel); // Update only content container
-        if (window.jQuery) {
-            $(drawerPanel).show().animate({ right: "0" }, 300);
-        } else {
-            drawerPanel.style.display = "block";
-            drawerPanel.classList.add("open");
-        }
-        drawerPanel.dataset.currentNodeId = nodeId;
+        // Drawer already open → update + replay slide-in animation
+
+        // Reset animation state
+        drawerPanel.style.display = "block";
+        drawerPanel.style.transition = "none";
+        drawerPanel.style.right = "-400px";  // animation start point
+
+        // Force reflow to make the browser register the starting position
+        drawerPanel.offsetWidth;
+
+        // Apply slide-in transition
+        drawerPanel.style.transition = "right 300ms ease";
+        drawerPanel.style.right = "0";
+
+        // Ensure open class is present (your CSS might depend on it)
+        drawerPanel.classList.add("open");
     }
 };
+
 
 // Unified outside click handler
 function handleOutsideClick(event) {
@@ -878,7 +816,60 @@ if (window.jQuery) {
 } else {
     document.addEventListener("click", handleOutsideClick);
 }
-      
+
+
+// Reusable core function — just does the navigation
+function goToNode(nodeId) {
+    if (!nodeId) return;
+
+    network.selectNodes([nodeId]);
+    network.focus(nodeId, {
+        scale: 1.2,
+        animation: {
+            duration: 800,
+            easingFunction: "easeInOutQuad"
+        }
+    });
+
+    // Optional: smooth scroll the network into view
+    const networkEl = document.getElementById("network");
+    const topPos = networkEl.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top: topPos, behavior: "smooth" });
+
+    // Close drawer if it's open
+    closeDrawer();
+}
+
+// Master click handler — one single delegated listener
+document.addEventListener("click", e => {
+    const btn = e.target.closest(".go-to-node");
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    let nodeId = null;
+
+    // Case 1: Button inside the drawer → use current drawer node
+    if (btn.closest(".global-drawer")) {
+        nodeId = drawerPanel?.dataset.currentNodeId;
+    }
+    // Case 2: Button in search results (or anywhere else) → read from data attribute
+    else if (btn.dataset.nodeId) {
+        nodeId = btn.dataset.nodeId;
+    }
+    // Case 3: Fallback — maybe parent has the data (common in result templates)
+    else {
+        const container = btn.closest("[data-node-id]");
+        if (container) nodeId = container.dataset.nodeId;
+    }
+
+    if (nodeId) {
+        goToNode(nodeId);
+    }
+});
+
+
 
 let debounceTimeout;
 searchInput.onkeypress = (e) => {
@@ -941,27 +932,28 @@ searchBtn.onclick = () => {
         const GoToBtn = document.createElement("button");
         GoToBtn.className = "secondary-button go-to-node icon icon-regular";
         GoToBtn.textContent = "See Connections";
-        GoToBtn.onclick = () => {
-            network.selectNodes([node.id]);
-            network.fit({ nodes: [node.id], animation: true });
-            const networkElement = document.getElementById("network");
-            const topPos = networkElement.getBoundingClientRect().top + window.scrollY - 50;
-            window.scrollTo({ top: topPos, behavior: "smooth" });
-            if (window.jQuery) {
-                $(drawerPanel).animate({ right: "-400px" }, 200, function () {
-                    $(this).hide();
-                });
-            } else {
-                drawerPanel.classList.remove("open");
-                drawerPanel.addEventListener("transitionend", function hideAfter() {
-                    if (!drawerPanel.classList.contains("open")) {
-                        drawerPanel.style.display = "none";
-                    }
-                    drawerPanel.removeEventListener("transitionend", hideAfter);
-                });
-            }
-            delete drawerPanel.dataset.currentNodeId; // Clear current node ID when navigating
-        };
+        
+        // GoToBtn.onclick = () => {
+        //     network.selectNodes([node.id]);
+        //     network.fit({ nodes: [node.id], animation: true });
+        //     const networkElement = document.getElementById("network");
+        //     const topPos = networkElement.getBoundingClientRect().top + window.scrollY - 50;
+        //     window.scrollTo({ top: topPos, behavior: "smooth" });
+        //     if (window.jQuery) {
+        //         $(drawerPanel).animate({ right: "-400px" }, 200, function () {
+        //             $(this).hide();
+        //         });
+        //     } else {
+        //         drawerPanel.classList.remove("open");
+        //         drawerPanel.addEventListener("transitionend", function hideAfter() {
+        //             if (!drawerPanel.classList.contains("open")) {
+        //                 drawerPanel.style.display = "none";
+        //             }
+        //             drawerPanel.removeEventListener("transitionend", hideAfter);
+        //         });
+        //     }
+        //     delete drawerPanel.dataset.currentNodeId; // Clear current node ID when navigating
+        // };
         resultDiv.appendChild(GoToBtn);
 
         const viewMoreBtn = document.createElement("a");
