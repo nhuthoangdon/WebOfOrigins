@@ -5,8 +5,10 @@ function loadData(callback) {
 let nodesData = [];
 let edgesData = [];
 
+    const DATA_URL = "https://woo-data-proxy.weboforigins.workers.dev";
+
 // Load nodes.csv
-Papa.parse("data/nodes.csv", {
+Papa.parse(`${DATA_URL}/nodes.csv`, {
     download: true,
     delimiter: ";",
     header: true,
@@ -34,7 +36,7 @@ Papa.parse("data/nodes.csv", {
         });
 
         // Load edges.csv
-        Papa.parse("data/edges.csv", {
+        Papa.parse(`${DATA_URL}/edges.csv`, {
             download: true,
             delimiter: ";",
             header: true,
