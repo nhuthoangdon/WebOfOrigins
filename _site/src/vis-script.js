@@ -798,26 +798,22 @@ const toggleDrawer = (nodeId, nodeLabel) => {
 
 // Unified outside click handler
 function handleOutsideClick(event) {
-    const isVisible = window.jQuery
-        ? $(".global-drawer").is(":visible")
-        : drawerPanel.style.display === "block";
+    // Drawer is considered "visible" only when it has the .open class
+    const isOpen = drawerPanel.classList.contains("open");
+    if (!isOpen) return;
 
-    const isClickInside = drawerPanel.contains(event.target);
-    const isCloseBtn = event.target.classList.contains("btn-ic-close") ||
-        event.target.classList.contains("panel-cta");
+    // Was the click inside the drawer?
+    const clickedInside = drawerPanel.contains(event.target);
 
-    if (isVisible && !isClickInside && !isCloseBtn) {
+    // Was the click on a close button or CTA we want to ignore?
+    const clickedCloseBtn = event.target.closest(".btn-ic-close, .panel-cta");
+
+    // Close only if: drawer is open + click was outside + not on allowed buttons
+    if (!clickedInside && !clickedCloseBtn) {
         closeDrawer();
     }
 }
-
-
-// Bind correct handler
-if (window.jQuery) {
-    $(document).on("click", handleOutsideClick);
-} else {
-    document.addEventListener("click", handleOutsideClick);
-}
+document.addEventListener("click", handleOutsideClick);
 
 
 // Reusable core function — just does the navigation
@@ -934,28 +930,7 @@ searchBtn.onclick = () => {
         const GoToBtn = document.createElement("button");
         GoToBtn.className = "secondary-button go-to-node icon icon-regular";
         GoToBtn.textContent = "See Connections";
-        
-        // GoToBtn.onclick = () => {
-        //     network.selectNodes([node.id]);
-        //     network.fit({ nodes: [node.id], animation: true });
-        //     const networkElement = document.getElementById("network");
-        //     const topPos = networkElement.getBoundingClientRect().top + window.scrollY - 50;
-        //     window.scrollTo({ top: topPos, behavior: "smooth" });
-        //     if (window.jQuery) {
-        //         $(drawerPanel).animate({ right: "-400px" }, 200, function () {
-        //             $(this).hide();
-        //         });
-        //     } else {
-        //         drawerPanel.classList.remove("open");
-        //         drawerPanel.addEventListener("transitionend", function hideAfter() {
-        //             if (!drawerPanel.classList.contains("open")) {
-        //                 drawerPanel.style.display = "none";
-        //             }
-        //             drawerPanel.removeEventListener("transitionend", hideAfter);
-        //         });
-        //     }
-        //     delete drawerPanel.dataset.currentNodeId; // Clear current node ID when navigating
-        // };
+
         resultDiv.appendChild(GoToBtn);
 
         const viewMoreBtn = document.createElement("a");
@@ -989,6 +964,13 @@ const smallSearchInput = document.getElementById('small-search-input');
 const smallClearButton = document.getElementById('small-search-clear');
 const smallResultCount = document.getElementById('small-search-result-count');
 const largeSearchResults = document.getElementById('search-results');
+
+// Debounce the input to improve performance on fast typing
+let searchTimeout;
+smallSearchInput.addEventListener('input', () => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(performSmallSearch, 200); // 200ms debounce
+});
 
 if (smallSearchInput && smallClearButton && smallResultCount) {
     function performSmallSearch() {
@@ -1051,42 +1033,15 @@ if (smallSearchInput && smallClearButton && smallResultCount) {
     });
 }
 
+
 function toggleCountryNodes(show) {
-    if (show === undefined) {
-        console.error("Show parameter is undefined, check DOM or event binding");
-        return;
-    }
-    const countryTypes = ['iCountry', 'smCountry', 'icCountry'];
-    const countryNodeIds = nodes.getIds().filter(id => {
-        const node = nodes.get(id);
-        return node && countryTypes.includes(node.group);
+    if (show === undefined) return console.error("toggleCountryNodes: missing 'show' param");
+
+    const countryNodeIds = nodes.getIds({
+        filter: node => ['iCountry', 'smCountry', 'icCountry'].includes(node.group)
     });
 
-    if (show) {
-        // When showing, rebuild all nodes with a fresh dataset
-        const nonCountryNodes = nodes.get().filter(node => !countryTypes.includes(node.group));
-        const countryNodes = countryNodeIds.map(id => {
-            const node = nodes.get(id);
-            // Create a new object without hidden property
-            const { hidden, ...cleanNode } = node;
-            return cleanNode;
-        });
-        nodes.clear(); // Clear existing nodes
-        nodes.add([...nonCountryNodes, ...countryNodes]); // Re-add all nodes
-    } else {
-        // When hiding, set hidden to true
-        nodes.update(countryNodeIds.map(id => ({ id, hidden: true })));
-    }
-
-    // Refresh the network and adjust layout
-    // network.setData({ nodes, edges });
-    // network.fit({ animation: false });
-
-    // Verify updated states
-    const updatedStates = countryNodeIds.map(id => ({
-        id,
-        hidden: nodes.get(id)?.hidden || false
-    }));
+    nodes.update(countryNodeIds.map(id => ({ id, hidden: !show })));
 }
 
 
@@ -1097,72 +1052,59 @@ loadData((nodesData, edgesData) => {
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const panel = document.getElementById('control-panel');
     const toggle = document.getElementById('control-panel-toggle');
     const icon = toggle.querySelector('i');
-    const mediaQuery = window.matchMedia('(max-width: 481px)');
+    const media = window.matchMedia('(max-width: 481px)');
 
-    function handleViewportChange(e) {
-        if (e.matches) {
-            // Mobile breakpoint: start collapsed with chevron up
-            panel.classList.add('collapsed');
-            icon.classList.remove('fa-chevron-right', 'fa-chevron-left', 'fa-chevron-down');
-            icon.classList.add('fa-chevron-up');
-            toggle.setAttribute('aria-label', 'Expand control panel');
+    // Helper: set correct icon + aria-label based on state & viewport
+    const updateIconAndAria = () => {
+        const isCollapsed = panel.classList.contains('collapsed');
+        toggle.setAttribute('aria-label', isCollapsed ? 'Expand control panel' : 'Collapse control panel');
+
+        if (media.matches) {
+            // Mobile: ↑ when collapsed, ↓ when expanded
+            icon.className = isCollapsed ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
         } else {
-            // Desktop breakpoint: start collapsed with chevron left
-            panel.classList.add('collapsed');
-            icon.classList.remove('fa-chevron-up', 'fa-chevron-down', 'fa-chevron-right');
-            icon.classList.add('fa-chevron-left');
-            toggle.setAttribute('aria-label', 'Expand control panel');
+            // Desktop: ← when collapsed, → when expanded
+            icon.className = isCollapsed ? 'fas fa-chevron-left' : 'fas fa-chevron-right';
         }
-    }
+    };
 
-    // Initial setup
-    handleViewportChange(mediaQuery);
-    mediaQuery.addEventListener('change', handleViewportChange);
+    // Initial setup + respond to viewport changes
+    const handleViewportChange = (e) => {
+        panel.classList.add('collapsed');     // always start collapsed
+        updateIconAndAria();
+    };
 
-    toggle.addEventListener('click', function () {
+    handleViewportChange(media);              // run once on load
+    media.addEventListener('change', handleViewportChange);
+
+    // Toggle click
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();                  // prevent outside-click handler from firing immediately
         panel.classList.toggle('collapsed');
+        updateIconAndAria();
+    });
 
-        if (mediaQuery.matches) {
-            // Mobile logic: up when collapsed, down when expanded
-            if (panel.classList.contains('collapsed')) {
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-                toggle.setAttribute('aria-label', 'Expand control panel');
-            } else {
-                icon.classList.remove('fa-chevron-up');
-                icon.classList.add('fa-chevron-down');
-                toggle.setAttribute('aria-label', 'Collapse control panel');
-            }
-        } else {
-            // Desktop logic: left when collapsed, right when expanded
-            if (panel.classList.contains('collapsed')) {
-                icon.classList.remove('fa-chevron-right');
-                icon.classList.add('fa-chevron-left');
-                toggle.setAttribute('aria-label', 'Expand control panel');
-            } else {
-                icon.classList.remove('fa-chevron-left');
-                icon.classList.add('fa-chevron-right');
-                toggle.setAttribute('aria-label', 'Collapse control panel');
-            }
+    // Outside click → collapse
+    document.addEventListener('click', (e) => {
+        const clickedInside = panel.contains(e.target) || toggle.contains(e.target);
+        const isExpanded = !panel.classList.contains('collapsed');
+
+        if (isExpanded && !clickedInside) {
+            panel.classList.add('collapsed');
+            updateIconAndAria();
         }
     });
 
-    // Handle outside clicks to collapse the panel
-    document.addEventListener('click', function (event) {
-        if (!panel.contains(event.target) && !toggle.contains(event.target) && !panel.classList.contains('collapsed')) {
+    // Allow Escape key to collapse (great for accessibility)
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !panel.classList.contains('collapsed')) {
             panel.classList.add('collapsed');
-            if (mediaQuery.matches) {
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            } else {
-                icon.classList.remove('fa-chevron-right');
-                icon.classList.add('fa-chevron-left');
-            }
-            toggle.setAttribute('aria-label', 'Expand control panel');
+            updateIconAndAria();
+            toggle.focus(); // return focus to toggle button
         }
     });
 });

@@ -333,7 +333,10 @@ button:focus {
     transition: background 0.2s, color 0.2s;
 }
 
-.secondary-button:hover,
+.secondary-button:hover, .secondary-button.light-mode:hover {
+    background: var(--button-border-color);
+    color: var(--ui-white);
+}
 .secondary-button:focus {
     background: var(--ui-dark-purple);
     color: var(--text-color);
