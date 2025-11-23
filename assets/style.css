@@ -682,7 +682,7 @@ button:focus {
 }
 
 #network {
-    width: 95vw;
+    width: 90vw;
     height: 90vh;
     border: var(--input-field-border);
     -webkit-border-radius: 18px;
@@ -1881,7 +1881,7 @@ hr {
         -webkit-flex-direction: column;
         flex-direction: column;
         top: 100%;
-        left: calc((95vw - 80vw) / 2);
+        left: calc((90vw - 80vw) / 2);
         -webkit-border-radius: 12px 12px 0 0;
         border-radius: 12px 12px 0 0;
         -webkit-transform: translateY(-100%);
