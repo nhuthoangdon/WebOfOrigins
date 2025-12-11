@@ -1,353 +1,389 @@
 "from_node";"to_node";"label";"title";"roleCount";"is_same_level"
-"comp_1";"src_1";"Glucosamine can be Hydrolysed from Chitin";"Chitin can be processed by chemical or enzymatic hydrolysis, then deacetylation to make Glucosamine";"1";"0"
-"comp_1";"src_2";"Glucosamine can be Fermented from Corn";"Glucosamine can be made by fermenting corn, converting corn-derived Glucose into Glucosamine using microorganisms";"1";"0"
-"comp_2";"src_3";"Chondroitin can be Hydrolysed from Animal Cartilage";"Animal Cartilage is typically enzymatically hydrolysed and purified for Chondroitin Sulfate";"1";"0"
-"comp_2";"src_5";"Chondroitin can be Hydrolysed from Shark Cartilage";"Shark Cartilage undergoes a series of purification and extraction procedures to isolate Chondroitin sulfate";"1";"0"
-"comp_3";"comp_4";;"Collagen obtained from animal sources undergoes controlled hydrolysis and denaturation, breaking it down into soluble Gelatin";"1";"1"
-"comp_3";"src_10";"Gelatin can be Hydrolysed from Animal Skins/Hides";"Gelatin is made by partially hydrolyzing Collagen extracted from Animal Skins or Hides, often from Cattle and Pigs";"1";"0"
-"comp_3";"src_11";"Gelatin can be Hydrolysed from Animal Tendons, Ligaments, and Fascia";"Gelatin is made by partially hydrolyzing Collagen extracted from Tendons, Ligaments, and Fascia of animals, commonly Cattle and Pigs";"1";"0"
-"comp_3";"src_3";"Gelatin can be Hydrolysed from Animal Cartilage";"Gelatin is made by partially hydrolyzing Collagen from Animal Cartilage and other tissues, commonly from Cattle and Pigs";"1";"0"
-"comp_3";"src_9";"Gelatin can be Hydrolysed from Animal Bones";"Gelatin is made by partially hydrolyzing Collagen extracted from Animal Bones, commonly from Cattle and Pigs";"1";"0"
-"comp_4";"comp_5";;"Marine Collagen is Collagen derived from marine sources";"1";"1"
-"comp_4";"src_10";"Collagen can be Extracted from Animal Skins/Hides";"Animal Skins and Hides are washed, defatted, and soaked in acid or alkali to break down cellular structures, allowing Type I Collagen to be extracted. This is followed by thermal or enzymatic hydrolysis";"1";"0"
-"comp_4";"src_11";"Collagen can be Extracted from Animal Tendons, Ligaments, and Fascia";"Animal's dense Connective Tissues are high in Type I Collagen. They are mechanically or chemically broken down and enzymatically hydrolyzed to extract Collagen for nutraceuticals and biomedical use";"1";"0"
-"comp_4";"src_3";"Collagen can be Extracted from Animal Cartilage";"Animal Cartilage, rich in Type II Collagen, is separated from Bones and Connective Tissues, then enzymatically or chemically treated to extract Collagen for use in Joint Health Supplements and biomedical applications";"1";"0"
-"comp_4";"src_9";"Collagen can be Extracted from Animal Bones";"Animal Bones are cleaned, degreased, and treated with acid or alkali to demineralize them, releasing Type I Collagen. The material is then subjected to heat or enzymatic hydrolysis for Collagen or Gelatin production";"1";"0"
-"comp_5";"src_12";"Marine Collagen can be Extracted from Fish Scales & Skin";"Marine Collagen is extracted from Fish Scales and Skins, which are cleaned and treated with acid or enzymes to isolate Type I collagen. Commonly used in cosmetics and wound care products due to its high bioavailability";"1";"0"
-"comp_5";"src_13";"Marine Collagen can be Extracted from Other Fish Parts";"Marine Collagen is also extracted from Fish Parts other than scales and skins, including heads, fins, bones, and vertebrae. These parts are cooked or enzymatically treated to extract collagen, commonly used in marine collagen powders, peptides, and pharmaceutical products";"1";"0"
-"comp_6";"src_15";"MSM (Methylsulfonylmethane) can be Oxidised from DMSO (Dimethyl Sulfoxide)";"MSM used in supplements is typically synthesized in labs by oxidizing DMSO (dimethyl sulfoxide) through chemical or electrochemical methods";"1";"0"
-"comp_7";"src_16";"Hyaluronic Acid can be Extracted from Rooster Combs";"Hyaluronic Acid is traditionally extracted from connective tissues in Rooster Combs via purification processes";"1";"0"
-"comp_7";"src_17";"Hyaluronic Acid can be Fermented from Bacteria (Streptococcus spp. or Bacillus spp.)";"Hyaluronic Acid (HA) is widely made today by microbial fermentation";"1";"0"
-"comp_8";"src_18";"Surimi can be Processed from Fish Meat & Products";"Surimi is made from Fish Meat through a process of washing, mincing, and blending with stabilisers";"1";"0"
-"con_1";"consq_1";"Contributes to";"Nutrient runoff into water bodies (24)";"1";"0"
-"con_1";"imp_1";"Causes";"test desc (test ref)";"1";"0"
-"con_13";"con_18";;;"1";"1"
-"con_2";"con_4";;"test desc (test ref)";"1";"1"
-"con_2";"consq_1";"Contributes to";"Intoxicates water bodies (25)";"1";"0"
-"con_2";"consq_2";"Causes";"Harmful substances in soil (25)";"1";"0"
-"con_2";"consq_3";"Contributes to";"Entering air through evaporation, spray drift during application, and wind erosion of contaminated soil (25)";"1";"0"
-"consq_1";"imp_1";"Contributes to";"test desc (test ref)";"1";"0"
-"consq_1";"imp_8";;;"1";"0"
-"consq_2";"consq_1";;"Pollutants and contaminants leaching into ground water (test)";"1";"1"
-"consq_3";"consq_1";;;"1";"1"
-"consq_3";"consq_5";;;"1";"1"
-"iCountry_1";"item_1";"Top Consumer & Top Importer & Significant Producer";"U.S. is the largest Consumer market for Joint Health Supplements (3). U.S. is the largest Importer of Joint Health Supplements (~33% of global shipments) (3). U.S. is a notable Producer of Joint Health Supplements (48, 67)";"3";"0"
-"iCountry_1";"item_2";"Top Producer";"The US is a major Producer of Gummies, including both flavored confectionery and dietary supplement varieties (48, 107, 108)";"1";"0"
-"iCountry_11";"item_1";"Significant Consumer";"The EU is a notable Consumer of Joint Health Supplements, ~20% of global market share (5)";"1";"0"
-"iCountry_2";"item_1";"Significant Exporter";"Australia is a major Exporter of Joint Health Supplements (67)";"1";"0"
-"iCountry_32";"item_2";"Significant Producer";"Germany is a traditional hub for confectionery production and a major Producer of gummy candies, best known for the brand Haribo (48, 107, 108)";"1";"0"
-"iCountry_4";"item_1";"Top Producer & Top Exporter";"China is the largest Supplier and Manufacturer of Joint Health Supplements, ~80% of global production (1). China is the largest Exporter of Joint Health Supplements, also largest share in US imports (~77%) (2)";"2";"0"
-"iCountry_4";"item_2";"Top Producer";"China is one of the largest Producers of gummies globally, leading in both flavored confectionery and dietary supplement varieties (48, 107, 108)";"1";"0"
-"iCountry_6";"item_1";"Significant Consumer & Significant Producer";"Japan is a significant Consumer of Joint Health Supplements due to aging population (2). Japan is a major Producer of Joint Health Supplements in Asia-Pacific (2)";"2";"0"
-"iCountry_6";"item_2";"Recognised Producer";"Japan is a notable Producer of Gummies, known for unique flavors and textures, producing both confectionery and dietary supplement varieties (48, 107)";"1";"0"
-"iCountry_7";"item_1";"Significant Producer & Significant Exporter";"India is a major Producer and Exporter of Joint Health Supplements (4). India is a major Exporter of Joint Health Supplements (48, 67)";"2";"0"
-"iCountry_9";"item_1";"Significant Importer";"Vietnam is a significant Importer of Joint Health Supplements (~18% of global shipments) (3, 67)";"1";"0"
-"icCountry_1";"ind_1";"Global Leader & Top Exporter";"The US has the largest Corn Farming industry, producing ~354.19M tonnes, with ~57.79M tonnes exported (2022-2023) (9, 38). The US is the largest Exporter of Corn, ~US$14.3B, 2024 (8)";"2";"0"
-"icCountry_1";"ind_10";"Significant Grower";"The US has a major Cattle Farming industry, with a large herd (~92.08M, 2022) and leading Beef Production despite a smaller head count than India, Brazil, and China (50)";"1";"0"
-"icCountry_1";"ind_11";"Significant Processor";"The US ranks among the top 5 in annual Cattle Slaughter, ~30.9M head (2025) (96)";"1";"0"
-"icCountry_1";"ind_17";"Significant Grower";"The US has a significant Pig Farming industry, ranking among the top producers globally, though far behind China, with a pig population of ~74.5M (2021-2025) (94, 95)";"1";"0"
-"icCountry_1";"ind_18";"Recognised Processor";"The US ranks among the top in Swine Slaughter, after China and the EU, with ~131.8M pigs killed/year (97)";"1";"0"
-"icCountry_1";"ind_20";"Top Importer";"The US is the leading Importer of Live Bovines by both value and head count (~$2.99B, ~2M head, 2024) (84)";"1";"0"
-"icCountry_1";"ind_21";"Recognised Importer";"The US, along with Spain, is a significant Livestock Bovine Importer (~$208.75M, ~4.88M head, 2024) (85)";"1";"0"
-"icCountry_1";"ind_29";"Significant Exporter";"The United States is a notable Exporter of live poultry/fowls—including chickens, ducks, geese, turkeys, and guinea fowls—ranking high by trade value (~$359.62M) with a lower export quantity (~81.75M head, 2024) (86, 87, 88, 89)";"1";"0"
-"icCountry_1";"ind_30";"Significant Processor";"The US ranks 2nd in Poultry Slaughter after China, with ~9.75B fowls/year (2023), incl. chickens, turkeys, ducks, though far behind in number (98)";"1";"0"
-"icCountry_1";"ind_4";"Significant Catcher";"The US has well-established lobster and shrimp fisheries (43)";"1";"0"
-"icCountry_1";"ind_5";"Global Leader";"The USA is the undisputed global leader in Biotechnology, leading in both firm numbers and R&D (48, 73, 74)";"1";"0"
-"icCountry_1";"ind_6";"Significant Producer";"The US is among the top global shrimp producers with ~837,622 tonnes (40, 41)";"1";"0"
-"icCountry_10";"ind_15";"Significant Catcher";"Indonesia ranks 2nd globally in Fisheries production, with 7.4M tonnes in 2022, about half of China's (75)";"1";"0"
-"icCountry_10";"ind_16";"Top Catcher";"Indonesia is the undisputed leader in Shark Fishing, consistently ranking first in global shark catch across years and reports (48, 76, 77, 78)";"1";"0"
-"icCountry_10";"ind_3";"Significant Player";"Indonesia has a growing Crustacean Processing industry, notably frozen and prepared shrimps and prawns, with exports valued at $1.35 billion (39, 81, 82)";"1";"0"
-"icCountry_10";"ind_30";"Significant Processor";"Indonesia ranks in the top 5 for Poultry Slaughter, with ~4.96B fowls/year (incl. chickens, ducks; 2023) (98)";"1";"0"
-"icCountry_10";"ind_4";"Significant Catcher";"Indonesia is a major crustacean catcher, with coastal and small-scale fisheries yielding significant shrimp and crab catches (43)";"1";"0"
-"icCountry_10";"ind_8";"Significant Grower";"Indonesia is a notable and emerging producer of mud and soft-shell crabs (44)";"1";"0"
-"icCountry_11";"ind_1";"Significant Grower";"The EU has a significant Corn Farming industry, producing ~58M tonnes, but remains below domestic demand of ~77.4M tonnes (2022-2023) (38)";"1";"0"
-"icCountry_11";"ind_11";"Recognised Processor";"The EU is a notable processor in Cattle Slaughter, ~22.5M cows killed/year (2025) (96)";"1";"0"
-"icCountry_11";"ind_18";"Recognised Processor";"The EU slaughters ~220M pigs/year—ranking 2nd globally in Swine Slaughter, though far behind China (2025) (97)";"1";"0"
-"icCountry_11";"ind_20";"Significant Exporter";"The EU is a notable Livestock Bovine Exporter by value, along with Brazil (~$837M, ~615K head, 2024) (83)";"1";"0"
-"icCountry_11";"ind_29";"Top Exporter";"The EU is the leading Exporter of young chickens (chicks) by value and head count, ~$349.18M, ~185.3M (86)";"1";"0"
-"icCountry_13";"ind_1";"Significant Grower & Top Exporter";"Brazil has the 3rd largest Corn Farming industry, after the US and China, producing ~136M tonnes and exporting ~47M tonnes (2022-2023) (9, 38). Brazil is the second largest exporter of Corn, ~US$8.2B, 2024 (8)";"2";"0"
-"icCountry_13";"ind_10";"Significant Grower";"Brazil has the second-largest cattle herd (~193.78M, 2022), ranking 2nd in both beef production and Cattle Farming industry (50)";"1";"0"
-"icCountry_13";"ind_11";"Top Processor";"Brazil is one of the leading countries in Cattle Slaughter after China, with ~47.5M head/year (2025) (96)";"1";"0"
-"icCountry_13";"ind_17";"Significant Grower";"Brazil is a significant grower in Pig Farming, ranking after the US with a pig population of ~44.4M (2021-2025) (94, 95)";"1";"0"
-"icCountry_13";"ind_20";"Significant Exporter";"Brazil is a notable Livestock Bovine Exporter by value, alongside the EU (~$848M, 2024) (83)";"1";"0"
-"icCountry_13";"ind_30";"Significant Processor";"Brazil is among the top countries in Poultry Slaughter after China and the US, with ~6.30B fowls/year (incl. chickens, turkeys; 2023) (98)";"1";"0"
-"icCountry_14";"ind_1";"Significant Grower & Significant Exporter";"Argentina is the 2nd largest Corn producer in South America after Brazil and is one of the top global producers with production ~ 55M tonnes (8, 38). Argentina is a significant Exporter of Corn, ~US$6.6B, 2024 (8)";"2";"0"
-"icCountry_14";"ind_16";"Recognised Catcher";"Argentina is a notable Shark-Catching nation in the South Atlantic, with both targeted and incidental catches (48, 76, 77)";"1";"0"
-"icCountry_15";"ind_1";"Significant Exporter";"Ukraine is within the top 5 Exporters of Corn, ~US$5.1B, 2024 (8)";"1";"0"
-"icCountry_17";"ind_8";"Significant Grower";"The Philippines is a notable producer of blue swimming crabs, primarily for export (44)";"1";"0"
-"icCountry_20";"ind_5";"Top Player";"The UK is Europe's biotech leader, long ranked in the top 10 globally and second only to the US in number of biotech firms (48, 73, 74)";"1";"0"
-"icCountry_21";"ind_16";"Significant Catcher";"Spain is Europe’s top Shark-Catching nation, targeting multiple shark species (48, 76, 77, 78)";"1";"0"
-"icCountry_21";"ind_17";"Recognised Grower";"Spain has a recognised Pig Farming industry, known for high-quality pork products, with a pig population of ~34.1M (2021-2025) (94, 95)";"1";"0"
-"icCountry_21";"ind_20";"Significant Importer";"Spain is a significant Livestock Bovine Importer by head count (~1M head, ~$371M, 2024) (84)";"1";"0"
-"icCountry_21";"ind_21";"Recognised Importer";"Spain, along with the US, is a significant Livestock Bovine Importer (~$333.6M, ~3.7M head, 2024) (85)";"1";"0"
-"icCountry_22";"ind_16";"Significant Catcher";"Taiwan is a major Shark-Catching nation, with targeted longline fisheries harvesting a wide range of shark species (48, 76, 77)";"1";"0"
-"icCountry_25";"ind_5";"Significant Player";"Ireland is another emerging biotechnology player, ranking 4th in R&D intensity after Lithuania (48, 73)";"1";"0"
-"icCountry_26";"ind_5";"Significant Player";"Switzerland is a significant player in Biotechnology, leading in R&D gloabally and amongst the top 10 by market share (48, 73, 74)";"1";"0"
-"icCountry_27";"ind_29";"Significant Importer";"Belgium is a notable Importer of live poultry/fowls—including young and mature chickens, ducks, geese, turkeys, and guinea fowls—with a trade value of ~$219.79M and import quantity of ~87.57M head (2024) (90, 91, 92, 93)";"1";"0"
-"icCountry_27";"ind_5";"Significant Player";"Belgium is a notable biotech hub, close to Switzerland in R&D intensity (48, 73, 74)";"1";"0"
-"icCountry_28";"ind_20";"Top Exporter";"France is the leading country in Livestock Bovine Export (~$1.79B, ~1.4M head, 2024) (83)";"1";"0"
-"icCountry_28";"ind_29";"Significant Exporter";"France is a major Exporter of live poultry/fowls—including chickens, ducks, geese, turkeys, and guinea fowls—with a trade value of ~$415.91M and ~114.73M head (2024) (86, 87, 88, 89)";"1";"0"
-"icCountry_28";"ind_5";"Significant Player";"France is a notable player in biotechnology, ranking 3rd globally in number of active biotech firms (48, 73)";"1";"0"
-"icCountry_29";"ind_5";"Significant Player";"Lithuania is an emerging biotechnology player, ranking amongst the top 3 in R&D intensity after Switzerland and Belgium (48, 73)";"1";"0"
-"icCountry_3";"ind_20";"Top Exporter";"Canada is close to France as a leading Exporter of Live Bovines by value (~$1.69B, ~824K head, 2024) (83)";"1";"0"
-"icCountry_3";"ind_21";"Recognised Exporter";"Canada is an emerging Exporter of Livestock Porcine, though trade value and volume remain significantly lower than Denmark and the Netherlands (~$208M, ~4.88M head, 2024) (85)";"1";"0"
-"icCountry_3";"ind_4";"Recognised Catcher";"Canada has emerging lobster and snow crab fisheries (43)";"1";"0"
-"icCountry_3";"ind_5";"Significant Player";"Canada is a notable biotechnology player, ranking after France in number of active biotech firms (48, 73)";"1";"0"
-"icCountry_30";"ind_15";"Significant Catcher";"Peru has a significant Fisheries industry, ranking 4th globally with 5.4M tonnes in 2022, closely behind India (75)";"1";"0"
-"icCountry_31";"ind_15";"Significant Catcher";"Russia is a major capture Fisheries producer, ranking 5th globally with 5M tonnes in 2022 (75)";"1";"0"
-"icCountry_32";"ind_21";"Top Importer";"Germany is the leading country in Live Swine (Porcine) Import (~$844.7M, ~9.2M head, 2024) (85)";"1";"0"
-"icCountry_32";"ind_29";"Significant Importer";"Germany is a notable Importer of live poultry/fowls—including young and mature chickens, ducks, geese, turkeys, and guinea fowls—ranking high by trade value (~$316.15M) with an import quantity of ~120.25M head (2024) (90, 91, 92, 93)";"1";"0"
-"icCountry_34";"ind_20";"Significant Importer";"Italy is the second-largest Importer of Live Bovines by value (~$2B, ~1M head, 2024) (84)";"1";"0"
-"icCountry_35";"ind_20";"Recognised Importer";"Netherlands is an emerging Livestock Bovine Importer by head count (~957K head, ~$369M, 2024) (84)";"1";"0"
-"icCountry_35";"ind_21";"Significant Exporter";"Netherlands is the 2nd largest Live Swine (Porcine) Exporter after Denmark by trade value and quantity (~$636M, ~7.44M head, 2024) (85)";"1";"0"
-"icCountry_35";"ind_29";"Significant Exporter & Top Importer";"The Netherlands is a major Exporter of live poultry/fowls—including chickens, ducks, geese, turkeys, and guinea fowls—ranking after France by trade value (~$410.04M) but leading in export quantity (~346.91M head, 2024) (86, 87, 88, 89). The Netherlands is the leading Importer of live poultry/fowls—including young and mature chickens, ducks, geese, turkeys, and guinea fowls—by both trade value (~$972.52M) and quantity (~359.91M head, 2024) (90, 91, 92, 93)";"2";"0"
-"icCountry_36";"ind_21";"Top Exporter";"Denmark is the world's largest Live Swine (Porcine) Exporter both by trade value and quantity (~$1.6B, ~17.5M head, 2024) (85)";"1";"0"
-"icCountry_37";"ind_21";"Top Importer";"Poland is one of the top Importers of Live Swine (Porcine), following Germany (~$784M, ~7.8M head, 2024) (85)";"1";"0"
-"icCountry_37";"ind_29";"Significant Importer";"Poland is a notable Importer of live poultry/fowls—including young and mature chickens, ducks, geese, turkeys, and guinea fowls—with a trade value of ~$262.47M and import quantity of ~171.83M head (2024) (90, 91, 92, 93)";"1";"0"
-"icCountry_4";"ind_1";"Significant Grower";"China is the second-largest Corn Grower, primarily for domestic use, producing ~274M tonnes vs ~295M tonnes of domestic demand (2022-2023) (10, 38)";"1";"0"
-"icCountry_4";"ind_10";"Significant Grower";"China has the 3rd largest cattle population (~98.17M, 2022) and Cattle Farming industry (50)";"1";"0"
-"icCountry_4";"ind_11";"Global Leader";"China is the leading country in Cattle Slaughter, with ~52.5M cows killed per year (2025) (96)";"1";"0"
-"icCountry_4";"ind_15";"Top Catcher";"China has the largest Fishing industry in the world, catching 13.2M tonnes in 2022 (75)";"1";"0"
-"icCountry_4";"ind_17";"Top Grower";"China leads in Pig Farming, with the world’s largest pig population at ~452.6M (2021-2025) (94, 95)";"1";"0"
-"icCountry_4";"ind_18";"Global Leader";"China leads globally in Swine Slaughter, ~700M pigs/year (2025) (97)";"1";"0"
-"icCountry_4";"ind_3";"Top Player";"China leads the Crustacean Processing industry, following its massive aquaculture production and fisheries, notably frozen and prepared shrimps, prawns, and crabs, exporting processed products valued at $2.35B (39, 79, 81, 82)";"1";"0"
-"icCountry_4";"ind_30";"Global Leader";"China leads in Poultry Slaughter, killing ~16.27B fowls/year (2023), incl. chickens, ducks, and geese (98)";"1";"0"
-"icCountry_4";"ind_4";"Top Catcher";"China leads in crustacean fisheries and overall fishing, mostly for domestic consumption, with crabs as a targeted species (43)";"1";"0"
-"icCountry_4";"ind_6";"Top Producer";"China has the largest shrimp farming industry, with an estimated production of 1.487M tonnes (40, 41)";"1";"0"
-"icCountry_4";"ind_8";"Top Grower";"China is an undisputed leader in crab aquaculture, especially Chinese mitten crab (~779,000 metric tonnes in 2019), Gazami, and mud crabs (44, 72)";"1";"0"
-"icCountry_4";"ind_9";"Top Producer";"China has the largest crayfish farming industry, dominating global crayfish aquaculture (47)";"1";"0"
-"icCountry_5";"ind_16";"Recognised Catcher";"Mexico catches a notable amount of Sharks in coastal and pelagic fisheries, targeting various species (48, 76, 77, 78)";"1";"0"
-"icCountry_5";"ind_20";"Recognised Exporter";"Mexico is an emerging Exporter of Live Bovines (~$793M, ~748K head, 2024) (83)";"1";"0"
-"icCountry_7";"ind_1";"Recognised Grower";"India is a growing Grower/Producer of Corn, but not a major exporter (9)";"1";"0"
-"icCountry_7";"ind_10";"Top Grower";"India has the largest cattle population (~306.7M, 2022), despite ranking behind the US, Brazil, and China in beef production (50)";"1";"0"
-"icCountry_7";"ind_11";"Top Processor";"India is close behind Brazil in Cattle Slaughter, ~41.4M head/year (2025) (96)";"1";"0"
-"icCountry_7";"ind_15";"Significant Catcher";"India has the 3rd largest Fisheries, after China and Indonesia, producing 5.5M tonnes (2022) (75)";"1";"0"
-"icCountry_7";"ind_16";"Significant Catcher";"India consistently ranks among the top 3 Shark Fishing nations, with a substantial impact on global shark populations (48, 76, 77, 78)";"1";"0"
-"icCountry_7";"ind_3";"Significant Player";"India is a notable player in the Crustacean Processing industry and one of the top exporters of prepared and frozen shrimps and prawns (80, 81, 82)";"1";"0"
-"icCountry_7";"ind_30";"Recognised Processor";"India ranks in the top 5 for Poultry Slaughter, after Indonesia, with ~3.03B fowls/year (incl. chickens, ducks; 2023) (98)";"1";"0"
-"icCountry_7";"ind_4";"Significant Catcher";"India has significant shrimp and crab fisheries (43)";"1";"0"
-"icCountry_7";"ind_6";"Significant Producer";"India is a major shrimp producer, with an aquaculture industry yielding approximately 734,160 tonnes (40, 41)";"1";"0"
-"icCountry_8";"ind_3";"Significant Player";"Thailand is a notable player in the Crustacean Processing industry and a major exporter of processed shrimps and prawns (80, 81, 82)";"1";"0"
-"icCountry_9";"ind_3";"Significant Player";"Vietnam is one of the key players in the Crustacean Processing industry, exporting processed products valued at $1.54B (39, 81, 82)";"1";"0"
-"icCountry_9";"ind_6";"Significant Producer";"Vietnam is a major shrimp producer, with shrimp aquaculture yielding around 945,791 tonnes (40, 41)";"1";"0"
-"icCountry_9";"ind_7";"Top Grower";"Vietnam is a leading lobster farming country, mainly for domestic use and exports, primarily to China (45, 46)";"1";"0"
-"icCountry_9";"ind_8";"Significant Grower";"Vietnam is a significant mud crab farming nation, producing over 38,000 tonnes annually, with a strong export focus to East and Southeast Asian markets (44, 48)";"1";"0"
-"imp_1";"imp_2";;"test desc (test ref)";"1";"1"
-"imp_1";"imp_8";;;"1";"1"
-"ind_1";"con_1";"Associated with";"High nutrient demands, particularly concerning Nitrogen (N) and Phosphorus (P) fertilisers (test ref)";"1";"0"
-"ind_1";"con_2";;;"1";"0"
-"ind_1";"con_3";;;"1";"0"
-"ind_1";"con_4";;;"1";"0"
-"ind_1";"con_9";;;"1";"0"
-"ind_10";"ind_11";;"Cattle Farming is the primary source of cattle supply to the Cattle Slaughtering industry for meat and other byproducts";"1";"1"
-"ind_10";"ind_20";;"Cattle Farming produces livestock, which can be traded domestically and internationally for breeding or slaughter";"1";"1"
-"ind_11";"ind_12";;"The Cattle Slaughtering industry provides prepared carcasses and parts to the Meat Processing industry for further processing into meat cuts and other products";"1";"1"
-"ind_11";"ind_22";;"Rendering Plants collect raw byproducts (e.g. bones, cartilage, hides, fat, offal, blood, hooves, horns) from Cattle Slaughtering for processing into usable materials";"1";"1"
-"ind_17";"ind_18";;"Farmed Pigs are transported to Slaughtering facilities for killing and initial processing";"1";"1"
-"ind_17";"ind_21";;"Pig Farming produces livestock widely traded for Breeding, Fattening, or Slaughter";"1";"1"
-"ind_18";"ind_19";;"Slaughtered Pigs from Abattoirs and Slaughterhouses are sent to Meat Processing plants for cutting, packaging, and further preparation";"1";"1"
-"ind_18";"ind_22";;"Rendering Plants collect raw byproducts (e.g. bones, cartilage, hides, fat, offal, blood) from Pig Slaughtering for processing into usable materials";"1";"1"
-"ind_22";"ind_14";;"The Rendering industry supplies prepared hides to the Leather industry for tanning and manufacturing";"1";"1"
-"ind_22";"ind_23";;"The Rendering Industry supplies the Pharmaceutical Industry with processed materials-such as Collagen, Gelatin, Chondroitin Sulfate, Heparin, and Insulin-derived from Bovine, Porcine, and Avian byproducts";"1";"1"
-"ind_22";"ind_25";;"The Rendering Industry supplies the Cosmetics Industry with processed materials—such as Animal Fats, Gelatin, Collagen, Keratin, Glycerin (Glycerol), and Stearic Acid—used as emollients, thickeners, and active ingredients in skincare and personal care products";"1";"1"
-"ind_28";"ind_29";;"Poultry Farming produces livestock for domestic and international trade for Breeding, Eggs, Fattening, or Slaughter";"1";"1"
-"ind_28";"ind_30";;"Farmed Avian species are delivered to the Poultry Slaughtering Industry for killing and initial carcass preparation";"1";"1"
-"ind_3";"ind_4";;"Crustacean Fisheries is a significant contributor to the seafood processing industry, 4-6 million tons of wild-caught crustaceans annually (34)";"1";"1"
-"ind_3";"ind_6";;"Shrimp and Prawn Farming supplies ~4 million tons of farmed shrimp annually; farmed and wild-caught shrimp dominate crustacean processing (31, 34)";"1";"1"
-"ind_3";"ind_7";;"Lobster Farming is a small but growing segment, contributing a minor share to the processing industry (36)";"1";"1"
-"ind_3";"ind_8";;"Crab Farming is a small but growing segment, contributing a minor share to the processing industry (37)";"1";"1"
-"ind_3";"ind_9";;"Crayfish Farming is a small but growing segment, contributing a minor share to the processing industry (34)";"1";"1"
-"ind_30";"ind_22";;"Poultry byproducts from Slaughtering are processed in the Rendering Industry for materials used in other industries, though to a much smaller extent compared to Bovine and Porcine";"1";"1"
-"ind_31";"ind_32";;"The Forestry Industry provides the primary raw materials (Wood) for Paper Manufacturing";"1";"1"
-"item_1";"comp_1";"Glucosamine: Main Ingredient in Joint Health Supplements. Health or nutritional benefits";"Glucosamine is the main ingredient in most Joint Health Supplements, believed to help relieve joint pain. Evidence: Moderate (23)";"1";"0"
-"item_1";"comp_2";"Chondroitin: Main Ingredient in Joint Health Supplements. Health or nutritional benefits";"Chondroitin is often paired with Glucosamine in Joint Health Supplements for pain relief. Evidence: Limited (28, 29)";"1";"0"
-"item_1";"comp_4";"Collagen: Active Ingredient in Joint Health Supplements. Health or nutritional benefits";"Collagen is a key ingredient in Joint Health Supplements, believed to support cartilage health and improve joint flexibility. Evidence: Moderate (99, 100)";"1";"0"
-"item_1";"comp_5";"Marine Collagen: Active Ingredient in Joint Health Supplements. Health or nutritional benefits";"Marine Collagen is commonly used in Joint Health Supplements for its small peptide size, which is thought to improve absorption and support cartilage health and joint mobility. Evidence: Moderate (99, 100)";"1";"0"
-"item_1";"comp_6";"MSM (Methylsulfonylmethane): Active Ingredient in Joint Health Supplements. Health or nutritional benefits";"MSM is used in Joint Health Supplements, thought to support joint comfort and mobility. Evidence: Moderate (109)";"1";"0"
-"item_1";"comp_7";"Hyaluronic Acid: Active Ingredient in Joint Health Supplements. Health or nutritional benefits";"Hyaluronic Acid is used in Joint Health Supplements, thought to support joint lubrication and mobility. Evidence: Moderate (110)";"1";"0"
-"item_10";"comp_3";"Gelatin: Coating Agent in Confectionery. Provides Coating";"Gelatin is commonly used in Confectionery to provide structure, chewiness, and stability. Evidence: Not Applicable";"1";"0"
-"item_11";"comp_3";"Gelatin: Excipient in Capsules. Controls Release";"Gelatin is the main material used in Capsules, forming a protective shell for powders, liquids, or supplements. Evidence: Not Applicable";"1";"0"
-"item_12";"comp_4";"Collagen: Main Ingredient in Collagen Peptides/Hydrolysed Collagen. Health or nutritional benefits";"Collagen is the main ingredient in Collagen Peptides and Hydrolysed Collagen, providing short-chain proteins thought to support skin, hair, nails, and joint health. Evidence: Moderate (99, 100)";"1";"0"
-"item_12";"comp_5";"Marine Collagen: Main Ingredient in Collagen Peptides/Hydrolysed Collagen. Health or nutritional benefits";"Marine Collagen is used in Collagen Peptides and Hydrolysed Collagen, providing easily absorbed proteins thought to support skin, hair, nails, and joint health. Evidence: Moderate (99, 100)";"1";"0"
-"item_13";"comp_4";"Collagen: Active Ingredient in Collagen Face Cream. Health or nutritional benefits";"Collagen is used in Collagen Face Creams, thought to help improve skin elasticity and hydration. Evidence: Moderate (102)";"1";"0"
-"item_13";"comp_5";"Marine Collagen: Active Ingredient in Collagen Face Cream. Health or nutritional benefits";"Marine Collagen is used in Collagen Face Creams, thought to help enhance skin elasticity and hydration. Evidence: Limited (102)";"1";"0"
-"item_14";"comp_3";"Gelatin: Biding Agent in Sausages. Enhances Stability";"Gelatin is used in Sausages to improve texture, binding, and juiciness. Evidence: Not Applicable";"1";"0"
-"item_14";"comp_4";"Collagen: Coating Agent in Sausages. Provides Coating";"Collagen is used in Sausages, primarily as a casing material and to help maintain texture and shape. Evidence: Not Applicable";"1";"0"
-"item_15";"comp_3";"Gelatin: Coating Agent in Coated Tablets. Provides Coating";"Gelatin is used in Coated Tablets to form a protective outer layer and aid in swallowing. Evidence: Not Applicable";"1";"0"
-"item_16";"comp_3";"Gelatin: Active Ingredient in Wound Dressings. Health or nutritional benefits";"Gelatin is used in Wound Dressings to provide a supportive matrix that helps with moisture retention and healing. Evidence: Not Applicable";"1";"0"
-"item_16";"comp_4";"Collagen: Active Ingredient in Wound Dressings. Health or nutritional benefits";"Collagen is used in Wound Dressings, thought to support tissue repair and promote healing. Evidence: Not Applicable";"1";"0"
-"item_17";"comp_1";"Glucosamine: Active Ingredient in Pet Supplements. Health or nutritional benefits";"Glucosamine is also used in Pet Supplements, thought to support joint health and mobility. Evidence: Moderate (103, 105, 106)";"1";"0"
-"item_17";"comp_2";"Chondroitin: Active Ingredient in Pet Supplements. Health or nutritional benefits";"Chondroitin is often used in Pet Supplements in addition to Glucosamine, thought to support joint health and cartilage maintenance. Evidence: Limited (104, 105)";"1";"0"
-"item_17";"comp_4";"Collagen: Active Ingredient in Pet Supplements. Health or nutritional benefits";"Collagen is used in Pet Supplements, thought to support joint health, skin, and coat condition. Evidence: Moderate (106)";"1";"0"
-"item_18";"comp_3";"Gelatin: Gelling Agent in Energy Gels. Forms Gel Structure";"Gelatin is used in Energy Gels to provide thickness and improve texture for easier consumption. Evidence: Not Applicable";"1";"0"
-"item_18";"comp_4";"Collagen: Active Ingredient in Energy Gels. Health or nutritional benefits";"Collagen is used in Energy Gels, thought to support joint health and overall connective tissue function. Evidence: Moderate (99, 100)";"1";"0"
-"item_19";"comp_4";"Collagen: Active Ingredient in Protein Bars. Health or nutritional benefits";"Collagen is used in Protein Bars, thought to support joint health and help maintain skin, hair, and nail condition. Evidence: Moderate (99, 100)";"1";"0"
-"item_2";"comp_3";"Gelatin: Biding Agent in Gummies. Adds texture or viscosity";"Gelatin is widely used in Gummies as a binding agent, giving them their chewy texture and stability. Evidence: Not Applicable";"1";"0"
-"item_20";"comp_3";"Gelatin: Biding Agent in Photographic Film. Provides Coating";"Gelatin is used in Photographic Film to form a light-sensitive, protective layer that captures and holds the image. Evidence: Not Applicable";"1";"0"
-"item_21";"comp_8";"Surimi: Main Ingredient in Crab Stick. Forms Base Texture";"Surimi is the main ingredient in Crab Stick, forming the base texture and protein. Evidence: Not Applicable";"1";"0"
-"item_3";"comp_3";"Gelatin: Main Ingredient in Jello. Forms Gel Structure";"Gelatin is the key ingredient in Jello, responsible for its gel-like texture and structure. Evidence: Not Applicable";"1";"0"
-"item_4";"comp_3";"Gelatin: Biding Agent in Marshmallows. Adds texture or viscosity";"Gelatin is a key ingredient in Marshmallows, giving them their soft, spongy texture. Evidence: Not Applicable";"1";"0"
-"item_5";"comp_3";"Gelatin: Thickener in Dairy Yogurt. Adds texture or viscosity";"Gelatin is sometimes added to Dairy Yogurt to improve thickness and create a smooth, creamy texture. Evidence: Not Applicable";"1";"0"
-"item_6";"comp_3";"Gelatin: Stabiliser in Cream Cheese. Enhances Stability";"Gelatin is used in Cream Cheese to help stabilize texture and improve firmness. Evidence: Not Applicable";"1";"0"
-"item_7";"comp_3";"Gelatin: Stabiliser in Sour Cream. Enhances Stability";"Gelatin is added to Sour Cream to enhance thickness and maintain a consistent texture. Evidence: Not Applicable";"1";"0"
-"item_8";"comp_3";"Gelatin: Emulsifier in Margarine. Improves Spreadability";"Gelatin is occasionally used in Margarine to help stabilize texture and improve spreadability. Evidence: Not Applicable";"1";"0"
-"item_9";"comp_3";"Gelatin: Stabiliser in Ice Cream. Prevents Ice Crystal Formation";"Gelatin is often added to Ice Cream to improve creaminess and maintain a smooth, stable texture. Evidence: Not Applicable";"1";"0"
-"mat_1";"ind_3";"Crustacean Shells is a Byproduct of Crustacean Processing";"The Crustacean Processing industry is the primary source of shells, particularly from shrimp, crabs, and lobsters, processing 6-8 million tons annually, 50-70% of crustacean weight are discarded as shells, cephalothoraxes, and exoskeletons (30, 31, 34)";"1";"0"
-"mat_1";"ind_4";"Crustacean Shells is a Byproduct of Crustacean Fisheries";"Crustacean Fisheries are a major source of shells, especially from wild-caught shrimp, crabs, and lobsters (48)";"1";"0"
-"mat_1";"ind_6";"Crustacean Shells is a Byproduct of Shrimp and Prawn Farming";"Shrimp and Prawn Farming contribute significantly to shell supply due to high production (40, 41)";"1";"0"
-"mat_1";"ind_7";"Crustacean Shells is a Byproduct of Lobster Farming";"Lobster Farming is a minor shell source compared to other crustaceans (36)";"1";"0"
-"mat_1";"ind_8";"Crustacean Shells is a Byproduct of Crab Farming";"Crab Farming contributes moderately to shell supply, though volumes are lower than shrimp or prawn (44)";"1";"0"
-"mat_1";"ind_9";"Crustacean Shells is a Byproduct of Crayfish Farming";"Crayfish Farming is a minor contributor to shell supply at lower volumes than shrimp and crab (47)";"1";"0"
-"mat_10";"ind_34";"Wild-Caught Fish is a Target Catch of Commercial Fishing";"Wild-Caught Fish are harvested through Commercial Fishing and Artisanal Fishing primarily for human consumption, common species including Cod, Tuna, Anchovy, Herring, and Mackerel";"1";"0"
-"mat_10";"ind_35";"Wild-Caught Fish is a Target Catch of Artisanal Fishing";"Yields of WIld-Caught Fish from Artisanal Fishing are much smaller than Commercial Fishing, primarily for local consumption, catches are less likely to be processed into byproducts";"1";"0"
-"mat_2";"ind_5";"Filamentuous Fungi is a Main Product of Biotechnology";"Filamentous Fungi is cultivated at industrial-scale in the Biotechnology industry by selecting or engineering suitable fungal strains in lab-controlled environments";"1";"0"
-"mat_3";"ind_10";"Bovine (Cow) is a Primary Product of Cattle Farming";"Bovine refers to domesticated Cattle raised in the Cattle Farming Industry for meat, milk, breeding, and other purposes";"1";"0"
-"mat_3";"ind_11";"Bovine (Cow) is a Raw Material of Cattle Slaughtering";"The Cattle Slaughtering Industry processes Bovines for meat as the primary product before further processing in downstream industries";"1";"0"
-"mat_3";"ind_14";"Bovine (Cow) is a Raw Material of Tanning";"Bovine is the primary raw material for the Leather Processing industry, whose products include leather, gelatin, collagen, and related materials";"1";"0"
-"mat_3";"ind_20";"Bovine (Cow) is a Raw Material of Livestock Trading (Bovine)";"Live Bovines are traded in the Livestock Trade industry for breeding, fattening, or slaughter";"1";"0"
-"mat_3";"ind_22";"Bovine (Cow) is a Raw Material of Rendering (Animals)";"Non-meat parts of Bovine are sent to the Rendering Industry for processing";"1";"0"
-"mat_3";"ind_23";"Bovine (Cow) is a Source of Pharmaceuticals";"Bovine byproducts are an important source for the Pharmaceutical Industry, used in the production of Heparin, Insulin, Collagen, Gelatin, and other medical materials";"1";"0"
-"mat_3";"ind_24";"Bovine (Cow) is a Source of Pet Food";"Bovine products, byproducts, and derivatives—such as meat trimmings, organs, fat, bone meal, and tallow—are used in the Pet Food Industry as sources of protein, nutrients, and energy";"1";"0"
-"mat_3";"ind_25";"Bovine (Cow) is a Source of Cosmetics";"Bovine byproducts and derivatives—such as Tallow, Collagen, Gelatin, Keratin, and Glycerin—are widely used in the Cosmetics Industry as emollients, stabilisers, and active ingredients in skincare and personal care products";"1";"0"
-"mat_4";"ind_15";"Sharks and Elasmobranchs is a Bycatch of Fisheries";"Sharks and Elasmobranchs (e.g. rays, skates) are unintentionally caught alongside target species during commercial or artisanal fishing operations";"1";"0"
-"mat_4";"ind_16";"Sharks and Elasmobranchs is a Target Catch of Shark Fisheries";"Sharks and Elasmobranchs (e.g. rays, skates) are deliberately caught in targeted fisheries for their meat, fins, cartilage, or other parts";"1";"0"
-"mat_5";"ind_17";"Porcine (Pig) is a Primary Product of Pig Farming";"Porcine refers to domesticated Pigs raised in the Pig Farming Industry for meat production, breeding, and related uses";"1";"0"
-"mat_5";"ind_18";"Porcine (Pig) is a Primary Product of Pig Slaughtering";"The Pig Slaughtering Industry processes Pigs for meat as the primary product before further processing in downstream industries";"1";"0"
-"mat_5";"ind_21";"Porcine (Pig) is a Primary Product of Livestock Trading (Porcine)";"Live Porcine Animals are traded across markets for breeding, fattening, or slaughter";"1";"0"
-"mat_5";"ind_22";"Porcine (Pig) is a Raw Material of Rendering (Animals)";"Non-meat parts from Porcine are sent to the Rendering Industry for processing";"1";"0"
-"mat_5";"ind_23";"Porcine (Pig) is a Source of Pharmaceuticals";"Porcine byproducts—such as intestinal mucosa, glands, and tissues—are key sources for the Pharmaceutical Industry, used in the production of Heparin, Insulin, Gelatin, and other medical products";"1";"0"
-"mat_5";"ind_24";"Porcine (Pig) is a Source of Pet Food";"Porcine products, byproducts, and derivatives such as meat trimmings, organs, fat, and rendered meals are widely used in the Pet Food industry as essential protein, fat, and nutrient sources";"1";"0"
-"mat_5";"ind_25";"Porcine (Pig) is a Source of Cosmetics";"Porcine byproducts and derivatives—such as Collagen, Gelatin, Fat, and Glycerin—are used in the Cosmetics Industry for their moisturizing, texturizing, and stabilising properties in skincare and personal care products";"1";"0"
-"mat_6";"ind_22";"Avian (Poultry/Fowls) is a Raw Material of Rendering (Animals)";"Avian slaughter byproducts are sent to the Rendering industry but in much smaller volumes than Bovine and Porcine, contributing minimally to downstream industries like Pharmaceuticals and Cosmetics";"1";"0"
-"mat_6";"ind_24";"Avian (Poultry/Fowls) is a Source of Pet Food";"Avian meat, byproducts, and derivatives are used in the Pet Food industry as protein and nutrient sources";"1";"0"
-"mat_6";"ind_28";"Avian (Poultry/Fowls) is a Primary Product of Poultry Farming";"Avian species like chickens, ducks, and turkeys are bred and raised in the Poultry Farming industry for meat, eggs, and other products";"1";"0"
-"mat_6";"ind_29";"Avian (Poultry/Fowls) is a Primary Product of Livestock Trading (Poultry)";"Avian species are traded internationally as livestock for breeding or production purposes";"1";"0"
-"mat_6";"ind_30";"Avian (Poultry/Fowls) is a Primary Product of Poultry Slaughtering";"Avian species are sent to the Slaughtering industry for meat production as the primary output";"1";"0"
-"mat_7";"ind_33";"Farmed Fish is a Primary Product of Fish Aquaculture";"Fish Aquaculture produces Farmed Fish primarily for human consumption, commonly Carp, Tilapia, Catfish, Salmon, and Pangasius";"1";"0"
-"mat_8";"ind_13";"Dairy Cows is a Primary Product of Dairy Farming";"Dairy cows are raised in Dairy Farming to produce milk and related dairy products";"1";"0"
-"mat_9";"ind_31";"Lignin (Wood) is a Byproduct of Paper Manufacturing";"Lignin is extracted as a byproduct during wood processing in the forestry industry, primarily from pulp and paper manufacturing";"1";"0"
-"smCountry_1";"mat_2";"Global Leader";"The USA is the global leader in filamentous fungal research and biotech, with focus on enzymes, pharmaceuticals, and agriculture (60)";"1";"0"
-"smCountry_1";"mat_3";"Top Producer & Significant Exporter";"The US is the largest global Bovine Producer (Beef) (~12.89M tonnes, 2022), generating various co-products, by-products, and sub-products from bovine processing (48, 49, 50). The US is one of the top global Bovine/Beef Exporters with ~1.2M-1.5M tonnes (2024-2025) (48, 49, 51, 52)";"2";"0"
-"smCountry_1";"mat_5";"Significant Producer & Significant Exporter";"The US is a major Porcine (Pork) Producer after China and the EU, ~12.8M tonnes, ~11% of global production (48, 53, 54). The US is likely the second largest Porcine (Pork) Exporter globally, ~3.03M tonnes, 2024 (48, 55, 71)";"2";"0"
-"smCountry_1";"mat_6";"Top Producer & Top Exporter";"The US is the world's largest Poultry Producer, ~22.5M metric tonnes, ~20% global output, 2024 (48, 57). The US is the second-largest Poultry Exporter, close behind Brazil, ~2.9-3.5M tonnes (57, 58, 59)";"2";"0"
-"smCountry_1";"src_1";"Top Consumer";"The US is a significant consumer of Chitin, Crustacean Shells (raw material), and derivatives—especially in pharmaceuticals and biodegradable materials—likely second only to China (7, 48)";"1";"0"
-"smCountry_1";"src_12";"Top Importer";"The US is the top Importer of fish waste byproducts, including Fish Scales and Skins, valued at $113.59M in 2024 (111)";"1";"0"
-"smCountry_1";"src_13";"Top Importer";"The US is the top Importer of fish waste byproducts, including Fish Scales and Skins, valued at $113.59M in 2024 (111)";"1";"0"
-"smCountry_1";"src_18";"Top Importer & Recognised Consumer";"The US is the top Importer of Fish and other fishery products with import value ~$26.6B in 2024 (112). The US is a recognised Consumer of Fish and seafood, though far behind China, India, and Indonesia by volume, with ~7.5M tonnes in 2022 (114)";"2";"0"
-"smCountry_1";"src_2";"Top Consumer";"USA is the largest consumer of Corn and corn products (e.g. ethanol, livestock feed, food, and industrial products) (14)";"1";"0"
-"smCountry_1";"src_6";"Top Consumer & Significant Importer";"The USA is top Beef Consumer, both in per capita and total consumption (~12.7M tonnes, 2025) (48, 49). The US is a major Importer of Beef for processed foods (~2M tonnes, 2025), despite being a leading producer and exporter (48, 49)";"2";"0"
-"smCountry_1";"src_7";"Significant Consumer";"The US is a significant Consumer of Pork with high total volumes, ~27kg/yr per capita (48, 53)";"1";"0"
-"smCountry_1";"src_8";"Top Consumer";"The US leads in Poultry Consumption, with the highest total and per capita intake, ~17.9M tonnes, 2023 (57)";"1";"0"
-"smCountry_10";"mat_1";"Major Source";"Indonesia produces significant quantities of Crustacean Shells, notably from Shrimp and Crab, derived from both aquaculture and wild-catch fisheries (17, 18, 81)";"1";"0"
-"smCountry_10";"mat_10";"Significant Catcher";"Indonesia is the 2nd largest Catcher of Wild-Caught Fish, though far behind China, with ~7M tonnes caught in 2020 (116)";"1";"0"
-"smCountry_10";"mat_7";"Significant Producer";"Indonesia is the 2nd largest Producer of Farmed Fish after China, though at a much lower volume, with ~16.7 M tonnes in 2021 (113, 115)";"1";"0"
-"smCountry_10";"src_18";"Significant Consumer";"Indonesia is among the top 3 Consumers of Fish and seafood, close to India, with ~11.4 M tonnes in 2022 (114)";"1";"0"
-"smCountry_11";"mat_2";"Top Player";"The EU has an established filamentous fungal research hub, focusing on industrial enzymes, pharmaceuticals, and environmental biotech (60)";"1";"0"
-"smCountry_11";"mat_3";"Recognised Producer";"The EU is a significant Bovine/Beef Producer, mainly for domestic consumption (~6.5M tonnes, 2025) (49)";"1";"0"
-"smCountry_11";"mat_5";"Significant Producer & Top Exporter";"The EU is the second largest Porcine (Pork) Producer, ~21M tonnes, ~18.3% of global production (48, 53, 54). The EU is the largest global Porcine (Pork) Exporter, ~30-31% of world pork exports, ~10.4M tonnes, 2024 (48, 53)";"2";"0"
-"smCountry_11";"mat_6";"Recognised Producer & Significant Exporter";"The EU is an emerging Producer of Poultry, ~12.0M metric tonnes, ~11.3% of global production (48, 57). The EU is a significant Poultry Exporter, with Poland, the Netherlands, and Spain as top contributors, ~1.8-2.5M tonnes (57, 58, 59)";"2";"0"
-"smCountry_11";"src_12";"Significant Importer";"The EU is a major Importer of fish waste byproducts by quantity, including Fish Scales and Skins, ~199,651,000 kg, 2024 (111)";"1";"0"
-"smCountry_11";"src_13";"Significant Importer";"The EU is a major Importer of fish waste byproducts by quantity, including Other Fish Parts, ~199,651,000 kg, 2024 (111)";"1";"0"
-"smCountry_11";"src_18";"Top Importer";"The EU is the leading Importer of Fish and other fisheries and aquaculture products as a whole (although none of its member states has import values close to the top three), accounting for ~35% of total world fish imports by value (112)";"1";"0"
-"smCountry_11";"src_6";"Recognised Consumer";"The EU is a significant Beef Consumer with substantial domestic demand across member countries (~6.2M tonnes, 2025) (49)";"1";"0"
-"smCountry_11";"src_7";"Top Consumer";"The EU ranks among the top Pork Consumers, ~20.5M tonnes (48, 53)";"1";"0"
-"smCountry_11";"src_8";"Significant Consumer & Significant Importer";"The EU is a major Poultry Consumer, with steady demand and strong domestic consumption (57). The EU is a notable Poultry Importer alongside China, with imports ~0.7M tonnes (57)";"2";"0"
-"smCountry_12";"mat_7";"Recognised Exporter";"Ecuador is a recognised Exporter of Farmed Fish, though well behind China and Norway in value, with ~$9.2 B in 2024 (112)";"1";"0"
-"smCountry_13";"mat_2";"Top Player";"Brazil is an emerging player in filamentous fungal science, leveraging fungal bioactive compounds and sustainable bioprocessing (60)";"1";"0"
-"smCountry_13";"mat_3";"Top Producer & Top Exporter";"Brazil is the world's 2nd largest Bovine Producer (Beef) (~10.35M tonnes, 2022), generating abundant co-products, by-products, and sub-products (48, 49, 50). Brazil is the world's largest Bovine/Beef Exporter by volume ~2.9M-3.6M tonnes (2024-2025) (48, 49, 51, 52)";"2";"0"
-"smCountry_13";"mat_5";"Recognised Producer & Recognised Exporter";"Brazil is among the top five global Porcine (Pork) Producers, ~4.5-4.8M tonnes (48, 53, 54). Brazil is an emerging Porcine (Pork) Exporter and a competitive supplier to Asia (48, 53, 55)";"2";"0"
-"smCountry_13";"mat_6";"Significant Producer & Top Exporter";"Brazil is a major Poultry Producer, close to China, export-oriented, ~15M metric tonnes, ~15.1% global production (48, 57). Brazil ranks as the top global Exporter of Poultry, ~4-5M metric tonnes (57, 58, 59)";"2";"0"
-"smCountry_13";"src_2";"Significant Consumer";"Brazil is a major consumer of Corn alongside being a top producer (15)";"1";"0"
-"smCountry_13";"src_5";"Top Player";"Brazil has the third largest market share of Shark Cartilage product, ~$14.13M sales revenue (2025) (66)";"1";"0"
-"smCountry_13";"src_6";"Significant Consumer";"Brazil is a notable Beef Consumer, with high domestic consumption (~8.2M tonnes, 2025) (48, 49)";"1";"0"
-"smCountry_13";"src_8";"Significant Consumer";"Brazil is a major Poultry Consumer, with strong domestic demand and high per capita intake due to its affordability, ~10.1M tonnes (57)";"1";"0"
-"smCountry_14";"mat_3";"Recognised Producer & Significant Exporter";"Argentina is a well-known traditional Bovine Producer (Beef) (~3.14M tonnes, 2022), popular for its grass-fed cattle and high-quality beef (48, 49, 50). Argentina is a notable Exporter of premium grass-fed Beef, with ~600–860K tonnes exported (2024–2025), though behind top producers in volume (48, 49, 51, 52)";"2";"0"
-"smCountry_16";"src_2";"Significant Importer";"South Korea is one of the major importers of corn, for feed and industrial use (12)";"1";"0"
-"smCountry_16";"src_6";"Recognised Importer";"South Korea is an emerging Beef Importer (~575K tonnes, 2025), particularly premium beef from the US and Australia (48, 49)";"1";"0"
-"smCountry_18";"mat_7";"Recognised Producer";"Bangladesh is a recognised Producer of Farmed Fish, alongside Vietnam, ranking after the top three (China, Indonesia, India), with ~6.3M tonnes in 2021 (113, 115)";"1";"0"
-"smCountry_2";"mat_3";"Significant Exporter";"Australia is the 2nd largest Bovine meat (Beef) Exporter in the world, exporting ~1.69M-1.9M tonnes (2024-2025) (48, 49, 51, 52)";"1";"0"
-"smCountry_20";"src_8";"Top Importer";"The UK is a top-three global Poultry Importer, importing ~0.94M tonnes (48, 57)";"1";"0"
-"smCountry_21";"src_18";"Recognised Importer";"Spain is a notable EU Importer of Fish, valued at ~$9.4B in 2024 (112)";"1";"0"
-"smCountry_28";"src_18";"Recognised Importer";"France is a notable EU Importer of Fish after Spain and Italy, with value ~$7.7B in 2024 (112)";"1";"0"
-"smCountry_3";"mat_5";"Recognised Exporter";"Canada is an emerging Exporter of Porcine (Pork), primarily to the US and Asia (48, 53, 55)";"1";"0"
-"smCountry_3";"src_12";"Recognised Importer";"Canada is a significant Importer of fish waste byproducts, including Fish Scales and Skins, valued at ~$80.5M, with a total import quantity of ~43.78M kg, 2024 (111)";"1";"0"
-"smCountry_3";"src_13";"Recognised Importer";"Canada is a significant Importer of fish waste byproducts, including Other Fish Parts, valued at ~$80.5M, with a total import quantity of ~43.78M kg, 2024 (111)";"1";"0"
-"smCountry_3";"src_5";"Top Player";"Canada has the second largest market share of Shark Cartilage product, ~$17.871M sales revenue (2025) (66)";"1";"0"
-"smCountry_30";"mat_10";"Recognised Catcher";"Peru is a recognised Catcher of Wild-Caught Fish, with >5.5M tonnes caught in 2020 (116)";"1";"0"
-"smCountry_31";"mat_10";"Recognised Catcher";"Russia is a recognised Catcher of Wild-Caught Fish closely behind Peru and India, with ~5M tonnes in 2020 (116)";"1";"0"
-"smCountry_32";"src_5";"Significant Player";"Germany leads Europe's Shark Cartilage product market, generating ~$7.19M in sales revenue (2025) (66)";"1";"0"
-"smCountry_33";"src_5";"Significant Player";"Nigeria leads Africa in Shark Cartilage product sales, with ~$6.435M in revenue (2025) (66)";"1";"0"
-"smCountry_34";"src_18";"Recognised Importer";"Italy is a notable EU Importer of Fish alongside Spain and France, valued at ~8B in 2024 (112)";"1";"0"
-"smCountry_36";"src_12";"Recognised Importer";"Denmark is a significant Importer of fish waste byproducts, including Fish Scales and Skins, valued at ~$79.3M, with a total import quantity of ~235.54M kg, 2024 (111)";"1";"0"
-"smCountry_36";"src_13";"Recognised Importer";"Denmark is a significant Importer of fish waste byproducts, including Other Fish Parts, valued at ~$79.3M, with a total import quantity of ~235.54M kg, 2024 (111)";"1";"0"
-"smCountry_4";"mat_1";"Top Exporter & Top Producer";"China is the top global Exporter of Crustacean Shells (shrimp, crab, etc.) and derivatives (e.g. Chitin), driven by abundant supply and low-cost production (6, 17, 79, 80). China can be considered as the top Crustacean Shells Producer and Chitin Producer (~80% of global supply) for its abundant shell supply, driven by extensive shrimp and crab aquaculture industries (6, 17, 79, 80)";"2";"0"
-"smCountry_4";"mat_10";"Top Catcher & Global Leader";"China is the leading global Wild Fish Catcher, with over 13 M tonnes captured in 2020 (116). China is leading as the largest Exporter of Wild-Caught Fish and seafood in general (117)";"2";"0"
-"smCountry_4";"mat_2";"Top Player";"China is a key player in filamentous fungi production, with a rapidly growing industry focused on fermentation, enzyme production, and bioremediation (60)";"1";"0"
-"smCountry_4";"mat_3";"Significant Producer";"China ranks 3rd in Bovine Production (Beef) after the US and Brazil, producing ~7.18M tonnes in 2022, mainly for domestic consumption (48, 49, 50)";"1";"0"
-"smCountry_4";"mat_5";"Top Producer";"China is the world's largest Porcine (Pork) Producer, ~55-56M tonnes, accounts for >50% of the global pig population
-  (48, 53, 54)";"1";"0"
-"smCountry_4";"mat_6";"Significant Producer & Recognised Exporter";"China has significant Poultry Production, ~17-20M metric tonnes, ~16.6% of global production (48, 57). China is rapidly expanding Poultry Exports, particularly in processed chicken, ~0.8-1M tonnes (57, 58, 59)";"2";"0"
-"smCountry_4";"mat_7";"Top Producer & Top Exporter";"China is the world's largest Fish Producer, ~67.8M tonnes, 2024 (113). China is the largest Exporter of Farmed Fish in the world, with a value of ~$20.18 B in 2024 (112)";"2";"0"
-"smCountry_4";"src_1";"Top Importer & Top Consumer";"China is amongst the top 3 importers of Chitin, while also being the largest producer and exporter (6). China is a leading consumer market for Chitin, driven by the increasing demands in agriculture, water treatment, and pharmaceuticals (48, 68)";"2";"0"
-"smCountry_4";"src_18";"Top Importer & Top Consumer";"China is the 2nd largest Importer and reporter of Fish and other fishery products with import value ~$22.3B in 2024 (112). China is the largest Consumer of Fish and seafood, with ~59.3M tonnes in 2022 (114)";"2";"0"
-"smCountry_4";"src_2";"Significant Importer & Significant Consumer";"China is a significant importer of Corn despite being a top producer itself due to high domestic demands, mainly for livestock feed and biofuels (11). China is the second largest consumer of Corn after the US; consumption often exceeds production, driving import demand (15)";"2";"0"
-"smCountry_4";"src_5";"Global Leader";"China has the largest Shark Cartilage product market share, sales revenue ~$22.324M (2025) (66)";"1";"0"
-"smCountry_4";"src_6";"Top Consumer & Top Importer";"China is closely behind the US in Beef Consumption (~11.6M tonnes, 2025), with demand continuing to rise (48, 49). China is the largest Beef Importer despite having a large bovine farming industry (~3.8M tonnes, 2025), driven by high domestic demand (48, 49)";"2";"0"
-"smCountry_4";"src_7";"Significant Importer & Top Consumer";"China is one of the top Pork Importers due to strong domestic demand, despite being the world's largest producer (48, 53). China is the world's largest Pork Consumer, accounting for nearly half of global consumption (48, 53)";"2";"0"
-"smCountry_4";"src_8";"Top Consumer & Significant Importer";"China is the second-largest Poultry Consumer after the US, with the fastest growth in consumption, ~ 15M tonnes, 2023 (57). China is a notable Poultry Importer after Japan, Mexico, and the UK, with imports of ~0.7M tonnes (48, 57)";"2";"0"
-"smCountry_40";"mat_10";"Significant Exporter";"Norway is the 2nd largest Exporter of aquatic animals (mostly farmed salmon), but also including Wild-Caught Fish such as cod, herring, mackerel, and some other whitefish and small pelagic species (117)";"1";"0"
-"smCountry_40";"mat_7";"Significant Exporter";"Norway is the second largest Exporter of Farmed Fish after China, primarily cultured Atlantic Salmon, with a value of ~$16 B in 2024 (112)";"1";"0"
-"smCountry_41";"mat_7";"Recognised Exporter";"Chile is a recognised Exporter of Farmed Fish, behind China, Norway, Ecuador, and Vietnam, with a value of ~$7.8 B in 2024 (112)";"1";"0"
-"smCountry_5";"src_2";"Top Importer & Significant Consumer";"Mexico is the largest importer of Corn, driven by food and feed demand, imports mostly from the U.S. (8). Mexico is a large consumer of Corn, primarily for food and feed, substantial portion of supply imported primarily from the U.S. (16)";"2";"0"
-"smCountry_5";"src_5";"Significant Player";"Mexico has significant market share of Shark Cartilage product, ~$9.241M sales revenue (2025) (66)";"1";"0"
-"smCountry_5";"src_7";"Significant Importer";"Mexico is a fast-growing Pork Importer, driven by strong domestic demand (48, 53)";"1";"0"
-"smCountry_5";"src_8";"Top Importer";"Mexico is close to Japan as a top Poultry Importer, with imports of ~0.8 to 1.01M tonnes (48, 57)";"1";"0"
-"smCountry_6";"src_1";"Significant Consumer & Significant Importer";"Japan has high Chitin consumption primarily for biomedical applications (48, 68). Japan is a major importer of Chitin for uses in biomedical and agricultural applications (6)";"2";"0"
-"smCountry_6";"src_18";"Significant Importer & Recognised Consumer";"Japan is the 3rd largest Importer of Fish after the US and China, valued at ~$12.9 B in 2024 (112). Japan is a recognised Consumer of Fish and seafood, behind China, India, Indonesia, and the US, with ~5.6 M tonnes in 2022 (114)";"2";"0"
-"smCountry_6";"src_2";"Significant Importer";"Japan is a major Corn importer, mainly for animal feed (8)";"1";"0"
-"smCountry_6";"src_6";"Recognised Importer";"Japan is a significant Beef Importer (~720K tonnes, 2025) with high demand due to strong consumption and limited local production (48, 49)";"1";"0"
-"smCountry_6";"src_7";"Top Importer";"Japan is the world’s largest Importer of Pork (48, 53, 56)";"1";"0"
-"smCountry_6";"src_8";"Top Importer";"Japan leads global Poultry Imports, totaling around 0.9–1.08M tonnes (48, 57)";"1";"0"
-"smCountry_7";"mat_1";"Major Source & Significant Exporter";"India is an emerging seafood Producer and Shell product supplier—incl. Chitin—with growing applications in agriculture and cosmetics (7, 17, 19, 79, 81). India is a notable Chitin Exporter, a compound derived directly from Crustacean Shells, likely ranking 2nd globally (6, 7)";"2";"0"
-"smCountry_7";"mat_10";"Recognised Catcher";"India is a recognised Catcher of Wild-Caught Fish alongside Peru, with ~5.5M tonnes in 2020 (116)";"1";"0"
-"smCountry_7";"mat_3";"Recognised Producer & Significant Exporter";"India is an emerging Bovine Producer (Beef), ~4.35M tonnes (2022), mainly of buffalo due to religious restrictions, generating various co- and by-products (48, 49, 50). India ranks among the top 5 Bovine Meat/Carabeef Exporters, mainly Buffalo meat, with ~1.4–1.6M tonnes (2024–2025) (48, 49, 51, 52)";"2";"0"
-"smCountry_7";"mat_7";"Significant Producer";"India is among the top three Producers of Farmed Fish after China and Indonesia, with ~10.9 M tonnes in 2021 (113, 115)";"1";"0"
-"smCountry_7";"src_18";"Significant Consumer";"India is the 2nd largest Consumer of Fish and seafood, with ~12.6M tonnes in 2022 (114)";"1";"0"
-"smCountry_7";"src_5";"Significant Player";"India has significant market share of Shark Cartilage product, ~$9.489M sales revenue (2025) (66)";"1";"0"
-"smCountry_8";"mat_1";"Major Source";"Thailand is one of the top Shrimp and prawn producers-incl. processed products, enabling abundant Crustacean Shell availability (17, 81)";"1";"0"
-"smCountry_8";"mat_6";"Recognised Exporter";"Thailand is an emerging Exporter of Poultry, supplying high-quality products to Asian markets, ~1.1-1.5M tonnes (57, 58, 59)";"1";"0"
-"smCountry_9";"mat_1";"Significant Producer & Top Exporter";"Vietnam is a significant Producer of Crustacean Shells (mainly Shrimp) and their derivative, Chitin, supported by its major Shrimp and Prawn Farming industry (6, 17, 81). Vietnam is one of the top Exporters of Chitin, derived from Crustacean Shells, primarily supplying regional markets in Asia (6, 48)";"2";"0"
-"smCountry_9";"mat_10";"Recognised Exporter";"Vietnam is a recognised Exporter of Wild-Caught Fish (Tuna), and the 3rd largest Exporter of aquatic animal products (incl. farmed fish and shrimps) (117)";"1";"0"
-"smCountry_9";"mat_7";"Recognised Producer & Recognised Exporter";"Vietnam is a recognised Producer of Farmed Fish, alongside Bangladesh, ranking after the top three (China, Indonesia, India), with ~6.4 M tonnes in 2021 (113, 115). Vietnam is a recognised Exporter of Farmed Fish, behind China, Norway, and Ecuador, with a value of ~$8.3 B in 2024 (112)";"2";"0"
-"smCountry_9";"src_1";"Significant Importer";"Vietnam imports a significant quantity of Chitin despite being a notable producer to meet domestic demands (6)";"1";"0"
-"smCountry_9";"src_2";"Significant Importer";"Vietnam is a notable importer of Corn, driven by feed and food processing (13)";"1";"0"
-"src_1";"mat_1";"Chitin can be Extracted from Crustacean Shells";"Chitin can be extracted from Crustacean Shells by demineralisation and deproteinisation (32, 33)";"1";"0"
-"src_1";"mat_2";"Chitin can be Extracted from Filamentuous Fungi";"Chitin can be extracted from cell walls of Filamentous Fungi (35)";"1";"0"
-"src_10";"mat_3";"Animal Skins/Hides can be Harvested from Bovine (Cow)";"Bovine Hides are thick and Collagen-rich, used in Leather production, Gelatin extraction, and biomedical materials like collagen sheets";"1";"0"
-"src_10";"mat_5";"Animal Skins/Hides can be Harvested from Porcine (Pig)";"Porcine Skins are softer and have high fat content. They are commonly processed into food-grade Gelatin, Sausage Casings, and cosmetic-grade Collagen";"1";"0"
-"src_10";"mat_6";"Animal Skins/Hides can be Harvested from Avian (Poultry/Fowls)";"Avian Skin, especially from chickens, is thin and often rendered for Fat (e.g., schmaltz) but also used in some Collagen Peptide and Broth production";"1";"0"
-"src_11";"mat_3";"Animal Tendons, Ligaments, and Fascia can be Harvested from Bovine (Cow)";"Bovine Connective Tissues are strong and high in Type I Collagen. They are used for Joint Health Supplements, Sports Nutrition, and surgical materials";"1";"0"
-"src_11";"mat_5";"Animal Tendons, Ligaments, and Fascia can be Harvested from Porcine (Pig)";"Porcine Connective Tissues are flexible and used in similar applications to Bovine but with slightly different processing behavior and Collagen yield";"1";"0"
-"src_11";"mat_6";"Animal Tendons, Ligaments, and Fascia can be Harvested from Avian (Poultry/Fowls)";"Avian Tendons and Fascia are smaller and less commonly used industrially, but still processed into Broths and low-yield Collagen sources";"1";"0"
-"src_12";"mat_10";"Fish Scales & Skin can be Harvested from Wild-Caught Fish";"Fish Skins & Scales from Wild-Caught Fish (often species like Cod, Tilapia, and Sardines), are collected as Byproducts for further processing";"1";"0"
-"src_12";"mat_7";"Fish Scales & Skin can be Harvested from Farmed Fish";"Fish Skin and Scales (esp. from tilapia, cod, carp) are lightweight and high in Type I Collagen. They’re processed into Marine Collagen, Biofilms, Wound Dressings, and cosmetic actives";"1";"0"
-"src_13";"mat_10";"Other Fish Parts can be Harvested from Wild-Caught Fish";"Other Fish Parts from Wild-Caught Fish, such as heads, bones, and viscera, are used as Byproducts for Fish Meal, Fish Oil, and Nutritional Supplments";"1";"0"
-"src_13";"mat_7";"Other Fish Parts can be Harvested from Farmed Fish";"Includes Fish Heads, Fins, and Vertebrae, rich in Collagen, minerals, and oils. Often used for Broth, Fish Meal, hydrolyzed protein, and pharmaceutical inputs";"1";"0"
-"src_14";"mat_9";"DMS (Dimethyl Sulfide) can be Degraded/Broken Down from Lignin (Wood)";"DMS is formed through the chemical degradation of sulfur-containing compounds in Lignin, commonly occurring during the Kraft pulping of wood in paper production";"1";"0"
-"src_15";"src_14";;"DMS is chemically oxidised to produce DMSO";"1";"1"
-"src_16";"mat_6";"Rooster Combs can be Harvested from Avian (Poultry/Fowls)";"Rooster Combs can be harvested from farmed Poultry";"1";"0"
-"src_17";"ind_5";"Bacteria (Streptococcus spp. or Bacillus spp.) is a Primary Product of Biotechnology";"In modern HA production, starter cultures of bacteria are maintained in biorepositories";"1";"0"
-"src_18";"mat_10";"Fish Meat & Products can be Harvested from Wild-Caught Fish";"Fish Meat from Wild Caught Fish is harvested from natural marine and freshwater environments, commonly sourced from species such as Cod, Tuna, Anchovies, and Sardines";"1";"0"
-"src_18";"mat_7";"Fish Meat & Products can be Harvested from Farmed Fish";"Fish Meat from Farmed Fish is sourced from aquaculture, commonly including species such as Salmon, Tilapia, Catfish, and Carp";"1";"0"
-"src_2";"ind_1";"Corn is a Main Product of Corn Farming";"Corn is harvested directly from the maize plant in Corn Farming";"1";"0"
-"src_3";"mat_3";"Animal Cartilage can be Harvested from Bovine (Cow)";"Bovine is a major source for animal cartilage, typically sourced from the trachea, ribs, or sternum of cows";"1";"0"
-"src_3";"mat_5";"Animal Cartilage can be Harvested from Porcine (Pig)";"Cartilage can be harvested from the trachea, ribs, or joints of pigs - a major source of cartilage alongside bovine";"1";"0"
-"src_3";"mat_6";"Animal Cartilage can be Harvested from Avian (Poultry/Fowls)";"Avian cartilage is primarily sourced from poultry like chickens, turkeys, or ducks (from joints, sternum, or trachea)";"1";"0"
-"src_3";"src_5";;"Shark Cartilage is another source for Animal Cartilage";"1";"1"
-"src_5";"mat_4";"Shark Cartilage can be Harvested from Sharks and Elasmobranchs";"Cartilage can be harvested from the skeletons and fins of cartilagenous fish like sharks, rays, skates";"1";"0"
-"src_6";"mat_3";"Beef (Bovine Meat) can be Harvested from Bovine (Cow)";"Beef is the meat derived from farmed Bovines";"1";"0"
-"src_7";"mat_5";"Pork (Pig Meat) can be Harvested from Porcine (Pig)";"Pork is the meat harvested as the main product from farmed Porcines";"1";"0"
-"src_8";"mat_6";"Poultry (Avian Meat) can be Harvested from Avian (Poultry/Fowls)";"Poultry (e.g. chicken, duck, turkey) is the meat harvested from farmed Avian species";"1";"0"
-"src_9";"mat_3";"Animal Bones can be Harvested from Bovine (Cow)";"Bovine Bones are dense and rich in Type I Collagen and Calcium Phosphate. They are widely processed in the Rendering industry for Gelatin, Bone Meal, Pet Food, Calcium Supplements, and biomedical uses";"1";"0"
-"src_9";"mat_5";"Animal Bones can be Harvested from Porcine (Pig)";"Porcine Bones have slightly less density than bovine and a different fat profile. They are often used for Gelatin production, Bone Broth, and food-grade Phosphate extraction";"1";"0"
-"src_9";"mat_6";"Animal Bones can be Harvested from Avian (Poultry/Fowls)";"Avian Bones (from chickens, ducks, etc.) are lighter and more porous, used in Feed Supplements, Hydroxyapatite extraction, and occasionally Gelatin production for niche applications";"1";"0"
+comp_1;src_1;Glucosamine can be Hydrolysed from Chitin;Chitin can be processed by chemical or enzymatic hydrolysis, then deacetylation to make Glucosamine;1;0
+comp_1;src_2;Glucosamine can be Fermented from Corn;Glucosamine can be made by fermenting corn, converting corn-derived Glucose into Glucosamine using microorganisms;1;0
+comp_2;src_3;Chondroitin can be Hydrolysed from Animal Cartilage;Animal Cartilage is typically enzymatically hydrolysed and purified for Chondroitin Sulfate;1;0
+comp_2;src_5;Chondroitin can be Hydrolysed from Shark Cartilage;Shark Cartilage undergoes a series of purification and extraction procedures to isolate Chondroitin sulfate;1;0
+comp_3;comp_4;;Collagen obtained from animal sources undergoes controlled hydrolysis and denaturation, breaking it down into soluble Gelatin;1;1
+comp_3;src_10;Gelatin can be Hydrolysed from Animal Skins/Hides;Gelatin is made by partially hydrolyzing Collagen extracted from Animal Skins or Hides, often from Cattle and Pigs;1;0
+comp_3;src_11;Gelatin can be Hydrolysed from Animal Tendons, Ligaments, and Fascia;Gelatin is made by partially hydrolyzing Collagen extracted from Tendons, Ligaments, and Fascia of animals, commonly Cattle and Pigs;1;0
+comp_3;src_3;Gelatin can be Hydrolysed from Animal Cartilage;Gelatin is made by partially hydrolyzing Collagen from Animal Cartilage and other tissues, commonly from Cattle and Pigs;1;0
+comp_3;src_9;Gelatin can be Hydrolysed from Animal Bones;Gelatin is made by partially hydrolyzing Collagen extracted from Animal Bones, commonly from Cattle and Pigs;1;0
+comp_4;comp_5;;Marine Collagen is Collagen derived from marine sources;1;1
+comp_4;src_10;Collagen can be Extracted from Animal Skins/Hides;Animal Skins and Hides are washed, defatted, and soaked in acid or alkali to break down cellular structures, allowing Type I Collagen to be extracted. This is followed by thermal or enzymatic hydrolysis;1;0
+comp_4;src_11;Collagen can be Extracted from Animal Tendons, Ligaments, and Fascia;Animal's dense Connective Tissues are high in Type I Collagen. They are mechanically or chemically broken down and enzymatically hydrolyzed to extract Collagen for nutraceuticals and biomedical use;1;0
+comp_4;src_3;Collagen can be Extracted from Animal Cartilage;Animal Cartilage, rich in Type II Collagen, is separated from Bones and Connective Tissues, then enzymatically or chemically treated to extract Collagen for use in Joint Health Supplements and biomedical applications;1;0
+comp_4;src_9;Collagen can be Extracted from Animal Bones;Animal Bones are cleaned, degreased, and treated with acid or alkali to demineralize them, releasing Type I Collagen. The material is then subjected to heat or enzymatic hydrolysis for Collagen or Gelatin production;1;0
+comp_5;src_12;Marine Collagen can be Extracted from Fish Scales & Skin;Marine Collagen is extracted from Fish Scales and Skins, which are cleaned and treated with acid or enzymes to isolate Type I collagen. Commonly used in cosmetics and wound care products due to its high bioavailability;1;0
+comp_5;src_13;Marine Collagen can be Extracted from Other Fish Parts;Marine Collagen is also extracted from Fish Parts other than scales and skins, including heads, fins, bones, and vertebrae. These parts are cooked or enzymatically treated to extract collagen, commonly used in marine collagen powders, peptides, and pharmaceutical products;1;0
+comp_6;src_15;MSM (Methylsulfonylmethane) can be Oxidised from DMSO (Dimethyl Sulfoxide);MSM used in supplements is typically synthesized in labs by oxidizing DMSO (dimethyl sulfoxide) through chemical or electrochemical methods;1;0
+comp_7;src_16;Hyaluronic Acid can be Extracted from Rooster Combs;Hyaluronic Acid is traditionally extracted from connective tissues in Rooster Combs via purification processes;1;0
+comp_7;src_17;Hyaluronic Acid can be Fermented from Bacteria (Streptococcus spp. or Bacillus spp.);Hyaluronic Acid (HA) is widely made today by microbial fermentation;1;0
+comp_8;src_18;Surimi can be Processed from Fish Meat & Products;Surimi is made from Fish Meat through a process of washing, mincing, and blending with stabilisers;1;0
+con_1;consq_15;Contributes to;Runoff of nutrients, especially Nitrogen and Phosphate from soil Fertilisers, can enter lakes, estuaries, and other water bodies, leading to Eutrophication. (133);1;0
+con_12;con_7;;Energy Consumption (tied to Enegry Production) is responsible for 75% of GHG Emissions. (136);1;1
+con_12;consq_6;Drives;Energy Consumption is a primary driver of Climate Change, as its production accounts for the majority of Greenhouse Gas Emissions, mainly through the burning of fossil fuels. (136);1;0
+con_19;con_4;;Soil Fertility Decline leads to chemical and biological deterioration of soil quality, contributing to Soil Degradation. (140);1;1
+con_19;consq_8;Contributes to;Soil Fertility Decline and Soil Erosion reinforce each other: The loss of organic matter reduces soil structure and makes soils more vulnerable to erosion, while erosion removes nutrient-rich topsoil, further diminishing soil fertility. (149);1;0
+con_2;con_4;;Pesticides and Herbicides cause Soil Degradation by killing off beneficial microbes, disrupting nutrient cycles, damaging soil structure, and leaving persistent residues. (138);1;1
+con_2;consq_1;Contributes to;Pesticides leach from fields into groundwater and surface water, elevating toxicity levels. (25, 122);1;0
+con_2;consq_13;Leads to;Repeated use of Pesticides and Herbicides drives natural selection and revolutionary adaptation. (128);1;0
+con_2;consq_2;Contributes to;Herbicide residues persist in soil, reducing microbial diversity and affecting soil health in fields. (25, 121);1;0
+con_2;consq_3;Contributes to;Pesticides can enter air through evaporation, spray drift during application, and wind erosion of contaminated soil (25, 122);1;0
+con_2;consq_4;Contributes to;Pesticides can kill off beneficial insects, pollinators, non-target species, and disrupt soil fauna (120);1;0
+con_3;consq_7;Causes;Water Overuse, particularly in Agriculture, drives Ground Water Depletion by extracting water faster than natural recharge rates. (120);1;0
+con_4;consq_8;Results in;Soil degradation weakens the soil's structure and reduces organic matter, making it more vulnerable to erosion by wind and water. (120, 124, 149);1;0
+con_5;consq_14;Causes;Deforestation destroys habitats, causing widespread habitat loss and endangering many plant and animal species. (126,127);1;0
+con_5;consq_3;Exacerbates;Deforestation worsens atmospheric carbon levels, as the loss of trees diminishes the capacity of forests to sequester CO2. (127);1;0
+con_5;consq_6;Contributes to;Deforested areas lose the ability to regulate moisture and water cycles, altering weather patterns and contributing to Climate Change. (127);1;0
+con_5;consq_8;Leads to;Deforestation leads to Soil Erosion as the loss of trees reduces water retention and destabilizes topsoil, particularly in coastal areas. (127);1;0
+con_5;imp_6;Contributes to;Forests sustain the livelihoods of millions of people, communities, and national economies. Deforestation diminishes these resources, indirectly affecting the economy. (126);1;0
+con_6;con_1;;Monoculture Farming requires intensive use of Fertilisers, as repeatedly growing the same crop depletes soil nutrients and degrades the soil microbiome. (125);1;1
+con_6;con_19;;Monoculture causes significant Soil Fertility Decline by depleting soil nutrients and reducing beneficial microbes and organisms that maintain soil balance. (141);1;1
+con_6;con_2;;Monoculture Farming tends to require increased use of Pesticides and Herbicides, as monoculture crops are more vulnerable to pests and disease outbreaks. (125);1;1
+con_6;con_3;;Monoculture crops require higher water use, as a single root system is insufficient to maintain soil structure, reducing water uptake and water retention. (125);1;1
+con_6;con_4;;Monoculture disrupts soil balance by depleting nutrients, reducing fertility, and accelerating Soil Erosion, as a single root structure is insufficient to retain water and stabilize the soil. (125);1;1
+con_6;consq_4;Contributes to;Monoculture reduces Biodiversity and leads to a less resilient and poorer ecosystem. (125);1;0
+con_6;consq_9;Results in;Expansion of monocultures converts natural ecosystems, reducing habitat connectivity for wildlife. (120);1;0
+con_7;consq_6;Causes;Greenhouse Gases such as Carbon Dioxide, Methane, Nitrous Oxide, and certain synthetic chemicals trap outgoing heat in the atmosphere, altering climate and weather patterns. (135);1;0
+consq_1;consq_15;;Water Contamination with excess nutrients such as Nitrogen and Phosphorus causes Eutrophication. (133);1;1
+consq_1;imp_10;Results in;Contaminated Water from human activities introduces microbes, chemicals, heavy metals, and radioactive elements into drinking water sources such as rivers, groundwater, and tanks, making it unsafe without proper treatment. (142);1;0
+consq_1;imp_2;Drives;Water Contamination harms both aquatic and terrestrial ecosystems. Pollutants directly damage aquatic life and can infiltrate soils, altering their properties and harming plants, creating cascading effects that can lead to Ecosystem Degradation or even Collapse. (144);1;0
+consq_1;imp_4;Results in;Water Contamination not only threatens drinking water, but also harms human health through non-drinking pathways, such as skin contact with polluted water and inhalation of contaminated droplets or aerosols. (142, 143);1;0
+consq_15;imp_15;Triggers;Eutrophication promotes rapid algal growth, which can include toxin-producing species that lead to Harmful Algal Blooms (HABs). (145);1;0
+consq_15;imp_17;Causes;Eutrophication (nutrient overload in water) acts as a fertiliser, allowing algae to grow and reproduce rapidly and form dense blooms. (145);1;0
+consq_2;consq_1;;Soil contaminants, including Pesticides, Fertilisers, and Heavy Metals, can be transported into aquifers via leaching and subsurface runoff. (130);1;1
+consq_2;consq_15;;Runoff of nutrients, especially Nitrogen and Phosphate from soil Fertilisers, can enter lakes, estuaries, and other water bodies, leading to Eutrophication. (133);1;1
+consq_3;consq_1;;Pollutants from the atmosphere, such as Sulfur, Nitrogen, and Heavy Metals, can enter marine environments and waterways via rain, snow, or dust. (129);1;1
+consq_3;consq_15;;Atmospheric deposition of Nitrogen adds excess nutrients to the Marine Environment, driving Eutrophication. (132);1;1
+consq_3;consq_5;;Air Pollutants such as sulfur and Carbon Dioxide increase acidity and reduce pH levels in lakes, streams, and the ocean. (129,131);1;1
+consq_4;imp_2;Leads to;Biodiversity Loss reduces essential ecosystem services such as pollination, water purification, flood control, and soil fertility, creating cascading effects that can lead to Ecosystem Degradation or even Ecosystem Collapse. (147);1;0
+consq_9;consq_4;;Habitat Loss is one of the greatest threats to Biodiversity. As species rely on interconnected populations across habitats, fragmentation and shrinking habitats increase local extinctions, leading to Biodiversity Loss. (134);1;1
+iCountry_1;item_1;Top Consumer & Top Importer & Significant Producer;U.S. is the largest Consumer market for Joint Health Supplements (3). U.S. is the largest Importer of Joint Health Supplements (~33% of global shipments) (3). U.S. is a notable Producer of Joint Health Supplements (48, 67);3;0
+iCountry_1;item_2;Top Producer;The US is a major Producer of Gummies, including both flavored confectionery and dietary supplement varieties (48, 107, 108);1;0
+iCountry_11;item_1;Significant Consumer;The EU is a notable Consumer of Joint Health Supplements, ~20% of global market share (5);1;0
+iCountry_2;item_1;Significant Exporter;Australia is a major Exporter of Joint Health Supplements (67);1;0
+iCountry_32;item_2;Significant Producer;Germany is a traditional hub for confectionery production and a major Producer of gummy candies, best known for the brand Haribo (48, 107, 108);1;0
+iCountry_4;item_1;Top Producer & Top Exporter;China is the largest Supplier and Manufacturer of Joint Health Supplements, ~80% of global production (1). China is the largest Exporter of Joint Health Supplements, also largest share in US imports (~77%) (2);2;0
+iCountry_4;item_2;Top Producer;China is one of the largest Producers of gummies globally, leading in both flavored confectionery and dietary supplement varieties (48, 107, 108);1;0
+iCountry_6;item_1;Significant Consumer & Significant Producer;Japan is a significant Consumer of Joint Health Supplements due to aging population (2). Japan is a major Producer of Joint Health Supplements in Asia-Pacific (2);2;0
+iCountry_6;item_2;Recognised Producer;Japan is a notable Producer of Gummies, known for unique flavors and textures, producing both confectionery and dietary supplement varieties (48, 107);1;0
+iCountry_7;item_1;Significant Producer & Significant Exporter;India is a major Producer and Exporter of Joint Health Supplements (4). India is a major Exporter of Joint Health Supplements (48, 67);2;0
+iCountry_9;item_1;Significant Importer;Vietnam is a significant Importer of Joint Health Supplements (~18% of global shipments) (3, 67);1;0
+icCountry_1;ind_1;Global Leader & Top Exporter;The US has the largest Corn Farming industry, producing ~354.19M tonnes, with ~57.79M tonnes exported (2022-2023) (9, 38). The US is the largest Exporter of Corn, ~US$14.3B, 2024 (8);2;0
+icCountry_1;ind_10;Significant Grower;The US has a major Cattle Farming industry, with a large herd (~92.08M, 2022) and leading Beef Production despite a smaller head count than India, Brazil, and China (50);1;0
+icCountry_1;ind_11;Significant Processor;The US ranks among the top 5 in annual Cattle Slaughter, ~30.9M head (2025) (96);1;0
+icCountry_1;ind_17;Significant Grower;The US has a significant Pig Farming industry, ranking among the top producers globally, though far behind China, with a pig population of ~74.5M (2021-2025) (94, 95);1;0
+icCountry_1;ind_18;Recognised Processor;The US ranks among the top in Swine Slaughter, after China and the EU, with ~131.8M pigs killed/year (97);1;0
+icCountry_1;ind_20;Top Importer;The US is the leading Importer of Live Bovines by both value and head count (~$2.99B, ~2M head, 2024) (84);1;0
+icCountry_1;ind_21;Recognised Importer;The US, along with Spain, is a significant Livestock Bovine Importer (~$208.75M, ~4.88M head, 2024) (85);1;0
+icCountry_1;ind_29;Significant Exporter;The United States is a notable Exporter of live poultry/fowls—including chickens, ducks, geese, turkeys, and guinea fowls—ranking high by trade value (~$359.62M) with a lower export quantity (~81.75M head, 2024) (86, 87, 88, 89);1;0
+icCountry_1;ind_30;Significant Processor;The US ranks 2nd in Poultry Slaughter after China, with ~9.75B fowls/year (2023), incl. chickens, turkeys, ducks, though far behind in number (98);1;0
+icCountry_1;ind_4;Significant Catcher;The US has well-established lobster and shrimp fisheries (43);1;0
+icCountry_1;ind_5;Global Leader;The USA is the undisputed global leader in Biotechnology, leading in both firm numbers and R&D (48, 73, 74);1;0
+icCountry_1;ind_6;Significant Producer;The US is among the top global shrimp producers with ~837,622 tonnes (40, 41);1;0
+icCountry_10;ind_15;Significant Catcher;Indonesia ranks 2nd globally in Fisheries production, with 7.4M tonnes in 2022, about half of China's (75);1;0
+icCountry_10;ind_16;Top Catcher;Indonesia is the undisputed leader in Shark Fishing, consistently ranking first in global shark catch across years and reports (48, 76, 77, 78);1;0
+icCountry_10;ind_3;Significant Player;Indonesia has a growing Crustacean Processing industry, notably frozen and prepared shrimps and prawns, with exports valued at $1.35 billion (39, 81, 82);1;0
+icCountry_10;ind_30;Significant Processor;"Indonesia ranks in the top 5 for Poultry Slaughter, with ~4.96B fowls/year (incl. chickens, ducks; 2023) (98)";1;0
+icCountry_10;ind_4;Significant Catcher;Indonesia is a major crustacean catcher, with coastal and small-scale fisheries yielding significant shrimp and crab catches (43);1;0
+icCountry_10;ind_8;Significant Grower;Indonesia is a notable and emerging producer of mud and soft-shell crabs (44);1;0
+icCountry_11;ind_1;Significant Grower;The EU has a significant Corn Farming industry, producing ~58M tonnes, but remains below domestic demand of ~77.4M tonnes (2022-2023) (38);1;0
+icCountry_11;ind_11;Recognised Processor;The EU is a notable processor in Cattle Slaughter, ~22.5M cows killed/year (2025) (96);1;0
+icCountry_11;ind_18;Recognised Processor;The EU slaughters ~220M pigs/year—ranking 2nd globally in Swine Slaughter, though far behind China (2025) (97);1;0
+icCountry_11;ind_20;Significant Exporter;The EU is a notable Livestock Bovine Exporter by value, along with Brazil (~$837M, ~615K head, 2024) (83);1;0
+icCountry_11;ind_29;Top Exporter;The EU is the leading Exporter of young chickens (chicks) by value and head count, ~$349.18M, ~185.3M (86);1;0
+icCountry_13;ind_1;Significant Grower & Top Exporter;Brazil has the 3rd largest Corn Farming industry, after the US and China, producing ~136M tonnes and exporting ~47M tonnes (2022-2023) (9, 38). Brazil is the second largest exporter of Corn, ~US$8.2B, 2024 (8);2;0
+icCountry_13;ind_10;Significant Grower;Brazil has the second-largest cattle herd (~193.78M, 2022), ranking 2nd in both beef production and Cattle Farming industry (50);1;0
+icCountry_13;ind_11;Top Processor;Brazil is one of the leading countries in Cattle Slaughter after China, with ~47.5M head/year (2025) (96);1;0
+icCountry_13;ind_17;Significant Grower;Brazil is a significant grower in Pig Farming, ranking after the US with a pig population of ~44.4M (2021-2025) (94, 95);1;0
+icCountry_13;ind_20;Significant Exporter;Brazil is a notable Livestock Bovine Exporter by value, alongside the EU (~$848M, 2024) (83);1;0
+icCountry_13;ind_30;Significant Processor;"Brazil is among the top countries in Poultry Slaughter after China and the US, with ~6.30B fowls/year (incl. chickens, turkeys; 2023) (98)";1;0
+icCountry_14;ind_1;Significant Grower & Significant Exporter;Argentina is the 2nd largest Corn producer in South America after Brazil and is one of the top global producers with production ~ 55M tonnes (8, 38). Argentina is a significant Exporter of Corn, ~US$6.6B, 2024 (8);2;0
+icCountry_14;ind_16;Recognised Catcher;Argentina is a notable Shark-Catching nation in the South Atlantic, with both targeted and incidental catches (48, 76, 77);1;0
+icCountry_15;ind_1;Significant Exporter;Ukraine is within the top 5 Exporters of Corn, ~US$5.1B, 2024 (8);1;0
+icCountry_17;ind_8;Significant Grower;The Philippines is a notable producer of blue swimming crabs, primarily for export (44);1;0
+icCountry_20;ind_5;Top Player;The UK is Europe's biotech leader, long ranked in the top 10 globally and second only to the US in number of biotech firms (48, 73, 74);1;0
+icCountry_21;ind_16;Significant Catcher;Spain is Europe’s top Shark-Catching nation, targeting multiple shark species (48, 76, 77, 78);1;0
+icCountry_21;ind_17;Recognised Grower;Spain has a recognised Pig Farming industry, known for high-quality pork products, with a pig population of ~34.1M (2021-2025) (94, 95);1;0
+icCountry_21;ind_20;Significant Importer;Spain is a significant Livestock Bovine Importer by head count (~1M head, ~$371M, 2024) (84);1;0
+icCountry_21;ind_21;Recognised Importer;Spain, along with the US, is a significant Livestock Bovine Importer (~$333.6M, ~3.7M head, 2024) (85);1;0
+icCountry_22;ind_16;Significant Catcher;Taiwan is a major Shark-Catching nation, with targeted longline fisheries harvesting a wide range of shark species (48, 76, 77);1;0
+icCountry_25;ind_5;Significant Player;Ireland is another emerging biotechnology player, ranking 4th in R&D intensity after Lithuania (48, 73);1;0
+icCountry_26;ind_5;Significant Player;Switzerland is a significant player in Biotechnology, leading in R&D gloabally and amongst the top 10 by market share (48, 73, 74);1;0
+icCountry_27;ind_29;Significant Importer;Belgium is a notable Importer of live poultry/fowls—including young and mature chickens, ducks, geese, turkeys, and guinea fowls—with a trade value of ~$219.79M and import quantity of ~87.57M head (2024) (90, 91, 92, 93);1;0
+icCountry_27;ind_5;Significant Player;Belgium is a notable biotech hub, close to Switzerland in R&D intensity (48, 73, 74);1;0
+icCountry_28;ind_20;Top Exporter;France is the leading country in Livestock Bovine Export (~$1.79B, ~1.4M head, 2024) (83);1;0
+icCountry_28;ind_29;Significant Exporter;France is a major Exporter of live poultry/fowls—including chickens, ducks, geese, turkeys, and guinea fowls—with a trade value of ~$415.91M and ~114.73M head (2024) (86, 87, 88, 89);1;0
+icCountry_28;ind_5;Significant Player;France is a notable player in biotechnology, ranking 3rd globally in number of active biotech firms (48, 73);1;0
+icCountry_29;ind_5;Significant Player;Lithuania is an emerging biotechnology player, ranking amongst the top 3 in R&D intensity after Switzerland and Belgium (48, 73);1;0
+icCountry_3;ind_20;Top Exporter;Canada is close to France as a leading Exporter of Live Bovines by value (~$1.69B, ~824K head, 2024) (83);1;0
+icCountry_3;ind_21;Recognised Exporter;Canada is an emerging Exporter of Livestock Porcine, though trade value and volume remain significantly lower than Denmark and the Netherlands (~$208M, ~4.88M head, 2024) (85);1;0
+icCountry_3;ind_4;Recognised Catcher;Canada has emerging lobster and snow crab fisheries (43);1;0
+icCountry_3;ind_5;Significant Player;Canada is a notable biotechnology player, ranking after France in number of active biotech firms (48, 73);1;0
+icCountry_30;ind_15;Significant Catcher;Peru has a significant Fisheries industry, ranking 4th globally with 5.4M tonnes in 2022, closely behind India (75);1;0
+icCountry_31;ind_15;Significant Catcher;Russia is a major capture Fisheries producer, ranking 5th globally with 5M tonnes in 2022 (75);1;0
+icCountry_32;ind_21;Top Importer;Germany is the leading country in Live Swine (Porcine) Import (~$844.7M, ~9.2M head, 2024) (85);1;0
+icCountry_32;ind_29;Significant Importer;Germany is a notable Importer of live poultry/fowls—including young and mature chickens, ducks, geese, turkeys, and guinea fowls—ranking high by trade value (~$316.15M) with an import quantity of ~120.25M head (2024) (90, 91, 92, 93);1;0
+icCountry_34;ind_20;Significant Importer;Italy is the second-largest Importer of Live Bovines by value (~$2B, ~1M head, 2024) (84);1;0
+icCountry_35;ind_20;Recognised Importer;Netherlands is an emerging Livestock Bovine Importer by head count (~957K head, ~$369M, 2024) (84);1;0
+icCountry_35;ind_21;Significant Exporter;Netherlands is the 2nd largest Live Swine (Porcine) Exporter after Denmark by trade value and quantity (~$636M, ~7.44M head, 2024) (85);1;0
+icCountry_35;ind_29;Significant Exporter & Top Importer;The Netherlands is a major Exporter of live poultry/fowls—including chickens, ducks, geese, turkeys, and guinea fowls—ranking after France by trade value (~$410.04M) but leading in export quantity (~346.91M head, 2024) (86, 87, 88, 89). The Netherlands is the leading Importer of live poultry/fowls—including young and mature chickens, ducks, geese, turkeys, and guinea fowls—by both trade value (~$972.52M) and quantity (~359.91M head, 2024) (90, 91, 92, 93);2;0
+icCountry_36;ind_21;Top Exporter;Denmark is the world's largest Live Swine (Porcine) Exporter both by trade value and quantity (~$1.6B, ~17.5M head, 2024) (85);1;0
+icCountry_37;ind_21;Top Importer;Poland is one of the top Importers of Live Swine (Porcine), following Germany (~$784M, ~7.8M head, 2024) (85);1;0
+icCountry_37;ind_29;Significant Importer;Poland is a notable Importer of live poultry/fowls—including young and mature chickens, ducks, geese, turkeys, and guinea fowls—with a trade value of ~$262.47M and import quantity of ~171.83M head (2024) (90, 91, 92, 93);1;0
+icCountry_4;ind_1;Significant Grower;China is the second-largest Corn Grower, primarily for domestic use, producing ~274M tonnes vs ~295M tonnes of domestic demand (2022-2023) (10, 38);1;0
+icCountry_4;ind_10;Significant Grower;China has the 3rd largest cattle population (~98.17M, 2022) and Cattle Farming industry (50);1;0
+icCountry_4;ind_11;Global Leader;China is the leading country in Cattle Slaughter, with ~52.5M cows killed per year (2025) (96);1;0
+icCountry_4;ind_15;Top Catcher;China has the largest Fishing industry in the world, catching 13.2M tonnes in 2022 (75);1;0
+icCountry_4;ind_17;Top Grower;China leads in Pig Farming, with the world’s largest pig population at ~452.6M (2021-2025) (94, 95);1;0
+icCountry_4;ind_18;Global Leader;China leads globally in Swine Slaughter, ~700M pigs/year (2025) (97);1;0
+icCountry_4;ind_3;Top Player;China leads the Crustacean Processing industry, following its massive aquaculture production and fisheries, notably frozen and prepared shrimps, prawns, and crabs, exporting processed products valued at $2.35B (39, 79, 81, 82);1;0
+icCountry_4;ind_30;Global Leader;China leads in Poultry Slaughter, killing ~16.27B fowls/year (2023), incl. chickens, ducks, and geese (98);1;0
+icCountry_4;ind_4;Top Catcher;China leads in crustacean fisheries and overall fishing, mostly for domestic consumption, with crabs as a targeted species (43);1;0
+icCountry_4;ind_6;Top Producer;China has the largest shrimp farming industry, with an estimated production of 1.487M tonnes (40, 41);1;0
+icCountry_4;ind_8;Top Grower;China is an undisputed leader in crab aquaculture, especially Chinese mitten crab (~779,000 metric tonnes in 2019), Gazami, and mud crabs (44, 72);1;0
+icCountry_4;ind_9;Top Producer;China has the largest crayfish farming industry, dominating global crayfish aquaculture (47);1;0
+icCountry_5;ind_16;Recognised Catcher;Mexico catches a notable amount of Sharks in coastal and pelagic fisheries, targeting various species (48, 76, 77, 78);1;0
+icCountry_5;ind_20;Recognised Exporter;Mexico is an emerging Exporter of Live Bovines (~$793M, ~748K head, 2024) (83);1;0
+icCountry_7;ind_1;Recognised Grower;India is a growing Grower/Producer of Corn, but not a major exporter (9);1;0
+icCountry_7;ind_10;Top Grower;India has the largest cattle population (~306.7M, 2022), despite ranking behind the US, Brazil, and China in beef production (50);1;0
+icCountry_7;ind_11;Top Processor;India is close behind Brazil in Cattle Slaughter, ~41.4M head/year (2025) (96);1;0
+icCountry_7;ind_15;Significant Catcher;India has the 3rd largest Fisheries, after China and Indonesia, producing 5.5M tonnes (2022) (75);1;0
+icCountry_7;ind_16;Significant Catcher;India consistently ranks among the top 3 Shark Fishing nations, with a substantial impact on global shark populations (48, 76, 77, 78);1;0
+icCountry_7;ind_3;Significant Player;India is a notable player in the Crustacean Processing industry and one of the top exporters of prepared and frozen shrimps and prawns (80, 81, 82);1;0
+icCountry_7;ind_30;Recognised Processor;"India ranks in the top 5 for Poultry Slaughter, after Indonesia, with ~3.03B fowls/year (incl. chickens, ducks; 2023) (98)";1;0
+icCountry_7;ind_4;Significant Catcher;India has significant shrimp and crab fisheries (43);1;0
+icCountry_7;ind_6;Significant Producer;India is a major shrimp producer, with an aquaculture industry yielding approximately 734,160 tonnes (40, 41);1;0
+icCountry_8;ind_3;Significant Player;Thailand is a notable player in the Crustacean Processing industry and a major exporter of processed shrimps and prawns (80, 81, 82);1;0
+icCountry_9;ind_3;Significant Player;Vietnam is one of the key players in the Crustacean Processing industry, exporting processed products valued at $1.54B (39, 81, 82);1;0
+icCountry_9;ind_6;Significant Producer;Vietnam is a major shrimp producer, with shrimp aquaculture yielding around 945,791 tonnes (40, 41);1;0
+icCountry_9;ind_7;Top Grower;Vietnam is a leading lobster farming country, mainly for domestic use and exports, primarily to China (45, 46);1;0
+icCountry_9;ind_8;Significant Grower;Vietnam is a significant mud crab farming nation, producing over 38,000 tonnes annually, with a strong export focus to East and Southeast Asian markets (44, 48);1;0
+imp_10;imp_4;;Unsafe Drinking Water can cause short- and long-term health effects, ranging from gastrointestinal illness to cancer, depending on the contaminants. Chemical exposure may lead to skin conditions, nervous system and organ damage, developmental or reproductive disorders, and cancer, while microbial contamination can spread life-threatening diseases such as cholera, typhoid, hepatitis, and severe diarrheal illness. (142);1;1
+imp_15;imp_16;;Harmful Algal Blooms can create Dead Zones when large amounts of algae die off and decompose, consuming dissolved oxygen and leaving the water hypoxic. (145);1;1
+imp_15;imp_18;;Harmful Algal Blooms often involve toxin-producing cyanobacteria in freshwater and dinoflagellates in marine environments, which release poisons detrimental to wildlife. (146);1;1
+imp_15;imp_2;;Toxin-producing algae from Harmful Algal Blooms can poison animals and deplete oxygen in the surrounding water and air, harming wildlife and destabilising ecosystems, ultimately contributing to Ecosystem Degradation. (145);1;1
+imp_15;imp_4;;Harmful Algal Blooms can affect human health through the inhalation of aerosols containing toxins produced by certain algal species. (143);1;1
+imp_16;imp_18;;Dead Zones directly impact aquatic life because hypoxic conditions (low oxygen) are insufficient to support most marine organisms. (146);1;1
+imp_17;imp_15;;Algal Blooms can include or encourage the growth of toxin-producing algae, but not all blooms develop into Harmful Algal Blooms. (145);1;1
+imp_17;imp_16;;Algal Blooms are a leading cause of hypoxia in marine environments. When large amounts of algae die, decomposition consumes oxygen, creating Dead Zones where marine life cannot survive. (145);1;1
+imp_17;imp_18;;Algal Blooms of non-toxic species can block sunlight for aquatic plants and damage fish gills, leading to mass die-offs of aquatic life. (145);1;1
+imp_2;imp_3;;Ecosystem Degradation and Collapse are closely linked to Species Extinction, as the loss of key species triggers cascading extinctions and destabilises entire ecosystems. (143);1;1
+ind_1;con_1;Associates with;Excessive nitrogen and phosphorus fertilizers applied to boost yields in Corn Farming result in nutrient imbalances and runoff risks. (119);1;0
+ind_1;con_2;Associates with;Intensive application of herbicides like atrazine and sulfonylureas in Corn Farming leads to persistent residues in soil, affecting crop rotation and non-target organisms. (118);1;0
+ind_1;con_3;Associates with;Corn is one of the most widely grown crops globally, with about 33% of production occurring in highly water-stressed areas, raising concerns about water supply and long-term sustainability. (148);1;0
+ind_1;con_4;Associates with;Tillage and monocropping in Corn Farming erode topsoil and deplete organic matter, harming soil structure. (120);1;0
+ind_1;con_5;Contributes to;Rising global demand for Corn, primarily fueled by the Livestock and Ethanol industries, is driving land expansion, which often leads to Deforestation, especially in Brazil, one of the world's largest Corn Producers. (123);1;0
+ind_1;con_6;Associates with;Corn Farming is often practiced as a monoculture, especially in large-scale, industrialized agriculture. ();1;0
+ind_10;ind_11;;Cattle Farming is the primary source of cattle supply to the Cattle Slaughtering industry for meat and other byproducts;1;1
+ind_10;ind_20;;Cattle Farming produces livestock, which can be traded domestically and internationally for breeding or slaughter;1;1
+ind_11;ind_12;;The Cattle Slaughtering industry provides prepared carcasses and parts to the Meat Processing industry for further processing into meat cuts and other products;1;1
+ind_11;ind_22;;Rendering Plants collect raw byproducts (e.g. bones, cartilage, hides, fat, offal, blood, hooves, horns) from Cattle Slaughtering for processing into usable materials;1;1
+ind_17;ind_18;;Farmed Pigs are transported to Slaughtering facilities for killing and initial processing;1;1
+ind_17;ind_21;;Pig Farming produces livestock widely traded for Breeding, Fattening, or Slaughter;1;1
+ind_18;ind_19;;Slaughtered Pigs from Abattoirs and Slaughterhouses are sent to Meat Processing plants for cutting, packaging, and further preparation;1;1
+ind_18;ind_22;;Rendering Plants collect raw byproducts (e.g. bones, cartilage, hides, fat, offal, blood) from Pig Slaughtering for processing into usable materials;1;1
+ind_22;ind_14;;The Rendering industry supplies prepared hides to the Leather industry for tanning and manufacturing;1;1
+ind_22;ind_23;;The Rendering Industry supplies the Pharmaceutical Industry with processed materials-such as Collagen, Gelatin, Chondroitin Sulfate, Heparin, and Insulin-derived from Bovine, Porcine, and Avian byproducts;1;1
+ind_22;ind_25;;The Rendering Industry supplies the Cosmetics Industry with processed materials—such as Animal Fats, Gelatin, Collagen, Keratin, Glycerin (Glycerol), and Stearic Acid—used as emollients, thickeners, and active ingredients in skincare and personal care products;1;1
+ind_28;ind_29;;Poultry Farming produces livestock for domestic and international trade for Breeding, Eggs, Fattening, or Slaughter;1;1
+ind_28;ind_30;;Farmed Avian species are delivered to the Poultry Slaughtering Industry for killing and initial carcass preparation;1;1
+ind_3;ind_4;;Crustacean Fisheries is a significant contributor to the seafood processing industry, 4-6 million tons of wild-caught crustaceans annually (34);1;1
+ind_3;ind_6;;"Shrimp and Prawn Farming supplies ~4 million tons of farmed shrimp annually; farmed and wild-caught shrimp dominate crustacean processing (31, 34)";1;1
+ind_3;ind_7;;Lobster Farming is a small but growing segment, contributing a minor share to the processing industry (36);1;1
+ind_3;ind_8;;Crab Farming is a small but growing segment, contributing a minor share to the processing industry (37);1;1
+ind_3;ind_9;;Crayfish Farming is a small but growing segment, contributing a minor share to the processing industry (34);1;1
+ind_30;ind_22;;Poultry byproducts from Slaughtering are processed in the Rendering Industry for materials used in other industries, though to a much smaller extent compared to Bovine and Porcine;1;1
+ind_31;ind_32;;The Forestry Industry provides the primary raw materials (Wood) for Paper Manufacturing;1;1
+item_1;comp_1;Glucosamine: Main Ingredient in Joint Health Supplements. Health or nutritional benefits;Glucosamine is the main ingredient in most Joint Health Supplements, believed to help relieve joint pain. Evidence: Moderate (23);1;0
+item_1;comp_2;Chondroitin: Main Ingredient in Joint Health Supplements. Health or nutritional benefits;Chondroitin is often paired with Glucosamine in Joint Health Supplements for pain relief. Evidence: Limited (28, 29);1;0
+item_1;comp_4;Collagen: Active Ingredient in Joint Health Supplements. Health or nutritional benefits;Collagen is a key ingredient in Joint Health Supplements, believed to support cartilage health and improve joint flexibility. Evidence: Moderate (99, 100);1;0
+item_1;comp_5;Marine Collagen: Active Ingredient in Joint Health Supplements. Health or nutritional benefits;Marine Collagen is commonly used in Joint Health Supplements for its small peptide size, which is thought to improve absorption and support cartilage health and joint mobility. Evidence: Moderate (99, 100);1;0
+item_1;comp_6;MSM (Methylsulfonylmethane): Active Ingredient in Joint Health Supplements. Health or nutritional benefits;MSM is used in Joint Health Supplements, thought to support joint comfort and mobility. Evidence: Moderate (109);1;0
+item_1;comp_7;Hyaluronic Acid: Active Ingredient in Joint Health Supplements. Health or nutritional benefits;Hyaluronic Acid is used in Joint Health Supplements, thought to support joint lubrication and mobility. Evidence: Moderate (110);1;0
+item_10;comp_3;Gelatin: Coating Agent in Confectionery. Provides Coating;Gelatin is commonly used in Confectionery to provide structure, chewiness, and stability. Evidence: Not Applicable;1;0
+item_11;comp_3;Gelatin: Excipient in Capsules. Controls Release;Gelatin is the main material used in Capsules, forming a protective shell for powders, liquids, or supplements. Evidence: Not Applicable;1;0
+item_12;comp_4;Collagen: Main Ingredient in Collagen Peptides/Hydrolysed Collagen. Health or nutritional benefits;Collagen is the main ingredient in Collagen Peptides and Hydrolysed Collagen, providing short-chain proteins thought to support skin, hair, nails, and joint health. Evidence: Moderate (99, 100);1;0
+item_12;comp_5;Marine Collagen: Main Ingredient in Collagen Peptides/Hydrolysed Collagen. Health or nutritional benefits;Marine Collagen is used in Collagen Peptides and Hydrolysed Collagen, providing easily absorbed proteins thought to support skin, hair, nails, and joint health. Evidence: Moderate (99, 100);1;0
+item_13;comp_4;Collagen: Active Ingredient in Collagen Face Cream. Health or nutritional benefits;Collagen is used in Collagen Face Creams, thought to help improve skin elasticity and hydration. Evidence: Moderate (102);1;0
+item_13;comp_5;Marine Collagen: Active Ingredient in Collagen Face Cream. Health or nutritional benefits;Marine Collagen is used in Collagen Face Creams, thought to help enhance skin elasticity and hydration. Evidence: Limited (102);1;0
+item_14;comp_3;Gelatin: Biding Agent in Sausages. Enhances Stability;Gelatin is used in Sausages to improve texture, binding, and juiciness. Evidence: Not Applicable;1;0
+item_14;comp_4;Collagen: Coating Agent in Sausages. Provides Coating;Collagen is used in Sausages, primarily as a casing material and to help maintain texture and shape. Evidence: Not Applicable;1;0
+item_15;comp_3;Gelatin: Coating Agent in Coated Tablets. Provides Coating;Gelatin is used in Coated Tablets to form a protective outer layer and aid in swallowing. Evidence: Not Applicable;1;0
+item_16;comp_3;Gelatin: Active Ingredient in Wound Dressings. Health or nutritional benefits;Gelatin is used in Wound Dressings to provide a supportive matrix that helps with moisture retention and healing. Evidence: Not Applicable;1;0
+item_16;comp_4;Collagen: Active Ingredient in Wound Dressings. Health or nutritional benefits;Collagen is used in Wound Dressings, thought to support tissue repair and promote healing. Evidence: Not Applicable;1;0
+item_17;comp_1;Glucosamine: Active Ingredient in Pet Supplements. Health or nutritional benefits;Glucosamine is also used in Pet Supplements, thought to support joint health and mobility. Evidence: Moderate (103, 105, 106);1;0
+item_17;comp_2;Chondroitin: Active Ingredient in Pet Supplements. Health or nutritional benefits;Chondroitin is often used in Pet Supplements in addition to Glucosamine, thought to support joint health and cartilage maintenance. Evidence: Limited (104, 105);1;0
+item_17;comp_4;Collagen: Active Ingredient in Pet Supplements. Health or nutritional benefits;Collagen is used in Pet Supplements, thought to support joint health, skin, and coat condition. Evidence: Moderate (106);1;0
+item_18;comp_3;Gelatin: Gelling Agent in Energy Gels. Forms Gel Structure;Gelatin is used in Energy Gels to provide thickness and improve texture for easier consumption. Evidence: Not Applicable;1;0
+item_18;comp_4;Collagen: Active Ingredient in Energy Gels. Health or nutritional benefits;Collagen is used in Energy Gels, thought to support joint health and overall connective tissue function. Evidence: Moderate (99, 100);1;0
+item_19;comp_4;Collagen: Active Ingredient in Protein Bars. Health or nutritional benefits;Collagen is used in Protein Bars, thought to support joint health and help maintain skin, hair, and nail condition. Evidence: Moderate (99, 100);1;0
+item_2;comp_3;Gelatin: Biding Agent in Gummies. Adds texture or viscosity;Gelatin is widely used in Gummies as a binding agent, giving them their chewy texture and stability. Evidence: Not Applicable;1;0
+item_20;comp_3;Gelatin: Biding Agent in Photographic Film. Provides Coating;Gelatin is used in Photographic Film to form a light-sensitive, protective layer that captures and holds the image. Evidence: Not Applicable;1;0
+item_21;comp_8;Surimi: Main Ingredient in Crab Stick. Forms Base Texture;Surimi is the main ingredient in Crab Stick, forming the base texture and protein. Evidence: Not Applicable;1;0
+item_3;comp_3;Gelatin: Main Ingredient in Jello. Forms Gel Structure;Gelatin is the key ingredient in Jello, responsible for its gel-like texture and structure. Evidence: Not Applicable;1;0
+item_4;comp_3;Gelatin: Biding Agent in Marshmallows. Adds texture or viscosity;Gelatin is a key ingredient in Marshmallows, giving them their soft, spongy texture. Evidence: Not Applicable;1;0
+item_5;comp_3;Gelatin: Thickener in Dairy Yogurt. Adds texture or viscosity;Gelatin is sometimes added to Dairy Yogurt to improve thickness and create a smooth, creamy texture. Evidence: Not Applicable;1;0
+item_6;comp_3;Gelatin: Stabiliser in Cream Cheese. Enhances Stability;Gelatin is used in Cream Cheese to help stabilize texture and improve firmness. Evidence: Not Applicable;1;0
+item_7;comp_3;Gelatin: Stabiliser in Sour Cream. Enhances Stability;Gelatin is added to Sour Cream to enhance thickness and maintain a consistent texture. Evidence: Not Applicable;1;0
+item_8;comp_3;Gelatin: Emulsifier in Margarine. Improves Spreadability;Gelatin is occasionally used in Margarine to help stabilize texture and improve spreadability. Evidence: Not Applicable;1;0
+item_9;comp_3;Gelatin: Stabiliser in Ice Cream. Prevents Ice Crystal Formation;Gelatin is often added to Ice Cream to improve creaminess and maintain a smooth, stable texture. Evidence: Not Applicable;1;0
+mat_1;ind_3;Crustacean Shells is a Byproduct of Crustacean Processing;The Crustacean Processing industry is the primary source of shells, particularly from shrimp, crabs, and lobsters, processing 6-8 million tons annually, 50-70% of crustacean weight are discarded as shells, cephalothoraxes, and exoskeletons (30, 31, 34);1;0
+mat_1;ind_4;Crustacean Shells is a Byproduct of Crustacean Fisheries;Crustacean Fisheries are a major source of shells, especially from wild-caught shrimp, crabs, and lobsters (48);1;0
+mat_1;ind_6;Crustacean Shells is a Byproduct of Shrimp and Prawn Farming;Shrimp and Prawn Farming contribute significantly to shell supply due to high production (40, 41);1;0
+mat_1;ind_7;Crustacean Shells is a Byproduct of Lobster Farming;Lobster Farming is a minor shell source compared to other crustaceans (36);1;0
+mat_1;ind_8;Crustacean Shells is a Byproduct of Crab Farming;Crab Farming contributes moderately to shell supply, though volumes are lower than shrimp or prawn (44);1;0
+mat_1;ind_9;Crustacean Shells is a Byproduct of Crayfish Farming;Crayfish Farming is a minor contributor to shell supply at lower volumes than shrimp and crab (47);1;0
+mat_10;ind_34;Wild-Caught Fish is a Target Catch of Commercial Fishing;Wild-Caught Fish are harvested through Commercial Fishing and Artisanal Fishing primarily for human consumption, common species including Cod, Tuna, Anchovy, Herring, and Mackerel;1;0
+mat_10;ind_35;Wild-Caught Fish is a Target Catch of Artisanal Fishing;Yields of WIld-Caught Fish from Artisanal Fishing are much smaller than Commercial Fishing, primarily for local consumption, catches are less likely to be processed into byproducts;1;0
+mat_2;ind_5;Filamentuous Fungi is a Main Product of Biotechnology;Filamentous Fungi is cultivated at industrial-scale in the Biotechnology industry by selecting or engineering suitable fungal strains in lab-controlled environments;1;0
+mat_3;ind_10;Bovine (Cow) is a Primary Product of Cattle Farming;Bovine refers to domesticated Cattle raised in the Cattle Farming Industry for meat, milk, breeding, and other purposes;1;0
+mat_3;ind_11;Bovine (Cow) is a Raw Material of Cattle Slaughtering;The Cattle Slaughtering Industry processes Bovines for meat as the primary product before further processing in downstream industries;1;0
+mat_3;ind_14;Bovine (Cow) is a Raw Material of Tanning;Bovine is the primary raw material for the Leather Processing industry, whose products include leather, gelatin, collagen, and related materials;1;0
+mat_3;ind_20;Bovine (Cow) is a Raw Material of Livestock Trading (Bovine);Live Bovines are traded in the Livestock Trade industry for breeding, fattening, or slaughter;1;0
+mat_3;ind_22;Bovine (Cow) is a Raw Material of Rendering (Animals);Non-meat parts of Bovine are sent to the Rendering Industry for processing;1;0
+mat_3;ind_23;Bovine (Cow) is a Source of Pharmaceuticals;Bovine byproducts are an important source for the Pharmaceutical Industry, used in the production of Heparin, Insulin, Collagen, Gelatin, and other medical materials;1;0
+mat_3;ind_24;Bovine (Cow) is a Source of Pet Food;Bovine products, byproducts, and derivatives—such as meat trimmings, organs, fat, bone meal, and tallow—are used in the Pet Food Industry as sources of protein, nutrients, and energy;1;0
+mat_3;ind_25;Bovine (Cow) is a Source of Cosmetics;Bovine byproducts and derivatives—such as Tallow, Collagen, Gelatin, Keratin, and Glycerin—are widely used in the Cosmetics Industry as emollients, stabilisers, and active ingredients in skincare and personal care products;1;0
+mat_4;ind_15;Sharks and Elasmobranchs is a Bycatch of Fisheries;Sharks and Elasmobranchs (e.g. rays, skates) are unintentionally caught alongside target species during commercial or artisanal fishing operations;1;0
+mat_4;ind_16;Sharks and Elasmobranchs is a Target Catch of Shark Fisheries;Sharks and Elasmobranchs (e.g. rays, skates) are deliberately caught in targeted fisheries for their meat, fins, cartilage, or other parts;1;0
+mat_5;ind_17;Porcine (Pig) is a Primary Product of Pig Farming;Porcine refers to domesticated Pigs raised in the Pig Farming Industry for meat production, breeding, and related uses;1;0
+mat_5;ind_18;Porcine (Pig) is a Primary Product of Pig Slaughtering;The Pig Slaughtering Industry processes Pigs for meat as the primary product before further processing in downstream industries;1;0
+mat_5;ind_21;Porcine (Pig) is a Primary Product of Livestock Trading (Porcine);Live Porcine Animals are traded across markets for breeding, fattening, or slaughter;1;0
+mat_5;ind_22;Porcine (Pig) is a Raw Material of Rendering (Animals);Non-meat parts from Porcine are sent to the Rendering Industry for processing;1;0
+mat_5;ind_23;Porcine (Pig) is a Source of Pharmaceuticals;Porcine byproducts—such as intestinal mucosa, glands, and tissues—are key sources for the Pharmaceutical Industry, used in the production of Heparin, Insulin, Gelatin, and other medical products;1;0
+mat_5;ind_24;Porcine (Pig) is a Source of Pet Food;Porcine products, byproducts, and derivatives such as meat trimmings, organs, fat, and rendered meals are widely used in the Pet Food industry as essential protein, fat, and nutrient sources;1;0
+mat_5;ind_25;Porcine (Pig) is a Source of Cosmetics;Porcine byproducts and derivatives—such as Collagen, Gelatin, Fat, and Glycerin—are used in the Cosmetics Industry for their moisturizing, texturizing, and stabilising properties in skincare and personal care products;1;0
+mat_6;ind_22;Avian (Poultry/Fowls) is a Raw Material of Rendering (Animals);Avian slaughter byproducts are sent to the Rendering industry but in much smaller volumes than Bovine and Porcine, contributing minimally to downstream industries like Pharmaceuticals and Cosmetics;1;0
+mat_6;ind_24;Avian (Poultry/Fowls) is a Source of Pet Food;Avian meat, byproducts, and derivatives are used in the Pet Food industry as protein and nutrient sources;1;0
+mat_6;ind_28;Avian (Poultry/Fowls) is a Primary Product of Poultry Farming;Avian species like chickens, ducks, and turkeys are bred and raised in the Poultry Farming industry for meat, eggs, and other products;1;0
+mat_6;ind_29;Avian (Poultry/Fowls) is a Primary Product of Livestock Trading (Poultry);Avian species are traded internationally as livestock for breeding or production purposes;1;0
+mat_6;ind_30;Avian (Poultry/Fowls) is a Primary Product of Poultry Slaughtering;Avian species are sent to the Slaughtering industry for meat production as the primary output;1;0
+mat_7;ind_33;Farmed Fish is a Primary Product of Fish Aquaculture;Fish Aquaculture produces Farmed Fish primarily for human consumption, commonly Carp, Tilapia, Catfish, Salmon, and Pangasius;1;0
+mat_8;ind_13;Dairy Cows is a Primary Product of Dairy Farming;Dairy cows are raised in Dairy Farming to produce milk and related dairy products;1;0
+mat_9;ind_31;Lignin (Wood) is a Byproduct of Paper Manufacturing;Lignin is extracted as a byproduct during wood processing in the forestry industry, primarily from pulp and paper manufacturing;1;0
+smCountry_1;mat_2;Global Leader;The USA is the global leader in filamentous fungal research and biotech, with focus on enzymes, pharmaceuticals, and agriculture (60);1;0
+smCountry_1;mat_3;Top Producer & Significant Exporter;The US is the largest global Bovine Producer (Beef) (~12.89M tonnes, 2022), generating various co-products, by-products, and sub-products from bovine processing (48, 49, 50). The US is one of the top global Bovine/Beef Exporters with ~1.2M-1.5M tonnes (2024-2025) (48, 49, 51, 52);2;0
+smCountry_1;mat_5;Significant Producer & Significant Exporter;The US is a major Porcine (Pork) Producer after China and the EU, ~12.8M tonnes, ~11% of global production (48, 53, 54). The US is likely the second largest Porcine (Pork) Exporter globally, ~3.03M tonnes, 2024 (48, 55, 71);2;0
+smCountry_1;mat_6;Top Producer & Top Exporter;The US is the world's largest Poultry Producer, ~22.5M metric tonnes, ~20% global output, 2024 (48, 57). The US is the second-largest Poultry Exporter, close behind Brazil, ~2.9-3.5M tonnes (57, 58, 59);2;0
+smCountry_1;src_1;Top Consumer;The US is a significant consumer of Chitin, Crustacean Shells (raw material), and derivatives—especially in pharmaceuticals and biodegradable materials—likely second only to China (7, 48);1;0
+smCountry_1;src_12;Top Importer;The US is the top Importer of fish waste byproducts, including Fish Scales and Skins, valued at $113.59M in 2024 (111);1;0
+smCountry_1;src_13;Top Importer;The US is the top Importer of fish waste byproducts, including Fish Scales and Skins, valued at $113.59M in 2024 (111);1;0
+smCountry_1;src_18;Top Importer & Recognised Consumer;The US is the top Importer of Fish and other fishery products with import value ~$26.6B in 2024 (112). The US is a recognised Consumer of Fish and seafood, though far behind China, India, and Indonesia by volume, with ~7.5M tonnes in 2022 (114);2;0
+smCountry_1;src_2;Top Consumer;USA is the largest consumer of Corn and corn products (e.g. ethanol, livestock feed, food, and industrial products) (14);1;0
+smCountry_1;src_6;Top Consumer & Significant Importer;The USA is top Beef Consumer, both in per capita and total consumption (~12.7M tonnes, 2025) (48, 49). The US is a major Importer of Beef for processed foods (~2M tonnes, 2025), despite being a leading producer and exporter (48, 49);2;0
+smCountry_1;src_7;Significant Consumer;The US is a significant Consumer of Pork with high total volumes, ~27kg/yr per capita (48, 53);1;0
+smCountry_1;src_8;Top Consumer;The US leads in Poultry Consumption, with the highest total and per capita intake, ~17.9M tonnes, 2023 (57);1;0
+smCountry_10;mat_1;Major Source;Indonesia produces significant quantities of Crustacean Shells, notably from Shrimp and Crab, derived from both aquaculture and wild-catch fisheries (17, 18, 81);1;0
+smCountry_10;mat_10;Significant Catcher;Indonesia is the 2nd largest Catcher of Wild-Caught Fish, though far behind China, with ~7M tonnes caught in 2020 (116);1;0
+smCountry_10;mat_7;Significant Producer;Indonesia is the 2nd largest Producer of Farmed Fish after China, though at a much lower volume, with ~16.7 M tonnes in 2021 (113, 115);1;0
+smCountry_10;src_18;Significant Consumer;Indonesia is among the top 3 Consumers of Fish and seafood, close to India, with ~11.4 M tonnes in 2022 (114);1;0
+smCountry_11;mat_2;Top Player;The EU has an established filamentous fungal research hub, focusing on industrial enzymes, pharmaceuticals, and environmental biotech (60);1;0
+smCountry_11;mat_3;Recognised Producer;The EU is a significant Bovine/Beef Producer, mainly for domestic consumption (~6.5M tonnes, 2025) (49);1;0
+smCountry_11;mat_5;Significant Producer & Top Exporter;The EU is the second largest Porcine (Pork) Producer, ~21M tonnes, ~18.3% of global production (48, 53, 54). The EU is the largest global Porcine (Pork) Exporter, ~30-31% of world pork exports, ~10.4M tonnes, 2024 (48, 53);2;0
+smCountry_11;mat_6;Recognised Producer & Significant Exporter;The EU is an emerging Producer of Poultry, ~12.0M metric tonnes, ~11.3% of global production (48, 57). The EU is a significant Poultry Exporter, with Poland, the Netherlands, and Spain as top contributors, ~1.8-2.5M tonnes (57, 58, 59);2;0
+smCountry_11;src_12;Significant Importer;The EU is a major Importer of fish waste byproducts by quantity, including Fish Scales and Skins, ~199,651,000 kg, 2024 (111);1;0
+smCountry_11;src_13;Significant Importer;The EU is a major Importer of fish waste byproducts by quantity, including Other Fish Parts, ~199,651,000 kg, 2024 (111);1;0
+smCountry_11;src_18;Top Importer;The EU is the leading Importer of Fish and other fisheries and aquaculture products as a whole (although none of its member states has import values close to the top three), accounting for ~35% of total world fish imports by value (112);1;0
+smCountry_11;src_6;Recognised Consumer;The EU is a significant Beef Consumer with substantial domestic demand across member countries (~6.2M tonnes, 2025) (49);1;0
+smCountry_11;src_7;Top Consumer;The EU ranks among the top Pork Consumers, ~20.5M tonnes (48, 53);1;0
+smCountry_11;src_8;Significant Consumer & Significant Importer;The EU is a major Poultry Consumer, with steady demand and strong domestic consumption (57). The EU is a notable Poultry Importer alongside China, with imports ~0.7M tonnes (57);2;0
+smCountry_12;mat_7;Recognised Exporter;Ecuador is a recognised Exporter of Farmed Fish, though well behind China and Norway in value, with ~$9.2 B in 2024 (112);1;0
+smCountry_13;mat_2;Top Player;Brazil is an emerging player in filamentous fungal science, leveraging fungal bioactive compounds and sustainable bioprocessing (60);1;0
+smCountry_13;mat_3;Top Producer & Top Exporter;Brazil is the world's 2nd largest Bovine Producer (Beef) (~10.35M tonnes, 2022), generating abundant co-products, by-products, and sub-products (48, 49, 50). Brazil is the world's largest Bovine/Beef Exporter by volume ~2.9M-3.6M tonnes (2024-2025) (48, 49, 51, 52);2;0
+smCountry_13;mat_5;Recognised Producer & Recognised Exporter;Brazil is among the top five global Porcine (Pork) Producers, ~4.5-4.8M tonnes (48, 53, 54). Brazil is an emerging Porcine (Pork) Exporter and a competitive supplier to Asia (48, 53, 55);2;0
+smCountry_13;mat_6;Significant Producer & Top Exporter;Brazil is a major Poultry Producer, close to China, export-oriented, ~15M metric tonnes, ~15.1% global production (48, 57). Brazil ranks as the top global Exporter of Poultry, ~4-5M metric tonnes (57, 58, 59);2;0
+smCountry_13;src_2;Significant Consumer;Brazil is a major consumer of Corn alongside being a top producer (15);1;0
+smCountry_13;src_5;Top Player;Brazil has the third largest market share of Shark Cartilage product, ~$14.13M sales revenue (2025) (66);1;0
+smCountry_13;src_6;Significant Consumer;Brazil is a notable Beef Consumer, with high domestic consumption (~8.2M tonnes, 2025) (48, 49);1;0
+smCountry_13;src_8;Significant Consumer;Brazil is a major Poultry Consumer, with strong domestic demand and high per capita intake due to its affordability, ~10.1M tonnes (57);1;0
+smCountry_14;mat_3;Recognised Producer & Significant Exporter;Argentina is a well-known traditional Bovine Producer (Beef) (~3.14M tonnes, 2022), popular for its grass-fed cattle and high-quality beef (48, 49, 50). Argentina is a notable Exporter of premium grass-fed Beef, with ~600–860K tonnes exported (2024–2025), though behind top producers in volume (48, 49, 51, 52);2;0
+smCountry_16;src_2;Significant Importer;South Korea is one of the major importers of corn, for feed and industrial use (12);1;0
+smCountry_16;src_6;Recognised Importer;South Korea is an emerging Beef Importer (~575K tonnes, 2025), particularly premium beef from the US and Australia (48, 49);1;0
+smCountry_18;mat_7;Recognised Producer;Bangladesh is a recognised Producer of Farmed Fish, alongside Vietnam, ranking after the top three (China, Indonesia, India), with ~6.3M tonnes in 2021 (113, 115);1;0
+smCountry_2;mat_3;Significant Exporter;Australia is the 2nd largest Bovine meat (Beef) Exporter in the world, exporting ~1.69M-1.9M tonnes (2024-2025) (48, 49, 51, 52);1;0
+smCountry_20;src_8;Top Importer;The UK is a top-three global Poultry Importer, importing ~0.94M tonnes (48, 57);1;0
+smCountry_21;src_18;Recognised Importer;Spain is a notable EU Importer of Fish, valued at ~$9.4B in 2024 (112);1;0
+smCountry_28;src_18;Recognised Importer;France is a notable EU Importer of Fish after Spain and Italy, with value ~$7.7B in 2024 (112);1;0
+smCountry_3;mat_5;Recognised Exporter;Canada is an emerging Exporter of Porcine (Pork), primarily to the US and Asia (48, 53, 55);1;0
+smCountry_3;src_12;Recognised Importer;Canada is a significant Importer of fish waste byproducts, including Fish Scales and Skins, valued at ~$80.5M, with a total import quantity of ~43.78M kg, 2024 (111);1;0
+smCountry_3;src_13;Recognised Importer;Canada is a significant Importer of fish waste byproducts, including Other Fish Parts, valued at ~$80.5M, with a total import quantity of ~43.78M kg, 2024 (111);1;0
+smCountry_3;src_5;Top Player;Canada has the second largest market share of Shark Cartilage product, ~$17.871M sales revenue (2025) (66);1;0
+smCountry_30;mat_10;Recognised Catcher;Peru is a recognised Catcher of Wild-Caught Fish, with >5.5M tonnes caught in 2020 (116);1;0
+smCountry_31;mat_10;Recognised Catcher;Russia is a recognised Catcher of Wild-Caught Fish closely behind Peru and India, with ~5M tonnes in 2020 (116);1;0
+smCountry_32;src_5;Significant Player;Germany leads Europe's Shark Cartilage product market, generating ~$7.19M in sales revenue (2025) (66);1;0
+smCountry_33;src_5;Significant Player;Nigeria leads Africa in Shark Cartilage product sales, with ~$6.435M in revenue (2025) (66);1;0
+smCountry_34;src_18;Recognised Importer;Italy is a notable EU Importer of Fish alongside Spain and France, valued at ~8B in 2024 (112);1;0
+smCountry_36;src_12;Recognised Importer;Denmark is a significant Importer of fish waste byproducts, including Fish Scales and Skins, valued at ~$79.3M, with a total import quantity of ~235.54M kg, 2024 (111);1;0
+smCountry_36;src_13;Recognised Importer;Denmark is a significant Importer of fish waste byproducts, including Other Fish Parts, valued at ~$79.3M, with a total import quantity of ~235.54M kg, 2024 (111);1;0
+smCountry_4;mat_1;Top Exporter & Top Producer;China is the top global Exporter of Crustacean Shells (shrimp, crab, etc.) and derivatives (e.g. Chitin), driven by abundant supply and low-cost production (6, 17, 79, 80). China can be considered as the top Crustacean Shells Producer and Chitin Producer (~80% of global supply) for its abundant shell supply, driven by extensive shrimp and crab aquaculture industries (6, 17, 79, 80);2;0
+smCountry_4;mat_10;Top Catcher & Global Leader;China is the leading global Wild Fish Catcher, with over 13 M tonnes captured in 2020 (116). China is leading as the largest Exporter of Wild-Caught Fish and seafood in general (117);2;0
+smCountry_4;mat_2;Top Player;China is a key player in filamentous fungi production, with a rapidly growing industry focused on fermentation, enzyme production, and bioremediation (60);1;0
+smCountry_4;mat_3;Significant Producer;China ranks 3rd in Bovine Production (Beef) after the US and Brazil, producing ~7.18M tonnes in 2022, mainly for domestic consumption (48, 49, 50);1;0
+smCountry_4;mat_5;Top Producer;"China is the world's largest Porcine (Pork) Producer, ~55-56M tonnes, accounts for >50% of the global pig population
+  (48, 53, 54)";1;0
+smCountry_4;mat_6;Significant Producer & Recognised Exporter;China has significant Poultry Production, ~17-20M metric tonnes, ~16.6% of global production (48, 57). China is rapidly expanding Poultry Exports, particularly in processed chicken, ~0.8-1M tonnes (57, 58, 59);2;0
+smCountry_4;mat_7;Top Producer & Top Exporter;China is the world's largest Fish Producer, ~67.8M tonnes, 2024 (113). China is the largest Exporter of Farmed Fish in the world, with a value of ~$20.18 B in 2024 (112);2;0
+smCountry_4;src_1;Top Importer & Top Consumer;China is amongst the top 3 importers of Chitin, while also being the largest producer and exporter (6). China is a leading consumer market for Chitin, driven by the increasing demands in agriculture, water treatment, and pharmaceuticals (48, 68);2;0
+smCountry_4;src_18;Top Importer & Top Consumer;China is the 2nd largest Importer and reporter of Fish and other fishery products with import value ~$22.3B in 2024 (112). China is the largest Consumer of Fish and seafood, with ~59.3M tonnes in 2022 (114);2;0
+smCountry_4;src_2;Significant Importer & Significant Consumer;"China is a significant importer of Corn despite being a top producer itself due to high domestic demands, mainly for livestock feed and biofuels (11). China is the second largest consumer of Corn after the US; consumption often exceeds production, driving import demand (15)";2;0
+smCountry_4;src_5;Global Leader;China has the largest Shark Cartilage product market share, sales revenue ~$22.324M (2025) (66);1;0
+smCountry_4;src_6;Top Consumer & Top Importer;China is closely behind the US in Beef Consumption (~11.6M tonnes, 2025), with demand continuing to rise (48, 49). China is the largest Beef Importer despite having a large bovine farming industry (~3.8M tonnes, 2025), driven by high domestic demand (48, 49);2;0
+smCountry_4;src_7;Significant Importer & Top Consumer;China is one of the top Pork Importers due to strong domestic demand, despite being the world's largest producer (48, 53). China is the world's largest Pork Consumer, accounting for nearly half of global consumption (48, 53);2;0
+smCountry_4;src_8;Top Consumer & Significant Importer;China is the second-largest Poultry Consumer after the US, with the fastest growth in consumption, ~ 15M tonnes, 2023 (57). China is a notable Poultry Importer after Japan, Mexico, and the UK, with imports of ~0.7M tonnes (48, 57);2;0
+smCountry_40;mat_10;Significant Exporter;Norway is the 2nd largest Exporter of aquatic animals (mostly farmed salmon), but also including Wild-Caught Fish such as cod, herring, mackerel, and some other whitefish and small pelagic species (117);1;0
+smCountry_40;mat_7;Significant Exporter;Norway is the second largest Exporter of Farmed Fish after China, primarily cultured Atlantic Salmon, with a value of ~$16 B in 2024 (112);1;0
+smCountry_41;mat_7;Recognised Exporter;Chile is a recognised Exporter of Farmed Fish, behind China, Norway, Ecuador, and Vietnam, with a value of ~$7.8 B in 2024 (112);1;0
+smCountry_5;src_2;Top Importer & Significant Consumer;Mexico is the largest importer of Corn, driven by food and feed demand, imports mostly from the U.S. (8). Mexico is a large consumer of Corn, primarily for food and feed, substantial portion of supply imported primarily from the U.S. (16);2;0
+smCountry_5;src_5;Significant Player;Mexico has significant market share of Shark Cartilage product, ~$9.241M sales revenue (2025) (66);1;0
+smCountry_5;src_7;Significant Importer;Mexico is a fast-growing Pork Importer, driven by strong domestic demand (48, 53);1;0
+smCountry_5;src_8;Top Importer;Mexico is close to Japan as a top Poultry Importer, with imports of ~0.8 to 1.01M tonnes (48, 57);1;0
+smCountry_6;src_1;Significant Consumer & Significant Importer;Japan has high Chitin consumption primarily for biomedical applications (48, 68). Japan is a major importer of Chitin for uses in biomedical and agricultural applications (6);2;0
+smCountry_6;src_18;Significant Importer & Recognised Consumer;Japan is the 3rd largest Importer of Fish after the US and China, valued at ~$12.9 B in 2024 (112). Japan is a recognised Consumer of Fish and seafood, behind China, India, Indonesia, and the US, with ~5.6 M tonnes in 2022 (114);2;0
+smCountry_6;src_2;Significant Importer;Japan is a major Corn importer, mainly for animal feed (8);1;0
+smCountry_6;src_6;Recognised Importer;Japan is a significant Beef Importer (~720K tonnes, 2025) with high demand due to strong consumption and limited local production (48, 49);1;0
+smCountry_6;src_7;Top Importer;Japan is the world’s largest Importer of Pork (48, 53, 56);1;0
+smCountry_6;src_8;Top Importer;Japan leads global Poultry Imports, totaling around 0.9–1.08M tonnes (48, 57);1;0
+smCountry_7;mat_1;Major Source & Significant Exporter;India is an emerging seafood Producer and Shell product supplier—incl. Chitin—with growing applications in agriculture and cosmetics (7, 17, 19, 79, 81). India is a notable Chitin Exporter, a compound derived directly from Crustacean Shells, likely ranking 2nd globally (6, 7);2;0
+smCountry_7;mat_10;Recognised Catcher;India is a recognised Catcher of Wild-Caught Fish alongside Peru, with ~5.5M tonnes in 2020 (116);1;0
+smCountry_7;mat_3;Recognised Producer & Significant Exporter;India is an emerging Bovine Producer (Beef), ~4.35M tonnes (2022), mainly of buffalo due to religious restrictions, generating various co- and by-products (48, 49, 50). India ranks among the top 5 Bovine Meat/Carabeef Exporters, mainly Buffalo meat, with ~1.4–1.6M tonnes (2024–2025) (48, 49, 51, 52);2;0
+smCountry_7;mat_7;Significant Producer;India is among the top three Producers of Farmed Fish after China and Indonesia, with ~10.9 M tonnes in 2021 (113, 115);1;0
+smCountry_7;src_18;Significant Consumer;India is the 2nd largest Consumer of Fish and seafood, with ~12.6M tonnes in 2022 (114);1;0
+smCountry_7;src_5;Significant Player;India has significant market share of Shark Cartilage product, ~$9.489M sales revenue (2025) (66);1;0
+smCountry_8;mat_1;Major Source;Thailand is one of the top Shrimp and prawn producers-incl. processed products, enabling abundant Crustacean Shell availability (17, 81);1;0
+smCountry_8;mat_6;Recognised Exporter;Thailand is an emerging Exporter of Poultry, supplying high-quality products to Asian markets, ~1.1-1.5M tonnes (57, 58, 59);1;0
+smCountry_9;mat_1;Significant Producer & Top Exporter;Vietnam is a significant Producer of Crustacean Shells (mainly Shrimp) and their derivative, Chitin, supported by its major Shrimp and Prawn Farming industry (6, 17, 81). Vietnam is one of the top Exporters of Chitin, derived from Crustacean Shells, primarily supplying regional markets in Asia (6, 48);2;0
+smCountry_9;mat_10;Recognised Exporter;Vietnam is a recognised Exporter of Wild-Caught Fish (Tuna), and the 3rd largest Exporter of aquatic animal products (incl. farmed fish and shrimps) (117);1;0
+smCountry_9;mat_7;Recognised Producer & Recognised Exporter;Vietnam is a recognised Producer of Farmed Fish, alongside Bangladesh, ranking after the top three (China, Indonesia, India), with ~6.4 M tonnes in 2021 (113, 115). Vietnam is a recognised Exporter of Farmed Fish, behind China, Norway, and Ecuador, with a value of ~$8.3 B in 2024 (112);2;0
+smCountry_9;src_1;Significant Importer;Vietnam imports a significant quantity of Chitin despite being a notable producer to meet domestic demands (6);1;0
+smCountry_9;src_2;Significant Importer;Vietnam is a notable importer of Corn, driven by feed and food processing (13);1;0
+src_1;mat_1;Chitin can be Extracted from Crustacean Shells;Chitin can be extracted from Crustacean Shells by demineralisation and deproteinisation (32, 33);1;0
+src_1;mat_2;Chitin can be Extracted from Filamentuous Fungi;Chitin can be extracted from cell walls of Filamentous Fungi (35);1;0
+src_10;mat_3;Animal Skins/Hides can be Harvested from Bovine (Cow);Bovine Hides are thick and Collagen-rich, used in Leather production, Gelatin extraction, and biomedical materials like collagen sheets;1;0
+src_10;mat_5;Animal Skins/Hides can be Harvested from Porcine (Pig);Porcine Skins are softer and have high fat content. They are commonly processed into food-grade Gelatin, Sausage Casings, and cosmetic-grade Collagen;1;0
+src_10;mat_6;Animal Skins/Hides can be Harvested from Avian (Poultry/Fowls);Avian Skin, especially from chickens, is thin and often rendered for Fat (e.g., schmaltz) but also used in some Collagen Peptide and Broth production;1;0
+src_11;mat_3;Animal Tendons, Ligaments, and Fascia can be Harvested from Bovine (Cow);Bovine Connective Tissues are strong and high in Type I Collagen. They are used for Joint Health Supplements, Sports Nutrition, and surgical materials;1;0
+src_11;mat_5;Animal Tendons, Ligaments, and Fascia can be Harvested from Porcine (Pig);Porcine Connective Tissues are flexible and used in similar applications to Bovine but with slightly different processing behavior and Collagen yield;1;0
+src_11;mat_6;Animal Tendons, Ligaments, and Fascia can be Harvested from Avian (Poultry/Fowls);Avian Tendons and Fascia are smaller and less commonly used industrially, but still processed into Broths and low-yield Collagen sources;1;0
+src_12;mat_10;Fish Scales & Skin can be Harvested from Wild-Caught Fish;Fish Skins & Scales from Wild-Caught Fish (often species like Cod, Tilapia, and Sardines), are collected as Byproducts for further processing;1;0
+src_12;mat_7;Fish Scales & Skin can be Harvested from Farmed Fish;Fish Skin and Scales (esp. from tilapia, cod, carp) are lightweight and high in Type I Collagen. They’re processed into Marine Collagen, Biofilms, Wound Dressings, and cosmetic actives;1;0
+src_13;mat_10;Other Fish Parts can be Harvested from Wild-Caught Fish;Other Fish Parts from Wild-Caught Fish, such as heads, bones, and viscera, are used as Byproducts for Fish Meal, Fish Oil, and Nutritional Supplments;1;0
+src_13;mat_7;Other Fish Parts can be Harvested from Farmed Fish;Includes Fish Heads, Fins, and Vertebrae, rich in Collagen, minerals, and oils. Often used for Broth, Fish Meal, hydrolyzed protein, and pharmaceutical inputs;1;0
+src_14;mat_9;DMS (Dimethyl Sulfide) can be Degraded/Broken Down from Lignin (Wood);DMS is formed through the chemical degradation of sulfur-containing compounds in Lignin, commonly occurring during the Kraft pulping of wood in paper production;1;0
+src_15;src_14;;DMS is chemically oxidised to produce DMSO;1;1
+src_16;mat_6;Rooster Combs can be Harvested from Avian (Poultry/Fowls);Rooster Combs can be harvested from farmed Poultry;1;0
+src_17;ind_5;Bacteria (Streptococcus spp. or Bacillus spp.) is a Primary Product of Biotechnology;In modern HA production, starter cultures of bacteria are maintained in biorepositories;1;0
+src_18;mat_10;Fish Meat & Products can be Harvested from Wild-Caught Fish;Fish Meat from Wild Caught Fish is harvested from natural marine and freshwater environments, commonly sourced from species such as Cod, Tuna, Anchovies, and Sardines;1;0
+src_18;mat_7;Fish Meat & Products can be Harvested from Farmed Fish;Fish Meat from Farmed Fish is sourced from aquaculture, commonly including species such as Salmon, Tilapia, Catfish, and Carp;1;0
+src_2;ind_1;Corn is a Main Product of Corn Farming;Corn is harvested directly from the maize plant in Corn Farming;1;0
+src_3;mat_3;Animal Cartilage can be Harvested from Bovine (Cow);Bovine is a major source for animal cartilage, typically sourced from the trachea, ribs, or sternum of cows;1;0
+src_3;mat_5;Animal Cartilage can be Harvested from Porcine (Pig);Cartilage can be harvested from the trachea, ribs, or joints of pigs - a major source of cartilage alongside bovine;1;0
+src_3;mat_6;Animal Cartilage can be Harvested from Avian (Poultry/Fowls);Avian cartilage is primarily sourced from poultry like chickens, turkeys, or ducks (from joints, sternum, or trachea);1;0
+src_3;src_5;;Shark Cartilage is another source for Animal Cartilage;1;1
+src_5;mat_4;Shark Cartilage can be Harvested from Sharks and Elasmobranchs;Cartilage can be harvested from the skeletons and fins of cartilagenous fish like sharks, rays, skates;1;0
+src_6;mat_3;Beef (Bovine Meat) can be Harvested from Bovine (Cow);Beef is the meat derived from farmed Bovines;1;0
+src_7;mat_5;Pork (Pig Meat) can be Harvested from Porcine (Pig);Pork is the meat harvested as the main product from farmed Porcines;1;0
+src_8;mat_6;Poultry (Avian Meat) can be Harvested from Avian (Poultry/Fowls);Poultry (e.g. chicken, duck, turkey) is the meat harvested from farmed Avian species;1;0
+src_9;mat_3;Animal Bones can be Harvested from Bovine (Cow);Bovine Bones are dense and rich in Type I Collagen and Calcium Phosphate. They are widely processed in the Rendering industry for Gelatin, Bone Meal, Pet Food, Calcium Supplements, and biomedical uses;1;0
+src_9;mat_5;Animal Bones can be Harvested from Porcine (Pig);Porcine Bones have slightly less density than bovine and a different fat profile. They are often used for Gelatin production, Bone Broth, and food-grade Phosphate extraction;1;0
+src_9;mat_6;Animal Bones can be Harvested from Avian (Poultry/Fowls);Avian Bones (from chickens, ducks, etc.) are lighter and more porous, used in Feed Supplements, Hydroxyapatite extraction, and occasionally Gelatin production for niche applications;1;0
