@@ -5,10 +5,10 @@ function loadData(callback) {
 let nodesData = [];
 let edgesData = [];
 
-    const DATA_URL = "https://pub-70beed977ae84669b7e949f8d2499fbc.r2.dev";
+    // const DATA_URL = "https://pub-70beed977ae84669b7e949f8d2499fbc.r2.dev";
 
 // Load nodes.csv
-    Papa.parse(`${DATA_URL}/nodes_v20251211.csv`, {
+    Papa.parse("nodes_v20251211.csv", {
     download: true,
     delimiter: ";",
     header: true,
@@ -36,7 +36,7 @@ let edgesData = [];
         });
 
         // Load edges.csv
-        Papa.parse(`${DATA_URL}/edges_v20251211.csv`, {
+        Papa.parse("edges_v20251211.csv", {
             download: true,
             delimiter: ";",
             header: true,
