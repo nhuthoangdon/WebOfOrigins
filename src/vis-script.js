@@ -1,3 +1,5 @@
+console.log('vis-script.js loaded');
+
 let nodes, edges, network;
 
 // Function to load and parse CSV files
@@ -8,7 +10,7 @@ let edgesData = [];
     // const DATA_URL = "https://pub-70beed977ae84669b7e949f8d2499fbc.r2.dev";
 
 // Load nodes.csv
-    Papa.parse("nodes_v20251211.csv", {
+    Papa.parse("/data/nodes.csv", {
     download: true,
     delimiter: ";",
     header: true,
@@ -36,7 +38,7 @@ let edgesData = [];
         });
 
         // Load edges.csv
-        Papa.parse("edges_v20251211.csv", {
+        Papa.parse("/data/edges.csv", {
             download: true,
             delimiter: ";",
             header: true,
