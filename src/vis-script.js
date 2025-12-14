@@ -10,7 +10,7 @@ let edgesData = [];
     // const DATA_URL = "https://pub-70beed977ae84669b7e949f8d2499fbc.r2.dev";
 
 // Load nodes.csv
-    Papa.parse("/data/nodes.csv", {
+    Papa.parse("https://data.weboforigins.com/nodes.csv", {
     download: true,
     delimiter: ";",
     header: true,
@@ -38,7 +38,7 @@ let edgesData = [];
         });
 
         // Load edges.csv
-        Papa.parse("/data/edges.csv", {
+        Papa.parse("https://data.weboforigins.com/edges.csv", {
             download: true,
             delimiter: ";",
             header: true,
