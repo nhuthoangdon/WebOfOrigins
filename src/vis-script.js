@@ -4,27 +4,79 @@ let nodes, edges, network;
 
 // Function to load and parse CSV files
 function loadData(callback) {
-let nodesData = [];
-let edgesData = [];
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const loadingProgress = document.getElementById('loading-progress');
+    const loadingPercent = document.getElementById('loading-percent');
 
-    // const DATA_URL = "https://pub-70beed977ae84669b7e949f8d2499fbc.r2.dev";
+    if (loadingOverlay) loadingOverlay.classList.add('visible');
 
-// Load nodes.csv
-    Papa.parse("https://data.weboforigins.com/nodes.csv", {
-    download: true,
-    delimiter: ";",
-    header: true,
-    complete: function (results) {
-        nodesData = results.data
-            .filter(row => row.id && row.label) //Exclude rows with missing id or label
+    let nodesData = [];
+    let edgesData = [];
+    let completedFiles = 0; // 0, 1, or 2
+
+    function updateOverallProgress() {
+        const percent = Math.round((completedFiles / 2) * 100);
+        loadingProgress.style.width = `${percent}%`;
+        loadingPercent.textContent = `${percent}%`;
+    }
+
+    function fetchAndParse(url, onComplete) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+
+        xhr.onprogress = (e) => {
+            if (e.lengthComputable) {
+                const filePercent = (e.loaded / e.total) * 50; // each file = 50% of total
+                const base = completedFiles * 50;
+                const current = base + filePercent;
+                loadingProgress.style.width = `${Math.round(current)}%`;
+                loadingPercent.textContent = `${Math.round(current)}%`;
+            }
+        };
+
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                Papa.parse(xhr.responseText, {
+                    delimiter: ";",
+                    header: true,
+                    complete: (results) => {
+                        onComplete(results.data);
+                        completedFiles++;
+                        updateOverallProgress();
+                        if (completedFiles === 2 && loadingOverlay) {
+                            loadingOverlay.classList.remove('visible');
+                        }
+                    },
+                    error: (err) => {
+                        console.error(`PapaParse error for ${url}:`, err);
+                        if (loadingOverlay) loadingOverlay.classList.remove('visible');
+                    }
+                });
+            } else {
+                console.error(`Failed to load ${url}: ${xhr.status}`);
+                if (loadingOverlay) loadingOverlay.classList.remove('visible');
+            }
+        };
+
+        xhr.onerror = () => {
+            console.error(`Network error loading ${url}`);
+            if (loadingOverlay) loadingOverlay.classList.remove('visible');
+        };
+
+        xhr.send();
+    }
+
+    // Load nodes.csv
+    fetchAndParse("https://data.weboforigins.com/nodes.csv", (data) => {
+        nodesData = data
+            .filter(row => row.id && row.label)
             .map(row => {
-                // Safely handle the label
                 const rawLabel = typeof row.label === "string" ? row.label : "";
                 const cleanedLabel = rawLabel
-                    .trim() // Remove leading/trailing whitespace
-                    .replace(/\u00A0/g, " ") // Replace non-breaking spaces with regular spaces
-                    .replace(/[\r\n]+/g, " "); // Replace newlines with spaces
-                const title = row.title || ""; //fallback to empty string if missing
+                    .trim()
+                    .replace(/\u00A0/g, " ")
+                    .replace(/[\r\n]+/g, " ");
+                const title = row.title || "";
                 const is_sustainable = parseInt(row.is_sustainable, 10) === 1;
                 return {
                     id: row.id,
@@ -35,45 +87,44 @@ let edgesData = [];
                     image: row.image || "",
                     is_sustainable: is_sustainable
                 };
-        });
+            });
+    });
 
-        // Load edges.csv
-        Papa.parse("https://data.weboforigins.com/edges.csv", {
-            download: true,
-            delimiter: ";",
-            header: true,
-            complete: function (results) {
-                edgesData = results.data
-                    .filter(row => row.from_node && row.to_node) // Exclude rows with missing from_node or to_node
-                    .map(row => {
-                        // Safely handle the label
-                        const rawLabel = typeof row.label === "string" ? row.label : "";
-                        const cleanedLabel = rawLabel
-                            .trim()
-                            .replace(/\u00A0/g, " ")
-                            .replace(/[\r\n]+/g, " ");
-                        const title = row.title || "";
-                        const roleCount = parseInt(row.roleCount, 10) || 1; // Convert to number, default to 1 if missing
-                        return {
-                            from: row.from_node,
-                            to: row.to_node,
-                            label: cleanedLabel,
-                            title: title,
-                            roleCount: roleCount, //newly added
-                            is_same_level: row.is_same_level === "1" //convert to boolean-like
-                        };
-                    });
-                callback(nodesData, edgesData);
-            },
-            error: function (error) {
-                console.error("Error loading data/edges.csv:", error);
-            }
-        });
-    },
-    error: function (error) {
-        console.error("Error loading data/nodes.csv:", error);
-    }
-});
+    // Load edges.csv
+    fetchAndParse("https://data.weboforigins.com/edges.csv", (data) => {
+        edgesData = data
+            .filter(row => row.from_node && row.to_node)
+            .map(row => {
+                const rawLabel = typeof row.label === "string" ? row.label : "";
+                const cleanedLabel = rawLabel
+                    .trim()
+                    .replace(/\u00A0/g, " ")
+                    .replace(/[\r\n]+/g, " ");
+                const title = row.title || "";
+                const roleCount = parseInt(row.roleCount, 10) || 1;
+                return {
+                    from: row.from_node,
+                    to: row.to_node,
+                    label: cleanedLabel,
+                    title: title,
+                    roleCount: roleCount,
+                    is_same_level: row.is_same_level === "1"
+                };
+            });
+
+        // Both files loaded → callback
+        if (completedFiles === 2) {
+            callback(nodesData, edgesData);
+        }
+    });
+
+    // Fallback callback if one file finishes first
+    const interval = setInterval(() => {
+        if (completedFiles === 2) {
+            clearInterval(interval);
+            callback(nodesData, edgesData);
+        }
+    }, 100);
 }
 
 function wrapText(text, maxChars = 30) { //function to wrap long label text into multiple lines
