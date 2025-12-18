@@ -1,6 +1,4 @@
-// script.js — FINAL VERSION (2025 best practices)
-// One source of truth: /src/header.html + /src/footer.html
-// Always loaded via JS. No Jekyll includes. No duplication.
+// main pages script, excepts for vis-related elements
 
 console.log('script.js loaded');
 
@@ -186,3 +184,96 @@ function makeListingsClickable() {
     });
   });
 }
+
+
+// ——————————————————————————————————————
+// References Page script
+document.addEventListener('DOMContentLoaded', function () {
+  // Only run on the references page
+  if (!document.getElementById('references-list')) return;
+
+  Papa.parse("https://data.weboforigins.com/references.csv", {
+    download: true,
+    delimiter: ";",
+    header: true,
+    complete: function (results) {
+      const list = document.getElementById('references-list');
+      // Remove any counter-reset to avoid conflict with manual numbering
+      list.style.counterReset = 'none';
+      list.style.listStyleType = 'none';  // disable default numbering
+      list.style.paddingLeft = '0';
+      list.style.maxWidth = '900px';
+      list.style.margin = '0 auto';
+      const loading = document.getElementById('loading-references');
+
+      const validRows = results.data
+        .filter(row => row.url)
+        .sort((a, b) => (parseInt(a.id) || 99999) - (parseInt(b.id) || 99999));
+
+      if (validRows.length === 0) {
+        list.innerHTML = '<li>No references found or failed to parse data.</li>';
+        list.style.display = 'block';
+        loading.style.display = 'none';
+        return;
+      }
+
+      validRows.forEach(row => {
+        const li = document.createElement('li');
+        li.style.marginBottom = '1.8rem';
+        li.style.lineHeight = '1.5';
+        li.style.display = 'flex';
+        li.style.alignItems = 'flex-start';
+        li.style.gap = '0.5rem';
+
+        // Manual number from id
+        const numSpan = document.createElement('span');
+        numSpan.textContent = `${row.id}.`;
+        numSpan.style.flexShrink = '0';
+        numSpan.style.minWidth = '2.5em';
+        numSpan.style.color = 'var(--tinted-text-color)';
+        li.appendChild(numSpan);
+
+        // Content wrapper
+        const contentDiv = document.createElement('div');
+        contentDiv.style.flex = '1';
+
+        // Type (bold)
+        if (row.type && row.type.trim()) {
+          const typeSpan = document.createElement('strong');
+          typeSpan.textContent = `${row.type.trim()} `;
+          contentDiv.appendChild(typeSpan);
+        }
+
+        // Title (hyperlinked)
+        const a = document.createElement('a');
+        a.href = row.url.trim();
+        a.textContent = row.title ? row.title.trim() : row.url.trim();
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.style.color = 'var(--link-color)';
+        a.style.textDecoration = 'underline';
+        contentDiv.appendChild(a);
+
+        // Tags
+        if (row.tags && row.tags.trim()) {
+          const span = document.createElement('span');
+          span.textContent = ` – ${row.tags.trim()}`;
+          span.style.color = 'var(--tinted-text-color)';
+          span.style.fontSize = '0.95rem';
+          contentDiv.appendChild(span);
+        }
+
+        li.appendChild(contentDiv);
+        list.appendChild(li);
+      });
+
+      loading.style.display = 'none';
+      list.style.display = 'block';
+    },
+    error: function (err) {
+      console.error("Error loading references.csv:", err);
+      document.getElementById('loading-references').innerHTML =
+        '<p style="color: var(--highlight-color);">Error loading references. Please try again later.</p>';
+    }
+  });
+});

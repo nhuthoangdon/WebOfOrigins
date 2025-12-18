@@ -202,3 +202,29 @@ img {
         }
     }
 }
+
+
+// REFERENCES PAGE STYLES
+#references-list {
+    li {
+        margin-bottom: 1.8rem;
+        hanging-punctuation: first;
+
+        a {
+            font-weight: 500;
+
+            &:hover {
+                color: var(--highlight-color);
+            }
+        }
+
+        span {
+            display: block;
+            margin-top: 0.4rem;
+
+            @media (min-width: 768px) {
+                display: inline;
+            }
+        }
+    }
+}

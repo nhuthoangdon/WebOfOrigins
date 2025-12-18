@@ -26,6 +26,7 @@
         'Courier New',
         'Droid Sans Mono',
         monospace;
+    --body-font-size: 1.125rem;
     --icon-solid: var(--fa-font-solid);
     --icon-regular: var(--fa-font-regular);
     --icon-brands: var(--fa-font-brands);
@@ -1228,7 +1229,8 @@ h4 {
 
 p {
     color: var(--text-color);
-    font-size: 1.125rem;
+    font-size: var(--body-font-size);
+    font-family: var(--body-font);
     line-height: 1.8rem;
     font-weight: 300;
     letter-spacing: .03em;

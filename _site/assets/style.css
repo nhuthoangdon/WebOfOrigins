@@ -26,6 +26,7 @@
         'Courier New',
         'Droid Sans Mono',
         monospace;
+    --body-font-size: 1.125rem;
     --icon-solid: var(--fa-font-solid);
     --icon-regular: var(--fa-font-regular);
     --icon-brands: var(--fa-font-brands);
@@ -716,13 +717,13 @@ button:focus {
     .loading-progress {
         width: 0%;
         height: 100%;
-        background: #C9E73A;
+        background: var(--ui-neon-green);
         transition: width 0.3s ease;
     }
 
     .loading-percent {
         color: var(--text-color);
-        font-family: 'Source Code Pro', monospace;
+        font-family: var(--heading-font);
         font-size: 1em;
     }
 
@@ -1228,7 +1229,8 @@ h4 {
 
 p {
     color: var(--text-color);
-    font-size: 1.125rem;
+    font-size: var(--body-font-size);
+    font-family: var(--body-font);
     line-height: 1.8rem;
     font-weight: 300;
     letter-spacing: .03em;
