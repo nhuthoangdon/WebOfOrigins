@@ -4,41 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/dist/dist/vis-network.min.css" type="text/css" />
     <link rel="stylesheet" href="/assets/main.css?v1.0" type="text/css">
     <link rel="stylesheet" href="/assets/style.css?v1.0" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
     <title>Network Guide</title>
+    
     <link rel="icon" type="image/x-icon" href="/src/Assets/favicon.ico">
     <link rel="icon" type="image/svg+xml" href="/src/Assets/favicon_light.svg" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/svg+xml" href="/src/Assets/favicon_dark.svg" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/png" href="/src/Assets/favicon_default.png">
 
     <script data-search-pseudo-elements src="https://kit.fontawesome.com/22d2e141d4.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
 
-    <!-- <header class="site-header" role="banner">
-
-  <div class="wrapper"><a class="site-title" rel="author" href="/">Web of Origins</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/glossary/">Network Guide</a><a class="page-link" href="/blog/">Insights</a><a class="page-link" href="/license/">License | WOO License | CC BY-NC 4.0</a><a class="page-link" href="/privacy/">Privacy Policy</a><a class="page-link" href="/references/">References</a><a class="page-link" href="/sponsor/">Donate</a></div>
-      </nav></div>
+    <header>
+  <nav id="menu" class="menu">
+    <a id="home-logo" href="/"><img class="nav-logo" alt="WOO Logo" src="/src/Assets/logo.svg"></a>
+    <!-- <ul class="menu-items">
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/about/">Mission</a></li>
+      <li><a href="/glossary/">Glossary</a></li>
+    </ul> -->
+    <ul class="menu-items">
+      <li><a href="/" >Home</a></li>
+      <li><a href="/blog/" >Insights</a>
+      </li>
+      <li><a href="/about/" >Mission</a></li>
+      <li><a href="/glossary/" class="current" >Glossary</a>
+      </li>
+    </ul>
+    <button id="header-sponsor-cta" class="primary-button sponsor-cta"><span class="btn-label">Support This Project</span><span class="btn-icon"><i class="fa-solid fa-heart fa-beat"></i></span></button>
+    <div class="hamburger-menu">
+      <a><i class="fa-solid fa-bars fa-xl" style="color: #F8FAFB;"></i></a>
+    </div>
+  </nav>
 </header>
- -->
-     <header></header>
 
     <main class="page-content">
         <div class="text-container">
@@ -107,33 +120,39 @@
     </a>
     </main>
 
-
-    <!-- <footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Web of Origins</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">Web of Origins</li></ul>
-      </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
-        <p>Visualising the connections between products, materials, industries, and their origins.</p>
+    <footer>
+  <div class="footer-main-container">
+    <div class="footer-left-content">
+      <a href="/" class="footer-logo">
+        <img alt="WOO Logo Mark" src="/src/Assets/logomark.svg">
+      </a>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/blog/">Insights</a>
+        <a href="/about/">Mission</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="mailto:weboforigins@gmail.com">Contact</a>
+        <a href="/sponsor/">Donate</a>
       </div>
     </div>
-
+    <div class="footer-socials">
+      <a href="https://twitter.com/WebOfOrigins" target="_blank"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+      <a href="https://www.facebook.com/WebOfOrigins" target="_blank"><i class="fa-brands fa-facebook-f fa-lg"></i></a>
+      <a href="https://www.linkedin.com/company/weboforigins" target="_blank"><i
+          class="fa-brands fa-linkedin-in fa-lg"></i></a>
+    </div>
   </div>
 
+  <div class="footer-bottom">
+    <div class="footer-copyright">© 2025 Web of Origins</div>
+    <span class="short-vertical-divider"></span>
+    <div class="footer-bottom-links">
+      <a href="/license.html">License</a>
+      <a href="#disclaimer">Disclaimer</a>
+      <a href="/privacy/">Privacy</a>
+    </div>
+  </div>
 </footer>
- -->
-    <footer></footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
         integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>

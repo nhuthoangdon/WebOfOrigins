@@ -6,31 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 1. Global interactions (always active)
   initGlobalInteractions();
   makeListingsClickable();
-
-  // 2. Always load header & footer from /src/ — works everywhere
-  try {
-    await loadFragments();
-    console.log('Header & footer loaded from /src/');
-  } catch (err) {
-    console.error('Failed to load header/footer:', err);
-  }
-
-  // 3. Initialize header logic + nav highlighting
   initHeader();
-  highlightCurrentNav();
 });
 
-// ——————————————————————————————————————
-// Load header/footer from /src/ (single source)
-async function loadFragments() {
-  const [headerHtml, footerHtml] = await Promise.all([
-    fetch('/src/header.html').then(r => r.ok ? r.text() : ''),
-    fetch('/src/footer.html').then(r => r.ok ? r.text() : '')
-  ]);
-
-  if (headerHtml) document.querySelector('header').innerHTML = headerHtml;
-  if (footerHtml) document.querySelector('footer').innerHTML = footerHtml;
-}
 
 // ——————————————————————————————————————
 // Global UI interactions
@@ -55,22 +33,7 @@ function initGlobalInteractions() {
   }, true);
 }
 
-// ——————————————————————————————————————
-// Highlight current page in nav
-function highlightCurrentNav() {
-  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
 
-  document.querySelectorAll('ul.menu-items li a').forEach(link => {
-    let href = (link.getAttribute('href') || '').replace(/\/+$/, '');
-
-    const isMatch =
-      href === currentPath ||
-      (currentPath === '/' && (href === '' || href === '/index')) ||
-      (href === '/' && currentPath === '/index');
-
-    if (isMatch) link.classList.add('current');
-  });
-}
 
 // ——————————————————————————————————————
 // Header logic: mobile menu, sponsor CTA
@@ -86,7 +49,7 @@ function initHeader() {
   document.addEventListener('click', e => {
     if (e.target.closest('.sponsor-cta')) {
       e.preventDefault();
-      window.location.href = '/pages/sponsor';
+      window.location.href = '/sponsor/';
     }
   });
 
@@ -104,7 +67,7 @@ function initHeader() {
     // Use delegated click (prevents issues after DOM reload)
     mobileSponsorCTA.addEventListener('click', e => {
       e.stopPropagation();
-      window.location.href = '/pages/sponsor';
+      window.location.href = '/sponsor/';
     });
 
     return mobileSponsorCTA;

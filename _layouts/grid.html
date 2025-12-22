@@ -10,15 +10,13 @@ title: "{{ page.title }}"
 
     <body>
 
-        <!-- {% include header.html %} -->
-         <header></header>
+        {% include header.html %}
 
         <main class="wide-width-section">
             {{ content }}
         </main>
 
-        <!-- {% include footer.html %} -->
-        <footer></footer>
+        {% include footer.html %}
 
         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
         <script src="{{ "/src/script.js?v1.0" | relative_url }}" type="text/javascript"></script>
