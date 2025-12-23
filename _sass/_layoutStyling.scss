@@ -126,12 +126,13 @@ ul.listing-grid {
             padding: 0 4rem;
             margin: 6rem auto;
         }
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         padding: 0 2rem;
     }
     @media (max-width: 350px) {
-        padding: 0 1rem;
+        padding: 0 24px;
     }
+    .button-link { margin-top: 2rem; }
 }
 
 .text-container {

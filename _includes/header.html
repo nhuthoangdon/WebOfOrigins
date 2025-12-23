@@ -1,12 +1,6 @@
 <header>
   <nav id="menu" class="menu">
     <a id="home-logo" href="/"><img class="nav-logo" alt="WOO Logo" src="/src/Assets/logo.svg"></a>
-    <!-- <ul class="menu-items">
-      <li><a href="/">Home</a></li>
-      <li><a href="/blog/">Insights</a></li>
-      <li><a href="/about/">Mission</a></li>
-      <li><a href="/glossary/">Glossary</a></li>
-    </ul> -->
     <ul class="menu-items">
       <li><a href="/" {% if page.url=='/' %}class="current" {% endif %}>Home</a></li>
       <li><a href="/blog/" {% if page.url=='/blog/' or page.url contains '/blog/' %}class="current" {% endif %}>Insights</a>
@@ -15,7 +9,7 @@
       <li><a href="/glossary/" {% if page.url contains '/glossary/' %}class="current" {% endif %}>Glossary</a>
       </li>
     </ul>
-    <button id="header-sponsor-cta" class="primary-button sponsor-cta"><span class="btn-label">Support This Project</span><span class="btn-icon"><i class="fa-solid fa-heart fa-beat"></i></span></button>
+    <button id="header-sponsor-cta" class="primary-button sponsor-cta header-sponsor-cta"><span class="btn-label">Support This Project</span><span class="btn-icon"><i class="fa-solid fa-heart fa-beat"></i></span></button>
     <div class="hamburger-menu">
       <a><i class="fa-solid fa-bars fa-xl" style="color: #F8FAFB;"></i></a>
     </div>
