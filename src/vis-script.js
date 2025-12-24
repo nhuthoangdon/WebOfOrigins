@@ -684,7 +684,15 @@ const drawerPanel = document.createElement("div");
       drawerPanel.className = "global-drawer";
       drawerPanel.style.display = "none";
 
-// Add close button as a persistent element
+// Add References link to references.html
+const referencesLink = document.createElement("a");
+      referencesLink.className = "cta-link references-link light-mode";
+      referencesLink.href = "/references/";
+      referencesLink.target = "_blank";
+      referencesLink.rel = "noopener noreferrer";
+referencesLink.innerHTML = "References <i class='fa-solid fa-book-open-reader'></i>";
+
+// Add close button to drawer panel
 const closeIcon = document.createElement("i");
       closeIcon.className = "fa-solid fa-xmark fa-lg";
 const closeDrawerBtn = document.createElement("div");
@@ -697,6 +705,8 @@ drawerPanel.appendChild(closeDrawerBtn);
 const contentContainer = document.createElement("div");
 contentContainer.className = "drawer-content";
 drawerPanel.appendChild(contentContainer);
+
+drawerPanel.appendChild(referencesLink);
 
 document.body.appendChild(drawerPanel);
 

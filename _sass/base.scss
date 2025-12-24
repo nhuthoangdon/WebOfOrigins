@@ -60,8 +60,8 @@
 .light-mode {
   --text-color: var(--ui-black);
   --heading-color: var(--ui-dark-gray);
-  --link-color: var(--ui-dark-purple);
-  --highlight-color: #2100d9;
+  --link-color: #2100d9;
+  --highlight-color: var(--ui-dark-purple);
 }
 
 /* =========================
@@ -179,6 +179,7 @@ h3 {
   color: var(--heading-color);
   text-transform: capitalize;
   line-height: 2rem;
+  margin-bottom: 0;
 }
 
 h4 {
@@ -531,6 +532,7 @@ button:hover span.btn-icon { visibility: visible; opacity: 1; transform: transla
   font-size: 1em;
   font-family: var(--body-font);
   display: block;
+  .references-link { justify-self: flex-end; margin: 1em 0; }
 }
 .global-drawer.open { right: 0; display: block; }
 .global-drawer h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--ui-dark-gray); }
@@ -664,8 +666,8 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
   #home-footer { width: 100%; }
 }
 
-// link to Reference list on Homepage
-#home-reference-link { margin: 1.5rem 5% 2rem auto; }
+// link to Reference list
+.references-link { margin: 1.5rem 5% 2rem auto; display: block;}
 
 /* =========================
     Control Panel
@@ -696,6 +698,9 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
 /* Panel cta icon mapping */
 .icon-open-tab::after {
   content: "\f08e";
+}
+.icon-book-open-reader::after {
+  content: "\f5da";
 }
 
 /* Utility classes */

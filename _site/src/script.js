@@ -182,8 +182,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       validRows.forEach(row => {
         const li = document.createElement('li');
-        li.style.marginBottom = '1.8rem';
-        li.style.lineHeight = '1.5';
+        li.style.marginBottom = '1.5rem';
+        li.style.lineHeight = '1rem';
         li.style.display = 'flex';
         li.style.alignItems = 'flex-start';
         li.style.gap = '0.5rem';
@@ -200,13 +200,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const contentDiv = document.createElement('div');
         contentDiv.style.flex = '1';
 
-        // Type (bold)
-        if (row.type && row.type.trim()) {
-          const typeSpan = document.createElement('strong');
-          typeSpan.textContent = `${row.type.trim()} `;
-          contentDiv.appendChild(typeSpan);
-        }
-
         // Title (hyperlinked)
         const a = document.createElement('a');
         a.href = row.url.trim();
@@ -217,12 +210,21 @@ document.addEventListener('DOMContentLoaded', function () {
         a.style.textDecoration = 'underline';
         contentDiv.appendChild(a);
 
+        // Type (bold)
+        if (row.type && row.type.trim()) {
+          const typeSpan = document.createElement('strong');
+          typeSpan.textContent = ` | ${row.type.trim()} `;
+          typeSpan.style.fontWeight = '600';
+          contentDiv.appendChild(typeSpan);
+        }
+
         // Tags
         if (row.tags && row.tags.trim()) {
           const span = document.createElement('span');
           span.textContent = ` – ${row.tags.trim()}`;
           span.style.color = 'var(--tinted-text-color)';
-          span.style.fontSize = '0.95rem';
+          span.style.fontSize = 'var(--small-text-size)';
+          span.style.fontStyle = 'italic';
           contentDiv.appendChild(span);
         }
 
