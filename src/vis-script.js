@@ -598,6 +598,12 @@ function createNetwork(nodesData, edgesData) {
         }, {
             highlightEdges: false // Prevent default edge highlighting
         });
+
+        // setTimeout(() => {
+        //     const nodeId = params.nodes[0];
+        //     const node = nodes.get(nodeId);
+        //     toggleDrawer(nodeId, node.label || node.title || "Details");
+        //     }, 0);
     });
 
         network.on("dragStart", function (params) {
@@ -628,41 +634,58 @@ function createNetwork(nodesData, edgesData) {
             network.moveTo({ position: { x, y }, scale, animation: false });
         });
         
-        network.on("click", function (params) {
-            if (params.nodes.length === 1) {
-                const selectedNodeIds = params.nodes;
-                const highlightDepth = 1;
-                let nodesToHighlight = new Set(selectedNodeIds);
-                let edgesToHighlight = new Set();
+    network.on("click", function (params) {
+        if (params.nodes.length === 1) {
+            setTimeout(() => {
+                const nodeId = params.nodes[0];
+                const node = nodes.get(nodeId);
+                toggleDrawer(nodeId, node.label || node.title || "Details");
+            }, 50);
+            const selectedNodeIds = params.nodes;
+            const highlightDepth = 1;
+            let nodesToHighlight = new Set(selectedNodeIds);
+            let edgesToHighlight = new Set();
 
-                for (let depth = 0; depth < highlightDepth; depth++) {
-                    let currentNodes = new Set(nodesToHighlight);
-                    currentNodes.forEach(nodeId => {
-                        network.getConnectedNodes(nodeId).forEach(connectedNodeId => {
-                            nodesToHighlight.add(connectedNodeId);
-                        });
-                    });
-                }
-
-                nodesToHighlight.forEach(nodeId => {
-                    network.getConnectedEdges(nodeId).forEach(edgeId => {
-                        const edge = edges.get(edgeId);
-                        if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
-                            edgesToHighlight.add(edgeId);
-                        }
+            for (let depth = 0; depth < highlightDepth; depth++) {
+                let currentNodes = new Set(nodesToHighlight);
+                currentNodes.forEach(nodeId => {
+                    network.getConnectedNodes(nodeId).forEach(connectedNodeId => {
+                        nodesToHighlight.add(connectedNodeId);
                     });
                 });
-
-                network.setSelection({
-                    nodes: Array.from(nodesToHighlight),
-                    edges: Array.from(edgesToHighlight)
-                }, {
-                    highlightEdges: false
-                });
-            } else if (params.nodes.length === 0 && params.edges.length === 0) {
-                network.unselectAll();
             }
-         });
+
+            nodesToHighlight.forEach(nodeId => {
+                network.getConnectedEdges(nodeId).forEach(edgeId => {
+                    const edge = edges.get(edgeId);
+                    if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
+                        edgesToHighlight.add(edgeId);
+                    }
+                });
+            });
+
+            network.setSelection({
+                nodes: Array.from(nodesToHighlight),
+                edges: Array.from(edgesToHighlight)
+            }, {
+                highlightEdges: false
+            });
+        } else if (params.edges.length === 1) {
+            const edgeId = params.edges[0];
+            const edge = edges.get(edgeId);
+            const nodesToHighlight = [edge.from, edge.to];
+            network.setSelection({
+                nodes: nodesToHighlight,
+                edges: [edgeId]
+            }, {
+                highlightEdges: false
+            });
+        } else if (params.nodes.length === 0 && params.edges.length === 0) {
+            network.unselectAll();
+            closeDrawer();
+        }
+    });
+        
 
     // Ensure toggle element exists and bind event
     const toggleElement = document.getElementById('country-toggle');
@@ -714,7 +737,7 @@ document.body.appendChild(drawerPanel);
 const updateDrawerContent = (nodeId, nodeLabel) => {
     const connectedEdges = network.getConnectedEdges(nodeId);
     if (connectedEdges.length === 0 || connectedEdges.every(edgeId => edges.get(edgeId).title === "No Description")) {
-        return `<h3>${nodeLabel.replace(/\n/g, " ")} Highlights</h3><p style="color: #28282bff;">No further info found for this item. Please check back later.</p>`;
+        return `<h3>${nodeLabel.replace(/\n/g, " ")}</h3><p style="color: #28282bff;">No further info found for this item. Please check back later.</p>`;
     } else {
         const validEdgeTitles = connectedEdges
             .map(edgeId => {
@@ -725,7 +748,7 @@ const updateDrawerContent = (nodeId, nodeLabel) => {
             .map(title => title || "No further info found.");
         // Convert array to ul with li elements for bullets
         const listItems = validEdgeTitles.map(title => `<li>${title}</li>`).join("");
-        return `<h3>${nodeLabel.replace(/\n/g, " ")} Highlights</h3><ul>${listItems}</ul>`;
+        return `<h3>${nodeLabel.replace(/\n/g, " ")}</h3><ul>${listItems}</ul>`;
     }
       };
 
@@ -885,7 +908,7 @@ function goToNode(nodeId) {
 
     network.selectNodes([nodeId]);
     network.focus(nodeId, {
-        scale: 1.2,
+        scale: 1.1,
         animation: {
             duration: 800,
             easingFunction: "easeInOutQuad"

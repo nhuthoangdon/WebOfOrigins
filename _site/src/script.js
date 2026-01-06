@@ -208,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
         a.rel = "noopener noreferrer";
         a.style.color = 'var(--link-color)';
         a.style.textDecoration = 'underline';
+        a.style.textTransform = 'capitalize';
         contentDiv.appendChild(a);
 
         // Type (bold)
@@ -215,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const typeSpan = document.createElement('strong');
           typeSpan.textContent = ` | ${row.type.trim()} `;
           typeSpan.style.fontWeight = '600';
+          typeSpan.style.textTransform = 'capitalize';
           contentDiv.appendChild(typeSpan);
         }
 
@@ -225,6 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
           span.style.color = 'var(--tinted-text-color)';
           span.style.fontSize = 'var(--small-text-size)';
           span.style.fontStyle = 'italic';
+          span.style.textTransform = 'lowercase';
           contentDiv.appendChild(span);
         }
 
