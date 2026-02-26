@@ -1,4 +1,6 @@
 console.log('vis-script.js loaded');
+// Detect Node (module) environment to avoid executing browser-only runtime during tests
+const __isNodeEnv = typeof module !== 'undefined' && module.exports;
 
 let nodes, edges, network;
 
@@ -132,8 +134,15 @@ if (!text) return "";  // Prevent errors if label is missing
 return text.replace(new RegExp(`(.{1,${maxChars}})(\\s|$)`, "g"), "$1\n").trim();
 }
 
+// Export helpers for Node testing (mocha)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { wrapText };
+}
 
+
+// If not running in Node, create the network and bind browser runtime
 // Function to create the network
+if (!__isNodeEnv) {
 function createNetwork(nodesData, edgesData) {
     // Define color mapping based on node type (to match the diagram)
     const colorMap = {
@@ -1194,3 +1203,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+    }
