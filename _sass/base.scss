@@ -319,8 +319,8 @@ button:hover span.btn-icon { visibility: visible; opacity: 1; transform: transla
 
 /* Use icon fonts for pseudo content where required */
 .secondary-button::after { margin-left: .5em; font-size: 1em; font-family: var(--icon-font); }
-.secondary-button.go-to-insights:hover::after { content: " 📰"; }
-.secondary-button.go-to-insights::after { content: " 🗞️"; }
+.secondary-button.go-to-insights:hover::after { content: "🧠"; }
+.secondary-button.go-to-insights::after { content: "🧠"; }
 
 .tertiary-button {
   @include flex(row, center, center);
