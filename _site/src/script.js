@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 function initGlobalInteractions() {
   // "Go to Insights" buttons
   document.addEventListener('click', e => {
-    if (e.target.closest('.go-to-insights')) {
+    if (e.target.closest('.go-to-ai-mode')) {
       e.preventDefault();
-      window.location.href = '/blog/';
+      window.location.href = '/wooai/';
     }
   });
 
