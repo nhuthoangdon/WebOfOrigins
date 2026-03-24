@@ -814,6 +814,12 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
 }
 .menu-items li a:hover::after, .menu-items li a:focus::after { transform: scaleX(.9); }
 
+#menu-special-item {
+  color: var(--ui-light-blue);
+}
+  #menu-special-item:hover { color: var(--highlight-color); }
+
+
 a#home-logo { display: flex; }
 .nav-logo { width: 11em; height: auto; }
 .hamburger-menu { display: none; }
@@ -963,3 +969,30 @@ hr { width: 100%; margin: 8% 0; border: 1px solid rgba(136,146,230,0.15); }
     Responsive adjustments previously at bottom are now placed near their selectors
     (end of file)
     ========================= */
+
+
+
+.ai-loading {
+  transition: opacity 0.6s ease;
+  /* make sure this exists */
+}
+
+/* Optional: show a subtle progress feel */
+.ai-loading::after {
+  content: "·";
+  animation: dots 1.4s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0% {
+    content: ".";
+  }
+
+  33% {
+    content: "..";
+  }
+
+  66% {
+    content: "...";
+  }   
+}

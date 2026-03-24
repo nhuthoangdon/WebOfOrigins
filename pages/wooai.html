@@ -31,7 +31,7 @@ permalink: /wooai/
         <!-- main content area -->
         <main class="ai-main">
             <div class="ai-loading" id="ai-loading">
-                <div>Loading AI assistant…</div>
+                <div>Loading AI features…</div>
             </div>
 
             <iframe id="ai-frame" src="https://web-of-origins-ai.vercel.app/"
@@ -45,13 +45,28 @@ permalink: /wooai/
         const loading = document.getElementById('ai-loading');
         const frame = document.getElementById('ai-frame');
 
-        frame.onload = () => {
-            loading?.classList.add('hidden');
-            setTimeout(() => loading?.remove(), 600);
+        let loaded = false;
+
+        const hideLoader = () => {
+            if (!loading || loaded) return;
+            loaded = true;
+
+            loading.style.transition = 'opacity 0.5s ease';
+            loading.style.opacity = '0';
+
+            setTimeout(() => {
+                loading.remove();
+            }, 550);
         };
 
-        // safety fallback
-        setTimeout(() => loading?.classList.add('hidden'), 15000);
+        // Hide as soon as iframe starts loading content
+        frame.addEventListener('load', hideLoader);
+
+        // Aggressive early hide if it's taking too long
+        setTimeout(hideLoader, 6000);
+
+        // Final safety net
+        setTimeout(hideLoader, 12000);
     </script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
