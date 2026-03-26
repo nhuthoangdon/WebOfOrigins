@@ -572,6 +572,11 @@ function createNetwork(nodesData, edgesData) {
     network = new vis.Network(container, data, options);
 
         network.on("selectNode", function (params) {
+            if (params.nodes.length === 1) {
+                showViewDetailsButton(params.nodes[0]);
+            }
+
+        
         const selectedNodeIds = params.nodes; // Support multiple selected nodes
         const highlightDepth = 1; // Adjust depth of highlighted nodes
 
@@ -644,56 +649,73 @@ function createNetwork(nodesData, edgesData) {
         });
         
     network.on("click", function (params) {
+        // === 1. NODE CLICKED ===
         if (params.nodes.length === 1) {
-            setTimeout(() => {
-                const nodeId = params.nodes[0];
-                const node = nodes.get(nodeId);
-                toggleDrawer(nodeId, node.label || node.title || "Details");
-            }, 50);
-            const selectedNodeIds = params.nodes;
-            const highlightDepth = 1;
-            let nodesToHighlight = new Set(selectedNodeIds);
-            let edgesToHighlight = new Set();
+            const nodeId = params.nodes[0];
+            const node = nodes.get(nodeId);
 
-            for (let depth = 0; depth < highlightDepth; depth++) {
-                let currentNodes = new Set(nodesToHighlight);
-                currentNodes.forEach(nodeId => {
-                    network.getConnectedNodes(nodeId).forEach(connectedNodeId => {
-                        nodesToHighlight.add(connectedNodeId);
+            if (node) {
+                // Show floating button on FIRST click
+                showViewDetailsButton(nodeId);
+
+                // Highlight the clicked node + its neighbourhood
+                const highlightDepth = 1;
+                let nodesToHighlight = new Set([nodeId]);
+                let edgesToHighlight = new Set();
+
+                for (let depth = 0; depth < highlightDepth; depth++) {
+                    let current = new Set(nodesToHighlight);
+                    current.forEach(id => {
+                        network.getConnectedNodes(id).forEach(connectedId => {
+                            nodesToHighlight.add(connectedId);
+                        });
+                    });
+                }
+
+                nodesToHighlight.forEach(id => {
+                    network.getConnectedEdges(id).forEach(edgeId => {
+                        const edge = edges.get(edgeId);
+                        if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
+                            edgesToHighlight.add(edgeId);
+                        }
                     });
                 });
-            }
 
-            nodesToHighlight.forEach(nodeId => {
-                network.getConnectedEdges(nodeId).forEach(edgeId => {
-                    const edge = edges.get(edgeId);
-                    if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
-                        edgesToHighlight.add(edgeId);
-                    }
+                // Apply highlight without triggering drag
+                network.setSelection({
+                    nodes: Array.from(nodesToHighlight),
+                    edges: Array.from(edgesToHighlight)
+                }, {
+                    highlightEdges: false
                 });
-            });
+            }
+            return;
+        }
 
-            network.setSelection({
-                nodes: Array.from(nodesToHighlight),
-                edges: Array.from(edgesToHighlight)
-            }, {
-                highlightEdges: false
-            });
-        } else if (params.edges.length === 1) {
+        // === 2. EDGE CLICKED ===
+        if (params.edges.length === 1) {
             const edgeId = params.edges[0];
             const edge = edges.get(edgeId);
-            const nodesToHighlight = [edge.from, edge.to];
-            network.setSelection({
-                nodes: nodesToHighlight,
-                edges: [edgeId]
-            }, {
-                highlightEdges: false
-            });
-        } else if (params.nodes.length === 0 && params.edges.length === 0) {
+
+            if (edge) {
+                network.setSelection({
+                    nodes: [edge.from, edge.to],
+                    edges: [edgeId]
+                }, {
+                    highlightEdges: false
+                });
+            }
+            hideViewDetailsButton();
+            return;
+        }
+
+        // === 3. EMPTY SPACE CLICKED ===
+        if (params.nodes.length === 0 && params.edges.length === 0) {
             network.unselectAll();
+            hideViewDetailsButton();
             closeDrawer();
         }
-    });
+        });
         
 
     // Ensure toggle element exists and bind event
@@ -779,72 +801,36 @@ optionButtons.appendChild(goToNodeOption);
 drawerPanel.appendChild(optionButtons);
 
 
+// Clean closeDrawer using CSS transition (reliable on iOS)
 function closeDrawer(e) {
     if (e) {
         e.preventDefault();
         e.stopPropagation();
+        hideViewDetailsButton();
     }
 
-    // Ensure drawerPanel exists
-    if (!drawerPanel) return;
+    if (!drawerPanel || !drawerPanel.classList.contains("open")) return;
 
-    // Target value (px) - matches your CSS right: -400px
-    const target = -400;
-    const duration = 200; // ms - matches your jQuery 200ms
+    drawerPanel.classList.remove("open");
 
-    const computed = getComputedStyle(drawerPanel);
-    const wasDisplayNone = computed.display === "none";
-
-    if (wasDisplayNone) {
-        drawerPanel.style.display = "block";
-    }
-
-    let startRight = parseFloat(getComputedStyle(drawerPanel).right);
-    if (Number.isNaN(startRight)) startRight = 0;
-
-    if (startRight === target) {
+    // Wait for CSS transition to finish before hiding
+    const onTransitionEnd = () => {
         drawerPanel.style.display = "none";
         delete drawerPanel.dataset.currentNodeId;
-        return;
-    }
+        drawerPanel.removeEventListener("transitionend", onTransitionEnd);
+    };
 
-    // Cancel any previous animation
-    if (drawerPanel._drawerAnim) {
-        drawerPanel._drawerAnim.cancelled = true;
-    }
+    drawerPanel.addEventListener("transitionend", onTransitionEnd, { once: true });
 
-    // jQuery 'swing' easing
-    const swing = t => 0.5 - Math.cos(t * Math.PI) / 2;
-    const startTime = performance.now();
-    const anim = { cancelled: false };
-    drawerPanel._drawerAnim = anim;
-
-    function step(now) {
-        if (anim.cancelled) return;
-
-        const elapsed = now - startTime;
-        const tRaw = Math.min(1, elapsed / duration);
-        const t = swing(tRaw);
-        const current = startRight + (target - startRight) * t;
-
-        drawerPanel.style.right = current + "px";
-
-        if (tRaw < 1) {
-            requestAnimationFrame(step);
-            return;
+    // iOS safety fallback
+    setTimeout(() => {
+        if (!drawerPanel.classList.contains("open")) {
+            drawerPanel.style.display = "none";
+            delete drawerPanel.dataset.currentNodeId;
         }
-
-        // Animation finished
-        drawerPanel.style.right = target + "px";
-        drawerPanel.style.display = "none";
-
-        if (drawerPanel._drawerAnim === anim) {
-            drawerPanel._drawerAnim = null;
-        }
-    }
-
-    requestAnimationFrame(step);
-    delete drawerPanel.dataset.currentNodeId;
+    }, 400);
+    // ←←← RE-ENABLE DRAGGING WHEN DRAWER CLOSES to solve dragging node issue when a node is selected twice due to vis network's default dragNodes behaviour
+    network.setOptions({ interaction: { dragNodes: true } });
 }
 
 
@@ -854,84 +840,79 @@ document.querySelectorAll(".close-drawer").forEach(btn => {
 
 
 
-const toggleDrawer = (nodeId, nodeLabel) => {
-    const isOpen = drawerPanel.classList.contains("open");
+    const toggleDrawer = (nodeId, nodeLabel) => {
+        if (!nodeId) return;
 
-    // Update content
-    contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
-    drawerPanel.dataset.currentNodeId = nodeId;
+        const isOpen = drawerPanel.classList.contains("open");
 
-    if (!isOpen) {
-        // Drawer closed → open it
+        contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+        drawerPanel.dataset.currentNodeId = nodeId;
+
+        if (isOpen) return;
+
         drawerPanel.style.display = "block";
-
-        // Let CSS handle transition to open state
         requestAnimationFrame(() => {
-            drawerPanel.classList.add("open");
+            requestAnimationFrame(() => {
+                drawerPanel.classList.add("open");
+            });
         });
 
-    } else {
-        // Drawer already open → update + replay slide-in animation
-
-        // Reset animation state
-        drawerPanel.style.display = "block";
-        drawerPanel.style.transition = "none";
-        drawerPanel.style.right = "-400px";  // animation start point
-
-        // Force reflow to make the browser register the starting position
-        drawerPanel.offsetWidth;
-
-        // Apply slide-in transition
-        drawerPanel.style.transition = "right 300ms ease";
-        drawerPanel.style.right = "0";
-
-        // Ensure open class is present (your CSS might depend on it)
-        drawerPanel.classList.add("open");
-    }
-};
+        // Lock dragging while drawer is open
+        network.setOptions({ interaction: { dragNodes: false } });
+    };
 
 
 // Unified outside click handler
+// Outside click handler - ignores network clicks
 function handleOutsideClick(event) {
-    // Drawer is considered "visible" only when it has the .open class
-    const isOpen = drawerPanel.classList.contains("open");
-    if (!isOpen) return;
+    if (!drawerPanel.classList.contains("open")) return;
 
-    // Was the click inside the drawer?
     const clickedInside = drawerPanel.contains(event.target);
+    const isCloseBtn = event.target.closest(".btn-ic-close, .close-drawer, .tertiary-button");
+    const clickedOnNetwork = document.getElementById("network").contains(event.target);
 
-    // Was the click on a close button or CTA we want to ignore?
-    const clickedCloseBtn = event.target.closest(".btn-ic-close, .panel-cta");
-
-    // Close only if: drawer is open + click was outside + not on allowed buttons
-    if (!clickedInside && !clickedCloseBtn) {
+    if (!clickedInside && !isCloseBtn && !clickedOnNetwork) {
         closeDrawer();
     }
 }
 document.addEventListener("click", handleOutsideClick);
 
 
-// Reusable core function — just does the navigation
-function goToNode(nodeId) {
-    if (!nodeId) return;
+    function goToNode(nodeId) {
+        if (!nodeId || !network) return;
 
-    network.selectNodes([nodeId]);
-    network.focus(nodeId, {
-        scale: 1.1,
-        animation: {
-            duration: 800,
-            easingFunction: "easeInOutQuad"
+        // Full reset to prevent interaction lock
+        network.setOptions({
+            interaction: {
+                dragNodes: true,
+                dragView: true,
+                zoomView: true
+            }
+        });
+
+        network.unselectAll();
+
+        // Select + highlight safely
+        network.setSelection({ nodes: [nodeId] }, { highlightEdges: false });
+
+        // Focus smoothly
+        network.focus(nodeId, {
+            scale: 1.2,
+            animation: {
+                duration: 800,
+                easingFunction: "easeInOutQuad"
+            }
+        });
+
+        // Scroll into view
+        const networkEl = document.getElementById("network");
+        if (networkEl) {
+            const topPos = networkEl.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({ top: topPos, behavior: "smooth" });
         }
-    });
 
-    // Optional: smooth scroll the network into view
-    const networkEl = document.getElementById("network");
-    const topPos = networkEl.getBoundingClientRect().top + window.pageYOffset - 80;
-    window.scrollTo({ top: topPos, behavior: "smooth" });
-
-    // Close drawer if it's open
-    closeDrawer();
-}
+        closeDrawer();
+    }
 
 // Master click handler — one single delegated listener
 document.addEventListener("click", e => {
@@ -1026,8 +1007,6 @@ searchBtn.onclick = () => {
         GoToBtn.className = "secondary-button go-to-node icon icon-regular";
         GoToBtn.textContent = "See Connections";
 
-        resultDiv.appendChild(GoToBtn);
-
         const viewMoreBtn = document.createElement("a");
         viewMoreBtn.className = "panel-cta view-node-details icon icon-solid icon-chevron-right";
         const viewMoreIcon = document.createElement("span");
@@ -1060,73 +1039,71 @@ const smallClearButton = document.getElementById('small-search-clear');
 const smallResultCount = document.getElementById('small-search-result-count');
 const largeSearchResults = document.getElementById('search-results');
 
-// Debounce the input to improve performance on fast typing
+// Centralized small search
+function performSmallSearch() {
+    if (!network || !nodes) return;
+
+    // Clear large search to avoid conflicts
+    if (largeSearchResults) {
+        largeSearchResults.style.display = 'none';
+        largeSearchResults.innerHTML = '';
+    }
+
+    const keyword = smallSearchInput.value.toLowerCase().trim();
+
+    matchingNodesSmall = nodes.getIds().filter(id => {
+        const node = nodes.get(id);
+        return node && node.label.toLowerCase().replace(/\n/g, ' ').includes(keyword);
+    });
+
+    currentIndexSmall = 0;
+    smallClearButton.style.display = keyword.length > 0 ? 'block' : 'none';
+    smallResultCount.textContent = matchingNodesSmall.length > 0 ? `1 of ${matchingNodesSmall.length}` : '0 of 0';
+
+    if (matchingNodesSmall.length > 0) {
+        // Use the safe goToNode instead of raw setSelection + focus
+        goToNode(matchingNodesSmall[0]);
+    } else {
+        network.unselectAll();
+    }
+}
+
+// Input handler with debounce
 let searchTimeout;
 smallSearchInput.addEventListener('input', () => {
     clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(performSmallSearch, 200); // 200ms debounce
+    searchTimeout = setTimeout(performSmallSearch, 200);
 });
 
-if (smallSearchInput && smallClearButton && smallResultCount) {
-    function performSmallSearch() {
-        // Clear large search results to avoid conflicts
-        largeSearchResults.style.display = 'none';
-        largeSearchResults.innerHTML = '';
+smallSearchInput.addEventListener('focus', () => {
+    if (smallSearchInput.value.trim().length > 0) {
+        performSmallSearch();
+    }
+});
 
-        const keyword = smallSearchInput.value.toLowerCase().trim();
-        matchingNodesSmall = nodes.getIds().filter(id => {
-            const node = nodes.get(id);
-            return node && node.label.toLowerCase().replace(/\n/g, ' ').includes(keyword);
-        });
-
-        currentIndexSmall = 0;
-        smallClearButton.style.display = keyword.length > 0 ? 'block' : 'none';
-        smallResultCount.textContent = matchingNodesSmall.length > 0 ? `1 of ${matchingNodesSmall.length}` : '0 of 0';
-        network.setSelection({ nodes: matchingNodesSmall }, { highlightEdges: true });
+smallSearchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
         if (matchingNodesSmall.length > 0) {
-            network.focus(matchingNodesSmall[0], { scale: 1.5, animation: true });
-            const networkElement = document.getElementById('network');
-            const topPos = networkElement.getBoundingClientRect().top + window.scrollY - 50;
-            window.scrollTo({ top: topPos, behavior: 'smooth' });
-        } else {
-            network.unselectAll();
+            currentIndexSmall = (currentIndexSmall + 1) % matchingNodesSmall.length;
+            smallResultCount.textContent = `${currentIndexSmall + 1} of ${matchingNodesSmall.length}`;
+            goToNode(matchingNodesSmall[currentIndexSmall]);   // ← use safe function
         }
     }
+});
 
-    smallSearchInput.addEventListener('input', performSmallSearch);
-
-    smallSearchInput.addEventListener('focus', () => {
-        if (smallSearchInput.value.trim().length > 0) {
-            performSmallSearch();
-        }
-    });
-
-    smallSearchInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            if (matchingNodesSmall.length > 0) {
-                currentIndexSmall = (currentIndexSmall + 1) % matchingNodesSmall.length;
-                smallResultCount.textContent = `${currentIndexSmall + 1} of ${matchingNodesSmall.length}`;
-                network.focus(matchingNodesSmall[currentIndexSmall], { scale: 1.5, animation: true });
-                const networkElement = document.getElementById('network');
-                const topPos = networkElement.getBoundingClientRect().top + window.scrollY - 50;
-                window.scrollTo({ top: topPos, behavior: 'smooth' });
-            }
-        }
-    });
-
-    smallClearButton.addEventListener('click', () => {
-        smallSearchInput.value = '';
-        smallClearButton.style.display = 'none';
-        matchingNodesSmall = [];
-        currentIndexSmall = 0;
-        smallResultCount.textContent = '0 of 0';
-        network.unselectAll();
-        // Clear large search results
+smallClearButton.addEventListener('click', () => {
+    smallSearchInput.value = '';
+    smallClearButton.style.display = 'none';
+    matchingNodesSmall = [];
+    currentIndexSmall = 0;
+    smallResultCount.textContent = '0 of 0';
+    if (network) network.unselectAll();
+    if (largeSearchResults) {
         largeSearchResults.style.display = 'none';
         largeSearchResults.innerHTML = '';
-    });
-}
+    }
+});
 
 
 function toggleCountryNodes(show) {
@@ -1139,6 +1116,32 @@ function toggleCountryNodes(show) {
     nodes.update(countryNodeIds.map(id => ({ id, hidden: !show })));
 }
 
+
+    // Floating "View Details" button logic
+    const viewDetailsBtn = document.getElementById('view-details-btn');
+    let currentHighlightedNodeId = null;
+
+    function showViewDetailsButton(nodeId) {
+        currentHighlightedNodeId = nodeId;
+        viewDetailsBtn.style.display = 'flex';
+    }
+
+    function hideViewDetailsButton() {
+        currentHighlightedNodeId = null;
+        viewDetailsBtn.style.display = 'none';
+    }
+
+    // Button click handler
+    viewDetailsBtn.addEventListener('click', () => {
+        if (currentHighlightedNodeId) {
+            const node = nodes.get(currentHighlightedNodeId);
+            if (node) {
+                toggleDrawer(currentHighlightedNodeId, node.label);
+            }
+        }
+    // hide button after opening drawer
+        hideViewDetailsButton();
+    });
 
 // Load data and create the network
 loadData((nodesData, edgesData) => {
