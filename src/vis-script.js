@@ -852,6 +852,8 @@ function closeDrawer(e) {
 
     if (!drawerPanel || !drawerPanel.classList.contains("open")) return;
 
+    // Force immediate visual feedback for iOS
+    drawerPanel.style.transition = "right 0.25s ease";
     drawerPanel.classList.remove("open");
 
     // Wait for CSS transition to finish before hiding
@@ -859,19 +861,18 @@ function closeDrawer(e) {
         drawerPanel.style.display = "none";
         delete drawerPanel.dataset.currentNodeId;
         drawerPanel.removeEventListener("transitionend", onTransitionEnd);
+        drawerPanel.style.transition = ""; // reset
     };
 
     drawerPanel.addEventListener("transitionend", onTransitionEnd, { once: true });
 
     // iOS safety fallback
     setTimeout(() => {
-        if (!drawerPanel.classList.contains("open")) {
+        if (drawerPanel.classList.contains("open") === false) {
             drawerPanel.style.display = "none";
             delete drawerPanel.dataset.currentNodeId;
         }
     }, 400);
-    // ←←← RE-ENABLE DRAGGING WHEN DRAWER CLOSES to solve dragging node issue when a node is selected twice due to vis network's default dragNodes behaviour
-    network.setOptions({ interaction: { dragNodes: true } });
 }
 
 
