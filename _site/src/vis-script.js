@@ -610,12 +610,36 @@ function createNetwork(nodesData, edgesData) {
                 });
             }
         });
+
+        // Add touchend listener for iOS to handle empty space taps
+        networkContainer.addEventListener("touchend", function (e) {
+            // Only handle single touch, not pinch
+            if (e.changedTouches.length === 1 && !network.getSelectedNodes().length && !network.getSelectedEdges().length) {
+                // Check if touch is on empty space (not on nodes/edges)
+                const touch = e.changedTouches[0];
+                const rect = networkContainer.getBoundingClientRect();
+                const x = touch.clientX - rect.left;
+                const y = touch.clientY - rect.top;
+                
+                // Get positions at the touch point
+                const positions = network.DOMtoCanvas({ x: x, y: y });
+                const nodeIds = network.getNodeAt(positions);
+                const edgeIds = network.getEdgeAt(positions);
+                
+                if (!nodeIds && !edgeIds) {
+                    // Empty space touched
+                    network.unselectAll();
+                    hideViewDetailsButton();
+                    closeDrawer();
+                }
+            }
+        }, { passive: true });
     }
 
-        network.on("selectNode", function (params) {
-            if (params.nodes.length === 1) {
-                showViewDetailsButton(params.nodes[0]);
-            }
+    network.on("selectNode", function (params) {
+        if (params.nodes.length === 1) {
+            showViewDetailsButton(params.nodes[0]);
+        }
 
         
         const selectedNodeIds = params.nodes; // Support multiple selected nodes
@@ -661,33 +685,33 @@ function createNetwork(nodesData, edgesData) {
         //     }, 0);
     });
 
-        network.on("dragStart", function (params) {
-            if (params.nodes.length > 0) {
-                network.setOptions({
-                    physics: {
-                        enabled: true,
-                        stabilization: true,
-                        hierarchicalRepulsion: {
-                            avoidOverlap: 1,
-                            nodeDistance: 150,
-                            springLength: 200
-                        }
-                    }
-                });
-            }
-        });
-
-        network.on("dragEnd", function (params) {
+    network.on("dragStart", function (params) {
+        if (params.nodes.length > 0) {
             network.setOptions({
                 physics: {
-                    enabled: false
+                    enabled: true,
+                    stabilization: true,
+                    hierarchicalRepulsion: {
+                        avoidOverlap: 1,
+                        nodeDistance: 150,
+                        springLength: 200
+                    }
                 }
             });
-            // Store current position and scale
-            const { x, y, scale } = network.getViewPosition();
-            // Disable stabilization and reapply view position
-            network.moveTo({ position: { x, y }, scale, animation: false });
+        }
+    });
+
+    network.on("dragEnd", function (params) {
+        network.setOptions({
+            physics: {
+                enabled: false
+            }
         });
+        // Store current position and scale
+        const { x, y, scale } = network.getViewPosition();
+        // Disable stabilization and reapply view position
+        network.moveTo({ position: { x, y }, scale, animation: false });
+    });
         
     network.on("click", function (params) {
         // === 1. NODE CLICKED ===
@@ -757,7 +781,7 @@ function createNetwork(nodesData, edgesData) {
             closeDrawer();
         }
         });
-        
+    
 
     // Ensure toggle element exists and bind event
     const toggleElement = document.getElementById('country-toggle');
@@ -878,6 +902,8 @@ function closeDrawer(e) {
 
 document.querySelectorAll(".close-drawer").forEach(btn => {
     btn.addEventListener("click", closeDrawer);
+    // Add touchend for iOS compatibility
+    btn.addEventListener("touchend", closeDrawer, { passive: true });
 });
 
 
@@ -918,6 +944,8 @@ function handleOutsideClick(event) {
     }
 }
 document.addEventListener("click", handleOutsideClick);
+// Add touchend for iOS devices where click events may not fire reliably on canvas
+document.addEventListener("touchend", handleOutsideClick, { passive: true });
 
 
     function goToNode(nodeId) {
