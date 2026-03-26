@@ -350,7 +350,20 @@ function createNetwork(nodesData, edgesData) {
             zoomView: true,
             dragView: true,
             dragNodes: true,
-            hoverEdges: true
+            hoverEdges: true,
+            //mobile settings
+            touch: {
+                enabled: true,
+                scale: 1.0,
+                minScale: 0.2, //zoom out
+                maxScale: 8.0, //zoom in
+            },
+            zoomSpeed: 0.7,
+            zoomView: true,
+            dragView: true,
+            dragNodes: true,
+            hideEdgesOnDrag: false, // Keep edges visible during drag for better context
+            hideNodeOnDrag: false
         },
         physics: {
             enabled: false, // Can disable if conflict occurs with hierarchical layout
@@ -570,6 +583,34 @@ function createNetwork(nodesData, edgesData) {
     };
 
     network = new vis.Network(container, data, options);
+
+    // === iOS / Mobile touch gesture fixes ===
+    const networkContainer = document.getElementById("network");
+
+    if (networkContainer) {
+        // Prevent default browser behaviors (scroll + pinch-zoom) on the canvas
+        networkContainer.addEventListener("touchstart", function (e) {
+            if (e.touches.length >= 2) {           // pinch zoom
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        networkContainer.addEventListener("touchmove", function (e) {
+            // Allow network to handle multi-touch (pinch) and single-touch drag
+            if (e.touches.length >= 2 || network.getSelectedNodes().length === 0) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Optional: Reset interaction state when user taps empty space
+        network.on("click", function (params) {
+            if (params.nodes.length === 0 && params.edges.length === 0) {
+                network.setOptions({
+                    interaction: { dragNodes: true, dragView: true, zoomView: true }
+                });
+            }
+        });
+    }
 
         network.on("selectNode", function (params) {
             if (params.nodes.length === 1) {
@@ -881,7 +922,7 @@ document.addEventListener("click", handleOutsideClick);
     function goToNode(nodeId) {
         if (!nodeId || !network) return;
 
-        // Full reset to prevent interaction lock
+        // Reset interaction state before any focus/select (prevents iOS lock)
         network.setOptions({
             interaction: {
                 dragNodes: true,
