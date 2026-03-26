@@ -614,7 +614,7 @@ function createNetwork(nodesData, edgesData) {
         // Add touchend listener for iOS to handle empty space taps
         networkContainer.addEventListener("touchend", function (e) {
             // Only handle single touch, not pinch
-            if (e.changedTouches.length === 1 && !network.getSelectedNodes().length && !network.getSelectedEdges().length) {
+            if (e.changedTouches.length === 1) {
                 // Check if touch is on empty space (not on nodes/edges)
                 const touch = e.changedTouches[0];
                 const rect = networkContainer.getBoundingClientRect();
@@ -829,6 +829,9 @@ drawerPanel.appendChild(referencesLink);
 
 document.body.appendChild(drawerPanel);
 
+// iOS-specific hack: ensure fixed drawer receives touches
+drawerPanel.addEventListener("touchstart", function () { }, { passive: true });
+
 // Function to update drawer content
 const updateDrawerContent = (nodeId, nodeLabel) => {
     const connectedEdges = network.getConnectedEdges(nodeId);
@@ -866,44 +869,33 @@ optionButtons.appendChild(goToNodeOption);
 drawerPanel.appendChild(optionButtons);
 
 
-// Clean closeDrawer using CSS transition (reliable on iOS)
+// iOS-safe closeDrawer using CSS transform transition
 function closeDrawer(e) {
     if (e) {
         e.preventDefault();
-        e.stopPropagation();
+        e.stopImmediatePropagation();
         hideViewDetailsButton();
     }
 
     if (!drawerPanel || !drawerPanel.classList.contains("open")) return;
 
-    // Force immediate visual feedback for iOS
-    drawerPanel.style.transition = "right 0.25s ease";
     drawerPanel.classList.remove("open");
 
-    // Wait for CSS transition to finish before hiding
-    const onTransitionEnd = () => {
-        drawerPanel.style.display = "none";
-        delete drawerPanel.dataset.currentNodeId;
-        drawerPanel.removeEventListener("transitionend", onTransitionEnd);
-        drawerPanel.style.transition = ""; // reset
-    };
+    // CSS transition handles the animation to translateX(100%)
 
-    drawerPanel.addEventListener("transitionend", onTransitionEnd, { once: true });
-
-    // iOS safety fallback
+    // Reliable timeout fallback for iOS
     setTimeout(() => {
-        if (drawerPanel.classList.contains("open") === false) {
+        if (!drawerPanel.classList.contains("open")) {
             drawerPanel.style.display = "none";
             delete drawerPanel.dataset.currentNodeId;
         }
-    }, 400);
+    }, 320);
 }
 
 
 document.querySelectorAll(".close-drawer").forEach(btn => {
-    btn.addEventListener("click", closeDrawer);
-    // Add touchend for iOS compatibility
-    btn.addEventListener("touchend", closeDrawer, { passive: true });
+    btn.addEventListener("click", closeDrawer, { passive: false });
+    btn.addEventListener("touchend", closeDrawer, { passive: false });  // ← critical for iOS
 });
 
 
