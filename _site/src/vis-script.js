@@ -829,9 +829,6 @@ drawerPanel.appendChild(referencesLink);
 
 document.body.appendChild(drawerPanel);
 
-// iOS-specific hack: ensure fixed drawer receives touches
-drawerPanel.addEventListener("touchstart", function () { }, { passive: true });
-
 // Function to update drawer content
 const updateDrawerContent = (nodeId, nodeLabel) => {
     const connectedEdges = network.getConnectedEdges(nodeId);
@@ -869,38 +866,7 @@ optionButtons.appendChild(goToNodeOption);
 drawerPanel.appendChild(optionButtons);
 
 
-// iOS-safe closeDrawer using CSS transform transition
-function closeDrawer(e) {
-    if (e) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        hideViewDetailsButton();
-    }
-
-    if (!drawerPanel || !drawerPanel.classList.contains("open")) return;
-
-    drawerPanel.classList.remove("open");
-
-    // CSS transition handles the animation to translateX(100%)
-
-    // Reliable timeout fallback for iOS
-    setTimeout(() => {
-        if (!drawerPanel.classList.contains("open")) {
-            drawerPanel.style.display = "none";
-            delete drawerPanel.dataset.currentNodeId;
-        }
-    }, 320);
-}
-
-
-document.querySelectorAll(".close-drawer").forEach(btn => {
-    btn.addEventListener("click", closeDrawer, { passive: false });
-    btn.addEventListener("touchend", closeDrawer, { passive: false });  // ← critical for iOS
-});
-
-
-
-    const toggleDrawer = (nodeId, nodeLabel) => {
+const toggleDrawer = (nodeId, nodeLabel) => {
         if (!nodeId) return;
 
         const isOpen = drawerPanel.classList.contains("open");
@@ -921,23 +887,65 @@ document.querySelectorAll(".close-drawer").forEach(btn => {
         network.setOptions({ interaction: { dragNodes: false } });
     };
 
+    // iOS-compatible drawer closing - direct inline style that actually works
+    document.addEventListener("click", (e) => {
+        if (e.target.closest(".close-drawer")) {
+            drawerPanel.classList.remove("open");
 
-// Unified outside click handler
-// Outside click handler - ignores network clicks
-function handleOutsideClick(event) {
-    if (!drawerPanel.classList.contains("open")) return;
+            setTimeout(() => {
+                if (!drawerPanel.classList.contains("open")) {
+                    drawerPanel.style.display = "none";
+                    delete drawerPanel.dataset.currentNodeId;
+                    if (typeof hideViewDetailsButton === "function") {
+                        hideViewDetailsButton();
+                    }
+                }
+            }, 350);
+            network.setOptions({ interaction: { dragNodes: true } });
+        }
+    }, { passive: false });
 
-    const clickedInside = drawerPanel.contains(event.target);
-    const isCloseBtn = event.target.closest(".btn-ic-close, .close-drawer, .tertiary-button");
-    const clickedOnNetwork = document.getElementById("network").contains(event.target);
+    // Touchend version for iOS
+    document.addEventListener("touchend", (e) => {
+        if (e.target.closest(".close-drawer")) {
+            e.preventDefault();
+            drawerPanel.classList.remove("open");
 
-    if (!clickedInside && !isCloseBtn && !clickedOnNetwork) {
-        closeDrawer();
-    }
-}
-document.addEventListener("click", handleOutsideClick);
-// Add touchend for iOS devices where click events may not fire reliably on canvas
-document.addEventListener("touchend", handleOutsideClick, { passive: true });
+            setTimeout(() => {
+                if (!drawerPanel.classList.contains("open")) {
+                    drawerPanel.style.display = "none";
+                    delete drawerPanel.dataset.currentNodeId;
+                    if (typeof hideViewDetailsButton === "function") {
+                        hideViewDetailsButton();
+                    }
+                }
+            }, 350);
+        }
+    }, { passive: false });
+
+    // Outside click handler (same direct style)
+    document.addEventListener("click", (e) => {
+        if (!drawerPanel || !drawerPanel.classList.contains("open")) return;
+
+        const clickedInside = drawerPanel.contains(e.target);
+        const isCloseBtn = e.target.closest(".btn-ic-close, .close-drawer, .tertiary-button");
+        const clickedOnNetwork = document.getElementById("network").contains(e.target);
+
+        if (!clickedInside && !isCloseBtn && !clickedOnNetwork) {
+            drawerPanel.classList.remove("open");
+
+            setTimeout(() => {
+                if (!drawerPanel.classList.contains("open")) {
+                    drawerPanel.style.display = "none";
+                    delete drawerPanel.dataset.currentNodeId;
+                    if (typeof hideViewDetailsButton === "function") {
+                        hideViewDetailsButton();
+                    }
+                }
+            }, 350);
+        }
+    }, { passive: false });
+
 
 
     function goToNode(nodeId) {

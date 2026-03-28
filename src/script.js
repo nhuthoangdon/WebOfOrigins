@@ -85,16 +85,23 @@ function initHeader() {
       mobileSponsorCTA.remove();
     }
   };
-
+  
+  const mainContent = document.querySelector('main');
+  
   const openMenu = () => {
     menuItems.classList.add('menu-items-mobile_open');
     hamburgerIcon?.classList.replace('fa-bars', 'fa-xmark');
+    mainContent.style.filter = 'blur(2px)';
+    mainContent.style.opacity = '0.2';
     ensureMobileCTA(); // Critical: show CTA when menu opens
   };
 
   const closeMenu = () => {
     menuItems.classList.remove('menu-items-mobile_open');
     hamburgerIcon?.classList.replace('fa-xmark', 'fa-bars');
+    mainContent.style.filter = 'none';
+    mainContent.style.opacity = '1';
+    ensureMobileCTA();
   };
 
   // — Hamburger toggle —
