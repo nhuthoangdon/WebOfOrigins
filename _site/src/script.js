@@ -126,6 +126,35 @@ function initHeader() {
 
   // — Initial state —
   ensureMobileCTA();
+
+  // — Hide menu on scroll, show when stopped —
+  let scrollTimeout;
+  let lastScrollTop = 0;
+  const scrollThreshold = 8; // Minimal scroll to trigger hide
+
+  window.addEventListener('scroll', () => {
+    const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollDelta = Math.abs(currentScrollTop - lastScrollTop);
+
+    // Hide menu only if scrolling down and delta is significant
+    if (currentScrollTop > lastScrollTop && scrollDelta > scrollThreshold) {
+      menu.style.transform = 'translateY(-100%)';
+      menu.style.opacity = '0.8';
+      menu.style.pointerEvents = 'none';
+    }
+
+    lastScrollTop = currentScrollTop;
+
+    // Clear existing timeout
+    clearTimeout(scrollTimeout);
+
+    // Show menu after scrolling stops (300ms delay)
+    scrollTimeout = setTimeout(() => {
+      menu.style.transform = 'translateY(0)';
+      menu.style.opacity = '1';
+      menu.style.pointerEvents = 'auto';
+    }, 500);
+  }, { passive: true });
 }
 
 // ——————————————————————————————————————
