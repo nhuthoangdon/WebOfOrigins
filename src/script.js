@@ -55,6 +55,8 @@ function initHeader() {
 
   // — Mobile sponsor CTA (created once, reused forever) —
   let mobileSponsorCTA = null;
+  let menuListItem = document.createElement('li');
+  menuItems.appendChild(menuListItem);
 
   const createMobileCTA = () => {
     if (mobileSponsorCTA) return mobileSponsorCTA;
@@ -63,6 +65,9 @@ function initHeader() {
     mobileSponsorCTA.textContent = 'Support This Project';
     mobileSponsorCTA.className = 'primary-button sponsor-button-mobile';
     mobileSponsorCTA.style.cursor = 'pointer';
+    menuListItem.appendChild(mobileSponsorCTA);
+  
+
 
     // Use delegated click (prevents issues after DOM reload)
     mobileSponsorCTA.addEventListener('click', e => {
