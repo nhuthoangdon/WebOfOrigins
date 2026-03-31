@@ -996,7 +996,7 @@ a#home-logo { display: flex; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     font-size: 1.2em;
     text-align: center;
     background: linear-gradient(135deg, rgba(3,3,76,0.7) 10%, rgba(4,15,56,0.8) 50%, rgba(5,0,20,0.98) 100%);
@@ -1206,4 +1206,10 @@ hr { width: 100%; margin: 8% 0; border: 1px solid rgba(136,146,230,0.15); }
   66% {
     content: "...";
   }   
+}
+
+#network canvas {
+  touch-action: none !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }

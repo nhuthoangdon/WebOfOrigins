@@ -352,12 +352,12 @@ function createNetwork(nodesData, edgesData) {
             dragNodes: true,
             hoverEdges: true,
             //mobile settings
-            touch: {
-                enabled: true,
-                scale: 1.0,
-                minScale: 0.2, //zoom out
-                maxScale: 8.0, //zoom in
-            },
+            // touch: {
+            //     enabled: true,
+            //     scale: 1.0,
+            //     minScale: 0.2, //zoom out
+            //     maxScale: 8.0, //zoom in
+            // },
             zoomSpeed: 0.7,
             zoomView: true,
             dragView: true,
@@ -584,58 +584,6 @@ function createNetwork(nodesData, edgesData) {
 
     network = new vis.Network(container, data, options);
 
-    // === iOS / Mobile touch gesture fixes ===
-    const networkContainer = document.getElementById("network");
-
-    if (networkContainer) {
-        // Prevent default browser behaviors (scroll + pinch-zoom) on the canvas
-        networkContainer.addEventListener("touchstart", function (e) {
-            if (e.touches.length >= 2) {           // pinch zoom
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        networkContainer.addEventListener("touchmove", function (e) {
-            // Allow network to handle multi-touch (pinch) and single-touch drag
-            if (e.touches.length >= 2 || network.getSelectedNodes().length === 0) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        // Optional: Reset interaction state when user taps empty space
-        network.on("click", function (params) {
-            if (params.nodes.length === 0 && params.edges.length === 0) {
-                network.setOptions({
-                    interaction: { dragNodes: true, dragView: true, zoomView: true }
-                });
-            }
-        });
-
-        // Add touchend listener for iOS to handle empty space taps
-        networkContainer.addEventListener("touchend", function (e) {
-            // Only handle single touch, not pinch
-            if (e.changedTouches.length === 1) {
-                // Check if touch is on empty space (not on nodes/edges)
-                const touch = e.changedTouches[0];
-                const rect = networkContainer.getBoundingClientRect();
-                const x = touch.clientX - rect.left;
-                const y = touch.clientY - rect.top;
-                
-                // Get positions at the touch point
-                const positions = network.DOMtoCanvas({ x: x, y: y });
-                const nodeIds = network.getNodeAt(positions);
-                const edgeIds = network.getEdgeAt(positions);
-                
-                if (!nodeIds && !edgeIds) {
-                    // Empty space touched
-                    network.unselectAll();
-                    hideViewDetailsButton();
-                    closeDrawer();
-                }
-            }
-        }, { passive: true });
-    }
-
     network.on("selectNode", function (params) {
         if (params.nodes.length === 1) {
             showViewDetailsButton(params.nodes[0]);
@@ -714,73 +662,35 @@ function createNetwork(nodesData, edgesData) {
     });
         
     network.on("click", function (params) {
-        // === 1. NODE CLICKED ===
-        if (params.nodes.length === 1) {
-            const nodeId = params.nodes[0];
-            const node = nodes.get(nodeId);
 
-            if (node) {
-                // Show floating button on FIRST click
-                showViewDetailsButton(nodeId);
-
-                // Highlight the clicked node + its neighbourhood
-                const highlightDepth = 1;
-                let nodesToHighlight = new Set([nodeId]);
-                let edgesToHighlight = new Set();
-
-                for (let depth = 0; depth < highlightDepth; depth++) {
-                    let current = new Set(nodesToHighlight);
-                    current.forEach(id => {
-                        network.getConnectedNodes(id).forEach(connectedId => {
-                            nodesToHighlight.add(connectedId);
-                        });
-                    });
-                }
-
-                nodesToHighlight.forEach(id => {
-                    network.getConnectedEdges(id).forEach(edgeId => {
-                        const edge = edges.get(edgeId);
-                        if (nodesToHighlight.has(edge.from) && nodesToHighlight.has(edge.to)) {
-                            edgesToHighlight.add(edgeId);
-                        }
-                    });
-                });
-
-                // Apply highlight without triggering drag
-                network.setSelection({
-                    nodes: Array.from(nodesToHighlight),
-                    edges: Array.from(edgesToHighlight)
-                }, {
-                    highlightEdges: false
-                });
-            }
-            return;
-        }
-
-        // === 2. EDGE CLICKED ===
-        if (params.edges.length === 1) {
-            const edgeId = params.edges[0];
-            const edge = edges.get(edgeId);
-
-            if (edge) {
-                network.setSelection({
-                    nodes: [edge.from, edge.to],
-                    edges: [edgeId]
-                }, {
-                    highlightEdges: false
-                });
-            }
-            hideViewDetailsButton();
-            return;
-        }
-
-        // === 3. EMPTY SPACE CLICKED ===
         if (params.nodes.length === 0 && params.edges.length === 0) {
             network.unselectAll();
             hideViewDetailsButton();
-            closeDrawer();
+
+            // Close drawer
+            if (drawerPanel && drawerPanel.classList.contains("open")) {
+                drawerPanel.classList.remove("open");
+                setTimeout(() => {
+                    if (!drawerPanel.classList.contains("open")) {
+                        drawerPanel.style.display = "none";
+                        delete drawerPanel.dataset.currentNodeId;
+                        hideViewDetailsButton();
+                    }
+                }, 350);
+            }
+
+            // Reset interaction state AFTER the click event has finished processing
+            setTimeout(() => {
+                network.setOptions({
+                    interaction: {
+                        dragNodes: true,
+                        dragView: true,
+                        zoomView: true
+                    }
+                });
+            }, 10);   // small delay
         }
-        });
+    });
     
 
     // Ensure toggle element exists and bind event
@@ -793,6 +703,54 @@ function createNetwork(nodesData, edgesData) {
         console.error("Country toggle element (#country-toggle) not found in DOM");
          }
 
+
+    // Small search — moved inside createNetwork so nodes DataSet is guaranteed ready
+    let matchingNodesSmall = [];
+    let currentIndexSmall = 0;
+
+    const smallSearchInput = document.getElementById('small-search-input');
+    const smallClearButton = document.getElementById('small-search-clear');
+    const smallResultCount = document.getElementById('small-search-result-count');
+    const largeSearchResults = document.getElementById('search-results');
+
+    function performSmallSearch() {
+        if (!network || !nodes) return;
+        largeSearchResults.style.display = 'none';
+        largeSearchResults.innerHTML = '';
+
+        const keyword = smallSearchInput.value.toLowerCase().trim();
+        matchingNodesSmall = nodes.getIds().filter(id => {
+            const node = nodes.get(id);
+            return node && node.label.toLowerCase().replace(/\n/g, ' ').includes(keyword);
+        });
+
+        currentIndexSmall = 0;
+        smallClearButton.style.display = keyword.length > 0 ? 'block' : 'none';
+        smallResultCount.textContent = matchingNodesSmall.length > 0 ? `1 of ${matchingNodesSmall.length}` : '0 of 0';
+
+        if (matchingNodesSmall.length > 0) goToNode(matchingNodesSmall[0]);
+        else network.unselectAll();
+    }
+
+    smallSearchInput.addEventListener('input', performSmallSearch);
+    smallSearchInput.addEventListener('focus', () => { if (smallSearchInput.value.trim().length > 0) performSmallSearch(); });
+    smallSearchInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && matchingNodesSmall.length > 0) {
+            currentIndexSmall = (currentIndexSmall + 1) % matchingNodesSmall.length;
+            smallResultCount.textContent = `${currentIndexSmall + 1} of ${matchingNodesSmall.length}`;
+            goToNode(matchingNodesSmall[currentIndexSmall]);
+        }
+    });
+    smallClearButton.addEventListener('click', () => {
+        smallSearchInput.value = '';
+        smallClearButton.style.display = 'none';
+        matchingNodesSmall = [];
+        currentIndexSmall = 0;
+        smallResultCount.textContent = '0 of 0';
+        network.unselectAll();
+        largeSearchResults.style.display = 'none';
+        largeSearchResults.innerHTML = '';
+    });
 }
 
 
@@ -980,8 +938,6 @@ const toggleDrawer = (nodeId, nodeLabel) => {
             const topPos = networkEl.getBoundingClientRect().top + window.pageYOffset - 80;
             window.scrollTo({ top: topPos, behavior: "smooth" });
         }
-
-        closeDrawer();
     }
 
 // Master click handler — one single delegated listener
@@ -1026,14 +982,6 @@ searchInput.onkeypress = (e) => {
 searchBtn.onclick = () => {
     const query = searchInput.value.toLowerCase().trim();
     if (!query) return;
-    if (smallSearchInput && smallClearButton && smallResultCount) {
-        smallSearchInput.value = '';
-        smallClearButton.style.display = 'none';
-        matchingNodesSmall = [];
-        currentIndexSmall = 0;
-        smallResultCount.textContent = '0 of 0';
-        network.unselectAll();
-    }
     searchResults.innerHTML = "";
     searchResults.style.display = "flex";
 
@@ -1101,79 +1049,79 @@ searchInput.onkeypress = (e) => { if (e.key === "Enter") searchBtn.onclick(); };
 
 
 
-let matchingNodesSmall = [];
-let currentIndexSmall = 0;
+// let matchingNodesSmall = [];
+// let currentIndexSmall = 0;
 
-const smallSearchInput = document.getElementById('small-search-input');
-const smallClearButton = document.getElementById('small-search-clear');
-const smallResultCount = document.getElementById('small-search-result-count');
-const largeSearchResults = document.getElementById('search-results');
+// const smallSearchInput = document.getElementById('small-search-input');
+// const smallClearButton = document.getElementById('small-search-clear');
+// const smallResultCount = document.getElementById('small-search-result-count');
+// const largeSearchResults = document.getElementById('search-results');
 
-// Centralized small search
-function performSmallSearch() {
-    if (!network || !nodes) return;
+// // Centralized small search
+// function performSmallSearch() {
+//     if (!network || !nodes) return;
 
-    // Clear large search to avoid conflicts
-    if (largeSearchResults) {
-        largeSearchResults.style.display = 'none';
-        largeSearchResults.innerHTML = '';
-    }
+//     // Clear large search to avoid conflicts
+//     if (largeSearchResults) {
+//         largeSearchResults.style.display = 'none';
+//         largeSearchResults.innerHTML = '';
+//     }
 
-    const keyword = smallSearchInput.value.toLowerCase().trim();
+//     const keyword = smallSearchInput.value.toLowerCase().trim();
 
-    matchingNodesSmall = nodes.getIds().filter(id => {
-        const node = nodes.get(id);
-        return node && node.label.toLowerCase().replace(/\n/g, ' ').includes(keyword);
-    });
+//     matchingNodesSmall = nodes.getIds().filter(id => {
+//         const node = nodes.get(id);
+//         return node && node.label.toLowerCase().replace(/\n/g, ' ').includes(keyword);
+//     });
 
-    currentIndexSmall = 0;
-    smallClearButton.style.display = keyword.length > 0 ? 'block' : 'none';
-    smallResultCount.textContent = matchingNodesSmall.length > 0 ? `1 of ${matchingNodesSmall.length}` : '0 of 0';
+//     currentIndexSmall = 0;
+//     smallClearButton.style.display = keyword.length > 0 ? 'block' : 'none';
+//     smallResultCount.textContent = matchingNodesSmall.length > 0 ? `1 of ${matchingNodesSmall.length}` : '0 of 0';
 
-    if (matchingNodesSmall.length > 0) {
-        // Use the safe goToNode instead of raw setSelection + focus
-        goToNode(matchingNodesSmall[0]);
-    } else {
-        network.unselectAll();
-    }
-}
+//     if (matchingNodesSmall.length > 0) {
+//         // Use the safe goToNode instead of raw setSelection + focus
+//         goToNode(matchingNodesSmall[0]);
+//     } else {
+//         network.unselectAll();
+//     }
+// }
 
-// Input handler with debounce
-let searchTimeout;
-smallSearchInput.addEventListener('input', () => {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(performSmallSearch, 200);
-});
+// // Input handler with debounce
+// let searchTimeout;
+// smallSearchInput.addEventListener('input', () => {
+//     clearTimeout(searchTimeout);
+//     searchTimeout = setTimeout(performSmallSearch, 200);
+// });
 
-smallSearchInput.addEventListener('focus', () => {
-    if (smallSearchInput.value.trim().length > 0) {
-        performSmallSearch();
-    }
-});
+// smallSearchInput.addEventListener('focus', () => {
+//     if (smallSearchInput.value.trim().length > 0) {
+//         performSmallSearch();
+//     }
+// });
 
-smallSearchInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        if (matchingNodesSmall.length > 0) {
-            currentIndexSmall = (currentIndexSmall + 1) % matchingNodesSmall.length;
-            smallResultCount.textContent = `${currentIndexSmall + 1} of ${matchingNodesSmall.length}`;
-            goToNode(matchingNodesSmall[currentIndexSmall]);   // ← use safe function
-        }
-    }
-});
+// smallSearchInput.addEventListener('keydown', (event) => {
+//     if (event.key === 'Enter') {
+//         event.preventDefault();
+//         if (matchingNodesSmall.length > 0) {
+//             currentIndexSmall = (currentIndexSmall + 1) % matchingNodesSmall.length;
+//             smallResultCount.textContent = `${currentIndexSmall + 1} of ${matchingNodesSmall.length}`;
+//             goToNode(matchingNodesSmall[currentIndexSmall]);   // ← use safe function
+//         }
+//     }
+// });
 
-smallClearButton.addEventListener('click', () => {
-    smallSearchInput.value = '';
-    smallClearButton.style.display = 'none';
-    matchingNodesSmall = [];
-    currentIndexSmall = 0;
-    smallResultCount.textContent = '0 of 0';
-    if (network) network.unselectAll();
-    if (largeSearchResults) {
-        largeSearchResults.style.display = 'none';
-        largeSearchResults.innerHTML = '';
-    }
-});
+// smallClearButton.addEventListener('click', () => {
+//     smallSearchInput.value = '';
+//     smallClearButton.style.display = 'none';
+//     matchingNodesSmall = [];
+//     currentIndexSmall = 0;
+//     smallResultCount.textContent = '0 of 0';
+//     if (network) network.unselectAll();
+//     if (largeSearchResults) {
+//         largeSearchResults.style.display = 'none';
+//         largeSearchResults.innerHTML = '';
+//     }
+// });
 
 
 function toggleCountryNodes(show) {
