@@ -132,8 +132,7 @@ function initHeader() {
   // — Initial state —
   ensureMobileCTA();
 
-  // — Hide menu on scroll, show when stopped —
-  let scrollTimeout;
+  // — Hide menu on scroll down, show when scrolling up —
   let lastScrollTop = 0;
   const scrollThreshold = 8; // Minimal scroll to trigger hide
 
@@ -144,21 +143,14 @@ function initHeader() {
     // Hide menu only if scrolling down and delta is significant
     if (currentScrollTop > lastScrollTop && scrollDelta > scrollThreshold) {
       menu.style.transform = 'translateY(-100%)';
-      menu.style.opacity = '0.8';
       menu.style.pointerEvents = 'none';
+    } else if (currentScrollTop < lastScrollTop) {
+      // Show menu when scrolling up
+      menu.style.transform = 'translateY(0)';
+      menu.style.pointerEvents = 'auto';
     }
 
     lastScrollTop = currentScrollTop;
-
-    // Clear existing timeout
-    clearTimeout(scrollTimeout);
-
-    // Show menu after scrolling stops (300ms delay)
-    scrollTimeout = setTimeout(() => {
-      menu.style.transform = 'translateY(0)';
-      menu.style.opacity = '1';
-      menu.style.pointerEvents = 'auto';
-    }, 500);
   }, { passive: true });
 }
 

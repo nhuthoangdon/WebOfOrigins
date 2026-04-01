@@ -578,6 +578,37 @@ function createNetwork(nodesData, edgesData) {
 
     network = new vis.Network(container, data, options);
 
+    // iOS 16.7 (older hardware like iPhone 8) canvas tap-select + drag-anchored-zoom fix
+    // Runs only on iOS, no effect on desktop or newer iOS
+    const ua = navigator.userAgent;
+    const iosVersionMatch = ua.match(/OS (\d+)_(\d+)_?(\d+)?/);
+    const iosMajor = iosVersionMatch ? parseInt(iosVersionMatch[1], 10) : 0;
+    const isOldIOS = /iPad|iPhone|iPod/.test(ua) && iosMajor <= 16;
+
+    if (isOldIOS) {
+        const containerEl = document.getElementById("network");
+        const canvasEl = containerEl ? containerEl.querySelector("canvas") : null;
+
+        if (containerEl) {
+            containerEl.setAttribute("tabindex", "-1");
+            containerEl.style.webkitTapHighlightColor = "transparent";
+            containerEl.style.outline = "none";
+        }
+        if (canvasEl) {
+            canvasEl.style.webkitTapHighlightColor = "transparent";
+            canvasEl.style.outline = "none";
+        }
+
+        // Force clean selection on tap (bypasses hover → select desync on old WebKit)
+        network.on("click", function (params) {
+            if (params.nodes.length === 1) {
+                network.redraw();
+                const nodeId = params.nodes[0];
+                network.setSelection({ nodes: [nodeId] }, { highlightEdges: true });
+            }
+        });
+    }
+
     network.on("selectNode", function (params) {
         if (params.nodes.length === 1) {
             showViewDetailsButton(params.nodes[0]);

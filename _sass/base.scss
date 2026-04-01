@@ -143,7 +143,7 @@ section {
 
 h1 {
   color: var(--heading-color);
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: var(--heading-font);
   font-weight: 400;
   text-transform: capitalize;
@@ -689,20 +689,17 @@ button:hover span.btn-icon {
   gap: 8px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  @media (max-width: 481px) {
+    bottom: auto; top: 20px;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
 }
 
 .floating-details-btn:hover {
   background: #611FF4;
   -webkit-transform: translateX(-50%) scale(1.05);
   transform: translateX(-50%) scale(1.05);
-}
-
-@media (max-width: 600px) {
-  .floating-details-btn {
-    bottom: 20px;
-    padding: 14px 28px;
-    font-size: 1rem;
-  }
 }
 
 .loading-overlay {
@@ -910,7 +907,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     justify-content: flex-start;
     align-items: center;
     gap: 1em;
-  background: rgba(5, 1, 25, 0.65);
+  background: rgba(5, 1, 25, 0.6);
   -webkit-backdrop-filter: blur(12px) saturate(120%);
   backdrop-filter: blur(12px) saturate(120%);
   border-bottom: 1px solid rgba(142, 208, 220, 0.1);
