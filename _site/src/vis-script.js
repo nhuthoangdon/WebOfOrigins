@@ -351,18 +351,12 @@ function createNetwork(nodesData, edgesData) {
             dragView: true,
             dragNodes: true,
             hoverEdges: true,
-            //mobile settings
-            // touch: {
-            //     enabled: true,
-            //     scale: 1.0,
-            //     minScale: 0.2, //zoom out
-            //     maxScale: 8.0, //zoom in
-            // },
-            zoomSpeed: 0.7,
+            zoomSpeed: 0.9,
             zoomView: true,
             dragView: true,
             dragNodes: true,
-            hideEdgesOnDrag: false, // Keep edges visible during drag for better context
+            hideEdgesOnDrag: false,
+            hideEdgesOnZoom: true,
             hideNodeOnDrag: false
         },
         physics: {
@@ -633,6 +627,23 @@ function createNetwork(nodesData, edgesData) {
         //     }, 0);
     });
 
+    network.on("selectEdge", function (params) {
+        if (params.edges.length === 1) {
+            const edgeId = params.edges[0];
+            const edge = edges.get(edgeId);
+
+            if (edge) {
+                network.setSelection({
+                    nodes: [edge.from, edge.to],
+                    edges: [edgeId]
+                }, { highlightEdges: false }
+                );
+            }
+            hideViewDetailsButton();
+        }
+    });
+    
+
     network.on("dragStart", function (params) {
         if (params.nodes.length > 0) {
             network.setOptions({
@@ -678,17 +689,6 @@ function createNetwork(nodesData, edgesData) {
                     }
                 }, 350);
             }
-
-            // Reset interaction state AFTER the click event has finished processing
-            setTimeout(() => {
-                network.setOptions({
-                    interaction: {
-                        dragNodes: true,
-                        dragView: true,
-                        zoomView: true
-                    }
-                });
-            }, 10);   // small delay
         }
     });
     
@@ -878,6 +878,7 @@ const toggleDrawer = (nodeId, nodeLabel) => {
                     }
                 }
             }, 350);
+            network.setOptions({ interaction: { dragNodes: true } });
         }
     }, { passive: false });
 
@@ -901,44 +902,45 @@ const toggleDrawer = (nodeId, nodeLabel) => {
                     }
                 }
             }, 350);
+            network.setOptions({ interaction: { dragNodes: true } });
         }
     }, { passive: false });
 
 
 
-    function goToNode(nodeId) {
-        if (!nodeId || !network) return;
+function goToNode(nodeId) {
+    if (!nodeId || !network) return;
 
-        // Reset interaction state before any focus/select (prevents iOS lock)
-        network.setOptions({
-            interaction: {
-                dragNodes: true,
-                dragView: true,
-                zoomView: true
-            }
-        });
-
-        network.unselectAll();
-
-        // Select + highlight safely
-        network.setSelection({ nodes: [nodeId] }, { highlightEdges: false });
-
-        // Focus smoothly
-        network.focus(nodeId, {
-            scale: 1.2,
-            animation: {
-                duration: 800,
-                easingFunction: "easeInOutQuad"
-            }
-        });
-
-        // Scroll into view
-        const networkEl = document.getElementById("network");
-        if (networkEl) {
-            const topPos = networkEl.getBoundingClientRect().top + window.pageYOffset - 80;
-            window.scrollTo({ top: topPos, behavior: "smooth" });
+    // Reset interaction state before any focus/select (prevents iOS lock)
+    network.setOptions({
+        interaction: {
+            dragNodes: true,
+            dragView: true,
+            zoomView: true
         }
+    });
+
+    network.unselectAll();
+
+    // Select + highlight safely
+    network.setSelection({ nodes: [nodeId] }, { highlightEdges: true });
+
+    // Focus smoothly
+    network.focus(nodeId, {
+        scale: 1.2,
+        animation: {
+            duration: 800,
+            easingFunction: "easeInOutQuad"
+        }
+    });
+
+    // Scroll into view
+    const networkEl = document.getElementById("network");
+    if (networkEl) {
+        const topPos = networkEl.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: topPos, behavior: "smooth" });
     }
+}
 
 // Master click handler — one single delegated listener
 document.addEventListener("click", e => {
@@ -958,7 +960,7 @@ document.addEventListener("click", e => {
     else if (btn.dataset.nodeId) {
         nodeId = btn.dataset.nodeId;
     }
-    // Case 3: Fallback — maybe parent has the data (common in result templates)
+    // Case 3: Fallback — maybe parent has the data
     else {
         const container = btn.closest("[data-node-id]");
         if (container) nodeId = container.dataset.nodeId;
@@ -969,7 +971,10 @@ document.addEventListener("click", e => {
     }
 });
 
-
+document.addEventListener('touchmove', function (event) {
+    if (event.scale !== 1) { event.preventDefault(); }
+}, { passive: false });
+  
 
 let debounceTimeout;
 searchInput.onkeypress = (e) => {
@@ -1046,82 +1051,6 @@ searchBtn.onclick = () => {
 };
 
 searchInput.onkeypress = (e) => { if (e.key === "Enter") searchBtn.onclick(); };
-
-
-
-// let matchingNodesSmall = [];
-// let currentIndexSmall = 0;
-
-// const smallSearchInput = document.getElementById('small-search-input');
-// const smallClearButton = document.getElementById('small-search-clear');
-// const smallResultCount = document.getElementById('small-search-result-count');
-// const largeSearchResults = document.getElementById('search-results');
-
-// // Centralized small search
-// function performSmallSearch() {
-//     if (!network || !nodes) return;
-
-//     // Clear large search to avoid conflicts
-//     if (largeSearchResults) {
-//         largeSearchResults.style.display = 'none';
-//         largeSearchResults.innerHTML = '';
-//     }
-
-//     const keyword = smallSearchInput.value.toLowerCase().trim();
-
-//     matchingNodesSmall = nodes.getIds().filter(id => {
-//         const node = nodes.get(id);
-//         return node && node.label.toLowerCase().replace(/\n/g, ' ').includes(keyword);
-//     });
-
-//     currentIndexSmall = 0;
-//     smallClearButton.style.display = keyword.length > 0 ? 'block' : 'none';
-//     smallResultCount.textContent = matchingNodesSmall.length > 0 ? `1 of ${matchingNodesSmall.length}` : '0 of 0';
-
-//     if (matchingNodesSmall.length > 0) {
-//         // Use the safe goToNode instead of raw setSelection + focus
-//         goToNode(matchingNodesSmall[0]);
-//     } else {
-//         network.unselectAll();
-//     }
-// }
-
-// // Input handler with debounce
-// let searchTimeout;
-// smallSearchInput.addEventListener('input', () => {
-//     clearTimeout(searchTimeout);
-//     searchTimeout = setTimeout(performSmallSearch, 200);
-// });
-
-// smallSearchInput.addEventListener('focus', () => {
-//     if (smallSearchInput.value.trim().length > 0) {
-//         performSmallSearch();
-//     }
-// });
-
-// smallSearchInput.addEventListener('keydown', (event) => {
-//     if (event.key === 'Enter') {
-//         event.preventDefault();
-//         if (matchingNodesSmall.length > 0) {
-//             currentIndexSmall = (currentIndexSmall + 1) % matchingNodesSmall.length;
-//             smallResultCount.textContent = `${currentIndexSmall + 1} of ${matchingNodesSmall.length}`;
-//             goToNode(matchingNodesSmall[currentIndexSmall]);   // ← use safe function
-//         }
-//     }
-// });
-
-// smallClearButton.addEventListener('click', () => {
-//     smallSearchInput.value = '';
-//     smallClearButton.style.display = 'none';
-//     matchingNodesSmall = [];
-//     currentIndexSmall = 0;
-//     smallResultCount.textContent = '0 of 0';
-//     if (network) network.unselectAll();
-//     if (largeSearchResults) {
-//         largeSearchResults.style.display = 'none';
-//         largeSearchResults.innerHTML = '';
-//     }
-// });
 
 
 function toggleCountryNodes(show) {

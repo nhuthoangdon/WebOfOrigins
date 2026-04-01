@@ -1208,7 +1208,7 @@ hr { width: 100%; margin: 8% 0; border: 1px solid rgba(136,146,230,0.15); }
   }   
 }
 
-#network canvas {
+#network canvas, #network {
   touch-action: none !important;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
