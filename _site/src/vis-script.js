@@ -841,40 +841,89 @@ const updateDrawerContent = (nodeId, nodeLabel) => {
 const optionButtons = document.createElement("div");
     optionButtons.className = "two-option-ctas drawer-options";
 
-const closeDrawerOption = document.createElement("a");
-    closeDrawerOption.className = "tertiary-button btn-go-back close-icon close-drawer light-mode";
-    closeDrawerOption.innerHTML = "<i class='fa-regular fa-circle-xmark'></i> Close";
-    closeDrawerOption.href = "javascript:void(0);";
+const closeDrawerPanelBtn = document.createElement("button");
+    closeDrawerPanelBtn.className = "tertiary-button btn-go-back close-icon close-drawer light-mode";
+    closeDrawerPanelBtn.innerHTML = "<i class='fa-regular fa-circle-xmark'></i> Close";
 
 const goToNodeOption = document.createElement("button");
 goToNodeOption.className = "secondary-button icon icon-regular go-to-node light-mode";
 goToNodeOption.textContent = "View Node";
 
-optionButtons.appendChild(closeDrawerOption);
+optionButtons.appendChild(closeDrawerPanelBtn);
 optionButtons.appendChild(goToNodeOption);
 drawerPanel.appendChild(optionButtons);
 
 
-const toggleDrawer = (nodeId, nodeLabel) => {
+    const toggleDrawer = (nodeId, nodeLabel) => {
         if (!nodeId) return;
 
         const isOpen = drawerPanel.classList.contains("open");
+        const currentNodeId = drawerPanel.dataset.currentNodeId;
 
+        // Same node → just reset scroll (user might have scrolled)
+        if (isOpen && currentNodeId === nodeId) {
+            drawerPanel.scrollTop = 0;
+            return;
+        }
+
+        // Update content first
         contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
         drawerPanel.dataset.currentNodeId = nodeId;
+        drawerPanel.scrollTop = 0;   // in case contentContainer ever gets overflow
 
-        if (isOpen) return;
+        if (isOpen) {
+            // Already open → reset scroll after a tiny paint cycle
+            requestAnimationFrame(() => {
+                drawerPanel.scrollTop = 0;
+            });
+            return;
+        }
 
+        // Not open yet → show + animate + reset scroll
         drawerPanel.style.display = "block";
+
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 drawerPanel.classList.add("open");
+
+                // Reset scroll AFTER the open class is applied and next paint
+                requestAnimationFrame(() => {
+                    drawerPanel.scrollTop = 0;
+                });
             });
         });
 
-        // Lock dragging while drawer is open
+        // Lock network dragging
         network.setOptions({ interaction: { dragNodes: false } });
     };
+
+// const toggleDrawer = (nodeId, nodeLabel) => {
+//         if (!nodeId) return;
+
+//         const isOpen = drawerPanel.classList.contains("open");
+//         const currentNodeId = drawerPanel.dataset.currentNodeId;
+
+//         if (isOpen && currentNodeId === nodeId) {
+//             // Same node already shown; still reset scroll in case user scrolled down
+//             drawerPanel.scrollTop = 0;
+//             return;
+//         }
+//         // Update content
+//         contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+//         drawerPanel.dataset.currentNodeId = nodeId;
+
+//         if (isOpen) return;
+
+//         drawerPanel.style.display = "block";
+//         requestAnimationFrame(() => {
+//             requestAnimationFrame(() => {
+//                 drawerPanel.classList.add("open");
+//             });
+//         });
+
+//         // Lock dragging while drawer is open
+//         network.setOptions({ interaction: { dragNodes: false } });
+//     };
 
     // iOS-compatible drawer closing - direct inline style that actually works
     document.addEventListener("click", (e) => {
@@ -1000,11 +1049,8 @@ document.addEventListener("click", e => {
     if (nodeId) {
         goToNode(nodeId);
     }
+    drawerPanel.classList.remove("open");
 });
-
-document.addEventListener('touchmove', function (event) {
-    if (event.scale !== 1) { event.preventDefault(); }
-}, { passive: false });
   
 
 let debounceTimeout;
@@ -1059,12 +1105,26 @@ searchBtn.onclick = () => {
 
         const GoToBtn = document.createElement("button");
         GoToBtn.className = "secondary-button go-to-node icon icon-regular";
-        GoToBtn.textContent = "See Connections";
 
-        const viewMoreBtn = document.createElement("a");
+        const viewMoreBtn = document.createElement("button");
         viewMoreBtn.className = "panel-cta view-node-details icon icon-solid icon-chevron-right";
-        const viewMoreIcon = document.createElement("span");
-        viewMoreBtn.textContent = "View Details";
+
+        const breakpoint600 = window.matchMedia("(max-width: 600px)");
+
+        function buttonTextOnMobile(e) {
+            if (e.matches) {
+                viewMoreBtn.textContent = "Details";
+                GoToBtn.textContent = "Connections";
+            } else {
+                viewMoreBtn.textContent = "View Details";
+                GoToBtn.textContent = "See Connections";
+            }
+        }
+        breakpoint600.addEventListener("change", buttonTextOnMobile);
+        buttonTextOnMobile(breakpoint600);
+
+        
+        viewMoreBtn.setAttribute("aria-label", "View Details for " + node.label);
         viewMoreBtn.addEventListener("click", () => {
             const nodeId = resultDiv.getAttribute("data-node-id");
             toggleDrawer(nodeId, node.label);

@@ -588,7 +588,16 @@ button:hover span.btn-icon {
 .global-drawer li { white-space: pre-wrap; margin-bottom: 5px; }
 .drawer-content { margin-top: 40px; }
 
-.close-drawer { cursor: pointer; }
+button.close-drawer { box-shadow: none; }
+  button.close-drawer:focus:not(:focus-visible) { 
+  cursor: pointer;
+  outline: none;
+}
+  button.close-drawer:hover {
+  color: var(--ui-dark-purple);
+}
+  button.close-drawer::before { display: none; }
+
 
 /* responsive for drawer */
 @media (max-width: 426px) {
@@ -659,6 +668,23 @@ button:hover span.btn-icon {
 .icon-chevron-right::after:hover { color: var(--highlight-color); }
 .icon-chevron-right:hover::after { -webkit-transform: translateX(4px); transform: translateX(4px); }
 .panel-cta:focus { color: var(--highlight-color); }
+
+button.view-node-details {
+  background: transparent;
+  box-shadow: none;
+}
+
+button.view-node-details:focus:not(:focus-visible) {
+  border: none;
+  outline: none;
+}
+  button.view-node-details:hover {
+    color: var(--highlight-color);
+  }
+  button.view-node-details:focus {
+    color: var(--highlight-color);
+    outline: 1px solid var(--ui-light-blue);
+  }
 
 /* =========================
     Network container & vis.js styling
@@ -939,6 +965,14 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
   animation: dotDropAndUnderline 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
 }
 
+#special-menu-link, #special-footer-link {
+  color: var(--ui-light-blue);
+}
+
+#special-menu-link:hover, #special-footer-link:hover {
+  color: var(--highlight-color);
+}
+
 @keyframes dotDropAndUnderline {
   0% {
     width: 8px;
@@ -965,11 +999,6 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     -webkit-transform: translateX(-50%) scale(1);
   }
 }
-
-#menu-special-item {
-  color: var(--ui-light-blue);
-}
-  #menu-special-item:hover { color: var(--highlight-color); }
 
 
 a#home-logo { display: flex; }
@@ -1206,7 +1235,7 @@ hr { width: 100%; margin: 8% 0; border: 1px solid rgba(136,146,230,0.15); }
 }
 
 #network canvas, #network {
-  touch-action: none !important;
+  touch-action: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
 }
