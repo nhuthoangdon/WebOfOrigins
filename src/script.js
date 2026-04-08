@@ -21,6 +21,14 @@ function initGlobalInteractions() {
     }
   });
 
+  // Back to main site button
+  document.addEventListener('click', e => {
+    if (e.target.closest('.back-to-main')) {
+      e.preventDefault();
+      window.location.href = '/';
+    }
+  });
+
   // Animated heart on sponsor CTA
   document.addEventListener('mouseenter', e => {
     const link = e.target.closest('.donate-links a.large-cta-link');

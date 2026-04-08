@@ -1135,6 +1135,7 @@ searchBtn.onclick = () => {
         resultItemCTA.appendChild(GoToBtn);
     });
     searchResults.appendChild(fragment);
+    searchResults.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 
     if (!matchingNodes.length) {
         searchResults.innerHTML = "<p>No matches found. Please try a different keyword. For best results, try a single keyword and double-check your spelling. The database is updated continuously, so you can also check back soon!</p>";
