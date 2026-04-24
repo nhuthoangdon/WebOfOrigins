@@ -1,46 +1,48 @@
 "id";"label";"type";"title";"shape";"image";"is_sustainable"
-comp_1;Glucosamine;Composition;"Natural Compound: A natural sugar found in shellfish shells, fungal cell walls, and the human body; a building block of cartilage that supports joint health (22)";;;
-comp_2;Chondroitin;Composition;Natural Compound: A natural substance found in cartilage around joints that helps maintain cartilage structure and cushion the joints (22);;;
-comp_3;Gelatin;Composition;Natural Compound: A protein derived by boiling animal tissues, used as a gelling agent, thickener, or stabilizer in food, pharmaceutical, and industrial products, providing texture, elasticity, or encapsulation properties ();;;
-comp_4;Collagen;Composition;"Natural Compound: A structural protein abundant in animal tissues such as skin, bones, and connective tissues; commercially extracted for use in gelatin production, collagen peptides, nutraceuticals, cosmetics, pharmaceuticals, and biomedical applications ()";;;
-comp_5;Marine Collagen;Composition;Natural Compound: Collagen derived from marine life, most commonly fish, smaller peptide sizes than land-animal collagen, and is thought to be better absorbed by the body ();;;
-comp_6;MSM (Methylsulfonylmethane);Composition;Natural Compound: A natural organic sulfur compound found in many living organisms, often used as a dietary supplement for potential joint and skin health benefits ();;;
-comp_7;Hyaluronic Acid;Composition;Natural Compound: A naturally occurring polysaccharide found in connective tissues and skin, known for its exceptional ability to retain moisture and support skin hydration, joint lubrication, and tissue repair ();;;
-comp_8;Surimi;Composition;Processed Food Product: Paste made from minced and rinsed Meat of mild-flavoured, lean, white Fish (most commonly Alaska Pollock and Pacific Whiting) ();;;
-con_1;Excessive Fertilisation;Concern;Overuse of chemical fertilisers. Often relates to Agriculture;;;
-con_10;Industrial Waste;Concern;Generation of hazardous or non-recyclable waste from industry. Often relates to Various Industries;;;
-con_11;Plastic Pollution;Concern;Accumulation of plastic waste in the environment. Often relates to Various Industries;;;
-con_12;Energy Overconsumption;Concern;High use of fossil fuels or non-renewable energy. Often relates to Various Industries;;;
-con_13;Overfishing;Concern;Excessive harvesting of marine species. Often relates to Fishing;;;
-con_15;Mining Activities;Concern;Extraction of minerals, including rare earths. Often relates to Energy Production;;;
-con_16;Urbanisation;Concern;Expansion of urban areas into natural landscapes. Often relates to Urban Development;;;
-con_17;Labour Exploitation;Concern;Unfair labor practices, including child labor. Often relates to Various Industries;;;
-con_18;IUU Fishing;Concern;Illegal, unreported, or unregulated fishing practices. Often relates to Fishing;;;
-con_19;Soil Fertility Decline;Concern;Loss of essential soil nutrients and quality. Often relates to Agriculture;;;
-con_2;Pesticide & Herbicide Use;Concern;Application of synthetic pesticides and herbicides. Often relates to Agriculture;;;
-con_3;Water Overuse;Concern;Excessive withdrawal of groundwater or surface water. Often relates to Various Industries;;;
-con_4;Soil Degradation;Concern;Loss of soil nutrients or structure due to farming practices. Often relates to Various Industries;;;
-con_5;Deforestation;Concern;Clearing of forests for agriculture or development. Often relates to Various Industries;;;
-con_6;Monoculture Farming;Concern;Cultivation of single crop species over large areas. Often relates to Agriculture;;;
-con_7;Greenhouse Gas (GHG) Emissions;Concern;Release of CO2, methane, and other GHGs from human activities. Often relates to Various Industries;;;
-con_8;Antibiotic Overuse;Concern;Excessive use of antibiotics in agriculture or medicine. Often relates to Various Industries;;;
-con_9;Genetic Modification;Concern;Use of genetically modified organisms in agriculture. Often relates to Agriculture;;;
-consq_1;Water Contamination;Consequence;Degradation of water quality by pollutants;;;
-consq_10;Chemical Exposure;Consequence;Human or wildlife contact with toxic substances;;;
-consq_11;Antibiotic Resistance;Consequence;Increased resistance of bacteria to antibiotics;;;
-consq_12;Resource Scarcity;Consequence;Depletion of natural resources like water or minerals;;;
-consq_13;Resistant Pests & Weeds;Consequence;Development of pest resistance to chemical controls;;;
-consq_14;Loss of Natural Ecosystems;Consequence;Loss of natural environments;;;
-consq_15;Eutrophication;Consequence;Excessive richness of nutrients in water bodies, Nutrient overload causing algal blooms and aquatic dead zones;;;
-consq_16;Marine Biodiversity Loss;Consequence;Decline in aquatic species populations;;;
-consq_2;Soil Contamination;Consequence;Accumulation of harmful substances in soil;;;
-consq_3;Air Pollution;Consequence;Release of particulates or gases into the atmosphere;;;
-consq_4;Biodiversity Loss;Consequence;Reduction in species diversity or population;;;
-consq_5;Ocean Acidification;Consequence;Decrease in ocean pH due to CO2 absorption;;;
-consq_6;Climate Change;Consequence;Global warming and altered weather patterns;;;
-consq_7;Groundwater Depletion;Consequence;Reduction in groundwater reserves;;;
-consq_8;Soil Erosion;Consequence;Loss of topsoil due to wind or water;;;
-consq_9;Habitat Fragmentation / Habitat Loss;Consequence;Division of habitats into smaller, isolated patches;;;
+comp_1;Glucosamine;Composition;"Natural Compound: A natural Sugar found in Shellfish Shells, Fungi, and the human body; a building block of Cartilage that supports joint health. (22)";;;
+comp_10;Collagen (Type I, V, X);Composition;Natural Compound: Collagen Type I is the primary form in the human body, supporting Skin, Hair, Nails, and Bone Health. Type V supports the formation of Cornea Tissues, certain Skin layers, Hair, and the Placenta. Type X is a short-chain, non-fibrillar Collagen found in calcified Cartilage, important for skeletal growth and used as a biomarker for Osteoarthritis. (48, 150);;;
+comp_2;Chondroitin;Composition;Natural Compound: A substance in Cartilage that helps maintain joint structure and cushioning. (22);;;
+comp_3;Gelatin;Composition;Natural Compound: A Protein from boiled Animal Tissues, used as a Gelling Agent, Thickener, or Stabilizer in Foods, Supplements, and industrial products. ();;;
+comp_4;Collagen (Type I, III);Composition;Natural Compound: Collagen Type I makes up about 90% of the human body Collagen, supporting the structure of Skin, Tendons, Ligaments, and Bones, while Type III supports Muscles, Arteries, and Organs. These 2 types of Collagen are commonly combined in Supplements for aging. (150);;;
+comp_5;Marine Collagen (Type I);Composition;Natural Compound: Collagen from Fish or other marine life, with smaller peptides thought to be more easily absorbed by the body. (150);;;
+comp_6;MSM (Methylsulfonylmethane);Composition;Natural Compound: A natural organic Sulfur Compound found in many organisms, often used as a Supplement for joint and skin health. ();;;
+comp_7;Hyaluronic Acid;Composition;Natural Compound: A Polysaccharide in Connective Tissues and Skin that retains moisture, supporting hydration, joint lubrication, and tissue repair. ();;;
+comp_8;Surimi;Composition;Processed Food Product: Paste made from minced, rinsed White Fish—commonly Alaska Pollock or Pacific Whiting—used to make Seafood Products like Crab Sticks. ();;;
+comp_9;Collagen (Type II);Composition;Natural Compound: Collagen Type II provides joint support, found in elastic Cartilage of human and animals. (150);;;
+con_1;Excessive Fertilisation;Concern;Overuse of chemical fertilisers that can harm soil and water quality.. Often relates to Agriculture;;;
+con_10;Industrial Waste;Concern;Production of hazardous or non-recyclable waste from industrial activities.. Often relates to Various Industries;;;
+con_11;Plastic Pollution;Concern;Accumulation of plastic waste in the environment, affecting wildlife and ecosystems.. Often relates to Various Industries;;;
+con_12;Energy Overconsumption;Concern;High use of fossil fuels or non-renewable energy sources.. Often relates to Various Industries;;;
+con_13;Overfishing;Concern;Harvesting marine species beyond sustainable limits.. Often relates to Fishing;;;
+con_15;Mining Activities;Concern;Extraction of minerals, including rare earths, often impacting ecosystems.. Often relates to Energy Production;;;
+con_16;Urbanisation;Concern;Expansion of urban areas into natural landscapes.. Often relates to Urban Development;;;
+con_17;Labour Exploitation;Concern;Unfair labor practices, including child labor and unsafe working conditions.. Often relates to Various Industries;;;
+con_18;IUU Fishing;Concern;Illegal, unreported, or unregulated fishing practices.. Often relates to Fishing;;;
+con_19;Soil Fertility Decline;Concern;Loss of essential nutrients and soil quality over time.. Often relates to Agriculture;;;
+con_2;Pesticide & Herbicide Use;Concern;Application of synthetic chemicals to control pests and weeds.. Often relates to Agriculture;;;
+con_3;Water Overuse;Concern;Excessive withdrawal of groundwater or surface water beyond sustainable levels.. Often relates to Various Industries;;;
+con_4;Soil Degradation;Concern;Loss of soil nutrients or structure due to unsustainable farming practices.. Often relates to Various Industries;;;
+con_5;Deforestation;Concern;Clearing forests for agriculture, development, or other human activities.. Often relates to Various Industries;;;
+con_6;Monoculture Farming;Concern;Growing a single crop species over large areas, reducing biodiversity and soil health.. Often relates to Agriculture;;;
+con_7;Greenhouse Gas (GHG) Emissions;Concern;Release of carbon dioxide, methane, and other greenhouse gases from human activities.. Often relates to Various Industries;;;
+con_8;Antibiotic Overuse;Concern;Excessive use of antibiotics in agriculture or medicine, contributing to resistance.. Often relates to Various Industries;;;
+con_9;Genetic Modification;Concern;Use of genetically modified organisms in agriculture.. Often relates to Agriculture;;;
+consq_1;Water Contamination;Consequence;Degradation of water quality due to pollutants.;;;
+consq_10;Chemical Exposure;Consequence;Contact of humans or wildlife with toxic substances.;;;
+consq_11;Antibiotic Resistance;Consequence;Increased resistance of bacteria to antibiotics.;;;
+consq_12;Resource Scarcity;Consequence;Depletion of natural resources such as water or minerals.;;;
+consq_13;Resistant Pests & Weeds;Consequence;Development of resistance in pests or weeds to chemical controls.;;;
+consq_14;Loss of Natural Ecosystems;Consequence;Disappearance or severe degradation of natural environments.;;;
+consq_15;Eutrophication;Consequence;Excess nutrients in water causing algal blooms and aquatic dead zones.;;;
+consq_16;Marine Biodiversity Loss;Consequence;Decline in populations of aquatic species.;;;
+consq_2;Soil Contamination;Consequence;Accumulation of harmful substances in soil.;;;
+consq_3;Air Pollution;Consequence;Release of particulates or gases into the atmosphere.;;;
+consq_4;Biodiversity Loss;Consequence;Reduction in species diversity or population.;;;
+consq_5;Ocean Acidification;Consequence;Decrease in ocean pH caused by CO₂ absorption.;;;
+consq_6;Climate Change;Consequence;Global warming and altered weather patterns.;;;
+consq_7;Groundwater Depletion;Consequence;Reduction of underground water reserves.;;;
+consq_8;Soil Erosion;Consequence;Loss of topsoil due to wind or water.;;;
+consq_9;Habitat Fragmentation / Habitat Loss;Consequence;Division or destruction of habitats into smaller, isolated patches.;;;
 iCountry_1;USA;iCountry;USA;image;https://flagsapi.com/US/flat/64.png;
 iCountry_10;Indonesia;iCountry;Indonesia;image;https://flagsapi.com/ID/flat/64.png;
 iCountry_11;European Union;iCountry;European Union;image;src/Assets/eu_flag.svg;
@@ -123,84 +125,88 @@ icCountry_6;Japan;icCountry;Japan;image;https://flagsapi.com/JP/flat/64.png;
 icCountry_7;India;icCountry;India;image;https://flagsapi.com/IN/flat/64.png;
 icCountry_8;Thailand;icCountry;Thailand;image;https://flagsapi.com/TH/flat/64.png;
 icCountry_9;Vietnam;icCountry;Vietnam;image;https://flagsapi.com/VN/flat/64.png;
-imp_10;Unsafe Drinking Water;Impact;Contaminated water unfit for consumption;;;
-imp_11;Reduced Agricultural Yield;Impact;Decreased crop or livestock productivity;;;
-imp_12;Sea Level Rise;Impact;Increased coastal flooding from rising oceans;;;
-imp_13;Natural Disaster Increase;Impact;Higher frequency of extreme weather events;;;
-imp_14;Social Inequality;Impact;Unequal access to resources or opportunities;;;
-imp_15;Harmful Algal Blooms (HABs);Impact;A Harmful Algal Bloom occurs when toxin-producing algae grow excessively in a water body.;;;
-imp_16;Dead Zone (Hypoxia);Impact;Zone with reduced level of oxygen in the water;;;
-imp_17;Algal Blooms;Impact;Excessive growth of algae, generally caused by excess nutrients in the water;;;
-imp_18;Aquatic Life Loss;Impact;Decline in aquatic species and populations;;;
-imp_2;Ecosystem Degradation/Collapse;Impact;Breakdown of ecosystem structure and function;;;
-imp_3;Species Extinction;Impact;Permanent loss of species;;;
-imp_4;Human Health Impacts;Impact;Widespread health issues from environmental factors;;;
-imp_5;Food Insecurity;Impact;Lack of reliable access to sufficient food;;;
-imp_6;Economic Decline;Impact;Sustained reduction in economic activity;;;
-imp_7;Resource Conflicts;Impact;Disputes over scarce natural resources;;;
-ind_1;Corn Farming;Industry;Corn/maize farming, significant global sector, high production volumes;;;0
-ind_10;Cattle Farming;Industry;Raising cattle for beef or dairy, incl. breeding, feeding, and herd management;;;0
-ind_11;Cattle Slaughtering;Industry;The Slaughtering Industry is the entry point where live Cattle are processed into carcasses and raw products for further processing;;;0
-ind_13;Dairy Farming;Industry;Milking and initial processing of raw milk;;;
-ind_14;Tanning;Industry;Tanning and treating animal skins and hides for leather products;;;0
-ind_15;Fisheries;Industry;Harvesting of fish and aquatic species from wild stocks in marine and fresh water environments, including coastal, inland, and deep-sea ecosystems;;;
-ind_16;Shark Fisheries;Industry;Targeted capture of sharks in marine fisheries, primarily for fins, meat, cartilage, and other derived products;;;
-ind_17;Pig Farming;Industry;Breeding and raising pigs for meat production. Includes commercial and small-scale operations for pork supply;;;0
-ind_18;Pig Slaughtering;Industry;The Slaughtering Industry is the entry point where live Pigs are processed into carcasses and raw products for further processing;;;
-ind_20;Livestock Trading (Bovine);Industry;Import and export of live Bovines for breeding, fattening, or slaughter;;;
-ind_21;Livestock Trading (Porcine);Industry;Export and import of live Pigs for breeding or slaughter;;;
-ind_22;Rendering (Animals);Industry;Rendering Plants collect raw byproducts (e.g. bones, cartilage, hides, fat, offal, blood) from animal slaughter for processing into usable materials;;;
-ind_23;Pharmaceuticals;Industry;Producing drugs, vaccines, and biologics for human and animal health;;;
-ind_24;Pet Food;Industry;Manufacturing nutritional products formulated for domestic animals;;;
-ind_25;Cosmetics;Industry;Creating personal care and beauty products for external human use;;;
-ind_26;Animal Feed;Industry;Producing feed formulations to support livestock and poultry health and productivity;;;
-ind_27;Fertiliser;Industry;Converting organic or synthetic materials into nutrient sources to enhance soil fertility and crop growth;;;
-ind_28;Poultry Farming;Industry;Breeding and raising poultry (primarily chickens, turkeys, ducks) for meat or eggs;;;
-ind_29;Livestock Trading (Poultry);Industry;Import/Export of live poultry (e.g. chicks, breeding stock, or slaughter-ready birds) for breeding, fattening, or slaughter;;;
-ind_3;Crustacean Processing;Industry;Preparation and handling of crustaceans for consumption, commonly shrimp, crabs, lobsters, crayfish;;;
-ind_30;Poultry Slaughtering;Industry;Killing and initial processing of poultry into carcasses, primal cuts, and byproducts (e.g. feathers, offal);;;
-ind_31;Paper Manufacturing;Industry;Transforming Wood or recycled fibres into usable paper products;;;
-ind_32;Forestry;Industry;The practice of managing, cultivating, and conserving forests and associated resources;;;
-ind_33;Fish Aquaculture;Industry;Fish farming, breeding and raising of fish in controlled environments;;;
-ind_34;Commercial Fishing;Industry;Catching fish and seafood for profit from wild fisheries in marine and freshwater environments;;;
-ind_35;Artisanal Fishing;Industry;Low-tech, small-scale fishing practices by individual fishers or households, primarily for local consumption or trade;;;
-ind_4;Crustacean Fisheries;Industry;Commercial harvesting of aquatic arthropods—commonly decapods such as shrimp, lobsters, and crabs;;;
-ind_5;Biotechnology;Industry;Use of biological systems and organisms to develop new products and processes;;;1
-ind_6;Shrimp and Prawn Farming;Industry;Most heavily farmed crustaceans (e.g. Whiteleg shrimp, Giant tiger prawn, Freshwater prawn);;;0
-ind_7;Lobster Farming;Industry;"Commonly rock lobsters; smallest farmed share among crustaceans, minor vs wild catch (<5% of total lobster production) (36)";;;
-ind_8;Crab Farming;Industry;Growing sector, though wild-caught fisheries still dominate production (1.6 mil tons wild catch vs 1.24 mil tons from aquaculture) (37);;;
-ind_9;Crayfish Farming;Industry;Growing sector within aquaculture, production volume smaller than Shrimp, Prawn, and Crab, ~200,000 metric tons (34);;;
-item_1;Joint Health Supplements;Item;Tablets, capsules, gummies, or powders containing Glucosamine, often combined with Chondroitin Sulfate or other compounds, used to support joint function, reduce pain, and slow cartilage degradation, commonly for osteoarthritis and joint mobility;;;
-item_10;Confectionery;Item;Food items rich in sugar and carbohydrates;;;
-item_11;Capsules;Item;Cylindrical enclosures—commonly made from gelatin or plant-based alternatives—used to encase and deliver medications, supplements, or other ingestible substances. Designed for easy swallowing and controlled release;;;
-item_12;Collagen Peptides/Hydrolysed Collagen;Item;Small pieces of animal Collagen, broken down into smaller peptides or animo acids that can be absorbed through gastrointestinal tract. Commonly available in powdered, pill, or liquid forms;;;
-item_13;Collagen Face Cream;Item;Facial skincare product containing hydrolysed Collagen, formulated to support skin elasticity, hydration, and a smoother appearance;;;
-item_14;Sausages;Item;Processed meat products made from ground or emulsified meat, fat, and seasonings, filled into natural or synthetic casings;;;
-item_15;Coated Tablets;Item;Solid oral dosage forms in which the compressed tablet core is covered with a polymer, sugar, or film coating to improve stability, control release, mask taste, or enhance handling in pharmaceutical manufacturing;;;
-item_16;Wound Dressings;Item;Sterile medical materials or products applied to cover and protect wounds, designed to promote healing, control moisture, absorb exudate, and prevent contamination in clinical or surgical settings;;;
-item_17;Pet Supplements;Item;Nutritional products formulated to support the health, growth, or specific needs of companion animals, containing vitamins, minerals, amino acids, fatty acids, or other bioactive ingredients;;;
-item_18;Energy Gels;Item;Concentrated, easily digestible carbohydrate-based products, often with added electrolytes or other nutrients, designed to provide rapid energy for endurance activities;;;
-item_19;Protein Bars;Item;Compact supplemental foods formulated with concentrated protein (dairy, plant, or blended), carbohydrates, fats, and added nutrients, designed for convenient nutrition and supplementation;;;
-item_2;Gummies;Item;Soft, chewy sweets shaped in various forms, often fruit-flavored;;;
-item_20;Photographic Film;Item;Strip of plastic coated with a chemical emultion used in analog or traditional photography;;;
-item_21;Crab Stick;Item;Processed seafood made primarily from minced white Fish, shaped and flavoured to resemble crab meat;;;
-item_3;Jello;Item;Wiggly, fruit-flavored dessert gel, typically served chilled;;;
-item_4;Marshmallows;Item;Fluffy, sweet confections used in desserts or hot drinks;;;
-item_5;Dairy Yogurt;Item;Creamy dairy product;;;
-item_6;Cream Cheese;Item;Soft, spreadable cheese;;;
-item_7;Sour Cream;Item;Tangy dairy topping;;;
-item_8;Margarine;Item;Vegetable oil spread, butter substitute;;;
-item_9;Ice Cream;Item;Frozen dessert;;;
-mat_1;Crustacean Shells;rawMaterial;"Crustacean exoskeletons, often from shrimp (largest source), lobsters, crabs, and crayfish; used to produce chitin, chitosan, and glucosamine";;;0
-mat_10;Wild-Caught Fish;rawMaterial;Fish harvested from natural marine and freshwater environments for food, supplements, and byproducts, incl. Cod, Tuna, Anchovies, and Sardines;;;
-mat_2;Filamentuous Fungi;rawMaterial;Saprophytic microorganisms commonly used in various industries to produce enzymes, chemicals, and other compounds;;;1
-mat_3;Bovine (Cow);rawMaterial;Domesticated cattle raised for beef, dairy, leather, and byproducts like gelatin, tallow, and bone meal;;;0
-mat_4;Sharks and Elasmobranchs;rawMaterial;"Cartilaginous fish harvested for meat, fins, cartilage, liver oil, and skin; byproducts used in supplements, cosmetics, and traditional medicine";;;0
-mat_5;Porcine (Pig);rawMaterial;Domesticated pigs raised for meat (pork) and byproducts such as insulin, gelatin, heparin, and lard;;;0
-mat_6;Avian (Poultry/Fowls);rawMaterial;Birds like chickens and ducks raised for meat, eggs, feathers, and byproducts such as gelatin, enzymes, and vaccines;;;0
-mat_7;Farmed Fish;rawMaterial;Fish raised in controlled aquaculture systems for Food, Nutritional Supplements, and other Byproducts, most commonly Salmon, Tilapia, Catfish, and Carp;;;0
-mat_8;Dairy Cows;rawMaterial;"Cattle selectively bred for high milk production; central to the dairy industry for producing milk, cheese, yogurt and other dairy products";;;0
-mat_9;Lignin (Wood);rawMaterial;"A complex organic polymer found in the cell walls of woody plants, providing rigidity and resistance to decay; often obtained as a byproduct of the pulp and Paper industry";;;
+imp_10;Unsafe Drinking Water;Impact;Contaminated water that is unfit for human consumption.;;;
+imp_11;Reduced Agricultural Yield;Impact;Decreased productivity of crops or livestock.;;;
+imp_12;Sea Level Rise;Impact;Rising ocean levels that increase coastal flooding and erosion.;;;
+imp_13;Natural Disaster Increase;Impact;Higher frequency or intensity of extreme weather events.;;;
+imp_14;Social Inequality;Impact;Unequal access to resources, services, or opportunities.;;;
+imp_15;Harmful Algal Blooms (HABs);Impact;Rapid growth of toxin-producing algae in water bodies, posing risks to ecosystems and human health.;;;
+imp_16;Dead Zones (Hypoxia);Impact;Areas of water with very low oxygen levels, unable to support most aquatic life.;;;
+imp_17;Algal Blooms;Impact;Excessive growth of algae, usually driven by nutrient pollution.;;;
+imp_18;Aquatic Life Loss;Impact;Decline in aquatic species abundance and biodiversity.;;;
+imp_2;Ecosystem Degradation/Collapse;Impact;Breakdown of ecosystem structure, function, and resilience.;;;
+imp_3;Species Extinction;Impact;Permanent loss of a species from the planet.;;;
+imp_4;Human Health Impacts;Impact;Widespread health problems linked to environmental conditions.;;;
+imp_5;Food Insecurity;Impact;Lack of reliable access to sufficient, safe, and nutritious food.;;;
+imp_6;Economic Decline;Impact;Sustained reduction in economic activity and productivity.;;;
+imp_7;Resource Conflicts;Impact;Disputes or tensions over scarce natural resources.;;;
+ind_1;Corn Farming;Industry;Cultivation of Corn (Maize), a major global agricultural sector with high production volumes.;;;0
+ind_10;Cattle Farming;Industry;Rearing Cattle for Beef or Dairy, including breeding, feeding, and herd management.;;;0
+ind_11;Cattle Slaughtering;Industry;Processing of live Cattle into carcasses and raw products for further use in food and byproducts.;;;0
+ind_13;Dairy Farming;Industry;Milking cattle and initial processing of raw Milk for consumption or further Dairy production.;;;
+ind_14;Tanning Industry;Industry;Treating Animal Skins and Hides to produce Leather products.;;;0
+ind_15;Fisheries;Industry;Harvesting Fish and Aquatic Species from wild marine and freshwater stocks, including coastal, inland, and deep-sea ecosystems.;;;
+ind_16;Shark Fisheries;Industry;Targeted capture of Sharks for Fins, Meat, Cartilage, and other derived products.;;;
+ind_17;Pig Farming;Industry;Breeding and raising Pigs for Meat, including commercial and small-scale operations.;;;0
+ind_18;Pig Slaughtering;Industry;Processing of live Pigs into carcasses and raw products for further food or byproduct use.;;;
+ind_20;Livestock Trading (Bovine);Industry;Import and export of live Cattle for breeding, fattening, or slaughter.;;;
+ind_21;Livestock Trading (Porcine);Industry;Import and export of live pigs for breeding or slaughter.;;;
+ind_22;Rendering (Animals);Industry;Collection and processing of animal byproducts—Bones, Cartilage, Hides, Fat, Offal, and Blood—into usable materials.;;;
+ind_23;Pharmaceuticals Industry;Industry;Producing Drugs, Vaccines, and Biologics for human and animal health.;;;
+ind_24;Pet Food Industry;Industry;Manufacturing nutritional products formulated for domestic animals.;;;
+ind_25;Cosmetics Industry;Industry;Creating personal care and beauty products for external human use.;;;
+ind_26;Animal Feed Production;Industry;Producing feed to support the health and productivity of Livestock and Poultry.;;;
+ind_27;Fertiliser Production;Industry;Converting organic or synthetic materials into nutrients that enhance Soil Fertility and Crop Growth.;;;
+ind_28;Poultry Farming (Broilers);Industry;Breeding and raising Birds—primarily Chickens, Turkeys, and Ducks—for Meat.;;;
+ind_29;Livestock Trading (Poultry);Industry;Import and export of live Poultry, including Chicks, breeding stock, or slaughter-ready Birds, for breeding, fattening, or processing.;;;
+ind_3;Crustacean Processing;Industry;Handling and preparation of Crustaceans—commonly Shrimp, Crabs, Lobsters, and Crayfish—for consumption.;;;
+ind_30;Poultry Slaughtering;Industry;Processing live Birds into carcasses, cuts, and byproducts such as Feathers and Offal.;;;
+ind_31;Paper Manufacturing;Industry;Transforming Wood or recycled Fibers into usable Paper products.;;;
+ind_32;Forestry Industry;Industry;Managing, cultivating, and conserving forests and their resources.;;;
+ind_33;Fish Aquaculture;Industry;Farming, breeding, and raising Fish in controlled environments.;;;
+ind_34;Commercial Fishing;Industry;Catching Fish and Seafood from wild marine and freshwater stocks for profit.;;;
+ind_35;Artisanal Fishing;Industry;Small-scale, low-tech fishing by individuals or households, mainly for local consumption or trade.;;;
+ind_36;Layer Poultry Farming/Egg Production;Industry;Breeding and raising Female Chickens (Hens) for Commercial Egg Production.;;;
+ind_37;Egg Breaking Industry;Industry;Egg Breaking processes Eggs into cracked, separated, frozen, liquid, dried, and pasteurised forms for use in Bakeries, Pasta Production, and wider Food Manufacturing.;;;
+ind_4;Crustacean Fisheries;Industry;Commercial harvesting of aquatic arthropods, mainly decapods like Shrimp, Lobsters, and Crabs.;;;
+ind_5;Biotechnology;Industry;Use of biological systems and organisms to develop new products, processes, and technologies.;;;1
+ind_6;Shrimp and Prawn Farming;Industry;Aquaculture of heavily farmed Crustaceans, including Whiteleg Shrimp, Giant Tiger Prawn, and Freshwater Prawn.;;;0
+ind_7;Lobster Farming;Industry;"Farming of Rock Lobsters; a small share of total lobster production compared with wild catch (<5%).";;;
+ind_8;Crab Farming;Industry;Growing aquaculture sector, though wild-caught fisheries still dominate (1.6 million tons wild vs 1.24 million tons farmed).;;;
+ind_9;Crayfish Farming;Industry;Smaller-scale aquaculture sector with production around 200,000 metric tons, less than Shrimp, Prawn, or Crab.;;;
+item_1;Joint Health Supplements;Item;Tablets, capsules, gummies, or powders containing Glucosamine, often combined with Chondroitin Sulfate or other compounds, used to support joint function, reduce joint pain, and help slow cartilage degradation—commonly taken for osteoarthritis and joint mobility support.;;;
+item_10;Confectionery (general);Item;Foods high in sugar and carbohydrates.;;;
+item_11;Capsules;Item;Cylindrical shells, often gelatin or plant-based, used to deliver medications or supplements, designed for easy swallowing and controlled release.;;;
+item_12;Collagen Peptides/Hydrolysed Collagen;Item;Small fragments of animal collagen broken into absorbable peptides or amino acids, available in powders, pills, or liquids.;;;
+item_13;Collagen Face Cream;Item;Skincare product with hydrolysed collagen to support skin elasticity, hydration, and a smoother appearance.;;;
+item_14;Sausages;Item;Processed meat made from ground or emulsified meat, fat, and seasonings, encased in natural or synthetic casings.;;;
+item_15;Coated Tablets;Item;Compressed tablets covered with a polymer, sugar, or film to improve stability, mask taste, or control release.;;;
+item_16;Wound Dressings;Item;Sterile materials applied to wounds to protect, absorb fluids, control moisture, and support healing.;;;
+item_17;Pet Supplements;Item;Nutritional products for companion animals, containing vitamins, minerals, amino acids, or other beneficial compounds.;;;
+item_18;Energy Gels;Item;Concentrated, easy-to-digest carbohydrate products with electrolytes, designed for rapid energy during endurance activities.;;;
+item_19;Protein Bars;Item;Compact foods with protein, carbohydrates, fats, and nutrients for convenient supplementation.;;;
+item_2;Gummies;Item;Soft, chewy, fruit-flavored sweets, typically molded into various shapes.;;;
+item_20;Photographic Film;Item;Plastic strips coated with light-sensitive chemicals for analog photography.;;;
+item_21;Crab Sticks;Item;Processed seafood made from minced white fish, shaped and flavored to mimic crab meat.;;;
+item_3;Jello;Item;A wiggly, fruit-flavored gelatin dessert, typically served chilled.;;;
+item_4;Marshmallows;Item;Fluffy, sweet confections commonly used in desserts or hot drinks.;;;
+item_5;Dairy Yogurt;Item;A creamy, fermented dairy product made from milk.;;;
+item_6;Cream Cheese;Item;A soft, spreadable fresh cheese.;;;
+item_7;Sour Cream;Item;A tangy, cultured dairy topping.;;;
+item_8;Margarine;Item;A vegetable oil–based spread commonly used as a butter substitute.;;;
+item_9;Ice Cream;Item;A frozen, sweet dairy dessert.;;;
+mat_1;Crustacean Shells;rawMaterial;Exoskeletons from Shrimp, Lobsters, Crabs, and Crayfish, commonly used to produce Chitin, Chitosan, and Glucosamine.;;;0
+mat_10;Wild-Caught Fish;rawMaterial;Fish harvested from natural marine and freshwater environments for Food, Supplements, and byproducts, including Cod, Tuna, Anchovies, and Sardines.;;;
+mat_11;Eggs;rawMaterial;Mass produced Eggs (predominantly from Chicken), typically laid by selectively bred Laying Hens in controlled, automated, and specialised farming systems.;;;0
+mat_12;Layer Poultry;rawMaterial;Poultry (mostly Chickens) bred and raised for Eggs, commonly called Layers or Laying Hens.;;;
+mat_2;Filamentuous Fungi;rawMaterial;Saprophytic microorganisms used in industries to produce enzymes, chemicals, and other compounds.;;;1
+mat_3;Bovine (Cow);rawMaterial;Domesticated cattle raised for Beef, Dairy, Leather, and byproducts such as Gelatin, Tallow, and Bone Meal.;;;0
+mat_4;Sharks and Elasmobranchs;rawMaterial;"Cartilaginous fish harvested for Meat, Fins, Cartilage, Liver Oil, and Skin; byproducts are used in Supplements, Cosmetics, and traditional medicine.";;;0
+mat_5;Porcine (Pig);rawMaterial;Domesticated pigs raised for Meat (Pork) and byproducts like Insulin, Gelatin, Heparin, and Lard.;;;0
+mat_6;Broiler Avian (Poultry/Fowls);rawMaterial;Birds such as Chickens and Ducks, raised primarily for Meat.;;;0
+mat_7;Farmed Fish;rawMaterial;Fish raised in aquaculture systems for Food, nutritional Supplements, and other byproducts, commonly including Salmon, Tilapia, Catfish, and Carp.;;;0
+mat_8;Dairy Cows;rawMaterial;Cattle bred for high Milk production, central to the Dairy Industry for Milk, Cheese, Yogurt, and other Dairy Products.;;;0
+mat_9;Lignin (Wood);rawMaterial;A complex polymer in woody plant cell walls that provides rigidity and decay resistance, often obtained as a byproduct of the Pulp and Paper Industry.;;;
 smCountry_1;USA;smCountry;USA;image;https://flagsapi.com/US/flat/64.png;
 smCountry_10;Indonesia;smCountry;Indonesia;image;https://flagsapi.com/ID/flat/64.png;
 smCountry_11;European Union;smCountry;European Union;image;src/Assets/eu_flag.svg;
@@ -242,20 +248,27 @@ smCountry_6;Japan;smCountry;Japan;image;https://flagsapi.com/JP/flat/64.png;
 smCountry_7;India;smCountry;India;image;https://flagsapi.com/IN/flat/64.png;
 smCountry_8;Thailand;smCountry;Thailand;image;https://flagsapi.com/TH/flat/64.png;
 smCountry_9;Vietnam;smCountry;Vietnam;image;https://flagsapi.com/VN/flat/64.png;
-src_1;Chitin;Source;Derived from exoskeletons of arthropods and cell walls of fungi;;;
-src_10;Animal Skins/Hides;Source;Animal hide rich in collagen, widely utilized for gelatin production, collagen peptide manufacturing, leather processing, and cosmetic or pharmaceutical formulations;;;
-src_11;Animal Tendons, Ligaments, and Fascia;Source;"Tendons, sinews, and ligaments from animals, primarily obtained as byproducts of the meat processing industry; utilized for gelatin production, collagen peptide manufacturing, nutraceuticals, and medical-grade biomaterials";;;
-src_12;Fish Scales & Skin;Source;Collagen-rich outer tissue of fish, commercially processed for gelatin, collagen peptides, cosmetic actives, and biomedical or packaging applications such as wound dressings and biofilms;;;
-src_13;Other Fish Parts;Source;Various fish byproducts—such as heads, bones, and fins—processed for collagen extraction, fish protein hydrolysates, animal feed, fertilizers, and biomedical uses;;;
-src_14;DMS (Dimethyl Sulfide);Source;A sulfur-containing compound originating from the breakdown of Lignin in wood pulp during Paper Manufacturing;;;
-src_15;DMSO (Dimethyl Sulfoxide);Source;A colorless, odorless organic solvent derived from the oxidation of dimethyl sulfide (DMS), used widely in industrial applications and as a precursor in the synthesis of dietary supplements like MSM;;;
-src_16;Rooster Combs;Source;The fleshy, red, and prominent growth on top of a rooster's head, more prominent than in hens;;;0
-src_17;Bacteria (Streptococcus spp. or Bacillus spp.);Source;Bacterial strains, typically used in fermentation for producing hyaluronic acid as well as in food processing, enzyme production, probiotics, and other industrial applications;;;1
-src_18;Fish Meat & Products;Source;Fish Flesh and related products, primarily consumed as food;;;0
-src_2;Corn;Source;"Also known as maize; widely cultivated for use in food, feed, and various industrial applications";;;0
-src_3;Animal Cartilage;Source;Tough connective tissue from cattle, poultry, and fish, used for collagen/gelatin and chondroitin extraction in supplements, foods, pet feed, and biomedical applications;;;
-src_5;Shark Cartilage;Source;Niche market, high-value material processed from shark skeletons (byproducts of meat/fin industries), mainly used in nutraceuticals and cosmetics;;;0
-src_6;Beef (Bovine Meat);Source;Meat derived from Bovine animals, primarily Cattle, processed for human consumption and used in a wide range of food products;;;
-src_7;Pork (Pig Meat);Source;Meat derived from Pigs, processed for human consumption and widely used in various food products;;;
-src_8;Poultry (Avian Meat);Source;Meat derived from Avian species such as chicken, turkey, and duck, processed for human consumption and widely used in global food products;;;0
-src_9;Animal Bones;Source;"Dense skeletal structures containing collagen and minerals; commercially rendered for gelatin, bone-derived ingredients (e.g., calcium phosphates), and functional food or pharmaceutical components";;;
+src_1;Chitin;Source;A natural polymer derived from the exoskeletons of arthropods and the cell walls of fungi.;;;
+src_10;Bovine Hide;Source;Thick, collagen-rich Skins from Cattle. A major raw material for Leather production and an important source for Gelatin, Collagen, and medical-grade biomaterials.;;;
+src_11;Bovine Connective Tissues (Tendons, Ligaments, and Fascia);Source;Strong connective tissues from cattle, including tendons, ligaments, and fascia, rich in Type I Collagen. Widely used for Joint Health Supplements, Sports Nutrition, and medical or surgical materials.;;;
+src_12;Fish Scales & Skin;Source;Collagen-rich outer tissues of fish, processed for Gelatin, Collagen peptides, Cosmetics, and Biomedical or packaging applications like Wound Dressings and Biofilms.;;;
+src_13;Fish Byproducts (heads, bones, fins, vertebrae, cartilage);Source;Various Fish Byproducts—such as heads, bones, and fins—processed for Collagen extraction, Fish Protein Hydrolysates, Animal Feed, Fertilizers, and Biomedical uses;;;
+src_14;DMS (Dimethyl Sulfide);Source;A sulfur-containing compound formed from the breakdown of Lignin in Wood Pulp during Paper Manufacturing.;;;
+src_15;DMSO (Dimethyl Sulfoxide);Source;A colorless, odorless organic solvent derived from oxidizing Dimethyl Sulfide (DMS), used in industrial applications and as a precursor for Supplements like MSM.;;;
+src_16;Rooster Combs;Source;The fleshy, red crest on a rooster’s head, more pronounced than in hens.;;;0
+src_17;Bacteria (Streptococcus spp. or Bacillus spp.);Source;Microorganisms used in fermentation to produce Hyaluronic Acid, as well as in Food Processing, Enzyme production, Probiotics, and other industrial applications.;;;1
+src_18;Fish Meat & Products;Source;Fish flesh and related products, primarily consumed as food.;;;0
+src_19;Porcine Bones;Source;Skeletal material from Pigs with slightly lower density and a distinct fat profile compared to Bovine Bones. Commonly used for Gelatin, Bone Broth, and food-grade mineral extraction.;;;
+src_2;Corn;Source;"Also called maize; widely grown for food, animal feed, and various industrial uses.";;;0
+src_20;Avian (Poultry) Bones;Source;Lightweight, porous Bones from Poultry such as Chickens, Ducks, and Turkeys. Primarily used in Animal Feed Supplements, Hydroxyapatite extraction, and niche Gelatin or Broth products.;;;
+src_21;Avian Skin;Source;Thin skins from Poultry, especially Chickens. Most commonly rendered for Animal Fats, but also used in smaller volumes for Broths and Collagen Peptide production.;;;
+src_22;Pig Skin;Source;Softer skin with higher fat content than Bovine Hides. Widely processed into food-grade Gelatin, Sausage Casings, cosmetic-grade Collagen, and traditional pork products.;;;
+src_23;Porcine Connective Tissues (Tendons, Ligaments, and Fascia);Source;Flexible connective tissues from Pigs, processed similarly to Bovine sources. Used for Collagen, Gelatin, and nutraceutical ingredients, with slightly different yield and processing characteristics.;;;
+src_24;Poultry Connective Tissues (Tendons, Ligaments, and Fascia);Source;Smaller connective tissues from Poultry. Less commonly used at industrial scale, but still processed into Broths and low-yield Collagen sources.;;;
+src_25;Eggshell Membrane;Source;Thin, resilient layer between an Avian Egg's Hard Shell and the Egg White, composed of Collagen (Type I, V, and X), Glucosamine, Chondroitin Sulphate, Hyaluronic Acid, Elastin, Keratin, and many other Proteins. Historically discarded as waste but now prized as a highly sustainable and bioactive source for Health and Beauty Products;;;1
+src_3;Animal Cartilage;Source;Tough Connective Tissue from Cattle, Poultry, or Fish, used to extract Collagen, Gelatin, and Chondroitin for supplements, foods, pet feed, and biomedical applications.;;;
+src_5;Shark Cartilage;Source;High-value cartilage from shark skeletons (byproducts of meat and fin industries), mainly used in nutraceuticals and cosmetics.;;;0
+src_6;Beef (Bovine Meat);Source;Meat from cattle, processed for human consumption and used in a variety of food products.;;;
+src_7;Pork (Pig Meat);Source;Meat from pigs, processed for human consumption and widely used in global food products.;;;
+src_8;Poultry (Avian Meat);Source;Meat from birds such as chicken, turkey, and duck, processed for human consumption and used worldwide.;;;0
+src_9;Bovine Bones;Source;Dense skeletal structures from Cattle, rich in Type I Collagen and minerals such as Calcium Phosphate. Widely processed for Gelatin, bone-derived ingredients, Pet Food, Calcium Supplements, and biomedical applications.;;;

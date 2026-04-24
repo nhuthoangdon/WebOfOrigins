@@ -4,6 +4,66 @@ const __isNodeEnv = typeof module !== 'undefined' && module.exports;
 
 let nodes, edges, network;
 
+// Utility function to escape HTML characters to prevent XSS
+function escapeHtml(text) {
+    if (typeof text !== 'string') return '';
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;',
+        '/': '&#x2F;',
+        '`': '&#x60;',
+        '=': '&#x3D;'
+    };
+    return text.replace(/[&<>"'`=/]/g, function(m) { return map[m]; });
+}
+
+// Utility function to sanitize and validate URLs
+function sanitizeUrl(url) {
+    if (typeof url !== 'string' || !url.trim()) return '';
+    try {
+        const parsed = new URL(url, window.location.origin);
+        // Only allow http and https protocols
+        if (!['http:', 'https:'].includes(parsed.protocol)) return '';
+        return parsed.href;
+    } catch {
+        return '';
+    }
+}
+
+// Utility function to sanitize text input
+function sanitizeText(text, maxLength = 10000) {
+    if (typeof text !== 'string') return '';
+    return text
+        .trim()
+        .replace(/\u00A0/g, " ")  // Replace non-breaking spaces
+        .replace(/[\r\n]+/g, " ") // Replace newlines with spaces
+        .replace(/\s+/g, " ")     // Normalize whitespace
+        .substring(0, maxLength); // Limit length
+}
+
+// Utility function to validate and parse integers
+function parseIntSafe(value, defaultValue = 0, min = 0, max = Number.MAX_SAFE_INTEGER) {
+    const parsed = parseInt(value, 10);
+    if (isNaN(parsed) || parsed < min || parsed > max) return defaultValue;
+    return parsed;
+}
+
+// Utility function to validate boolean values
+function parseBoolSafe(value, defaultValue = false) {
+    if (typeof value === 'string') {
+        const lower = value.toLowerCase().trim();
+        if (lower === '1' || lower === 'true' || lower === 'yes') return true;
+        if (lower === '0' || lower === 'false' || lower === 'no') return false;
+    }
+    if (typeof value === 'number') {
+        return value === 1;
+    }
+    return defaultValue;
+}
+
 // Function to load and parse CSV files
 function loadData(callback) {
     const loadingOverlay = document.getElementById('loading-overlay');
@@ -41,7 +101,12 @@ function loadData(callback) {
                 Papa.parse(xhr.responseText, {
                     delimiter: ";",
                     header: true,
+                    skipEmptyLines: true,
+                    transformHeader: (header) => header.trim().toLowerCase(),
                     complete: (results) => {
+                        if (results.errors && results.errors.length > 0) {
+                            console.warn(`CSV parsing warnings for ${url}:`, results.errors);
+                        }
                         onComplete(results.data);
                         completedFiles++;
                         updateOverallProgress();
@@ -71,22 +136,23 @@ function loadData(callback) {
     // Load nodes.csv
     fetchAndParse("https://data.weboforigins.com/nodes.csv", (data) => {
         nodesData = data
-            .filter(row => row.id && row.label)
+            .filter(row => row.id && typeof row.id === 'string' && row.id.trim() &&
+                          row.label && typeof row.label === 'string' && row.label.trim())
             .map(row => {
-                const rawLabel = typeof row.label === "string" ? row.label : "";
-                const cleanedLabel = rawLabel
-                    .trim()
-                    .replace(/\u00A0/g, " ")
-                    .replace(/[\r\n]+/g, " ");
-                const title = row.title || "";
-                const is_sustainable = parseInt(row.is_sustainable, 10) === 1;
+                const rawLabel = sanitizeText(row.label);
+                const cleanedLabel = escapeHtml(rawLabel);
+                const title = escapeHtml(sanitizeText(row.title || ""));
+                const is_sustainable = parseBoolSafe(row.is_sustainable);
+                const shape = sanitizeText(row.shape || "", 50);
+                const image = sanitizeUrl(row.image || "");
+
                 return {
-                    id: row.id,
+                    id: row.id.trim(),
                     label: cleanedLabel,
-                    type: row.type,
+                    type: sanitizeText(row.type || "", 50),
                     title: title,
-                    shape: row.shape || "",
-                    image: row.image || "",
+                    shape: shape,
+                    image: image,
                     is_sustainable: is_sustainable
                 };
             });
@@ -95,22 +161,22 @@ function loadData(callback) {
     // Load edges.csv
     fetchAndParse("https://data.weboforigins.com/edges.csv", (data) => {
         edgesData = data
-            .filter(row => row.from_node && row.to_node)
+            .filter(row => row.from_node && typeof row.from_node === 'string' && row.from_node.trim() &&
+                          row.to_node && typeof row.to_node === 'string' && row.to_node.trim())
             .map(row => {
-                const rawLabel = typeof row.label === "string" ? row.label : "";
-                const cleanedLabel = rawLabel
-                    .trim()
-                    .replace(/\u00A0/g, " ")
-                    .replace(/[\r\n]+/g, " ");
-                const title = row.title || "";
-                const roleCount = parseInt(row.roleCount, 10) || 1;
+                const rawLabel = sanitizeText(row.label || "");
+                const cleanedLabel = escapeHtml(rawLabel);
+                const title = escapeHtml(sanitizeText(row.title || ""));
+                const roleCount = parseIntSafe(row.roleCount, 1, 1, 1000);
+                const is_same_level = parseBoolSafe(row.is_same_level);
+
                 return {
-                    from: row.from_node,
-                    to: row.to_node,
+                    from: row.from_node.trim(),
+                    to: row.to_node.trim(),
                     label: cleanedLabel,
                     title: title,
                     roleCount: roleCount,
-                    is_same_level: row.is_same_level === "1"
+                    is_same_level: is_same_level
                 };
             });
 
@@ -136,7 +202,7 @@ return text.replace(new RegExp(`(.{1,${maxChars}})(\\s|$)`, "g"), "$1\n").trim()
 
 // Export helpers for Node testing (mocha)
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { wrapText };
+    module.exports = { wrapText, escapeHtml, sanitizeText, sanitizeUrl, parseIntSafe, parseBoolSafe };
 }
 
 
@@ -822,7 +888,8 @@ document.body.appendChild(drawerPanel);
 const updateDrawerContent = (nodeId, nodeLabel) => {
     const connectedEdges = network.getConnectedEdges(nodeId);
     if (connectedEdges.length === 0 || connectedEdges.every(edgeId => edges.get(edgeId).title === "No Description")) {
-        return `<h3>${nodeLabel.replace(/\n/g, " ")}</h3><p style="color: #28282bff;">No further info found for this item. Please check back later.</p>`;
+        const safeLabel = escapeHtml(nodeLabel.replace(/\n/g, " "));
+        return `<h3>${safeLabel}</h3><p style="color: #28282bff;">No further info found for this item. Please check back later.</p>`;
     } else {
         const validEdgeTitles = connectedEdges
             .map(edgeId => {
@@ -830,10 +897,11 @@ const updateDrawerContent = (nodeId, nodeLabel) => {
                 return edge.title !== "No Description" ? edge.title : null;
             })
             .filter(title => title !== null)
-            .map(title => title || "No further info found.");
+            .map(title => escapeHtml(title || "No further info found."));
         // Convert array to ul with li elements for bullets
         const listItems = validEdgeTitles.map(title => `<li>${title}</li>`).join("");
-        return `<h3>${nodeLabel.replace(/\n/g, " ")}</h3><ul>${listItems}</ul>`;
+        const safeLabel = escapeHtml(nodeLabel.replace(/\n/g, " "));
+        return `<h3>${safeLabel}</h3><ul>${listItems}</ul>`;
     }
       };
 
@@ -1080,12 +1148,12 @@ searchBtn.onclick = () => {
               resultItemCTA.className = "two-option-ctas";
 
         // Generate pathway text using unwrapped label
-        let pathway = `<b style="color: #dfdee8ff;">${node.label.replace(/\n/g, " ")}: </b>`;
-        const nodeDescription = (node.title || "No description available.").replace(/\n/g, " ");
-        const fromSources = network.getConnectedNodes(node.id, "from").map(id => nodes.get(id).label.replace(/\n/g, " "));
-        const toSources = network.getConnectedNodes(node.id, "to").map(id => nodes.get(id).label.replace(/\n/g, " "));
+        let pathway = `<b style="color: #dfdee8ff;">${escapeHtml(node.label.replace(/\n/g, " "))}: </b>`;
+        const nodeDescription = escapeHtml((node.title || "No description available.").replace(/\n/g, " "));
+        const fromSources = network.getConnectedNodes(node.id, "from").map(id => escapeHtml(nodes.get(id).label.replace(/\n/g, " ")));
+        const toSources = network.getConnectedNodes(node.id, "to").map(id => escapeHtml(nodes.get(id).label.replace(/\n/g, " ")));
 
-        if (nodeDescription != node.label) {
+        if (nodeDescription != escapeHtml(node.label.replace(/\n/g, " "))) {
             pathway += `${nodeDescription}\n`;
         } else {
             pathway += "\n";
@@ -1124,7 +1192,7 @@ searchBtn.onclick = () => {
         buttonTextOnMobile(breakpoint600);
 
         
-        viewMoreBtn.setAttribute("aria-label", "View Details for " + node.label);
+        viewMoreBtn.setAttribute("aria-label", "View Details for " + escapeHtml(node.label));
         viewMoreBtn.addEventListener("click", () => {
             const nodeId = resultDiv.getAttribute("data-node-id");
             toggleDrawer(nodeId, node.label);
