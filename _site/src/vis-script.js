@@ -36,6 +36,7 @@ function sanitizeUrl(url) {
 // Utility function to sanitize text input
 function sanitizeText(text, maxLength = 10000) {
     if (typeof text !== 'string') return '';
+    if (typeof maxLength !== 'number' || maxLength < 0) maxLength = 10000;
     return text
         .trim()
         .replace(/\u00A0/g, " ")  // Replace non-breaking spaces
@@ -65,7 +66,7 @@ function parseBoolSafe(value, defaultValue = false) {
 }
 
 // Function to load and parse CSV files
-function loadData(callback) {
+function loadData(onSuccess, onError = null) {
     const loadingOverlay = document.getElementById('loading-overlay');
     const loadingProgress = document.getElementById('loading-progress');
     const loadingPercent = document.getElementById('loading-percent');
@@ -75,124 +76,137 @@ function loadData(callback) {
     let nodesData = [];
     let edgesData = [];
     let completedFiles = 0; // 0, 1, or 2
+    let failedFiles = 0; // Track failures
+    let callbackCalled = false; // Prevent duplicate callbacks
 
     function updateOverallProgress() {
         const percent = Math.round((completedFiles / 2) * 100);
-        loadingProgress.style.width = `${percent}%`;
-        loadingPercent.textContent = `${percent}%`;
+        if (loadingProgress) loadingProgress.style.width = `${percent}%`;
+        if (loadingPercent) loadingPercent.textContent = `${percent}%`;
     }
 
-    function fetchAndParse(url, onComplete) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-
-        xhr.onprogress = (e) => {
-            if (e.lengthComputable) {
-                const filePercent = (e.loaded / e.total) * 50; // each file = 50% of total
-                const base = completedFiles * 50;
-                const current = base + filePercent;
-                loadingProgress.style.width = `${Math.round(current)}%`;
-                loadingPercent.textContent = `${Math.round(current)}%`;
+    function handleLoadComplete() {
+        if (completedFiles + failedFiles === 2 && !callbackCalled) {
+            callbackCalled = true;
+            if (loadingOverlay) loadingOverlay.classList.remove('visible');
+            
+            if (failedFiles > 0) {
+                const errorMsg = `Failed to load ${failedFiles} file(s)`;
+                console.error(errorMsg);
+                if (onError) onError(errorMsg);
+                return;
             }
-        };
+            
+            onSuccess(nodesData, edgesData);
+        }
+    }
 
-        xhr.onload = () => {
-            if (xhr.status === 200) {
-                Papa.parse(xhr.responseText, {
-                    delimiter: ";",
-                    header: true,
-                    skipEmptyLines: true,
-                    transformHeader: (header) => header.trim().toLowerCase(),
-                    complete: (results) => {
+    function fetchAndParse(url, isNodesFile) {
+        fetch(url, { 
+            method: 'GET',
+            mode: 'cors',
+            credentials: 'omit',
+            cache: 'no-cache'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(responseText => {
+            Papa.parse(responseText, {
+                delimiter: ";",
+                header: true,
+                skipEmptyLines: true,
+                transformHeader: (header) => header.trim().toLowerCase(),
+                complete: (results) => {
+                    try {
                         if (results.errors && results.errors.length > 0) {
                             console.warn(`CSV parsing warnings for ${url}:`, results.errors);
                         }
-                        onComplete(results.data);
+
+                        if (!Array.isArray(results.data) || results.data.length === 0) {
+                            throw new Error('CSV parsing resulted in empty data');
+                        }
+
+                        if (isNodesFile) {
+                            nodesData = results.data
+                                .filter(row => row.id && typeof row.id === 'string' && row.id.trim() &&
+                                              row.label && typeof row.label === 'string' && row.label.trim())
+                                .map(row => {
+                                    const rawLabel = sanitizeText(row.label);
+                                    const title = sanitizeText(row.title || "");
+                                    const is_sustainable = parseBoolSafe(row.is_sustainable);
+                                    const shape = sanitizeText(row.shape || "", 50);
+                                    const image = sanitizeUrl(row.image || "");
+
+                                    return {
+                                        id: row.id.trim(),
+                                        label: rawLabel,
+                                        type: sanitizeText(row.type || "", 50),
+                                        title: title,
+                                        shape: shape,
+                                        image: image,
+                                        is_sustainable: is_sustainable
+                                    };
+                                });
+                        } else {
+                            edgesData = results.data
+                                .filter(row => row.from_node && typeof row.from_node === 'string' && row.from_node.trim() &&
+                                              row.to_node && typeof row.to_node === 'string' && row.to_node.trim())
+                                .map(row => {
+                                    const rawLabel = sanitizeText(row.label || "");
+                                    const title = sanitizeText(row.title || "");
+                                    const roleCount = parseIntSafe(row.roleCount, 1, 1, 1000);
+                                    const is_same_level = parseBoolSafe(row.is_same_level);
+
+                                    return {
+                                        from: row.from_node.trim(),
+                                        to: row.to_node.trim(),
+                                        label: rawLabel,
+                                        title: title,
+                                        roleCount: roleCount,
+                                        is_same_level: is_same_level
+                                    };
+                                });
+                        }
+                        
                         completedFiles++;
                         updateOverallProgress();
-                        if (completedFiles === 2 && loadingOverlay) {
-                            loadingOverlay.classList.remove('visible');
-                        }
-                    },
-                    error: (err) => {
-                        console.error(`PapaParse error for ${url}:`, err);
-                        if (loadingOverlay) loadingOverlay.classList.remove('visible');
+                        handleLoadComplete();
+                    } catch (err) {
+                        console.error(`Error processing ${url}:`, err);
+                        failedFiles++;
+                        handleLoadComplete();
                     }
-                });
-            } else {
-                console.error(`Failed to load ${url}: ${xhr.status}`);
-                if (loadingOverlay) loadingOverlay.classList.remove('visible');
-            }
-        };
-
-        xhr.onerror = () => {
-            console.error(`Network error loading ${url}`);
-            if (loadingOverlay) loadingOverlay.classList.remove('visible');
-        };
-
-        xhr.send();
+                },
+                error: (err) => {
+                    console.error(`PapaParse error for ${url}:`, err);
+                    failedFiles++;
+                    handleLoadComplete();
+                }
+            });
+        })
+        .catch(err => {
+            console.error(`Network error loading ${url}:`, err);
+            failedFiles++;
+            handleLoadComplete();
+        });
     }
 
-    // Load nodes.csv
-    fetchAndParse("https://data.weboforigins.com/nodes.csv", (data) => {
-        nodesData = data
-            .filter(row => row.id && typeof row.id === 'string' && row.id.trim() &&
-                          row.label && typeof row.label === 'string' && row.label.trim())
-            .map(row => {
-                const rawLabel = sanitizeText(row.label);
-                const cleanedLabel = escapeHtml(rawLabel);
-                const title = escapeHtml(sanitizeText(row.title || ""));
-                const is_sustainable = parseBoolSafe(row.is_sustainable);
-                const shape = sanitizeText(row.shape || "", 50);
-                const image = sanitizeUrl(row.image || "");
+    // Load both CSV files in parallel
+    fetchAndParse("https://data.weboforigins.com/nodes.csv", true);
+    fetchAndParse("https://data.weboforigins.com/edges.csv", false);
 
-                return {
-                    id: row.id.trim(),
-                    label: cleanedLabel,
-                    type: sanitizeText(row.type || "", 50),
-                    title: title,
-                    shape: shape,
-                    image: image,
-                    is_sustainable: is_sustainable
-                };
-            });
-    });
 
-    // Load edges.csv
-    fetchAndParse("https://data.weboforigins.com/edges.csv", (data) => {
-        edgesData = data
-            .filter(row => row.from_node && typeof row.from_node === 'string' && row.from_node.trim() &&
-                          row.to_node && typeof row.to_node === 'string' && row.to_node.trim())
-            .map(row => {
-                const rawLabel = sanitizeText(row.label || "");
-                const cleanedLabel = escapeHtml(rawLabel);
-                const title = escapeHtml(sanitizeText(row.title || ""));
-                const roleCount = parseIntSafe(row.roleCount, 1, 1, 1000);
-                const is_same_level = parseBoolSafe(row.is_same_level);
-
-                return {
-                    from: row.from_node.trim(),
-                    to: row.to_node.trim(),
-                    label: cleanedLabel,
-                    title: title,
-                    roleCount: roleCount,
-                    is_same_level: is_same_level
-                };
-            });
-
-        // Both files loaded → callback
-        if (completedFiles === 2) {
-            callback(nodesData, edgesData);
+    // Optional: Add timeout safety (30 seconds)
+    const loadTimeout = setTimeout(() => {
+        if (!callbackCalled && (completedFiles + failedFiles) < 2) {
+            callbackCalled = true;
+            onError('Load timeout: One or more files did not complete');
         }
-    });
-
-    // Fallback callback if one file finishes first
-    const interval = setInterval(() => {
-        if (completedFiles === 2) {
-            clearInterval(interval);
-            callback(nodesData, edgesData);
-        }
-    }, 100);
+    }, 30000);
 }
 
 function wrapText(text, maxChars = 30) { //function to wrap long label text into multiple lines
@@ -888,20 +902,36 @@ document.body.appendChild(drawerPanel);
 const updateDrawerContent = (nodeId, nodeLabel) => {
     const connectedEdges = network.getConnectedEdges(nodeId);
     if (connectedEdges.length === 0 || connectedEdges.every(edgeId => edges.get(edgeId).title === "No Description")) {
-        const safeLabel = escapeHtml(nodeLabel.replace(/\n/g, " "));
-        return `<h3>${safeLabel}</h3><p style="color: #28282bff;">No further info found for this item. Please check back later.</p>`;
+        const safeLabel = nodeLabel.replace(/\n/g, " ");
+        const h3 = document.createElement('h3');
+        h3.textContent = safeLabel;
+        const p = document.createElement('p');
+        p.style.color = '#28282bff';
+        p.textContent = 'No further info found for this item. Please check back later.';
+        const container = document.createElement('div');
+        container.appendChild(h3);
+        container.appendChild(p);
+        return container.innerHTML;
     } else {
         const validEdgeTitles = connectedEdges
             .map(edgeId => {
                 const edge = edges.get(edgeId);
                 return edge.title !== "No Description" ? edge.title : null;
             })
-            .filter(title => title !== null)
-            .map(title => escapeHtml(title || "No further info found."));
+            .filter(title => title !== null);
         // Convert array to ul with li elements for bullets
-        const listItems = validEdgeTitles.map(title => `<li>${title}</li>`).join("");
-        const safeLabel = escapeHtml(nodeLabel.replace(/\n/g, " "));
-        return `<h3>${safeLabel}</h3><ul>${listItems}</ul>`;
+        const listItems = validEdgeTitles.map(title => {
+            const li = document.createElement('li');
+            li.textContent = title || "No further info found.";
+            return li.outerHTML;
+        }).join("");
+        const safeLabel = nodeLabel.replace(/\n/g, " ");
+        const h3 = document.createElement('h3');
+        h3.textContent = safeLabel;
+        const container = document.createElement('div');
+        container.appendChild(h3);
+        container.innerHTML += `<ul>${listItems}</ul>`;
+        return container.innerHTML;
     }
       };
 
@@ -1132,12 +1162,23 @@ searchInput.onkeypress = (e) => {
 searchBtn.onclick = () => {
     const query = searchInput.value.toLowerCase().trim();
     if (!query) return;
+    if (query.length > 200) {
+        console.warn('Search query exceeds maximum length');
+        return;
+    }
+    
+    if (!searchResults || !nodes) {
+        console.error('Search results container or nodes not found');
+        return;
+    }
+    
     searchResults.innerHTML = "";
     searchResults.style.display = "flex";
 
-    const matchingNodes = nodes.get().filter(node =>
-        node.label.toLowerCase().replace(/\n/g, " ").includes(query)
-    );
+    const matchingNodes = nodes.get().filter(node => {
+        if (!node || !node.label) return false;
+        return node.label.toLowerCase().replace(/\n/g, " ").includes(query);
+    });
     const fragment = document.createDocumentFragment();
 
     matchingNodes.forEach(node => {
@@ -1148,27 +1189,38 @@ searchBtn.onclick = () => {
               resultItemCTA.className = "two-option-ctas";
 
         // Generate pathway text using unwrapped label
-        let pathway = `<b style="color: #dfdee8ff;">${escapeHtml(node.label.replace(/\n/g, " "))}: </b>`;
-        const nodeDescription = escapeHtml((node.title || "No description available.").replace(/\n/g, " "));
-        const fromSources = network.getConnectedNodes(node.id, "from").map(id => escapeHtml(nodes.get(id).label.replace(/\n/g, " ")));
-        const toSources = network.getConnectedNodes(node.id, "to").map(id => escapeHtml(nodes.get(id).label.replace(/\n/g, " ")));
+        const nodeLabelText = node.label.replace(/\n/g, " ");
+        const nodeDescription = (node.title || "No description available.").replace(/\n/g, " ");
+        const fromSources = network.getConnectedNodes(node.id, "from").map(id => nodes.get(id).label.replace(/\n/g, " "));
+        const toSources = network.getConnectedNodes(node.id, "to").map(id => nodes.get(id).label.replace(/\n/g, " "));
 
-        if (nodeDescription != escapeHtml(node.label.replace(/\n/g, " "))) {
-            pathway += `${nodeDescription}\n`;
+        const p = document.createElement("p");
+        const b = document.createElement("b");
+        b.style.color = "#dfdee8ff";
+        b.textContent = `${nodeLabelText}: `;
+        p.appendChild(b);
+
+        if (nodeDescription !== nodeLabelText) {
+            const descSpan = document.createElement("span");
+            descSpan.textContent = nodeDescription;
+            p.appendChild(descSpan);
+            p.appendChild(document.createElement("br"));
         } else {
-            pathway += "\n";
+            p.appendChild(document.createElement("br"));
         }
 
         if (fromSources.length > 0) {
-            pathway += `- Associates with: ${fromSources.join(", ")}\n`;
+            const assocSpan = document.createElement("span");
+            assocSpan.textContent = `- Associates with: ${fromSources.join(", ")}`;
+            p.appendChild(assocSpan);
+            p.appendChild(document.createElement("br"));
         }
 
         if (toSources.length > 0) {
-            pathway += `- Connects to: ${toSources.join(", ")}`;
+            const connSpan = document.createElement("span");
+            connSpan.textContent = `- Connects to: ${toSources.join(", ")}`;
+            p.appendChild(connSpan);
         }
-
-        const p = document.createElement("p");
-        p.innerHTML = pathway;
         resultDiv.appendChild(p);
 
         const GoToBtn = document.createElement("button");
@@ -1192,7 +1244,7 @@ searchBtn.onclick = () => {
         buttonTextOnMobile(breakpoint600);
 
         
-        viewMoreBtn.setAttribute("aria-label", "View Details for " + escapeHtml(node.label));
+        viewMoreBtn.setAttribute("aria-label", "View Details for " + node.label.replace(/\n/g, " "));
         viewMoreBtn.addEventListener("click", () => {
             const nodeId = resultDiv.getAttribute("data-node-id");
             toggleDrawer(nodeId, node.label);
@@ -1251,9 +1303,21 @@ function toggleCountryNodes(show) {
     });
 
 // Load data and create the network
-loadData((nodesData, edgesData) => {
-    createNetwork(nodesData, edgesData);
-});
+loadData(
+    (nodesData, edgesData) => {
+        createNetwork(nodesData, edgesData);
+    },
+    (errorMsg) => {
+        console.error('Failed to load graph data:', errorMsg);
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay) loadingOverlay.classList.remove('visible');
+        // Optionally show user-friendly error message
+        const networkEl = document.getElementById('network');
+        if (networkEl) {
+            networkEl.innerHTML = `<div style="padding: 20px; color: #d32f2f;">Error loading graph data. Please refresh the page.</div>`;
+        }
+    }
+);
 
 
 
