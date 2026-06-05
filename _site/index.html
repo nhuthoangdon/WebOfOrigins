@@ -11,7 +11,9 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
     
     <title>Home - Web Of Origins</title>
     
@@ -47,6 +49,12 @@
     </div>
   </nav>
 </header>
+
+  <!-- Floating AI Button -->
+<button id="ai-float-btn" class="ai-float-btn" aria-label="Explore with AI">
+    <i class="fa-solid fa-sparkles"></i>
+    <span><i class="fa-solid fa-brain fa-fade"></i> Explore with AI</span>
+</button>
   
   <div class="cf-turnstile" 
     data-sitekey="0x4AAAAAACBLTv9bEWI1GQF2" 
@@ -62,14 +70,15 @@
     <!-- Search CTA -->
     <div id="large-search-panel">
       <div class="large-search-headings">
-        <h2>Explore the hidden supply networks and impacts behind products</h2>
-        <h1 class="hero-heading">Start with an ingredient, raw material, or country</h1>
+        <!-- <h2>Trace material origins</h2> -->
+        <h1 class="hero-heading">Trace material origins</h1>
+        <h3>Explore what’s inside products, where ingredients come from, how they connect, and the environmental impacts of the industries behind them.</h3>
       </div>
-      <div tabindex="0" class="large-search-container" role="button" aria-label="Search input, please enter a keyword, for example, glucosamine, corn, jello, or China, and then press the GO button">
-        <input type="text" id="large-search-input" placeholder="E.g. supplements, gelatin, corn, China" aria-label="Search input, please enter a keyword, for example, glucosamine, corn, jello, or China, and then press the GO button">
+      <div tabindex="0" class="large-search-container" role="button" aria-label="Search input, please enter a keyword, for example, glucosamine, collagen, corn, China, and then press the GO button">
+        <input type="text" id="large-search-input" placeholder="E.g. glucosamine, collagen, corn, China" aria-label="Search input, please enter a keyword, for example, glucosamine, corn, jello, or China, and then press the GO button">
         <button id="large-search-btn" class="primary-button"><span class="btn-label">Go</span><span class="btn-icon"><i class="fa-solid fa-magnifying-glass fa-flip"></i></span></button>
       </div>
-      <span class="supporting-text">Latest entry: 'eggshell membrane'.</span>
+      <span><p class="microcopy">Latest entry: 'eggshell membrane'.</p></span>
     </div>
     
     <!-- Search Results -->

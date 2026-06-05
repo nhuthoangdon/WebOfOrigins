@@ -1,6 +1,7 @@
 "id";"label";"type";"title";"shape";"image";"is_sustainable"
 comp_1;Glucosamine;Composition;"Natural Compound: A natural Sugar found in Shellfish Shells, Fungi, and the human body; a building block of Cartilage that supports joint health. (22)";;;
 comp_10;Collagen (Type I, V, X);Composition;Natural Compound: Collagen Type I is the primary form in the human body, supporting Skin, Hair, Nails, and Bone Health. Type V supports the formation of Cornea Tissues, certain Skin layers, Hair, and the Placenta. Type X is a short-chain, non-fibrillar Collagen found in calcified Cartilage, important for skeletal growth and used as a biomarker for Osteoarthritis. (48, 150);;;
+comp_11;Calcium Carbonate (CaCO3);Composition;Natural Compound: Calcium Carbonate is a common inorganic compound found in rocks (limestone, marble) and organic sources (eggshells, shells), used in Dietary Supplement, Antacid, and Industrial Filler. ();;;
 comp_2;Chondroitin;Composition;Natural Compound: A substance in Cartilage that helps maintain joint structure and cushioning. (22);;;
 comp_3;Gelatin;Composition;Natural Compound: A Protein from boiled Animal Tissues, used as a Gelling Agent, Thickener, or Stabilizer in Foods, Supplements, and industrial products. ();;;
 comp_4;Collagen (Type I, III);Composition;Natural Compound: Collagen Type I makes up about 90% of the human body Collagen, supporting the structure of Skin, Tendons, Ligaments, and Bones, while Type III supports Muscles, Arteries, and Organs. These 2 types of Collagen are commonly combined in Supplements for aging. (150);;;
@@ -20,6 +21,7 @@ con_17;Labour Exploitation;Concern;Unfair labor practices, including child labor
 con_18;IUU Fishing;Concern;Illegal, unreported, or unregulated fishing practices.. Often relates to Fishing;;;
 con_19;Soil Fertility Decline;Concern;Loss of essential nutrients and soil quality over time.. Often relates to Agriculture;;;
 con_2;Pesticide & Herbicide Use;Concern;Application of synthetic chemicals to control pests and weeds.. Often relates to Agriculture;;;
+con_20;Disease Outbreaks;Concern;Sudden occurence of disease cases in a community or specific area, caused by infectious agents, environmental exposure, or toxins, that exceeds normal expectancy and typically affects a more limited geographic area than an epidemic.. Often relates to Agriculture;;;
 con_3;Water Overuse;Concern;Excessive withdrawal of groundwater or surface water beyond sustainable levels.. Often relates to Various Industries;;;
 con_4;Soil Degradation;Concern;Loss of soil nutrients or structure due to unsustainable farming practices.. Often relates to Various Industries;;;
 con_5;Deforestation;Concern;Clearing forests for agriculture, development, or other human activities.. Often relates to Various Industries;;;
@@ -28,14 +30,18 @@ con_7;Greenhouse Gas (GHG) Emissions;Concern;Release of carbon dioxide, methane,
 con_8;Antibiotic Overuse;Concern;Excessive use of antibiotics in agriculture or medicine, contributing to resistance.. Often relates to Various Industries;;;
 con_9;Genetic Modification;Concern;Use of genetically modified organisms in agriculture.. Often relates to Agriculture;;;
 consq_1;Water Contamination;Consequence;Degradation of water quality due to pollutants.;;;
-consq_10;Chemical Exposure;Consequence;Contact of humans or wildlife with toxic substances.;;;
-consq_11;Antibiotic Resistance;Consequence;Increased resistance of bacteria to antibiotics.;;;
+consq_10;Environmental Chemical Exposure;Consequence;Contact of humans or wildlife with toxic substances (heavy metals, pesticides, industrial compounds) from air, water, soil, and food;;;
+consq_11;Drug/Antibiotic/Antimicrobial Resistance;Consequence;Increased resistance of bacteria to antibiotics.;;;
 consq_12;Resource Scarcity;Consequence;Depletion of natural resources such as water or minerals.;;;
 consq_13;Resistant Pests & Weeds;Consequence;Development of resistance in pests or weeds to chemical controls.;;;
 consq_14;Loss of Natural Ecosystems;Consequence;Disappearance or severe degradation of natural environments.;;;
 consq_15;Eutrophication;Consequence;Excess nutrients in water causing algal blooms and aquatic dead zones.;;;
 consq_16;Marine Biodiversity Loss;Consequence;Decline in populations of aquatic species.;;;
+consq_17;Mass Culling (livestock);Consequence;Rapid, large-scale killing of animals, often livestock to manage disease outbreaks, prevent zoonotic transmission, or handle supply chain disruptions;;;
+consq_18;Disease Transmission / Outbreaks;Consequence;"Process of an infectious agent transferring from a source or reservoir to a susceptible subject; sudden occurrences of a disease in a community, geographic area, or season that exceeds the number of normally expeced cases";;;
+consq_19;Food Chain Bioaccumulation;Consequence;The gradual buildup of persistent toxins such as mercury, DDT, PCBs, microplastics, and heavy metals within individual organisms, which are then transferred and magnified across trophic levels in the food chain;;;
 consq_2;Soil Contamination;Consequence;Accumulation of harmful substances in soil.;;;
+consq_20;Rising Global Temperatures / Global Warming;Consequence;Global temperatures have risen by approximately 1.3°C above pre-industrial levels as of 2026, with trends continuing to increase at an alarming rate;;;
 consq_3;Air Pollution;Consequence;Release of particulates or gases into the atmosphere.;;;
 consq_4;Biodiversity Loss;Consequence;Reduction in species diversity or population.;;;
 consq_5;Ocean Acidification;Consequence;Decrease in ocean pH caused by CO₂ absorption.;;;
@@ -127,18 +133,34 @@ icCountry_8;Thailand;icCountry;Thailand;image;https://flagsapi.com/TH/flat/64.pn
 icCountry_9;Vietnam;icCountry;Vietnam;image;https://flagsapi.com/VN/flat/64.png;
 imp_10;Unsafe Drinking Water;Impact;Contaminated water that is unfit for human consumption.;;;
 imp_11;Reduced Agricultural Yield;Impact;Decreased productivity of crops or livestock.;;;
-imp_12;Sea Level Rise;Impact;Rising ocean levels that increase coastal flooding and erosion.;;;
-imp_13;Natural Disaster Increase;Impact;Higher frequency or intensity of extreme weather events.;;;
+imp_12;Sea Level Rise;Impact;Rising ocean levels that increase coastal flooding and erosion;;;
+imp_13;Natural Disaster Increase / Weather Pattern Disruption;Impact;Higher frequency or intensity of extreme weather events.;;;
 imp_14;Social Inequality;Impact;Unequal access to resources, services, or opportunities.;;;
 imp_15;Harmful Algal Blooms (HABs);Impact;Rapid growth of toxin-producing algae in water bodies, posing risks to ecosystems and human health.;;;
 imp_16;Dead Zones (Hypoxia);Impact;Areas of water with very low oxygen levels, unable to support most aquatic life.;;;
 imp_17;Algal Blooms;Impact;Excessive growth of algae, usually driven by nutrient pollution.;;;
-imp_18;Aquatic Life Loss;Impact;Decline in aquatic species abundance and biodiversity.;;;
-imp_2;Ecosystem Degradation/Collapse;Impact;Breakdown of ecosystem structure, function, and resilience.;;;
-imp_3;Species Extinction;Impact;Permanent loss of a species from the planet.;;;
-imp_4;Human Health Impacts;Impact;Widespread health problems linked to environmental conditions.;;;
-imp_5;Food Insecurity;Impact;Lack of reliable access to sufficient, safe, and nutritious food.;;;
-imp_6;Economic Decline;Impact;Sustained reduction in economic activity and productivity.;;;
+imp_18;Marine Biodiversity Loss;Impact;Decline in aquatic species abundance and biodiversity.;;;
+imp_19;Food Production Shortages;Impact;Occur when the supply of agricultural and food products fails to meet demand due to disruptions in supply chains, input costs, or environmental factors;;;
+imp_2;Ecosystem Degradation/Collapse;Impact;Breakdown of ecosystem structure, function, and resilience;;;
+imp_20;Ethical Dilemmas;Impact;Complex decision-making situations involving choices between two or more mutually exclusive alternatives, where each option carries negative consequences.;;;
+imp_21;Heatwaves;Impact;A period of abnormally high and uncomfortable temperatures relative to the local seasonal average, lasting for more than two consecutive days;;;
+imp_23;Melting Ice, Glaciers, and Snow;Impact;The melting of ice and snow is primarily driven by rising atmospheric and ocean temperatures caused by anthropogenic impacts;;;
+imp_25;Droughts;Impact;Periods of drier-than-normal conditions that can last for days, months, or years, with negative impacts on ecosystems and agriculture;;;
+imp_26;Floods;Impact;The overflow of water that submerges normally dry land, resulting from excessive rainfall, rapid snowmelt, or infrastructure failure;;;
+imp_27;Storms / Hurricanes;Impact;Intense tropical cyclones characterized by strong winds, heavy rainfall, and organized systems of clouds and thunderstorms;;;
+imp_28;Wildfires and Bushfires;Impact;Unplanned, uncontrolled fire burning in vegetative fuels such as forests, shrublands, or grasslands, often ignited by lightning or human activity;;;
+imp_29;Risks to Human Life;Impact;Immediate threats to human survival, including conditions that increase mortality risk or factors that endanger human life;;;
+imp_3;Species Extinction;Impact;Permanent loss of a species from the planet;;;
+imp_30;Human Displacement;Impact;Involuntary or coerced relocation of individuals from their homes due to conflict, persecution, or environmental factors;;;
+imp_31;Saltwater Intrusion;Impact;Movement of saltwater into freshwater aquafiers or surface water bodies;;;
+imp_32;Water Shortage/Scarcity;Impact;limited water supply driven by climate change, unsustainable extraction, and pollution, where renewable freshwater resources are used faster than they can naturally replenish;;;
+imp_33;Altered Shipping Routes;Impact;Changes in global shipping routes driven by environmental or economic factors;;;
+imp_34;Human-Wildlife Conflict;Impact;Occurs when the presence or behaviour of wild animals creates actual or perceived, direct, and recurring threats to human safety, livelihoods, or resources, and vice versa;;;
+imp_35;Mass Coral Bleaching;Impact;An event where corals turn white as a stress response to stressors such as changes in temperature, pollution, or salinity, primarily triggered by Warming Oceans;;;
+imp_36;Marine Heatwaves;Impact;Prolonged periods of extreme, unusually warm sea surface temperatures in a specific region;;;
+imp_4;Human Health Impacts;Impact;Widespread health problems linked to environmental conditions;;;
+imp_5;Food Insecurity;Impact;Lack of reliable access to sufficient, safe, and nutritious food;;;
+imp_6;Economic Decline;Impact;Sustained reduction in economic activity and productivity;;;
 imp_7;Resource Conflicts;Impact;Disputes or tensions over scarce natural resources.;;;
 ind_1;Corn Farming;Industry;Cultivation of Corn (Maize), a major global agricultural sector with high production volumes.;;;0
 ind_10;Cattle Farming;Industry;Rearing Cattle for Beef or Dairy, including breeding, feeding, and herd management.;;;0
@@ -168,6 +190,7 @@ ind_34;Commercial Fishing;Industry;Catching Fish and Seafood from wild marine an
 ind_35;Artisanal Fishing;Industry;Small-scale, low-tech fishing by individuals or households, mainly for local consumption or trade.;;;
 ind_36;Layer Poultry Farming/Egg Production;Industry;Breeding and raising Female Chickens (Hens) for Commercial Egg Production.;;;
 ind_37;Egg Breaking Industry;Industry;Egg Breaking processes Eggs into cracked, separated, frozen, liquid, dried, and pasteurised forms for use in Bakeries, Pasta Production, and wider Food Manufacturing.;;;
+ind_38;Quarrying;Industry;High-revenue industry focused on the surface extraction, crushing, and processing of natural resources such as Rock, Sand, Gravel, and Limestone for Construction, Infrastructure, and Industrial use;;;
 ind_4;Crustacean Fisheries;Industry;Commercial harvesting of aquatic arthropods, mainly decapods like Shrimp, Lobsters, and Crabs.;;;
 ind_5;Biotechnology;Industry;Use of biological systems and organisms to develop new products, processes, and technologies.;;;1
 ind_6;Shrimp and Prawn Farming;Industry;Aquaculture of heavily farmed Crustaceans, including Whiteleg Shrimp, Giant Tiger Prawn, and Freshwater Prawn.;;;0
@@ -180,7 +203,7 @@ item_11;Capsules;Item;Cylindrical shells, often gelatin or plant-based, used to 
 item_12;Collagen Peptides/Hydrolysed Collagen;Item;Small fragments of animal collagen broken into absorbable peptides or amino acids, available in powders, pills, or liquids.;;;
 item_13;Collagen Face Cream;Item;Skincare product with hydrolysed collagen to support skin elasticity, hydration, and a smoother appearance.;;;
 item_14;Sausages;Item;Processed meat made from ground or emulsified meat, fat, and seasonings, encased in natural or synthetic casings.;;;
-item_15;Coated Tablets;Item;Compressed tablets covered with a polymer, sugar, or film to improve stability, mask taste, or control release.;;;
+item_15;Tablets (Coated, Uncoated);Item;Compressed Tablets, Coated or Uncoated, contain active ingredients and excipients, designed for precise dosing, stability, and ease of handling. Coated Tablets are covered with sugar, polymer, or film layers to mask taste, protect ingredients, or control release.;;;
 item_16;Wound Dressings;Item;Sterile materials applied to wounds to protect, absorb fluids, control moisture, and support healing.;;;
 item_17;Pet Supplements;Item;Nutritional products for companion animals, containing vitamins, minerals, amino acids, or other beneficial compounds.;;;
 item_18;Energy Gels;Item;Concentrated, easy-to-digest carbohydrate products with electrolytes, designed for rapid energy during endurance activities.;;;
@@ -188,7 +211,23 @@ item_19;Protein Bars;Item;Compact foods with protein, carbohydrates, fats, and n
 item_2;Gummies;Item;Soft, chewy, fruit-flavored sweets, typically molded into various shapes.;;;
 item_20;Photographic Film;Item;Plastic strips coated with light-sensitive chemicals for analog photography.;;;
 item_21;Crab Sticks;Item;Processed seafood made from minced white fish, shaped and flavored to mimic crab meat.;;;
+item_22;Antacids (Tums, Rolaids);Item;OTC medicines used to quickly relieve indigestion, sour stomach, and heartburn by neutralizing excess stomach acid with Calcium Carbonate as active ingredient.;;;
+item_23;Calcium Supplements;Item;Calcium Supplements are used to support Bone Health when dietary intake is insufficient. They commonly contain Calcium Carbonate or Calcium Citrate and are often combined with Vitamin D to enhance absorption.;;;
+item_24;Toothpaste;Item;General Toothpaste for everyday cleaning and whitening;;;
+item_25;Face Makeup;Item;Primers, Foundations, Concealers, Finishing Powder, Blushes, etc.;;;
+item_26;Deodorants & Antiperspirants;Item;Sticks, pastes, and sprays applied to the body, typically the underarms, to control odor and manage sweat.;;;
+item_27;Phosphate Binders;Item;Prescription medications used to treat hyperphosphatemia (high blood phosphorus) in patients with chronic kidney disease (CKD) and on dialysis;;;
+item_28;Bar Soap;Item;Solid, typically rectangular cleansing product mainly consists of fats or oils with an alkali (lye);;;
+item_29;Detergents;Item;A water-soluble cleaning agent, typically liquid, composed of synthetic surfactants or blends designed to remove oils, dirt, and grease from surfaces such as clothing, dishes, and household items;;;
 item_3;Jello;Item;A wiggly, fruit-flavored gelatin dessert, typically served chilled.;;;
+item_30;Lotions;Item;A liquid topical product applied to the skin for moisturising, protection, soothing, or treating skin conditions;;;
+item_31;Commercial Bread;Item;Mass-produced, engineered, and typically ultra-processed, designed for long shelf life, consistent texture, and softness. Often contains ingredients like refined flour, added sugars, oils, preservatives, and dough conditioners;;;
+item_32;Fortified Bread Flour;Item;Wheat Flour fortified with added nutrients to restore those lost during processing or enhance nutritional value, with requirements varying by country;;;
+item_33;Biscuits & Cookies;Item;Small, flat, or slightly raised baked good typically made from a stiff dough of flour, sugar, and fat;;;
+item_34;Pastries;Item;Sweet or savoury baked goods with a flaky, crumbly, or light texture, made from dough composed of flour, water, and a high proportion of fat;;;
+item_35;Cakes;Item;Sweet, tender baked goods made from a mixture of flour, sugar, eggs, and fat, combined with a leavening agent to create a light, airy texture;;;
+item_36;Quick Breads;Item;Easy, no-yeast baked goods that rise using leavening agents such as baking powder or baking soda, enabling fast and convenient preparation;;;
+item_37;Breakfast/Cereal/Snack Bars;Item;Portable, ready-to-eat foods primarily made from grains like oats, rice, or wheat bounded by sweeteners, used as a quick bridge between meals;;;
 item_4;Marshmallows;Item;Fluffy, sweet confections commonly used in desserts or hot drinks.;;;
 item_5;Dairy Yogurt;Item;A creamy, fermented dairy product made from milk.;;;
 item_6;Cream Cheese;Item;A soft, spreadable fresh cheese.;;;
@@ -199,6 +238,7 @@ mat_1;Crustacean Shells;rawMaterial;Exoskeletons from Shrimp, Lobsters, Crabs, a
 mat_10;Wild-Caught Fish;rawMaterial;Fish harvested from natural marine and freshwater environments for Food, Supplements, and byproducts, including Cod, Tuna, Anchovies, and Sardines.;;;
 mat_11;Eggs;rawMaterial;Mass produced Eggs (predominantly from Chicken), typically laid by selectively bred Laying Hens in controlled, automated, and specialised farming systems.;;;0
 mat_12;Layer Poultry;rawMaterial;Poultry (mostly Chickens) bred and raised for Eggs, commonly called Layers or Laying Hens.;;;
+mat_13;Shells and Skeletal Remains of Marine Organisms;rawMaterial;Protective or structural support for Mollusks, Corals, Invertebrates, Vertebrates, and Microorganisms. They are primarily composed of Calcium Carbonate and can accumulate over millions of years to form Limestone, Chalk, and Marble;;;
 mat_2;Filamentuous Fungi;rawMaterial;Saprophytic microorganisms used in industries to produce enzymes, chemicals, and other compounds.;;;1
 mat_3;Bovine (Cow);rawMaterial;Domesticated cattle raised for Beef, Dairy, Leather, and byproducts such as Gelatin, Tallow, and Bone Meal.;;;0
 mat_4;Sharks and Elasmobranchs;rawMaterial;"Cartilaginous fish harvested for Meat, Fins, Cartilage, Liver Oil, and Skin; byproducts are used in Supplements, Cosmetics, and traditional medicine.";;;0
@@ -249,7 +289,7 @@ smCountry_7;India;smCountry;India;image;https://flagsapi.com/IN/flat/64.png;
 smCountry_8;Thailand;smCountry;Thailand;image;https://flagsapi.com/TH/flat/64.png;
 smCountry_9;Vietnam;smCountry;Vietnam;image;https://flagsapi.com/VN/flat/64.png;
 src_1;Chitin;Source;A natural polymer derived from the exoskeletons of arthropods and the cell walls of fungi.;;;
-src_10;Bovine Hide;Source;Thick, collagen-rich Skins from Cattle. A major raw material for Leather production and an important source for Gelatin, Collagen, and medical-grade biomaterials.;;;
+src_10;Bovine Hides;Source;Thick, collagen-rich Skins from Cattle. A major raw material for Leather production and an important source for Gelatin, Collagen, and medical-grade biomaterials.;;;
 src_11;Bovine Connective Tissues (Tendons, Ligaments, and Fascia);Source;Strong connective tissues from cattle, including tendons, ligaments, and fascia, rich in Type I Collagen. Widely used for Joint Health Supplements, Sports Nutrition, and medical or surgical materials.;;;
 src_12;Fish Scales & Skin;Source;Collagen-rich outer tissues of fish, processed for Gelatin, Collagen peptides, Cosmetics, and Biomedical or packaging applications like Wound Dressings and Biofilms.;;;
 src_13;Fish Byproducts (heads, bones, fins, vertebrae, cartilage);Source;Various Fish Byproducts—such as heads, bones, and fins—processed for Collagen extraction, Fish Protein Hydrolysates, Animal Feed, Fertilizers, and Biomedical uses;;;
@@ -266,6 +306,10 @@ src_22;Pig Skin;Source;Softer skin with higher fat content than Bovine Hides. Wi
 src_23;Porcine Connective Tissues (Tendons, Ligaments, and Fascia);Source;Flexible connective tissues from Pigs, processed similarly to Bovine sources. Used for Collagen, Gelatin, and nutraceutical ingredients, with slightly different yield and processing characteristics.;;;
 src_24;Poultry Connective Tissues (Tendons, Ligaments, and Fascia);Source;Smaller connective tissues from Poultry. Less commonly used at industrial scale, but still processed into Broths and low-yield Collagen sources.;;;
 src_25;Eggshell Membrane;Source;Thin, resilient layer between an Avian Egg's Hard Shell and the Egg White, composed of Collagen (Type I, V, and X), Glucosamine, Chondroitin Sulphate, Hyaluronic Acid, Elastin, Keratin, and many other Proteins. Historically discarded as waste but now prized as a highly sustainable and bioactive source for Health and Beauty Products;;;1
+src_26;Eggshells;Source;Eggshells, once discarded, are now upcycled into high-value Agricultural, Industrial, and Medical Products due to their rich Calcium Carbonate and Protein content.;;;
+src_27;Limestone;Source;Sedimentary rock primarily composed of Calcium Carbonate;;;
+src_28;Chalk;Source;A specific type of Limestone, characterised as a soft, white, porous sedimentary rock composed primarily of Calcium Carbonate;;;
+src_29;Marble;Source;Metamorphic rock formed when Limestone is subjected to intense heat and pressure, composed primarily of Calcite - a mineral form of Calcium Carbonate;;;
 src_3;Animal Cartilage;Source;Tough Connective Tissue from Cattle, Poultry, or Fish, used to extract Collagen, Gelatin, and Chondroitin for supplements, foods, pet feed, and biomedical applications.;;;
 src_5;Shark Cartilage;Source;High-value cartilage from shark skeletons (byproducts of meat and fin industries), mainly used in nutraceuticals and cosmetics.;;;0
 src_6;Beef (Bovine Meat);Source;Meat from cattle, processed for human consumption and used in a variety of food products.;;;
