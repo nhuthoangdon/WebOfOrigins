@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   initGlobalInteractions();
   makeListingsClickable();
   initHeader();
+  initAIMode();
+  initThemeToggle();
 });
 
 
@@ -41,7 +43,92 @@ function initGlobalInteractions() {
   }, true);
 }
 
+// --------------------------------------
+// AI Mode page interactions
+function initAIMode() {
+  const aiBtn = document.getElementById('ai-float-btn');
+  if (!aiBtn) {
+    console.warn('AI Button (#ai-float-btn) not found');
+    return;
+  }
 
+  let modal = null;
+
+  function createModal() {
+    if (modal) return modal;
+
+    modal = document.createElement('div');
+    modal.id = 'ai-modal';
+    modal.className = 'ai-modal';
+    modal.innerHTML = `
+          <div class="ai-modal-content">
+              <button id="close-ai-btn" class="close-ai-btn" aria-label="Close AI Window" title="Close this window">
+                  ✕
+              </button>
+              
+              <div id="ai-loading" class="ai-loading">
+                  <div class="ai-loading-spinner"></div>
+                  <p>Loading AI Explorer...</p>
+              </div>
+              
+              <iframe id="ai-frame" 
+                      src="https://web-of-origins-ai.vercel.app/"
+                      title="AI-assisted search – Web of Origins" 
+                      allow="clipboard-write" 
+                      loading="lazy">
+              </iframe>
+          </div>
+      `;
+
+    document.body.appendChild(modal);
+
+    const closeBtn = modal.querySelector('#close-ai-btn');
+    const iframe = modal.querySelector('#ai-frame');
+    const loadingUI = modal.querySelector('#ai-loading');
+
+    // Close button
+    closeBtn.addEventListener('click', closeAIModal);
+
+    // Hide loading when iframe finishes loading
+    iframe.addEventListener('load', () => {
+      if (loadingUI) loadingUI.style.display = 'none';
+    });
+
+    // Close on click outside content
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeAIModal();
+    });
+
+    return modal;
+  }
+
+  function openAIModal() {
+    modal = createModal();
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    console.log('AI Explorer opened');
+  }
+
+  function closeAIModal() {
+    if (modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Main click handler
+  aiBtn.addEventListener('click', openAIModal);
+
+  // Keyboard Escape support
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const currentModal = document.getElementById('ai-modal');
+      if (currentModal && currentModal.style.display === 'flex') {
+        closeAIModal();
+      }
+    }
+  });
+}
 
 // ——————————————————————————————————————
 // Header logic: mobile menu, sponsor CTA
@@ -53,7 +140,7 @@ function initHeader() {
 
   if (!menu || !hamburger || !menuItems) return;
 
-  // Desktop sponsor buttons — delegation (works forever)
+  // Desktop sponsor buttons
   document.addEventListener('click', e => {
     if (e.target.closest('.sponsor-cta')) {
       e.preventDefault();
@@ -61,41 +148,45 @@ function initHeader() {
     }
   });
 
-  // — Mobile sponsor CTA (created once, reused forever) —
-  let mobileSponsorCTA = null;
-  let menuListItem = document.createElement('li');
-  menuItems.appendChild(menuListItem);
+  // — Mobile sponsor CTA
+  let mobileSponsorLink = null;
+  let mobileSponsorListItem = document.createElement('li');
+  //Positioning mobileSponsorListItem before the last item (data cta)
+  const lastItem = menuItems.lastElementChild;
+  if (lastItem) {
+    menuItems.insertBefore(mobileSponsorListItem, lastItem);
+  } else {
+    menuItems.appendChild(mobileSponsorListItem);
+  }
 
   const createMobileCTA = () => {
-    if (mobileSponsorCTA) return mobileSponsorCTA;
+    if (mobileSponsorLink) return mobileSponsorLink;
 
-    mobileSponsorCTA = document.createElement('button');
-    mobileSponsorCTA.textContent = 'Support This Project';
-    mobileSponsorCTA.className = 'primary-button sponsor-button-mobile';
-    mobileSponsorCTA.style.cursor = 'pointer';
-    menuListItem.appendChild(mobileSponsorCTA);
-  
-
+    mobileSponsorLink = document.createElement('a');
+    mobileSponsorLink.textContent = 'Support This Project';
+    mobileSponsorLink.className = 'cta-link sponsor-link-mobile';
+    mobileSponsorLink.style.cursor = 'pointer';
+    mobileSponsorListItem.appendChild(mobileSponsorLink);
 
     // Use delegated click (prevents issues after DOM reload)
-    mobileSponsorCTA.addEventListener('click', e => {
+    mobileSponsorLink.addEventListener('click', e => {
       e.stopPropagation();
       window.location.href = '/sponsor/';
     });
 
-    return mobileSponsorCTA;
+    return mobileSponsorLink;
   };
 
-  const isMobile = () => window.matchMedia('(max-width: 961px)').matches;
+  const isMobileMenu = () => window.matchMedia('(max-width: 860px)').matches;
 
   const ensureMobileCTA = () => {
-    if (isMobile()) {
+    if (isMobileMenu()) {
       const cta = createMobileCTA();
       if (!menuItems.contains(cta)) {
         menuItems.appendChild(cta);
       }
-    } else if (mobileSponsorCTA?.parentNode) {
-      mobileSponsorCTA.remove();
+    } else if (mobileSponsorLink?.parentNode) {
+      mobileSponsorLink.remove();
     }
   };
   
@@ -286,3 +377,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
+  const html = document.documentElement;
+
+  // Default = Dark (your original theme)
+  let currentTheme = localStorage.getItem('theme') || 'dark';
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    } else {
+      html.classList.remove('light-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+  }
+
+  // Apply saved preference on load
+  applyTheme(currentTheme);
+
+  toggleBtn.addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', currentTheme);
+    applyTheme(currentTheme);
+    console.log(`Theme switched to ${currentTheme}`);
+  });
+}
