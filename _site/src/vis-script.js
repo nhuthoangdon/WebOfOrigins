@@ -906,7 +906,6 @@ const updateDrawerContent = (nodeId, nodeLabel) => {
         const h3 = document.createElement('h3');
         h3.textContent = safeLabel;
         const p = document.createElement('p');
-        p.style.color = '#28282bff';
         p.textContent = 'No further info found for this item. Please check back later.';
         const container = document.createElement('div');
         container.appendChild(h3);
@@ -1196,7 +1195,6 @@ searchBtn.onclick = () => {
 
         const p = document.createElement("p");
         const b = document.createElement("b");
-        b.style.color = "#dfdee8ff";
         b.textContent = `${nodeLabelText}: `;
         p.appendChild(b);
 
@@ -1377,4 +1375,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-    }
+
+}
