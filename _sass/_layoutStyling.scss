@@ -9,12 +9,11 @@ $medium-text-size: 1rem;
 $border-radius-small: 8px;
 $border-radius-medium: 14px;
 $border-radius-large: 28px;
-$tinted-text-color: #a8b4bc;
 
 :root {
     --ai-accent: #22d3ee;
     --modal-bg: rgba(5, 1, 25, 0.95);
-    --modal-content-bg: #0a0f1c; 
+    --modal-content-bg: #0a0f1c;
 }
 
 // _layouts/grid.html styling
@@ -61,15 +60,15 @@ ul.listing-grid {
         transition: all 0.3s ease;
 
         &:hover {
-            -webkit-box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            -webkit-box-shadow: var(--card-box-shadow-hovered);
+            box-shadow: var(--card-box-shadow-hovered);
             -webkit-transform: translateY(-5px);
             transform: translateY(-5px);
             border-color: rgba(94, 167, 239, 0.3);
             background: rgba(94, 167, 239, 0.1);
         }
          &:hover a {
-                    color: #C9E73A; 
+                    color: var(--highlight-color); 
          }
          &:hover a span::after {
             -webkit-transform: translateX(4px);
@@ -80,7 +79,7 @@ ul.listing-grid {
         
         h4 {
             margin-bottom: 0;
-            color: #8ED0DC;
+            color: var(--link-color);
             font-family: $body-font;
             letter-spacing: 0.03em;
         }
@@ -154,7 +153,7 @@ ul.listing-grid {
 
 .post-meta {
     font-size: $medium-text-size;
-    color: $tinted-text-color;
+    color: var(--tinted-text-color);
     letter-spacing: .04rem;
 }
 
@@ -346,31 +345,7 @@ img {
     }
 }
 
-// AI Floating Button
-.ai-float-btn {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    z-index: 9999;
-    background: var(--ai-accent);
-    color: #0a0f1c;
-    border: none;
-    border-radius: 50px;
-    padding: 14px 24px;
-    font-weight: 600;
-    font-size: 1.05rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 6px 20px rgba(34, 211, 238, 0.35);
-    transition: all 0.25s ease;
-    cursor: pointer;
 
-    &:hover {
-        transform: translateY(-4px) scale(1.05);
-        box-shadow: 0 10px 25px rgba(34, 211, 238, 0.45);
-    }
-}
 
 // AI Modal
 .ai-modal {

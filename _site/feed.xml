@@ -1,81 +1,390 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-16T18:06:00+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Web of Origins</title><subtitle>Visualising the connections between products, materials, industries, and their origins.</subtitle><author><name>Web of Origins</name></author><entry><title type="html">Tracing Coffee Origins</title><link href="http://localhost:4000/remy/tuti/boo/2025/10/20/coffee-origins-copy-2.html" rel="alternate" type="text/html" title="Tracing Coffee Origins" /><published>2025-10-20T00:00:00+07:00</published><updated>2025-10-20T00:00:00+07:00</updated><id>http://localhost:4000/remy/tuti/boo/2025/10/20/coffee-origins%20copy%202</id><content type="html" xml:base="http://localhost:4000/remy/tuti/boo/2025/10/20/coffee-origins-copy-2.html"><![CDATA[<p>Layout 2
-For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-19T15:54:32+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Web of Origins</title><subtitle>Visualising the connections between products, materials, industries, and their origins.</subtitle><author><name>Web of Origins</name></author><entry><title type="html">Slaughtering Industry (AI-generated content for testing)</title><link href="http://localhost:4000/remy/tuti/boo/2025/10/20/coffee-origins-copy-2.html" rel="alternate" type="text/html" title="Slaughtering Industry (AI-generated content for testing)" /><published>2025-10-20T00:00:00+07:00</published><updated>2025-10-20T00:00:00+07:00</updated><id>http://localhost:4000/remy/tuti/boo/2025/10/20/coffee-origins%20copy%202</id><content type="html" xml:base="http://localhost:4000/remy/tuti/boo/2025/10/20/coffee-origins-copy-2.html"><![CDATA[<p>The slaughtering industry is a critical yet often opaque component of global food systems. It represents the transition point between livestock production and meat consumption, linking agriculture, processing, distribution, and retail.
 <!--more--></p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?
-For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Tracing the origins of slaughtering practices reveals not only where meat comes from, but how animals are raised, handled, processed, and the broader implications for ethics, health, and the environment.</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Historical Foundations</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?</p>]]></content><author><name>Remy</name></author><category term="[&quot;remy&quot;, &quot;tuti&quot;, &quot;bOO&quot;]" /><summary type="html"><![CDATA[Layout 2 For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.]]></summary></entry><entry><title type="html">Test more post</title><link href="http://localhost:4000/test/2025/10/18/test-second-post.html" rel="alternate" type="text/html" title="Test more post" /><published>2025-10-18T00:00:00+07:00</published><updated>2025-10-18T00:00:00+07:00</updated><id>http://localhost:4000/test/2025/10/18/test-second-post</id><content type="html" xml:base="http://localhost:4000/test/2025/10/18/test-second-post.html"><![CDATA[<p>test
-Test blah balh dummy content</p>
+<p>Animal slaughter for food dates back to early human societies, where hunting gradually gave way to domestication and controlled livestock rearing. As populations grew and urbanized, slaughtering evolved from small-scale, local practices into centralized operations designed for efficiency and scale.</p>
 
-<p>For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Modern slaughterhouses are highly systematized facilities, integrating mechanization, food safety protocols, and supply chain logistics to meet global demand.</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-<!--more-->
-Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Livestock Sources</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>The slaughtering industry begins with livestock production, which varies by species and region:</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Cattle: Raised for beef, often in pasture-based or feedlot systems.
+Poultry: Chickens and turkeys, typically produced in intensive farming operations.
+Pigs: Raised in both industrial and smaller-scale farms for pork.
+Small Ruminants: Sheep and goats, often linked to regional and cultural consumption patterns.</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>The origin of livestock—whether from intensive industrial farms or extensive, pasture-based systems—significantly influences meat quality, animal welfare, and environmental impact.</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?</p>]]></content><author><name>Web of Origins</name></author><category term="[&quot;test&quot;, &quot;test&quot;, &quot;test&quot;]" /><summary type="html"><![CDATA[test Test blah balh dummy content For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty. If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).]]></summary></entry><entry><title type="html">Palm Oil in Cosmetics</title><link href="http://localhost:4000/food/2025/10/10/coffee-origins-copy-3.html" rel="alternate" type="text/html" title="Palm Oil in Cosmetics" /><published>2025-10-10T00:00:00+07:00</published><updated>2025-10-10T00:00:00+07:00</updated><id>http://localhost:4000/food/2025/10/10/coffee-origins%20copy%203</id><content type="html" xml:base="http://localhost:4000/food/2025/10/10/coffee-origins-copy-3.html"><![CDATA[<p>test if this is the layout that got effected
-For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.
-<!--more-->
-If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?</p>
+<p>Slaughtering Processes</p>
 
-<p>For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Modern slaughtering involves several standardized stages:</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Transport and Handling: Animals are moved from farms to processing facilities, where stress levels can affect both welfare and meat quality.
+Stunning: Intended to render animals unconscious before slaughter; methods vary (mechanical, electrical, or gas).
+Bleeding and Processing: Removal of blood followed by skinning, evisceration, and carcass breakdown.
+Inspection and Grading: Ensuring compliance with food safety standards and quality classification.</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?
-Exploring coffee’s supply chain, linked to nodes like <code class="language-plaintext highlighter-rouge">Coffee</code>, <code class="language-plaintext highlighter-rouge">Brazil</code>, and impacts like <code class="language-plaintext highlighter-rouge">Deforestation</code>. <a href="#">View visualization</a>.</p>
+<p>These processes are regulated in many countries, though standards and enforcement vary globally.</p>
 
-<p>For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Global Processing Hubs</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?
-For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Slaughtering operations are distributed worldwide, often located near major livestock production areas:</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>North and South America: Large-scale beef and poultry processing industries.
+Europe: Highly regulated systems with strict animal welfare and hygiene standards.
+Asia: Rapidly expanding production, with diverse practices ranging from industrial facilities to smaller local operations.</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?</p>]]></content><author><name>Web of Origins</name></author><category term="food" /><category term="deforestation" /><category term="orangutans" /><category term="indonesia" /><summary type="html"><![CDATA[test if this is the layout that got effected For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/Assets/dummy-img.jpeg" /><media:content medium="image" url="http://localhost:4000/src/Assets/dummy-img.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Test 2 blah</title><link href="http://localhost:4000/global%20warming/supply%20chain/2025/10/06/test-third-post.html" rel="alternate" type="text/html" title="Test 2 blah" /><published>2025-10-06T00:00:00+07:00</published><updated>2025-10-06T00:00:00+07:00</updated><id>http://localhost:4000/global%20warming/supply%20chain/2025/10/06/test-third-post</id><content type="html" xml:base="http://localhost:4000/global%20warming/supply%20chain/2025/10/06/test-third-post.html"><![CDATA[<p>test blah blah blah</p>
+<p>Processing hubs are integral to global meat supply chains, linking producers to domestic and international markets.</p>
 
-<p>For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.
-<!--more-->
-If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?
-For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Traceability and Transparency</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Tracing meat origins has become increasingly important for food safety, ethical considerations, and consumer trust. Key traceability elements include:</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?</p>]]></content><author><name>Remy</name></author><category term="[&quot;global warming&quot;, &quot;supply chain&quot;]" /><summary type="html"><![CDATA[test blah blah blah For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.]]></summary></entry><entry><title type="html">Tracing Coffee Origins</title><link href="http://localhost:4000/2025/10/01/article-test-3.html" rel="alternate" type="text/html" title="Tracing Coffee Origins" /><published>2025-10-01T00:00:00+07:00</published><updated>2025-10-01T00:00:00+07:00</updated><id>http://localhost:4000/2025/10/01/article-test%203</id><content type="html" xml:base="http://localhost:4000/2025/10/01/article-test-3.html"><![CDATA[<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?
-<!--more-->
-For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Farm of origin
+Animal health records
+Slaughterhouse identification
+Processing and distribution pathways</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).</p>
+<p>Technologies such as RFID tagging, barcoding, and digital tracking systems are used to enhance traceability, though implementation remains uneven.</p>
+
+<p>Ethical and Welfare Considerations</p>
+
+<p>The slaughtering industry raises significant ethical questions, particularly regarding animal welfare:</p>
+
+<p>Pre-Slaughter Conditions: Transport stress, overcrowding, and handling practices.
+Stunning Effectiveness: Ensuring animals do not experience unnecessary pain.
+Cultural and Religious Practices: Variations such as halal and kosher slaughter methods.</p>
+
+<p>Public scrutiny and advocacy have driven improvements in some regions, but challenges persist globally.</p>
+
+<p>Environmental Impacts</p>
+
+<p>While slaughtering itself is one stage, it is closely tied to the broader environmental footprint of meat production:</p>
+
+<p>Greenhouse gas emissions from livestock
+Land and water use
+Waste management from processing facilities
+Pollution from byproducts and effluents</p>
+
+<p>Efforts to mitigate these impacts include improved waste treatment, resource efficiency, and alternative protein development.</p>
+
+<p>Labor and Economic Dimensions</p>
+
+<p>The industry is labor-intensive and often associated with challenging working conditions:</p>
+
+<p>Repetitive and physically demanding tasks
+Exposure to health and safety risks
+Economic reliance in certain regions</p>
+
+<p>At the same time, it provides employment and supports global food systems, making it economically significant.</p>
+
+<p>Conclusion</p>
+
+<p>Tracing the origins of the slaughtering industry reveals a complex intersection of agriculture, technology, ethics, and global trade. From farm to processing facility, each stage shapes the quality, safety, and impact of meat products.</p>
+
+<p>Understanding this system enables more informed perspectives on consumption, sustainability, and animal welfare—highlighting the importance of transparency and responsible practices in one of the world’s most essential industries.</p>]]></content><author><name>Remy</name></author><category term="[&quot;remy&quot;, &quot;tuti&quot;, &quot;bOO&quot;]" /><summary type="html"><![CDATA[The slaughtering industry is a critical yet often opaque component of global food systems. It represents the transition point between livestock production and meat consumption, linking agriculture, processing, distribution, and retail.]]></summary></entry><entry><title type="html">Pet Trade (AI-generated content for testing)</title><link href="http://localhost:4000/test/2025/10/18/test-second-post.html" rel="alternate" type="text/html" title="Pet Trade (AI-generated content for testing)" /><published>2025-10-18T00:00:00+07:00</published><updated>2025-10-18T00:00:00+07:00</updated><id>http://localhost:4000/test/2025/10/18/test-second-post</id><content type="html" xml:base="http://localhost:4000/test/2025/10/18/test-second-post.html"><![CDATA[<p>Tracing Pet Trade Origins</p>
+
+<p>The global pet trade is a vast and multifaceted system that connects wildlife, domesticated species, breeding industries, and international markets. 
+<!--more--></p>
+
+<p>While pets are often associated with companionship and emotional value, their origins can trace back to complex supply chains involving ecological, ethical, and regulatory dimensions. Understanding the origins of the pet trade reveals how animals move from source to consumer—and the impacts embedded within that journey.</p>
+
+<p>The Evolution of the Pet Trade</p>
+
+<p>Keeping animals as companions dates back thousands of years, with early domestication of species such as dogs and cats serving functional roles in hunting, protection, and pest control. Over time, this relationship evolved into one centered on companionship, giving rise to modern pet ownership.</p>
+
+<p>Today, the pet trade encompasses a wide range of animals, including:</p>
+
+<p>Domesticated Species: Dogs, cats, rabbits, and hamsters, typically bred in controlled environments.
+Exotic Pets: Reptiles, birds, amphibians, and rare mammals, often sourced from specialized breeders or wild capture.
+Aquatic Species: Fish and invertebrates traded for aquariums, sourced from both wild ecosystems and aquaculture.</p>
+
+<p>Each category involves distinct sourcing methods and regulatory considerations.</p>
+
+<p>Sources of Pets</p>
+
+<p>Tracing pet origins requires identifying how animals enter the trade:</p>
+
+<p>Commercial Breeding: Large-scale and small-scale breeders produce animals for sale, often prioritizing specific traits or appearances.
+Wild Capture: Some species, particularly exotic pets, are captured directly from natural habitats.
+Captive Breeding Programs: Designed to reduce pressure on wild populations, though effectiveness varies.
+Rescue and Adoption Networks: An alternative pathway where animals are rehomed rather than commercially produced.</p>
+
+<p>The origin pathway significantly influences animal welfare, genetic health, and environmental impact.</p>
+
+<p>Global Trade Networks</p>
+
+<p>The pet trade operates across local, regional, and international levels. Certain regions play prominent roles:</p>
+
+<p>Southeast Asia: A major hub for breeding and exporting ornamental fish, reptiles, and birds.
+South America and Africa: Key sources of wild-caught exotic species.
+North America and Europe: Large consumer markets with established breeding industries and regulatory frameworks.</p>
+
+<p>These networks often involve multiple intermediaries, including collectors, exporters, importers, wholesalers, and retailers.</p>
+
+<p>Traceability and Regulation</p>
+
+<p>Unlike some food systems, pet trade traceability can be inconsistent. Efforts to improve transparency include:</p>
+
+<p>Microchipping and Registration: Common for domesticated pets to track ownership and origin.
+Permits and Certifications: Required for international trade in certain species, especially those protected under conservation agreements.
+Labeling Standards: Indicating whether an animal is wild-caught or captive-bred.</p>
+
+<p>However, enforcement varies widely, and illegal trade remains a significant challenge.</p>
+
+<p>Environmental and Ethical Concerns</p>
+
+<p>The pet trade raises several critical concerns:</p>
+
+<p>Biodiversity Loss: Overharvesting of wild species can threaten ecosystems and lead to population declines.
+Invasive Species: Released or escaped pets can disrupt local ecosystems.
+Animal Welfare: Poor breeding conditions, transport stress, and inadequate care standards can harm animals.
+Illegal Wildlife Trade: A substantial portion of the exotic pet trade operates outside legal frameworks.</p>
+
+<p>These issues highlight the importance of responsible sourcing and informed consumer choices.</p>
+
+<p>The Role of Consumers</p>
+
+<p>Consumers play a pivotal role in shaping the pet trade. Demand influences which species are bred or captured and under what conditions. Responsible practices include:</p>
+
+<p>Choosing adoption over purchase where possible
+Verifying the source and breeding conditions
+Avoiding species with complex or unmet care requirements
+Supporting ethical breeders and certified suppliers</p>
+
+<p>Increased awareness can drive shifts toward more sustainable and humane practices.</p>
+
+<p>Conclusion</p>
+
+<p>Tracing pet trade origins reveals a system that extends far beyond pet stores and homes. It encompasses breeding operations, wild ecosystems, global logistics, and regulatory frameworks. Each stage carries implications for animal welfare, environmental sustainability, and ethical responsibility.</p>
+
+<p>By understanding where pets come from, individuals can make more informed decisions—supporting a pet trade that prioritizes the well-being of animals and the preservation of biodiversity.</p>]]></content><author><name>Web of Origins</name></author><category term="[&quot;test&quot;, &quot;test&quot;, &quot;test&quot;]" /><category term="pets" /><category term="trade" /><summary type="html"><![CDATA[Tracing Pet Trade Origins The global pet trade is a vast and multifaceted system that connects wildlife, domesticated species, breeding industries, and international markets.]]></summary></entry><entry><title type="html">Palm Oil in Cosmetics (AI-generated content for testing)</title><link href="http://localhost:4000/food/2025/10/10/coffee-origins-copy-3.html" rel="alternate" type="text/html" title="Palm Oil in Cosmetics (AI-generated content for testing)" /><published>2025-10-10T00:00:00+07:00</published><updated>2025-10-10T00:00:00+07:00</updated><id>http://localhost:4000/food/2025/10/10/coffee-origins%20copy%203</id><content type="html" xml:base="http://localhost:4000/food/2025/10/10/coffee-origins-copy-3.html"><![CDATA[<p>Palm oil is one of the most widely used ingredients in modern cosmetics, valued for its versatility, stability, and cost efficiency. Yet behind its functional role lies a complex global supply chain tied to agriculture, processing, and environmental impact. <!--more--> Tracing palm oil origins in cosmetics reveals how a single ingredient connects tropical ecosystems, industrial chemistry, and everyday personal care products.</p>
+
+<p>Why Palm Oil is Used in Cosmetics</p>
+
+<p>Palm oil and its derivatives are foundational to cosmetic formulations due to their chemical properties:</p>
+
+<p>Emollient Function: Softens and smooths skin
+Surfactant Base: Enables cleansing and foaming in products like shampoos and body washes
+Stabilizer and Thickener: Improves texture and shelf life
+Carrier Medium: Helps deliver active ingredients</p>
+
+<p>Rather than appearing as “palm oil” on labels, it is often listed under derivative names such as fatty alcohols, glycerin, or stearates—making its presence less visible to consumers.</p>
+
+<p>Cultivation and Geographic Origins</p>
+
+<p>Palm oil is derived from the fruit of the oil palm (Elaeis guineensis), a crop that thrives in tropical climates. The majority of global production is concentrated in:</p>
+
+<p>Indonesia and Malaysia: Together account for the largest share of global supply
+West and Central Africa: The crop’s original native region
+Latin America: An expanding production zone</p>
+
+<p>Plantations range from large-scale industrial estates to smallholder farms, each with different productivity levels and environmental impacts.</p>
+
+<p>From Fruit to Cosmetic Ingredient</p>
+
+<p>The transformation of palm fruit into cosmetic-grade ingredients involves several stages:</p>
+
+<p>Harvesting: Fresh fruit bunches are collected and transported to mills
+Extraction: Oil is pressed from the fruit’s flesh and kernel
+Refining and Fractionation: Separating components into usable forms
+Chemical Processing: Converting raw oil into derivatives (e.g., surfactants, emulsifiers)</p>
+
+<p>These derivatives are then integrated into a wide range of cosmetic products, from soaps to lotions and makeup.</p>
+
+<p>Supply Chains and Traceability</p>
+
+<p>Palm oil supply chains are highly complex, often involving multiple intermediaries:</p>
+
+<p>Plantations and smallholders
+Mills and refineries
+Ingredient manufacturers
+Cosmetic brands</p>
+
+<p>Traceability challenges arise due to mixing of oils from different sources during processing. As a result, identifying the exact origin of palm-derived ingredients in a finished product can be difficult.</p>
+
+<p>Certification systems and sourcing commitments aim to improve transparency, but full traceability remains a work in progress.</p>
+
+<p>Environmental Concerns</p>
+
+<p>Palm oil production is associated with several significant environmental issues:</p>
+
+<p>Deforestation: Clearing tropical forests for plantations
+Biodiversity Loss: Threats to species such as orangutans and other wildlife
+Greenhouse Gas Emissions: Especially from peatland conversion
+Soil and Water Degradation: نتيجة intensive agricultural practices</p>
+
+<p>These impacts vary depending on how and where palm oil is produced, with poorly managed expansion causing the greatest harm.</p>
+
+<p>Social and Economic Dimensions</p>
+
+<p>Palm oil is also a major economic driver, supporting millions of livelihoods:</p>
+
+<p>Smallholder farmers depend on palm cultivation for income
+The industry contributes significantly to national economies
+Labor conditions vary, with concerns in some regions about fair wages and worker rights</p>
+
+<p>Balancing economic benefits with ethical labor practices remains a key challenge.</p>
+
+<p>Industry Responses and Alternatives</p>
+
+<p>In response to growing scrutiny, the cosmetics industry has adopted various strategies:</p>
+
+<p>Sustainable Sourcing Commitments: Including certification and zero-deforestation pledges
+Ingredient Transparency: Improved labeling and disclosure initiatives
+Alternative Ingredients: Exploring substitutes such as coconut or sunflower-derived compounds</p>
+
+<p>However, alternatives also carry environmental trade-offs, and replacing palm oil entirely is not always more sustainable.</p>
+
+<p>Conclusion</p>
+
+<p>Tracing palm oil origins in cosmetics reveals a deeply interconnected system spanning agriculture, chemistry, and global trade. While palm oil enables the functionality and affordability of many products, its production raises critical environmental and social concerns.</p>
+
+<p>Understanding where these ingredients come from allows for more informed decisions—encouraging demand for greater transparency, responsible sourcing, and sustainable practices across the cosmetics industry.</p>
+
+<p>Exploring coffee’s supply chain, linked to nodes like <code class="language-plaintext highlighter-rouge">Coffee</code>, <code class="language-plaintext highlighter-rouge">Brazil</code>, and impacts like <code class="language-plaintext highlighter-rouge">Deforestation</code>. <a href="#">View visualization</a>.</p>]]></content><author><name>Web of Origins</name></author><category term="food" /><category term="deforestation" /><category term="orangutans" /><category term="indonesia" /><summary type="html"><![CDATA[Palm oil is one of the most widely used ingredients in modern cosmetics, valued for its versatility, stability, and cost efficiency. Yet behind its functional role lies a complex global supply chain tied to agriculture, processing, and environmental impact.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/Assets/dummy-img.jpeg" /><media:content medium="image" url="http://localhost:4000/src/Assets/dummy-img.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Fishing (AI-Generated Content for testing)</title><link href="http://localhost:4000/global%20warming/supply%20chain/2025/10/06/test-third-post.html" rel="alternate" type="text/html" title="Fishing (AI-Generated Content for testing)" /><published>2025-10-06T00:00:00+07:00</published><updated>2025-10-06T00:00:00+07:00</updated><id>http://localhost:4000/global%20warming/supply%20chain/2025/10/06/test-third-post</id><content type="html" xml:base="http://localhost:4000/global%20warming/supply%20chain/2025/10/06/test-third-post.html"><![CDATA[<p>Fishing is one of humanity’s oldest practices, deeply embedded in survival, culture, and global trade. What begins as a simple act of catching fish unfolds into a complex system of ecosystems, technologies, and supply chains. <!--more-->  Tracing fishing origins reveals not only where seafood comes from, but how it is harvested, managed, and its broader environmental and social consequences.</p>
+
+<p>The Roots of Fishing</p>
+
+<p>Fishing dates back tens of thousands of years, with early humans relying on rivers, lakes, and coastal waters for sustenance. Over time, techniques evolved—from hand gathering and spearing to nets, lines, and eventually industrial-scale operations.</p>
+
+<p>Today, fishing spans two primary domains:</p>
+
+<p>Wild Capture Fisheries: Harvesting fish directly from natural environments such as oceans and freshwater systems.
+Aquaculture: Farming fish, shellfish, and aquatic plants under controlled conditions.</p>
+
+<p>Understanding the origin of seafood requires distinguishing between these fundamentally different systems.</p>
+
+<p>Global Fishing Grounds</p>
+
+<p>Fishing activities are shaped by geography, ocean currents, and marine biodiversity. Major fishing regions include:</p>
+
+<p>North Atlantic: Historically rich in cod, haddock, and mackerel.
+Pacific Ocean: The largest and most productive, supplying tuna, anchovies, and pollock.
+Southeast Asia: A critical hub for both wild capture and aquaculture, producing shrimp, tilapia, and a wide range of reef fish.</p>
+
+<p>Each region supports different species, influenced by water temperature, nutrient availability, and ecological dynamics.</p>
+
+<p>Methods and Their Impact</p>
+
+<p>Fishing methods significantly affect both the type of seafood harvested and the surrounding ecosystem:</p>
+
+<p>Trawling: Dragging nets along the seafloor or through water columns; highly efficient but can damage habitats and result in bycatch.
+Longlining: Using extended lines with baited hooks; targets specific species but can inadvertently catch non-target animals.
+Pole-and-Line: A more selective, small-scale method with minimal environmental impact.
+Fish Farming Systems: Range from open-net pens in oceans to inland recirculating aquaculture systems.</p>
+
+<p>The method used is a key part of tracing origin, as it determines ecological footprint and sustainability.</p>
+
+<p>Traceability and Transparency</p>
+
+<p>Modern seafood supply chains are often opaque, involving multiple intermediaries from catch to consumer. Traceability initiatives aim to provide clear information on:</p>
+
+<p>Species identification
+Catch location
+Fishing method
+Processing and distribution pathways</p>
+
+<p>Technologies such as blockchain, satellite tracking, and certification schemes (e.g., eco-labels) are increasingly used to improve transparency and combat illegal, unreported, and unregulated (IUU) fishing.</p>
+
+<p>Environmental Pressures</p>
+
+<p>Fishing exerts significant pressure on marine ecosystems. Key concerns include:</p>
+
+<p>Overfishing: Depleting fish stocks faster than they can replenish.
+Bycatch: Unintentional capture of non-target species, including endangered marine life.
+Habitat Destruction: Especially from bottom trawling and destructive practices.
+Aquaculture Impacts: Including water pollution, disease spread, and reliance on wild fish for feed.</p>
+
+<p>Climate change further complicates these dynamics, shifting fish populations and altering ocean conditions.</p>
+
+<p>Social and Economic Dimensions</p>
+
+<p>Millions of people worldwide depend on fishing for food security and livelihoods, particularly in coastal and island communities. However, the industry also faces challenges such as:</p>
+
+<p>Labor exploitation in some industrial fleets
+Unequal access to resources
+Economic vulnerability of small-scale fishers</p>
+
+<p>Sustainable fishing practices aim to balance ecological health with economic viability and social equity.</p>
+
+<p>Conclusion</p>
+
+<p>Tracing fishing origins reveals a system far more intricate than the final product on a plate. From ocean ecosystems to fishing methods and global trade networks, every stage shapes the sustainability and impact of seafood.</p>
+
+<p>By understanding where and how fish are sourced, consumers and stakeholders can make more informed decisions—supporting practices that protect marine environments while sustaining the communities that depend on them.</p>]]></content><author><name>Remy</name></author><category term="[&quot;global warming&quot;, &quot;supply chain&quot;]" /><summary type="html"><![CDATA[Fishing is one of humanity’s oldest practices, deeply embedded in survival, culture, and global trade. What begins as a simple act of catching fish unfolds into a complex system of ecosystems, technologies, and supply chains.]]></summary></entry><entry><title type="html">Tracing Coffee Origins (AI-generated content for testing)</title><link href="http://localhost:4000/2025/10/01/article-test-3.html" rel="alternate" type="text/html" title="Tracing Coffee Origins (AI-generated content for testing)" /><published>2025-10-01T00:00:00+07:00</published><updated>2025-10-01T00:00:00+07:00</updated><id>http://localhost:4000/2025/10/01/article-test%203</id><content type="html" xml:base="http://localhost:4000/2025/10/01/article-test-3.html"><![CDATA[<p>Coffee is more than a daily ritual—it is a global narrative woven from geography, culture, ecology, and trade. Every cup carries a story that begins long before beans are roasted and brewed. 
+<!--more--></p>
+
+<p>Tracing coffee origins reveals not only where coffee comes from, but how environment, cultivation, and human decisions shape its flavor, quality, and impact.</p>
+
+<p>The Birthplace of Coffee</p>
+
+<p>Coffee’s story begins in East Africa, most notably in Ethiopia, widely regarded as the origin of Coffea arabica. According to legend, a goat herder named Kaldi first noticed the energizing effects of coffee cherries. While the story is apocryphal, Ethiopia remains central to coffee’s genetic diversity and cultural heritage.</p>
+
+<p>From Ethiopia, coffee spread to Yemen, where it was first cultivated and traded commercially. The port of Mocha became synonymous with coffee trade, giving rise to the term “mocha” still used today.</p>
+
+<p>The Global Coffee Belt</p>
+
+<p>Coffee cultivation is geographically constrained to the “Coffee Belt,” a band between the Tropics of Cancer and Capricorn. This region provides the ideal conditions—consistent temperatures, altitude, and rainfall—for coffee plants to thrive.</p>
+
+<p>Major coffee-producing regions include:</p>
+
+<p>Latin America (e.g., Brazil, Colombia): Known for balanced flavors, often with nutty, chocolatey notes.
+Africa (e.g., Ethiopia, Kenya): Renowned for bright acidity and complex, fruity profiles.
+Asia-Pacific (e.g., Vietnam, Indonesia): Typically produce bold, earthy, and full-bodied coffees.</p>
+
+<p>Each region imparts distinct characteristics to coffee, shaped by environmental variables such as soil composition, altitude, and microclimate.</p>
+
+<p>Terroir: The Science of Flavor</p>
+
+<p>Much like wine, coffee is deeply influenced by terroir—the combination of natural factors that affect crop characteristics. Altitude, for instance, plays a critical role: higher elevations slow the maturation of coffee cherries, allowing more complex sugars to develop, resulting in more nuanced flavors.</p>
+
+<p>Soil type, rainfall patterns, and even surrounding vegetation contribute to the final cup profile. A Kenyan coffee grown in volcanic soil at high altitude will taste markedly different from a Brazilian coffee cultivated on lower, flatter terrain.</p>
+
+<p>From Cherry to Bean</p>
+
+<p>Tracing coffee origins also involves understanding processing methods, which significantly affect flavor:</p>
+
+<p>Washed (Wet) Process: Produces cleaner, brighter flavors.
+Natural (Dry) Process: Results in sweeter, fruitier profiles.
+Honey Process: Balances sweetness and acidity.</p>
+
+<p>These methods reflect local traditions, resource availability, and innovation, further embedding origin into the coffee’s identity.</p>
 
 <p><img src="/src/Assets/random.jpg" alt="My helpful screenshot" /></p>
 
-<p>Would you like that setup example?For a primary SCSS/SASS file (like a main.scss or style.scss that will eventually become a full CSS file) that you want Jekyll to render to a .css file, you must include the front matter, but it can be empty.</p>
+<p>Supply Chains and Transparency</p>
 
-<p>If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system).
-Would you like that setup example?</p>]]></content><author><name>remy</name></author><category term="dogs" /><category term="cats" /><category term="pets" /><category term="orangeutans" /><summary type="html"><![CDATA[If you’d like, I can show you a simple structure that combines your universal styles.css and your Jekyll overrides cleanly inside the _sass pipeline (so you maintain just one style system). Would you like that setup example?]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/Assets/test-image.jpg" /><media:content medium="image" url="http://localhost:4000/src/Assets/test-image.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>Modern consumers are increasingly interested in traceability—knowing exactly where their coffee comes from. Specialty coffee has led this movement, emphasizing direct trade relationships, single-origin labeling, and detailed farm-level information.</p>
+
+<p>Traceability enhances:</p>
+
+<p>Quality control
+Ethical sourcing
+Environmental accountability</p>
+
+<p>However, achieving full transparency remains complex due to fragmented supply chains and varying standards across regions.</p>
+
+<p>Environmental and Social Dimensions</p>
+
+<p>Coffee production is deeply intertwined with environmental and social systems. Climate change poses a significant threat, altering suitable growing regions and increasing vulnerability to pests and diseases.</p>
+
+<p>At the same time, millions of smallholder farmers depend on coffee for their livelihoods. Sustainable sourcing initiatives aim to address issues such as:</p>
+
+<p>Deforestation
+Water usage
+Fair compensation
+Labor conditions</p>
+
+<p>Understanding coffee origins therefore extends beyond flavor—it includes the broader impacts on ecosystems and communities.</p>
+
+<p>Conclusion</p>
+
+<p>Tracing coffee origins transforms a simple beverage into a multidimensional story of place, process, and people. From Ethiopian highlands to Colombian farms and Indonesian islands, each origin contributes unique attributes to the global coffee landscape.</p>
+
+<p>By exploring where coffee comes from, we gain a deeper appreciation not only for its taste, but for the intricate systems that bring it to our cup. Every sip becomes an opportunity to connect with the world behind the brew.</p>]]></content><author><name>remy</name></author><category term="dogs" /><category term="cats" /><category term="pets" /><category term="orangeutans" /><summary type="html"><![CDATA[Coffee is more than a daily ritual—it is a global narrative woven from geography, culture, ecology, and trade. Every cup carries a story that begins long before beans are roasted and brewed.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/src/Assets/test-image.jpg" /><media:content medium="image" url="http://localhost:4000/src/Assets/test-image.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
