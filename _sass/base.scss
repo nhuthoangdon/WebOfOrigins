@@ -63,6 +63,7 @@
   --button-text-color: var(--ui-white);
   --button-text-color-inverted: var(--ui-black);
   --logo: url(/src/Assets/logo-dark.svg);
+  --logo-mark: url(/src/Assets/logomark.svg);
   --normal-text-weight: 300;
   --medium-text-weight: 400;
   --bold-text-weight: 600;
@@ -100,6 +101,7 @@
   --highlight: #0284C8;
   --border: rgba(82, 93, 140, 0.3);
   --logo: url(/src/Assets/logo-light.svg);
+  --logo-mark: url(/src/Assets/logomark_light.svg);
   --normal-text-weight: 400;
     --medium-text-weight: 600;
     --bold-text-weight: 700;
@@ -1262,7 +1264,7 @@ footer a { color: var(--text-color); text-decoration: none; -webkit-transition: 
   padding: 1em 0 1.5em 0; border-bottom: 1px solid var(--line-color);
 }
 .footer-left-content { max-width: 70vw; gap: 2em; }
-.footer-logo { width: 3em; }
+.footer-logo { width: 3em; height: 3em; background-image: var(--logo-mark); background-size: contain; background-repeat: no-repeat; background-position: center; }
 .footer-links { flex-flow: row wrap; gap: 1.5em; font-weight: var(--normal-text-weight); }
 .footer-links a { font-weight: var(--medium-text-weight); letter-spacing: .05em; }
 .footer-links a:hover { color: var(--highlight-color); }

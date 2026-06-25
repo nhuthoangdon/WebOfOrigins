@@ -220,6 +220,315 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 
+const drawerPanel = document.createElement("div");
+drawerPanel.className = "global-drawer";
+drawerPanel.style.display = "none";
+
+// Add References link to references.html
+const referencesLink = document.createElement("a");
+referencesLink.className = "cta-link references-link light-mode";
+referencesLink.href = "/references/";
+referencesLink.target = "_blank";
+referencesLink.rel = "noopener noreferrer";
+referencesLink.innerHTML = "References <i class='fa-solid fa-book-open-reader'></i>";
+
+// Add close button to drawer panel
+const closeIcon = document.createElement("i");
+closeIcon.className = "fa-solid fa-xmark fa-lg";
+const closeDrawerBtn = document.createElement("div");
+closeDrawerBtn.className = "btn-ic-close close-drawer";
+closeDrawerBtn.appendChild(closeIcon);
+
+drawerPanel.appendChild(closeDrawerBtn);
+
+// Add content container to hold dynamic content
+const contentContainer = document.createElement("div");
+contentContainer.className = "drawer-content";
+drawerPanel.appendChild(contentContainer);
+
+drawerPanel.appendChild(referencesLink);
+
+document.body.appendChild(drawerPanel);
+
+// Function to update drawer content
+const updateDrawerContent = (nodeId, nodeLabel) => {
+    const connectedEdges = network.getConnectedEdges(nodeId);
+    if (connectedEdges.length === 0 || connectedEdges.every(edgeId => edges.get(edgeId).title === "No Description")) {
+        const safeLabel = nodeLabel.replace(/\n/g, " ");
+        const h3 = document.createElement('h3');
+        h3.textContent = safeLabel;
+        const p = document.createElement('p');
+        p.textContent = 'No further info found for this item. Please check back later.';
+        const container = document.createElement('div');
+        container.appendChild(h3);
+        container.appendChild(p);
+        return container.innerHTML;
+    } else {
+        const validEdgeTitles = connectedEdges
+            .map(edgeId => {
+                const edge = edges.get(edgeId);
+                return edge.title !== "No Description" ? edge.title : null;
+            })
+            .filter(title => title !== null);
+        // Convert array to ul with li elements for bullets
+        const listItems = validEdgeTitles.map(title => {
+            const li = document.createElement('li');
+            li.textContent = title || "No further info found.";
+            return li.outerHTML;
+        }).join("");
+        const safeLabel = nodeLabel.replace(/\n/g, " ");
+        const h3 = document.createElement('h3');
+        h3.textContent = safeLabel;
+        const container = document.createElement('div');
+        container.appendChild(h3);
+        container.innerHTML += `<ul>${listItems}</ul>`;
+        return container.innerHTML;
+    }
+};
+
+const toggleDrawer = (nodeId, nodeLabel) => {
+    if (!nodeId) return;
+
+    const isOpen = drawerPanel.classList.contains("open");
+    const currentNodeId = drawerPanel.dataset.currentNodeId;
+
+    // Same node → just reset scroll (user might have scrolled)
+    if (isOpen && currentNodeId === nodeId) {
+        drawerPanel.scrollTop = 0;
+        return;
+    }
+
+    // Update content first
+    contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+    drawerPanel.dataset.currentNodeId = nodeId;
+    drawerPanel.scrollTop = 0;   // in case contentContainer ever gets overflow
+
+    if (isOpen) {
+        // Already open → reset scroll after a tiny paint cycle
+        requestAnimationFrame(() => {
+            drawerPanel.scrollTop = 0;
+        });
+        return;
+    }
+
+    // Not open yet → show + animate + reset scroll
+    drawerPanel.style.display = "block";
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            drawerPanel.classList.add("open");
+
+            // Reset scroll AFTER the open class is applied and next paint
+            requestAnimationFrame(() => {
+                drawerPanel.scrollTop = 0;
+            });
+        });
+    });
+
+    // Lock network dragging
+    network.setOptions({ interaction: { dragNodes: false } });
+};
+
+// const toggleDrawer = (nodeId, nodeLabel) => {
+//         if (!nodeId) return;
+
+//         const isOpen = drawerPanel.classList.contains("open");
+//         const currentNodeId = drawerPanel.dataset.currentNodeId;
+
+//         if (isOpen && currentNodeId === nodeId) {
+//             // Same node already shown; still reset scroll in case user scrolled down
+//             drawerPanel.scrollTop = 0;
+//             return;
+//         }
+//         // Update content
+//         contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
+//         drawerPanel.dataset.currentNodeId = nodeId;
+
+//         if (isOpen) return;
+
+//         drawerPanel.style.display = "block";
+//         requestAnimationFrame(() => {
+//             requestAnimationFrame(() => {
+//                 drawerPanel.classList.add("open");
+//             });
+//         });
+
+//         // Lock dragging while drawer is open
+//         network.setOptions({ interaction: { dragNodes: false } });
+//     };
+
+// iOS-compatible drawer closing - direct inline style that actually works
+document.addEventListener("click", (e) => {
+    if (e.target.closest(".close-drawer")) {
+        drawerPanel.classList.remove("open");
+
+        setTimeout(() => {
+            if (!drawerPanel.classList.contains("open")) {
+                drawerPanel.style.display = "none";
+                delete drawerPanel.dataset.currentNodeId;
+                if (typeof hideViewDetailsButton === "function") {
+                    hideViewDetailsButton();
+                }
+            }
+        }, 350);
+        network.setOptions({ interaction: { dragNodes: true } });
+    }
+}, { passive: false });
+
+// Touchend version for iOS
+document.addEventListener("touchend", (e) => {
+    if (e.target.closest(".close-drawer")) {
+        e.preventDefault();
+        drawerPanel.classList.remove("open");
+
+        setTimeout(() => {
+            if (!drawerPanel.classList.contains("open")) {
+                drawerPanel.style.display = "none";
+                delete drawerPanel.dataset.currentNodeId;
+                if (typeof hideViewDetailsButton === "function") {
+                    hideViewDetailsButton();
+                }
+            }
+        }, 350);
+        network.setOptions({ interaction: { dragNodes: true } });
+    }
+}, { passive: false });
+
+// Outside click handler (same direct style)
+document.addEventListener("click", (e) => {
+    if (!drawerPanel || !drawerPanel.classList.contains("open")) return;
+
+    const clickedInside = drawerPanel.contains(e.target);
+    const isCloseBtn = e.target.closest(".btn-ic-close, .close-drawer, .tertiary-button");
+    const clickedOnNetwork = document.getElementById("network").contains(e.target);
+
+    if (!clickedInside && !isCloseBtn && !clickedOnNetwork) {
+        drawerPanel.classList.remove("open");
+
+        setTimeout(() => {
+            if (!drawerPanel.classList.contains("open")) {
+                drawerPanel.style.display = "none";
+                delete drawerPanel.dataset.currentNodeId;
+                if (typeof hideViewDetailsButton === "function") {
+                    hideViewDetailsButton();
+                }
+            }
+        }, 350);
+        network.setOptions({ interaction: { dragNodes: true } });
+    }
+}, { passive: false });
+
+
+
+function goToNode(nodeId) {
+    if (!nodeId || !network) return;
+
+    // Reset interaction state before any focus/select (prevents iOS lock)
+    network.setOptions({
+        interaction: {
+            dragNodes: true,
+            dragView: true,
+            zoomView: true
+        }
+    });
+
+    network.unselectAll();
+
+    // Select + highlight safely
+    network.setSelection({ nodes: [nodeId] }, { highlightEdges: true });
+
+    // Focus smoothly
+    network.focus(nodeId, {
+        scale: 1.2,
+        animation: {
+            duration: 800,
+            easingFunction: "easeInOutQuad"
+        }
+    });
+
+    // Scroll into view
+    const networkEl = document.getElementById("network");
+    if (networkEl) {
+        const topPos = networkEl.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: topPos, behavior: "smooth" });
+    }
+}
+
+// Master click handler — one single delegated listener
+document.addEventListener("click", e => {
+    const btn = e.target.closest(".go-to-node");
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    let nodeId = null;
+
+    // Case 1: Button inside the drawer → use current drawer node
+    if (btn.closest(".global-drawer")) {
+        nodeId = drawerPanel?.dataset.currentNodeId;
+    }
+    // Case 2: Button in search results (or anywhere else) → read from data attribute
+    else if (btn.dataset.nodeId) {
+        nodeId = btn.dataset.nodeId;
+    }
+    // Case 3: Fallback — maybe parent has the data
+    else {
+        const container = btn.closest("[data-node-id]");
+        if (container) nodeId = container.dataset.nodeId;
+    }
+
+    if (nodeId) {
+        goToNode(nodeId);
+    }
+    drawerPanel.classList.remove("open");
+});
+
+// === HEADLESS DATA LOADER FOR HOMEPAGE (minimal, no network) ===
+function loadDataForSearch(onSuccess) {
+    loadData((rawNodes, rawEdges) => {
+        // Reuse exact node preparation from createNetwork
+        const nodeDegrees = {};
+        rawNodes.forEach(node => { nodeDegrees[node.id] = 0; });
+
+        rawEdges.forEach(edge => {
+            const fromNode = rawNodes.find(n => n.id === edge.from);
+            const toNode = rawNodes.find(n => n.id === edge.to);
+            const isFromCountry = fromNode && ['iCountry', 'smCountry', 'icCountry'].includes(fromNode.type);
+            const isToCountry = toNode && ['iCountry', 'smCountry', 'icCountry'].includes(toNode.type);
+            const weight = parseInt(edge.roleCount, 10) || 1;
+
+            nodeDegrees[edge.from] = (nodeDegrees[edge.from] || 0) + (isFromCountry ? weight : 1);
+            nodeDegrees[edge.to] = (nodeDegrees[edge.to] || 0) + (isToCountry ? weight : 1);
+        });
+
+        const connectedNodesData = rawNodes.filter(n => nodeDegrees[n.id] > 0);
+
+        nodes = new vis.DataSet(connectedNodesData.map(node => {
+            const degree = nodeDegrees[node.id] || 0;
+            const isFlagNode = ['iCountry', 'smCountry', 'icCountry'].includes(node.type);
+            const validImage = node.image && node.image !== "https://flagsapi.com//flat/64.png" ? node.image : undefined;
+
+            return {
+                id: node.id,
+                label: wrapText(node.label, 20),
+                type: node.type,
+                title: node.title || "No Description",
+                shape: isFlagNode && validImage ? "image" : "dot",
+                image: isFlagNode && validImage ? node.image : undefined,
+                is_sustainable: node.is_sustainable,
+                group: node.type
+            };
+        }));
+
+        edges = new vis.DataSet(rawEdges); // needed for connected nodes in drawer
+
+        console.log(`Homepage data loaded: ${nodes.length} nodes, ${edges.length} edges`);
+        if (onSuccess) onSuccess(nodes, edges);
+    });
+}
+
+
 // If not running in Node, create the network and bind browser runtime
 // Function to create the network
 if (!__isNodeEnv) {
@@ -868,286 +1177,12 @@ function createNetwork(nodesData, edgesData) {
 const searchInput = document.getElementById("large-search-input");
 const searchBtn = document.getElementById("large-search-btn");
 const searchResults = document.getElementById("search-results");
-const drawerPanel = document.createElement("div");
-      drawerPanel.className = "global-drawer";
-      drawerPanel.style.display = "none";
-
-// Add References link to references.html
-const referencesLink = document.createElement("a");
-      referencesLink.className = "cta-link references-link light-mode";
-      referencesLink.href = "/references/";
-      referencesLink.target = "_blank";
-      referencesLink.rel = "noopener noreferrer";
-referencesLink.innerHTML = "References <i class='fa-solid fa-book-open-reader'></i>";
-
-// Add close button to drawer panel
-const closeIcon = document.createElement("i");
-      closeIcon.className = "fa-solid fa-xmark fa-lg";
-const closeDrawerBtn = document.createElement("div");
-      closeDrawerBtn.className = "btn-ic-close close-drawer";
-closeDrawerBtn.appendChild(closeIcon);
-
-drawerPanel.appendChild(closeDrawerBtn);
-
-// Add content container to hold dynamic content
-const contentContainer = document.createElement("div");
-contentContainer.className = "drawer-content";
-drawerPanel.appendChild(contentContainer);
-
-drawerPanel.appendChild(referencesLink);
-
-document.body.appendChild(drawerPanel);
-
-// Function to update drawer content
-const updateDrawerContent = (nodeId, nodeLabel) => {
-    const connectedEdges = network.getConnectedEdges(nodeId);
-    if (connectedEdges.length === 0 || connectedEdges.every(edgeId => edges.get(edgeId).title === "No Description")) {
-        const safeLabel = nodeLabel.replace(/\n/g, " ");
-        const h3 = document.createElement('h3');
-        h3.textContent = safeLabel;
-        const p = document.createElement('p');
-        p.textContent = 'No further info found for this item. Please check back later.';
-        const container = document.createElement('div');
-        container.appendChild(h3);
-        container.appendChild(p);
-        return container.innerHTML;
-    } else {
-        const validEdgeTitles = connectedEdges
-            .map(edgeId => {
-                const edge = edges.get(edgeId);
-                return edge.title !== "No Description" ? edge.title : null;
-            })
-            .filter(title => title !== null);
-        // Convert array to ul with li elements for bullets
-        const listItems = validEdgeTitles.map(title => {
-            const li = document.createElement('li');
-            li.textContent = title || "No further info found.";
-            return li.outerHTML;
-        }).join("");
-        const safeLabel = nodeLabel.replace(/\n/g, " ");
-        const h3 = document.createElement('h3');
-        h3.textContent = safeLabel;
-        const container = document.createElement('div');
-        container.appendChild(h3);
-        container.innerHTML += `<ul>${listItems}</ul>`;
-        return container.innerHTML;
-    }
-      };
-
-//add Close and View Node Buttons to drawerPanel
-const optionButtons = document.createElement("div");
-    optionButtons.className = "two-option-ctas drawer-options";
-
-const closeDrawerPanelBtn = document.createElement("button");
-    closeDrawerPanelBtn.className = "tertiary-button btn-go-back close-icon close-drawer light-mode";
-    closeDrawerPanelBtn.innerHTML = "<i class='fa-regular fa-circle-xmark'></i> Close";
-
-const goToNodeOption = document.createElement("button");
-goToNodeOption.className = "secondary-button icon icon-regular go-to-node light-mode";
-goToNodeOption.textContent = "View Node";
-
-optionButtons.appendChild(closeDrawerPanelBtn);
-optionButtons.appendChild(goToNodeOption);
-drawerPanel.appendChild(optionButtons);
-
-
-    const toggleDrawer = (nodeId, nodeLabel) => {
-        if (!nodeId) return;
-
-        const isOpen = drawerPanel.classList.contains("open");
-        const currentNodeId = drawerPanel.dataset.currentNodeId;
-
-        // Same node → just reset scroll (user might have scrolled)
-        if (isOpen && currentNodeId === nodeId) {
-            drawerPanel.scrollTop = 0;
-            return;
-        }
-
-        // Update content first
-        contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
-        drawerPanel.dataset.currentNodeId = nodeId;
-        drawerPanel.scrollTop = 0;   // in case contentContainer ever gets overflow
-
-        if (isOpen) {
-            // Already open → reset scroll after a tiny paint cycle
-            requestAnimationFrame(() => {
-                drawerPanel.scrollTop = 0;
-            });
-            return;
-        }
-
-        // Not open yet → show + animate + reset scroll
-        drawerPanel.style.display = "block";
-
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                drawerPanel.classList.add("open");
-
-                // Reset scroll AFTER the open class is applied and next paint
-                requestAnimationFrame(() => {
-                    drawerPanel.scrollTop = 0;
-                });
-            });
-        });
-
-        // Lock network dragging
-        network.setOptions({ interaction: { dragNodes: false } });
-    };
-
-// const toggleDrawer = (nodeId, nodeLabel) => {
-//         if (!nodeId) return;
-
-//         const isOpen = drawerPanel.classList.contains("open");
-//         const currentNodeId = drawerPanel.dataset.currentNodeId;
-
-//         if (isOpen && currentNodeId === nodeId) {
-//             // Same node already shown; still reset scroll in case user scrolled down
-//             drawerPanel.scrollTop = 0;
-//             return;
-//         }
-//         // Update content
-//         contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
-//         drawerPanel.dataset.currentNodeId = nodeId;
-
-//         if (isOpen) return;
-
-//         drawerPanel.style.display = "block";
-//         requestAnimationFrame(() => {
-//             requestAnimationFrame(() => {
-//                 drawerPanel.classList.add("open");
-//             });
-//         });
-
-//         // Lock dragging while drawer is open
-//         network.setOptions({ interaction: { dragNodes: false } });
-//     };
-
-    // iOS-compatible drawer closing - direct inline style that actually works
-    document.addEventListener("click", (e) => {
-        if (e.target.closest(".close-drawer")) {
-            drawerPanel.classList.remove("open");
-
-            setTimeout(() => {
-                if (!drawerPanel.classList.contains("open")) {
-                    drawerPanel.style.display = "none";
-                    delete drawerPanel.dataset.currentNodeId;
-                    if (typeof hideViewDetailsButton === "function") {
-                        hideViewDetailsButton();
-                    }
-                }
-            }, 350);
-            network.setOptions({ interaction: { dragNodes: true } });
-        }
-    }, { passive: false });
-
-    // Touchend version for iOS
-    document.addEventListener("touchend", (e) => {
-        if (e.target.closest(".close-drawer")) {
-            e.preventDefault();
-            drawerPanel.classList.remove("open");
-
-            setTimeout(() => {
-                if (!drawerPanel.classList.contains("open")) {
-                    drawerPanel.style.display = "none";
-                    delete drawerPanel.dataset.currentNodeId;
-                    if (typeof hideViewDetailsButton === "function") {
-                        hideViewDetailsButton();
-                    }
-                }
-            }, 350);
-            network.setOptions({ interaction: { dragNodes: true } });
-        }
-    }, { passive: false });
-
-    // Outside click handler (same direct style)
-    document.addEventListener("click", (e) => {
-        if (!drawerPanel || !drawerPanel.classList.contains("open")) return;
-
-        const clickedInside = drawerPanel.contains(e.target);
-        const isCloseBtn = e.target.closest(".btn-ic-close, .close-drawer, .tertiary-button");
-        const clickedOnNetwork = document.getElementById("network").contains(e.target);
-
-        if (!clickedInside && !isCloseBtn && !clickedOnNetwork) {
-            drawerPanel.classList.remove("open");
-
-            setTimeout(() => {
-                if (!drawerPanel.classList.contains("open")) {
-                    drawerPanel.style.display = "none";
-                    delete drawerPanel.dataset.currentNodeId;
-                    if (typeof hideViewDetailsButton === "function") {
-                        hideViewDetailsButton();
-                    }
-                }
-            }, 350);
-            network.setOptions({ interaction: { dragNodes: true } });
-        }
-    }, { passive: false });
 
 
 
-function goToNode(nodeId) {
-    if (!nodeId || !network) return;
 
-    // Reset interaction state before any focus/select (prevents iOS lock)
-    network.setOptions({
-        interaction: {
-            dragNodes: true,
-            dragView: true,
-            zoomView: true
-        }
-    });
 
-    network.unselectAll();
-
-    // Select + highlight safely
-    network.setSelection({ nodes: [nodeId] }, { highlightEdges: true });
-
-    // Focus smoothly
-    network.focus(nodeId, {
-        scale: 1.2,
-        animation: {
-            duration: 800,
-            easingFunction: "easeInOutQuad"
-        }
-    });
-
-    // Scroll into view
-    const networkEl = document.getElementById("network");
-    if (networkEl) {
-        const topPos = networkEl.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({ top: topPos, behavior: "smooth" });
-    }
-}
-
-// Master click handler — one single delegated listener
-document.addEventListener("click", e => {
-    const btn = e.target.closest(".go-to-node");
-    if (!btn) return;
-
-    e.preventDefault();
-    e.stopPropagation();
-
-    let nodeId = null;
-
-    // Case 1: Button inside the drawer → use current drawer node
-    if (btn.closest(".global-drawer")) {
-        nodeId = drawerPanel?.dataset.currentNodeId;
-    }
-    // Case 2: Button in search results (or anywhere else) → read from data attribute
-    else if (btn.dataset.nodeId) {
-        nodeId = btn.dataset.nodeId;
-    }
-    // Case 3: Fallback — maybe parent has the data
-    else {
-        const container = btn.closest("[data-node-id]");
-        if (container) nodeId = container.dataset.nodeId;
-    }
-
-    if (nodeId) {
-        goToNode(nodeId);
-    }
-    drawerPanel.classList.remove("open");
-});
+    
   
 
 let debounceTimeout;
@@ -1300,6 +1335,8 @@ function toggleCountryNodes(show) {
         hideViewDetailsButton();
     });
 
+
+
 // Load data and create the network
 loadData(
     (nodesData, edgesData) => {
@@ -1376,4 +1413,106 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+}
+
+
+// =============================================
+// STANDALONE LARGE SEARCH FOR HOMEPAGE
+// Must be defined globally, outside any conditional blocks
+// =============================================
+function initLargeSearch() {
+    console.log("initLargeSearch() called - wiring up search");
+
+    const searchInput = document.getElementById("large-search-input");
+    const searchBtn = document.getElementById("large-search-btn");
+    const searchResults = document.getElementById("search-results");
+
+    if (!searchInput || !searchBtn || !searchResults) {
+        console.error("Large search elements not found");
+        return;
+    }
+
+    let debounceTimeout;
+
+    searchInput.onkeypress = (e) => {
+        if (e.key === "Enter") {
+            clearTimeout(debounceTimeout);
+            debounceTimeout = setTimeout(() => searchBtn.onclick(), 300);
+        }
+    };
+
+    searchBtn.onclick = () => {
+        const query = searchInput.value.toLowerCase().trim();
+        if (!query) return;
+
+        console.log("Searching for:", query);   // Debug log
+
+        searchResults.innerHTML = "";
+        searchResults.style.display = "flex";
+
+        const matchingNodes = nodes.get().filter(node => {
+            if (!node || !node.label) return false;
+            return node.label.toLowerCase().replace(/\n/g, " ").includes(query);
+        });
+
+        console.log(`Found ${matchingNodes.length} matching nodes`);
+
+        const fragment = document.createDocumentFragment();
+
+        matchingNodes.forEach(node => {
+            const resultDiv = document.createElement("div");
+            resultDiv.className = "result-item card";
+            resultDiv.setAttribute("data-node-id", node.id);
+
+            const resultItemCTA = document.createElement("div");
+            resultItemCTA.className = "two-option-ctas";
+
+            const nodeLabelText = node.label.replace(/\n/g, " ");
+            const nodeDescription = (node.title || "No description available.").replace(/\n/g, " ");
+
+            const p = document.createElement("p");
+            const b = document.createElement("b");
+            b.textContent = `${nodeLabelText}: `;
+            p.appendChild(b);
+
+            if (nodeDescription !== nodeLabelText) {
+                const descSpan = document.createElement("span");
+                descSpan.textContent = nodeDescription;
+                p.appendChild(descSpan);
+                p.appendChild(document.createElement("br"));
+            } else {
+                p.appendChild(document.createElement("br"));
+            }
+
+            resultDiv.appendChild(p);
+
+            const viewMoreBtn = document.createElement("button");
+            viewMoreBtn.className = "panel-cta view-node-details icon icon-solid icon-chevron-right";
+            viewMoreBtn.textContent = "View Details";
+            viewMoreBtn.addEventListener("click", () => {
+                const nodeId = resultDiv.getAttribute("data-node-id");
+                if (typeof toggleDrawer === "function") {
+                    toggleDrawer(nodeId, node.label);
+                }
+            });
+
+            const GoToBtn = document.createElement("button");
+            GoToBtn.className = "secondary-button go-to-node icon icon-regular";
+            GoToBtn.textContent = "See Connections";
+
+            resultDiv.appendChild(resultItemCTA);
+            resultItemCTA.appendChild(viewMoreBtn);
+            resultItemCTA.appendChild(GoToBtn);
+
+            fragment.appendChild(resultDiv);
+        });
+
+        searchResults.appendChild(fragment);
+
+        if (!matchingNodes.length) {
+            searchResults.innerHTML = "<p>No matches found. Please try a different keyword...</p>";
+        }
+    };
+
+    console.log("✅ Large search fully initialized for homepage");
 }

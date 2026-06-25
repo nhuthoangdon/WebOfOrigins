@@ -31,6 +31,14 @@ function initGlobalInteractions() {
     }
   });
 
+  // "Go to Data" buttons
+  document.addEventListener('click', e => {
+    if (e.target.closest('.go-to-data-button')) {
+      e.preventDefault();
+      window.location.href = '/datavis/';
+    }
+  });
+
   // Animated heart on sponsor CTA
   document.addEventListener('mouseenter', e => {
     const link = e.target.closest('.donate-links a.large-cta-link');
