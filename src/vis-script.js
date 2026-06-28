@@ -248,85 +248,83 @@ drawerPanel.appendChild(contentContainer);
 
 drawerPanel.appendChild(referencesLink);
 
+// Add option buttons to drawer panel
+const optionButtonsContainer = document.createElement("div");
+optionButtonsContainer.className = "two-option-ctas drawer-options";
+
+const closeDrawerPanelBtn = document.createElement("button");
+closeDrawerPanelBtn.className = "tertiary-button btn-go-back close-icon close-drawer light-mode";
+closeDrawerPanelBtn.innerHTML = "<i class='fa-regular fa-circle-xmark'></i> Close";
+
+const goToNodeOption = document.createElement("button");
+goToNodeOption.className = "secondary-button icon icon-regular go-to-node light-mode";
+goToNodeOption.textContent = "View Node";
+
+optionButtonsContainer.appendChild(closeDrawerPanelBtn);
+optionButtonsContainer.appendChild(goToNodeOption);
+drawerPanel.appendChild(optionButtonsContainer);
+
 document.body.appendChild(drawerPanel);
 
 // Function to update drawer content
 const updateDrawerContent = (nodeId, nodeLabel) => {
-    const connectedEdges = network.getConnectedEdges(nodeId);
-    if (connectedEdges.length === 0 || connectedEdges.every(edgeId => edges.get(edgeId).title === "No Description")) {
-        const safeLabel = nodeLabel.replace(/\n/g, " ");
-        const h3 = document.createElement('h3');
-        h3.textContent = safeLabel;
-        const p = document.createElement('p');
-        p.textContent = 'No further info found for this item. Please check back later.';
-        const container = document.createElement('div');
-        container.appendChild(h3);
-        container.appendChild(p);
-        return container.innerHTML;
-    } else {
-        const validEdgeTitles = connectedEdges
-            .map(edgeId => {
-                const edge = edges.get(edgeId);
-                return edge.title !== "No Description" ? edge.title : null;
-            })
-            .filter(title => title !== null);
-        // Convert array to ul with li elements for bullets
-        const listItems = validEdgeTitles.map(title => {
-            const li = document.createElement('li');
-            li.textContent = title || "No further info found.";
-            return li.outerHTML;
-        }).join("");
-        const safeLabel = nodeLabel.replace(/\n/g, " ");
-        const h3 = document.createElement('h3');
-        h3.textContent = safeLabel;
-        const container = document.createElement('div');
-        container.appendChild(h3);
-        container.innerHTML += `<ul>${listItems}</ul>`;
-        return container.innerHTML;
+    if (!edges || typeof edges.get !== 'function') {
+        const safeLabel = (nodeLabel || "").replace(/\n/g, " ");
+        return `<h3>${safeLabel}</h3><p>No further info available on homepage.</p>`;
     }
+
+    const connectedEdges = edges.get().filter(e => e.from === nodeId || e.to === nodeId);
+
+    if (connectedEdges.length === 0 || connectedEdges.every(e => !e.title || e.title === "No Description")) {
+        const safeLabel = (nodeLabel || "").replace(/\n/g, " ");
+        return `<h3>${safeLabel}</h3><p>No further info found for this item. Please check back later.</p>`;
+    }
+
+    const listItems = connectedEdges
+        .map(e => {
+            if (!e.title || e.title === "No Description") return "";
+            return `<li>${e.title}</li>`;
+        })
+        .filter(Boolean)
+        .join("");
+
+    const safeLabel = (nodeLabel || "").replace(/\n/g, " ");
+    return `<h3>${safeLabel}</h3><ul>${listItems}</ul>`;
 };
 
 const toggleDrawer = (nodeId, nodeLabel) => {
     if (!nodeId) return;
 
-    const isOpen = drawerPanel.classList.contains("open");
-    const currentNodeId = drawerPanel.dataset.currentNodeId;
+    // Ensure drawer is initialized
+    if (!drawerPanel) {
+        drawerPanel = document.createElement("div");
+        drawerPanel.className = "global-drawer";
+        drawerPanel.style.display = "none";
 
-    // Same node → just reset scroll (user might have scrolled)
-    if (isOpen && currentNodeId === nodeId) {
-        drawerPanel.scrollTop = 0;
-        return;
+        const closeIcon = document.createElement("i");
+        closeIcon.className = "fa-solid fa-xmark fa-lg";
+        const closeBtn = document.createElement("div");
+        closeBtn.className = "btn-ic-close close-drawer";
+        closeBtn.appendChild(closeIcon);
+        drawerPanel.appendChild(closeBtn);
+
+        contentContainer = document.createElement("div");
+        contentContainer.className = "drawer-content";
+        drawerPanel.appendChild(contentContainer);
+
+        document.body.appendChild(drawerPanel);
     }
 
-    // Update content first
     contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
     drawerPanel.dataset.currentNodeId = nodeId;
-    drawerPanel.scrollTop = 0;   // in case contentContainer ever gets overflow
+    drawerPanel.scrollTop = 0;
 
-    if (isOpen) {
-        // Already open → reset scroll after a tiny paint cycle
-        requestAnimationFrame(() => {
-            drawerPanel.scrollTop = 0;
-        });
-        return;
-    }
-
-    // Not open yet → show + animate + reset scroll
     drawerPanel.style.display = "block";
-
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             drawerPanel.classList.add("open");
-
-            // Reset scroll AFTER the open class is applied and next paint
-            requestAnimationFrame(() => {
-                drawerPanel.scrollTop = 0;
-            });
         });
     });
-
-    // Lock network dragging
-    network.setOptions({ interaction: { dragNodes: false } });
 };
 
 // const toggleDrawer = (nodeId, nodeLabel) => {
@@ -357,66 +355,58 @@ const toggleDrawer = (nodeId, nodeLabel) => {
 //         network.setOptions({ interaction: { dragNodes: false } });
 //     };
 
-// iOS-compatible drawer closing - direct inline style that actually works
+// Close drawer (Close button + iOS touch)
 document.addEventListener("click", (e) => {
-    if (e.target.closest(".close-drawer")) {
-        drawerPanel.classList.remove("open");
-
-        setTimeout(() => {
-            if (!drawerPanel.classList.contains("open")) {
-                drawerPanel.style.display = "none";
-                delete drawerPanel.dataset.currentNodeId;
-                if (typeof hideViewDetailsButton === "function") {
-                    hideViewDetailsButton();
-                }
-            }
-        }, 350);
-        network.setOptions({ interaction: { dragNodes: true } });
+    if (e.target.closest(".close-drawer") && drawerPanel) {
+        closeDrawer();
     }
 }, { passive: false });
 
-// Touchend version for iOS
 document.addEventListener("touchend", (e) => {
-    if (e.target.closest(".close-drawer")) {
+    if (e.target.closest(".close-drawer") && drawerPanel) {
         e.preventDefault();
-        drawerPanel.classList.remove("open");
-
-        setTimeout(() => {
-            if (!drawerPanel.classList.contains("open")) {
-                drawerPanel.style.display = "none";
-                delete drawerPanel.dataset.currentNodeId;
-                if (typeof hideViewDetailsButton === "function") {
-                    hideViewDetailsButton();
-                }
-            }
-        }, 350);
-        network.setOptions({ interaction: { dragNodes: true } });
+        closeDrawer();
     }
 }, { passive: false });
 
-// Outside click handler (same direct style)
+// Safe outside click handler (works on both pages)
 document.addEventListener("click", (e) => {
     if (!drawerPanel || !drawerPanel.classList.contains("open")) return;
 
     const clickedInside = drawerPanel.contains(e.target);
     const isCloseBtn = e.target.closest(".btn-ic-close, .close-drawer, .tertiary-button");
-    const clickedOnNetwork = document.getElementById("network").contains(e.target);
+
+    // Safe network check
+    const networkEl = document.getElementById("network");
+    const clickedOnNetwork = networkEl ? networkEl.contains(e.target) : false;
 
     if (!clickedInside && !isCloseBtn && !clickedOnNetwork) {
-        drawerPanel.classList.remove("open");
-
-        setTimeout(() => {
-            if (!drawerPanel.classList.contains("open")) {
-                drawerPanel.style.display = "none";
-                delete drawerPanel.dataset.currentNodeId;
-                if (typeof hideViewDetailsButton === "function") {
-                    hideViewDetailsButton();
-                }
-            }
-        }, 350);
-        network.setOptions({ interaction: { dragNodes: true } });
+        closeDrawer();
     }
 }, { passive: false });
+
+// Helper function
+function closeDrawer() {
+    if (!drawerPanel) return;
+
+    drawerPanel.classList.remove("open");
+
+    setTimeout(() => {
+        if (!drawerPanel.classList.contains("open")) {
+            drawerPanel.style.display = "none";
+            delete drawerPanel.dataset.currentNodeId;
+            // Safe call
+            if (typeof hideViewDetailsButton === "function") {
+                hideViewDetailsButton();
+            }
+        }
+    }, 350);
+
+    // Only run on full graph page
+    if (typeof network !== "undefined" && network) {
+        network.setOptions({ interaction: { dragNodes: true } });
+    }
+}
 
 
 
@@ -464,30 +454,33 @@ document.addEventListener("click", e => {
 
     let nodeId = null;
 
-    // Case 1: Button inside the drawer → use current drawer node
     if (btn.closest(".global-drawer")) {
         nodeId = drawerPanel?.dataset.currentNodeId;
-    }
-    // Case 2: Button in search results (or anywhere else) → read from data attribute
-    else if (btn.dataset.nodeId) {
+    } else if (btn.dataset.nodeId) {
         nodeId = btn.dataset.nodeId;
-    }
-    // Case 3: Fallback — maybe parent has the data
-    else {
+    } else {
         const container = btn.closest("[data-node-id]");
         if (container) nodeId = container.dataset.nodeId;
     }
 
-    if (nodeId) {
+    if (!nodeId) return;
+
+    // === NEW: Homepage detection ===
+    const isHomepage = !document.getElementById("network");
+
+    if (isHomepage) {
+        // Navigate to datavis with hash
+        window.location.href = `/datavis/#node=${encodeURIComponent(nodeId)}`;
+    } else {
+        // Full graph page - use existing behavior
         goToNode(nodeId);
+        drawerPanel.classList.remove("open");
     }
-    drawerPanel.classList.remove("open");
 });
 
-// === HEADLESS DATA LOADER FOR HOMEPAGE (minimal, no network) ===
+// === IMPROVED HEADLESS DATA LOADER FOR HOMEPAGE ===
 function loadDataForSearch(onSuccess) {
     loadData((rawNodes, rawEdges) => {
-        // Reuse exact node preparation from createNetwork
         const nodeDegrees = {};
         rawNodes.forEach(node => { nodeDegrees[node.id] = 0; });
 
@@ -517,11 +510,13 @@ function loadDataForSearch(onSuccess) {
                 shape: isFlagNode && validImage ? "image" : "dot",
                 image: isFlagNode && validImage ? node.image : undefined,
                 is_sustainable: node.is_sustainable,
-                group: node.type
+                group: node.type,
+                // Extra fields for better search results
+                rawLabel: node.label
             };
         }));
 
-        edges = new vis.DataSet(rawEdges); // needed for connected nodes in drawer
+        edges = new vis.DataSet(rawEdges);   // Full edge data preserved
 
         console.log(`Homepage data loaded: ${nodes.length} nodes, ${edges.length} edges`);
         if (onSuccess) onSuccess(nodes, edges);
@@ -967,6 +962,33 @@ function createNetwork(nodesData, edgesData) {
 
     network = new vis.Network(container, data, options);
 
+
+    // Auto-focus node from URL hash (e.g. /datavis/#node=mat_4)
+    function handleNodeFromHash() {
+        const hash = window.location.hash;
+        if (!hash || !hash.startsWith('#node=')) return;
+
+        const nodeId = decodeURIComponent(hash.substring(6));
+        if (!nodeId || !nodes.get(nodeId)) return;
+
+        setTimeout(() => {
+            goToNode(nodeId);
+            const node = nodes.get(nodeId);
+            if (node) {
+                toggleDrawer(nodeId, node.label);
+            }
+        }, 1000); // Allow network to fully render
+    }
+
+    // Trigger after network is ready
+    network.once("afterDrawing", handleNodeFromHash);
+
+
+    // Also support direct refresh on datavis with hash
+    window.addEventListener('load', () => {
+        setTimeout(handleNodeFromHash, 1500);
+    });
+
     // iOS 16.7 (older hardware like iPhone 8) canvas tap-select + drag-anchored-zoom fix
     // Runs only on iOS, no effect on desktop or newer iOS
     const ua = navigator.userAgent;
@@ -1178,12 +1200,6 @@ const searchInput = document.getElementById("large-search-input");
 const searchBtn = document.getElementById("large-search-btn");
 const searchResults = document.getElementById("search-results");
 
-
-
-
-
-    
-  
 
 let debounceTimeout;
 searchInput.onkeypress = (e) => {
@@ -1444,8 +1460,15 @@ function initLargeSearch() {
     searchBtn.onclick = () => {
         const query = searchInput.value.toLowerCase().trim();
         if (!query) return;
+        if (query.length > 200) {
+            console.warn('Search query exceeds maximum length');
+            return;
+        }
 
-        console.log("Searching for:", query);   // Debug log
+        if (!searchResults || !nodes) {
+            console.error('Search results container or nodes not found');
+            return;
+        }
 
         searchResults.innerHTML = "";
         searchResults.style.display = "flex";
@@ -1454,8 +1477,6 @@ function initLargeSearch() {
             if (!node || !node.label) return false;
             return node.label.toLowerCase().replace(/\n/g, " ").includes(query);
         });
-
-        console.log(`Found ${matchingNodes.length} matching nodes`);
 
         const fragment = document.createDocumentFragment();
 
@@ -1467,8 +1488,23 @@ function initLargeSearch() {
             const resultItemCTA = document.createElement("div");
             resultItemCTA.className = "two-option-ctas";
 
+            // Generate pathway text using unwrapped label
             const nodeLabelText = node.label.replace(/\n/g, " ");
             const nodeDescription = (node.title || "No description available.").replace(/\n/g, " ");
+
+            // Get connected nodes using edges DataSet (no network dependency)
+            const fromEdges = edges.get().filter(e => e.from === node.id);
+            const toEdges = edges.get().filter(e => e.to === node.id);
+
+            const fromSources = fromEdges.map(e => {
+                const targetNode = nodes.get(e.to);
+                return targetNode ? targetNode.label.replace(/\n/g, " ") : "";
+            }).filter(Boolean);
+
+            const toSources = toEdges.map(e => {
+                const sourceNode = nodes.get(e.from);
+                return sourceNode ? sourceNode.label.replace(/\n/g, " ") : "";
+            }).filter(Boolean);
 
             const p = document.createElement("p");
             const b = document.createElement("b");
@@ -1484,33 +1520,59 @@ function initLargeSearch() {
                 p.appendChild(document.createElement("br"));
             }
 
-            resultDiv.appendChild(p);
+            if (fromSources.length > 0) {
+                const assocSpan = document.createElement("span");
+                assocSpan.textContent = `- Associates with: ${fromSources.join(", ")}`;
+                p.appendChild(assocSpan);
+                p.appendChild(document.createElement("br"));
+            }
 
-            const viewMoreBtn = document.createElement("button");
-            viewMoreBtn.className = "panel-cta view-node-details icon icon-solid icon-chevron-right";
-            viewMoreBtn.textContent = "View Details";
-            viewMoreBtn.addEventListener("click", () => {
-                const nodeId = resultDiv.getAttribute("data-node-id");
-                if (typeof toggleDrawer === "function") {
-                    toggleDrawer(nodeId, node.label);
-                }
-            });
+            if (toSources.length > 0) {
+                const connSpan = document.createElement("span");
+                connSpan.textContent = `- Connects to: ${toSources.join(", ")}`;
+                p.appendChild(connSpan);
+            }
+            resultDiv.appendChild(p);
 
             const GoToBtn = document.createElement("button");
             GoToBtn.className = "secondary-button go-to-node icon icon-regular";
-            GoToBtn.textContent = "See Connections";
+            GoToBtn.textContent = "View in Visualisation";
+            GoToBtn.setAttribute("data-node-id", node.id);
 
+            const viewMoreBtn = document.createElement("button");
+            viewMoreBtn.className = "panel-cta view-node-details icon icon-solid icon-chevron-right";
+
+            const breakpoint600 = window.matchMedia("(max-width: 600px)");
+
+            function buttonTextOnMobile(e) {
+                if (e.matches) {
+                    viewMoreBtn.textContent = "Details";
+                    GoToBtn.textContent = "Connections";
+                } else {
+                    viewMoreBtn.textContent = "View Details";
+                    GoToBtn.textContent = "See Connections";
+                }
+            }
+            breakpoint600.addEventListener("change", buttonTextOnMobile);
+            buttonTextOnMobile(breakpoint600);
+
+            viewMoreBtn.setAttribute("aria-label", "View Details for " + node.label.replace(/\n/g, " "));
+            viewMoreBtn.addEventListener("click", () => {
+                const nodeId = resultDiv.getAttribute("data-node-id");
+                toggleDrawer(nodeId, node.label);
+            });
+
+            fragment.appendChild(resultDiv);
             resultDiv.appendChild(resultItemCTA);
             resultItemCTA.appendChild(viewMoreBtn);
             resultItemCTA.appendChild(GoToBtn);
-
-            fragment.appendChild(resultDiv);
         });
 
         searchResults.appendChild(fragment);
+        searchResults.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 
         if (!matchingNodes.length) {
-            searchResults.innerHTML = "<p>No matches found. Please try a different keyword...</p>";
+            searchResults.innerHTML = "<p>No matches found. Please try a different keyword. For best results, try a single keyword and double-check your spelling. The database is updated continuously, so you can also check back soon!</p>";
         }
     };
 

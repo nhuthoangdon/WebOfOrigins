@@ -488,7 +488,7 @@ button {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 9999;
+  z-index: 1002;
   background: var(--accent, #22d3ee);
   color: var(--button-text-color-inverted, #000);
   border: none;
@@ -635,14 +635,17 @@ button {
 .two-option-ctas {
   @include flex(row, center, space-between);
   flex-wrap: wrap;
+  gap: 2em;
+  @media (max-width: 490px) {
+      align-items: center;
+      justify-content: center;
+      gap: 1em;
+    }
 }
 .go-to-node::after { content: "\f192"; font: var(--icon-regular); }
 .go-to-node:hover::after { content: "\f192"; font: var(--icon-solid); }
 
-/* responsive two-option-ctas */
-@media (max-width: 490px) {
-  .two-option-ctas { align-items: center; justify-content: center; gap: 1em; }
-}
+
 
 /* =========================
     Card / Container
