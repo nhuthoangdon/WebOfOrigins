@@ -1,13 +1,3 @@
-/* assets/style.scss
-    Converted from CSS -> SCSS
-    Reorganized into variables, utilities, base, components, layout, and responsive sections.
-    Layout & visual behaviour preserved.
-*/
-
-/* =========================
-    CSS Custom Properties
-    (kept as CSS vars to allow runtime theme switching)
-    ========================= */
 :root {
   --background: radial-gradient(circle at center,
      rgba(25, 1, 55, 0.4) 30%,
@@ -42,7 +32,7 @@
   --input-field-hover-bg-color: rgba(5, 1, 25, 0.8);
   --input-field-focus-box-shadow: 0 0 12px rgba(142, 208, 220, 0.4);
   --input-field-focus-border-color: rgb(142, 208, 220, 0.8);
-  --border-color: rgba(59, 70, 156, 0.6);
+  --border-color: rgba(61, 75, 183, 0.7);
   --line-color: rgba(82, 93, 140, 0.3);
   --container-bg-color: rgba(34, 46, 56, 0.2);
   --container-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
@@ -50,9 +40,10 @@
   --card-border: 1px solid rgb(142, 208, 220, 0.1);
   --popup-bg-color: rgba(246, 247, 249, 0.9);
   --popup-box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-  --card-box-shadow-hovered: 0px 4px 20px 4px rgba(67, 200, 249, 0.15);
-  --floating-btn-box-shadow: 0 2px 6px 4px rgba(67, 200, 249, 0.22), 0 0 1px 2px rgba(67, 200, 249, 0.2);
-  --floating-btn-box-shadow-hovered: 0 8px 16px rgba(34, 211, 238, 0.28), 0 0 0 1px rgba(34, 211, 238, 0.1);
+  --card-box-shadow-hovered: 0px 4px 20px 4px rgba(69, 15, 162, 0.15);
+  --banner-bg-color: rgba(25, 3, 97, 0.8);
+  --floating-btn-box-shadow: 0 2px 10px 6px rgba(0, 0, 0, 0.4), 0 0 1px 2px rgba(1, 13, 18, 0.2);
+  --floating-btn-box-shadow-hovered: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 2px 4px rgba(2, 22, 25, 0.1);
   --text-color: var(--ui-white);
   --tinted-text-color: var(--ui-subtle-gray);
   --placeholder-text-color: var(--ui-light-blue);
@@ -469,11 +460,17 @@ button {
     -webkit-transition: transform 0.3s ease-out;
       transition: transform 0.3s ease-out;
   }
+  &.go-back:hover i {
+    -webkit-transform: translateX(-6px);
+      transform: translateX(-6px);
+  }
+
+  @media (max-width: 320px) {
+    text-align: center;
+  }
 }
 
 
-
-.tertiary-button.go-back:hover i { -webkit-transform: translateX(-6px); transform: translateX(-6px); }
 
 .cta-link {
   font-family: var(--body-font);
@@ -504,11 +501,57 @@ button {
   &:hover { transform: translateY(-3px); box-shadow: var(--floating-btn-box-shadow-hovered); }
 }
 
+/* =========================
+    Banners
+    ========================= */
+.cta-banner {
+  width: 100%;
+  padding: 2rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(115deg, rgba(21, 3, 61, 0.7) 0%, rgba(11, 221, 253, 0.1) 100%);
+  border-top: 1px solid rgba(142,208,220,0.03);
+  border-bottom: 1px solid rgba(82,93,140,0.06);
+  box-shadow: 0 6px 30px rgba(2,2,4,0.45);
+  backdrop-filter: blur(6px);
+  
+  .cta-banner-content {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 2rem 5%;
+      background: var(--card-bg-color);
+      border-radius: 12px;
+      border: var(--card-border);
+      position: relative;
 
-/* responsive tertiary-button small-screen */
-@media (max-width: 320px) {
-  .tertiary-button { text-align: center; }
-}
+      &::before {
+        content: "";
+        position: absolute;
+        left: -3px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 80%;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--ui-light-blue) 0%, var(--ui-neon-green) 100%);
+      }
+
+      .cta-copy {
+        width: 60%;
+        height: auto;
+      }
+      button i { transition: transform .2s ease-in-out; }
+      button:hover i {transform: translateX(4px);}
+    }
+ }
+
+
+
 
 /* =========================
     Search Panels & Results
@@ -1082,35 +1125,63 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
     .menu-items {
       display: -webkit-flex; display: flex; flex-flow: row wrap; justify-content: center; align-items: center;
       text-align: left; list-style: none; gap: 1.5em; margin: 0.5rem 0; -webkit-transition: opacity .3s ease-out; transition: opacity .3s ease-out;
-    }
-    .menu-items li { display: flex; display: -webkit-flex; }
-    .menu-items li a {
-      text-decoration: none; color: var(--text-color); -webkit-transition: color .3s; transition: color .3s; position: relative; padding: .5rem;
-      font-family: var(--body-font);
-        text-align: center;
-        font-size: 1rem;
-        font-weight: var(--medium-text-weight);
-        letter-spacing: 0.05em;
-    }
-    .menu-items a:visited { color: var(--text-color); }
-    .menu-items a:hover { color: var(--highlight-color); }
-    .menu-items a:active { color: var(--highlight-color); opacity: .5; }
-    .menu-items a.current { color: var(--highlight-color); }
-    .menu-items li a::after {
-      content: ""; display: block; position: absolute; left: 50%; bottom: 0; width: 8px; height: 8px;
-      background: var(--highlight-color); border-radius: 50%; pointer-events: none; opacity: .9;
-      transform: translateX(-50%) scale(0); -webkit-transform: translateX(-50%) scale(0);
-    }
-    .menu-items li a:hover::after, .menu-items li a:focus::after {
-      animation: dotDropAndUnderline 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+      
+      li {
+          display: flex;
+          display: -webkit-flex;
+          a {
+              text-decoration: none;
+              color: var(--text-color);
+              -webkit-transition: color .3s;
+              transition: color .3s;
+              position: relative;
+              padding: .5rem;
+              font-family: var(--body-font);
+              text-align: center;
+              font-size: 1rem;
+              font-weight: var(--medium-text-weight);
+              letter-spacing: 0.05em;
+              &:visited {
+                  color: var(--text-color);
+                }
+              &:hover {
+                  color: var(--highlight-color);
+                }
+              &:active {
+                  color: var(--highlight-color);
+                  opacity: .5;
+                }
+              &.current {
+                  color: var(--highlight-color);
+                }
+              &::after {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  left: 50%;
+                  bottom: 0;
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 50%;
+                  background: var(--highlight-color);
+                  pointer-events: none;
+                  opacity: .9;
+                  transform: translateX(-50%) scale(0);
+                  -webkit-transform: translateX(-50%) scale(0);         
+                }
+              &:hover::after, &:focus::after {
+                  animation: dotDropAndUnderline 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;         
+                }
+            }
+        }   
     }
 
     #special-menu-link, #special-footer-link {
       color: var(--link-color);
-    }
-
-    #special-menu-link:hover, #special-footer-link:hover {
-      color: var(--highlight-color);
+      
+      &:hover {
+        color: var(--highlight-color);
+      }
     }
 
     // Theme Toggle Button
@@ -1147,16 +1218,16 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
   50% {
     width: 8px;
     height: 8px;
-    bottom: -70%;
-    border-radius: 50%;
+    bottom: -20px;
+    border-radius: 0;
     transform: translateX(-50%) scale(1);
     -webkit-transform: translateX(-50%) scale(1);
   }
   100% {
     width: 100%;
     height: 4px;
-    bottom: -70%;
-    border-radius: 2px;
+    bottom: -20px;
+    border-radius: 0;
     transform: translateX(-50%) scale(1);
     -webkit-transform: translateX(-50%) scale(1);
   }
@@ -1169,7 +1240,7 @@ a#home-logo { display: flex; }
 .header-sponsor-cta { margin-left: auto; }
 
 /* responsive menu behavior */
-@media (max-width: 860px) {
+@media (max-width: 950px) {
   .menu-content {
     justify-content: space-between;
     align-items: center;
@@ -1183,27 +1254,29 @@ a#home-logo { display: flex; }
   .menu-items {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 1.5rem;
     font-size: 1.2em;
     text-align: center;
+    width: 100%;
+    max-width: 600px;
+    height: calc(100vh - 80px);
     background: linear-gradient(135deg, rgba(3,3,76,0.7) 10%, rgba(4,15,56,0.8) 50%, rgba(5,0,20,0.98) 100%);
     backdrop-filter: blur(12px) saturate(120%);
     -webkit-box-shadow: 0 8px 24px rgba(0,0,0,0.4);
     box-shadow: 0 8px 24px rgba(0,0,0,0.4);
     border: 1px solid rgba(67,105,220,0.3);
-    width: calc(100% - 2em);
     padding: 2em;
-    margin: auto;
-    position: absolute;
+    position: fixed;
     top: 4em;
-    left: 50%;
+    right: 0;
     border-radius: 10px;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transform: translate(-50%, -20px);
-    -webkit-transform: translate(-50%, -20px);
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
     z-index: 1001;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
                 opacity 0.2s ease-in,
@@ -1217,14 +1290,14 @@ a#home-logo { display: flex; }
     }
   
   .menu-items-mobile_open {
+    
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
-    transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
     transition-delay: 0s;
     background-color: var(--bg-color);
-    max-height: calc(100vh - 64px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -1238,11 +1311,28 @@ a#home-logo { display: flex; }
     margin-top: 0.5em;
   }
   
-  .sponsor-link-mobile::before { content: '🤍 '; }
-
-  #cta-btn-data .btn-label::before { content: '📊 '; }
-  
   .hamburger-menu { display: block; cursor: pointer; }
+  
+  #theme-toggle-dk {
+    display: none;
+  }
+
+  #theme-toggle-mb {
+    display: flex;
+    margin-left: 0;
+  }
+  #sponsor-link-mobile { display: flex; }
+}
+@media (min-width: 950px) {
+  #theme-toggle-dk {
+      display: flex;
+    }
+  #theme-toggle-mb {
+    display: none;
+  }
+  #sponsor-link-mobile {
+    display: none;
+  }
 }
 
 /* additional small-screen menu alignment */

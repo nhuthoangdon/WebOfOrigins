@@ -36,7 +36,7 @@ permalink: /
       </div>
       <div tabindex="0" class="large-search-container" role="button" aria-label="Search input, please enter a keyword, for example, glucosamine, collagen, corn, China, and then press the GO button">
         <input type="text" id="large-search-input" placeholder="E.g. glucosamine, collagen, corn, China" aria-label="Search input, please enter a keyword, for example, glucosamine, corn, jello, or China, and then press the GO button">
-        <button id="large-search-btn" class="primary-button" title="Search the Database"><span class="btn-label">Go</span><span class="btn-icon"><i class="fa-solid fa-magnifying-glass fa-bounce"></i></span></button>
+        <button id="large-search-btn" class="primary-button" title="Search the Database"><span class="btn-label">Go</span><span class="btn-icon"><i class="fa-solid fa-magnifying-glass fa-float"></i></span></button>
       </div>
       <span><p class="microcopy">Latest entry: 'eggshell membrane'.</p></span>
     </div>
@@ -44,45 +44,22 @@ permalink: /
     <!-- Search Results -->
     <div id="search-results" class="card-container"></div>
 
-    <!-- <div class="network-container">
-
-      <div id="loading-overlay" class="loading-overlay">
-        <div class="loading-bar">
-          <div id="loading-progress" class="loading-progress"></div>
+    <div class="cta-banner" role="region" aria-label="Explore the data visually">
+      <div class="cta-banner-content">
+        <div class="cta-copy">
+          <h2>Explore Data Visually</h2>
+          <p>View connections between products, materials, industries, and impacts in an interactive visualisation.</p>
         </div>
-        <span id="loading-percent" class="loading-percent">0%</span>
-      </div>
-      
-      <div id="network"></div>
-
-      <button id="view-details-btn" class="floating-details-btn" style="display: none;">
-        <i class="fa-solid fa-info-circle"></i> View Details
-      </button>
-
-      <div id="control-panel" class="control-panel collapsed">
-        <button id="control-panel-toggle" class="control-panel-toggle" aria-label="Expand control panel">
-          <i class="fa-solid fa-chevron-left"></i>
-          <span class="control-panel-title label_small">Search & Controls</span>
-        </button>
-        <div class="control-panel-content">
-          <div class="checkbox-row" id="country-toggle">
-            <input type="checkbox" id="country-toggle" name="country-toggle" checked>
-            <label for="country-toggle">Show Country</label>
-          </div>
-          <div class="small-search-panel">
-            <div class="small-search-container">
-              <input type="text" id="small-search-input" placeholder="Search node by keyword...">
-              <button id="small-search-clear" title="Clear search">✖</button>
-            </div>
-            <div id="small-search-result-count" class="small-search-result-count">0 of 0</div>
-          </div>
+        <div class="cta-actions">
+          <button type="button" data-url="/datavis/" class="primary-button" title="Open Data Visualisation">
+            Data Visualisation <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+          </button>
         </div>
-
       </div>
     </div>
-    <a href="/references/" target="_blank" class="cta-link references-link" rel="noopener noreferrer"><span class="icon icon-solid icon-book-open-reader">References</span></a> -->
+
     
-    <button class="secondary-button go-to-ai-mode page-cta">Dive Deeper with AI</button>
+    <!-- <button class="secondary-button go-to-ai-mode page-cta">Dive Deeper with AI</button> -->
 </main>
 
 {%include footer.html %}

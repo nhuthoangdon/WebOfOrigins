@@ -167,23 +167,6 @@ function initHeader() {
     menuItems.appendChild(mobileSponsorListItem);
   }
 
-  const createMobileCTA = () => {
-    if (mobileSponsorLink) return mobileSponsorLink;
-
-    mobileSponsorLink = document.createElement('a');
-    mobileSponsorLink.textContent = 'Support This Project';
-    mobileSponsorLink.className = 'cta-link sponsor-link-mobile';
-    mobileSponsorLink.style.cursor = 'pointer';
-    mobileSponsorListItem.appendChild(mobileSponsorLink);
-
-    // Use delegated click (prevents issues after DOM reload)
-    mobileSponsorLink.addEventListener('click', e => {
-      e.stopPropagation();
-      window.location.href = '/sponsor/';
-    });
-
-    return mobileSponsorLink;
-  };
 
   const isMobileMenu = () => window.matchMedia('(max-width: 860px)').matches;
 
@@ -388,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function initThemeToggle() {
-  const toggleBtn = document.getElementById('theme-toggle');
+  const toggleBtns = document.querySelectorAll('.theme-toggle');
   const icon = document.getElementById('theme-icon');
   const html = document.documentElement;
 
@@ -410,10 +393,12 @@ function initThemeToggle() {
   // Apply saved preference on load
   applyTheme(currentTheme);
 
-  toggleBtn.addEventListener('click', () => {
-    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', currentTheme);
-    applyTheme(currentTheme);
-    console.log(`Theme switched to ${currentTheme}`);
-  });
+  toggleBtns.forEach (btn => {
+    btn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', currentTheme);
+      applyTheme(currentTheme);
+      console.log(`Theme switched to ${currentTheme}`);
+    });
+  })
 }
