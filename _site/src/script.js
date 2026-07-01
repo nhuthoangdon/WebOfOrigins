@@ -186,7 +186,7 @@ function initHeader() {
   const openMenu = () => {
     menuItems.classList.add('menu-items-mobile_open');
     hamburgerIcon?.classList.replace('fa-bars', 'fa-xmark');
-    mainContent.style.filter = 'blur(2px)';
+    mainContent.style.filter = 'blur(4px)';
     mainContent.style.opacity = '0.2';
     ensureMobileCTA(); // Critical: show CTA when menu opens
   };

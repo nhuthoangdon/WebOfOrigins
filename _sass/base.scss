@@ -4,6 +4,7 @@
      rgba(8, 1, 35, 0.4) 60%,
      rgba(2, 0, 12, 0.8) 100%);
   --menu-bg-color: rgba(3, 0, 10, 0.5);
+  --menu-mobile-bg-color: linear-gradient(135deg, rgba(4, 1, 70, 0.99) 0%, rgba(5, 22, 71, 0.76) 50%, rgba(1, 26, 46, 0.98) 100%);
   --body-font: "Source Sans 3", sans-serif, -apple-system, BlinkMacMacSystemFont,
      "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
      Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
@@ -41,7 +42,7 @@
   --popup-bg-color: rgba(246, 247, 249, 0.9);
   --popup-box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
   --card-box-shadow-hovered: 0px 4px 20px 4px rgba(69, 15, 162, 0.15);
-  --banner-bg-color: rgba(25, 3, 97, 0.8);
+  --banner-bg: linear-gradient(115deg, rgba(21, 3, 61, 0.7) 0%, rgba(11, 221, 253, 0.1) 100%);
   --floating-btn-box-shadow: 0 2px 10px 6px rgba(0, 0, 0, 0.4), 0 0 1px 2px rgba(1, 13, 18, 0.2);
   --floating-btn-box-shadow-hovered: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 2px 4px rgba(2, 22, 25, 0.1);
   --text-color: var(--ui-white);
@@ -65,7 +66,8 @@
 .light-mode {
   --background:
      rgba(244, 245, 248, 1);
-  --menu-bg-color: rgba(216, 230, 237, 0.9);
+  --menu-bg-color: rgba(185, 219, 212, 0.8);
+  --menu-mobile-bg-color: linear-gradient(135deg, rgba(216, 230, 237, 0.9) 0%, rgba(244, 245, 248, 0.9) 100%);
   --bg-color: #f8fafc;
   --input-field-bg: rgba(255, 255, 255, 0.9);
   --input-field-hover-border-color: rgb(0, 187, 255);
@@ -74,11 +76,12 @@
   --input-field-focus-border-color: rgba(25, 12, 207, 1);
   --container-bg-color: rgba(255, 255, 255, 0.72);
   --container-box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-  --card-bg-color: rgba(255, 255, 255, 0.88);
+  --card-bg-color: rgba(237, 242, 250, 0.9);
   --card-border: 1px solid rgba(148, 163, 184, 0.3);
   --card-box-shadow-hovered: 0px 4px 12px 2px rgba(98, 98, 99, 0.25);
   --popup-bg-color: rgba(255, 255, 255, 0.96);
   --popup-box-shadow: -2px 0 16px rgba(15, 23, 42, 0.14);
+  --banner-bg: linear-gradient(115deg, rgba(21, 3, 61, 1) 0%, rgba(11, 221, 253, 0.6) 100%);
   --floating-btn-box-shadow: 0 2px 6px 4px rgba(0, 0, 0, 0.1), 0 0 1px 2px rgba(0, 0, 0, 0.08);
   --floating-btn-box-shadow-hovered: 0 8px 16px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1);
   --text-color: #000207;
@@ -88,7 +91,7 @@
   --heading-color: #343a57;
   --link-color: #253ceb;
   --highlight-color: #6600cd;
-  --accent: #1431bf;
+  --accent: #201395;
   --highlight: #0284C8;
   --border: rgba(82, 93, 140, 0.3);
   --logo: url(/src/Assets/logo-light.svg);
@@ -510,7 +513,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(115deg, rgba(21, 3, 61, 0.7) 0%, rgba(11, 221, 253, 0.1) 100%);
+  background: var(--banner-bg);
   border-top: 1px solid rgba(142,208,220,0.03);
   border-bottom: 1px solid rgba(82,93,140,0.06);
   box-shadow: 0 6px 30px rgba(2,2,4,0.45);
@@ -520,6 +523,8 @@ button {
       width: 100%;
       max-width: 1200px;
       display: flex;
+      // flex-flow: row wrap;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
@@ -542,12 +547,23 @@ button {
       }
 
       .cta-copy {
-        width: 60%;
+        flex: 1 1 60%;
         height: auto;
       }
-      button i { transition: transform .2s ease-in-out; }
-      button:hover i {transform: translateX(4px);}
+      
+      .cta-actions {
+        flex: 1 1 10%;
+        min-width: 200px;
+        
+        button i {
+            transition: transform .2s ease-in-out;
+        }
+        button:hover i {
+            transform: translateX(4px);
+        }
+      }
     }
+    
  }
 
 
@@ -1124,7 +1140,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
 
     .menu-items {
       display: -webkit-flex; display: flex; flex-flow: row wrap; justify-content: center; align-items: center;
-      text-align: left; list-style: none; gap: 1.5em; margin: 0.5rem 0; -webkit-transition: opacity .3s ease-out; transition: opacity .3s ease-out;
+      text-align: left; list-style: none; gap: 1.5em; margin: 0.5rem 0; -webkit-transition: opacity .3s ease-out; transition: opacity .3s ease-out; color: var(--text-color);
       
       li {
           display: flex;
@@ -1236,7 +1252,10 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
 
 a#home-logo { display: flex; }
 .nav-logo { width: 11em; height: 4em; background-image: var(--logo); background-size: contain; background-repeat: no-repeat; background-position: center;}
-.hamburger-menu { display: none; }
+.hamburger-menu { 
+  display: none;
+  a { color: var(--text-color); }
+}
 .header-sponsor-cta { margin-left: auto; }
 
 /* responsive menu behavior */
@@ -1258,25 +1277,27 @@ a#home-logo { display: flex; }
     justify-content: flex-start;
     gap: 1.5rem;
     font-size: 1.2em;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
+    text-align: left;
+    color: var(--text-color);
+    width: 85vw;
+    max-width: 400px;
     height: calc(100vh - 80px);
-    background: linear-gradient(135deg, rgba(3,3,76,0.7) 10%, rgba(4,15,56,0.8) 50%, rgba(5,0,20,0.98) 100%);
-    backdrop-filter: blur(12px) saturate(120%);
-    -webkit-box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    background: var(--menu-mobile-bg-color);
+    backdrop-filter: blur(100px) saturate(120%);
+    -webkit-backdrop-filter: blur(100px) saturate(120%);
+    -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
     border: 1px solid rgba(67,105,220,0.3);
     padding: 2em;
+    margin: 0;
     position: fixed;
-    top: 4em;
+    top: 80px;
     right: 0;
-    border-radius: 10px;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transform: translateX(50%);
-    -webkit-transform: translateX(50%);
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
     z-index: 1001;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
                 opacity 0.2s ease-in,
@@ -1284,10 +1305,14 @@ a#home-logo { display: flex; }
     -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
                         opacity 0.2s ease-in,
                         visibility 0s linear 0.3s;
-  }
-    .menu-items li a::after {
+  
+    li a { 
+      color: var(--text-color);
+    &::after {
       display: none;
     }
+    }
+  }
   
   .menu-items-mobile_open {
     
@@ -1297,7 +1322,7 @@ a#home-logo { display: flex; }
     transform: translateX(0);
     -webkit-transform: translateX(0);
     transition-delay: 0s;
-    background-color: var(--bg-color);
+    // background-color: var(--bg-color);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
