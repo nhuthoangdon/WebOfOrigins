@@ -118,6 +118,56 @@ ul.listing-grid {
     }
 }
 
+.latest-insight {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: calc(2rem + 4%) auto;
+    gap: 2rem;
+    padding: 2rem;
+    h2 {
+        align-self: flex-start;
+    }
+        ul.latest-insight-grid {
+            li {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 2rem;
+                height: auto;
+    
+                img {
+                    flex: 1 1 40%;
+                    height: 280px;
+                    min-width: 200px;
+                    object-fit: cover;
+                    -webkit-object-fit: cover;
+                    -webkit-border-radius: $border-radius-small;
+                    border-radius: $border-radius-small;
+                    margin-bottom: 0;
+                    background-color: rgba(94, 167, 239, 0.5);
+                }
+    
+                .text-content {
+                    flex: 1 1 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 12px;
+                    min-width: 200px;
+
+                    .panel-cta {
+                        align-self: flex-end;
+                    }
+                }
+            }   
+        }
+}
+
+
+
 // Default layout
 .page-content { //main page content after header
     width: 100%;

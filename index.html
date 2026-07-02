@@ -26,7 +26,7 @@ permalink: /
     data-action="page_load_check">
   </div>
   
-    <main class="wrapper">
+  <main class="wrapper">
     <!-- Search CTA -->
     <div id="large-search-panel">
       <div class="large-search-headings">
@@ -57,6 +57,33 @@ permalink: /
         </div>
       </div>
     </div>
+
+
+    <section class="latest-insight">
+      <h2>Latest Insight</h2>
+      <ul class="listing-grid latest-insight-grid">
+        {% for post in site.posts limit: 1 %}
+        <li data-post-url="{{ post.url }}">
+          <img src="{{ post.image }}" alt="Post Image" />
+          <div class="text-content">
+            <a href="{{ post.url }}">
+              <h4>{{ post.title }}</h4>
+            </a>
+            <span class="meta-block">
+              {% if post.industry %}
+              <p class="post-meta"><b>Industries:</b> {{ post.industry | array_to_sentence_string }}</p>
+              {% endif %}
+              {% if post.impact %}
+              <p class="post-meta"><b>Impacts:</b> {{ post.impact | array_to_sentence_string }}</p>
+              {% endif %}
+            </span>
+            {{ post.excerpt }}
+            <a href="{{ post.url }}" class="panel-cta"><span class="icon icon-solid icon-chevron-right">Read More</span></a>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
 
     
     <!-- <button class="secondary-button go-to-ai-mode page-cta">Dive Deeper with AI</button> -->
