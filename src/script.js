@@ -156,30 +156,7 @@ function initHeader() {
     }
   });
 
-  // — Mobile sponsor CTA
-  let mobileSponsorLink = null;
-  let mobileSponsorListItem = document.createElement('li');
-  //Positioning mobileSponsorListItem before the last item (data cta)
-  const lastItem = menuItems.lastElementChild;
-  if (lastItem) {
-    menuItems.insertBefore(mobileSponsorListItem, lastItem);
-  } else {
-    menuItems.appendChild(mobileSponsorListItem);
-  }
 
-
-  const isMobileMenu = () => window.matchMedia('(max-width: 860px)').matches;
-
-  const ensureMobileCTA = () => {
-    if (isMobileMenu()) {
-      const cta = createMobileCTA();
-      if (!menuItems.contains(cta)) {
-        menuItems.appendChild(cta);
-      }
-    } else if (mobileSponsorLink?.parentNode) {
-      mobileSponsorLink.remove();
-    }
-  };
   
   const mainContent = document.querySelector('main');
   
@@ -402,3 +379,11 @@ function initThemeToggle() {
     });
   })
 }
+
+// Donate button click handler
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.donate-button');
+  if (!btn) return;
+  e.preventDefault();
+  window.location.href = btn.dataset.url || '/sponsor/';
+});

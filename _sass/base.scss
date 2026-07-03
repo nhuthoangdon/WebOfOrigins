@@ -210,7 +210,7 @@ h1.article-header {
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-family: var(--heading-font);
   text-transform: uppercase;
   font-weight: 800;
@@ -232,6 +232,7 @@ h3 {
 h4 {
   font-size: 1.2rem;
   font-weight: 700;
+  letter-spacing: .04em;
   margin-top: 1rem;
   margin-bottom: .5rem;
   color: var(--heading-color);
@@ -1511,4 +1512,20 @@ hr { width: 100%; margin: 8% 0; border: 1px solid var(--line-color); }
   touch-action: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+}
+
+
+.support-cta {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  background: var(--banner-bg);
+  padding: 5% 10%;
+  @media (max-width: 450px) {
+    padding: 20px;
+  }
 }
