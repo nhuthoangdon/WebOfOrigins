@@ -327,33 +327,6 @@ const toggleDrawer = (nodeId, nodeLabel) => {
     });
 };
 
-// const toggleDrawer = (nodeId, nodeLabel) => {
-//         if (!nodeId) return;
-
-//         const isOpen = drawerPanel.classList.contains("open");
-//         const currentNodeId = drawerPanel.dataset.currentNodeId;
-
-//         if (isOpen && currentNodeId === nodeId) {
-//             // Same node already shown; still reset scroll in case user scrolled down
-//             drawerPanel.scrollTop = 0;
-//             return;
-//         }
-//         // Update content
-//         contentContainer.innerHTML = updateDrawerContent(nodeId, nodeLabel);
-//         drawerPanel.dataset.currentNodeId = nodeId;
-
-//         if (isOpen) return;
-
-//         drawerPanel.style.display = "block";
-//         requestAnimationFrame(() => {
-//             requestAnimationFrame(() => {
-//                 drawerPanel.classList.add("open");
-//             });
-//         });
-
-//         // Lock dragging while drawer is open
-//         network.setOptions({ interaction: { dragNodes: false } });
-//     };
 
 // Close drawer (Close button + iOS touch)
 document.addEventListener("click", (e) => {

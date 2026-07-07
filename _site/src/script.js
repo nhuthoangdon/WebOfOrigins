@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   makeListingsClickable();
   initHeader();
   initAIMode();
-  initThemeToggle();
+  // initThemeToggle();
 });
 
 
@@ -150,7 +150,7 @@ function initHeader() {
 
   // Desktop sponsor buttons
   document.addEventListener('click', e => {
-    if (e.target.closest('.sponsor-cta')) {
+    if (e.target.closest('.donate-button')) {
       e.preventDefault();
       window.location.href = '/sponsor/';
     }
@@ -165,7 +165,6 @@ function initHeader() {
     hamburgerIcon?.classList.replace('fa-bars', 'fa-xmark');
     mainContent.style.filter = 'blur(4px)';
     mainContent.style.opacity = '0.2';
-    ensureMobileCTA(); // Critical: show CTA when menu opens
   };
 
   const closeMenu = () => {
@@ -173,7 +172,6 @@ function initHeader() {
     hamburgerIcon?.classList.replace('fa-xmark', 'fa-bars');
     mainContent.style.filter = 'none';
     mainContent.style.opacity = '1';
-    ensureMobileCTA();
   };
 
   // — Hamburger toggle —
@@ -193,11 +191,6 @@ function initHeader() {
   // — Close on scroll —
   window.addEventListener('scroll', closeMenu);
 
-  // — Responsive updates —
-  window.addEventListener('resize', ensureMobileCTA);
-
-  // — Initial state —
-  ensureMobileCTA();
 
   // — Hide menu on scroll down, show when scrolling up —
   let lastScrollTop = 0;
@@ -219,6 +212,39 @@ function initHeader() {
 
     lastScrollTop = currentScrollTop;
   }, { passive: true });
+
+
+
+  const toggleBtns = document.querySelectorAll('.theme-toggle');
+  const icon = document.getElementById('theme-icon');
+  const html = document.documentElement;
+
+  // Default = Dark (your original theme)
+  let currentTheme = localStorage.getItem('theme') || 'dark';
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      html.classList.add('light-mode');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    } else {
+      html.classList.remove('light-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+  }
+
+  // Apply saved preference on load
+  applyTheme(currentTheme);
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', currentTheme);
+      applyTheme(currentTheme);
+      console.log(`Theme switched to ${currentTheme}`);
+    });
+  })
 }
 
 // ——————————————————————————————————————
@@ -347,38 +373,38 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function initThemeToggle() {
-  const toggleBtns = document.querySelectorAll('.theme-toggle');
-  const icon = document.getElementById('theme-icon');
-  const html = document.documentElement;
+// function initThemeToggle() {
+//   const toggleBtns = document.querySelectorAll('.theme-toggle');
+//   const icon = document.getElementById('theme-icon');
+//   const html = document.documentElement;
 
-  // Default = Dark (your original theme)
-  let currentTheme = localStorage.getItem('theme') || 'dark';
+//   // Default = Dark (your original theme)
+//   let currentTheme = localStorage.getItem('theme') || 'dark';
 
-  function applyTheme(theme) {
-    if (theme === 'light') {
-      html.classList.add('light-mode');
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
-    } else {
-      html.classList.remove('light-mode');
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-    }
-  }
+//   function applyTheme(theme) {
+//     if (theme === 'light') {
+//       html.classList.add('light-mode');
+//       icon.classList.remove('fa-sun');
+//       icon.classList.add('fa-moon');
+//     } else {
+//       html.classList.remove('light-mode');
+//       icon.classList.remove('fa-moon');
+//       icon.classList.add('fa-sun');
+//     }
+//   }
 
-  // Apply saved preference on load
-  applyTheme(currentTheme);
+//   // Apply saved preference on load
+//   applyTheme(currentTheme);
 
-  toggleBtns.forEach (btn => {
-    btn.addEventListener('click', () => {
-      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', currentTheme);
-      applyTheme(currentTheme);
-      console.log(`Theme switched to ${currentTheme}`);
-    });
-  })
-}
+//   toggleBtns.forEach (btn => {
+//     btn.addEventListener('click', () => {
+//       currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+//       localStorage.setItem('theme', currentTheme);
+//       applyTheme(currentTheme);
+//       console.log(`Theme switched to ${currentTheme}`);
+//     });
+//   })
+// }
 
 // Donate button click handler
 document.addEventListener('click', e => {
@@ -386,4 +412,55 @@ document.addEventListener('click', e => {
   if (!btn) return;
   e.preventDefault();
   window.location.href = btn.dataset.url || '/sponsor/';
+});
+
+
+
+// Particles.js Background
+particlesJS('particles-js', {
+  "particles": {
+    "number": { "value": 90, "density": { "enable": true, "value_area": 900 } },
+    "color": { "value": ["#030173", "#5900fe", "#bce100", "#c51360"] },
+    "shape": { "type": "circle" },
+    "opacity": {
+      "value": 0.55,
+      "random": true,
+      "anim": { "enable": true, "speed": 0.8, "opacity_min": 0.15 }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": { "enable": true, "speed": 2.5, "size_min": 0.1 }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 200,
+      "color": "#3896a7",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1.5,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": true,
+      "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" },
+      "onclick": { "enable": true, "mode": "push" },
+      "resize": true
+    },
+    "modes": {
+      "grab": { "distance": 180, "line_linked": { "opacity": 0.4 } },
+      "push": { "particles_nb": 4 }
+    }
+  },
+  "retina_detect": true
 });

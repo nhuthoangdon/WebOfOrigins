@@ -50,10 +50,10 @@ ul.listing-grid {
         align-items: flex-start;
         justify-content: flex-start;
         text-align: left;
-        -webkit-border-radius: $border-radius-small;
-        border-radius: $border-radius-small;
-        border: 1px solid rgba(142, 208, 220, 0.1);
-        background: rgba(71, 110, 141, 0.08);
+        -webkit-border-radius: $border-radius-medium;
+        border-radius: $border-radius-medium;
+        border: var(--card-border);
+        background: var(--card-bg-color);
         padding: 1.5rem;
         cursor: pointer;
         -webkit-transition: all 0.3s ease;
@@ -64,8 +64,8 @@ ul.listing-grid {
             box-shadow: var(--card-box-shadow-hovered);
             -webkit-transform: translateY(-5px);
             transform: translateY(-5px);
-            border-color: rgba(94, 167, 239, 0.3);
-            background: rgba(94, 167, 239, 0.1);
+            border-color: rgba(89, 172, 255, 0.8);
+            // background: rgba(94, 167, 239, 0.1);
         }
          &:hover a {
                     color: var(--highlight-color); 
@@ -483,3 +483,4 @@ img {
     to {
         transform: rotate(360deg);
     } }
+

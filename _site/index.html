@@ -51,8 +51,7 @@
           <i id="theme-icon" class="fa-solid fa-sun"></i>
           </button>
       </ul>
-      <button id="header-sponsor-cta" class="secondary-button sponsor-cta header-sponsor-cta" title="Buy me a Coffee"><i class="fa-solid fa-heart fa-beat" style="color: firebrick;"></i> Support This Project</button>
-      <!-- Theme Toggle -->
+      <button id="header-sponsor-cta" class="secondary-button donate-button header-sponsor-cta" title="Buy me a Coffee"><i class="fa-solid fa-heart fa-beat" style="color: firebrick;"></i> Support This Project</button>
       <!-- Theme Toggle -->
       <button id="theme-toggle-dk" class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
         <i id="theme-icon" class="fa-solid fa-sun"></i>
@@ -63,11 +62,6 @@
     </div>
   </nav>
 </header>
-
-  <!-- Floating AI Button -->
-<button id="ai-float-btn" class="ai-float-btn" aria-label="Ask AI" title="Open AI Window">
-    <span><i class="fa-solid fa-brain fa-fade"></i> Ask AI</span>
-</button>
   
   <div class="cf-turnstile" 
     data-sitekey="0x4AAAAAACBLTv9bEWI1GQF2" 
@@ -138,18 +132,24 @@
       </ul>
     </section>
 
-    <!-- <hr> -->
+    <hr>
 
-    <section class="support-cta">
+    <section class="support-cta-section">
       <h3>Support the Project</h3>
-      <p class="intro-text">Help grow the database and improve the platform. Your contribution helps keep the project alive.</p>
+      <p class="intro-text">Help grow the database and improve the platform. Your contribution helps keep the project alive.
+      </p>
       <button class="secondary-button donate-button" data-url="/sponsor/" title="Contribute to the Project">Donate</button>
     </section>
 
-    
-    <!-- <button class="secondary-button go-to-ai-mode page-cta">Dive Deeper with AI</button> -->
+
+    <div id="particles-js"></div>
+
 </main>
 
+<!-- Floating AI Button -->
+<button id="ai-float-btn" class="ai-float-btn" aria-label="Ask AI" title="Open AI Window">
+    <span><i class="fa-solid fa-brain fa-fade"></i> Ask AI (beta)</span>
+</button>
 <footer>
   <div class="footer-main-container">
     <div class="footer-left-content">
@@ -162,7 +162,7 @@
         <a href="mailto:weboforigins@gmail.com">Contact</a>
         <a href="/sponsor/">Donate</a>
         <span>|</span>
-        <a href="/wooai/" id="special-footer-link" style="font-weight: 600;">Ask AI</a>
+        <a href="/wooai/" id="special-footer-link" style="font-weight: 600;">Ask AI (beta)</a>
       </div>
     </div>
     <div class="footer-socials">
@@ -183,8 +183,6 @@
     </div>
   </div>
 </footer>
-
-
 
   <script>
     // 3. The callback function to send the token to your server
@@ -215,8 +213,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     
     <script src="/src/vis-script.js?v1.4.3" type="text/javascript"></script>
-    <!-- <script src="/src/data-search.js" type="text/javascript"></script> -->
-    <script src="/src/vis-script.js?v=1.6"></script>
+    <script src="/src/vis-script.js?v=1.6" type="text/javascript"></script>
+    <script src="/src/particles.js-master/particles.min.js"></script>
     
     <script>
       document.addEventListener('DOMContentLoaded', () => {
