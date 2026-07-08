@@ -319,7 +319,7 @@ const toggleDrawer = (nodeId, nodeLabel) => {
     drawerPanel.dataset.currentNodeId = nodeId;
     drawerPanel.scrollTop = 0;
 
-    drawerPanel.style.display = "block";
+    drawerPanel.style.display = "flex";
     requestAnimationFrame(() => {
         requestAnimationFrame(() => {
             drawerPanel.classList.add("open");
