@@ -193,6 +193,7 @@ ul.listing-grid {
     max-width: $max-text-content-width;
     display: flex;
     flex-direction: column;
+    margin-top: calc(2% + 0.75rem);
 }
 
 .centered-content {
@@ -483,4 +484,62 @@ img {
     to {
         transform: rotate(360deg);
     } }
+
+
+
+/* Tags Page */
+.tag-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+
+    .tag-group {
+        width: 100%;
+        border-top: var(--card-border);
+        padding: 2rem 1.5rem 0;
+
+        h4 {
+            color: var(--font-color);
+            font-family: var(--heading-font);
+            text-transform: capitalize;
+            position: relative;
+        &::before {
+            content: "🏷️";
+            position: absolute;
+            left: -1.5em;
+            }
+        }
+
+        ul {
+            list-style: circle;
+        }
+    }
+}
+
+
+
+
+
+.tag-group li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+
+
+.tag-group a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.tag-group a:hover {
+    color: var(--highlight-color);
+    text-decoration: underline;
+}
 

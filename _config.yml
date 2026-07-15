@@ -1,6 +1,6 @@
 # Site Settings
 title: Web of Origins
-description: Visualising the connections between products, materials, industries, and their origins.
+description: Visualising the connections between products, materials, industries, origins, and impacts.
 author: Web of Origins
 url: https://weboforigins.com
 baseurl: ""
@@ -31,6 +31,10 @@ exclude:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-archives
+  - jekyll-tagging
 
 # Defaults
 defaults:
@@ -52,3 +56,11 @@ minima:
     twitter: WebOfOrigins
     linkedin: company/weboforigins
     facebook: WebOfOrigins
+
+
+tagging:
+  enabled: true
+  layout: post
+  permalink: /tag/:name/
+  dir: tags
+  permalink_style: pretty

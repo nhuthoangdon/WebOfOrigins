@@ -1,0 +1,31 @@
+---
+layout: default
+title: Browse topics by tag
+---
+
+<h1 id="page-title">Browse by Tags</h1>
+
+{% assign sorted_tags = site.tags | sort %}
+
+<section class="tag-list">
+    {% for tag in sorted_tags %}
+    <div class="tag-group" id="{{ tag[0] | slugify }}">
+        <h4>{{ tag[0] }}</h4>
+    
+        <ul>
+            {% for post in tag[1] %}
+            <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</section>
+
+<hr>
+
+<section>
+    <a href="/blog/" class="tertiary-button go-back"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
+</section>
+

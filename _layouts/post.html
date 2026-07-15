@@ -27,7 +27,13 @@ permalink: /:categories/:title:output_ext
         {% endif %}
 
         {% if page.tags %}
-        <p class="post-meta"><b>Tags:</b> {{ page.tags | join: ', ' }}</p>
+        <p class="post-meta">
+            <b>Tags:</b>
+            {% for tag in page.tags %}
+            <a href="{{ '/similartags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {%
+            endunless %}
+            {% endfor %}
+        </p>
         {% endif %}
 
         {% if page.date %}
@@ -80,8 +86,8 @@ permalink: /:categories/:title:output_ext
     {% endif %}
     
     {% if score == 0 and page.tags and post.tags %}
-    {% for t in page.tags %}
-    {% if post.tags contains t %}
+    {% for tag in page.tags %}
+    {% if post.tags contains tag %}
     {% assign score = score | plus: 1 %}
     {% endif %}
     {% endfor %}

@@ -6,6 +6,7 @@ author: Remy
 industry: [agriculture, food, mining, food production]
 impact: [environmental]
 category: [global warming, supply chain]
+tags: [dogs, birds, fish, sharks, dolphins]
 ---
 
 Fishing is one of humanity’s oldest practices, deeply embedded in survival, culture, and global trade. What begins as a simple act of catching fish unfolds into a complex system of ecosystems, technologies, and supply chains. <!--more-->  Tracing fishing origins reveals not only where seafood comes from, but how it is harvested, managed, and its broader environmental and social consequences.
