@@ -1,8 +1,8 @@
 ---
 layout: tags
-permalink: /similartags/
+permalink: /taglist/
 description: Discover related tags and topic clusters to find connected content across the Web of Origins knowledge graph.
-title: Similar Tags — Discover Connected Origins Topics
+title: Sort by Tags — Discover Connected Origins Topics
 ---
 
 <script>

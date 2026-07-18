@@ -260,8 +260,8 @@ const goToNodeOption = document.createElement("button");
 goToNodeOption.className = "secondary-button icon icon-regular go-to-node light-mode";
 goToNodeOption.textContent = "View Node";
 
-optionButtonsContainer.appendChild(closeDrawerPanelBtn);
 optionButtonsContainer.appendChild(goToNodeOption);
+optionButtonsContainer.appendChild(closeDrawerPanelBtn);
 drawerPanel.appendChild(optionButtonsContainer);
 
 document.body.appendChild(drawerPanel);

@@ -10,6 +10,31 @@ $border-radius-small: 8px;
 $border-radius-medium: 14px;
 $border-radius-large: 28px;
 
+
+// General Breakpoints (max-width)
+$breakpoints: (
+    'xsmall': 376px,
+    'mobile': 481px,
+    'tablet': 769px,
+    'desktop': 1025px
+);
+
+// Create a single, dynamic mixin
+@mixin respond-to($breakpoint) {
+    // Grab the specific width from the map
+    $width: map-get($breakpoints, $breakpoint);
+
+    @if $width {
+        @media (max-width: $width) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "No breakpoint found for '#{$breakpoint}'. Make sure it's defined in the $breakpoints map.";
+    }
+}
+
 :root {
     --ai-accent: #22d3ee;
     --modal-bg: rgba(5, 1, 25, 0.95);
@@ -131,39 +156,39 @@ ul.listing-grid {
     h2 {
         align-self: flex-start;
     }
-        ul.latest-insight-grid {
-            li {
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 2rem;
-                height: auto;
-    
-                img {
-                    flex: 1 1 40%;
-                    height: 280px;
-                    min-width: 200px;
-                    object-fit: cover;
-                    -webkit-object-fit: cover;
-                    -webkit-border-radius: $border-radius-small;
-                    border-radius: $border-radius-small;
-                    margin-bottom: 0;
-                    background-color: rgba(94, 167, 239, 0.5);
-                }
-    
-                .text-content {
-                    flex: 1 1 50%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    gap: 12px;
-                    min-width: 200px;
+    ul.latest-insight-grid {
+        li {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            height: auto;
 
-                    .panel-cta {
-                        align-self: flex-end;
-                    }
+            img {
+                flex: 1 1 40%;
+                height: 280px;
+                min-width: 200px;
+                object-fit: cover;
+                -webkit-object-fit: cover;
+                -webkit-border-radius: $border-radius-small;
+                border-radius: $border-radius-small;
+                margin-bottom: 0;
+                background-color: rgba(94, 167, 239, 0.5);
+            }
+
+            .text-content {
+                flex: 1 1 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 12px;
+                min-width: 200px;
+
+                .panel-cta {
+                    align-self: flex-end;
                 }
-            }   
-        }
+            }
+        }   
+    }
 }
 
 
@@ -171,17 +196,15 @@ ul.listing-grid {
 // Default layout
 .page-content { //main page content after header
     width: 100%;
+    max-width: 100vw;
     margin: $page-content-margins;
     padding: $page-content-paddings;
-
-    @media (max-width: 1220px) {
-            max-width: 100%;
-            padding: 0 4rem;
-            margin: 6rem auto;
-        }
-    @media (max-width: 700px) {
+    
+    @include respond-to('desktop') {
         padding: 0 2rem;
+        margin: 6rem auto;   
     }
+    
     @media (max-width: 350px) {
         padding: 0 24px;
     }
@@ -233,29 +256,36 @@ img {
             }
 }
 
-.related-posts {
+.related-posts { // section
     width: 100%;
-    h3 {
-        margin-bottom: 2rem;
-    }
-    .listing-grid {
-        > :first-child {
-                grid-column: span 1;       
+
+    .tiles {
+        h2 {
+                margin-bottom: 2rem;
             }
         
-        gap: 1em;
-        
-        li {
-            gap: 0.5em;
-            .meta-block {
-                margin: 0;
+        .listing-grid {
+            > :first-child {
+                grid-column: span 1;
+            }
+    
+            gap: 1rem;
+    
+            li {
+                gap: 0.5em;
+    
+                .meta-block {
+                    margin: 0;
                 }
-            h5 {
-                font-size: 1em;
-                margin: 0;
-            }
+    
+                h5 {
+                    font-size: 1em;
+                    margin: 0;
+                }
+            }   
         }
     }
+    .tertiary-button { margin: 1em auto; }
 }
 
 
@@ -516,20 +546,20 @@ img {
         }
 
         ul {
-            list-style: circle;
+            list-style: disc;
+            padding: 0;
+            
+            li {
+                margin-bottom: 0.75rem;
+                padding-left: 8px;
+                position: relative;
+            }
         }
     }
 }
 
 
 
-
-
-.tag-group li {
-    margin-bottom: 0.75rem;
-    padding-left: 1.2rem;
-    position: relative;
-}
 
 
 

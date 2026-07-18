@@ -419,7 +419,7 @@ document.addEventListener('click', e => {
 // Particles.js Background
 particlesJS('particles-js', {
   "particles": {
-    "number": { "value": 90, "density": { "enable": true, "value_area": 900 } },
+    "number": { "value": 30, "density": { "enable": true, "value_area": 900 } },
     "color": { "value": ["#030173", "#5900fe", "#bce100", "#c51360"] },
     "shape": { "type": "circle" },
     "opacity": {

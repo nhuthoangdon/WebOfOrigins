@@ -1,7 +1,7 @@
 ---
 layout: grid
 title: Insights
-permalink: /blog/
+permalink: /insights/
 description: Read in-depth insights on topics relating to consumer products, industries, material sourcing, and environmental and ethical impacts of human development and sustainability
 ---
 

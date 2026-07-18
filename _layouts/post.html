@@ -1,8 +1,10 @@
 ---
 layout: default
 title: "{{ page.title }}"
-permalink: /:categories/:title:output_ext
+permalink: /insights/:categories/:title:output_ext
 ---
+
+<a class="tertiary-button go-back small-back-button" href="/insights/"><i class="fa-solid fa-arrow-left-long"></i>All Insights</a>
 
 <article class="text-container" itemscope itemtype="http://schema.org/BlogPosting">
 <meta itemprop="headline" content="{{ page.title }}">
@@ -30,7 +32,7 @@ permalink: /:categories/:title:output_ext
         <p class="post-meta">
             <b>Tags:</b>
             {% for tag in page.tags %}
-            <a href="{{ '/similartags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {%
+            <a href="{{ '/taglist/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {%
             endunless %}
             {% endfor %}
         </p>
@@ -57,7 +59,7 @@ permalink: /:categories/:title:output_ext
 
 <hr>
 
-<section>
+<section class="related-posts">
 
     {% comment %}=====================================================================
     RELATED POSTS
@@ -106,7 +108,7 @@ permalink: /:categories/:title:output_ext
     {% assign sorted = entries | sort | reverse %} <!-- sort by score (string) -->
     {% assign top3 = sorted | slice: 0, 3 %}
     
-    <div class="related-posts">
+    <div class="tiles">
         <h2>Related Insights</h2>
         <ul class="listing-grid">
             {% for e in top3 %}

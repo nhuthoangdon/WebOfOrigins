@@ -21,6 +21,7 @@ sass:
 include:
   - _pages
   - blog
+  - insights
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -58,9 +59,15 @@ minima:
     facebook: WebOfOrigins
 
 
+collections:
+  posts:
+    output: true
+    permalink: /insights/:categories/:title:output_ext
+
+
 tagging:
   enabled: true
   layout: post
-  permalink: /tag/:name/
+  permalink: /taglist/:name/
   dir: tags
   permalink_style: pretty
