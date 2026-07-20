@@ -92,10 +92,10 @@ ul.listing-grid {
             border-color: rgba(89, 172, 255, 0.8);
             // background: rgba(94, 167, 239, 0.1);
         }
-         &:hover a {
+         &:hover a.panel-cta {
                     color: var(--highlight-color); 
          }
-         &:hover a span::after {
+         &:hover a.panel-cta span::after {
             -webkit-transform: translateX(4px);
             transform: translateX(4px);
          }

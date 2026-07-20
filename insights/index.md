@@ -20,6 +20,13 @@ description: Read in-depth insights on topics relating to consumer products, ind
             {% if post.impact %}
             <p class="post-meta"><b>Impacts:</b> {{ post.impact | array_to_sentence_string }}</p>
             {% endif %}
+            {% if post.tags %}
+            <p class="post-meta"><b>Tags:</b>
+                {% for tag in post.tags %}
+                <a href="{{ '/taglist/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+            </p>
+            {% endif %}
         </span>
         {{ post.excerpt }}
         <a href="{{ post.url }}" class="panel-cta"><span class ="icon icon-solid icon-chevron-right">Read More</span></a>
