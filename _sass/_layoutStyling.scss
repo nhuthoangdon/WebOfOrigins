@@ -47,7 +47,7 @@ $breakpoints: (
    padding: $page-content-paddings;
    margin: $page-content-margins;
    align-items: flex-start;
-   @media (max-width: 1024px) {
+   @include respond-to('desktop') {
     max-width: 100%;
     margin: 6rem auto;
    }
@@ -59,10 +59,11 @@ ul.listing-grid {
     gap: 2rem;
     list-style-type: none;
     padding: 0;
+    @include respond-to('mobile') { gap: 1rem; }
     
     > :first-child {
         grid-column: span 2;
-        @media (max-width: 700px) {
+        @include respond-to('tablet') {
             grid-column: auto;
         }
     }
@@ -205,7 +206,7 @@ ul.listing-grid {
         margin: 6rem auto;   
     }
     
-    @media (max-width: 350px) {
+    @include respond-to('xsmall') {
         padding: 0 24px;
     }
     .button-link { margin-top: 2rem; }
@@ -249,11 +250,7 @@ img {
     border-radius: $border-radius-medium;
     margin: 2rem 0 2rem 0;
 
-    @media (max-width: 600px) {
-                width: 100%;
-                height: auto;
-                max-height: none;
-            }
+    @include respond-to('tablet') { max-height: 80vh; }
 }
 
 .related-posts { // section
@@ -338,14 +335,18 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.5rem;
     z-index: 20;
     img {
             width: 40px;
             height: 40px;
             object-fit: contain;
             margin: 0 auto;
-            @media (max-width: 426px) { display: none; }
+            @include respond-to('mobile') { display: none; }
         }
+    @media (max-width: 350px) {
+        justify-content: center;
+    }
 }
 
 .back-to-main i {
@@ -366,9 +367,9 @@ img {
     font-weight: 400;
     opacity: 0.85;
     letter-spacing: 0.02em;
-    @media (max-width: 375px) {font-size: 8px; text-align: right;}
+    @include respond-to('xsmall') { font-size: 8px; text-align: right; }
 }
-@media (max-width: 500px) {
+@include respond-to('tablet') {
     .ai-mode-label i {
         display: none;
     }
@@ -409,7 +410,7 @@ img {
 }
 
 // mobile adjustments
-@media (max-width: 640px) {
+@include respond-to('tablet') {
     .ai-header-bar {
         padding: 1rem;
         height: auto;

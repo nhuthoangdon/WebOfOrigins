@@ -39,6 +39,14 @@ function initGlobalInteractions() {
     }
   });
 
+  // go to sponsor/donate page
+  document.addEventListener('click', e => {
+    if (e.target.closest('.sponsor-cta')) {
+      e.preventDefault();
+      window.location.href = '/sponsor/';
+    }
+  });
+
   // Animated heart on sponsor CTA
   document.addEventListener('mouseenter', e => {
     const link = e.target.closest('.donate-links a.large-cta-link');
