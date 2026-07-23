@@ -129,19 +129,9 @@ permalink: /insights/:categories/:title:output_ext
 
                 <a href="{{ related_post.url | relative_url }}"><h5>{{ related_post.title }}</h5></a>
 
-                <span class="meta-block">
-                    {% if related_post.industry %}
-                    <p class="post-meta">
-                        <b>Industries:</b> {{ related_post.industry | array_to_sentence_string }}
-                    </p>
-                    {% endif %}
-            
-                    {% if related_post.impact %}
-                    <p class="post-meta">
-                        <b>Impacts:</b> {{ related_post.impact | array_to_sentence_string }}
-                    </p>
-                    {% endif %}
-                </span>
+                <div class="post-excerpt">
+                    {{ related_post.excerpt }}  
+                </div>
                 <a href="{{ related_post.url | relative_url }}" class="panel-cta-link panel-cta"><span class="icon icon-solid icon-chevron-right">Read More</span></a>
             </li>
             {% endfor %}     
@@ -149,7 +139,7 @@ permalink: /insights/:categories/:title:output_ext
     </div>
     {% endif %}
 
-    <a href="/blog/" class="tertiary-button go-back"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
+    <a href="/insights/" class="tertiary-button go-back"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
 
 </section>
 

@@ -28,7 +28,9 @@ description: Read in-depth insights on topics relating to consumer products, ind
             </p>
             {% endif %}
         </span>
-        {{ post.excerpt }}
+        <div class="post-excerpt">
+           {{ post.excerpt }}
+        </div>
         <a href="{{ post.url }}" class="panel-cta"><span class ="icon icon-solid icon-chevron-right">Read More</span></a>
     </li>
     {% endfor %}

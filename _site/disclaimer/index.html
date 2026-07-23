@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Network Guide | Web of Origins</title>
+<title>Disclaimer | Web of Origins</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Network Guide" />
+<meta property="og:title" content="Disclaimer" />
 <meta name="author" content="Web of Origins" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Visualising the connections between products, materials, industries, origins, and impacts." />
-<meta property="og:description" content="Visualising the connections between products, materials, industries, origins, and impacts." />
-<link rel="canonical" href="http://localhost:4000/glossary/" />
-<meta property="og:url" content="http://localhost:4000/glossary/" />
+<meta name="description" content="Important information about the scope, limitations, and use of information provided on this site" />
+<meta property="og:description" content="Important information about the scope, limitations, and use of information provided on this site" />
+<link rel="canonical" href="http://localhost:4000/disclaimer/" />
+<meta property="og:url" content="http://localhost:4000/disclaimer/" />
 <meta property="og:site_name" content="Web of Origins" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Network Guide" />
+<meta property="twitter:title" content="Disclaimer" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Web of Origins"},"description":"Visualising the connections between products, materials, industries, origins, and impacts.","headline":"Network Guide","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/src/Assets/logo.svg"},"name":"Web of Origins"},"url":"http://localhost:4000/glossary/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Web of Origins"},"description":"Important information about the scope, limitations, and use of information provided on this site","headline":"Disclaimer","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/src/Assets/logo.svg"},"name":"Web of Origins"},"url":"http://localhost:4000/disclaimer/"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -34,7 +34,7 @@
         href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
     
-    <title>Network Guide</title>
+    <title>Disclaimer</title>
     
     <link rel="icon" type="image/x-icon" href="/src/Assets/favicon.ico">
     <link rel="icon" type="image/svg+xml" href="/src/Assets/favicon_light.svg" media="(prefers-color-scheme: light)">
@@ -61,7 +61,7 @@
         <li id="sponsor-link-mobile"><a href="/sponsor/" 
             title="Support the development of this project">Support this Project</a>
         </li>
-        <!-- <li><a href="/glossary/" class="current" >Glossary</a>
+        <!-- <li><a href="/glossary/" >Glossary</a>
         </li> -->
         <li><a href="/wooai/"  title="Ask AI about origins and manufacturing processes">AI Knowledge</a></li>
         <li class="top-of-list"><button class="primary-button go-to-data-button" id="cta-btn-data" title="View Materials-Industries-Impacts Network"><span class="btn-label">Explore Data</span><span class="btn-icon"><i class="fa-solid fa-hexagon-nodes fa-spin-pulse"></i></span></button></li>
@@ -82,70 +82,52 @@
 </header>
 
     <main class="page-content">
-        <div class="text-container">
-    <h1 class="article-header">About the Data Visualisation</h1>
-    <h2>Interactions & Data Interpretation</h2>
-    <p>
-        The network visualises connections between consumer products, their ingredients, raw materials, industries, impacts, and associated countries arranged vertically by hierarchy. Nodes represent entities; edges show their relationships. Larger nodes indicate entities with more connections. Hover over any node or edge for details. <br>
-        <br>
-        Use the right-side control panel to search or toggle views (e.g., show/hide countries). Navigate with your mouse or the bottom-right controls.
-    </p>
-    <p>
-        Click a node to highlight its direct connections (up to two levels) and trace the supply chain by selecting nodes step by step. Multi-selection is currently not supported.
-    </p>
-    <p>Highlighted nodes can be dragged for better visibility.</p>
-    
-    <h3>Network Structure</h3>
-    <p>
-        <b>Nodes are color-coded by hierarchy level</b><br>
-        <br>
-        <b>• Country (flag):</b> Key countries associated with the end products (Item nodes). <br>
-        ↓<br>
-        <b style="color: #25B9FE;">• Item:</b> End products/consumer goods (e.g. "Jello").<br>
-        ↓
-        <br>
-        <b style="color: #C869ED;">• Composition:</b> Direct ingredients or components of the Items (e.g. Gelatin). <br> 
-        ↓
-        <br>
-        <b style="color: #6591FF;">• Source:</b> Materials or sources of the Compositions, if applicable (e.g. Animal Hides). <br>
-        ↓
-        <br>
-        <b>• Country (flag):</b> Key countries associated with the Sources and Raw Materials. <br>
-        ↓
-        <br>
-        <b style="color: #CEA372;">• Raw Material:</b> Base materials or origins of the Sources or Compositions (e.g. Cattle). <br> 
-        ↓
-        <br>
-        <b style="color: #60A4C2;">• Industry:</b> Industries that process the Raw Materials (e.g. Cattle Rendering). <br>
-        ↓
-        <br>
-        <b>• Country (flag):</b> Countries linked to the Industries and Concerns. <br>
-        ↓
-        <br>
-        <b style="color: #FBB53B;">• Concern:</b> Potential or reported issues of the Industries (e.g. Waste Generation). <br>
-        ↓
-        <br>
-        <b style="color: #F05CCB;">• Consequence:</b> Direct outcomes of the Concerns (e.g. Water Contamination). <br>
-        ↓
-        <br>
-        <b style="color: #FB7E57;">• Impact:</b> Broader social/environmental effects from the Consequences or Concerns (e.g. Biosecurity Risks). <br>
-        <br>
-        <b style="color: chartreuse;">🍀 Sustainable Nodes:</b> eco-friendly ingredients/compositions/materials.
-    </p>
-    <h3>Data Sources</h3>
-    <p>
-       The data used to construct the network is collected through extensive research. All supposely "claims" are based on credible sources cited in <a class="link" href="/references/">References</a>. Data is not exhausive and might not cover all related entries in a pathway. <br>
-       <br>
-       For countries, only the most prominent ones (usually the global top 3-5) are featured. Country Roles (e.g. Producer, Consumer, Importer, Exporter) are paired with relative adjectives of importance (e.g. significant importer, major consumer) and not ranking as a country's production data can change constantly. Occasionally, a country might be listed as "the largest" or "global leader" if its role is stable and the data is consistent across various sources.
-    </p>
-</div>
+        <h1>Disclaimer</h1>
+<section>
+    <div class="text-container">
+        <p class="sub-text"><b>Last updated:</b> July 23, 2026</p>
+        <p>
+            Web of Origins is an independent educational platform dedicated to mapping material flows, supply chains, and associated environmental and industrial impacts. The content on this website—including data visualizations, node graphs, search results, articles, and references—is provided for informational and exploratory purposes only.
+            <br />
+        </p>
+        <h2>Accuracy of Information</h2>
+        <p>
+            While we strive to compile data from credible public sources and maintain accuracy, we do not guarantee the completeness, timeliness, or absolute correctness of any information presented. The database and visualizations are living works in progress and may contain errors, omissions, or outdated details. Users should cross-verify critical information with primary sources before making decisions.
+        </p>
+        <h2>No Professional advice</h2>
+        <p>
+            Nothing on this site constitutes professional, medical, legal, financial, environmental, or regulatory advice. The platform is not a substitute for expert consultation. Reliance on any information from Web of Origins is strictly at your own risk.
+        </p>
+        <h2>Data Sources and Limitations</h2>
+        <ul>
+            <li>
+                <p> Data is aggregated from publicly available research, industry reports, government statistics, and other open sources.
+                </p>
+            </li>
+            <li>
+                <p> Visual connections and impact mappings represent simplified relationships and do not capture every nuance of complex global supply chains.
+                </p>
+            </li>
+            <li>
+                <p> Country and industry statistics reflect general trends and may vary by methodology and reporting period.
+                </p>
+            </li>
+        </ul>
+        <h2>Liability</h2>
+        <p>
+            To the fullest extent permitted by law, Web of Origins, its contributors, developers, and affiliates disclaim all liability for any direct, indirect, incidental, consequential, or punitive damages arising from your use of this website or reliance on its content.
+            <br />
+            <br />
+            <b>We are not responsible for: </b>
+            <br />
+            • Decisions made based on site information <br />
+            • Third-party websites linked from this platform <br />
+            • Any technical issues, data loss, or interruptions <br />
+        </p>
+    </div>
+</section>
 
-    <a class="button-link page-cta" href="/index">
-        <button class="primary-button">
-            <span class="btn-label">Explore the Network</span>
-            <span class="btn-icon"><img src="/src/Assets/ic_Home.png"></span>
-        </button>
-    </a>
+
     </main>
 
 

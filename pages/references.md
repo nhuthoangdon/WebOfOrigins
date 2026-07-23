@@ -2,6 +2,7 @@
 layout: default
 title: References
 permalink: /references/
+description: A collection of academic and research sources referenced throughout the site
 ---
 
 <div class="text-container">
