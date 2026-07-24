@@ -1,0 +1,47 @@
+---
+layout: default
+title: License | WOO License | CC BY-NC 4.0
+permalink: /licensing/
+---
+
+
+<div class="text-container centered-content">
+  <h1 class="article-header">License</h1>
+  <div class="notice-panel">
+    <p style="width: 80%; margin: auto; text-align: center;"><i><b>© 2025 Web of Origins</b> by Nhut Hoang-Don. All
+        rights reserved for the database structure, content, and website materials.</i></p>
+    <div>
+      <h2>Data</h2>
+      <p>The database, including its visualisation(s), is licensed under the <a class="link"
+          href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons
+          Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</a> license. Free to use, share, and adapt for
+        non-commercial purposes with appropriate credit. Suggested citation: Web of Origins, Nhut Hoang-Don, 2025, <a
+          class="link" href="www.weboforigins.com">weboforigins.com</a>.</p>
+    </div>
+    <div>
+      <h2>Code</h2>
+      <p>The codebase, including visualisation scripts, is licensed under the <a class="link"
+          href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0
+          International (CC BY 4.0)</a> license. See my repository’s <a class="link"
+          href="https://github.com/nhuthoangdon/WebOfOrigins/blob/31a5e300278c8a3babec3584bfc88be6f178668b/LICENSE">LICENSE</a>
+        file for details.</p>
+      <p>For commercial use of the database or its visualisations, please contact <a class="link"
+          href="mailto:weboforigins@gmail.com">weboforigins@gmail.com</a>.</p>
+      <p>Help bringing educational contents closer to the public! <a class="link" href="./about#sponsor-links"
+          target="_blank">Donate now</a> to support this project.</p>
+    </div>
+    <div>
+      <h2>Data Visualisations</h2>
+      <p>The visualisations on this website are created using <a href="https://visjs.org/">vis.js</a>, an open-source
+        JavaScript library. The usage and distribution of the library and its source codes are subject to the terms of the
+        vis.js license. For more information, please refer to the official vis.js license documentation.</p>
+    </div>
+  </div>
+  
+  <a class="button-link" href="/index"><button class="primary-button"><span class="btn-label">Home</span><span
+        class="btn-icon"><img src="/src/Assets/ic_Home.png"></span></button></a>
+
+</div>
+
+
+

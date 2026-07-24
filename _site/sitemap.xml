@@ -39,7 +39,7 @@
 <loc>http://localhost:4000/insights/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/license.html</loc>
+<loc>http://localhost:4000/licensing/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/privacy/</loc>

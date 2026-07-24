@@ -226,7 +226,7 @@ drawerPanel.style.display = "none";
 
 // Add References link to references.html
 const referencesLink = document.createElement("a");
-referencesLink.className = "cta-link references-link light-mode";
+referencesLink.className = "cta-link references-link";
 referencesLink.href = "/references/";
 referencesLink.target = "_blank";
 referencesLink.rel = "noopener noreferrer";
@@ -253,11 +253,11 @@ const optionButtonsContainer = document.createElement("div");
 optionButtonsContainer.className = "two-option-ctas drawer-options";
 
 const closeDrawerPanelBtn = document.createElement("button");
-closeDrawerPanelBtn.className = "tertiary-button btn-go-back close-icon close-drawer light-mode";
+closeDrawerPanelBtn.className = "tertiary-button btn-go-back close-icon close-drawer";
 closeDrawerPanelBtn.innerHTML = "<i class='fa-regular fa-circle-xmark'></i> Close";
 
 const goToNodeOption = document.createElement("button");
-goToNodeOption.className = "secondary-button icon icon-regular go-to-node light-mode";
+goToNodeOption.className = "secondary-button icon icon-regular go-to-node";
 goToNodeOption.textContent = "View Node";
 
 optionButtonsContainer.appendChild(goToNodeOption);
