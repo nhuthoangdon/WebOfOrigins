@@ -12,7 +12,7 @@ description: Read in-depth insights on topics relating to consumer products, ind
     {% for post in site.posts %}
     <li data-post-url="{{ post.url }}">
         <img class="image-thumbnail" src="{{ post.image }}" alt="Post Image" />
-        <a href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
+        <a href="{{ post.url }}"><h4>{{ post.topic }}</h4></a>
         <span class="meta-block">
             {% if post.industry %}
             <p class="post-meta"><b>Industries:</b> {{ post.industry | array_to_sentence_string }}</p>
@@ -23,7 +23,7 @@ description: Read in-depth insights on topics relating to consumer products, ind
             {% if post.tags %}
             <p class="post-meta"><b>Tags:</b>
                 {% for tag in post.tags %}
-                <a href="{{ '/taglist/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                <a class="tag-links" href="{{ '/taglist/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
                 {% endfor %}
             </p>
             {% endif %}

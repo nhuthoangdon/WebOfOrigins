@@ -5,6 +5,11 @@ layout: post
 author: Remy
 impact: [social, environmental]
 category: [remy, tuti, bOO]
+sources:
+  - name: WWF Report 2024
+    url: https://wwf.org/palmoil2024
+  - name: USDA Export Data
+    url: https://usda.gov/palmoil
 ---
 
 The slaughtering industry is a critical yet often opaque component of global food systems. It represents the transition point between livestock production and meat consumption, linking agriculture, processing, distribution, and retail.

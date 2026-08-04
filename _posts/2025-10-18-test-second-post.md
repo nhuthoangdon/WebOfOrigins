@@ -5,6 +5,11 @@ layout: post
 author: Web of Origins
 tags: [pets, trade]
 category: [test, test, test]
+sources:
+  - name: WWF Report 2024
+    url: https://wwf.org/palmoil2024
+  - name: USDA Export Data
+    url: https://usda.gov/palmoil
 ---
 
 Tracing Pet Trade Origins
