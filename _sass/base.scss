@@ -305,7 +305,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: .04em;
   margin-top: 1rem;
@@ -327,7 +327,7 @@ p {
   letter-spacing: .03em;
 }
 
-p.intro-text {
+.intro-text {
   font-size: 1.3rem;
   font-weight: var(--medium-text-weight);
   margin-bottom: 2rem;
@@ -337,7 +337,7 @@ p.intro-text {
   }
 }
 
-p.microcopy {
+.microcopy {
   font-size: var(--small-text-size);
   font-weight: var(--light-text-weight);
   color: var(--text-color);
@@ -348,6 +348,7 @@ b { font-weight: 700; }
 
 .sub-text { font-size: var(--medium-body-text-size); }
 
+.italic { font-style: italic; }
 
 /* =========================
     Links & Buttons

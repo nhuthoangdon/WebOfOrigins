@@ -9,7 +9,7 @@ description: Important information about the scope, limitations, and use of info
 <h1>Disclaimer</h1>
 <section>
     <div class="text-container">
-        <p class="sub-text"><b>Last updated:</b> July 23, 2026</p>
+        <p class="sub-text italic"><b>Last updated:</b> July 23, 2026</p>
         <p>
             Web of Origins is an independent educational platform dedicated to mapping material flows, supply chains, and associated environmental and industrial impacts. The content on this website—including data visualizations, node graphs, search results, articles, and references—is provided for informational and exploratory purposes only.
             <br/>

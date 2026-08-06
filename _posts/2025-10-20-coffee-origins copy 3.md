@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Palm Oil in Cosmetics (AI-generated content for testing)"
 date: 2025-10-10
 category: food

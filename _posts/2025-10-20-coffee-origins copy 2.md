@@ -1,4 +1,5 @@
 ---
+published: false
 title: "Slaughtering Industry (AI-generated content for testing)"
 date: 2025-10-20
 layout: post

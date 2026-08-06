@@ -1,7 +1,7 @@
 # Site Settings
 title: Web of Origins
-description: Visualising the connections between products, materials, industries, origins, and impacts.
-author: Web of Origins
+description: Map the origins of products and materials. Explore the connections between ingredients, industries, supply chains, and their impacts.
+author: Nhut Hoang-Don
 url: https://weboforigins.com
 baseurl: ""
 logo: /src/Assets/logo.svg
