@@ -6,7 +6,7 @@ description: Read in-depth insights on topics relating to consumer products, ind
 ---
 
 <h1 class="article-header">Latest Insights</h1>
-<p class="intro-text">Dive deeper into our findings</p>
+<p class="intro-text">Evidence-based analysis and informed perspectives on today’s most important topics</p>
 
 <ul class="listing-grid">
     {% for post in site.posts %}
