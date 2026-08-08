@@ -11,5 +11,8 @@ type = "javascript"
 
 
 account_id = "cd52d5638013736c996ed72221add668"
-route = "https://weboforigins.com/*"
+routes = [
+  "https://weboforigins.com/*",
+  "https://www.weboforigins.com/*"
+]
 zone_id = "b77b4b91431940aa708e706a877ec554"
