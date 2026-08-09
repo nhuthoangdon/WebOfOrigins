@@ -2,7 +2,7 @@
 layout: grid
 title: Insights
 permalink: /insights/
-description: Read in-depth insights on topics relating to consumer products, industries, material sourcing, and environmental and ethical impacts of human development and sustainability
+description: "Read in-depth insights on topics relating to consumer products, industries, material sourcing, and environmental and ethical impacts of human development and sustainability"
 ---
 
 <h1 class="article-header">Latest Insights</h1>
