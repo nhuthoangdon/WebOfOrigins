@@ -11,3 +11,31 @@ This project is dual-licensed as follows:
 
 
 Please review the respective license files for full details.
+
+## Cloudflare Worker Deployment
+
+This site uses a Cloudflare Worker to inject machine-readable `Link` headers on the homepage for agent discovery.
+
+- Worker entrypoint: `cloudflare/worker.js`
+- Cloudflare config: `wrangler.toml`
+- Adds `Link` headers for:
+  - `api-catalog`
+  - `service-desc`
+  - `service-doc`
+  - `describedby`
+- Serves discovery assets from:
+  - `/.well-known/api-catalog`
+  - `/openapi.yaml`
+  - `/ai-plugin.json`
+  - `/.well-known/ai-plugin.json`
+
+### Deploying the Worker
+
+1. Install Cloudflare Wrangler CLI.
+2. From the repository root, run:
+   ```bash
+   wrangler publish
+   ```
+3. Ensure `wrangler.toml` is configured with your Cloudflare `account_id` and route/zone settings.
+
+This setup allows adding response headers without modifying the origin site output.
