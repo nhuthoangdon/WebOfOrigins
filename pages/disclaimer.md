@@ -9,14 +9,17 @@ description: Important information about the scope, limitations, and use of info
 <h1>Disclaimer</h1>
 <section>
     <div class="text-container">
-        <p class="sub-text italic"><b>Last updated:</b> July 23, 2026</p>
+        <p class="sub-text italic"><b>Last updated:</b> August 11, 2026</p>
         <p>
             Web of Origins is an independent educational platform dedicated to mapping material flows, supply chains, and associated environmental and industrial impacts. The content on this website—including data visualizations, node graphs, search results, articles, and references—is provided for informational and exploratory purposes only.
             <br/>
         </p>
+        <h2>Content Authorship</h2>
+        <p>All original content on this site—including written text, data curation, structure, analysis, and presentation—is created and curated by a real human author. It is not AI-generated unless explicitly marked as such.</p>
+        <p>AI tools may be used in limited, supportive roles such as information searching, fact-checking, browsing public sources, organizing research, or assisting with routine technical tasks. Final decisions, wording, interpretations, and published content remain under human authorship and responsibility.</P>
         <h2>Accuracy of Information</h2>
         <p>
-            While we strive to compile data from credible public sources and maintain accuracy, we do not guarantee the completeness, timeliness, or absolute correctness of any information presented. The database and visualizations are living works in progress and may contain errors, omissions, or outdated details. Users should cross-verify critical information with primary sources before making decisions.
+            While we strive to compile data from credible public sources and maintain accuracy, we do not guarantee the completeness, timeliness, or absolute correctness of any information presented. The database and visualizations are living works in progress and may contain errors, omissions, or outdated details. Users should cross-verify critical information with primary sources before making decisions or citing.
         </p>
         <h2>No Professional advice</h2>
         <p>

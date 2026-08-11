@@ -11,8 +11,8 @@ description: "Read in-depth insights on topics relating to consumer products, in
 <ul class="listing-grid">
     {% for post in site.posts %}
     <li data-post-url="{{ post.url }}">
-        <img class="image-thumbnail" src="{{ post.image }}" alt="Post Image" />
-        <a href="{{ post.url }}"><h4>{{ post.topic }}</h4></a>
+        <img class="image-thumbnail" src="{{ post.image }}" alt="Featured image for {{ post.topic }}" />
+        <a href="{{ post.url }}" aria-label="Read the full insight: {{ post.topic }}" title="Read the full insight: {{ post.topic }}"><h4>{{ post.topic }}</h4></a>
         <span class="meta-block">
             {% if post.industry %}
             <p class="post-meta"><b>Industries:</b> {{ post.industry | array_to_sentence_string }}</p>
@@ -23,7 +23,7 @@ description: "Read in-depth insights on topics relating to consumer products, in
             {% if post.tags %}
             <p class="post-meta"><b>Tags:</b>
                 {% for tag in post.tags %}
-                <a class="tag-links" href="{{ '/taglist/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                <a class="tag-links" href="{{ '/browse-by-tags/' | relative_url }}#{{ tag | slugify }}" aria-label="View insights tagged {{ tag }}" title="View insights tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
                 {% endfor %}
             </p>
             {% endif %}
@@ -31,7 +31,7 @@ description: "Read in-depth insights on topics relating to consumer products, in
         <div class="post-excerpt">
            {{ post.excerpt }}
         </div>
-        <a href="{{ post.url }}" class="panel-cta"><span class ="icon icon-solid icon-chevron-right">Read More</span></a>
+        <a href="{{ post.url }}" class="panel-cta" aria-label="Read more about {{ post.topic }}" title="Read more about {{ post.topic }}"><span class ="icon icon-solid icon-chevron-right">Read More</span></a>
     </li>
     {% endfor %}
 </ul>
@@ -41,11 +41,11 @@ description: "Read in-depth insights on topics relating to consumer products, in
 <section class="follow-socials">
     <h2>Stay Connected</h2>
     <div class="social-ctas">
-        <a href="https://twitter.com/WebOfOrigins" target="_blank" class="social-cta">
+        <a href="https://twitter.com/WebOfOrigins" target="_blank" class="social-cta" rel="noopener noreferrer" aria-label="Open Web of Origins Twitter profile in a new tab" title="Open Web of Origins Twitter profile in a new tab">
             <i class="fa-brands fa-x-twitter fa-lg"></i></a>
-        <a href="https://www.facebook.com/WebOfOrigins" target="_blank" class="social-cta">
+        <a href="https://www.facebook.com/WebOfOrigins" target="_blank" class="social-cta" rel="noopener noreferrer" aria-label="Open Web of Origins Facebook page in a new tab" title="Open Web of Origins Facebook page in a new tab">
             <i class="fa-brands fa-facebook-f fa-lg"></i></a>
-        <a href="https://www.linkedin.com/company/weboforigins" target="_blank" class="social-cta">
+        <a href="https://www.linkedin.com/company/weboforigins" target="_blank" class="social-cta" rel="noopener noreferrer" aria-label="Open Web of Origins LinkedIn page in a new tab" title="Open Web of Origins LinkedIn page in a new tab">
             <i class="fa-brands fa-linkedin-in fa-lg"></i></a>
     </div>
 </section>

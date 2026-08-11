@@ -1,3 +1,37 @@
+/* Martian Mono */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/martian-mono-v6-latin-600.woff2') format('woff2');
+}
+
+/* Source Sans 3 */
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('/assets/fonts/source-sans-3-v19-latin-200.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/source-sans-3-v19-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/source-sans-3-v19-latin-700.woff2') format('woff2');
+}
+
 @font-face {
   font-family: "Font Awesome 6 Free";
   font-style: normal;
@@ -65,16 +99,14 @@
   --button-text-color-inverted: var(--ui-black);
   --logo: url(/src/Assets/logo-dark.svg);
   --logo-mark: url(/src/Assets/logomark.svg);
-  --normal-text-weight: 300;
-  --medium-text-weight: 400;
-  --bold-text-weight: 600;
+  --normal-text-weight: 400;
+  --bold-text-weight: 700;
   --light-text-weight: 200;
 }
 
 /* Light theme overrides (runtime) */
 .light-mode {
-  --background:
-     rgba(244, 245, 248, 1);
+  --background: rgba(244, 245, 248, 1);
   --menu-bg-color: rgba(185, 219, 212, 0.8);
   --menu-mobile-bg-color: linear-gradient(135deg, rgba(216, 230, 237, 0.9) 0%, rgba(244, 245, 248, 0.9) 100%);
   --bg-color: #f8fafc;
@@ -106,7 +138,7 @@
   --logo: url(/src/Assets/logo-light.svg);
   --logo-mark: url(/src/Assets/logomark_light.svg);
   --normal-text-weight: 400;
-    --medium-text-weight: 600;
+    --bold-text-weight: 600;
     --bold-text-weight: 700;
     --light-text-weight: 300;
 }
@@ -282,7 +314,7 @@ nav {
       font-family: var(--body-font);
       text-align: center;
       font-size: 1rem;
-      font-weight: var(--medium-text-weight);
+      font-weight: var(--bold-text-weight);
       letter-spacing: 0.05em;
 
       &:visited {
@@ -300,7 +332,7 @@ nav {
 
       &.current {
         color: var(--highlight-color);
-        font-weight: 700;
+        font-weight: var(--bold-text-weight);
 
         &:hover {
           cursor: default;
@@ -555,18 +587,17 @@ h1 {
   color: var(--heading-color);
   font-size: 3.25rem;
   font-family: var(--heading-font);
-  font-weight: var(--normal-text-weight);
   text-transform: capitalize;
-  line-height: 1.3em;
+  line-height: 1.5em;
 
   @include respond-to('desktop') {
-    font-size: 2.75rem; font-weight: 400; line-height: 1.4em;
+    font-size: 2.75rem;
   }
-  @include respond-to('desktop') {
+  @include respond-to('tablet') {
     font-size: 2.25rem; 
   }
   @include respond-to('mobile') {
-    font-size: 1.8rem; line-height: 1.4em;
+    font-size: 1.8rem;
   }
   @include respond-to('xsmall') {
     font-size: 7vw;
@@ -577,7 +608,6 @@ h1 {
   color: var(--text-color);
   margin: 0 auto;
   font-size: 4rem;
-  font-weight: var(--bold-text-weight);
   letter-spacing: .01em;
   line-height: 1.5em;
   text-align: center;
@@ -597,7 +627,7 @@ h1 {
 .article-header { // smaller h1 titles/headings
   color: var(--heading-color);
   font-size: 3rem;
-  font-weight: var(--bold-text-weight);
+  font-family: var(--heading-font);
   text-transform: capitalize;
   line-height: 1.5em;
   text-align: left;
@@ -615,7 +645,6 @@ h2 {
   font-size: 1.75rem;
   font-family: var(--heading-font);
   text-transform: uppercase;
-  font-weight: 800;
   letter-spacing: .1em;
   line-height: 1.5em;
   color: var(--heading-color);
@@ -635,7 +664,6 @@ h3 {
   font-size: 1.5rem;
   font-family: var(--heading-font);
   color: var(--heading-color);
-  font-weight: var(--bold-text-weight);
   letter-spacing: .01em;
   line-height: 1.5em;
   margin-bottom: 0;
@@ -651,7 +679,6 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
-  font-weight: 700;
   letter-spacing: .04em;
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -674,7 +701,8 @@ p {
 
 .intro-text {
   font-size: 1.3rem;
-  font-weight: var(--medium-text-weight);
+  font-family: var(--body-font);
+  font-weight: var(--normal-text-weight);
   margin-bottom: 2rem;
   color: var(--tinted-text-color);
   @include respond-to('xsmall') {
@@ -689,7 +717,7 @@ p {
   font-style: italic;
 }
 
-b { font-weight: 700; }
+b { font-weight: var(--bold-text-weight); }
 
 .sub-text { font-size: var(--medium-body-text-size); }
 
@@ -709,7 +737,7 @@ button {
   border-radius: 500px;
   font-family: var(--body-font);
   font-size: 0.9em;
-  font-weight: 600;
+  font-weight: var(--bold-text-weight);
   letter-spacing: .05em;
   text-align: center;
   cursor: pointer;
@@ -895,7 +923,7 @@ button {
   font-size: var(--small-body-text-size);
   text-decoration: none;
   letter-spacing: 0.03em;
-  font-weight: 500;
+  font-weight: var(--bold-text-weight);
 }
 
 
@@ -909,7 +937,7 @@ button {
   border: none;
   border-radius: 50px;
   padding: 14px 20px;
-  font-weight: 500;
+  font-weight: var(--bold-text-weight);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1089,7 +1117,7 @@ button {
 
 .result-item {
   gap: .5em;
-  b { font-weight: 800; color: var(--text-color); }
+  b { font-weight: var(--bold-text-weight); color: var(--text-color); }
   p {
     font-size: var(--medium-body-text-size);
     color: var(--text-color);
@@ -1149,7 +1177,7 @@ button {
   border-radius: 8px;
   background-color: var(--card-bg-color);
   font-size: 1em;
-  font-weight: 300;
+  font-weight: var(--normal-text-weight);
   letter-spacing: .01em;
 
   @include respond-to('mobile') {
@@ -1376,7 +1404,7 @@ button.view-node-details:focus:not(:focus-visible) {
   -webkit-border-radius: 50px;
   border-radius: 50px;
   font-size: 0.8rem;
-  font-weight: 400;
+  font-weight: var(--normal-text-weight);
   box-shadow: 0 0 4px 2px rgba(34, 211, 238, 0.2);
   cursor: pointer;
   display: none;
@@ -1612,7 +1640,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
 }
 
 /* Utility classes */
-.label_small { font-family: var(--body-font); font-size: var(--small-text-size); font-weight: 500; color: var(--ui-light-blue); }
+.label_small { font-family: var(--body-font); font-size: var(--small-text-size); font-weight: var(--bold-text-weight); color: var(--ui-light-blue); }
 .short-vertical-divider { width: 1px; height: 100%; min-height: 16px; background-color: var(--line-color); margin: auto 1em; }
 
 /* Panel cta icon mapping */
@@ -1679,7 +1707,7 @@ div.vis-network div.vis-navigation div.vis-button.vis-right {
   position: absolute; right: 0; -webkit-transform: translate(-2.75em, 1em); transform: translate(-2.75em, 1em);
   width: 1.5em; height: 1.5em; background: rgba(248,250,251,0.1);
   color: var(--text-color); border-radius: 50%; border: 1px solid rgba(248,250,251,0.2);
-  cursor: pointer; display: none; font-size: .6em; font-weight: 100; line-height: 1; padding: 0;
+  cursor: pointer; display: none; font-size: .6em; font-weight: var(--light-text-weight); line-height: 1; padding: 0;
 }
 #small-search-clear:hover { background: var(--highlight-color); color: var(--ui-black); }
 .small-search-result-count { font-size: .75em; color: var(--ui-light-blue); padding-right: .5em; margin-top: .25em; align-self: flex-end; }
@@ -1735,7 +1763,7 @@ footer {
         gap: 1.5em;
         font-weight: var(--normal-text-weight);
         a {
-            font-weight: var(--medium-text-weight);
+            font-weight: var(--bold-text-weight);
             letter-spacing: .05em;
           }
         a:hover { color: var(--highlight-color); }

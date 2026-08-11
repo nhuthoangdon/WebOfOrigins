@@ -11,7 +11,7 @@ impact: [environmental, allergy, consumer safety, medical risks]
 category: [dietary supplement, therapeutic, joint health]
 tags: [glucosamine, joint health, osteoarthritis, dietary supplements, chitin, glucosamine sulfate, glucosamine hydrochloride, crustacean shells, Georg Ledderhose, Luigi Rovati, Rottapharm, seafood waste, sustainable alternative available]
 # supply_chain: [seafood processing - chitin - glucosamine]
-image: /src/Assets/glucosamine-hero.jpg
+image: /src/Assets/glucosamine-discovery-georg-ledderhose.jpg
 excerpt: "From lobster shells to a global joint supplement - explore how glucosamine evolved from a laboratory discovery into one of the most widely used supplements for osteoarthritis and joint health."
 sources:
   - name: The Biochemical Basis and Coding Capacity of the Sugar Code - Part 1
