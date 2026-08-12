@@ -78,7 +78,7 @@ description: Information about how user data is collected, used, stored, handled
         <h2>Contact Us</h2>
         <p>
           If you have any questions about this Privacy Policy, please contact us at:
-            <a href="mailto:weboforigins@gmail.com">weboforigins@gmail.com</a>
+            <a href="mailto:weboforigins@gmail.com" aria-label="Email Web of Origins about privacy" title="Email Web of Origins about privacy">weboforigins@gmail.com</a>
         </p>
     </div>
 </section>

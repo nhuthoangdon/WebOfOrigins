@@ -1,30 +1,30 @@
 <header>
   <nav id="menu" class="menu">
     <div class="menu-content">
-      <a id="home-logo" class="nav-logo" href="/" title="Web of Origins Homepage" alt="Web of Origins Logo"></a>
+      <a id="home-logo" class="nav-logo" href="/" title="Web of Origins Homepage" aria-label="Go to the Web of Origins home page"></a>
       <ul class="menu-items">
         <!-- <li><a href="/" {% if page.url=='/' %}class="current" {% endif %}>Home</a></li> -->
-        <li><a href="/about" {% if page.url=='/about' or page.url=='/about' %}class="current" {% endif %} title="About the Project">About</a></li>
-        <li><a href="/insights" {% if page.url=='/insights' or page.url contains '/insights' %}class="current" {% endif %} title="Learn more about Environmental and Ethical Issues">Insights</a>
+        <li><a href="/about" {% if page.url=='/about' or page.url=='/about' %}class="current" {% endif %} title="About the Project" aria-label="Learn more about the Web of Origins project">About</a></li>
+        <li><a href="/insights" {% if page.url=='/insights' or page.url contains '/insights' %}class="current" {% endif %} title="Learn more about Environmental and Ethical Issues" aria-label="Read Web of Origins insights">Insights</a>
         </li>
         <li id="sponsor-link-mobile"><a href="/sponsor" {% if page.url=='/sponsor' or page.url contains '/sponsor' %}class="current" {% endif %}
-            title="Support the development of this project">Support this Project</a>
+            title="Support the development of this project" aria-label="Support the Web of Origins project">Support this Project</a>
         </li>
         <!-- <li><a href="/glossary/" {% if page.url contains '/glossary/' %}class="current" {% endif %}>Glossary</a>
         </li> -->
-        <li><a href="/wooai" {% if page.url=='/wooai' or page.url=='/wooai' %}class="current" {% endif %} title="Ask AI about origins and manufacturing processes">AI Knowledge</a></li>
+        <li><a href="/wooai" {% if page.url=='/wooai' or page.url=='/wooai' %}class="current" {% endif %} title="Ask AI about origins and manufacturing processes" aria-label="Open the AI knowledge base">AI Knowledge</a></li>
         <li class="top-of-list"><button class="primary-button go-to-data-button" id="cta-btn-data" title="View Materials-Industries-Impacts Network"><span class="btn-label">Explore Data</span><span class="btn-icon"><i class="fa-solid fa-hexagon-nodes fa-spin-pulse"></i></span></button></li>
         <button id="theme-toggle-mb" class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
           <i id="theme-icon" class="fa-solid fa-sun"></i>
           </button>
       </ul>
-      <button id="header-sponsor-cta" class="secondary-button donate-button header-sponsor-cta" title="Buy me a Coffee"><i class="fa-solid fa-heart fa-beat" style="color: firebrick;"></i> Support This Project</button>
+      <button id="header-sponsor-cta" class="secondary-button donate-button header-sponsor-cta" title="Buy me a Coffee" aria-label="Support the Web of Origins project"><i class="fa-solid fa-heart fa-beat" style="color: firebrick;"></i> Support This Project</button>
       <!-- Theme Toggle -->
       <button id="theme-toggle-dk" class="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
         <i id="theme-icon" class="fa-solid fa-sun"></i>
       </button>
       <div class="hamburger-menu">
-        <a><i class="fa-solid fa-bars fa-xl"></i></a>
+        <a aria-label="Open navigation menu" title="Open navigation menu"><i class="fa-solid fa-bars fa-xl"></i></a>
       </div>
     </div>
   </nav>

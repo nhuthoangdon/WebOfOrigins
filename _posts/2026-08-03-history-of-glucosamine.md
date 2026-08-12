@@ -11,7 +11,7 @@ impact: [environmental, allergy, consumer safety, medical risks]
 category: [dietary supplement, therapeutic, joint health]
 tags: [glucosamine, joint health, osteoarthritis, dietary supplements, chitin, glucosamine sulfate, glucosamine hydrochloride, crustacean shells, Georg Ledderhose, Luigi Rovati, Rottapharm, seafood waste, sustainable alternative available]
 # supply_chain: [seafood processing - chitin - glucosamine]
-image: /src/Assets/glucosamine-discovery-georg-ledderhose.jpg
+image: /src/Assets/glucosamine-discovery-georg-ledderhose.webp
 excerpt: "From lobster shells to a global joint supplement - explore how glucosamine evolved from a laboratory discovery into one of the most widely used supplements for osteoarthritis and joint health."
 sources:
   - name: The Biochemical Basis and Coding Capacity of the Sugar Code - Part 1
@@ -23,7 +23,7 @@ sources:
 
 Glucosamine is a naturally occurring amino sugar found across many living organisms, including plants, fungi, bacteria, and animals. In the human body, it is present in the highest concentrations in articular cartilage (the tissue covering joint surfaces), intervertebral discs (the cartilaginous cushions between the vertebrae of the spine), and synovial fluid (the lubricating fluid within movable joints). In these tissues, glucosamine serves as a precursor to glycosaminoglycans, long-chain complex sugars that combine with proteins to form proteoglycans - key components of the extracellular matrix that provide structure, resilience, hydration, and shock-absorbing properties to connective tissues such as cartilage and joints. Because of this role, glucosamine has become a popular ingredient in joint supplements, although clinical evidence for its effectiveness when consumed orally remains mixed.
 
-![Glucosamine as a building block for glycosaminoglycans](/src/Assets/glucosamine-buildingblock.jpg)
+![Glucosamine as a building block for glycosaminoglycans](/src/Assets/glucosamine-buildingblock.webp)
 <p class="sub-text image-caption">Glucosamine as a building block for glycosaminoglycans & proteoglycans - Note: This image was generated using AI and may contain minor inaccuracies.</p>
 
 <h2>The Story of Glucosamine</h2>

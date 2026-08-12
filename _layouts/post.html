@@ -5,7 +5,7 @@ description: "{{ page.description }}"
 permalink: /insights/:categories/:title:output_ext
 ---
 
-<a class="tertiary-button go-back small-back-button" href="/insights/"><i class="fa-solid fa-arrow-left-long"></i>All Insights</a>
+<a class="tertiary-button go-back small-back-button" href="/insights/" aria-label="View all insights" title="View all insights"><i class="fa-solid fa-arrow-left-long"></i>All Insights</a>
 
 <article class="text-container" itemscope itemtype="http://schema.org/BlogPosting">
 <meta itemprop="headline" content="{{ page.title }}">
@@ -37,7 +37,7 @@ permalink: /insights/:categories/:title:output_ext
         <p class="post-meta">
             <b>Tags:</b>
             {% for tag in page.tags %}
-            <a class="tag-links" href="{{ '/browse-by-tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {%
+            <a class="tag-links" href="{{ '/browse-by-tags/' | relative_url }}#{{ tag | slugify }}" aria-label="View insights tagged {{ tag }}" title="View insights tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {%
             endunless %}
             {% endfor %}
         </p>
@@ -48,7 +48,7 @@ permalink: /insights/:categories/:title:output_ext
         {% endif %}
     </div>
 
-    <img src="{{ page.image }}" alt="Post Image" class="blog-hero-image" />
+    <img src="{{ page.image }}" alt="Hero image for {{ page.title }}" class="blog-hero-image" />
 
     {{ content }}
 
@@ -57,7 +57,7 @@ permalink: /insights/:categories/:title:output_ext
     <p class="post-meta"><b>Sources:</b></p>
     <ul class="ref-list">
         {% for src in page.sources %}
-        <li class="post-meta"><a href="{{ src.url }}" target="_blank">{{ src.name }}</a></li>
+        <li class="post-meta"><a href="{{ src.url }}" target="_blank" rel="noopener noreferrer" aria-label="Open source {{ src.name }} in a new tab" title="Open source {{ src.name }} in a new tab">{{ src.name }}</a></li>
         {% endfor %}
     </ul>
     {% endif %}
@@ -135,19 +135,19 @@ permalink: /insights/:categories/:title:output_ext
                 <img class="image-thumbnail" src="/src/Assets/default-thumb.jpg" alt="Default thumbnail" />
                 {% endif %}
 
-                <a href="{{ related_post.url | relative_url }}"><h5>{{ related_post.title }}</h5></a>
+                <a href="{{ related_post.url | relative_url }}" aria-label="Read related insight: {{ related_post.title }}" title="Read related insight: {{ related_post.title }}"><h5>{{ related_post.title }}</h5></a>
 
                 <div class="post-excerpt">
                     {{ related_post.excerpt }}  
                 </div>
-                <a href="{{ related_post.url | relative_url }}" class="panel-cta-link panel-cta"><span class="icon icon-solid icon-chevron-right">Read More</span></a>
+                <a href="{{ related_post.url | relative_url }}" class="panel-cta-link panel-cta" aria-label="Read more about {{ related_post.title }}" title="Read more about {{ related_post.title }}"><span class="icon icon-solid icon-chevron-right">Read More</span></a>
             </li>
             {% endfor %}     
         </ul>
     </div>
     {% endif %}
 
-    <a href="/insights/" class="tertiary-button go-back"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
+    <a href="/insights/" class="tertiary-button go-back" aria-label="View all insights" title="View all insights"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
 
 </section>
 
@@ -156,11 +156,11 @@ permalink: /insights/:categories/:title:output_ext
 <section class="follow-socials">
     <h2>Stay Connected</h2>
     <div class="social-ctas">
-        <a href="https://twitter.com/WebOfOrigins" target="_blank" class="social-cta">
+        <a href="https://twitter.com/WebOfOrigins" target="_blank" class="social-cta" rel="noopener noreferrer" aria-label="Open Web of Origins Twitter profile in a new tab" title="Open Web of Origins Twitter profile in a new tab">
             <i class="fa-brands fa-x-twitter fa-lg"></i></a>
-        <a href="https://www.facebook.com/WebOfOrigins" target="_blank" class="social-cta">
+        <a href="https://www.facebook.com/WebOfOrigins" target="_blank" class="social-cta" rel="noopener noreferrer" aria-label="Open Web of Origins Facebook page in a new tab" title="Open Web of Origins Facebook page in a new tab">
             <i class="fa-brands fa-facebook-f fa-lg"></i></a>
-        <a href="https://www.linkedin.com/company/weboforigins" target="_blank" class="social-cta">
+        <a href="https://www.linkedin.com/company/weboforigins" target="_blank" class="social-cta" rel="noopener noreferrer" aria-label="Open Web of Origins LinkedIn page in a new tab" title="Open Web of Origins LinkedIn page in a new tab">
             <i class="fa-brands fa-linkedin-in fa-lg"></i></a>
     </div>
 </section>

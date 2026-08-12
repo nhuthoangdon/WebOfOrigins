@@ -86,7 +86,7 @@ description: Trace the origins of products and ingredients like glucosamine, col
               {% endif %}
             </span>
             <p>{{ post.excerpt }}</p>
-            <a href="{{ post.url }}" class="panel-cta"><span class="icon icon-solid icon-chevron-right">Read More</span></a>
+            <a href="{{ post.url }}" class="panel-cta" aria-label="Read more about {{ post.title }}" title="Read more about {{ post.title }}"><span class="icon icon-solid icon-chevron-right">Read More</span></a>
           </div>
         </li>
         {% endfor %}

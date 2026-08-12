@@ -13,7 +13,7 @@ permalink: /licensing
       <p>Web of Origins makes its data, code, and written content available under different licenses depending on the type of material. Please read the sections below carefully.</p>
       <h2>Database</h2>
       <p>The Web of Origins database and its visualisations are licensed under the <a class="link"
-          href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons
+          href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer" aria-label="Open the Creative Commons BY-NC 4.0 license in a new tab" title="Open the Creative Commons BY-NC 4.0 license in a new tab">Creative Commons
           Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</a> license.</p>
       <p>
           <b>You are free to: </b> <br>
@@ -27,17 +27,17 @@ permalink: /licensing
       </p>
       <p>
           <i>→ Suggested citation:</i>
-           Web of Origins, 2025-2026, <a class="link" href="www.weboforigins.com">weboforigins.com</a>.
+           Web of Origins, 2025-2026, <a class="link" href="https://www.weboforigins.com/" aria-label="Open the Web of Origins homepage" title="Open the Web of Origins homepage">weboforigins.com</a>.
       </p>
-      <p>For commercial use of any intellectual property, please contact: <a class="link" href="mailto:weboforigins@gmail.com">weboforigins@gmail.com</a></p>
+      <p>For commercial use of any intellectual property, please contact: <a class="link" href="mailto:weboforigins@gmail.com" aria-label="Email Web of Origins about licensing" title="Email Web of Origins about licensing">weboforigins@gmail.com</a></p>
     </div>
     <div>
       <h2>Code</h2>
       <p>The codebase, including visualisation scripts, is licensed under the <a class="link"
-          href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0
+          href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" aria-label="Open the Creative Commons Attribution 4.0 license in a new tab" title="Open the Creative Commons Attribution 4.0 license in a new tab">Creative Commons Attribution 4.0
           International (CC BY 4.0)</a> license. <br>
           See the repository’s <a class="link"
-          href="https://github.com/nhuthoangdon/WebOfOrigins/blob/31a5e300278c8a3babec3584bfc88be6f178668b/LICENSE">LICENSE</a> file for full details.
+          href="https://github.com/nhuthoangdon/WebOfOrigins/blob/31a5e300278c8a3babec3584bfc88be6f178668b/LICENSE" aria-label="Open the project license file on GitHub" title="Open the project license file on GitHub">LICENSE</a> file for full details.
       </p>
     </div>
     <div>
@@ -65,12 +65,12 @@ permalink: /licensing
       <h2>Support this Work</h2>
       <p>Web of Origins is built and maintained independently. <br>  
         Your support helps keep the data, insights, and visualisations freely available.</p>
-      <a class="cta-link" href="./sponsor">Sponsor the project →</a>
+      <a class="cta-link" href="./sponsor" aria-label="Support the Web of Origins project" title="Support the Web of Origins project">Sponsor the project →</a>
     </div>
   </div>
   
-  <a class="button-link" href="/"><button class="primary-button"><span class="btn-label">Home</span><span
-        class="btn-icon"><img src="/src/Assets/ic_Home.png"></span></button></a>
+  <a class="button-link" href="/" aria-label="Return to the home page" title="Return to the home page"><button class="primary-button"><span class="btn-label">Home</span><span
+        class="btn-icon"><img src="/src/Assets/ic_Home.png" alt="Home icon"></span></button></a>
 
 </div>
 

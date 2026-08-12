@@ -16,7 +16,7 @@ description: "{{ page.description }}"
         <ul>
             {% for post in tag[1] %}
             <li>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <a href="{{ post.url | relative_url }}" aria-label="Read the insight {{ post.title }}" title="Read the insight {{ post.title }}">{{ post.title }}</a>
             </li>
             {% endfor %}
         </ul>
@@ -27,6 +27,6 @@ description: "{{ page.description }}"
 <hr>
 
 <section>
-    <a href="/insights" class="tertiary-button go-back"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
+    <a href="/insights" class="tertiary-button go-back" aria-label="View all insights" title="View all insights"><i class="fa-solid fa-arrow-left"></i>View All Insights</a>
 </section>
 
