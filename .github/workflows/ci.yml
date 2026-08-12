@@ -7,21 +7,22 @@ on:
     branches: [ main, master ]
 
 jobs:
-  test:
-    name: Run tests
+  build:
+    name: Build Jekyll site
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          node-version: 18.x
+          ruby-version: 3.2
+          bundler-cache: true
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install Gems
+        run: bundle install
 
-      - name: Run tests
-        run: npm test
+      - name: Build site
+        run: bundle exec jekyll build
