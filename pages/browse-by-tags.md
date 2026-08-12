@@ -1,6 +1,6 @@
 ---
 layout: tags
-permalink: /browse-by-tags/
+permalink: /browse-by-tags
 description: Discover related tags and topic clusters to find connected content across the Web of Origins knowledge graph.
 title: Sort by Tags — Discover Connected Origins Topics
 ---

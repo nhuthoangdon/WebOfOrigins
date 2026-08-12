@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Privacy
-permalink: /privacy/
+permalink: /privacy
 description: Information about how user data is collected, used, stored, handled, and protected when interacting with the site
 ---
 

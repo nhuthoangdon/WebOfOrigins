@@ -19,7 +19,7 @@ function initGlobalInteractions() {
   document.addEventListener('click', e => {
     if (e.target.closest('.go-to-ai-mode')) {
       e.preventDefault();
-      window.location.href = '/wooai/';
+      window.location.href = '/wooai';
     }
   });
 
@@ -35,7 +35,7 @@ function initGlobalInteractions() {
   document.addEventListener('click', e => {
     if (e.target.closest('.go-to-data-button')) {
       e.preventDefault();
-      window.location.href = '/datavis/';
+      window.location.href = '/datavis';
     }
   });
 
@@ -43,7 +43,7 @@ function initGlobalInteractions() {
   document.addEventListener('click', e => {
     if (e.target.closest('.sponsor-cta')) {
       e.preventDefault();
-      window.location.href = '/sponsor/';
+      window.location.href = '/sponsor';
     }
   });
 
@@ -160,7 +160,7 @@ function initHeader() {
   document.addEventListener('click', e => {
     if (e.target.closest('.donate-button')) {
       e.preventDefault();
-      window.location.href = '/sponsor/';
+      window.location.href = '/sponsor';
     }
   });
 
@@ -419,7 +419,7 @@ document.addEventListener('click', e => {
   const btn = e.target.closest('.donate-button');
   if (!btn) return;
   e.preventDefault();
-  window.location.href = btn.dataset.url || '/sponsor/';
+  window.location.href = btn.dataset.url || '/sponsor';
 });
 
 

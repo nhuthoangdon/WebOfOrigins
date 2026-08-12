@@ -1,7 +1,7 @@
 ---
 layout: default
 title: License | WOO License | CC BY-NC 4.0
-permalink: /licensing/
+permalink: /licensing
 ---
 
 
@@ -69,7 +69,7 @@ permalink: /licensing/
     </div>
   </div>
   
-  <a class="button-link" href="/index"><button class="primary-button"><span class="btn-label">Home</span><span
+  <a class="button-link" href="/"><button class="primary-button"><span class="btn-label">Home</span><span
         class="btn-icon"><img src="/src/Assets/ic_Home.png"></span></button></a>
 
 </div>

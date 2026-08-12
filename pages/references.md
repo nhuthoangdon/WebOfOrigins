@@ -1,7 +1,7 @@
 ---
 layout: default
 title: References
-permalink: /references/
+permalink: /references
 description: A collection of academic and research sources referenced throughout the site
 ---
 

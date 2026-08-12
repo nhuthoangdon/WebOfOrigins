@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Disclaimer
-permalink: /disclaimer/
+permalink: /disclaimer
 description: Important information about the scope, limitations, and use of information provided on this site
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: grid
 title: Insights
-permalink: /insights/
+permalink: /insights
 description: "Read in-depth insights on topics relating to consumer products, industries, material sourcing, and environmental and ethical impacts of human development and sustainability"
 ---
 
@@ -23,7 +23,7 @@ description: "Read in-depth insights on topics relating to consumer products, in
             {% if post.tags %}
             <p class="post-meta"><b>Tags:</b>
                 {% for tag in post.tags %}
-                <a class="tag-links" href="{{ '/browse-by-tags/' | relative_url }}#{{ tag | slugify }}" aria-label="View insights tagged {{ tag }}" title="View insights tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+                <a class="tag-links" href="{{ '/browse-by-tags' | relative_url }}#{{ tag | slugify }}" aria-label="View insights tagged {{ tag }}" title="View insights tagged {{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
                 {% endfor %}
             </p>
             {% endif %}
