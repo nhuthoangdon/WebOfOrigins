@@ -63,7 +63,7 @@ minima:
 collections:
   posts:
     output: true
-    permalink: /insights/:categories/:title:output_ext
+    permalink: /insights/:title
 
 
 tagging:
