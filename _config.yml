@@ -41,10 +41,11 @@ plugins:
 defaults:
   -
     scope:
-      path: ""
+      path: "insights"
       type: "posts"
     values:
       layout: "post"
+      permalink: /insights/:title
 
 # Excerpt
 excerpt_separator: <!--more-->
