@@ -11,14 +11,17 @@ description: "Read in-depth insights on topics relating to consumer products, in
 <ul class="listing-grid">
     {% for post in site.posts %}
     <li data-post-url="{{ post.url }}">
-        <img class="image-thumbnail" src="{{ post.image }}" alt="Featured image for {{ post.topic }}" />
-        <a href="{{ post.url }}" aria-label="Read the full insight: {{ post.topic }}" title="Read the full insight: {{ post.topic }}"><h4>{{ post.topic }}</h4></a>
+        <img class="image-thumbnail" src="{{ post.image }}" alt="Featured image for {{ post.short_title }}" />
+        <a href="{{ post.url }}" aria-label="Read the full insight: {{ post.title }}" title="Read the full insight: {{ post.title }}"><h4>{{ post.short_title }}</h4></a>
         <span class="meta-block">
-            {% if post.industry %}
+            <!-- {% if post.industry %}
             <p class="post-meta"><b>Industries:</b> {{ post.industry | array_to_sentence_string }}</p>
             {% endif %}
             {% if post.impact %}
             <p class="post-meta"><b>Impacts:</b> {{ post.impact | array_to_sentence_string }}</p>
+            {% endif %} -->
+            {% if post.topic %}
+            <p class="post-meta"><b>Topic:</b> {{ post.topic }}</p>
             {% endif %}
             {% if post.tags %}
             <p class="post-meta"><b>Tags:</b>

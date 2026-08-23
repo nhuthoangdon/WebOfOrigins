@@ -66,14 +66,17 @@ description: Trace the origins of products and ingredients like glucosamine, col
           <img src="{{ post.image }}" alt="Featured image for {{ post.title }}" />
           <div class="text-content">
             <a href="{{ post.url }}" aria-label="Read more about {{ post.title }}" title="Read more about {{ post.title }}">
-              <h4>{{ post.title }}</h4>
+              <h4>{{ post.short_title }}</h4>
             </a>
             <span class="meta-block">
-              {% if post.industry %}
+              <!-- {% if post.industry %}
               <p class="post-meta"><b>Industries:</b> {{ post.industry | array_to_sentence_string }}</p>
               {% endif %}
               {% if post.impact %}
               <p class="post-meta"><b>Impacts:</b> {{ post.impact | array_to_sentence_string }}</p>
+              {% endif %} -->
+              {% if post.topic %}
+              <p class="post-meta"><b>Topic:</b> {{ post.topic }}</p>
               {% endif %}
               {% if post.tags %}
               <p class="post-meta"><b>Tags:</b>

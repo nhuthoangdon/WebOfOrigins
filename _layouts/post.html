@@ -1,8 +1,5 @@
 ---
 layout: default
-title: "{{ page.title }}"
-description: "{{ page.description }}"
-permalink: /insights/:title
 ---
 
 <a class="tertiary-button go-back small-back-button" href="/insights/" aria-label="View all insights" title="View all insights"><i class="fa-solid fa-arrow-left-long"></i>All Insights</a>
@@ -10,19 +7,33 @@ permalink: /insights/:title
 <article class="text-container" itemscope itemtype="http://schema.org/BlogPosting">
 <meta itemprop="headline" content="{{ page.title }}">
 
+<div class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/insights/">Insights</a></li>
+        {% if page.categories.size > 0 %}
+        <li>
+            <!-- No category page yet → keep it as text only -->
+            {{ page.categories | first }}
+        </li>
+        {% endif %}
+        <li aria-current="page">{{ page.short_title }}</li>
+    </ol>
+</div>
+
     {% if page.part %}
     <h4 class="post-part">{{ page.part }}</h4>
     {% endif %}
 
-    <h1 class="article-header">{{ page.topic }}</h1>
+    <h1 class="article-header">{{ page.title }}</h1>
 
     <div class="meta-block">
-        {% if page.industry %}
-        <p class="post-meta"><b>Industries:</b> {{ page.industry | array_to_sentence_string }}</p>
+        {% if page.topic %}
+        <p class="post-meta"><b>Topic:</b> {{ page.topic }}</p>
         {% endif %}
 
-        {% if page.category %}
-        <p class="post-meta"><b>Categories:</b> {{ page.category | default: page.categories | join: ', ' }}</p>
+        {% if page.industry %}
+        <p class="post-meta"><b>Industries:</b> {{ page.industry | array_to_sentence_string }}</p>
         {% endif %}
 
         {% if page.impact %}
@@ -44,7 +55,7 @@ permalink: /insights/:title
         {% endif %}
 
         {% if page.date %}
-        <p class="post-meta date"><i>{{ page.date | date_to_string }}</i></p>
+        <p class="post-meta date"><i>Published {{ page.date | date_to_string }}</i></p>
         {% endif %}
     </div>
 
@@ -135,7 +146,7 @@ permalink: /insights/:title
                 <img class="image-thumbnail" src="/src/Assets/default-thumb.jpg" alt="Default thumbnail" />
                 {% endif %}
 
-                <a href="{{ related_post.url | relative_url }}" aria-label="Read related insight: {{ related_post.title }}" title="Read related insight: {{ related_post.title }}"><h5>{{ related_post.title }}</h5></a>
+                <a href="{{ related_post.url | relative_url }}" aria-label="Read related insight: {{ related_post.title }}" title="Read related insight: {{ related_post.title }}"><h5>{{ related_post.short_title }}</h5></a>
 
                 <div class="post-excerpt">
                     {{ related_post.excerpt }}  

@@ -45,7 +45,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      permalink: /insights/:title
+      permalink: /insights/:categories/:title
 
 # Excerpt
 excerpt_separator: <!--more-->
@@ -63,7 +63,7 @@ minima:
 collections:
   posts:
     output: true
-    permalink: /insights/:title
+    permalink: /insights/:categories/:title
 
 
 tagging:

@@ -1,14 +1,15 @@
 ---
-title: "What is Glucosamine? History, benefits, debates, clinical evidence, and effectiveness explained"
-topic: "The History of Glucosamine: From Lobster Shells to One of the Most Popular Joint Health Supplements"
+title: "What is Glucosamine: From Lobster Shells to One of the Most Popular Joint Health Supplements"
+short_title: "The story of Glucosamine"
+topic: "Glucosamine: history, benefits, debates, clinical evidence, and effectiveness explained"
 description: "Discover the history of glucosamine, its role in joint health, and how it became a widely used supplement. Learn about its forms, uses, and what scientific evidence says about its effectiveness."
 part: "Part 1"
 date: 2026-08-01
 layout: post
 author: N.H-D.
-industry: [neutraceutical, pharmaceutical, dietary supplement manufacturing]
-impact: [environmental, allergy, consumer safety, medical risks]
-category: [dietary supplement, therapeutic, joint health]
+industry: [neutraceuticals, pharmaceuticals, dietary supplements, veterinary, cosmetics, seafood processing, biotech]
+# impact: [environmental, allergy, consumer safety, medical risks]
+categories: dietary-supplements
 tags: [glucosamine, joint health, osteoarthritis, dietary supplements, chitin, glucosamine sulfate, glucosamine hydrochloride, crustacean shells, Georg Ledderhose, Luigi Rovati, Rottapharm, seafood waste, sustainable alternative available]
 # supply_chain: [seafood processing - chitin - glucosamine]
 image: /src/Assets/glucosamine-discovery-georg-ledderhose.webp

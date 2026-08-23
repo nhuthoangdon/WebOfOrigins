@@ -183,7 +183,7 @@ ul.listing-grid {
 
             img {
                 flex: 1 1 40%;
-                height: 280px;
+                height: 100%;
                 min-width: 200px;
                 object-fit: cover;
                 -webkit-object-fit: cover;
@@ -198,7 +198,6 @@ ul.listing-grid {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                gap: 12px;
                 min-width: 200px;
 
                 .panel-cta {
@@ -618,3 +617,49 @@ img {
 .editorial-note {
     margin-top: 5%;
 }
+
+
+// beadscrumb
+.breadcrumb {
+    width: 100%;
+    max-width: $max-text-content-width;
+    margin: 0 auto 1.5rem;
+    padding: 0;
+  
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: var(--small-text-size);
+      color: var(--tinted-text-color);
+    }
+  
+    li {
+      display: flex;
+      align-items: center;
+  
+      &:not(:last-child)::after {
+        content: "/";
+        margin-left: 0.4rem;
+        color: var(--line-color);
+      }
+  
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+        font-weight: var(--medium-text-weight);
+  
+        &:hover {
+          color: var(--highlight-color);
+        }
+      }
+  
+      &[aria-current="page"] {
+        color: var(--text-color);
+        font-weight: var(--bold-text-weight);
+      }
+    }
+  }
