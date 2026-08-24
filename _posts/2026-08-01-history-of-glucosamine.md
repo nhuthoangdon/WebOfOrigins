@@ -25,7 +25,7 @@ sources:
 Glucosamine is a naturally occurring amino sugar found across many living organisms, including plants, fungi, bacteria, and animals. In the human body, it is present in the highest concentrations in articular cartilage (the tissue covering joint surfaces), intervertebral discs (the cartilaginous cushions between the vertebrae of the spine), and synovial fluid (the lubricating fluid within movable joints). In these tissues, glucosamine serves as a precursor to glycosaminoglycans, long-chain complex sugars that combine with proteins to form proteoglycans - key components of the extracellular matrix that provide structure, resilience, hydration, and shock-absorbing properties to connective tissues such as cartilage and joints. Because of this role, glucosamine has become a popular ingredient in joint supplements, although clinical evidence for its effectiveness when consumed orally remains mixed.
 
 ![Glucosamine as a building block for glycosaminoglycans](/src/Assets/glucosamine-buildingblock.webp)
-<p class="sub-text image-caption">Glucosamine as a building block for glycosaminoglycans & proteoglycans - Note: This image was generated using AI and may contain minor inaccuracies.</p>
+<p class="image-caption">Glucosamine as a building block for glycosaminoglycans & proteoglycans - Note: This image was generated using AI and may contain inaccuracies.</p>
 
 <h2>The Story of Glucosamine</h2>
 
@@ -60,6 +60,6 @@ Glucosamine is a naturally occurring amino sugar found across many living organi
 <h4>Current Significance</h4>
 <p>As of present, glucosamine remains one of the most widely used joint health supplements globally, available in both sulfate and hydrochloride forms and most commonly formulated in combination with chondroitin sulfate. Its popularity continues amid growing demand for joint health products in aging populations. However, clinical evidence regarding its efficacy remains mixed, with conclusions varying across clinical trials, systematic reviews, and recommendations from different medical organisations.</p>
 
+<p class="sub-text editorial-note"><i>This article was written using publicly available information and the sources listed above, with AI assistance for research and verification.</i></p>
 
-
-<p class="post-meta"><b>⟶ NEXT:</b> A review of glucosamine’s effectiveness based on clinical evidence and current literature (to be continued).</p>
+<a class="cta-link" href="/insights/dietary-supplements/glucosamine-effectiveness"><b>⟶ NEXT:</b> Glucosamine’s effectiveness based on clinical evidence and current literature.</a>

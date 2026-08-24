@@ -4,9 +4,6 @@ layout: default
 
 <a class="tertiary-button go-back small-back-button" href="/insights/" aria-label="View all insights" title="View all insights"><i class="fa-solid fa-arrow-left-long"></i>All Insights</a>
 
-<article class="text-container" itemscope itemtype="http://schema.org/BlogPosting">
-<meta itemprop="headline" content="{{ page.title }}">
-
 <div class="breadcrumb" aria-label="Breadcrumb">
     <ol>
         <li><a href="/">Home</a></li>
@@ -20,6 +17,9 @@ layout: default
         <li aria-current="page">{{ page.short_title }}</li>
     </ol>
 </div>
+
+<article class="text-container" itemscope itemtype="http://schema.org/BlogPosting">
+<meta itemprop="headline" content="{{ page.title }}">
 
     {% if page.part %}
     <h4 class="post-part">{{ page.part }}</h4>
@@ -66,15 +66,14 @@ layout: default
     <hr>
     {% if page.sources %}
     <p class="post-meta"><b>Sources:</b></p>
-    <ul class="ref-list">
+    <ol class="ref-list">
         {% for src in page.sources %}
         <li class="post-meta"><a href="{{ src.url }}" target="_blank" rel="noopener noreferrer" aria-label="Open source {{ src.name }} in a new tab" title="Open source {{ src.name }} in a new tab">{{ src.name }}</a></li>
         {% endfor %}
-    </ul>
+    </ol>
     {% endif %}
 </article>
 
-<p class="sub-text editorial-note"><i>This article was written using publicly available information and the sources listed above, with AI assistance for research and verification.</i></p>
 
 <hr>
 
@@ -146,7 +145,22 @@ layout: default
                 <img class="image-thumbnail" src="/src/Assets/default-thumb.jpg" alt="Default thumbnail" />
                 {% endif %}
 
-                <a href="{{ related_post.url | relative_url }}" aria-label="Read related insight: {{ related_post.title }}" title="Read related insight: {{ related_post.title }}"><h5>{{ related_post.short_title }}</h5></a>
+                <a href="{{ related_post.url | relative_url }}" aria-label="Read related insight: {{ related_post.title }}" title="Read related insight: {{ related_post.title }}"><h4>{{ related_post.short_title }}</h4></a>
+
+                <span class="meta-block">
+                    {% if related_post.topic %}
+                    <p class="post-meta"><b>Topic:</b> {{ related_post.topic }}</p>
+                    {% endif %}
+                    {% if related_post.tags %}
+                    <p class="post-meta"><b>Tags:</b>
+                        {% for tag in related_post.tags %}
+                        <a class="tag-links" href="{{ '/browse-by-tags' | relative_url }}#{{ tag | slugify }}"
+                            aria-label="View insights tagged {{ tag }}" title="View insights tagged {{ tag }}">{{ tag }}</a>{% unless
+                        forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+                </span>
 
                 <div class="post-excerpt">
                     {{ related_post.excerpt }}  

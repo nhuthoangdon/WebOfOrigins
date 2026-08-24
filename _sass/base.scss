@@ -645,7 +645,7 @@ h2 {
   font-size: 1.75rem;
   font-family: var(--heading-font);
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
   line-height: 1.5em;
   color: var(--heading-color);
 
@@ -696,7 +696,7 @@ p {
   font-family: var(--body-font);
   line-height: 1.8rem;
   font-weight: var(--normal-text-weight);
-  letter-spacing: .03em;
+  letter-spacing: .02em;
 }
 
 .intro-text {
@@ -719,7 +719,7 @@ p {
 
 b { font-weight: var(--bold-text-weight); }
 
-.sub-text { font-size: var(--medium-body-text-size); }
+.sub-text { font-size: var(--medium-body-text-size); color: var(--tinted-text-color); }
 
 .italic { font-style: italic; }
 
