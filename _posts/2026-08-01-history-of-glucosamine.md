@@ -37,10 +37,10 @@ Glucosamine is a naturally occurring amino sugar found across many living organi
 <h3>1898</h3>
 <p>A German chemist named Breuer created the first form of glucosamine sulfate by converting glucosamine hydrochloride into a sulfate salt. However, this remained primarily a laboratory experiment and did not advance into practical use at the time, as raw glucosamine sulfate was highly unstable and rapidly degraded when exposed to air and aqueous solutions.</p>
 
-<h3>1902 & 1939</h3>
-<h4>1902</h4>
+<h3>1902</h3>
 <p>Hermann Leuchs, under the mentorship of Nobel laureate Emil Fischer, achieved the first total synthesis of glucosamine from arabinose - a 5-carbon sugar often found in plants, confirming its structure as an amino sugar. His work produced a pure, controlled sample of the glucosamine molecule and laid the groundwork for further studies in carbohydrate and structural chemistry, contributing to the understanding of amino sugars as fundamental building blocks of biological macromolecules and metabolic pathways.</p>
-<h4>1939</h4>
+
+<h3>1939</h3>
 <p>The British chemist Sir Walter Haworth, winner of a Nobel Prize in 1937, mapped the final 3D molecular structure and spatial arrangement (stereochemistry) of the glucosamine molecule that is still used today.</p>
 
 <h3>1930s - 1960s</h3>
@@ -60,6 +60,6 @@ Glucosamine is a naturally occurring amino sugar found across many living organi
 <h4>Current Significance</h4>
 <p>As of present, glucosamine remains one of the most widely used joint health supplements globally, available in both sulfate and hydrochloride forms and most commonly formulated in combination with chondroitin sulfate. Its popularity continues amid growing demand for joint health products in aging populations. However, clinical evidence regarding its efficacy remains mixed, with conclusions varying across clinical trials, systematic reviews, and recommendations from different medical organisations.</p>
 
-<p class="sub-text editorial-note"><i>This article was written using publicly available information and the sources listed above, with AI assistance for research and verification.</i></p>
+<p class="sub-text editorial-note"><i>This article was written using publicly available information and the sources listed below, with AI assistance for research and verification.</i></p>
 
 <a class="cta-link" href="/insights/dietary-supplements/glucosamine-effectiveness"><b>⟶ NEXT:</b> Glucosamine’s effectiveness based on clinical evidence and current literature.</a>

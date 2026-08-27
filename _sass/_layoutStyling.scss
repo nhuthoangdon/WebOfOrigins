@@ -175,15 +175,19 @@ ul.listing-grid {
         align-self: flex-start;
     }
     ul.latest-insight-grid {
+        display: flex;
+        flex-direction: column;
         li {
             flex-direction: row;
             flex-wrap: wrap;
             gap: 2rem;
             height: auto;
+            max-height: none;
+            align-items: stretch;
+            align-content: stretch;
 
             img {
                 flex: 1 1 40%;
-                height: 100%;
                 min-width: 200px;
                 object-fit: cover;
                 -webkit-object-fit: cover;
@@ -281,6 +285,7 @@ p:has(.post-image) {
     margin-top: 2rem;
     display: block;
     padding: 0;
+    @include respond-to('mobile') { width: 100%; }
 }
 .image-caption {
     width: 60%;
@@ -289,6 +294,8 @@ p:has(.post-image) {
     font-size: var(--small-text-size);
     margin-top: 0;
     margin-bottom: 2rem;
+
+    @include respond-to('mobile') { width: 100%; }
 }
 
 .related-posts { // section
