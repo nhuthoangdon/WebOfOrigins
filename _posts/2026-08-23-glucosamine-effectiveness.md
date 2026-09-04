@@ -53,6 +53,10 @@ sources:
     url: https://linkinghub.elsevier.com/retrieve/pii/S1063458406001890
   - name: "Participants at the Hohenheim Consensus Conference in August 29th 2011, Henrotin Y, Chevalier X, et al. Physiological effects of oral glucosamine on joint health: current status and consensus on future research priorities. BMC Res Notes. 2013;6(1):115. doi:10.1186/1756-0500-6-115"
     url: https://bmcresnotes.biomedcentral.com/articles/10.1186/1756-0500-6-115
+  - name: "Moye ZD, Burne RA, Zeng L. Uptake and Metabolism of N -Acetylglucosamine and Glucosamine by Streptococcus mutans. Parales RE, ed. Appl Environ Microbiol. 2014;80(16):5053-5067. doi:10.1128/AEM.00820-14"
+    url: https://journals.asm.org/doi/10.1128/AEM.00820-14
+  - name: "Shmagel A, Demmer R, Knights D, et al. The Effects of Glucosamine and Chondroitin Sulfate on Gut Microbial Composition: A Systematic Review of Evidence from Animal and Human Studies. Nutrients. 2019;11(2):294. doi:10.3390/nu11020294"
+    url: https://www.mdpi.com/2072-6643/11/2/294
 ---
 
 
@@ -103,10 +107,17 @@ sources:
 <p>Despite concerns over shellfish-derived glucosamine, scientific evidence suggests that the risk may depend on the purity of the product. The allergens responsible for shellfish allergy are proteins, mainly tropomyosin, found in the flesh and other tissues of shellfish, whereas glucosamine is derived from chitin in the hard outer shell. Hence, in theory, a highly purified glucosamine product without detectable shellfish proteins should not trigger a shellfish allergy. A clinical trial found that shrimp-allergic individuals tolerated 1,500 mg of glucosamine from specific brands without any incident of hypersensitivity[15]. Hence, it is reasonable to assume that whether a glucosamine product can trigger an allergic reaction depends largely on the purity and source of its ingredients.</p>
 
 <h3>Dosage & Absorption</h3>
-<p>The standard dosage used in the majority of trials is 1,500 mg of glucosamine sulfate per day, consumed either once daily or divided into smaller doses. A study in horses found that glucosamine sulfate was better absorbed, penetrated the joints more effectively, and remained in the joint fluid longer than glucosamine HCl when administered orally[13]. However, there have been only a limited number of studies comparing the efficacy of the two forms.</p>
+<p>The standard dosage used in the majority of trials is 1,500 mg of glucosamine (in sulfate or HCI forms) per day, consumed either once daily or divided into smaller doses. A study in horses found that glucosamine sulfate was better absorbed, penetrated the joints more effectively, and remained in the joint fluid longer than glucosamine HCl when administered orally[13]. However, there have been only a limited number of studies comparing the efficacy of the two forms.</p>
 
 <h3>General Guidelines from Medical Organisations</h3>
-<p>Glucosamine is available as a prescription medicine in some European countries, but is generally marketed as a dietary supplement in the United States. Guidelines on its use differ across regions, with the American Academy of Orthopaedic Surgeons (AAOS) and the American College of Rheumatology and Arthritis Foundation recommending against using glucosamine as a treatment for knee OA, while prescription-grade glucosamine sulfate can be prescribed for the same condition in some European countries[16,17]. Because glucosamine’s effectiveness remains equivocal, medical experts generally agree that its use can be tried for early-stage OA, but should be discontinued after 6 months if no improvement is observed[18,19]. Cost-effectiveness should also be taken into account for each individual use case[3].</p>
+<p>Glucosamine is available as a prescription medicine in some European countries, but is generally marketed as a dietary supplement in the United States. Guidelines on its use differ across regions and regulatory bodies. The American Academy of Orthopaedic Surgeons (AAOS) and the American College of Rheumatology and Arthritis Foundation recommending against using glucosamine as a treatment for knee OA, while prescription-grade glucosamine sulfate might be prescribed for the same condition in some European countries[16,17].</p>
+
+<p>Because glucosamine’s effectiveness remains equivocal, medical experts generally agree that its use can be tried for early-stage OA, but should be discontinued after 6 months if no improvement is observed[18,19]. Cost-effectiveness should also be taken into account for each individual use case[3].</p>
+
+<h4>ℹ Useful Insight</h4>
+<p>Apart from its building-block role, glucosamine also serves as a food source for bacteria[20]. Some studies suggest that orally consumed glucosamine sulfate is poorly absorbed in the gut, with only around 10-12% being absorbed and more than 50% being utilised by gut bacteria. This raises the possibility that glucosamine supplements may also affect the gut microbiome, potentially contributing to their pain-relieving effects. Moreover, as the gut microbiome varies from individual to individual, differences in how glucosamine is processed by gut bacteria could potentially contribute to variations in its effects, perhaps helping explain the inconsistent results between clinical trials[21]. Nevertheless, this proposed mechanism remains poorly understood, and more studies are needed to determine how glucosamine is utilised by the gut microbiome and whether these changes contribute to its effects on joint health.</p>
+
+<p><i>Updated 04 Sept, 2026</i></p>
 
 <hr>
 
@@ -118,4 +129,4 @@ sources:
 
 <p class="sub-text editorial-note"><i>This article draws on high-quality, peer-reviewed scientific and clinical literature and aims to present the available evidence as objectively as possible. It is intended solely for educational and informational purposes and should not be considered medical advice or a recommendation to start, change, or discontinue any treatment or supplement. For advice specific to your health or circumstances, consult a qualified healthcare professional.</i></p>
 
-<p class="post-meta"><b>⟶ COMING UP NEXT:</b> Sources, industries, and impacts associated with the manufacturing of Glucosamine Supplements.</p>
+<p class="post-meta"><b>⟶ NEXT: </b><a href="/insights/dietary-supplements/glucosamine-sources-and-impacts">Sources of Commmercial Glucosamine and Their Cascading Impacts</a></p>
