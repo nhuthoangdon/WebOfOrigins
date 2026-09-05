@@ -339,7 +339,7 @@ p:has(.post-image) {
         hanging-punctuation: first;
 
         a {
-            font-weight: 500;
+            font-weight: var(--medium-text-weight);
 
             &:hover {
                 color: var(--highlight-color);
@@ -355,6 +355,29 @@ p:has(.post-image) {
             }
         }
     }
+}
+
+
+.references {
+    li {
+        line-height: 1em;
+        a {
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: var(--medium-text-weight);
+            color: var(--link-color);
+    
+            &:hover {
+                color: var(--highlight-color);
+            } 
+        }
+    }
+    
+}
+a.citation {
+    text-decoration: none;
+    font-weight: var(--medium-text-weight);
+    // vertical-align: super; font-size: 0.8em;
 }
 
 

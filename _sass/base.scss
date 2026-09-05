@@ -692,6 +692,13 @@ h4 {
   }
 }
 
+h5 {
+  font-size: 1.125rem;
+  margin-bottom: 0;
+  color: var(--heading-color);
+  text-transform: capitalize;
+}
+
 p {
   color: var(--text-color);
   font-size: var(--body-text-size);

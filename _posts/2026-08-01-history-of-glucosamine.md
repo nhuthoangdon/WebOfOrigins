@@ -10,7 +10,7 @@ author: N.H-D.
 industry: [neutraceuticals, pharmaceuticals, dietary supplements, veterinary, cosmetics, seafood processing, biotech]
 # impact: [environmental, allergy, consumer safety, medical risks]
 categories: dietary-supplements
-tags: [glucosamine, joint health, osteoarthritis, dietary supplements, chitin, glucosamine sulfate, glucosamine hydrochloride, crustacean shells, Georg Ledderhose, Luigi Rovati, Rottapharm, seafood waste, sustainable alternative available]
+tags: [glucosamine, joint health, osteoarthritis, dietary supplements, chitin, glucosamine sulfate, glucosamine hydrochloride, crustacean shells, Georg Ledderhose, Luigi Rovati, Rottapharm, seafood waste, sustainable alternative]
 # supply_chain: [seafood processing - chitin - glucosamine]
 image: /src/Assets/glucosamine-discovery-georg-ledderhose.webp
 excerpt: "From lobster shells to a global joint supplement - explore how glucosamine evolved from a laboratory discovery into one of the most widely used supplements for osteoarthritis and joint health."
