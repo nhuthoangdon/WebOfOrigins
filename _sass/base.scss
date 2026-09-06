@@ -694,9 +694,20 @@ h4 {
 
 h5 {
   font-size: 1.125rem;
+  margin-top: 1rem;
   margin-bottom: 0;
   color: var(--heading-color);
   text-transform: capitalize;
+  letter-spacing: .02em;
+}
+
+h6 {
+  font-size: 1rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  color: var(--heading-color);
+  text-transform: uppercase;
+  letter-spacing: .02em;
 }
 
 p {
