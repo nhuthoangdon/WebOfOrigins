@@ -13,7 +13,7 @@ categories: dietary-supplements
 tags: [glucosamine, dietary supplements, chitin, chitosan, glucosamine sulfate, glucosamine hydrochloride, crustacean shells, seafood waste, fungal fermentation, microbial fermentation, corn-derived glucosamine, sustainability, environmental impacts, sustainable alternative]
 # supply_chain: [seafood processing - chitin - glucosamine]
 image: /src/Assets/glucosamine-primary-sources.webp
-excerpt: "Glucosamine is widely marketed for joint health and osteoarthritis, but what does the clinical evidence actually show? This article examines the science behind glucosamine supplements, from their proposed role in cartilage building to clinical trials, research bias, safety concerns, and conflicting findings, to provide a better understanding on their effectiveness."
+excerpt: "Where does glucosamine come from? Explore the crustacean, fungal, plant-based, microbial, and alternative sources used to produce commercial glucosamine supplements, how they are manufactured, and the environmental impacts and sustainability trade-offs behind each source."
 sources:
   - name: "Research I of M (US) C on MN. Glutamine. In: Military Strategies for Sustainment of Nutrition and Immune Function in the Field. National Academies Press (US); 1999. Accessed August 28, 2026. https://www.ncbi.nlm.nih.gov/books/NBK230973/"
     url: https://www.ncbi.nlm.nih.gov/books/NBK230973/
@@ -51,7 +51,7 @@ sources:
 
 <h2>Commercial Glucosamine Production: Sources and Environmental Impacts</h2>
 
-<h3>How is glucosamine made?</h3>
+<h3>How are glucosamine sulfate and glucosamine HCI made?</h3>
 
 <p>Commercial glucosamine is usually produced by breaking down chitin sourced from crustacean processing byproducts or fungi, or through direct microbial fermentation using specialized strains of bacteria.</p>
 

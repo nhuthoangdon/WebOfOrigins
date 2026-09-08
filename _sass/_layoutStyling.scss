@@ -169,10 +169,14 @@ ul.listing-grid {
     flex-direction: column;
     align-items: center;
     margin: calc(2rem + 4%) auto;
-    gap: 2rem;
+    gap: 1rem;
     padding: 2rem;
     h2 {
         align-self: flex-start;
+        margin-bottom: 0.5rem;
+    }
+    .intro-text {
+        margin-top: 0;
     }
     ul.latest-insight-grid {
         display: flex;
