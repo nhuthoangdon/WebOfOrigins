@@ -51,6 +51,9 @@ $breakpoints: (
     max-width: 100%;
     margin: 6rem auto;
    }
+   h1, h2, h3, h4, h5, h6, p {
+    max-width: 1000px;
+   }
 }
 
 ul.listing-grid {
