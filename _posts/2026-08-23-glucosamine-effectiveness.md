@@ -98,11 +98,14 @@ sources:
 <p>These findings seem to align with the glucosamine research landscape of registered clinical trials from <a href="https://ClinicalTrials.gov" target="_blank">ClinicalTrials.gov</a>(‡). The majority of glucosamine studies were conducted in the 2000s, and a much greater proportion were industry-/individual-/university-/ organisation-funded. Only a minority of trials have reported results and/or associated publications. Among the few trials with published papers, results vary depending on study design and quality, supporting the observation that larger-scale, higher-quality trials often found little to no difference in pain relief or cartilage function between groups using glucosamine and those taking placebo. Similarly, a handful of literature reviews that found glucosamine to be effective present potential reporting and selection biases [11,12], contributing to the uncertainty surrounding this substance.</p>
 
 <h2>Glucosamine Safety and Concerns: What Are the Risks and Recommendations?</h2>
-<h4>Is glucosamine safe? Low Concern</h4>
+<h4>Is glucosamine safe?</h4>
+<h5>Low Concern</h5>
 <p>Glucosamine is relatively safe. Despite different outcomes in effectiveness, most studies have reported no significant safety concerns or noticeable adverse effects from using glucosamine for periods of up to 3 years.</p>
-<h4>Is Glucosamine Linked to Alzheimer’s Disease? Preliminary Evidence</h4>
+<h4>Is Glucosamine Linked to Alzheimer’s Disease?</h4>
+<h5>Preliminary Evidence</h5>
 <p>A recent study, published in June 2026 and funded by the NIH and other credible institutions [14], found that glucosamine supplementation may accelerate Alzheimer’s disease progression through a metabolic process called “hyperglycosylation,” in which complex sugar molecules excessively attach to proteins in brain cells and disrupt their normal function. As an amino sugar, additional glucosamine in an Alzheimer’s-affected brain could potentially worsen protein clumping and cellular stress, contributing to disease progression. Nevertheless, the findings have not established a definitive causal relationship, and the study suggests that glucosamine’s effects may be more relevant to brains with established Alzheimer’s disease rather than being a primary cause of the disease in otherwise healthy individuals.</p>
-<h4>Can Glucosamine Cause an Allergic Reaction If You Have a Shellfish Allergy? Low Risk</h4>
+<h4>Can Glucosamine Cause an Allergic Reaction If You Have a Shellfish Allergy?</h4>
+<h5>Low Risk</h5>
 <p>Despite concerns over shellfish-derived glucosamine, scientific evidence suggests that the risk may depend on the purity of the product. The allergens responsible for shellfish allergy are proteins, mainly tropomyosin, found in the flesh and other tissues of shellfish, whereas glucosamine is derived from chitin in the hard outer shell. Hence, in theory, a highly purified glucosamine product without detectable shellfish proteins should not trigger a shellfish allergy. A clinical trial found that shrimp-allergic individuals tolerated 1,500 mg of glucosamine from specific brands without any incident of hypersensitivity [15]. Hence, it is reasonable to assume that whether a glucosamine product can trigger an allergic reaction depends largely on the purity and source of its ingredients.</p>
 
 <h3>How much glucosamine should be taken?</h3>
@@ -126,6 +129,8 @@ sources:
 
 <hr>
 
-<p class="sub-text editorial-note"><i>This article draws on high-quality, peer-reviewed scientific and clinical literature and aims to present the available evidence as objectively as possible. It is intended solely for educational and informational purposes and should not be considered medical advice or a recommendation to start, change, or discontinue any treatment or supplement. For advice specific to your health or circumstances, consult a qualified healthcare professional.</i></p>
+<p class="sub-text editorial-note"><i><b>*MINI DISCLAIMER*</b> This article draws on high-quality, peer-reviewed scientific and clinical literature and aims to present the available evidence as objectively as possible. It is intended solely for educational and informational purposes and should not be considered medical advice or a recommendation to start, change, or discontinue any treatment or supplement. For advice specific to your health or circumstances, consult a qualified healthcare professional.</i></p>
 
-<p class="post-meta"><b>⟶ NEXT: </b><a href="/insights/dietary-supplements/glucosamine-sources-and-impacts">Sources of Commmercial Glucosamine and Their Cascading Impacts</a></p>
+<hr>
+
+<p class="post-meta"><b>⟶ READ NEXT: </b><a href="/insights/dietary-supplements/glucosamine-sources-and-impacts">Sources of Commmercial Glucosamine and Their Cascading Impacts</a></p>

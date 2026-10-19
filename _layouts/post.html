@@ -88,7 +88,7 @@ description: "{{ page.description }}"
                 {% endif %}
             </div>
         
-            <img src="{{ page.image }}" alt="Hero image for {{ page.title }}" class="blog-hero-image" />
+            <img src="{{ page.image }}" alt="Hero image for {{ page.title }}" title="{{ page.image_title }}" class="blog-hero-image" />
         
             {{ content }}
         
@@ -99,7 +99,7 @@ description: "{{ page.description }}"
                 {% for source in page.sources %}
                 <li id="ref-{{ forloop.index }}">
                     {% if source.url %}
-                    <a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.name }}</a>
+                    <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.name }}</a>
                     {% else %}
                     {{ source.name }}
                     {% endif %}
