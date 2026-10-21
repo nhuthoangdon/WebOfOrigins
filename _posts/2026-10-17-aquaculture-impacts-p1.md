@@ -170,7 +170,10 @@ sources:
         Aquaculture Stewardship Council (ASC) certification for farmed seafood: <a href="https://asc-aqua.org" target="_blank" rel="noopener noreferrer">asc-aqua.org</a>
     </li>
     <li>
-        Marine Stewardship Council (MSC) certification for wild-caught seafood: <a href="https://www.msc.org" target="_blank" rel="noopener noreferrer">msc.org</a>
+        Best Aquaculture Practices (BAP) - third-party aquaculture certification: <a href="https://www.bapcertification.org" target="_blank" rel="noopener noreferrer">bapcertification.org</a>
+    </li>
+    <li>
+        Marine Stewardship Council (MSC) certification for wild-caught seafood: <a href="https://www.msc.org" target="_blank" rel="noopener noreferrer">msc.org</a> 
     </li>
 </ul>
 
