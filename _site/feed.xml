@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-10-19T17:45:08+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Web of Origins</title><subtitle>Map the origins of products and materials. Explore the connections between ingredients, industries, supply chains, and their impacts.</subtitle><author><name>Nhut Hoang-Don</name></author><entry><title type="html">Environmental Impacts of Aquaculture and Risks of Antibiotic Use</title><link href="http://localhost:4000/insights/environmental-impacts/aquaculture-impacts-p1" rel="alternate" type="text/html" title="Environmental Impacts of Aquaculture and Risks of Antibiotic Use" /><published>2026-10-17T00:00:00+07:00</published><updated>2026-10-17T00:00:00+07:00</updated><id>http://localhost:4000/insights/environmental-impacts/aquaculture-impacts-p1</id><content type="html" xml:base="http://localhost:4000/insights/environmental-impacts/aquaculture-impacts-p1"><![CDATA[<p class="intro-text">Aquaculture is the controlled farming of aquatic species in freshwater, brackish-water, and marine environments. It includes breeding, rearing (growing juvenile animals to full size), and harvesting. Aquaculture has emerged as a way to sustain population growth, meet global seafood demand, and reduce dependence on wild-caught species, but it can also present a wide range of environmental, ecological, and biological challenges depending on the farming practices and species involved.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-10-21T15:31:50+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Web of Origins</title><subtitle>Map the origins of products and materials. Explore the connections between ingredients, industries, supply chains, and their impacts.</subtitle><author><name>Nhut Hoang-Don</name></author><entry><title type="html">Environmental Impacts of Aquaculture and Risks of Antibiotic Use</title><link href="http://localhost:4000/insights/environmental-impacts/aquaculture-impacts-p1" rel="alternate" type="text/html" title="Environmental Impacts of Aquaculture and Risks of Antibiotic Use" /><published>2026-10-17T00:00:00+07:00</published><updated>2026-10-17T00:00:00+07:00</updated><id>http://localhost:4000/insights/environmental-impacts/aquaculture-impacts-p1</id><content type="html" xml:base="http://localhost:4000/insights/environmental-impacts/aquaculture-impacts-p1"><![CDATA[<p class="intro-text">Aquaculture is the controlled farming of aquatic species in freshwater, brackish-water, and marine environments. It includes breeding, rearing (growing juvenile animals to full size), and harvesting. Aquaculture has emerged as a way to sustain population growth, meet global seafood demand, and reduce dependence on wild-caught species, but it can also present a wide range of environmental, ecological, and biological challenges depending on the farming practices and species involved.</p>
 
 <h2>Aquaculture as an Alternative to Wild-Caught Fisheries</h2>
 <p>Since ancient times, humans have depended heavily on fisheries as an important source of food. Over the last few decades, as the human population has grown rapidly, demand for aquatic food has also grown, leading to increasing pressure on natural supplies. Fish stocks eventually became severely strained from the 1980s through the early 2000s [1]. Driven by increasing fish shortages, food security needs, the drive for exports, and rising living standards, commercial aquaculture developed into a highly viable and organised industry. Since the early 1980s, aquaculture production has expanded exponentially, making it one of the fastest-growing sectors of global food production, especially in developing nations [2,3]. However, aquaculture comes with its own caveats.</p>
@@ -20,29 +20,41 @@
 <h2>⚠️ The most concerning aquaculture products regarding veterinary drug residues</h2>
 
 <h3>𓆛 Chinese Tilapia</h3>
-<p>China is the world’s largest seafood producer and the country that consumes the most antibiotics in aquaculture, accounting for 57.9% of global antimicrobial consumption in 2017. It has also been the world’s largest exporter of tilapia in international markets for decades, and tilapia is one of the species raised with the highest use of antibiotics [10]. China is among the countries with the highest rates of inspection violations involving antibiotic use in aquaculture products imported into the US. In EU markets, Chinese tilapia is the second most frequently flagged product for veterinary drug residues [11,12].</p>
 
 <p><img src="/src/Assets/chinese-tilapia.webp" alt="Chinese Tilapia in a supermarket - Pexels stock image" class="post-image" /></p>
 <p class="image-caption">Chinese Tilapia in a supermarket. Photo by Terrance Barksdale (Pexels).</p>
 
+<p>China is the world’s largest seafood producer and the country that consumes the most antibiotics in aquaculture, accounting for 57.9% of global antimicrobial consumption in 2017. It has also been the world’s largest exporter of tilapia in international markets for decades, and tilapia is one of the species raised with the highest use of antibiotics [10]. China is among the countries with the highest rates of inspection violations involving antibiotic use in aquaculture products imported into the US. In EU markets, Chinese tilapia is the second most frequently flagged product for veterinary drug residues [11,12].</p>
+
 <h3>𓆞 Vietnamese Catfish/Pangasius (“Basa”)</h3>
-<p>Vietnam is the world’s largest exporter of catfish, most commonly pangasius species, and the fourth-largest consumer of antibiotics in aquaculture after China, India, and Indonesia, accounting for 5% of global consumption [10]. Vietnam also has the highest number of violations alongside China related to illegal veterinary drug use in farmed fish exported to the US and has notoriously been a top offender for similar violations in other imported aquaculture products across other major markets. Its catfish is among the most rejected shipments globally due to antibiotic violations [11,12].</p>
 
 <p><img src="/src/Assets/pangasius.webp" alt="Pangasius/Catfish - AI-generated" class="post-image" /></p>
 <p class="image-caption">Pangasius/Basa fish - AI-generated image.</p>
 
+<p>Vietnam is the world’s largest exporter of catfish, most commonly pangasius species, and the fourth-largest consumer of antibiotics in aquaculture after China, India, and Indonesia, accounting for 5% of global consumption [10]. Vietnam also has the highest number of violations alongside China related to illegal veterinary drug use in farmed fish exported to the US and has notoriously been a top offender for similar violations in other imported aquaculture products across other major markets. Its catfish is among the most rejected shipments globally due to antibiotic violations [11,12].</p>
+
 <h3><i class="fa-solid fa-shrimp"></i> Vietnamese, Indian, Indonesian, and Chinese Shrimp/Prawn</h3>
+
+<p><img src="/src/Assets/whiteleg-shrimp.webp" alt="Pacific white shrimp (also called whiteleg shrimp, Litopenaeus vannamei)" class="post-image" /></p>
+<p class="image-caption">Whiteleg shrimp (also known as Pacific white shrimp; scientific name: Litopenaeus vannamei), the most commonly farmed and imported shrimp species. Photo by Viet Chi Go (Pexels).</p>
+
 <p>Shrimp and prawn are the most exported aquaculture products worldwide by volume. Historically, Ecuador, India, Vietnam, Indonesia, and Argentina were the five leading exporters, respectively [13]. However, the ranking has shifted since 2024, with Indonesia overtaking Vietnam as the third-largest exporter, Argentina moving into fourth place, and Thailand taking fifth [14]. China is the world’s largest producer of shrimp and prawn but exports far less than other major producers because of its huge domestic demand. Nevertheless, it remains a top exporter of processed and value-added shrimp products, mainly to Japan, South Korea, and Southeast Asia [15].</p>
 
 <p>Among these leading exporters, shrimp and prawn products from Vietnam, India, Indonesia, and China are the most frequently rejected in major markets for containing banned veterinary drugs, followed by Bangladesh, a significant exporter to EU markets, and Malaysia, a prominent re-exporter of Chinese products [12].</p>
 
 <h3>𓎿 Chilean Salmon</h3>
+
+<p><img src="/src/Assets/salmon-fillet.webp" alt="Salmon Fillet" class="post-image" /></p>
+<p class="image-caption">Salmon fillet. Photo by Deane Bayas (Pexels).</p>
+
 <p>Chile is the world's second-largest producer of farmed salmon after Norway, but its salmon industry has been associated with exceptionally high antibiotic use. Between 2011 and 2015, Chilean salmon farms used more than 1,500 times as much antibiotics per tonne of salmon as Norwegian farms, and may have used much more than any other salmon producer. This intensive use has raised concerns about antibiotic-resistant bacteria, with superbugs having been detected around salmon farms in Chile [4,16].</p>
 
 <p>The biggest import markets for Chilean salmon are the US, Japan, and Brazil [17]. Amid growing global demand for safer products and increasing concerns about antimicrobial resistance, the Chilean government and industry partners have advanced initiatives and programmes to address antibiotic use in salmon farming. These include CSARP [18], developed in partnership with the Monterey Bay Aquarium and the One Health-based National Action Plan (NAP) [19], led by the University of Chile in collaboration with several government bodies and funded by ICARS*, both of which aim to reduce antimicrobial resistance and antibiotic use in Chilean Atlantic salmon aquaculture.</p>
 
 <h2>Risks of consuming aquaculture products with antibiotic residues</h2>
-<p>The risk of consumer exposure to veterinary drug residues in imported aquaculture products is <b>low to moderate</b> in developed markets, including high-income European countries, the US, Japan, Canada, New Zealand, and Australia, where strict regulations and zero-tolerance policies for certain unapproved veterinary drugs, including banned antibiotics such as <i>nitrofurans</i> and <i>chloramphenicol</i>, require non-compliant consignments to be destroyed or returned to the country of origin. However, the underlying concern persists because the global aquaculture industry continues to rely heavily on antimicrobials. Products containing illicit or unapproved veterinary drugs are still frequently flagged at border controls and may occasionally bypass screening [20].</p>
+<h4>Developed nations: low to moderate.</h4>
+<h4>Developing nations: medium to high.</h4>
+<p>The risk of consumer exposure to veterinary drug residues in imported aquaculture products is <b>low to moderate</b> in developed markets, including high-income European countries, the US, Japan, Canada, New Zealand, and Australia, where strict regulations and zero-tolerance policies for certain unapproved veterinary drugs, including banned antibiotics such as <i>nitrofurans</i> and <i>chloramphenicol</i>, require non-compliant consignments to be destroyed or returned to the country of origin. However, the underlying concern persists because the global aquaculture industry continues to rely heavily on antimicrobials, and products containing illicit or unapproved veterinary drugs are still frequently flagged at border controls. Moreover, imported aquaculture and seafood products are usually tested through risk-based sampling rather than screening every shipment; therefore, non-compliant products may occasionally bypass screening, although the risk is low [20].</p>
 
 <p>Prominent global reference points for drug and veterinary residue standards include Codex Alimentarius<sup>§</sup>, the European Union, and the United States; a lot of other countries defer to these as baselines for their own regulations. Low- and middle-income countries tend to follow Codex maximum residue limits (MRLs), while the EU, US, and a few other developed nations establish their own standards [21]. However, many countries, especially developing nations, still lack comprehensive national frameworks for regulating veterinary drug residues, or apply standards that are less stringent than Codex recommendations [22].</p>
 
@@ -53,10 +65,18 @@
 <h3>What are the Safest parts of fish and crustaceans to consume</h3>
 
 <h4>🐟 Lean Fish meat ✓</h4>
+
 <p>Antibiotic residues and environmental contaminants tend to accumulate and persist in fish brains, livers, muscles, gonads, fatty tissues, and other organs [24,25]. Therefore, removing the head (including the brain and gills), skin, belly fat, dark meat, and all internal organs, as well as trimming excess fat and the tail, before consumption may help reduce exposure [26]. However, drug residues and contaminants can also be present in lean muscle meat, making seafood from trusted sources the safest choice.</p>
 
+<p><img src="/src/Assets/edible-fish-parts.png" alt="Edible fish parts" class="post-image" /></p>
+<p class="image-caption">California OEHHA’s recommended guide to fish preparation. Image by <a href="https://oehha.ca.gov/fish/general-health-advice-people-catching-and-eating-sport-fish-california" target="_blank" rel="noopener noreferrer">OEHHA</a>.</p>
+
 <h4>🦐 Crustacean Muscle Meat ✓</h4>
+
 <p>In crustaceans such as shrimp, prawns, crabs, lobsters, and crayfish, drug residues and environmental contaminants typically concentrate in the hepatopancreas (the yellowish, creamy, mustard-like substance in their heads), gills, shells, and digestive tracts (the intestine, visible as the dark vein running along the back of shrimp, prawn, lobster, and crayfish tails) [27]. Many regulatory bodies, such as the FDA, recommend consuming only lean meat from the body, claws, and tail to minimise exposure to such toxins. As with fish, choosing seafood from trusted sources remains the most effective way to avoid eating unwanted substances.</p>
+
+<p><img src="/src/Assets/crustacean-edible-parts.webp" alt="Edible crustacean parts: body meat, tail meat, and claw meat" class="post-image" /></p>
+<p class="image-caption">Recommended parts of shrimp and crab for safer consumption: body meat, tail meat, and claw meat. AI-generated image.</p>
 
 <hr />
 
@@ -79,6 +99,9 @@
         Marine Stewardship Council (MSC) certification for wild-caught seafood: <a href="https://www.msc.org" target="_blank" rel="noopener noreferrer">msc.org</a>
     </li>
 </ul>
+
+<p><img src="/src/Assets/seafood-certifications.png" alt="Seafood certifications from BAP, ASC, and MSC" class="post-image" /></p>
+<p class="image-caption">BAP, ASC, and MSC labels for certified aquaculture and wild-caught seafood products.</p>
 
 <hr />
 
